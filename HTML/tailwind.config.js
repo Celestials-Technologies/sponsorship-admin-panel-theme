@@ -8,6 +8,7 @@ module.exports = {
         'inputText': '#333333',
         'btnPrimary': '#0E9E59',
         'textPrimary': '#191153',
+        'sideBarBg': '#ffffff1a',
       },
     },
   },
