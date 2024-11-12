@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+.font-poppins {
+    font-family: "Poppins", sans-serif;
+}
+
 .sidbar-list li.active {
     background-color: #E9901A;
     align-items: center;
@@ -24,4 +31,58 @@
 
 .logout-btn-shadow {
     box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.18);
+}
+
+@font-face {
+    font-family: Gilroy-normal;
+    src: url(src/fonts/gilroy/Gilroy-Regular.ttf);
+}
+
+@font-face {
+    font-family: Gilroy-medium;
+    src: url(src/fonts/gilroy/Gilroy-Medium.ttf);
+}
+
+@font-face {
+    font-family: Gilroy-semibold;
+    src: url(src/fonts/gilroy/Gilroy-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: Gilroy-bold;
+    src: url(src/fonts/gilroy/Gilroy-Bold.ttf);
+}
+
+@font-face {
+    font-family: Gilroy-extrabold;
+    src: url(src/fonts/gilroy/Gilroy-ExtraBold.ttf);
+}
+
+@font-face {
+    font-family: Gilroy-black;
+    src: url(src/fonts/gilroy/Gilroy-Black.ttf);
+}
+
+.Gilroy-normal {
+    font-family: 'Gilroy-normal', sans-serif;
+}
+
+.Gilroy-medium {
+    font-family: 'Gilroy-medium', sans-serif;
+}
+
+.Gilroy-semibold {
+    font-family: 'Gilroy-semibold', sans-serif;
+}
+
+.Gilroy-bold {
+    font-family: 'Gilroy-bold', sans-serif;
+}
+
+.Gilroy-extrabold {
+    font-family: 'Gilroy-extrabold', sans-serif;
+}
+
+.Gilroy-black {
+    font-family: 'Gilroy-black', sans-serif;
 }
