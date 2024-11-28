@@ -12,7 +12,7 @@
 
     <body class="min-h-screen">
         <div class="flex gap-[25px] pt-[25px] pb-[53px] px-[25px] min-h-screen bg-bgPrimary">
-            <div class="w-[260px] rounded-[20px] pt-[46px] pb-5 flex flex-col justify-between bg-sideBarBg border border-[#ffffff33]">
+            <div class="w-[260px] rounded-[20px] pt-[46px] pb-5 flex flex-col justify-between bg-sideBarBg">
                 <div class="px-2.5">
                     <h1 class="text-[28px] leading-8 text-center Gilroy-extrabold">
                         <span class="text-primary">Screen</span><span class="text-white">Popper</span>
@@ -90,7 +90,7 @@
                 </div>
             </div>
             <div class="w-[calc(100%-285px)]">
-                <div class="w-full py-[9px] pr-[18px] px-[33px] rounded-[15px] flex justify-between items-center gap-2.5 bg-sideBarBg border border-[#ffffff33]">
+                <div class="w-full py-[9px] pr-[18px] px-[33px] rounded-[15px] flex justify-between items-center gap-2.5 bg-sideBarBg">
                     <ul class="flex items-center gap-7 Gilroy-medium">
                         <li class="text-[17px] text-white">
                             <a href="#/">Plans & Pricing</a>    
@@ -128,19 +128,30 @@
                         </button>
                     </div>
                 </div>
-                <div class="mt-16">
-                    <div class="p-[25px] border border-white rounded-2xl bg-gradient flex gap-3.5 w-full max-w-[738px]">
-                        <div class="w-[76px] h-[76px] rounded-full bg-[#ffffff33] flex justify-center items-center">
-                            <div class="w-11 h-11 rounded-full bg-primary flex justify-center items-center">
-                                <span class="text-[31px] text-white Gilroy-extrabold">$</span>
+                <div class="pt-12">
+                    <p class="text-[28px] leading-[29px] text-white mb-2 Gilroy-black">Contact Us</p>
+                    <p class="text-[15px] leading-[19px] text-white Gilroy-normal capitalize">can no find what you are looking for? fill in the form below and contact our support team </p>
+                    <form action="#/" class="mt-[25px]">
+                        <div class="flex sm:flex-row flex-col gap-x-[25px] mb-[15px]">
+                            <div class="sm:w-1/2 w-full">
+                                <label class="inline-block text-[15px] leading-[19px] text-white Gilroy-medium mb-1">Name</label>
+                                <input type="Name" placeholder="Type Here" class="block w-full bg-white px-[13px] py-3.5 h-[45px] placeholder:text-[#00000033] rounded-xl" />
+                            </div>
+                            <div class="sm:w-1/2 w-full">
+                                <label class="inline-block text-[15px] leading-[19px] text-white Gilroy-medium mb-1">Reply to Email</label>
+                                <input type="text" placeholder="Type Here" class="block w-full bg-white px-[13px] py-3.5 h-[45px] placeholder:text-[#00000033] rounded-xl" />
+                                <p class="text-[15px] leading-[19px] text-white Gilroy-normal capitalize mt-2">your account’s email adress: ltvspot@reserchway.co</p>
                             </div>
                         </div>
-                        <div class="w-[calc(100%-90px)]">
-                            <h2 class="text-[28px] leading-[29px] text-white Gilroy-extrabold mb-5">Start selling ConnectSponsors to your clients!</h2>
-                            <p class="text-[15px] leading-6 text-white Gilroy-normal">If you’re one of our clients on the “Enterprise” packages, you can invite your clients to join ConnectSponsors, and automatically create their accounts. To give them an even bigger “wow” factor, consider activating our Custom Branding & Custom Domain feature.</p>
-                            <button type="button" class="rounded-full bg-btnSecondary w-[154px] h-11 py-2.5 text-lg text-white Gilroy-medium text-center">Coming Soon</button>
+                        <div class="w-full">
+                            <label class="inline-block text-[15px] leading-[19px] text-white Gilroy-medium mb-1">Why Should We Track This Channel? <span class="text-primary">(Optional)</span></label>
+                            <textarea placeholder="Type Here" class="resize-none block w-full bg-white px-[13px] py-3.5 h-[45px] placeholder:text-[#00000033] rounded-xl min-h-[210px]"></textarea>
                         </div>
-                    </div>
+                        <p class="text-[15px] leading-[19px] text-white Gilroy-normal mt-1.5">For More Deail, Review Our <a href="#/" class="text-primary">Privacy Policy</a></p>
+                        <div class="text-right">
+                            <button type="button" class="rounded-full bg-btnSecondary w-[122px] h-11 py-2.5 text-lg text-white Gilroy-medium text-center">Send</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

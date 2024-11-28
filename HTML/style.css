@@ -86,3 +86,11 @@
 .Gilroy-black {
     font-family: 'Gilroy-black', sans-serif;
 }
+
+.faqs-bg {
+    background-image: url(src/images/faqs-bg.png);
+}
+
+.scrollBar-hidden::-webkit-scrollbar {
+    display: none;
+}

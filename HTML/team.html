@@ -90,8 +90,8 @@
                 </div>
             </div>
             <div class="w-[calc(100%-285px)]">
-                <div class="w-full py-[9px] pr-[18px] px-[33px] rounded-[15px] flex justify-between items-center gap-2.5 bg-sideBarBg border border-[#ffffff33]">
-                    <ul class="flex items-center gap-7 Gilroy-medium">
+                <div class="w-full py-[9px] pr-[18px] px-[33px] rounded-[15px] flex lg:justify-between justify-end items-center gap-2.5 bg-sideBarBg border border-[#ffffff33]">
+                    <ul class="lg:flex items-center xl:gap-7 gap-2.5 Gilroy-medium hidden">
                         <li class="text-[17px] text-white">
                             <a href="#/">Plans & Pricing</a>    
                         </li>
@@ -128,18 +128,57 @@
                         </button>
                     </div>
                 </div>
-                <div class="mt-16">
-                    <div class="p-[25px] border border-white rounded-2xl bg-gradient flex gap-3.5 w-full max-w-[738px]">
-                        <div class="w-[76px] h-[76px] rounded-full bg-[#ffffff33] flex justify-center items-center">
-                            <div class="w-11 h-11 rounded-full bg-primary flex justify-center items-center">
-                                <span class="text-[31px] text-white Gilroy-extrabold">$</span>
+                <div class="pt-12">
+                    <h2 class="text-[28px] leading-[29px] text-white Gilroy-extrabold mb-3">Team</h2>
+                    <p class="text-lg leading-8 text-white Gilroy-medium mb-[25px]">Manage who has access to this workspace.</p>
+                    <div class="pt-3.5 pr-[15px] pb-7 pl-[18px] bg-sideBarBg border border-[#ffffff33] rounded-[20px]">
+                        <div class="flex justify-between items-center mb-[9px]">
+                            <p class="text-xl leading-6 text-white Gilroy-bold">Invite User</p>
+                            <div class="flex text-lg leading-6 text-white Gilroy-semibold">
+                                <span>User Limit:</span>
+                                <span class="text-primary pl-1"> 1/1</span>
                             </div>
                         </div>
-                        <div class="w-[calc(100%-90px)]">
-                            <h2 class="text-[28px] leading-[29px] text-white Gilroy-extrabold mb-5">Start selling ConnectSponsors to your clients!</h2>
-                            <p class="text-[15px] leading-6 text-white Gilroy-normal">If you’re one of our clients on the “Enterprise” packages, you can invite your clients to join ConnectSponsors, and automatically create their accounts. To give them an even bigger “wow” factor, consider activating our Custom Branding & Custom Domain feature.</p>
-                            <button type="button" class="rounded-full bg-btnSecondary w-[154px] h-11 py-2.5 text-lg text-white Gilroy-medium text-center">Coming Soon</button>
+                        <p class="text-[15px] leading-6 text-white Gilroy-medium mb-[9px]">The user you are creating will get an email with login details.</p>
+                        <div class="flex flex-wrap gap-[15px]">
+                            <input  class="block w-full bg-white px-[13px] py-3.5 h-[45px] placeholder:text-[#00000033] rounded-xl max-w-[303px]" type="name" placeholder="Employee Full Name" />
+                            <input  class="block w-full bg-white px-[13px] py-3.5 h-[45px] placeholder:text-[#00000033] rounded-xl max-w-[303px]" type="name" placeholder="Employee Email" />
+                            <input  class="block w-full bg-white px-[13px] py-3.5 h-[45px] placeholder:text-[#00000033] rounded-xl max-w-[303px]" type="name" placeholder="user" />
+                            <button type="button" class="rounded-full text-[15px] text-white text-center Gilroy-medium flex justify-center items-center bg-btnPrimary w-[115px] h-[45px]">Invite User</button>
                         </div>
+                    </div>
+                    <div class="mt-5 border border-white rounded-2xl w-full max-w-[1110px] bg-gradient overflow-auto scrollBar-hidden">
+                        <table class="w-[1105px]">
+                            <thead>
+                                <th class="text-xl text-white Gilroy-medium text-left py-[9px] border-b border-white w-[285px] pl-[45px]">User</th>
+                                <th class="text-xl text-white Gilroy-medium text-left py-[9px] border-b border-white w-[387px]">Email Address</th>
+                                <th class="text-xl text-white Gilroy-medium text-left py-[9px] border-b border-white w-[297px]">User Type</th>
+                                <th class="text-xl text-white Gilroy-medium text-left py-[9px] border-b border-white w-[112px]">Actions</th>
+                            </thead>
+                            <tbody>
+                                <td class="pl-[45px] py-5">
+                                    <div class="flex items-center gap-5">
+                                        <div>
+                                            <img src="src/images/user.png" alt="User Image" />
+                                        </div>
+                                        <p class="text-lg text-white Gilroy-semibold">Tim</p>
+                                    </div>
+                                </td>
+                                <td class="py-5 text-lg text-white Gilroy-normal">
+                                    Tim@etsponsored.com
+                                </td>
+                                <td class="pl-[45px] py-5 text-lg text-white Gilroy-normal">
+                                    User
+                                </td>
+                                <td class="py-5 text-lg text-white Gilroy-normal">
+                                    <button type="button" class="flex justify-center items-center w-[46px] h-[46px] rounded-[10px] bg-primary">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M20 1.84176L18.1582 0L10 8.17121L1.84176 0L0 1.84176L8.17121 10L0 18.1582L1.84176 20L10 11.8288L18.1582 20L20 18.1582L11.8288 10L20 1.84176Z" fill="white"/>
+                                        </svg>
+                                    </button>
+                                </td>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
