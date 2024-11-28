@@ -89,5 +89,8 @@
 
 .faqs-bg {
     background-image: url(src/images/faqs-bg.png);
-    background-repeat: no-repeat;
+}
+
+.scrollBar-hidden::-webkit-scrollbar {
+    display: none;
 }
