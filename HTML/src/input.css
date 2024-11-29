@@ -66,3 +66,15 @@
     border-width: 0 2px 2px 0;
     transform: rotate(45deg); */
   }
+
+  .boxShadow-sec {
+    box-shadow: 0px 1.793px 4.481px 1.793px rgba(0, 0, 0, 0.40);
+  }
+
+  .divider-bg-gradient {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.35) 0%, #FFF 45%, rgba(255, 255, 255, 0.35) 100%);
+  }
+
+  .pricing-card-boxShadow {
+    box-shadow: 0px 1.341px 3.352px 1.341px rgba(0, 0, 0, 0.40);
+  }
