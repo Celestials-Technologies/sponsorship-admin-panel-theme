@@ -94,3 +94,40 @@
 .scrollBar-hidden::-webkit-scrollbar {
     display: none;
 }
+.searchIconBox {
+    background-color: white;
+    transition:all 0.5s ease;
+}
+.searchIconBox:hover {
+    background-color: #E9901A;
+}
+.searchIconBox:hover .searchIcon {
+    stroke: white;
+    transition:all 0.5s ease;
+}
+.layerIconBox {
+    background-color: white;
+    transition:all 0.5s ease;
+}
+.layerIconBox:hover {
+    background-color: #E9901A;
+}
+.layerIcon path {
+    stroke: #E9901A;
+}
+.layerIconBox:hover .layerIcon path {
+    stroke: white;
+    transition:all 0.5s ease;
+}
+.layoutText {
+    opacity: 0;
+    margin-top: 6px;
+    transition:all 0.5s ease;
+}
+.layoutContainer:hover .layoutText {
+    opacity: 1;
+    margin-top: 0px;
+}
+.connectBox {
+    position: relative;
+}
