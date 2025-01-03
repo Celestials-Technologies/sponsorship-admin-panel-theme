@@ -131,3 +131,17 @@
 .connectBox {
     position: relative;
 }
+.iconMainBox {
+    background-color: #E9901A;
+    transition: all 0.5s ease;
+}
+.iconMainBox:hover {
+    background-color: white;
+}
+.iconMainBox svg path {
+    stroke: white;
+    transition: all 0.5s ease;
+}
+.iconMainBox:hover svg path {
+    stroke: #E9901A;
+}
