@@ -17,7 +17,7 @@
       class="flex gap-[25px] pt-[25px] pb-[53px] px-6 min-h-screen bg-bgPrimary"
     >
       <div
-        class="w-[260px] rounded-[20px] pt-[46px] pb-5 flex-col justify-between bg-sideBarBg border border-[#ffffff33] hidden lg:flex h-fit sticky top-6"
+        class="w-[260px] rounded-[20px] pt-[46px] pb-5 flex-col justify-between bg-sideBarBg border border-[#ffffff33] hidden lg:flex h-[92vh] sticky top-6"
       >
         <div class="px-2.5">
           <h1 class="text-[28px] leading-8 text-center Gilroy-extrabold">
@@ -289,7 +289,7 @@
                 Connect
               </button>
               <div
-                class="bg-sideBarBg md:border border-[#ffffff33] md:py-1.5 p-0 md:pl-5 md:pr-2 gap-4 rounded-full flex items-center"
+                class="bg-sideBarBg md:border border-[#ffffff33] md:py-1.5 p-0 md:pl-5 md:pr-2 gap-4 rounded-full flex items-center md:hidden"
               >
                 <input
                   type="text"
@@ -379,14 +379,14 @@
         </div>
       
         <div class="pt-12">
-          <div class="flex items-center justify-between mb-[17px]">
-            <p class="text-[28px] leading-[43px] text-white Gilroy-black">
+          <div class="flex flex-wrap gap-3 items-center justify-between mb-5">
+            <p class="text-3xl text-white Gilroy-semibold">
               Default
             </p>
             <div class="flex items-center gap-3">
               <button
                 type="button"
-                class="bg-[#E9901A] px-8 py-4 text-base text-white rounded-lg flex items-center justify-center gap-2 Gilroy-semibold"
+                class="bg-[#E9901A] px-5 py-2 md:px-8 md:py-4 text-base text-white rounded-lg flex items-center justify-center gap-2 Gilroy-semibold"
               >
                 <svg
                   width="24"
@@ -407,7 +407,7 @@
               </button>
               <button
                 type="button"
-                class="bg-[#E9901A] px-8 py-4 pt-[18px] text-base text-white rounded-lg flex items-center justify-center Gilroy-semibold"
+                class="bg-[#E9901A] py-2 pt-2.5 px-[18px] md:px-8 md:py-4 md:pt-[18px] text-base text-white rounded-lg flex items-center justify-center Gilroy-semibold"
               >
                 Trade
               </button>
@@ -417,7 +417,7 @@
           <div
             class="flex flex-wrap 2xl:flex-nowrap items-center gap-y-5"
           >
-            <div class="sm:w-3/6 xl:w-[31.333%] 2xl:w-full max-w-full px-2.5 h-full">
+            <div class="sm:w-3/6 xl:w-[31.333%] 2xl:w-full w-full max-w-full sm:px-2.5 h-full">
               <div
                 class="py-6 px-3.5 border border-[#ffffff33] w-full max-w-full bg-sideBarBg h-full flex items-center justify-center rounded-xl"
               >
@@ -430,11 +430,11 @@
                       alt="bitcoin"
                       class="w-8 h-8"
                     />
-                    <p class="text-white Gilroy-semibold pt-0.5 text-2xl">
+                    <p class="text-white Gilroy-semibold pt-0.5 text-xl sm:text-2xl">
                       BTC
                     </p>
                   </div>
-                  <div class="flex gap-4">
+                  <div class="flex gap-4 justify-between">
                     <div>
                       <p
                         class="text-xl whitespace-nowrap text-white Gilroy-semibold"
@@ -458,7 +458,7 @@
                           />
                         </svg>
                         <p
-                          class="text-base Gilroy-normal text-[#00A385] pt-0.5"
+                          class="text-sm sm:text-base Gilroy-normal text-[#00A385] pt-0.5"
                         >
                           92.4%
                         </p>
@@ -807,7 +807,7 @@
                 </div>
               </div>
             </div>
-            <div class="sm:w-3/6 xl:w-[31.333%] 2xl:w-full max-w-full px-2.5 h-full">
+            <div class="sm:w-3/6 xl:w-[31.333%] 2xl:w-full w-full max-w-full sm:px-2.5 h-full">
               <div
                 class="py-6 px-3.5 rounded-xl border border-[#ffffff33] w-full bg-sideBarBg h-full flex items-center justify-center"
               >
@@ -820,11 +820,11 @@
                       alt="cardano"
                       class="w-8 h-8"
                     />
-                    <p class="text-white Gilroy-semibold pt-0.5 text-2xl">
+                    <p class="text-white Gilroy-semibold pt-0.5 text-xl sm:text-2xl">
                       ADA
                     </p>
                   </div>
-                  <div class="flex gap-4">
+                  <div class="flex gap-4 justify-between">
                     <div>
                       <p
                         class="text-xl whitespace-nowrap text-white Gilroy-semibold"
@@ -848,7 +848,7 @@
                           />
                         </svg>
                         <p
-                          class="text-base Gilroy-normal text-[#8957ff] pt-0.5"
+                          class="text-sm sm:text-base Gilroy-normal text-[#8957ff] pt-0.5"
                         >
                           50.9%
                         </p>
@@ -1197,7 +1197,7 @@
                 </div>
               </div>
             </div>
-            <div class="sm:w-3/6 xl:w-[31.333%] 2xl:w-full max-w-full px-2.5 h-full">
+            <div class="sm:w-3/6 xl:w-[31.333%] 2xl:w-full w-full max-w-full sm:px-2.5 h-full">
               <div
                 class="py-6 px-3.5 rounded-xl border border-[#ffffff33] w-full bg-sideBarBg h-full flex items-center justify-center"
               >
@@ -1210,11 +1210,11 @@
                       alt="cardano"
                       class="w-8 h-8"
                     />
-                    <p class="text-white Gilroy-semibold pt-0.5 text-2xl">
+                    <p class="text-white Gilroy-semibold pt-0.5 text-xl sm:text-2xl">
                       EOS
                     </p>
                   </div>
-                  <div class="flex gap-4">
+                  <div class="flex gap-4 justify-between">
                     <div>
                       <p
                         class="text-xl whitespace-nowrap text-white Gilroy-semibold"
@@ -1238,7 +1238,7 @@
                           />
                         </svg>
                         <p
-                          class="text-base Gilroy-normal text-[#FF6161] pt-0.5"
+                          class="text-sm sm:text-base Gilroy-normal text-[#FF6161] pt-0.5"
                         >
                           19.3%
                         </p>
@@ -1587,13 +1587,13 @@
                 </div>
               </div>
             </div>
-            <div class="sm:w-3/6 xl:w-[31.333%] 2xl:w-full max-w-full px-2.5 h-full">
+            <div class="sm:w-3/6 xl:w-[31.333%] 2xl:w-full w-full max-w-full sm:px-2.5 h-full">
               <div
                 class="p-2 border border-[#ffffff33] rounded-xl w-full bg-sideBarBg flex h-full items-center"
               >
                 <button
                   type="button"
-                  class="p-6 w-full border border-dashed border-white rounded-lg cursor-pointer"
+                  class="p-[18px] w-full border border-dashed border-white rounded-lg cursor-pointer"
                 >
                   <svg
                     width="40px"
@@ -1612,11 +1612,11 @@
                     />
                   </svg>
                   <p
-                    class="mb-4 text-base Gilroy-normal text-white text-center"
+                    class="mb-4 text-sm sm:text-base Gilroy-normal text-white text-center"
                   >
                     Add any finance coin and enjoy empowering your portfolio
                   </p>
-                  <p class="text-base Gilroy-black text-white text-center">
+                  <p class="text-sm sm:text-base Gilroy-black text-white text-center">
                     Add More
                   </p>
                 </button>
@@ -1625,14 +1625,14 @@
           </div>
         </div>
         <div class="flex flex-wrap xl:flex-nowrap">
-          <div class="w-full xl:w-[70%] px-2.5">
+          <div class="w-full xl:w-[70%] xl:px-2.5">
             <div
-              class="pt-6 pr-[31px] pb-[22px] pl-[26px] border border-white rounded-[15px] bg-gradient mt-6"
+              class="p-6 md:pt-6 md:pr-[31px] md:pb-[22px] md:pl-[26px] border border-white rounded-[15px] bg-gradient mt-6"
             >
               <div
-                class="border-b border-dashed pb-6 mb-2 border-white flex items-center justify-between"
+                class="border-b border-dashed pb-6 mb-2 border-white flex flex-wrap gap-3 items-center justify-between"
               >
-                <p class="text-[26px] leading-[43px] text-white Gilroy-semibold">
+                <p class="text-xl md:text-[26px] text-white Gilroy-semibold">
                   Earnings
                 </p>
                 <div class="flex items-center gap-2">
@@ -2878,22 +2878,22 @@
               </svg>
             </div>
             <div
-              class="pt-6 pr-[31px] pb-[22px] pl-[26px] border border-white rounded-[15px] bg-gradient mt-6"
+              class="p-6 md:pt-6 md:pr-[31px] md:pb-[22px] md:pl-[26px] border border-white rounded-[15px] bg-gradient mt-6"
             >
               <div
                 class="border-b border-dashed pb-6 mb-2 border-white flex items-center justify-between mb-6 pb-6 flex-wrap gap-x-1"
               >
-                <p class="text-[26px] leading-[43px] text-white Gilroy-semibold">
+                <p class="text-xl md:text-[26px] text-white Gilroy-semibold">
                   Transaction History
                 </p>
-                <div class="flex gap-3">
+                <div class="flex gap-3 flex-wrap">
                   <div
                   class="bg-sideBarBg border border-[#ffffff33] py-1.5 pl-5 pr-2 gap-4 rounded-full flex items-center"
                   >
                     <input
                       type="text"
                       placeholder="Search"
-                      class="text-base bg-transparent leading-6 text-white outline-none Gilroy-medium"
+                      class="text-base bg-transparent leading-6 text-white outline-none Gilroy-medium w-[calc(100%-20%)]"
                     />
                     <div
                       class="p-1 flex items-center justify-center bg-white cursor-pointer w-fit rounded-full searchIconBox"
@@ -3169,21 +3169,21 @@
                   </tbody>
                 </table>
               </div>
-              <div class="mt-5 flex justify-between gap-6 items-center">
-                <p class="text-white text-base Gilroy-normal">
+              <div class="mt-5 flex flex-wrap justify-between gap-3 items-center">
+                <p class="text-white text-sm md:text-base Gilroy-normal">
                   Showing 1 to 10 of 500 entries
                 </p>
                 <ul class="flex items-center  gap-2">
-                  <li class="w-10 h-10 flex items-center justify-center rounded-lg border border-white  bg-transparent hover:bg-[#e9901a] transition-all">
+                  <li class="md:w-10 md:h-10 w-8 h-8 flex items-center justify-center rounded-lg border border-white  bg-transparent hover:bg-[#e9901a] transition-all">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-6 h-6">
                       <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
                     </svg>
                   </li>
-                  <li class="w-10 h-10 flex text-base text-white Gilroy-medium items-center justify-center rounded-lg border border-white  hover:bg-transparent bg-[#e9901a] transition-all pt-0.5"> 1 </li>
-                  <li class="w-10 h-10 flex text-base text-white Gilroy-medium items-center justify-center rounded-lg border border-white  bg-transparent hover:bg-[#e9901a] transition-all pt-0.5"> 2 </li>
-                  <li class="w-10 h-10 flex text-base text-white Gilroy-medium items-center justify-center rounded-lg border border-white  bg-transparent hover:bg-[#e9901a] transition-all pt-0.5"> ... </li>
-                  <li class="w-10 h-10 flex text-base text-white Gilroy-medium items-center justify-center rounded-lg border border-white  bg-transparent hover:bg-[#e9901a] transition-all pt-0.5"> 5 </li>
-                  <li class="w-10 h-10 flex items-center justify-center rounded-lg border border-white  hover:bg-transparent bg-[#e9901a] transition-all">
+                  <li class="w-8 h-8 md:w-10 md:h-10 flex text-base text-white Gilroy-medium items-center justify-center rounded-lg border border-white  hover:bg-transparent bg-[#e9901a] transition-all pt-0.5"> 1 </li>
+                  <li class="w-8 h-8 md:w-10 md:h-10 flex text-base text-white Gilroy-medium items-center justify-center rounded-lg border border-white  bg-transparent hover:bg-[#e9901a] transition-all pt-0.5"> 2 </li>
+                  <li class="w-8 h-8 md:w-10 md:h-10 flex text-base text-white Gilroy-medium items-center justify-center rounded-lg border border-white  bg-transparent hover:bg-[#e9901a] transition-all pt-0.5"> ... </li>
+                  <li class="w-8 h-8 md:w-10 md:h-10 flex text-base text-white Gilroy-medium items-center justify-center rounded-lg border border-white  bg-transparent hover:bg-[#e9901a] transition-all pt-0.5"> 5 </li>
+                  <li class="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center rounded-lg border border-white  hover:bg-transparent bg-[#e9901a] transition-all">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-6 h-6">
                       <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
                     </svg>                  
@@ -3192,7 +3192,7 @@
               </div>
             </div>
           </div>
-          <div class="w-full xl:w-[30%] px-2.5 flex flex-col gap-6 mt-6">
+          <!-- <div class="w-full xl:w-[30%] px-2.5 flex flex-col gap-6 mt-6">
             <div class="border border-white bg-sideBarBg p-6 rounded-xl">
               <div class="flex items-center justify-between">
                 <p class="text-base text-white Gilroy-medium">Balance</p>
@@ -3357,7 +3357,7 @@
                 </a>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
