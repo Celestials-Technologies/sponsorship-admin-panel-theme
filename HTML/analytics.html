@@ -1,0 +1,1748 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link href="./src/output.css" rel="stylesheet" />
+    <link href="./style.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="min-h-screen">
+    <div
+      class="flex gap-[25px] pt-[25px] pb-[53px] px-6 min-h-screen bg-bgPrimary"
+    >
+      <div
+        class="w-[260px] rounded-[20px] pt-[46px] pb-5 flex-col justify-between bg-sideBarBg border border-[#ffffff33] hidden lg:flex h-[92vh] sticky top-6 tableScroll overflow-y-auto"
+      >
+        <div class="px-2.5">
+          <h1 class="text-[28px] leading-8 text-center Gilroy-extrabold">
+            <span class="text-primary">Fin</span
+            ><span class="text-white">Vista</span>
+          </h1>
+          <ul class="mt-[90px] sidbar-list pl-px">
+            <li
+              class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center cursor-pointer hover:bg-[#E9901A] transition-all"
+            >
+              <div
+                class="w-[34px] h-[34px] rounded-lg flex justify-center items-center"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="19"
+                  viewBox="0 0 18 19"
+                  fill="none"
+                >
+                  <path
+                    d="M11.6053 19C12.754 19 13.7397 18.9342 14.5632 18.7345C15.3973 18.5323 16.1203 18.1798 16.6842 17.5646C17.2481 16.9494 17.5713 16.1607 17.7566 15.2508C17.9397 14.3524 18 13.2771 18 12.024V9C18 7.8954 17.1792 7 16.1667 7H8.83333C7.82078 7 7 7.8954 7 9V17C7 18.1046 7.82078 19 8.83333 19H11.6053Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M0 12.1009C0 13.3732 0.0548667 14.465 0.221267 15.3772C0.389767 16.301 0.683508 17.1018 1.19619 17.7264C1.70888 18.351 2.36611 18.7089 3.12429 18.9142C3.1969 18.9338 3.26987 18.9523 3.34315 18.9695C4.24691 19.1822 5 18.2503 5 17.1288V9.03063C5 7.90911 4.25381 7 3.33333 7H1.66667C0.746192 7 0 7.90911 0 9.03063V12.1009Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M6.22414 0C5.07514 0 4.08924 0.0548667 3.26543 0.221267C2.43121 0.389767 1.70806 0.683508 1.14396 1.19619C0.579861 1.70888 0.256661 2.36611 0.0712624 3.12429C0.0560417 3.18655 0.0417196 3.24901 0.0282686 3.31165C-0.168298 4.22722 0.688716 5 1.7151 5H16.3101C17.323 5 18.1646 4.24691 17.9725 3.34315C17.9569 3.26987 17.9402 3.1969 17.9225 3.12429C17.737 2.36611 17.4139 1.70888 16.8497 1.19619C16.2857 0.683508 15.5625 0.389767 14.7283 0.221267C13.9045 0.0548667 12.9186 0 11.7696 0H6.22414Z"
+                    fill="white"
+                  />
+                </svg>
+              </div>
+              <p class="text-base leading-5 text-white pt-0.5 Gilroy-semibold">
+                Dashboards
+              </p>
+            </li>
+            <li
+              class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-2.5 cursor-pointer hover:bg-[#E9901A] transition-all"
+            >
+              <div
+                class="w-[34px] h-[34px] rounded-lg flex justify-center items-center"
+              >
+                <svg
+                  width="100%"
+                  height="100%"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M2 14.5001L11.6422 19.3212C11.7734 19.3868 11.839 19.4196 11.9078 19.4325C11.9687 19.4439 12.0313 19.4439 12.0922 19.4325C12.161 19.4196 12.2266 19.3868 12.3578 19.3212L22 14.5001M2 9.50006L11.6422 4.67895C11.7734 4.61336 11.839 4.58056 11.9078 4.56766C11.9687 4.55622 12.0313 4.55622 12.0922 4.56766C12.161 4.58056 12.2266 4.61336 12.3578 4.67895L22 9.50006L12.3578 14.3212C12.2266 14.3868 12.161 14.4196 12.0922 14.4325C12.0313 14.4439 11.9687 14.4439 11.9078 14.4325C11.839 14.4196 11.7734 14.3868 11.6422 14.3212L2 9.50006Z"
+                    stroke="white"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <p
+                class="text-base leading-5 text-white h-auto pt-0.5 Gilroy-semibold"
+              >
+                Pages
+              </p>
+            </li>
+            <li
+              class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] mt-2.5 relative items-center active cursor-pointer"
+            >
+              <div
+                class="w-[34px] h-[34px] rounded-lg flex justify-center items-center"
+              >
+                <svg
+                  width="100%"
+                  height="100%"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M20 20V13M12 20V10M4 20L4 16M13.4067 5.0275L18.5751 6.96567M10.7988 5.40092L5.20023 9.59983M21.0607 6.43934C21.6464 7.02513 21.6464 7.97487 21.0607 8.56066C20.4749 9.14645 19.5251 9.14645 18.9393 8.56066C18.3536 7.97487 18.3536 7.02513 18.9393 6.43934C19.5251 5.85355 20.4749 5.85355 21.0607 6.43934ZM5.06066 9.43934C5.64645 10.0251 5.64645 10.9749 5.06066 11.5607C4.47487 12.1464 3.52513 12.1464 2.93934 11.5607C2.35355 10.9749 2.35355 10.0251 2.93934 9.43934C3.52513 8.85355 4.47487 8.85355 5.06066 9.43934ZM13.0607 3.43934C13.6464 4.02513 13.6464 4.97487 13.0607 5.56066C12.4749 6.14645 11.5251 6.14645 10.9393 5.56066C10.3536 4.97487 10.3536 4.02513 10.9393 3.43934C11.5251 2.85355 12.4749 2.85355 13.0607 3.43934Z"
+                    stroke="white"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <p
+                class="text-base leading-5 text-white pt-0.5 h-auto Gilroy-semibold"
+              >
+                Analytics
+              </p>
+            </li>
+            <li
+              class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-2.5 cursor-pointer hover:bg-[#E9901A] transition-all"
+            >
+              <div
+                class="w-[34px] h-[34px] rounded-lg flex justify-center items-center"
+              >
+                <svg
+                  width="100%"
+                  height="100%"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M16 7.99983V4.50048C16 3.66874 16 3.25287 15.8248 2.9973C15.6717 2.77401 15.4346 2.62232 15.1678 2.57691C14.8623 2.52493 14.4847 2.6992 13.7295 3.04775L4.85901 7.14182C4.18551 7.45267 3.84875 7.6081 3.60211 7.84915C3.38406 8.06225 3.21762 8.32238 3.1155 8.60966C3 8.93462 3 9.30551 3 10.0473V14.9998M16.5 14.4998H16.51M3 11.1998L3 17.7998C3 18.9199 3 19.48 3.21799 19.9078C3.40973 20.2841 3.71569 20.5901 4.09202 20.7818C4.51984 20.9998 5.07989 20.9998 6.2 20.9998H17.8C18.9201 20.9998 19.4802 20.9998 19.908 20.7818C20.2843 20.5901 20.5903 20.2841 20.782 19.9078C21 19.48 21 18.9199 21 17.7998V11.1998C21 10.0797 21 9.51967 20.782 9.09185C20.5903 8.71552 20.2843 8.40956 19.908 8.21782C19.4802 7.99983 18.9201 7.99983 17.8 7.99983L6.2 7.99983C5.0799 7.99983 4.51984 7.99983 4.09202 8.21781C3.7157 8.40956 3.40973 8.71552 3.21799 9.09185C3 9.51967 3 10.0797 3 11.1998ZM17 14.4998C17 14.776 16.7761 14.9998 16.5 14.9998C16.2239 14.9998 16 14.776 16 14.4998C16 14.2237 16.2239 13.9998 16.5 13.9998C16.7761 13.9998 17 14.2237 17 14.4998Z"
+                    stroke="white"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <p
+                class="text-base leading-5 text-white h-auto pt-0.5 Gilroy-semibold"
+              >
+                Wallet
+              </p>
+            </li>
+            <li
+              class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-2.5 cursor-pointer hover:bg-[#E9901A] transition-all"
+            >
+              <div
+                class="w-[34px] h-[34px] rounded-lg flex justify-center items-center"
+              >
+                <svg
+                  width="100%"
+                  height="100%"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12 15C8.8299 15 6.01077 16.5306 4.21597 18.906C3.82968 19.4172 3.63653 19.6728 3.64285 20.0183C3.64773 20.2852 3.81533 20.6219 4.02534 20.7867C4.29716 21 4.67384 21 5.4272 21H18.5727C19.3261 21 19.7028 21 19.9746 20.7867C20.1846 20.6219 20.3522 20.2852 20.3571 20.0183C20.3634 19.6728 20.1703 19.4172 19.784 18.906C17.9892 16.5306 15.17 15 12 15Z"
+                    stroke="white"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M12 12C14.4853 12 16.5 9.98528 16.5 7.5C16.5 5.01472 14.4853 3 12 3C9.51469 3 7.49997 5.01472 7.49997 7.5C7.49997 9.98528 9.51469 12 12 12Z"
+                    stroke="white"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <p
+                class="text-base leading-5 text-white pt-0.5 h-auto Gilroy-semibold"
+              >
+                Account
+              </p>
+            </li>
+            <li
+              class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-2.5 cursor-pointer hover:bg-[#E9901A] transition-all"
+            >
+              <div
+                class="w-[34px] h-[34px] rounded-lg flex justify-center items-center"
+              >
+                <svg
+                  width="100%"
+                  height="100%"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M14 2.26946V6.4C14 6.96005 14 7.24008 14.109 7.45399C14.2049 7.64215 14.3578 7.79513 14.546 7.89101C14.7599 8 15.0399 8 15.6 8H19.7305M20 9.98822V17.2C20 18.8802 20 19.7202 19.673 20.362C19.3854 20.9265 18.9265 21.3854 18.362 21.673C17.7202 22 16.8802 22 15.2 22H8.8C7.11984 22 6.27976 22 5.63803 21.673C5.07354 21.3854 4.6146 20.9265 4.32698 20.362C4 19.7202 4 18.8802 4 17.2V6.8C4 5.11984 4 4.27976 4.32698 3.63803C4.6146 3.07354 5.07354 2.6146 5.63803 2.32698C6.27976 2 7.11984 2 8.8 2H12.0118C12.7455 2 13.1124 2 13.4577 2.08289C13.7638 2.15638 14.0564 2.27759 14.3249 2.44208C14.6276 2.6276 14.887 2.88703 15.4059 3.40589L18.5941 6.59411C19.113 7.11297 19.3724 7.3724 19.5579 7.67515C19.7224 7.94356 19.8436 8.2362 19.9171 8.5423C20 8.88757 20 9.25445 20 9.98822Z"
+                    stroke="white"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <p
+                class="text-base leading-5 text-white pt-0.5 h-auto Gilroy-semibold"
+              >
+                Others
+              </p>
+            </li>
+            <!-- <li class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative">
+                            <div class="w-[34px] h-[34px] rounded-lg flex justify-center items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="19" height="18" viewBox="0 0 19 18" fill="none">
+                                    <path d="M5.65354 0H3.94353C1.97251 0 0.9375 1.03497 0.9375 2.99692V4.70687C0.9375 6.66881 1.97251 7.70378 3.93453 7.70378H5.64454C7.60656 7.70378 8.64156 6.66881 8.64156 4.70687V2.99692C8.65057 1.03497 7.61556 0 5.65354 0Z" fill="white"/>
+                                    <path opacity="0.4" d="M15.9414 0H14.2314C12.2694 0 11.2344 1.03497 11.2344 2.99692V4.70687C11.2344 6.66881 12.2694 7.70378 14.2314 7.70378H15.9414C17.9034 7.70378 18.9384 6.66881 18.9384 4.70687V2.99692C18.9384 1.03497 17.9034 0 15.9414 0Z" fill="white"/>
+                                    <path d="M15.9414 10.2871H14.2314C12.2694 10.2871 11.2344 11.3221 11.2344 13.284V14.994C11.2344 16.9559 12.2694 17.9909 14.2314 17.9909H15.9414C17.9034 17.9909 18.9384 16.9559 18.9384 14.994V13.284C18.9384 11.3221 17.9034 10.2871 15.9414 10.2871Z" fill="white"/>
+                                    <path opacity="0.4" d="M5.65354 10.2871H3.94353C1.97251 10.2871 0.9375 11.3221 0.9375 13.284V14.994C0.9375 16.9649 1.97251 17.9999 3.93453 17.9999H5.64454C7.60656 17.9999 8.64156 16.9649 8.64156 15.003V13.293C8.65057 11.3221 7.61556 10.2871 5.65354 10.2871Z" fill="white"/>
+                                </svg>
+                            </div>
+                            <p class="text-base leading-5 text-white pt-1.5 Gilroy-semibold">Featured Content Entrepreneurs</p>
+                        </li>
+                        <li class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative">
+                            <div class="w-[34px] h-[34px] rounded-lg flex justify-center items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
+                                    <path d="M18.5001 13.3959L14.6469 9.5L17.8962 6.25102C18.2305 5.91839 18.4958 5.523 18.6768 5.08756C18.8578 4.65212 18.951 4.18521 18.951 3.71365C18.951 3.24209 18.8578 2.77518 18.6768 2.33974C18.4958 1.9043 18.2305 1.50891 17.8962 1.17628C17.2225 0.504704 16.3099 0.127592 15.3586 0.127592C14.4072 0.127592 13.4947 0.504704 12.8209 1.17628L11.5413 2.44137L9.51405 4.46839L5.60332 0.514984C5.26494 0.184815 4.81088 0 4.33809 0C3.86529 0 3.41123 0.184815 3.07285 0.514984L0.527998 3.05954C0.36063 3.22647 0.227842 3.42477 0.13724 3.64309C0.0466369 3.8614 0 4.09545 0 4.33182C0 4.56819 0.0466369 4.80223 0.13724 5.02055C0.227842 5.23887 0.36063 5.43717 0.527998 5.6041L4.48186 9.5L4.16555 9.81627L2.88594 11.0814L0.369844 16.343C0.207001 16.679 0.152866 17.0573 0.21496 17.4255C0.277053 17.7937 0.452292 18.1333 0.716327 18.3973C0.980363 18.6613 1.32008 18.8366 1.68829 18.8987C2.05649 18.9607 2.43489 18.9066 2.77092 18.7438L7.97564 16.228L8.68015 15.5236L9.24088 14.9629L9.51405 14.6322L13.3673 18.485C13.7057 18.8152 14.1597 19 14.6325 19C15.1053 19 15.5594 18.8152 15.8977 18.485L18.4426 15.9405C18.6138 15.7773 18.7511 15.5821 18.8467 15.3658C18.9423 15.1495 18.9942 14.9165 18.9995 14.6801C19.0049 14.4437 18.9635 14.2086 18.8778 13.9882C18.7921 13.7679 18.6638 13.5666 18.5001 13.3959ZM15.3514 1.89508C15.8292 1.89354 16.2886 2.07934 16.631 2.41262C16.7984 2.57955 16.9312 2.77785 17.0218 2.99616C17.1124 3.21448 17.159 3.44853 17.159 3.6849C17.159 3.92127 17.1124 4.15531 17.0218 4.37363C16.9312 4.59195 16.7984 4.79025 16.631 4.95718L14.0862 2.4845C14.425 2.15469 14.8785 1.96916 15.3514 1.96696V1.89508ZM1.79323 4.32463L4.33809 1.79445L5.51706 2.97328L4.2662 4.23837L5.53143 5.50346L6.79667 4.23837L8.23444 5.67598L5.7471 8.27804L1.79323 4.32463ZM1.98014 17.1337L4.23744 12.4902L6.63851 14.8766L1.98014 17.1337ZM7.97564 13.6834L5.43079 11.1389L12.8209 3.74959L15.3514 6.27977L7.97564 13.6834ZM14.69 17.2055L10.8368 13.3672L13.3816 10.8226L14.7188 12.1596L13.4535 13.4247L14.7188 14.7041L15.9984 13.4247L17.2349 14.6754L14.69 17.2055Z" fill="white"/>
+                                </svg>
+                            </div>
+                            <p class="text-base leading-5 text-white pt-1.5 Gilroy-semibold">Partner apps, tools & courses</p>
+                        </li>
+                        <li class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative">
+                            <div class="w-[34px] h-[34px] rounded-lg flex justify-center items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
+                                    <path d="M18.5001 13.3959L14.6469 9.5L17.8962 6.25102C18.2305 5.91839 18.4958 5.523 18.6768 5.08756C18.8578 4.65212 18.951 4.18521 18.951 3.71365C18.951 3.24209 18.8578 2.77518 18.6768 2.33974C18.4958 1.9043 18.2305 1.50891 17.8962 1.17628C17.2225 0.504704 16.3099 0.127592 15.3586 0.127592C14.4072 0.127592 13.4947 0.504704 12.8209 1.17628L11.5413 2.44137L9.51405 4.46839L5.60332 0.514984C5.26494 0.184815 4.81088 0 4.33809 0C3.86529 0 3.41123 0.184815 3.07285 0.514984L0.527998 3.05954C0.36063 3.22647 0.227842 3.42477 0.13724 3.64309C0.0466369 3.8614 0 4.09545 0 4.33182C0 4.56819 0.0466369 4.80223 0.13724 5.02055C0.227842 5.23887 0.36063 5.43717 0.527998 5.6041L4.48186 9.5L4.16555 9.81627L2.88594 11.0814L0.369844 16.343C0.207001 16.679 0.152866 17.0573 0.21496 17.4255C0.277053 17.7937 0.452292 18.1333 0.716327 18.3973C0.980363 18.6613 1.32008 18.8366 1.68829 18.8987C2.05649 18.9607 2.43489 18.9066 2.77092 18.7438L7.97564 16.228L8.68015 15.5236L9.24088 14.9629L9.51405 14.6322L13.3673 18.485C13.7057 18.8152 14.1597 19 14.6325 19C15.1053 19 15.5594 18.8152 15.8977 18.485L18.4426 15.9405C18.6138 15.7773 18.7511 15.5821 18.8467 15.3658C18.9423 15.1495 18.9942 14.9165 18.9995 14.6801C19.0049 14.4437 18.9635 14.2086 18.8778 13.9882C18.7921 13.7679 18.6638 13.5666 18.5001 13.3959ZM15.3514 1.89508C15.8292 1.89354 16.2886 2.07934 16.631 2.41262C16.7984 2.57955 16.9312 2.77785 17.0218 2.99616C17.1124 3.21448 17.159 3.44853 17.159 3.6849C17.159 3.92127 17.1124 4.15531 17.0218 4.37363C16.9312 4.59195 16.7984 4.79025 16.631 4.95718L14.0862 2.4845C14.425 2.15469 14.8785 1.96916 15.3514 1.96696V1.89508ZM1.79323 4.32463L4.33809 1.79445L5.51706 2.97328L4.2662 4.23837L5.53143 5.50346L6.79667 4.23837L8.23444 5.67598L5.7471 8.27804L1.79323 4.32463ZM1.98014 17.1337L4.23744 12.4902L6.63851 14.8766L1.98014 17.1337ZM7.97564 13.6834L5.43079 11.1389L12.8209 3.74959L15.3514 6.27977L7.97564 13.6834ZM14.69 17.2055L10.8368 13.3672L13.3816 10.8226L14.7188 12.1596L13.4535 13.4247L14.7188 14.7041L15.9984 13.4247L17.2349 14.6754L14.69 17.2055Z" fill="white"/>
+                                </svg>
+                            </div>
+                            <p class="text-base leading-5 text-white pt-1.5 Gilroy-semibold">Suggest Youtube Channel</p>
+                        </li> -->
+          </ul>
+        </div>
+        <div class="px-5 mt-10">
+          <button
+            type="button"
+            class="text-lg leading-[18px] text-white w-full h-12 text-center border border-white capitalize rounded-[50px] Gilroy-normal logout-btn-shadow"
+          >
+            Logout
+          </button>
+        </div>
+      </div>
+      <div class="w-full lg:w-[calc(100%-250px)]">
+        <div
+          class="w-full py-[9px] md:pr-[18px] md:px-[33px] rounded-[15px] flex justify-between items-center gap-2.5 bg-sideBarBg border border-[#ffffff33] px-3 z-10 sticky top-6 backdrop-blur-sm"
+        >
+          <div class="flex items-center gap-5 justify-between w-full">
+            <div class="flex gap-3 items-center">
+              <button type="" class="">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="40"
+                  height="40"
+                  viewBox="0 0 51 35"
+                  fill="none"
+                >
+                  <path
+                    d="M2.46774 0C1.10486 0 0 1.23712 0 2.76316C0 4.28919 1.10486 5.52632 2.46774 5.52632V0ZM48.5323 5.52632C49.8951 5.52632 51 4.28919 51 2.76316C51 1.23712 49.8951 0 48.5323 0V5.52632ZM2.46774 14.7368C1.10486 14.7368 0 15.974 0 17.5C0 19.026 1.10486 20.2632 2.46774 20.2632V14.7368ZM41.9516 20.2632C43.3145 20.2632 44.4194 19.026 44.4194 17.5C44.4194 15.974 43.3145 14.7368 41.9516 14.7368V20.2632ZM2.46774 29.4737C1.10486 29.4737 0 30.7108 0 32.2368C0 33.7628 1.10486 35 2.46774 35V29.4737ZM25.5 35C26.8629 35 27.9677 33.7628 27.9677 32.2368C27.9677 30.7108 26.8629 29.4737 25.5 29.4737V35ZM2.46774 5.52632H48.5323V0H2.46774V5.52632ZM2.46774 20.2632H41.9516V14.7368H2.46774V20.2632ZM2.46774 35H25.5V29.4737H2.46774V35Z"
+                    fill="white"
+                  />
+                </svg>
+              </button>
+              <div
+                class="bg-sideBarBg border border-[#ffffff33] py-1.5 pl-5 pr-2 gap-4 rounded-full flex items-center hidden md:flex"
+              >
+                <input
+                  type="text"
+                  placeholder="Search"
+                  class="text-base bg-transparent leading-6 text-white outline-none Gilroy-medium"
+                />
+                <div
+                  class="p-1 flex items-center justify-center bg-white cursor-pointer w-fit rounded-full searchIconBox"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="#E9901A"
+                    class="w-6 h-6 fill-none searchIcon"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <div class="relative layoutContainer">
+                <div
+                  class="relative p-1 bg-white rounded-lg layerIconBox cursor-pointer w-fit flex items-center"
+                >
+                  <svg
+                    width="100%"
+                    height="100%"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-7 h-7 layerIcon"
+                  >
+                    <path
+                      d="M8.4 3H4.6C4.03995 3 3.75992 3 3.54601 3.10899C3.35785 3.20487 3.20487 3.35785 3.10899 3.54601C3 3.75992 3 4.03995 3 4.6V8.4C3 8.96005 3 9.24008 3.10899 9.45399C3.20487 9.64215 3.35785 9.79513 3.54601 9.89101C3.75992 10 4.03995 10 4.6 10H8.4C8.96005 10 9.24008 10 9.45399 9.89101C9.64215 9.79513 9.79513 9.64215 9.89101 9.45399C10 9.24008 10 8.96005 10 8.4V4.6C10 4.03995 10 3.75992 9.89101 3.54601C9.79513 3.35785 9.64215 3.20487 9.45399 3.10899C9.24008 3 8.96005 3 8.4 3Z"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M19.4 3H15.6C15.0399 3 14.7599 3 14.546 3.10899C14.3578 3.20487 14.2049 3.35785 14.109 3.54601C14 3.75992 14 4.03995 14 4.6V8.4C14 8.96005 14 9.24008 14.109 9.45399C14.2049 9.64215 14.3578 9.79513 14.546 9.89101C14.7599 10 15.0399 10 15.6 10H19.4C19.9601 10 20.2401 10 20.454 9.89101C20.6422 9.79513 20.7951 9.64215 20.891 9.45399C21 9.24008 21 8.96005 21 8.4V4.6C21 4.03995 21 3.75992 20.891 3.54601C20.7951 3.35785 20.6422 3.20487 20.454 3.10899C20.2401 3 19.9601 3 19.4 3Z"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M19.4 14H15.6C15.0399 14 14.7599 14 14.546 14.109C14.3578 14.2049 14.2049 14.3578 14.109 14.546C14 14.7599 14 15.0399 14 15.6V19.4C14 19.9601 14 20.2401 14.109 20.454C14.2049 20.6422 14.3578 20.7951 14.546 20.891C14.7599 21 15.0399 21 15.6 21H19.4C19.9601 21 20.2401 21 20.454 20.891C20.6422 20.7951 20.7951 20.6422 20.891 20.454C21 20.2401 21 19.9601 21 19.4V15.6C21 15.0399 21 14.7599 20.891 14.546C20.7951 14.3578 20.6422 14.2049 20.454 14.109C20.2401 14 19.9601 14 19.4 14Z"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M8.4 14H4.6C4.03995 14 3.75992 14 3.54601 14.109C3.35785 14.2049 3.20487 14.3578 3.10899 14.546C3 14.7599 3 15.0399 3 15.6V19.4C3 19.9601 3 20.2401 3.10899 20.454C3.20487 20.6422 3.35785 20.7951 3.54601 20.891C3.75992 21 4.03995 21 4.6 21H8.4C8.96005 21 9.24008 21 9.45399 20.891C9.64215 20.7951 9.79513 20.6422 9.89101 20.454C10 20.2401 10 19.9601 10 19.4V15.6C10 15.0399 10 14.7599 9.89101 14.546C9.79513 14.3578 9.64215 14.2049 9.45399 14.109C9.24008 14 8.96005 14 8.4 14Z"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+                <div
+                  class="p-1 text-white text-base capitalize absolute top-11 bg-[#E9901A] rounded layoutText"
+                >
+                  Layout
+                </div>
+              </div>
+            </div>
+            <div class="gap-3 flex items-center">
+              <button
+                type="button"
+                class="py-1 pt-1.5 px-2 bg-[#E9901A] text-base text-white border border-solid border-white hover:border-[#E9901A] rounded-lg cursor-pointer hover:bg-white transition-all duration-[0.5s] hover:text-[#E9901A] Gilroy-normal"
+              >
+                Connect
+              </button>
+              <div
+                class="bg-sideBarBg md:border border-[#ffffff33] md:py-1.5 p-0 md:pl-5 md:pr-2 gap-4 rounded-full flex items-center md:hidden"
+              >
+                <input
+                  type="text"
+                  placeholder="Search"
+                  class="text-base bg-transparent leading-6 text-white outline-none Gilroy-medium hidden md:block"
+                />
+                <div
+                  class="p-1 flex items-center justify-center bg-white cursor-pointer w-fit rounded-full searchIconBox"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="#E9901A"
+                    class="w-6 h-6 fill-none searchIcon"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <button
+                type="button"
+                class="p-1 cursor-pointer iconMainBox rounded-lg hidden md:block"
+              >
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M22 15.8442C20.6866 16.4382 19.2286 16.7688 17.6935 16.7688C11.9153 16.7688 7.23116 12.0847 7.23116 6.30654C7.23116 4.77135 7.5618 3.3134 8.15577 2C4.52576 3.64163 2 7.2947 2 11.5377C2 17.3159 6.68414 22 12.4623 22C16.7053 22 20.3584 19.4742 22 15.8442Z"
+                    stroke="white"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+              <button
+                type="button"
+                class="p-1 cursor-pointer iconMainBox rounded-lg hidden md:block"
+              >
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M9.35419 21C10.0593 21.6224 10.9856 22 12 22C13.0145 22 13.9407 21.6224 14.6458 21M18 8C18 6.4087 17.3679 4.88258 16.2427 3.75736C15.1174 2.63214 13.5913 2 12 2C10.4087 2 8.8826 2.63214 7.75738 3.75736C6.63216 4.88258 6.00002 6.4087 6.00002 8C6.00002 11.0902 5.22049 13.206 4.34968 14.6054C3.61515 15.7859 3.24788 16.3761 3.26134 16.5408C3.27626 16.7231 3.31488 16.7926 3.46179 16.9016C3.59448 17 4.19261 17 5.38887 17H18.6112C19.8074 17 20.4056 17 20.5382 16.9016C20.6852 16.7926 20.7238 16.7231 20.7387 16.5408C20.7522 16.3761 20.3849 15.7859 19.6504 14.6054C18.7795 13.206 18 11.0902 18 8Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+              <button
+                type="button"
+                class="p-1 cursor-pointer iconMainBox rounded-full hidden md:block"
+              >
+                <img
+                  src="./src/images/australia.png"
+                  alt="nation"
+                  class="rounded-full w-5 h-5"
+                />
+              </button>
+              <button
+                type="button"
+                class="p-1 cursor-pointer iconMainBox rounded-lg hidden md:block"
+              >
+                <img
+                  src="src/images/profile-img.png"
+                  alt="Profile"
+                  class="w-6 h-6"
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-12">
+          <div class="flex flex-wrap gap-3 items-center justify-between mb-5">
+            <p class="text-3xl text-white Gilroy-semibold">Analytics</p>
+            <div class="flex items-center gap-3">
+              <button
+                type="button"
+                class="bg-[#E9901A] px-5 py-2 md:px-8 md:py-4 text-base text-white rounded-lg flex items-center justify-center gap-2 Gilroy-semibold"
+              >
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12 8V16M8 12H16M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <p class="pt-0.5">Liquidity</p>
+              </button>
+              <button
+                type="button"
+                class="bg-[#E9901A] py-2 pt-2.5 px-[18px] md:px-8 md:py-4 md:pt-[18px] text-base text-white rounded-lg flex items-center justify-center Gilroy-semibold"
+              >
+                Trade
+              </button>
+            </div>
+          </div>
+          <div class="flex flex-wrap 2xl:flex-nowrap items-center gap-5">
+            <div
+              class="sm:w-[48%] xl:w-[31.333%] 2xl:w-full w-full max-w-full h-full"
+            >
+              <div
+                class="p-4 md:p-6 border border-[#ffffff33] w-full max-w-full bg-sideBarBg h-full rounded-xl"
+              >
+                <div
+                  class="flex border-b border-dashed border-white pb-4 mb-4 items-center gap-3"
+                >
+                  <h3 class="text-white Gilroy-semibold text-xl sm:text-2xl">
+                    Orders
+                  </h3>
+                </div>
+                <div class="flex items-center justify-between">
+                  <div>
+                    <h4
+                      class="text-white Gilroy-semibold text-xl sm:text-2xl whitespace-nowrap"
+                    >
+                      671.28 USDT
+                    </h4>
+                    <div class="flex items-center gap-2 mt-3">
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M22 7L14.1314 14.8686C13.7354 15.2646 13.5373 15.4627 13.309 15.5368C13.1082 15.6021 12.8918 15.6021 12.691 15.5368C12.4627 15.4627 12.2646 15.2646 11.8686 14.8686L9.13137 12.1314C8.73535 11.7354 8.53735 11.5373 8.30902 11.4632C8.10817 11.3979 7.89183 11.3979 7.69098 11.4632C7.46265 11.5373 7.26465 11.7354 6.86863 12.1314L2 17M22 7H15M22 7V14"
+                          stroke="#00A385"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></path>
+                      </svg>
+                      <p
+                        class="text-sm sm:text-base Gilroy-normal text-[#00A385] pt-0.5"
+                      >
+                        92.4%
+                      </p>
+                    </div>
+                  </div>
+                  <div>
+                    <svg
+                      width="100%"
+                      height="100%"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="w-full max-w-[283px] max-h-[97px]"
+                    >
+                      <path
+                        d="M3 11L3 21M15 11L15 21M9 3L9 21M21 3V21"
+                        stroke="#8957ff"
+                        stroke-width="4"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="sm:w-[48%] xl:w-[31.333%] 2xl:w-full w-full max-w-full h-full"
+            >
+              <div
+                class="p-4 md:p-6 border border-[#ffffff33] w-full max-w-full bg-sideBarBg h-full rounded-xl"
+              >
+                <div
+                  class="flex border-b border-dashed border-white pb-4 mb-4 items-center gap-3"
+                >
+                  <h3 class="text-white Gilroy-semibold text-xl sm:text-2xl">
+                    Package
+                  </h3>
+                </div>
+                <div class="flex items-center justify-between">
+                  <div>
+                    <h4
+                      class="text-white Gilroy-semibold text-xl sm:text-2xl whitespace-nowrap"
+                    >
+                      456.12 AD
+                    </h4>
+                    <div class="flex items-center gap-2 mt-3">
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M22 7L14.1314 14.8686C13.7354 15.2646 13.5373 15.4627 13.309 15.5368C13.1082 15.6021 12.8918 15.6021 12.691 15.5368C12.4627 15.4627 12.2646 15.2646 11.8686 14.8686L9.13137 12.1314C8.73535 11.7354 8.53735 11.5373 8.30902 11.4632C8.10817 11.3979 7.89183 11.3979 7.69098 11.4632C7.46265 11.5373 7.26465 11.7354 6.86863 12.1314L2 17M22 7H15M22 7V14"
+                          stroke="#FF6161"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></path>
+                      </svg>
+                      <p
+                        class="text-sm sm:text-base Gilroy-normal text-[#FF6161] pt-0.5"
+                      >
+                        37.9%
+                      </p>
+                    </div>
+                  </div>
+                  <div>
+                    <svg
+                      width="100%"
+                      height="100%"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="w-full max-w-[283px] max-h-[97px]"
+                    >
+                      <path
+                        d="M3 11L3 21M15 11L15 21M9 3L9 21M21 3V21"
+                        stroke="#8957ff"
+                        stroke-width="4"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="sm:w-[48%] xl:w-[31.333%] 2xl:w-full w-full max-w-full h-full"
+            >
+              <div
+                class="p-4 md:p-6 border border-[#ffffff33] w-full max-w-full bg-sideBarBg h-full rounded-xl"
+              >
+                <div
+                  class="flex border-b border-dashed border-white pb-4 mb-4 items-center gap-3"
+                >
+                  <h3 class="text-white Gilroy-semibold text-xl sm:text-2xl">
+                    Payments
+                  </h3>
+                </div>
+                <div class="flex items-center justify-between">
+                  <div>
+                    <h4
+                      class="text-white Gilroy-semibold text-xl sm:text-2xl whitespace-nowrap"
+                    >
+                      324.17 EOS
+                    </h4>
+                    <div class="flex items-center gap-2 mt-3">
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M22 7L14.1314 14.8686C13.7354 15.2646 13.5373 15.4627 13.309 15.5368C13.1082 15.6021 12.8918 15.6021 12.691 15.5368C12.4627 15.4627 12.2646 15.2646 11.8686 14.8686L9.13137 12.1314C8.73535 11.7354 8.53735 11.5373 8.30902 11.4632C8.10817 11.3979 7.89183 11.3979 7.69098 11.4632C7.46265 11.5373 7.26465 11.7354 6.86863 12.1314L2 17M22 7H15M22 7V14"
+                          stroke="#8957ff"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></path>
+                      </svg>
+                      <p
+                        class="text-sm sm:text-base Gilroy-normal text-[#8957ff] pt-0.5"
+                      >
+                        60.1%
+                      </p>
+                    </div>
+                  </div>
+                  <div>
+                    <svg
+                      width="100%"
+                      height="100%"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="w-full max-w-[283px] max-h-[97px]"
+                    >
+                      <path
+                        d="M3 11L3 21M15 11L15 21M9 3L9 21M21 3V21"
+                        stroke="#8957ff"
+                        stroke-width="4"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="sm:w-[48%] xl:w-[31.333%] 2xl:w-full w-full max-w-full h-full"
+            >
+              <div
+                class="p-4 md:p-6 border border-[#ffffff33] w-full max-w-full bg-sideBarBg h-full rounded-xl"
+              >
+                <div
+                  class="flex border-b border-dashed border-white pb-4 mb-4 items-center gap-3"
+                >
+                  <h3 class="text-white Gilroy-semibold text-xl sm:text-2xl">
+                    Subscriptions
+                  </h3>
+                </div>
+                <div class="flex items-center justify-between">
+                  <div>
+                    <h4
+                      class="text-white Gilroy-semibold text-xl sm:text-2xl whitespace-nowrap"
+                    >
+                      365.21 EUR
+                    </h4>
+                    <div class="flex items-center gap-2 mt-3">
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M22 7L14.1314 14.8686C13.7354 15.2646 13.5373 15.4627 13.309 15.5368C13.1082 15.6021 12.8918 15.6021 12.691 15.5368C12.4627 15.4627 12.2646 15.2646 11.8686 14.8686L9.13137 12.1314C8.73535 11.7354 8.53735 11.5373 8.30902 11.4632C8.10817 11.3979 7.89183 11.3979 7.69098 11.4632C7.46265 11.5373 7.26465 11.7354 6.86863 12.1314L2 17M22 7H15M22 7V14"
+                          stroke="#bd7b00"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></path>
+                      </svg>
+                      <p
+                        class="text-sm sm:text-base Gilroy-normal text-[#bd7b00] pt-0.5"
+                      >
+                        60.1%
+                      </p>
+                    </div>
+                  </div>
+                  <div>
+                    <svg
+                      width="100%"
+                      height="100%"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="w-full max-w-[283px] max-h-[97px]"
+                    >
+                      <path
+                        d="M3 11L3 21M15 11L15 21M9 3L9 21M21 3V21"
+                        stroke="#8957ff"
+                        stroke-width="4"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-wrap xl:flex-nowrap gap-6 mt-6">
+          <div class="w-full xl:w-3/6">
+            <div
+              class="p-6 md:pt-6 md:pr-[31px] md:pb-[22px] md:pl-[26px] border border-white rounded-[15px] bg-gradient"
+            >
+              <div
+                class="border-b border-dashed pb-6 mb-2 border-white flex flex-wrap gap-3 items-center justify-between"
+              >
+                <p class="text-xl md:text-[26px] text-white Gilroy-semibold">
+                  BTC to EUR Chart
+                </p>
+                <div class="flex items-center gap-2">
+                  <p class="text-sm Gilroy-normal text-white">Sort By</p>
+                  <select
+                    class="border border-solid border-white bg-transparent p-1 text-xs text-white pt-1.5 rounded-lg Gilroy-normal"
+                  >
+                    <option value="option1">Last 15 days</option>
+                    <option value="option2">Last 10 days</option>
+                  </select>
+                </div>
+              </div>
+              <div>
+                <img
+                  src="./src/images/chart.png"
+                  alt="chart"
+                  class="h-auto w-full"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="w-full xl:w-3/6">
+            <div
+              class="p-6 md:pt-6 md:pr-[31px] md:pb-[22px] md:pl-[26px] border border-white rounded-[15px] bg-gradient"
+            >
+              <div
+                class="border-b border-dashed pb-6 mb-2 border-white flex flex-wrap gap-3 items-center justify-between"
+              >
+                <p class="text-xl md:text-[26px] text-white Gilroy-semibold">
+                  ADA to USD Chart
+                </p>
+                <div class="flex items-center gap-2">
+                  <p class="text-sm Gilroy-normal text-white">Sort By</p>
+                  <select
+                    class="border border-solid border-white bg-transparent p-1 text-xs text-white pt-1.5 rounded-lg Gilroy-normal"
+                  >
+                    <option value="option1">Last 15 days</option>
+                    <option value="option2">Last 10 days</option>
+                  </select>
+                </div>
+              </div>
+              <div>
+                <img
+                  src="./src/images/chart2.png"
+                  alt="chart"
+                  class="h-auto w-full"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-wrap xl:flex-nowrap gap-6 mt-6">
+          <div class="w-full xl:w-3/6">
+            <div
+              class="p-6 md:pt-6 md:pr-[31px] md:pb-[22px] md:pl-[26px] border border-white rounded-[15px] bg-gradient"
+            >
+              <div
+                class="border-b border-dashed pb-6 mb-2 border-white flex flex-wrap gap-3 items-center justify-between"
+              >
+                <p class="text-xl md:text-[26px] text-white Gilroy-semibold">
+                  BTC to EUR Chart
+                </p>
+                <div class="flex items-center gap-2">
+                  <p class="text-sm Gilroy-normal text-white">Sort By</p>
+                  <select
+                    class="border border-solid border-white bg-transparent p-1 text-xs text-white pt-1.5 rounded-lg Gilroy-normal"
+                  >
+                    <option value="option1">Last 15 days</option>
+                    <option value="option2">Last 10 days</option>
+                  </select>
+                </div>
+              </div>
+              <div class="overflow-auto tableScroll pb-2.5">
+                <table class="w-full">
+                  <thead>
+                    <tr class="bg-[#302964]">
+                      <th
+                        class="py-5 px-6 whitespace-nowrap text-white text-base Gilroy-semibold text-left"
+                      >
+                        Title
+                      </th>
+                      <th
+                        class="py-5 px-6 whitespace-nowrap text-white text-base Gilroy-semibold text-left"
+                      >
+                        History
+                      </th>
+                      <th
+                        class="py-5 px-6 whitespace-nowrap text-white text-base Gilroy-semibold text-left"
+                      >
+                        Status
+                      </th>
+                      <th
+                        class="py-5 px-6 whitespace-nowrap text-white text-base Gilroy-semibold text-left"
+                      >
+                        Transaction
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="whitespace-nowrap">
+                        <div class="flex items-center py-2.5 px-6 gap-3">
+                          <img
+                            src="./src/images/bitcoin_mid.png"
+                            alt="Bitcoin"
+                            class="w-6 h-6"
+                          />
+                          <p class="pt-0.5 text-base Gilroy-medium text-white">
+                            Bitcoin
+                          </p>
+                        </div>
+                      </td>
+                      <td
+                        class="text-white whitespace-nowrap py-2.5 px-6 text-base Gilroy-medium text-white"
+                      >
+                        0df3635...eq23
+                      </td>
+                      <td class="py-2.5 px-6 whitespace-nowrap">
+                        <div
+                          class="w-full px-5 py-2 rounded-full border border-solid border-white text-[#00a185] text-base bg-[#b9d7d2] Gilroy-medium text-center"
+                        >
+                          Successful
+                        </div>
+                      </td>
+                      <td
+                        class="flex flex-col gap-1 py-2.5 px-6 whitespace-nowrap"
+                      >
+                        <p class="text-base text-white Gilroy-medium">
+                          +0.2948 BTC
+                        </p>
+                        <p class="text-sm text-white Gilroy-normal">
+                          +$10,930.90
+                        </p>
+                      </td>
+                    </tr>
+                    <tr class="bg-[#302964]">
+                      <td class="whitespace-nowrap">
+                        <div class="flex items-center py-2.5 px-6 gap-3">
+                          <img
+                            src="./src/images/cardano_mid.png"
+                            alt="cardano"
+                            class="w-6 h-6"
+                          />
+                          <p class="pt-0.5 text-base Gilroy-medium text-white">
+                            Cardano
+                          </p>
+                        </div>
+                      </td>
+                      <td
+                        class="text-white py-2.5 px-6 text-base Gilroy-medium text-white whitespace-nowrap"
+                      >
+                        0df3635...eq23
+                      </td>
+                      <td class="py-2.5 px-6 whitespace-nowrap">
+                        <div
+                          class="w-full px-5 py-2 rounded-full border border-solid border-white text-[#00a185] text-base bg-[#b9d7d2] Gilroy-medium text-center"
+                        >
+                          Successful
+                        </div>
+                      </td>
+                      <td
+                        class="flex flex-col gap-1 py-2.5 px-6 whitespace-nowrap"
+                      >
+                        <p class="text-base text-white Gilroy-medium">
+                          +0.8475 ADA
+                        </p>
+                        <p class="text-sm text-white Gilroy-normal">
+                          +$10,930.90
+                        </p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div
+                          class="flex items-center py-2.5 px-6 gap-3 whitespace-nowrap"
+                        >
+                          <img
+                            src="./src/images/bitcoin_mid.png"
+                            alt="Bitcoin"
+                            class="w-6 h-6"
+                          />
+                          <p class="pt-0.5 text-base Gilroy-medium text-white">
+                            Bitcoin
+                          </p>
+                        </div>
+                      </td>
+                      <td
+                        class="text-white py-2.5 px-6 text-base Gilroy-medium text-white whitespace-nowrap"
+                      >
+                        0df3635...eq23
+                      </td>
+                      <td class="py-2.5 px-6 whitespace-nowrap">
+                        <div
+                          class="w-full px-5 py-2 rounded-full border border-solid border-white text-[#ffc861] text-base bg-[#fdedcff2] Gilroy-medium text-center"
+                        >
+                          Pending
+                        </div>
+                      </td>
+                      <td
+                        class="flex flex-col gap-1 py-2.5 px-6 whitespace-nowrap"
+                      >
+                        <p class="text-base text-white Gilroy-medium">
+                          +0.2948 BTC
+                        </p>
+                        <p class="text-sm text-white Gilroy-normal">
+                          +$10,930.90
+                        </p>
+                      </td>
+                    </tr>
+                    <tr class="bg-[#302964]">
+                      <td class="whitespace-nowrap">
+                        <div class="flex items-center py-2.5 px-6 gap-3">
+                          <img
+                            src="./src/images/cardano_mid.png"
+                            alt="cardano"
+                            class="w-6 h-6"
+                          />
+                          <p class="pt-0.5 text-base Gilroy-medium text-white">
+                            Cardano
+                          </p>
+                        </div>
+                      </td>
+                      <td
+                        class="text-white py-2.5 px-6 text-base Gilroy-medium text-white whitespace-nowrap"
+                      >
+                        0df3635...eq23
+                      </td>
+                      <td class="py-2.5 px-6 whitespace-nowrap">
+                        <div
+                          class="w-full px-5 py-2 rounded-full border border-solid border-white text-[#00a185] text-base bg-[#b9d7d2] Gilroy-medium text-center"
+                        >
+                          Successful
+                        </div>
+                      </td>
+                      <td
+                        class="flex flex-col gap-1 py-2.5 px-6 whitespace-nowrap"
+                      >
+                        <p class="text-base text-white Gilroy-medium">
+                          +0.8475 ADA
+                        </p>
+                        <p class="text-sm text-white Gilroy-normal">
+                          +$10,930.90
+                        </p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="whitespace-nowrap">
+                        <div class="flex items-center py-2.5 px-6 gap-3">
+                          <img
+                            src="./src/images/bitcoin_mid.png"
+                            alt="Bitcoin"
+                            class="w-6 h-6"
+                          />
+                          <p class="pt-0.5 text-base Gilroy-medium text-white">
+                            Bitcoin
+                          </p>
+                        </div>
+                      </td>
+                      <td
+                        class="text-white py-2.5 px-6 text-base Gilroy-medium text-white whitespace-nowrap"
+                      >
+                        0df3635...eq23
+                      </td>
+                      <td class="py-2.5 px-6 whitespace-nowrap">
+                        <div
+                          class="w-full px-5 py-2 rounded-full border border-solid border-white text-[#ff6161] text-base bg-[#ffbebe] Gilroy-medium text-center"
+                        >
+                          Cancelled
+                        </div>
+                      </td>
+                      <td
+                        class="flex flex-col gap-1 py-2.5 px-6 whitespace-nowrap"
+                      >
+                        <p class="text-base text-white Gilroy-medium">
+                          +0.2948 BTC
+                        </p>
+                        <p class="text-sm text-white Gilroy-normal">
+                          +$10,930.90
+                        </p>
+                      </td>
+                    </tr>
+                    <tr class="bg-[#302964]">
+                      <td class="whitespace-nowrap">
+                        <div class="flex items-center py-2.5 px-6 gap-3">
+                          <img
+                            src="./src/images/bitcoin_mid.png"
+                            alt="Bitcoin"
+                            class="w-6 h-6"
+                          />
+                          <p class="pt-0.5 text-base Gilroy-medium text-white">
+                            Bitcoin
+                          </p>
+                        </div>
+                      </td>
+                      <td
+                        class="text-white py-2.5 px-6 text-base Gilroy-medium text-white whitespace-nowrap"
+                      >
+                        0df3635...eq23
+                      </td>
+                      <td class="py-2.5 px-6 whitespace-nowrap">
+                        <div
+                          class="w-full px-5 py-2 rounded-full border border-solid border-white text-[#ffc861] text-base bg-[#fdedcff2] Gilroy-medium text-center"
+                        >
+                          Pending
+                        </div>
+                      </td>
+                      <td
+                        class="flex flex-col gap-1 py-2.5 px-6 whitespace-nowrap"
+                      >
+                        <p class="text-base text-white Gilroy-medium">
+                          +0.2948 BTC
+                        </p>
+                        <p class="text-sm text-white Gilroy-normal">
+                          +$10,930.90
+                        </p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="whitespace-nowrap">
+                        <div class="flex items-center py-2.5 px-6 gap-3">
+                          <img
+                            src="./src/images/electro_mid.png"
+                            alt="electro"
+                            class="w-6 h-6"
+                          />
+                          <p class="pt-0.5 text-base Gilroy-medium text-white">
+                            Electro
+                          </p>
+                        </div>
+                      </td>
+                      <td
+                        class="text-white py-2.5 px-6 text-base Gilroy-medium text-white whitespace-nowrap"
+                      >
+                        0df3635...eq23
+                      </td>
+                      <td class="py-2.5 px-6 whitespace-nowrap">
+                        <div
+                          class="w-full px-5 py-2 rounded-full border border-solid border-white text-[#00a185] text-base bg-[#b9d7d2] Gilroy-medium text-center"
+                        >
+                          Successful
+                        </div>
+                      </td>
+                      <td
+                        class="flex flex-col gap-1 py-2.5 px-6 whitespace-nowrap"
+                      >
+                        <p class="text-base text-white Gilroy-medium">
+                          +0.9545 EOS
+                        </p>
+                        <p class="text-sm text-white Gilroy-normal">
+                          +$10,930.90
+                        </p>
+                      </td>
+                    </tr>
+                    <tr class="bg-[#302964]">
+                      <td class="whitespace-nowrap">
+                        <div class="flex items-center py-2.5 px-6 gap-3">
+                          <img
+                            src="./src/images/bitcoin_mid.png"
+                            alt="Bitcoin"
+                            class="w-6 h-6"
+                          />
+                          <p class="pt-0.5 text-base Gilroy-medium text-white">
+                            Bitcoin
+                          </p>
+                        </div>
+                      </td>
+                      <td
+                        class="text-white py-2.5 px-6 text-base Gilroy-medium text-white whitespace-nowrap"
+                      >
+                        0df3635...eq23
+                      </td>
+                      <td class="py-2.5 px-6 whitespace-nowrap">
+                        <div
+                          class="w-full px-5 py-2 rounded-full border border-solid border-white text-[#ffc861] text-base bg-[#fdedcff2] Gilroy-medium text-center"
+                        >
+                          Pending
+                        </div>
+                      </td>
+                      <td
+                        class="flex flex-col gap-1 py-2.5 px-6 whitespace-nowrap"
+                      >
+                        <p class="text-base text-white Gilroy-medium">
+                          +0.2948 BTC
+                        </p>
+                        <p class="text-sm text-white Gilroy-normal">
+                          +$10,930.90
+                        </p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="whitespace-nowrap">
+                        <div class="flex items-center py-2.5 px-6 gap-3">
+                          <img
+                            src="./src/images/bitcoin_mid.png"
+                            alt="Bitcoin"
+                            class="w-6 h-6"
+                          />
+                          <p class="pt-0.5 text-base Gilroy-medium text-white">
+                            Bitcoin
+                          </p>
+                        </div>
+                      </td>
+                      <td
+                        class="text-white py-2.5 px-6 text-base Gilroy-medium text-white whitespace-nowrap"
+                      >
+                        0df3635...eq23
+                      </td>
+                      <td class="py-2.5 px-6 whitespace-nowrap">
+                        <div
+                          class="w-full px-5 py-2 rounded-full border border-solid border-white text-[#ffc861] text-base bg-[#fdedcff2] Gilroy-medium text-center"
+                        >
+                          Pending
+                        </div>
+                      </td>
+                      <td
+                        class="flex flex-col gap-1 py-2.5 px-6 whitespace-nowrap"
+                      >
+                        <p class="text-base text-white Gilroy-medium">
+                          +0.2948 BTC
+                        </p>
+                        <p class="text-sm text-white Gilroy-normal">
+                          +$10,930.90
+                        </p>
+                      </td>
+                    </tr>
+                    <tr class="bg-[#302964]">
+                      <td class="whitespace-nowrap">
+                        <div class="flex items-center py-2.5 px-6 gap-3">
+                          <img
+                            src="./src/images/cardano_mid.png"
+                            alt="cardano"
+                            class="w-6 h-6"
+                          />
+                          <p class="pt-0.5 text-base Gilroy-medium text-white">
+                            Cardano
+                          </p>
+                        </div>
+                      </td>
+                      <td
+                        class="text-white py-2.5 px-6 text-base Gilroy-medium text-white whitespace-nowrap"
+                      >
+                        0df3635...eq23
+                      </td>
+                      <td class="py-2.5 px-6 whitespace-nowrap">
+                        <div
+                          class="w-full px-5 py-2 rounded-full border border-solid border-white text-[#00a185] text-base bg-[#b9d7d2] Gilroy-medium text-center"
+                        >
+                          Successful
+                        </div>
+                      </td>
+                      <td
+                        class="flex flex-col gap-1 py-2.5 px-6 whitespace-nowrap"
+                      >
+                        <p class="text-base text-white Gilroy-medium">
+                          +0.8475 ADA
+                        </p>
+                        <p class="text-sm text-white Gilroy-normal">
+                          +$10,930.90
+                        </p>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div
+                class="mt-5 flex flex-wrap justify-between gap-3 items-center"
+              >
+                <p class="text-white text-sm md:text-base Gilroy-normal">
+                  Showing 1 to 10 of 500 entries
+                </p>
+                <ul class="flex items-center gap-2">
+                  <li
+                    class="md:w-10 md:h-10 w-8 h-8 flex items-center justify-center rounded-lg border border-white bg-transparent hover:bg-[#e9901a] transition-all"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="white"
+                      class="w-6 h-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M15.75 19.5 8.25 12l7.5-7.5"
+                      />
+                    </svg>
+                  </li>
+                  <li
+                    class="w-8 h-8 md:w-10 md:h-10 flex text-base text-white Gilroy-medium items-center justify-center rounded-lg border border-white hover:bg-transparent bg-[#e9901a] transition-all pt-0.5"
+                  >
+                    1
+                  </li>
+                  <li
+                    class="w-8 h-8 md:w-10 md:h-10 flex text-base text-white Gilroy-medium items-center justify-center rounded-lg border border-white bg-transparent hover:bg-[#e9901a] transition-all pt-0.5"
+                  >
+                    2
+                  </li>
+                  <li
+                    class="w-8 h-8 md:w-10 md:h-10 flex text-base text-white Gilroy-medium items-center justify-center rounded-lg border border-white bg-transparent hover:bg-[#e9901a] transition-all pt-0.5"
+                  >
+                    ...
+                  </li>
+                  <li
+                    class="w-8 h-8 md:w-10 md:h-10 flex text-base text-white Gilroy-medium items-center justify-center rounded-lg border border-white bg-transparent hover:bg-[#e9901a] transition-all pt-0.5"
+                  >
+                    5
+                  </li>
+                  <li
+                    class="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center rounded-lg border border-white hover:bg-transparent bg-[#e9901a] transition-all"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="white"
+                      class="w-6 h-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                      />
+                    </svg>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="w-full xl:w-3/6">
+            <div
+              class="p-6 md:pt-6 md:pr-[31px] md:pb-[22px] md:pl-[26px] border border-white rounded-[15px] bg-gradient"
+            >
+              <div
+                class="border-b border-dashed pb-6 mb-2 border-white flex flex-wrap gap-3 items-center justify-between"
+              >
+                <p class="text-xl md:text-[26px] text-white Gilroy-semibold">
+                  Asset Allocation
+                </p>
+                <div class="flex items-center gap-2">
+                  <p class="text-sm Gilroy-normal text-white">Sort By</p>
+                  <select
+                    class="border border-solid border-white bg-transparent p-1 text-xs text-white pt-1.5 rounded-lg Gilroy-normal"
+                  >
+                    <option value="option1">Last 15 days</option>
+                    <option value="option2">Last 10 days</option>
+                  </select>
+                </div>
+              </div>
+              <div class="flex flex-col gap-4 md:gap-6">
+                <div
+                  class="flex pb-4 md:pb-6 gap-3 md:gap-5 border-b border-white items-center"
+                >
+                  <div class="h-full">
+                    <img src="./src/images/bitcoin_mid.png" class="w-9 h-9" />
+                  </div>
+                  <div class="w-full">
+                    <div class="flex items-center justify-between mb-2">
+                      <h5
+                        class="text-[18px] md:text-xl text-white Gilroy-medium"
+                      >
+                        Bitcoin
+                      </h5>
+                      <p class="text-sm md:text-base text-white Gilroy-normal">
+                        47%
+                      </p>
+                    </div>
+                    <div class="w-full h-[5px] rounded-[5px] bg-[#dfe0e4]">
+                      <div
+                        class="w-[47%] h-full rounded-[5px] bg-[#e9901a]"
+                      ></div>
+                    </div>
+                    <div class="mt-3 flex items-center justify-between">
+                      <p class="text-sm md:text-base text-white Gilroy-normal">
+                        Price: $0.32
+                      </p>
+                      <p class="text-sm md:text-base text-white Gilroy-normal">
+                        Value: $23,000.00
+                      </p>
+                    </div>
+                  </div>
+                  <div>
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="cursor-pointer"
+                    >
+                      <path
+                        d="M12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12C11 12.5523 11.4477 13 12 13Z"
+                        stroke="white"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      ></path>
+                      <path
+                        d="M12 6C12.5523 6 13 5.55228 13 5C13 4.44772 12.5523 4 12 4C11.4477 4 11 4.44772 11 5C11 5.55228 11.4477 6 12 6Z"
+                        stroke="white"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      ></path>
+                      <path
+                        d="M12 20C12.5523 20 13 19.5523 13 19C13 18.4477 12.5523 18 12 18C11.4477 18 11 18.4477 11 19C11 19.5523 11.4477 20 12 20Z"
+                        stroke="white"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      ></path>
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  class="flex pb-4 md:pb-6 gap-3 md:gap-5 border-b border-white items-center"
+                >
+                  <div class="h-full">
+                    <img src="./src/images/cardano_mid.png" class="w-9 h-9" />
+                  </div>
+                  <div class="w-full">
+                    <div class="flex items-center justify-between mb-2">
+                      <h5
+                        class="text-[18px] md:text-xl text-white Gilroy-medium"
+                      >
+                        Bitcoin
+                      </h5>
+                      <p class="text-sm md:text-base text-white Gilroy-normal">
+                        47%
+                      </p>
+                    </div>
+                    <div class="w-full h-[5px] rounded-[5px] bg-[#dfe0e4]">
+                      <div
+                        class="w-[47%] h-full rounded-[5px] bg-[#e9901a]"
+                      ></div>
+                    </div>
+                    <div class="mt-3 flex items-center justify-between">
+                      <p class="text-sm md:text-base text-white Gilroy-normal">
+                        Price: $0.32
+                      </p>
+                      <p class="text-sm md:text-base text-white Gilroy-normal">
+                        Value: $23,000.00
+                      </p>
+                    </div>
+                  </div>
+                  <div>
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="cursor-pointer"
+                    >
+                      <path
+                        d="M12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12C11 12.5523 11.4477 13 12 13Z"
+                        stroke="white"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      ></path>
+                      <path
+                        d="M12 6C12.5523 6 13 5.55228 13 5C13 4.44772 12.5523 4 12 4C11.4477 4 11 4.44772 11 5C11 5.55228 11.4477 6 12 6Z"
+                        stroke="white"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      ></path>
+                      <path
+                        d="M12 20C12.5523 20 13 19.5523 13 19C13 18.4477 12.5523 18 12 18C11.4477 18 11 18.4477 11 19C11 19.5523 11.4477 20 12 20Z"
+                        stroke="white"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      ></path>
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  class="flex pb-4 md:pb-6 gap-3 md:gap-5 border-b border-white items-center"
+                >
+                  <div class="h-full">
+                    <img src="./src/images/binance_lg.png" class="w-9 h-9" />
+                  </div>
+                  <div class="w-full">
+                    <div class="flex items-center justify-between mb-2">
+                      <h5
+                        class="text-[18px] md:text-xl text-white Gilroy-medium"
+                      >
+                        Bitcoin
+                      </h5>
+                      <p class="text-sm md:text-base text-white Gilroy-normal">
+                        47%
+                      </p>
+                    </div>
+                    <div class="w-full h-[5px] rounded-[5px] bg-[#dfe0e4]">
+                      <div
+                        class="w-[47%] h-full rounded-[5px] bg-[#e9901a]"
+                      ></div>
+                    </div>
+                    <div class="mt-3 flex items-center justify-between">
+                      <p class="text-sm md:text-base text-white Gilroy-normal">
+                        Price: $0.32
+                      </p>
+                      <p class="text-sm md:text-base text-white Gilroy-normal">
+                        Value: $23,000.00
+                      </p>
+                    </div>
+                  </div>
+                  <div>
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="cursor-pointer"
+                    >
+                      <path
+                        d="M12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12C11 12.5523 11.4477 13 12 13Z"
+                        stroke="white"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      ></path>
+                      <path
+                        d="M12 6C12.5523 6 13 5.55228 13 5C13 4.44772 12.5523 4 12 4C11.4477 4 11 4.44772 11 5C11 5.55228 11.4477 6 12 6Z"
+                        stroke="white"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      ></path>
+                      <path
+                        d="M12 20C12.5523 20 13 19.5523 13 19C13 18.4477 12.5523 18 12 18C11.4477 18 11 18.4477 11 19C11 19.5523 11.4477 20 12 20Z"
+                        stroke="white"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      ></path>
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  class="flex pb-4 md:pb-6 gap-3 md:gap-5 border-b border-white items-center"
+                >
+                  <div class="h-full">
+                    <img src="./src/images/bnb.png" class="w-9 h-9" />
+                  </div>
+                  <div class="w-full">
+                    <div class="flex items-center justify-between mb-2">
+                      <h5
+                        class="text-[18px] md:text-xl text-white Gilroy-medium"
+                      >
+                        Bitcoin
+                      </h5>
+                      <p class="text-sm md:text-base text-white Gilroy-normal">
+                        47%
+                      </p>
+                    </div>
+                    <div class="w-full h-[5px] rounded-[5px] bg-[#dfe0e4]">
+                      <div
+                        class="w-[47%] h-full rounded-[5px] bg-[#e9901a]"
+                      ></div>
+                    </div>
+                    <div class="mt-3 flex items-center justify-between">
+                      <p class="text-sm md:text-base text-white Gilroy-normal">
+                        Price: $0.32
+                      </p>
+                      <p class="text-sm md:text-base text-white Gilroy-normal">
+                        Value: $23,000.00
+                      </p>
+                    </div>
+                  </div>
+                  <div>
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="cursor-pointer"
+                    >
+                      <path
+                        d="M12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12C11 12.5523 11.4477 13 12 13Z"
+                        stroke="white"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      ></path>
+                      <path
+                        d="M12 6C12.5523 6 13 5.55228 13 5C13 4.44772 12.5523 4 12 4C11.4477 4 11 4.44772 11 5C11 5.55228 11.4477 6 12 6Z"
+                        stroke="white"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      ></path>
+                      <path
+                        d="M12 20C12.5523 20 13 19.5523 13 19C13 18.4477 12.5523 18 12 18C11.4477 18 11 18.4477 11 19C11 19.5523 11.4477 20 12 20Z"
+                        stroke="white"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      ></path>
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  class="flex pb-4 md:pb-6 gap-3 md:gap-5 border-b border-white items-center"
+                >
+                  <div class="h-full">
+                    <img src="./src/images/bitcoin_mid.png" class="w-9 h-9" />
+                  </div>
+                  <div class="w-full">
+                    <div class="flex items-center justify-between mb-2">
+                      <h5
+                        class="text-[18px] md:text-xl text-white Gilroy-medium"
+                      >
+                        Bitcoin
+                      </h5>
+                      <p class="text-sm md:text-base text-white Gilroy-normal">
+                        47%
+                      </p>
+                    </div>
+                    <div class="w-full h-[5px] rounded-[5px] bg-[#dfe0e4]">
+                      <div
+                        class="w-[47%] h-full rounded-[5px] bg-[#e9901a]"
+                      ></div>
+                    </div>
+                    <div class="mt-3 flex items-center justify-between">
+                      <p class="text-sm md:text-base text-white Gilroy-normal">
+                        Price: $0.32
+                      </p>
+                      <p class="text-sm md:text-base text-white Gilroy-normal">
+                        Value: $23,000.00
+                      </p>
+                    </div>
+                  </div>
+                  <div>
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="cursor-pointer"
+                    >
+                      <path
+                        d="M12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12C11 12.5523 11.4477 13 12 13Z"
+                        stroke="white"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      ></path>
+                      <path
+                        d="M12 6C12.5523 6 13 5.55228 13 5C13 4.44772 12.5523 4 12 4C11.4477 4 11 4.44772 11 5C11 5.55228 11.4477 6 12 6Z"
+                        stroke="white"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      ></path>
+                      <path
+                        d="M12 20C12.5523 20 13 19.5523 13 19C13 18.4477 12.5523 18 12 18C11.4477 18 11 18.4477 11 19C11 19.5523 11.4477 20 12 20Z"
+                        stroke="white"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      ></path>
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  class="flex pb-4 md:pb-6 gap-3 md:gap-5 border-b border-white items-center"
+                >
+                  <div class="h-full">
+                    <img src="./src/images/cardano_mid.png" class="w-9 h-9" />
+                  </div>
+                  <div class="w-full">
+                    <div class="flex items-center justify-between mb-2">
+                      <h5
+                        class="text-[18px] md:text-xl text-white Gilroy-medium"
+                      >
+                        Bitcoin
+                      </h5>
+                      <p class="text-sm md:text-base text-white Gilroy-normal">
+                        47%
+                      </p>
+                    </div>
+                    <div class="w-full h-[5px] rounded-[5px] bg-[#dfe0e4]">
+                      <div
+                        class="w-[47%] h-full rounded-[5px] bg-[#e9901a]"
+                      ></div>
+                    </div>
+                    <div class="mt-3 flex items-center justify-between">
+                      <p class="text-sm md:text-base text-white Gilroy-normal">
+                        Price: $0.32
+                      </p>
+                      <p class="text-sm md:text-base text-white Gilroy-normal">
+                        Value: $23,000.00
+                      </p>
+                    </div>
+                  </div>
+                  <div>
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="cursor-pointer"
+                    >
+                      <path
+                        d="M12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12C11 12.5523 11.4477 13 12 13Z"
+                        stroke="white"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      ></path>
+                      <path
+                        d="M12 6C12.5523 6 13 5.55228 13 5C13 4.44772 12.5523 4 12 4C11.4477 4 11 4.44772 11 5C11 5.55228 11.4477 6 12 6Z"
+                        stroke="white"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      ></path>
+                      <path
+                        d="M12 20C12.5523 20 13 19.5523 13 19C13 18.4477 12.5523 18 12 18C11.4477 18 11 18.4477 11 19C11 19.5523 11.4477 20 12 20Z"
+                        stroke="white"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      ></path>
+                    </svg>
+                  </div>
+                </div>
+                <div>
+                  <a href="#" class="flex items-center gap-2">
+                    <p class="text-sm md:text-base text-[#e9901a]">See All</p>
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M4 12H20M20 12L14 6M20 12L14 18"
+                        stroke="#e9901a"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="px-3 py-2.5 bg-sideBarBg backdrop-blur-lg flex items-center justify-around fixed bottom-0 md:hidden block w-full"
+    >
+      <button type="button" class="p-1 cursor-pointer iconMainBox rounded-lg">
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M22 15.8442C20.6866 16.4382 19.2286 16.7688 17.6935 16.7688C11.9153 16.7688 7.23116 12.0847 7.23116 6.30654C7.23116 4.77135 7.5618 3.3134 8.15577 2C4.52576 3.64163 2 7.2947 2 11.5377C2 17.3159 6.68414 22 12.4623 22C16.7053 22 20.3584 19.4742 22 15.8442Z"
+            stroke="white"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </button>
+      <button type="button" class="p-1 cursor-pointer iconMainBox rounded-lg">
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M9.35419 21C10.0593 21.6224 10.9856 22 12 22C13.0145 22 13.9407 21.6224 14.6458 21M18 8C18 6.4087 17.3679 4.88258 16.2427 3.75736C15.1174 2.63214 13.5913 2 12 2C10.4087 2 8.8826 2.63214 7.75738 3.75736C6.63216 4.88258 6.00002 6.4087 6.00002 8C6.00002 11.0902 5.22049 13.206 4.34968 14.6054C3.61515 15.7859 3.24788 16.3761 3.26134 16.5408C3.27626 16.7231 3.31488 16.7926 3.46179 16.9016C3.59448 17 4.19261 17 5.38887 17H18.6112C19.8074 17 20.4056 17 20.5382 16.9016C20.6852 16.7926 20.7238 16.7231 20.7387 16.5408C20.7522 16.3761 20.3849 15.7859 19.6504 14.6054C18.7795 13.206 18 11.0902 18 8Z"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </button>
+      <button type="button" class="p-1 cursor-pointer iconMainBox rounded-full">
+        <img
+          src="./src/images/australia.png"
+          alt="nation"
+          class="rounded-full w-5 h-5"
+        />
+      </button>
+      <button type="button" class="p-1 cursor-pointer iconMainBox rounded-lg">
+        <img src="src/images/profile-img.png" alt="Profile" class="w-6 h-6" />
+      </button>
+    </div>
+  </body>
+</html>

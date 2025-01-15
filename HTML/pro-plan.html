@@ -17,7 +17,7 @@
       class="flex gap-[25px] pt-[25px] pb-[53px] px-[25px] min-h-screen bg-bgPrimary"
     >
       <div
-        class="w-[260px] rounded-[20px] pt-[46px] pb-5 flex-col justify-between bg-sideBarBg border border-[#ffffff33] hidden lg:flex h-[92vh] sticky top-6"
+        class="w-[260px] rounded-[20px] pt-[46px] pb-5 flex-col justify-between bg-sideBarBg border border-[#ffffff33] hidden lg:flex h-[92vh] sticky top-6 tableScroll overflow-y-auto"
       >
         <div class="px-2.5">
           <h1 class="text-[28px] leading-8 text-center Gilroy-extrabold">
@@ -85,6 +85,50 @@
                 Pages
               </p>
             </li>
+            <li
+              class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-2.5 cursor-pointer hover:bg-[#E9901A] transition-all"
+            >
+              <div
+                class="w-[34px] h-[34px] rounded-lg flex justify-center items-center"
+              >
+              <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 20V13M12 20V10M4 20L4 16M13.4067 5.0275L18.5751 6.96567M10.7988 5.40092L5.20023 9.59983M21.0607 6.43934C21.6464 7.02513 21.6464 7.97487 21.0607 8.56066C20.4749 9.14645 19.5251 9.14645 18.9393 8.56066C18.3536 7.97487 18.3536 7.02513 18.9393 6.43934C19.5251 5.85355 20.4749 5.85355 21.0607 6.43934ZM5.06066 9.43934C5.64645 10.0251 5.64645 10.9749 5.06066 11.5607C4.47487 12.1464 3.52513 12.1464 2.93934 11.5607C2.35355 10.9749 2.35355 10.0251 2.93934 9.43934C3.52513 8.85355 4.47487 8.85355 5.06066 9.43934ZM13.0607 3.43934C13.6464 4.02513 13.6464 4.97487 13.0607 5.56066C12.4749 6.14645 11.5251 6.14645 10.9393 5.56066C10.3536 4.97487 10.3536 4.02513 10.9393 3.43934C11.5251 2.85355 12.4749 2.85355 13.0607 3.43934Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <p
+                class="text-base leading-5 text-white pt-0.5 h-auto Gilroy-semibold"
+              >
+                Analytics
+              </p>
+            </li>
+            <li
+            class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-2.5 cursor-pointer hover:bg-[#E9901A] transition-all"
+          >
+            <div
+              class="w-[34px] h-[34px] rounded-lg flex justify-center items-center"
+            >
+              <svg
+                width="100%"
+                height="100%"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M16 7.99983V4.50048C16 3.66874 16 3.25287 15.8248 2.9973C15.6717 2.77401 15.4346 2.62232 15.1678 2.57691C14.8623 2.52493 14.4847 2.6992 13.7295 3.04775L4.85901 7.14182C4.18551 7.45267 3.84875 7.6081 3.60211 7.84915C3.38406 8.06225 3.21762 8.32238 3.1155 8.60966C3 8.93462 3 9.30551 3 10.0473V14.9998M16.5 14.4998H16.51M3 11.1998L3 17.7998C3 18.9199 3 19.48 3.21799 19.9078C3.40973 20.2841 3.71569 20.5901 4.09202 20.7818C4.51984 20.9998 5.07989 20.9998 6.2 20.9998H17.8C18.9201 20.9998 19.4802 20.9998 19.908 20.7818C20.2843 20.5901 20.5903 20.2841 20.782 19.9078C21 19.48 21 18.9199 21 17.7998V11.1998C21 10.0797 21 9.51967 20.782 9.09185C20.5903 8.71552 20.2843 8.40956 19.908 8.21782C19.4802 7.99983 18.9201 7.99983 17.8 7.99983L6.2 7.99983C5.0799 7.99983 4.51984 7.99983 4.09202 8.21781C3.7157 8.40956 3.40973 8.71552 3.21799 9.09185C3 9.51967 3 10.0797 3 11.1998ZM17 14.4998C17 14.776 16.7761 14.9998 16.5 14.9998C16.2239 14.9998 16 14.776 16 14.4998C16 14.2237 16.2239 13.9998 16.5 13.9998C16.7761 13.9998 17 14.2237 17 14.4998Z"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            <p
+              class="text-base leading-5 text-white h-auto pt-0.5 Gilroy-semibold"
+            >
+              Wallet
+            </p>
+          </li>
             <li
               class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-2.5 cursor-pointer hover:bg-[#E9901A] transition-all"
             >
@@ -426,7 +470,7 @@
                     </svg>
                     </div>
                     <div
-                    class="flex sm:flex-nowrap flex-wrap gap-3 items-center justify-between gap-5"
+                    class="flex flex-wrap sm:flex-nowrap gap-3 items-center justify-between gap-5"
                     >
                     <div
                         class="p-4 md:p-6 border border-[#ffffff33] w-full sm:w-1/2 max-w-full bg-sideBarBg h-full rounded-xl"
@@ -1117,7 +1161,7 @@
                     </div>
                     </div>
                     <div
-                    class="flex sm:flex-nowrap flex-wrap gap-3 items-center justify-between gap-5 mt-5"
+                    class="flex flex-wrap sm:flex-nowrap gap-3 items-center justify-between gap-5 mt-5"
                     >
                     <div
                         class="p-4 md:p-6 border border-[#ffffff33] w-full sm:w-1/2 max-w-full bg-sideBarBg h-full rounded-xl"
@@ -2175,11 +2219,481 @@
                                     </button>
                                 </td>
                             </tr>
+                            <tr>
+                              <td class="px-6 py-2.5 whitespace-nowrap">
+                                  <div class="flex items-center gap-3">
+                                      <img src="./src/images/bnb.png" alt="BNB" class="w-6 h-6"/>
+                                      <div class="flex flex-col gap-1">
+                                          <p class="pt-0.5 text-base Gilroy-medium text-white">
+                                              Binance
+                                          </p>
+                                          <p class="text-xs Gilroy-normal text-white">
+                                              BNB
+                                          </p>
+                                      </div>
+                                  </div>
+                              </td>
+                              <td class="text-white whitespace-nowrap py-2.5 px-6 text-base Gilroy-medium">
+                                  $516,55
+                              </td>
+                              <td class="text-[#00a385] whitespace-nowrap py-2.5 px-6 text-base Gilroy-medium">
+                                  +7.4%
+                              </td>
+                              <td class="text-[#bd7b00] whitespace-nowrap py-2.5 px-6 text-base Gilroy-medium">
+                                  +27.3%
+                              </td>
+                              <td class="text-[#ff6161] whitespace-nowrap py-2.5 px-6 text-base Gilroy-medium">
+                                  -2.3%
+                              </td>
+                              <td class="text-white whitespace-nowrap py-2.5 px-6 text-base Gilroy-medium">
+                                  $4.97M
+                              </td>
+                              <td class="text-white whitespace-nowrap py-2.5 px-6 text-base Gilroy-medium">
+                                  <div class="flex gap-3 text-base Gilroy-medium text-white items-center">
+                                      88%
+                                      <div class="w-full h-[5px] rounded-[5px] bg-[#dfe0e4]">
+                                          <div class="w-[88%] h-full rounded-[5px] bg-[#e9901a]"></div>
+                                      </div>
+                                  </div>
+                              </td>
+                              <td class="py-2.5 px-6">
+                                  <button type="button" class="border-white rounded-xl border border-solid md:py-3 py-2 md:px-5 px-4 text-base text-white hover:border-[#e9901a] hover:bg-[e9901a] transition-all">
+                                      Trade
+                                  </button>
+                              </td>
+                            </tr>
+                            <tr class="bg-[#302964]">
+                              <td class="px-6 py-2.5 whitespace-nowrap">
+                                  <div class="flex items-center gap-3">
+                                      <img src="./src/images/bitcoin_mid.png" alt="Bitcoin" class="w-6 h-6"/>
+                                      <div class="flex flex-col gap-1">
+                                          <p class="pt-0.5 text-base Gilroy-medium text-white">
+                                              Bitcoin
+                                          </p>
+                                          <p class="text-xs Gilroy-normal text-white">
+                                              BTC
+                                          </p>
+                                      </div>
+                                  </div>
+                              </td>
+                              <td class="text-white whitespace-nowrap py-2.5 px-6 text-base Gilroy-medium">
+                                  $516,55
+                              </td>
+                              <td class="text-[#00a385] whitespace-nowrap py-2.5 px-6 text-base Gilroy-medium">
+                                  +7.4%
+                              </td>
+                              <td class="text-[#bd7b00] whitespace-nowrap py-2.5 px-6 text-base Gilroy-medium">
+                                  +27.3%
+                              </td>
+                              <td class="text-[#ff6161] whitespace-nowrap py-2.5 px-6 text-base Gilroy-medium">
+                                  -2.3%
+                              </td>
+                              <td class="text-white whitespace-nowrap py-2.5 px-6 text-base Gilroy-medium">
+                                  $4.97M
+                              </td>
+                              <td class="text-white whitespace-nowrap py-2.5 px-6 text-base Gilroy-medium">
+                                  <div class="flex gap-3 text-base Gilroy-medium text-white items-center">
+                                      96%
+                                      <div class="w-full h-[5px] rounded-[5px] bg-[#dfe0e4]">
+                                          <div class="w-[96%] h-full rounded-[5px] bg-[#e9901a]"></div>
+                                      </div>
+                                  </div>
+                              </td>
+                              <td class="py-2.5 px-6">
+                                  <button type="button" class="border-white rounded-xl border border-solid md:py-3 py-2 md:px-5 px-4 text-base text-white hover:border-[#e9901a] hover:bg-[e9901a] transition-all">
+                                      Trade
+                                  </button>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td class="px-6 py-2.5 whitespace-nowrap">
+                                  <div class="flex items-center gap-3">
+                                      <img src="./src/images/cardano_mid.png" alt="Cardano" class="w-6 h-6"/>
+                                      <div class="flex flex-col gap-1">
+                                          <p class="pt-0.5 text-base Gilroy-medium text-white">
+                                              Cardano
+                                          </p>
+                                          <p class="text-xs Gilroy-normal text-white">
+                                              ADA
+                                          </p>
+                                      </div>
+                                  </div>
+                              </td>
+                              <td class="text-white whitespace-nowrap py-2.5 px-6 text-base Gilroy-medium">
+                                  $516,55
+                              </td>
+                              <td class="text-[#00a385] whitespace-nowrap py-2.5 px-6 text-base Gilroy-medium">
+                                  +7.4%
+                              </td>
+                              <td class="text-[#bd7b00] whitespace-nowrap py-2.5 px-6 text-base Gilroy-medium">
+                                  +27.3%
+                              </td>
+                              <td class="text-[#ff6161] whitespace-nowrap py-2.5 px-6 text-base Gilroy-medium">
+                                  -2.3%
+                              </td>
+                              <td class="text-white whitespace-nowrap py-2.5 px-6 text-base Gilroy-medium">
+                                  $4.97M
+                              </td>
+                              <td class="text-white whitespace-nowrap py-2.5 px-6 text-base Gilroy-medium">
+                                  <div class="flex gap-3 text-base Gilroy-medium text-white items-center">
+                                      33%
+                                      <div class="w-full h-[5px] rounded-[5px] bg-[#dfe0e4]">
+                                          <div class="w-[33%] h-full rounded-[5px] bg-[#e9901a]"></div>
+                                      </div>
+                                  </div>
+                              </td>
+                              <td class="py-2.5 px-6">
+                                  <button type="button" class="border-white rounded-xl border border-solid md:py-3 py-2 md:px-5 px-4 text-base text-white hover:border-[#e9901a] hover:bg-[e9901a] transition-all">
+                                      Trade
+                                  </button>
+                              </td>
+                            </tr>
+                            <tr class="bg-[#302964]">
+                              <td class="px-6 py-2.5 whitespace-nowrap">
+                                  <div class="flex items-center gap-3">
+                                      <img src="./src/images/bitcoin_mid.png" alt="Bitcoin" class="w-6 h-6"/>
+                                      <div class="flex flex-col gap-1">
+                                          <p class="pt-0.5 text-base Gilroy-medium text-white">
+                                              Bitcoin
+                                          </p>
+                                          <p class="text-xs Gilroy-normal text-white">
+                                              BTC
+                                          </p>
+                                      </div>
+                                  </div>
+                              </td>
+                              <td class="text-white whitespace-nowrap py-2.5 px-6 text-base Gilroy-medium">
+                                  $516,55
+                              </td>
+                              <td class="text-[#00a385] whitespace-nowrap py-2.5 px-6 text-base Gilroy-medium">
+                                  +7.4%
+                              </td>
+                              <td class="text-[#bd7b00] whitespace-nowrap py-2.5 px-6 text-base Gilroy-medium">
+                                  +27.3%
+                              </td>
+                              <td class="text-[#ff6161] whitespace-nowrap py-2.5 px-6 text-base Gilroy-medium">
+                                  -2.3%
+                              </td>
+                              <td class="text-white whitespace-nowrap py-2.5 px-6 text-base Gilroy-medium">
+                                  $4.97M
+                              </td>
+                              <td class="text-white whitespace-nowrap py-2.5 px-6 text-base Gilroy-medium">
+                                  <div class="flex gap-3 text-base Gilroy-medium text-white items-center">
+                                      44%
+                                      <div class="w-full h-[5px] rounded-[5px] bg-[#dfe0e4]">
+                                          <div class="w-[44%] h-full rounded-[5px] bg-[#e9901a]"></div>
+                                      </div>
+                                  </div>
+                              </td>
+                              <td class="py-2.5 px-6">
+                                  <button type="button" class="border-white rounded-xl border border-solid md:py-3 py-2 md:px-5 px-4 text-base text-white hover:border-[#e9901a] hover:bg-[e9901a] transition-all">
+                                      Trade
+                                  </button>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td class="px-6 py-2.5 whitespace-nowrap">
+                                  <div class="flex items-center gap-3">
+                                      <img src="./src/images/bnb.png" alt="BNB" class="w-6 h-6"/>
+                                      <div class="flex flex-col gap-1">
+                                          <p class="pt-0.5 text-base Gilroy-medium text-white">
+                                              Binance
+                                          </p>
+                                          <p class="text-xs Gilroy-normal text-white">
+                                              BNB
+                                          </p>
+                                      </div>
+                                  </div>
+                              </td>
+                              <td class="text-white whitespace-nowrap py-2.5 px-6 text-base Gilroy-medium">
+                                  $516,55
+                              </td>
+                              <td class="text-[#00a385] whitespace-nowrap py-2.5 px-6 text-base Gilroy-medium">
+                                  +7.4%
+                              </td>
+                              <td class="text-[#bd7b00] whitespace-nowrap py-2.5 px-6 text-base Gilroy-medium">
+                                  +27.3%
+                              </td>
+                              <td class="text-[#ff6161] whitespace-nowrap py-2.5 px-6 text-base Gilroy-medium">
+                                  -2.3%
+                              </td>
+                              <td class="text-white whitespace-nowrap py-2.5 px-6 text-base Gilroy-medium">
+                                  $4.97M
+                              </td>
+                              <td class="text-white whitespace-nowrap py-2.5 px-6 text-base Gilroy-medium">
+                                  <div class="flex gap-3 text-base Gilroy-medium text-white items-center">
+                                      44%
+                                      <div class="w-full h-[5px] rounded-[5px] bg-[#dfe0e4]">
+                                          <div class="w-[44%] h-full rounded-[5px] bg-[#e9901a]"></div>
+                                      </div>
+                                  </div>
+                              </td>
+                              <td class="py-2.5 px-6">
+                                  <button type="button" class="border-white rounded-xl border border-solid md:py-3 py-2 md:px-5 px-4 text-base text-white hover:border-[#e9901a] hover:bg-[e9901a] transition-all">
+                                      Trade
+                                  </button>
+                              </td>
+                            </tr>
+                            <tr class="bg-[#302964]">
+                              <td class="px-6 py-2.5 whitespace-nowrap">
+                                  <div class="flex items-center gap-3">
+                                      <img src="./src/images/bitcoin_mid.png" alt="Bitcoin" class="w-6 h-6"/>
+                                      <div class="flex flex-col gap-1">
+                                          <p class="pt-0.5 text-base Gilroy-medium text-white">
+                                              Bitcoin
+                                          </p>
+                                          <p class="text-xs Gilroy-normal text-white">
+                                              BTC
+                                          </p>
+                                      </div>
+                                  </div>
+                              </td>
+                              <td class="text-white whitespace-nowrap py-2.5 px-6 text-base Gilroy-medium">
+                                  $516,55
+                              </td>
+                              <td class="text-[#00a385] whitespace-nowrap py-2.5 px-6 text-base Gilroy-medium">
+                                  +7.4%
+                              </td>
+                              <td class="text-[#bd7b00] whitespace-nowrap py-2.5 px-6 text-base Gilroy-medium">
+                                  +27.3%
+                              </td>
+                              <td class="text-[#ff6161] whitespace-nowrap py-2.5 px-6 text-base Gilroy-medium">
+                                  -2.3%
+                              </td>
+                              <td class="text-white whitespace-nowrap py-2.5 px-6 text-base Gilroy-medium">
+                                  $4.97M
+                              </td>
+                              <td class="text-white whitespace-nowrap py-2.5 px-6 text-base Gilroy-medium">
+                                  <div class="flex gap-3 text-base Gilroy-medium text-white items-center">
+                                      85%
+                                      <div class="w-full h-[5px] rounded-[5px] bg-[#dfe0e4]">
+                                          <div class="w-[85%] h-full rounded-[5px] bg-[#e9901a]"></div>
+                                      </div>
+                                  </div>
+                              </td>
+                              <td class="py-2.5 px-6">
+                                  <button type="button" class="border-white rounded-xl border border-solid md:py-3 py-2 md:px-5 px-4 text-base text-white hover:border-[#e9901a] hover:bg-[e9901a] transition-all">
+                                      Trade
+                                  </button>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td class="px-6 py-2.5 whitespace-nowrap">
+                                  <div class="flex items-center gap-3">
+                                      <img src="./src/images/cardano_mid.png" alt="Cardano" class="w-6 h-6"/>
+                                      <div class="flex flex-col gap-1">
+                                          <p class="pt-0.5 text-base Gilroy-medium text-white">
+                                              Cardano
+                                          </p>
+                                          <p class="text-xs Gilroy-normal text-white">
+                                              ADA
+                                          </p>
+                                      </div>
+                                  </div>
+                              </td>
+                              <td class="text-white whitespace-nowrap py-2.5 px-6 text-base Gilroy-medium">
+                                  $516,55
+                              </td>
+                              <td class="text-[#00a385] whitespace-nowrap py-2.5 px-6 text-base Gilroy-medium">
+                                  +7.4%
+                              </td>
+                              <td class="text-[#bd7b00] whitespace-nowrap py-2.5 px-6 text-base Gilroy-medium">
+                                  +27.3%
+                              </td>
+                              <td class="text-[#ff6161] whitespace-nowrap py-2.5 px-6 text-base Gilroy-medium">
+                                  -2.3%
+                              </td>
+                              <td class="text-white whitespace-nowrap py-2.5 px-6 text-base Gilroy-medium">
+                                  $4.97M
+                              </td>
+                              <td class="text-white whitespace-nowrap py-2.5 px-6 text-base Gilroy-medium">
+                                  <div class="flex gap-3 text-base Gilroy-medium text-white items-center">
+                                      74%
+                                      <div class="w-full h-[5px] rounded-[5px] bg-[#dfe0e4]">
+                                          <div class="w-[74%] h-full rounded-[5px] bg-[#e9901a]"></div>
+                                      </div>
+                                  </div>
+                              </td>
+                              <td class="py-2.5 px-6">
+                                  <button type="button" class="border-white rounded-xl border border-solid md:py-3 py-2 md:px-5 px-4 text-base text-white hover:border-[#e9901a] hover:bg-[e9901a] transition-all">
+                                      Trade
+                                  </button>
+                              </td>
+                            </tr>
+                            <tr class="bg-[#302964]">
+                              <td class="px-6 py-2.5 whitespace-nowrap">
+                                  <div class="flex items-center gap-3">
+                                      <img src="./src/images/electro.png" alt="Electro" class="w-6 h-6"/>
+                                      <div class="flex flex-col gap-1">
+                                          <p class="pt-0.5 text-base Gilroy-medium text-white">
+                                            Electro
+                                          </p>
+                                          <p class="text-xs Gilroy-normal text-white">
+                                              ETN
+                                          </p>
+                                      </div>
+                                  </div>
+                              </td>
+                              <td class="text-white whitespace-nowrap py-2.5 px-6 text-base Gilroy-medium">
+                                  $516,55
+                              </td>
+                              <td class="text-[#00a385] whitespace-nowrap py-2.5 px-6 text-base Gilroy-medium">
+                                  +7.4%
+                              </td>
+                              <td class="text-[#bd7b00] whitespace-nowrap py-2.5 px-6 text-base Gilroy-medium">
+                                  +27.3%
+                              </td>
+                              <td class="text-[#ff6161] whitespace-nowrap py-2.5 px-6 text-base Gilroy-medium">
+                                  -2.3%
+                              </td>
+                              <td class="text-white whitespace-nowrap py-2.5 px-6 text-base Gilroy-medium">
+                                  $4.97M
+                              </td>
+                              <td class="text-white whitespace-nowrap py-2.5 px-6 text-base Gilroy-medium">
+                                  <div class="flex gap-3 text-base Gilroy-medium text-white items-center">
+                                      74%
+                                      <div class="w-full h-[5px] rounded-[5px] bg-[#dfe0e4]">
+                                          <div class="w-[74%] h-full rounded-[5px] bg-[#e9901a]"></div>
+                                      </div>
+                                  </div>
+                              </td>
+                              <td class="py-2.5 px-6">
+                                  <button type="button" class="border-white rounded-xl border border-solid md:py-3 py-2 md:px-5 px-4 text-base text-white hover:border-[#e9901a] hover:bg-[e9901a] transition-all">
+                                      Trade
+                                  </button>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td class="px-6 py-2.5 whitespace-nowrap">
+                                  <div class="flex items-center gap-3">
+                                      <img src="./src/images/chain_mid.png" alt="Chain" class="w-6 h-6"/>
+                                      <div class="flex flex-col gap-1">
+                                          <p class="pt-0.5 text-base Gilroy-medium text-white">
+                                            Linkchain
+                                          </p>
+                                          <p class="text-xs Gilroy-normal text-white">
+                                            CHAIN
+                                          </p>
+                                      </div>
+                                  </div>
+                              </td>
+                              <td class="text-white whitespace-nowrap py-2.5 px-6 text-base Gilroy-medium">
+                                  $516,55
+                              </td>
+                              <td class="text-[#00a385] whitespace-nowrap py-2.5 px-6 text-base Gilroy-medium">
+                                  +7.4%
+                              </td>
+                              <td class="text-[#bd7b00] whitespace-nowrap py-2.5 px-6 text-base Gilroy-medium">
+                                  +27.3%
+                              </td>
+                              <td class="text-[#ff6161] whitespace-nowrap py-2.5 px-6 text-base Gilroy-medium">
+                                  -2.3%
+                              </td>
+                              <td class="text-white whitespace-nowrap py-2.5 px-6 text-base Gilroy-medium">
+                                  $4.97M
+                              </td>
+                              <td class="text-white whitespace-nowrap py-2.5 px-6 text-base Gilroy-medium">
+                                  <div class="flex gap-3 text-base Gilroy-medium text-white items-center">
+                                      50%
+                                      <div class="w-full h-[5px] rounded-[5px] bg-[#dfe0e4]">
+                                          <div class="w-6/12 h-full rounded-[5px] bg-[#e9901a]"></div>
+                                      </div>
+                                  </div>
+                              </td>
+                              <td class="py-2.5 px-6">
+                                  <button type="button" class="border-white rounded-xl border border-solid md:py-3 py-2 md:px-5 px-4 text-base text-white hover:border-[#e9901a] hover:bg-[e9901a] transition-all">
+                                      Trade
+                                  </button>
+                              </td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
+                <div class="mt-5 flex flex-wrap justify-between gap-3 items-center">
+                  <p class="text-white text-sm md:text-base Gilroy-normal">
+                    Showing 1 to 12 of 100 entries
+                  </p>
+                  <ul class="flex items-center  gap-2">
+                    <li class="md:w-10 md:h-10 w-8 h-8 flex items-center justify-center rounded-lg border border-white  bg-transparent hover:bg-[#e9901a] transition-all">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+                      </svg>
+                    </li>
+                    <li class="w-8 h-8 md:w-10 md:h-10 flex text-base text-white Gilroy-medium items-center justify-center rounded-lg border border-white  hover:bg-transparent bg-[#e9901a] transition-all pt-0.5"> 1 </li>
+                    <li class="w-8 h-8 md:w-10 md:h-10 flex text-base text-white Gilroy-medium items-center justify-center rounded-lg border border-white  bg-transparent hover:bg-[#e9901a] transition-all pt-0.5"> 2 </li>
+                    <li class="w-8 h-8 md:w-10 md:h-10 flex text-base text-white Gilroy-medium items-center justify-center rounded-lg border border-white  bg-transparent hover:bg-[#e9901a] transition-all pt-0.5"> ... </li>
+                    <li class="w-8 h-8 md:w-10 md:h-10 flex text-base text-white Gilroy-medium items-center justify-center rounded-lg border border-white  bg-transparent hover:bg-[#e9901a] transition-all pt-0.5"> 5 </li>
+                    <li class="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center rounded-lg border border-white  hover:bg-transparent bg-[#e9901a] transition-all">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                      </svg>                  
+                    </li>
+                  </ul>
+                </div>
             </div>
         </div>
+    </div>
+    <div class="px-3 py-2.5 bg-sideBarBg backdrop-blur-lg flex items-center justify-around fixed left-0 bottom-0 md:hidden block w-full">
+      <button
+      type="button"
+      class="p-1 cursor-pointer iconMainBox rounded-lg"
+    >
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M22 15.8442C20.6866 16.4382 19.2286 16.7688 17.6935 16.7688C11.9153 16.7688 7.23116 12.0847 7.23116 6.30654C7.23116 4.77135 7.5618 3.3134 8.15577 2C4.52576 3.64163 2 7.2947 2 11.5377C2 17.3159 6.68414 22 12.4623 22C16.7053 22 20.3584 19.4742 22 15.8442Z"
+          stroke="white"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+      </button>
+      <button
+        type="button"
+        class="p-1 cursor-pointer iconMainBox rounded-lg "
+      >
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M9.35419 21C10.0593 21.6224 10.9856 22 12 22C13.0145 22 13.9407 21.6224 14.6458 21M18 8C18 6.4087 17.3679 4.88258 16.2427 3.75736C15.1174 2.63214 13.5913 2 12 2C10.4087 2 8.8826 2.63214 7.75738 3.75736C6.63216 4.88258 6.00002 6.4087 6.00002 8C6.00002 11.0902 5.22049 13.206 4.34968 14.6054C3.61515 15.7859 3.24788 16.3761 3.26134 16.5408C3.27626 16.7231 3.31488 16.7926 3.46179 16.9016C3.59448 17 4.19261 17 5.38887 17H18.6112C19.8074 17 20.4056 17 20.5382 16.9016C20.6852 16.7926 20.7238 16.7231 20.7387 16.5408C20.7522 16.3761 20.3849 15.7859 19.6504 14.6054C18.7795 13.206 18 11.0902 18 8Z"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </button>
+      <button
+        type="button"
+        class="p-1 cursor-pointer iconMainBox rounded-full"
+      >
+        <img
+          src="./src/images/australia.png"
+          alt="nation"
+          class="rounded-full w-5 h-5"
+        />
+      </button>
+      <button
+        type="button"
+        class="p-1 cursor-pointer iconMainBox rounded-lg"
+      >
+        <img
+          src="src/images/profile-img.png"
+          alt="Profile"
+          class="w-6 h-6"
+        />
+      </button>
     </div>
   </body>
 </html>

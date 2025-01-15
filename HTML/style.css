@@ -17,11 +17,6 @@
   width: 6px;
   height: 100%;
   border-radius: 0px 10px 10px 0px;
-  background-color: #e9901a;
-}
-
-.sidbar-list li.active div {
-  background-color: white;
 }
 
 .sidbar-list li.active p {
@@ -145,7 +140,7 @@
   stroke: #e9901a;
 }
 .tableScroll::-webkit-scrollbar {
-  width: 2px;
+  width: 0.5px;
 }
 
 /* Track */
