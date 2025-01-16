@@ -3,6 +3,21 @@
 .font-poppins {
   font-family: "Poppins", sans-serif;
 }
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #e9901a;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #e98f1ab2;
+}
 
 .sidbar-list li.active {
   background-color: #e9901a;
@@ -141,6 +156,7 @@
 }
 .tableScroll::-webkit-scrollbar {
   width: 0.5px;
+  height:4px;
 }
 
 /* Track */
@@ -158,4 +174,45 @@
 /* Handle on hover */
 .tableScroll::-webkit-scrollbar-thumb:hover {
   background: #e98f1ab2;
+}
+.walletTopUp svg path {
+  stroke: #e9901a;
+  transition: all 0.5s ease;
+}
+.walletTopUp:hover svg path {
+  stroke: white;
+}
+.walletTopUp p {
+  color: #e9901a;
+  transition: all 0.5s ease;
+}
+.walletTopUp:hover p {
+  color: white;
+}
+
+.circle-bg {
+  fill: none;
+  stroke: white;
+  stroke-width: 2;
+}
+
+.circle {
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  animation: progress 5s ease forwards;
+}
+
+@keyframes progress {
+  0% {
+    stroke-dasharray: 0 100;
+  }
+}
+
+.circle {
+  stroke: #e9901a;
+}
+.circleText {
+  font-size: 0.5em;
+  text-anchor: middle;
 }
