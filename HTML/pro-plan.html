@@ -17,7 +17,7 @@
       class="flex gap-[25px] pt-[25px] pb-[53px] px-[25px] min-h-screen bg-bgPrimary"
     >
       <div
-        class="w-[260px] rounded-[20px] pt-[46px] pb-5 flex-col justify-between bg-sideBarBg border border-[#ffffff33] hidden lg:flex h-[92vh] sticky top-6 tableScroll overflow-y-auto"
+        class="w-[260px] rounded-[20px] pt-[46px] pb-5 flex-col justify-between bg-sideBarBg border border-translucentWhite hidden lg:flex h-[92vh] sticky top-6 tableScroll overflow-y-auto"
       >
         <div class="px-2.5">
           <h1 class="text-[28px] leading-8 text-center Gilroy-extrabold">
@@ -71,7 +71,7 @@
                     viewBox="0 0 24 24"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
-                    class="bg-[#e9901a]"
+                    class="bg-btnSecondary"
                     >
                     <path
                         d="M2 14.5001L11.6422 19.3212C11.7734 19.3868 11.839 19.4196 11.9078 19.4325C11.9687 19.4439 12.0313 19.4439 12.0922 19.4325C12.161 19.4196 12.2266 19.3868 12.3578 19.3212L22 14.5001M2 9.50006L11.6422 4.67895C11.7734 4.61336 11.839 4.58056 11.9078 4.56766C11.9687 4.55622 12.0313 4.55622 12.0922 4.56766C12.161 4.58056 12.2266 4.61336 12.3578 4.67895L22 9.50006L12.3578 14.3212C12.2266 14.3868 12.161 14.4196 12.0922 14.4325C12.0313 14.4439 11.9687 14.4439 11.9078 14.4325C11.839 14.4196 11.7734 14.3868 11.6422 14.3212L2 9.50006Z"
@@ -149,40 +149,39 @@
                   </p>
                 </li>
               </a>
-              <a href="./account.html">
+              <a href="./details.html">
                 <li
                   class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-2.5 cursor-pointer hover:bg-[#E9901A] transition-all"
                 >
                   <div
                     class="w-[34px] h-[34px] rounded-lg flex justify-center items-center"
                   >
-                    <svg
-                      width="100%"
-                      height="100%"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M12 15C8.8299 15 6.01077 16.5306 4.21597 18.906C3.82968 19.4172 3.63653 19.6728 3.64285 20.0183C3.64773 20.2852 3.81533 20.6219 4.02534 20.7867C4.29716 21 4.67384 21 5.4272 21H18.5727C19.3261 21 19.7028 21 19.9746 20.7867C20.1846 20.6219 20.3522 20.2852 20.3571 20.0183C20.3634 19.6728 20.1703 19.4172 19.784 18.906C17.9892 16.5306 15.17 15 12 15Z"
-                        stroke="white"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                      <path
-                        d="M12 12C14.4853 12 16.5 9.98528 16.5 7.5C16.5 5.01472 14.4853 3 12 3C9.51469 3 7.49997 5.01472 7.49997 7.5C7.49997 9.98528 9.51469 12 12 12Z"
-                        stroke="white"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
+                  <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14 11H8M10 15H8M16 7H8M20 10.5V6.8C20 5.11984 20 4.27976 19.673 3.63803C19.3854 3.07354 18.9265 2.6146 18.362 2.32698C17.7202 2 16.8802 2 15.2 2H8.8C7.11984 2 6.27976 2 5.63803 2.32698C5.07354 2.6146 4.6146 3.07354 4.32698 3.63803C4 4.27976 4 5.11984 4 6.8V17.2C4 18.8802 4 19.7202 4.32698 20.362C4.6146 20.9265 5.07354 21.3854 5.63803 21.673C6.27976 22 7.11984 22 8.8 22H11.5M22 22L20.5 20.5M21.5 18C21.5 19.933 19.933 21.5 18 21.5C16.067 21.5 14.5 19.933 14.5 18C14.5 16.067 16.067 14.5 18 14.5C19.933 14.5 21.5 16.067 21.5 18Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                   </div>
                   <p
                     class="text-base leading-5 text-white pt-0.5 h-auto Gilroy-semibold"
                   >
-                    Account
+                  Asset Details
+                  </p>
+                </li>
+              </a>
+              <a href="./new-asset.html">
+                <li
+                  class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-2.5 cursor-pointer hover:bg-[#E9901A] transition-all"
+                >
+                  <div
+                    class="w-[34px] h-[34px] rounded-lg flex justify-center items-center"
+                  >
+                  <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20 10.5V6.8C20 5.11984 20 4.27976 19.673 3.63803C19.3854 3.07354 18.9265 2.6146 18.362 2.32698C17.7202 2 16.8802 2 15.2 2H8.8C7.11984 2 6.27976 2 5.63803 2.32698C5.07354 2.6146 4.6146 3.07354 4.32698 3.63803C4 4.27976 4 5.11984 4 6.8V17.2C4 18.8802 4 19.7202 4.32698 20.362C4.6146 20.9265 5.07354 21.3854 5.63803 21.673C6.27976 22 7.11984 22 8.8 22H12M14 11H8M10 15H8M16 7H8M18 21V15M15 18H21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                  <p
+                    class="text-base leading-5 text-white pt-0.5 h-auto Gilroy-semibold"
+                  >
+                  New Asset
                   </p>
                 </li>
               </a>
@@ -199,7 +198,7 @@
       </div>
       <div class="w-full lg:w-[calc(100%-285px)]">
         <div
-          class="w-full py-[9px] md:pr-[18px] md:px-[33px] rounded-[15px] flex justify-between items-center gap-2.5 bg-sideBarBg border border-[#ffffff33] px-3 z-10 sticky top-6 backdrop-blur-sm"
+          class="w-full py-[9px] md:pr-[18px] md:px-[33px] rounded-[15px] flex justify-between items-center gap-2.5 bg-sideBarBg border border-translucentWhite px-3 z-10 sticky top-6 backdrop-blur-sm"
         >
           <div class="flex items-center gap-5 justify-between w-full">
             <div class="flex gap-3 items-center">
@@ -218,7 +217,7 @@
                 </svg>
               </button>
               <div
-                class="bg-sideBarBg border border-[#ffffff33] py-1.5 pl-5 pr-2 gap-4 rounded-full flex items-center hidden md:flex"
+                class="bg-sideBarBg border border-translucentWhite py-1.5 pl-5 pr-2 gap-4 rounded-full flex items-center hidden md:flex"
               >
                 <input
                   type="text"
@@ -286,7 +285,7 @@
                   </svg>
                 </div>
                 <div
-                  class="p-1 text-white text-base capitalize absolute top-11 bg-[#E9901A] rounded layoutText"
+                  class="p-1 text-white text-base capitalize absolute top-11 bg-btnSecondary rounded layoutText"
                 >
                   Layout
                 </div>
@@ -295,12 +294,12 @@
             <div class="gap-3 flex items-center">
               <button
                 type="button"
-                class="py-1 pt-1.5 px-2 bg-[#E9901A] text-base text-white border border-solid border-white hover:border-[#E9901A] rounded-lg cursor-pointer hover:bg-white transition-all duration-[0.5s] hover:text-[#E9901A] Gilroy-normal"
+                class="py-1 pt-1.5 px-2 bg-btnSecondary text-base text-white border border-solid border-white hover:border-[#E9901A] rounded-lg cursor-pointer hover:bg-white transition-all duration-[0.5s] hover:text-[#E9901A] Gilroy-normal"
               >
                 Connect
               </button>
               <div
-                class="bg-sideBarBg md:border border-[#ffffff33] md:py-1.5 p-0 md:pl-5 md:pr-2 gap-4 rounded-full flex items-center md:hidden"
+                class="bg-sideBarBg md:border border-translucentWhite md:py-1.5 p-0 md:pl-5 md:pr-2 gap-4 rounded-full flex items-center md:hidden"
               >
                 <input
                   type="text"
@@ -395,7 +394,7 @@
             <div class="flex items-center gap-3">
               <button
                 type="button"
-                class="bg-[#E9901A] px-5 py-2 md:px-8 md:py-4 text-base text-white rounded-lg flex items-center justify-center gap-2 Gilroy-semibold"
+                class="bg-btnSecondary px-5 py-2 md:px-8 md:py-4 text-base text-white rounded-lg flex items-center justify-center gap-2 Gilroy-semibold"
               >
                 <svg
                   width="24"
@@ -416,7 +415,7 @@
               </button>
               <button
                 type="button"
-                class="bg-[#E9901A] py-2 pt-2.5 px-[18px] md:px-8 md:py-4 md:pt-[18px] text-base text-white rounded-lg flex items-center justify-center Gilroy-semibold"
+                class="bg-btnSecondary py-2 pt-2.5 px-[18px] md:px-8 md:py-4 md:pt-[18px] text-base text-white rounded-lg flex items-center justify-center Gilroy-semibold"
               >
                 Trade
               </button>
@@ -467,7 +466,7 @@
                     class="flex flex-wrap sm:flex-nowrap gap-3 items-center justify-between gap-5"
                     >
                     <div
-                        class="p-4 md:p-6 border border-[#ffffff33] w-full sm:w-1/2 max-w-full bg-sideBarBg h-full rounded-xl"
+                        class="p-4 md:p-6 border border-translucentWhite w-full sm:w-1/2 max-w-full bg-sideBarBg h-full rounded-xl"
                     >
                         <h4
                         class="w-full border-b border-dashed border-white md:pb-6 md:mb-6 pb-5 mb-5 text-base text-white Gilroy-medium"
@@ -811,7 +810,7 @@
                     </div>
 
                     <div
-                        class="p-4 md:p-6 border border-[#ffffff33] w-full sm:w-1/2 max-w-full bg-sideBarBg h-full rounded-xl"
+                        class="p-4 md:p-6 border border-translucentWhite w-full sm:w-1/2 max-w-full bg-sideBarBg h-full rounded-xl"
                     >
                         <h4
                         class="w-full border-b border-dashed border-white md:pb-6 md:mb-6 pb-5 mb-5 text-base text-white Gilroy-medium"
@@ -1158,7 +1157,7 @@
                     class="flex flex-wrap sm:flex-nowrap gap-3 items-center justify-between gap-5 mt-5"
                     >
                     <div
-                        class="p-4 md:p-6 border border-[#ffffff33] w-full sm:w-1/2 max-w-full bg-sideBarBg h-full rounded-xl"
+                        class="p-4 md:p-6 border border-translucentWhite w-full sm:w-1/2 max-w-full bg-sideBarBg h-full rounded-xl"
                     >
                         <h4
                         class="w-full border-b border-dashed border-white md:pb-6 md:mb-6 pb-5 mb-5 text-base text-white Gilroy-medium"
@@ -1502,7 +1501,7 @@
                     </div>
 
                     <div
-                        class="p-4 md:p-6 border border-[#ffffff33] w-full sm:w-1/2 max-w-full bg-sideBarBg h-full rounded-xl"
+                        class="p-4 md:p-6 border border-translucentWhite w-full sm:w-1/2 max-w-full bg-sideBarBg h-full rounded-xl"
                     >
                         <h4
                         class="w-full border-b border-dashed border-white md:pb-6 md:mb-6 pb-5 mb-5 text-base text-white Gilroy-medium"
@@ -1887,7 +1886,7 @@
                     </svg>
                     </div>
                     <div class="flex flex-wrap sm:flex-nowrap gap-y-6 gap-x-5 items-center">
-                        <div class="lg:p-6 p-4 border border-[#ffffff33] w-full sm:w-1/2 max-w-full bg-sideBarBg h-full rounded-xl">
+                        <div class="lg:p-6 p-4 border border-translucentWhite w-full sm:w-1/2 max-w-full bg-sideBarBg h-full rounded-xl">
                             <div class="flex gap-3 sm:gap-4 items-center">
                                 <img src="./src/images/bit_xxl.png" alt="BitCoin"/>
                                 <div class="flex flex-col gap-3">
@@ -1897,7 +1896,7 @@
                             </div>
                             <div class="md:mt-7 mt-6">
                                 <div class="w-full h-[5px] rounded-[5px] bg-[#dfe0e4]">
-                                    <div class="w-[88%] h-full rounded-[5px] bg-[#e9901a]"></div>
+                                    <div class="w-[88%] h-full rounded-[5px] bg-btnSecondary"></div>
                                 </div>
                             </div>
                             <div class="flex flex-wrap gap-3 mt-4">
@@ -1912,7 +1911,7 @@
                                 <p class="text-base Gilroy-normal text-white">Since last mounth</p>
                             </div>
                         </div>
-                        <div class="lg:p-6 p-4 border border-[#ffffff33] w-full sm:w-1/2 max-w-full bg-sideBarBg h-full rounded-xl">
+                        <div class="lg:p-6 p-4 border border-translucentWhite w-full sm:w-1/2 max-w-full bg-sideBarBg h-full rounded-xl">
                             <div class="flex gap-3 sm:gap-4 items-center">
                                 <img src="./src/images/car_xxl.png" alt="Cardano"/>
                                 <div class="flex flex-col gap-3">
@@ -1922,7 +1921,7 @@
                             </div>
                             <div class="md:mt-7 mt-6">
                                 <div class="w-full h-[5px] rounded-[5px] bg-[#dfe0e4]">
-                                    <div class="w-[88%] h-full rounded-[5px] bg-[#e9901a]"></div>
+                                    <div class="w-[88%] h-full rounded-[5px] bg-btnSecondary"></div>
                                 </div>
                             </div>
                             <div class="flex flex-wrap gap-3 mt-4">
@@ -1939,7 +1938,7 @@
                         </div>
                     </div>
                     <div class="flex flex-wrap sm:flex-nowrap gap-y-6 gap-x-5 mt-6 sm:mt-5 items-center">
-                        <div class="lg:p-6 p-4 border border-[#ffffff33] w-full sm:w-1/2 max-w-full bg-sideBarBg h-full rounded-xl">
+                        <div class="lg:p-6 p-4 border border-translucentWhite w-full sm:w-1/2 max-w-full bg-sideBarBg h-full rounded-xl">
                             <div class="flex gap-3 sm:gap-4 items-center">
                                 <img src="./src/images/usd_xxl.png" alt="USD"/>
                                 <div class="flex flex-col gap-3">
@@ -1949,7 +1948,7 @@
                             </div>
                             <div class="md:mt-7 mt-6">
                                 <div class="w-full h-[5px] rounded-[5px] bg-[#dfe0e4]">
-                                    <div class="w-[88%] h-full rounded-[5px] bg-[#e9901a]"></div>
+                                    <div class="w-[88%] h-full rounded-[5px] bg-btnSecondary"></div>
                                 </div>
                             </div>
                             <div class="flex flex-wrap gap-3 mt-4">
@@ -1964,7 +1963,7 @@
                                 <p class="text-base Gilroy-normal text-white">Since last mounth</p>
                             </div>
                         </div>
-                        <div class="lg:p-6 p-4 border border-[#ffffff33] w-full sm:w-1/2 max-w-full bg-sideBarBg h-full rounded-xl">
+                        <div class="lg:p-6 p-4 border border-translucentWhite w-full sm:w-1/2 max-w-full bg-sideBarBg h-full rounded-xl">
                             <div class="flex gap-3 sm:gap-4 items-center">
                                 <img src="./src/images/ele_xxl.png" alt="ETN"/>
                                 <div class="flex flex-col gap-3">
@@ -1974,7 +1973,7 @@
                             </div>
                             <div class="md:mt-7 mt-6">
                                 <div class="w-full h-[5px] rounded-[5px] bg-[#dfe0e4]">
-                                    <div class="w-[88%] h-full rounded-[5px] bg-[#e9901a]"></div>
+                                    <div class="w-[88%] h-full rounded-[5px] bg-btnSecondary"></div>
                                 </div>
                             </div>
                             <div class="flex flex-wrap gap-3 mt-4">
@@ -1998,7 +1997,7 @@
                         <h2 class="text-white Gilroy-semibold pt-0.5 text-xl sm:text-2xl">
                             Currency Overview List
                         </h2>
-                        <div class="bg-sideBarBg border border-[#ffffff33] py-1.5 pl-5 pr-2 gap-4 rounded-full flex items-center">
+                        <div class="bg-sideBarBg border border-translucentWhite py-1.5 pl-5 pr-2 gap-4 rounded-full flex items-center">
                             <input type="text" placeholder="Search" class="text-base bg-transparent leading-6 text-white outline-none Gilroy-medium w-[calc(100%-20%)]">
                             <div class="p-1 flex items-center justify-center bg-white cursor-pointer w-fit rounded-full searchIconBox">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="#E9901A" class="w-6 h-6 fill-none searchIcon">
@@ -2008,7 +2007,7 @@
                         </div>
                     </div>
                     <div class="flex gap-6 gap-4">
-                        <div class="bg-sideBarBg border border-[#ffffff33] pl-6 py-3 pr-4 gap-2 flex items-center rounded-xl">
+                        <div class="bg-sideBarBg border border-translucentWhite pl-6 py-3 pr-4 gap-2 flex items-center rounded-xl">
                             <div class="flex gap-2 items-center">
                                 <img src="./src/images/usd.png" alt="USD"/>
                                 <p class="text-base Gilroy-normal text-white">USD</p>
@@ -2017,7 +2016,7 @@
                                 <path d="M6 9L12 15L18 9" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </div>
-                        <div class="bg-sideBarBg border border-[#ffffff33] px-3 py-2 pt-2.5 rounded-xl">
+                        <div class="bg-sideBarBg border border-translucentWhite px-3 py-2 pt-2.5 rounded-xl">
                             <select class="w-full bg-transparent border-none text-white text-base Gilroy-normal pr-1">
                                 <option value="1">24</option>
                                 <option value="2">25</option>
@@ -2074,12 +2073,12 @@
                                     <div class="flex gap-3 text-base Gilroy-medium text-white items-center">
                                         50%
                                         <div class="w-full h-[5px] rounded-[5px] bg-[#dfe0e4]">
-                                            <div class="w-1/2 h-full rounded-[5px] bg-[#e9901a]"></div>
+                                            <div class="w-1/2 h-full rounded-[5px] bg-btnSecondary"></div>
                                         </div>
                                     </div>
                                 </td>
                                 <td class="py-2.5 px-6">
-                                    <button type="button" class="border-white rounded-xl border border-solid md:py-3 py-2 md:px-5 px-4 text-base text-white hover:border-[#e9901a] hover:bg-[e9901a] transition-all">
+                                    <button type="button" class="border-white rounded-xl border border-solid md:py-3 py-2 md:px-5 px-4 text-base text-white hover:border-[#E9901A] hover:bg-[e9901a] transition-all">
                                         Trade
                                     </button>
                                 </td>
@@ -2117,12 +2116,12 @@
                                     <div class="flex gap-3 text-base Gilroy-medium text-white items-center">
                                         25%
                                         <div class="w-full h-[5px] rounded-[5px] bg-[#dfe0e4]">
-                                            <div class="w-3/12 h-full rounded-[5px] bg-[#e9901a]"></div>
+                                            <div class="w-3/12 h-full rounded-[5px] bg-btnSecondary"></div>
                                         </div>
                                     </div>
                                 </td>
                                 <td class="py-2.5 px-6">
-                                    <button type="button" class="border-white rounded-xl border border-solid md:py-3 py-2 md:px-5 px-4 text-base text-white hover:border-[#e9901a] hover:bg-[e9901a] transition-all">
+                                    <button type="button" class="border-white rounded-xl border border-solid md:py-3 py-2 md:px-5 px-4 text-base text-white hover:border-[#E9901A] hover:bg-[e9901a] transition-all">
                                         Trade
                                     </button>
                                 </td>
@@ -2160,12 +2159,12 @@
                                     <div class="flex gap-3 text-base Gilroy-medium text-white items-center">
                                         75%
                                         <div class="w-full h-[5px] rounded-[5px] bg-[#dfe0e4]">
-                                            <div class="w-9/12 h-full rounded-[5px] bg-[#e9901a]"></div>
+                                            <div class="w-9/12 h-full rounded-[5px] bg-btnSecondary"></div>
                                         </div>
                                     </div>
                                 </td>
                                 <td class="py-2.5 px-6">
-                                    <button type="button" class="border-white rounded-xl border border-solid md:py-3 py-2 md:px-5 px-4 text-base text-white hover:border-[#e9901a] hover:bg-[e9901a] transition-all">
+                                    <button type="button" class="border-white rounded-xl border border-solid md:py-3 py-2 md:px-5 px-4 text-base text-white hover:border-[#E9901A] hover:bg-[e9901a] transition-all">
                                         Trade
                                     </button>
                                 </td>
@@ -2203,12 +2202,12 @@
                                     <div class="flex gap-3 text-base Gilroy-medium text-white items-center">
                                         25%
                                         <div class="w-full h-[5px] rounded-[5px] bg-[#dfe0e4]">
-                                            <div class="w-3/12 h-full rounded-[5px] bg-[#e9901a]"></div>
+                                            <div class="w-3/12 h-full rounded-[5px] bg-btnSecondary"></div>
                                         </div>
                                     </div>
                                 </td>
                                 <td class="py-2.5 px-6">
-                                    <button type="button" class="border-white rounded-xl border border-solid md:py-3 py-2 md:px-5 px-4 text-base text-white hover:border-[#e9901a] hover:bg-[e9901a] transition-all">
+                                    <button type="button" class="border-white rounded-xl border border-solid md:py-3 py-2 md:px-5 px-4 text-base text-white hover:border-[#E9901A] hover:bg-[e9901a] transition-all">
                                         Trade
                                     </button>
                                 </td>
@@ -2246,12 +2245,12 @@
                                   <div class="flex gap-3 text-base Gilroy-medium text-white items-center">
                                       88%
                                       <div class="w-full h-[5px] rounded-[5px] bg-[#dfe0e4]">
-                                          <div class="w-[88%] h-full rounded-[5px] bg-[#e9901a]"></div>
+                                          <div class="w-[88%] h-full rounded-[5px] bg-btnSecondary"></div>
                                       </div>
                                   </div>
                               </td>
                               <td class="py-2.5 px-6">
-                                  <button type="button" class="border-white rounded-xl border border-solid md:py-3 py-2 md:px-5 px-4 text-base text-white hover:border-[#e9901a] hover:bg-[e9901a] transition-all">
+                                  <button type="button" class="border-white rounded-xl border border-solid md:py-3 py-2 md:px-5 px-4 text-base text-white hover:border-[#E9901A] hover:bg-[e9901a] transition-all">
                                       Trade
                                   </button>
                               </td>
@@ -2289,12 +2288,12 @@
                                   <div class="flex gap-3 text-base Gilroy-medium text-white items-center">
                                       96%
                                       <div class="w-full h-[5px] rounded-[5px] bg-[#dfe0e4]">
-                                          <div class="w-[96%] h-full rounded-[5px] bg-[#e9901a]"></div>
+                                          <div class="w-[96%] h-full rounded-[5px] bg-btnSecondary"></div>
                                       </div>
                                   </div>
                               </td>
                               <td class="py-2.5 px-6">
-                                  <button type="button" class="border-white rounded-xl border border-solid md:py-3 py-2 md:px-5 px-4 text-base text-white hover:border-[#e9901a] hover:bg-[e9901a] transition-all">
+                                  <button type="button" class="border-white rounded-xl border border-solid md:py-3 py-2 md:px-5 px-4 text-base text-white hover:border-[#E9901A] hover:bg-[e9901a] transition-all">
                                       Trade
                                   </button>
                               </td>
@@ -2332,12 +2331,12 @@
                                   <div class="flex gap-3 text-base Gilroy-medium text-white items-center">
                                       33%
                                       <div class="w-full h-[5px] rounded-[5px] bg-[#dfe0e4]">
-                                          <div class="w-[33%] h-full rounded-[5px] bg-[#e9901a]"></div>
+                                          <div class="w-[33%] h-full rounded-[5px] bg-btnSecondary"></div>
                                       </div>
                                   </div>
                               </td>
                               <td class="py-2.5 px-6">
-                                  <button type="button" class="border-white rounded-xl border border-solid md:py-3 py-2 md:px-5 px-4 text-base text-white hover:border-[#e9901a] hover:bg-[e9901a] transition-all">
+                                  <button type="button" class="border-white rounded-xl border border-solid md:py-3 py-2 md:px-5 px-4 text-base text-white hover:border-[#E9901A] hover:bg-[e9901a] transition-all">
                                       Trade
                                   </button>
                               </td>
@@ -2375,12 +2374,12 @@
                                   <div class="flex gap-3 text-base Gilroy-medium text-white items-center">
                                       44%
                                       <div class="w-full h-[5px] rounded-[5px] bg-[#dfe0e4]">
-                                          <div class="w-[44%] h-full rounded-[5px] bg-[#e9901a]"></div>
+                                          <div class="w-[44%] h-full rounded-[5px] bg-btnSecondary"></div>
                                       </div>
                                   </div>
                               </td>
                               <td class="py-2.5 px-6">
-                                  <button type="button" class="border-white rounded-xl border border-solid md:py-3 py-2 md:px-5 px-4 text-base text-white hover:border-[#e9901a] hover:bg-[e9901a] transition-all">
+                                  <button type="button" class="border-white rounded-xl border border-solid md:py-3 py-2 md:px-5 px-4 text-base text-white hover:border-[#E9901A] hover:bg-[e9901a] transition-all">
                                       Trade
                                   </button>
                               </td>
@@ -2418,12 +2417,12 @@
                                   <div class="flex gap-3 text-base Gilroy-medium text-white items-center">
                                       44%
                                       <div class="w-full h-[5px] rounded-[5px] bg-[#dfe0e4]">
-                                          <div class="w-[44%] h-full rounded-[5px] bg-[#e9901a]"></div>
+                                          <div class="w-[44%] h-full rounded-[5px] bg-btnSecondary"></div>
                                       </div>
                                   </div>
                               </td>
                               <td class="py-2.5 px-6">
-                                  <button type="button" class="border-white rounded-xl border border-solid md:py-3 py-2 md:px-5 px-4 text-base text-white hover:border-[#e9901a] hover:bg-[e9901a] transition-all">
+                                  <button type="button" class="border-white rounded-xl border border-solid md:py-3 py-2 md:px-5 px-4 text-base text-white hover:border-[#E9901A] hover:bg-[e9901a] transition-all">
                                       Trade
                                   </button>
                               </td>
@@ -2461,12 +2460,12 @@
                                   <div class="flex gap-3 text-base Gilroy-medium text-white items-center">
                                       85%
                                       <div class="w-full h-[5px] rounded-[5px] bg-[#dfe0e4]">
-                                          <div class="w-[85%] h-full rounded-[5px] bg-[#e9901a]"></div>
+                                          <div class="w-[85%] h-full rounded-[5px] bg-btnSecondary"></div>
                                       </div>
                                   </div>
                               </td>
                               <td class="py-2.5 px-6">
-                                  <button type="button" class="border-white rounded-xl border border-solid md:py-3 py-2 md:px-5 px-4 text-base text-white hover:border-[#e9901a] hover:bg-[e9901a] transition-all">
+                                  <button type="button" class="border-white rounded-xl border border-solid md:py-3 py-2 md:px-5 px-4 text-base text-white hover:border-[#E9901A] hover:bg-[e9901a] transition-all">
                                       Trade
                                   </button>
                               </td>
@@ -2504,12 +2503,12 @@
                                   <div class="flex gap-3 text-base Gilroy-medium text-white items-center">
                                       74%
                                       <div class="w-full h-[5px] rounded-[5px] bg-[#dfe0e4]">
-                                          <div class="w-[74%] h-full rounded-[5px] bg-[#e9901a]"></div>
+                                          <div class="w-[74%] h-full rounded-[5px] bg-btnSecondary"></div>
                                       </div>
                                   </div>
                               </td>
                               <td class="py-2.5 px-6">
-                                  <button type="button" class="border-white rounded-xl border border-solid md:py-3 py-2 md:px-5 px-4 text-base text-white hover:border-[#e9901a] hover:bg-[e9901a] transition-all">
+                                  <button type="button" class="border-white rounded-xl border border-solid md:py-3 py-2 md:px-5 px-4 text-base text-white hover:border-[#E9901A] hover:bg-[e9901a] transition-all">
                                       Trade
                                   </button>
                               </td>
@@ -2547,12 +2546,12 @@
                                   <div class="flex gap-3 text-base Gilroy-medium text-white items-center">
                                       74%
                                       <div class="w-full h-[5px] rounded-[5px] bg-[#dfe0e4]">
-                                          <div class="w-[74%] h-full rounded-[5px] bg-[#e9901a]"></div>
+                                          <div class="w-[74%] h-full rounded-[5px] bg-btnSecondary"></div>
                                       </div>
                                   </div>
                               </td>
                               <td class="py-2.5 px-6">
-                                  <button type="button" class="border-white rounded-xl border border-solid md:py-3 py-2 md:px-5 px-4 text-base text-white hover:border-[#e9901a] hover:bg-[e9901a] transition-all">
+                                  <button type="button" class="border-white rounded-xl border border-solid md:py-3 py-2 md:px-5 px-4 text-base text-white hover:border-[#E9901A] hover:bg-[e9901a] transition-all">
                                       Trade
                                   </button>
                               </td>
@@ -2590,12 +2589,12 @@
                                   <div class="flex gap-3 text-base Gilroy-medium text-white items-center">
                                       50%
                                       <div class="w-full h-[5px] rounded-[5px] bg-[#dfe0e4]">
-                                          <div class="w-6/12 h-full rounded-[5px] bg-[#e9901a]"></div>
+                                          <div class="w-6/12 h-full rounded-[5px] bg-btnSecondary"></div>
                                       </div>
                                   </div>
                               </td>
                               <td class="py-2.5 px-6">
-                                  <button type="button" class="border-white rounded-xl border border-solid md:py-3 py-2 md:px-5 px-4 text-base text-white hover:border-[#e9901a] hover:bg-[e9901a] transition-all">
+                                  <button type="button" class="border-white rounded-xl border border-solid md:py-3 py-2 md:px-5 px-4 text-base text-white hover:border-[#E9901A] hover:bg-[e9901a] transition-all">
                                       Trade
                                   </button>
                               </td>
@@ -2608,16 +2607,16 @@
                     Showing 1 to 12 of 100 entries
                   </p>
                   <ul class="flex items-center  gap-2">
-                    <li class="md:w-10 md:h-10 w-8 h-8 flex items-center justify-center rounded-lg border border-white  bg-transparent hover:bg-[#e9901a] transition-all">
+                    <li class="md:w-10 md:h-10 w-8 h-8 flex items-center justify-center rounded-lg border border-white  bg-transparent hover:bg-[#E9901A] transition-all">
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-6 h-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
                       </svg>
                     </li>
-                    <li class="w-8 h-8 md:w-10 md:h-10 flex text-base text-white Gilroy-medium items-center justify-center rounded-lg border border-white  hover:bg-transparent bg-[#e9901a] transition-all pt-0.5"> 1 </li>
-                    <li class="w-8 h-8 md:w-10 md:h-10 flex text-base text-white Gilroy-medium items-center justify-center rounded-lg border border-white  bg-transparent hover:bg-[#e9901a] transition-all pt-0.5"> 2 </li>
-                    <li class="w-8 h-8 md:w-10 md:h-10 flex text-base text-white Gilroy-medium items-center justify-center rounded-lg border border-white  bg-transparent hover:bg-[#e9901a] transition-all pt-0.5"> ... </li>
-                    <li class="w-8 h-8 md:w-10 md:h-10 flex text-base text-white Gilroy-medium items-center justify-center rounded-lg border border-white  bg-transparent hover:bg-[#e9901a] transition-all pt-0.5"> 5 </li>
-                    <li class="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center rounded-lg border border-white  hover:bg-transparent bg-[#e9901a] transition-all">
+                    <li class="w-8 h-8 md:w-10 md:h-10 flex text-base text-white Gilroy-medium items-center justify-center rounded-lg border border-white  hover:bg-transparent bg-btnSecondary transition-all pt-0.5"> 1 </li>
+                    <li class="w-8 h-8 md:w-10 md:h-10 flex text-base text-white Gilroy-medium items-center justify-center rounded-lg border border-white  bg-transparent hover:bg-[#E9901A] transition-all pt-0.5"> 2 </li>
+                    <li class="w-8 h-8 md:w-10 md:h-10 flex text-base text-white Gilroy-medium items-center justify-center rounded-lg border border-white  bg-transparent hover:bg-[#E9901A] transition-all pt-0.5"> ... </li>
+                    <li class="w-8 h-8 md:w-10 md:h-10 flex text-base text-white Gilroy-medium items-center justify-center rounded-lg border border-white  bg-transparent hover:bg-[#E9901A] transition-all pt-0.5"> 5 </li>
+                    <li class="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center rounded-lg border border-white  hover:bg-transparent bg-btnSecondary transition-all">
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-6 h-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
                       </svg>                  

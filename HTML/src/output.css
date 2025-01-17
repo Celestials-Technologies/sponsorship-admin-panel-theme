@@ -2953,7 +2953,7 @@ video {
   color: rgb(21 21 21 / var(--tw-text-opacity, 1));
 }
 
-.text-btnSecondary {
+.text-[#E9901A] {
   --tw-text-opacity: 1;
   color: rgb(233 144 26 / var(--tw-text-opacity, 1));
 }

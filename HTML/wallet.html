@@ -17,7 +17,7 @@
       class="flex gap-[25px] pt-[25px] pb-[53px] px-6 min-h-screen bg-bgPrimary"
     >
       <div
-        class="w-[260px] rounded-[20px] pt-[46px] pb-5 flex-col justify-between bg-sideBarBg border border-[#ffffff33] hidden lg:flex h-[92vh] sticky top-6 tableScroll overflow-y-auto"
+        class="w-[260px] rounded-[20px] pt-[46px] pb-5 flex-col justify-between bg-sideBarBg border border-translucentWhite hidden lg:flex h-[92vh] sticky top-6 tableScroll overflow-y-auto"
       >
         <div class="px-2.5">
           <h1 class="text-[28px] leading-8 text-center Gilroy-extrabold">
@@ -53,7 +53,9 @@
                     />
                   </svg>
                 </div>
-                <p class="text-base leading-5 text-white pt-0.5 Gilroy-semibold">
+                <p
+                  class="text-base leading-5 text-white pt-0.5 Gilroy-semibold"
+                >
                   Dashboards
                 </p>
               </li>
@@ -148,7 +150,7 @@
                 </p>
               </li>
             </a>
-            <a href="./account.html">
+            <a href="./details.html">
               <li
                 class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-2.5 cursor-pointer hover:bg-[#E9901A] transition-all"
               >
@@ -163,14 +165,7 @@
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M12 15C8.8299 15 6.01077 16.5306 4.21597 18.906C3.82968 19.4172 3.63653 19.6728 3.64285 20.0183C3.64773 20.2852 3.81533 20.6219 4.02534 20.7867C4.29716 21 4.67384 21 5.4272 21H18.5727C19.3261 21 19.7028 21 19.9746 20.7867C20.1846 20.6219 20.3522 20.2852 20.3571 20.0183C20.3634 19.6728 20.1703 19.4172 19.784 18.906C17.9892 16.5306 15.17 15 12 15Z"
-                      stroke="white"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M12 12C14.4853 12 16.5 9.98528 16.5 7.5C16.5 5.01472 14.4853 3 12 3C9.51469 3 7.49997 5.01472 7.49997 7.5C7.49997 9.98528 9.51469 12 12 12Z"
+                      d="M14 11H8M10 15H8M16 7H8M20 10.5V6.8C20 5.11984 20 4.27976 19.673 3.63803C19.3854 3.07354 18.9265 2.6146 18.362 2.32698C17.7202 2 16.8802 2 15.2 2H8.8C7.11984 2 6.27976 2 5.63803 2.32698C5.07354 2.6146 4.6146 3.07354 4.32698 3.63803C4 4.27976 4 5.11984 4 6.8V17.2C4 18.8802 4 19.7202 4.32698 20.362C4.6146 20.9265 5.07354 21.3854 5.63803 21.673C6.27976 22 7.11984 22 8.8 22H11.5M22 22L20.5 20.5M21.5 18C21.5 19.933 19.933 21.5 18 21.5C16.067 21.5 14.5 19.933 14.5 18C14.5 16.067 16.067 14.5 18 14.5C19.933 14.5 21.5 16.067 21.5 18Z"
                       stroke="white"
                       stroke-width="2"
                       stroke-linecap="round"
@@ -181,11 +176,29 @@
                 <p
                   class="text-base leading-5 text-white pt-0.5 h-auto Gilroy-semibold"
                 >
-                  Account
+                  Asset Details
                 </p>
               </li>
             </a>
-            
+            <a href="./new-asset.html">
+              <li
+                class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-2.5 cursor-pointer hover:bg-[#E9901A] transition-all"
+              >
+                <div
+                  class="w-[34px] h-[34px] rounded-lg flex justify-center items-center"
+                >
+                <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M20 10.5V6.8C20 5.11984 20 4.27976 19.673 3.63803C19.3854 3.07354 18.9265 2.6146 18.362 2.32698C17.7202 2 16.8802 2 15.2 2H8.8C7.11984 2 6.27976 2 5.63803 2.32698C5.07354 2.6146 4.6146 3.07354 4.32698 3.63803C4 4.27976 4 5.11984 4 6.8V17.2C4 18.8802 4 19.7202 4.32698 20.362C4.6146 20.9265 5.07354 21.3854 5.63803 21.673C6.27976 22 7.11984 22 8.8 22H12M14 11H8M10 15H8M16 7H8M18 21V15M15 18H21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                <p
+                  class="text-base leading-5 text-white pt-0.5 h-auto Gilroy-semibold"
+                >
+                New Asset
+                </p>
+              </li>
+            </a>
+
             <!-- <li class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative">
                             <div class="w-[34px] h-[34px] rounded-lg flex justify-center items-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="19" height="18" viewBox="0 0 19 18" fill="none">
@@ -226,7 +239,7 @@
       </div>
       <div class="w-full lg:w-[calc(100%-250px)]">
         <div
-          class="w-full py-[9px] md:pr-[18px] md:px-[33px] rounded-[15px] flex justify-between items-center gap-2.5 bg-sideBarBg border border-[#ffffff33] px-3 z-10 sticky top-6 backdrop-blur-sm"
+          class="w-full py-[9px] md:pr-[18px] md:px-[33px] rounded-[15px] flex justify-between items-center gap-2.5 bg-sideBarBg border border-translucentWhite px-3 z-10 sticky top-6 backdrop-blur-sm"
         >
           <div class="flex items-center gap-5 justify-between w-full">
             <div class="flex gap-3 items-center">
@@ -245,7 +258,7 @@
                 </svg>
               </button>
               <div
-                class="bg-sideBarBg border border-[#ffffff33] py-1.5 pl-5 pr-2 gap-4 rounded-full flex items-center hidden md:flex"
+                class="bg-sideBarBg border border-translucentWhite py-1.5 pl-5 pr-2 gap-4 rounded-full flex items-center hidden md:flex"
               >
                 <input
                   type="text"
@@ -313,7 +326,7 @@
                   </svg>
                 </div>
                 <div
-                  class="p-1 text-white text-base capitalize absolute top-11 bg-[#E9901A] rounded layoutText"
+                  class="p-1 text-white text-base capitalize absolute top-11 bg-btnSecondary rounded layoutText"
                 >
                   Layout
                 </div>
@@ -322,12 +335,12 @@
             <div class="gap-3 flex items-center">
               <button
                 type="button"
-                class="py-1 pt-1.5 px-2 bg-[#E9901A] text-base text-white border border-solid border-white hover:border-[#E9901A] rounded-lg cursor-pointer hover:bg-white transition-all duration-[0.5s] hover:text-[#E9901A] Gilroy-normal"
+                class="py-1 pt-1.5 px-2 bg-btnSecondary text-base text-white border border-solid border-white hover:border-[#E9901A] rounded-lg cursor-pointer hover:bg-white transition-all duration-[0.5s] hover:text-[#E9901A] Gilroy-normal"
               >
                 Connect
               </button>
               <div
-                class="bg-sideBarBg md:border border-[#ffffff33] md:py-1.5 p-0 md:pl-5 md:pr-2 gap-4 rounded-full flex items-center md:hidden"
+                class="bg-sideBarBg md:border border-translucentWhite md:py-1.5 p-0 md:pl-5 md:pr-2 gap-4 rounded-full flex items-center md:hidden"
               >
                 <input
                   type="text"
@@ -422,7 +435,7 @@
             <div class="flex items-center gap-3">
               <button
                 type="button"
-                class="bg-[#E9901A] px-5 py-2 md:px-8 md:py-4 text-base text-white rounded-lg flex items-center justify-center gap-2 Gilroy-semibold"
+                class="bg-btnSecondary px-5 py-2 md:px-8 md:py-4 text-base text-white rounded-lg flex items-center justify-center gap-2 Gilroy-semibold"
               >
                 <svg
                   width="24"
@@ -443,7 +456,7 @@
               </button>
               <button
                 type="button"
-                class="bg-[#E9901A] py-2 pt-2.5 px-[18px] md:px-8 md:py-4 md:pt-[18px] text-base text-white rounded-lg flex items-center justify-center Gilroy-semibold"
+                class="bg-btnSecondary py-2 pt-2.5 px-[18px] md:px-8 md:py-4 md:pt-[18px] text-base text-white rounded-lg flex items-center justify-center Gilroy-semibold"
               >
                 Trade
               </button>
@@ -473,7 +486,7 @@
             </h3>
             <button
               type="button"
-              class="xl:px-8 md:px-5 px-4 xl:py-4 md:py-3 py-2 border border-solid border-[#e9901a] hover:border-white hover:bg-[#e9901a] transition-all bg-transparent rounded-xl walletTopUp flex md:gap-3 gap-2"
+              class="xl:px-8 md:px-5 px-4 xl:py-4 md:py-3 py-2 border border-solid border-[#E9901A] hover:border-white hover:bg-[#E9901A] transition-all bg-transparent rounded-xl walletTopUp flex md:gap-3 gap-2"
             >
               <svg
                 width="24"
@@ -499,7 +512,7 @@
             class="sm:w-[48%] xl:w-[31.333%] 2xl:w-full w-full max-w-full h-full"
           >
             <div
-              class="py-6 px-3.5 border border-[#ffffff33] w-full max-w-full bg-sideBarBg h-full rounded-xl"
+              class="py-6 px-3.5 border border-translucentWhite w-full max-w-full bg-sideBarBg h-full rounded-xl"
             >
               <div
                 class="flex border-b border-dashed border-white pb-4 mb-4 items-center gap-3 w-full"
@@ -563,7 +576,7 @@
                     <text
                       x="18"
                       y="20.35"
-                      class="Gilroy-semibold fill-[#e9901a] circleText"
+                      class="Gilroy-semibold fill-[#E9901A] circleText"
                     >
                       33.5%
                     </text>
@@ -576,7 +589,7 @@
             class="sm:w-[48%] xl:w-[31.333%] 2xl:w-full w-full max-w-full h-full"
           >
             <div
-              class="py-6 px-3.5 border border-[#ffffff33] w-full max-w-full bg-sideBarBg h-full rounded-xl"
+              class="py-6 px-3.5 border border-translucentWhite w-full max-w-full bg-sideBarBg h-full rounded-xl"
             >
               <div
                 class="flex border-b border-dashed border-white pb-4 mb-4 items-center gap-3 w-full"
@@ -640,7 +653,7 @@
                     <text
                       x="18"
                       y="20.35"
-                      class="Gilroy-semibold fill-[#e9901a] circleText"
+                      class="Gilroy-semibold fill-[#E9901A] circleText"
                     >
                       33.5%
                     </text>
@@ -653,7 +666,7 @@
             class="sm:w-[48%] xl:w-[31.333%] 2xl:w-full w-full max-w-full h-full"
           >
             <div
-              class="py-6 px-3.5 border border-[#ffffff33] w-full max-w-full bg-sideBarBg h-full rounded-xl"
+              class="py-6 px-3.5 border border-translucentWhite w-full max-w-full bg-sideBarBg h-full rounded-xl"
             >
               <div
                 class="flex border-b border-dashed border-white pb-4 mb-4 items-center gap-3 w-full"
@@ -717,7 +730,7 @@
                     <text
                       x="18"
                       y="20.35"
-                      class="Gilroy-semibold fill-[#e9901a] circleText"
+                      class="Gilroy-semibold fill-[#E9901A] circleText"
                     >
                       33.5%
                     </text>
@@ -773,7 +786,7 @@
 
                   <div class="gap-3 flex items-center flex-wrap">
                     <div
-                      class="bg-sideBarBg border border-[#ffffff33] py-1.5 pl-5 pr-2 gap-4 rounded-full flex items-center"
+                      class="bg-sideBarBg border border-translucentWhite py-1.5 pl-5 pr-2 gap-4 rounded-full flex items-center"
                     >
                       <input
                         type="text"
@@ -1266,7 +1279,7 @@
                 </table>
               </div>
               <a href="#" class="flex items-center mt-6 gap-2">
-                <p class="text-base text-[#e9901a] Gilroy-medium">See All</p>
+                <p class="text-base text-[#E9901A] Gilroy-medium">See All</p>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -1304,10 +1317,10 @@
                   class="w-full h-auto"
                 />
               </div>
-              <div class="md:mt-10 mt-7 flex md:gap-6 gap-3">
+              <div class="md:mt-10 mt-7 flex gap-3">
                 <button
                   type="button"
-                  class="px-4 md:px-5 md:py-4 py-3 flex justify-center items-center md:gap-3 gap-2 border border-solid border-[#e9901a] transition-all hover:border-white hover:bg-[#e9901a] rounded-xl walletTopUp"
+                  class="px-4 py-3 flex justify-center items-center md:gap-3 gap-2 border border-solid border-[#E9901A] transition-all hover:border-white hover:bg-[#E9901A] rounded-xl walletTopUp"
                 >
                   <svg
                     width="20"
@@ -1324,11 +1337,15 @@
                       stroke-linejoin="round"
                     />
                   </svg>
-                  <p class="text-white text-base Gilroy-medium">New Card</p>
+                  <p
+                    class="text-white text-base Gilroy-medium whitespace-nowrap"
+                  >
+                    New Card
+                  </p>
                 </button>
                 <button
                   type="button"
-                  class="px-4 md:px-5 md:py-4 py-3 flex justify-center items-center md:gap-3 gap-2 border border-solid border-[#e9901a] transition-all hover:border-white hover:bg-[#e9901a] rounded-xl walletTopUp"
+                  class="px-4 md:px-5 md:py-4 py-3 flex justify-center items-center md:gap-3 gap-2 border border-solid border-[#E9901A] transition-all hover:border-white hover:bg-[#E9901A] rounded-xl walletTopUp"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -1504,7 +1521,7 @@
                 </table>
               </div>
               <a href="#" class="flex items-center mt-6 gap-2">
-                <p class="text-base text-[#e9901a] Gilroy-medium">See All</p>
+                <p class="text-base text-[#E9901A] Gilroy-medium">See All</p>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
