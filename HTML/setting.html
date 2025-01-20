@@ -168,7 +168,7 @@
               </a>
               <a href="./new-asset.html">
                 <li
-                  class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-2.5 cursor-pointer active"
+                  class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-2.5 cursor-pointer hover:bg-[#E9901A] transition-all"
                 >
                   <div
                     class="w-[34px] h-[34px] rounded-lg flex justify-center items-center"
@@ -184,10 +184,10 @@
                   </p>
                 </li>
               </a>
-              <div class="accountContainer">
+              <div>
                 <div class="accountMain">
                     <li
-                        class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-2.5 cursor-pointer hover:bg-[#E9901A] transition-all"
+                        class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-2.5 cursor-pointer active"
                     >
                         <div class="w-[34px] h-[34px] rounded-lg flex justify-center items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="size-6">
@@ -199,15 +199,24 @@
                         </p>
                     </li>
                 </div>
-                <div class="pl-8 accountList">
+                <div class="pl-8">
                     <div class="border-l border-solid border-[#E9901A]">
                         <ul>
                             <a href="./setting.html">
                                 <li
-                                    class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-0 cursor-pointer !bg-transparent transition-all"
+                                    class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center cursor-pointer transition-all"
+                                >
+                                    <p class="text-base leading-5 text-[#E9901A] transition-all pt-0.5 h-auto Gilroy-semibold">
+                                        Setting
+                                    </p>
+                                </li>
+                            </a>
+                            <a href="./password.html">
+                                <li
+                                    class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center cursor-pointer transition-all"
                                 >
                                     <p class="text-base leading-5 text-white hover:text-[#E9901A] transition-all pt-0.5 h-auto Gilroy-semibold">
-                                        Setting
+                                        Password
                                     </p>
                                 </li>
                             </a>
@@ -421,111 +430,231 @@
 
         <div class="pt-12">
           <div class="flex flex-wrap gap-3 items-center justify-between mb-5">
-            <p class="text-3xl lg:text-[40px] text-white Gilroy-semibold">Add a New Asset</p>
-            <div class="flex items-center gap-3">
-              <button
-                type="button"
-                class="bg-btnSecondary px-5 py-2 md:px-8 md:py-4 text-base text-white rounded-lg flex items-center justify-center gap-2 Gilroy-semibold"
-              >
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M12 8V16M8 12H16M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-                <p class="pt-0.5">Liquidity</p>
-              </button>
-              <button
-                type="button"
-                class="bg-btnSecondary py-2 pt-2.5 px-[18px] md:px-8 md:py-4 md:pt-[18px] text-base text-white rounded-lg flex items-center justify-center Gilroy-semibold"
-              >
-                Trade
-              </button>
-            </div>
+            <p class="text-3xl lg:text-[40px] text-white Gilroy-semibold">Setting</p>
           </div>
-          <div class="p-6 md:pt-6 md:pr-[31px] md:pb-[22px] md:pl-[26px] border border-white rounded-[15px] bg-gradient">
-            <div class="flex border-b border-dashed border-white pb-4 mb-4 items-center gap-3 w-full">
-                <p class="text-white Gilroy-semibold pt-0.5 text-xl sm:text-2xl">
-                    Add a New Asset
-                </p>
-            </div>
-            <form class="flex flex-col gap-5">
-                <p class="text-base text-white Gilroy-normal">
-                    Icon
-                </p>
-                <div class="flex md:gap-6 gap-5 flex-wrap items-center">
-                    <div class="p-2 border border-solid border-white rounded-xl w-[72px] h-[72px]">
-                        <img src="./src/images/bit_xxxl.png" alt="Bitcoin" class="w-full h-auto"/>
-                    </div>
-                    <button type="button" class="bg-btnSecondary transition-all h-fit px-6 py-3 pt-3.5 text-base text-white Gilroy-normal hover:bg-transparent border border-solid rounded-lg border-[#E9901A] hover:border-white">
-                        Upload
-                    </button>
-                    <button type="button" class="bg-transparent transition-all h-fit px-6 py-3 pt-3.5 text-base text-white Gilroy-normal hover:bg-[#E9901A] border border-solid rounded-lg border-white hover:border-[#E9901A]">
-                        Remove
-                    </button>
+          <div class="flex flex-wrap gap-y-6 gap-5">
+            <div class="p-6 md:pt-6 md:pr-[31px] w-full xl:w-[48%] md:pb-[22px] md:pl-[26px] border border-white rounded-[15px] bg-gradient">
+                <div class="flex border-b border-dashed border-white pb-4 mb-4 items-center gap-3">
+                    <h3 class="text-white Gilroy-semibold text-xl sm:text-2xl">
+                        Account Settings
+                    </h3>
                 </div>
-                <div class="flex flex-col">
-                    <label for="fname" class="text-base text-white Gilroy-normal">Asset Name</label>
-                    <input type="text"  id="fname" class="px-6 rounded-xl py-3 pt-3.5 mt-5 bg-transparent w-full border border-solid border-white outline-none text-base text-white Gilroy-normal" placeholder="Enter Name"/>
-                </div>
-                <div class="flex flex-wrap md:flex-nowrap gap-5 items-center">
-                    <div class="flex flex-col w-full md:w-3/6">
-                        <label class="text-base text-white Gilroy-normal">Select Category</label>
-                        <select class="px-6 rounded-xl py-3 pt-3.5 mt-5 bg-transparent w-full border border-solid border-white outline-none text-base text-white Gilroy-normal">
-                            <option value="option1">Bitcoin</option>
-                            <option value="option2">Cardano</option>
-                        </select>
+                <form class="flex flex-col md:gap-6 gap-5">
+                    <p class="md:text-lg text-base Gilroy-normal text-white">
+                        Profile photo
+                    </p>
+                    <div class="flex flex-wrap items-center lg:gap-6 gap-5 border-b border-dashed border-white pb-6">
+                        <img src="./src/images/upload.png" alt="Profile Photo"/>
+                        <button type="button" class="px-6 py-3.5 rounded-xl text-base text-white Gilroy-medium bg-[#E9901A] border border-solid border-[#E9901A] hover:text-[#E9901A] hover:bg-transparent transition-all">
+                            Upload Image
+                        </button>
+                        <button type="button" class="px-6 py-3.5 rounded-xl text-base Gilroy-medium bg-transparent border border-solid border-[#E9901A] text-[#E9901A] hover:text-white hover:bg-[#E9901A] transition-all">
+                            Cancel
+                        </button>
                     </div>
-                    <div class="flex flex-col w-full md:w-3/6">
-                        <label class="text-base text-white Gilroy-normal">Convert Currency</label>
-                        <select class="px-6 rounded-xl py-3 pt-3.5 mt-5 bg-transparent w-full border border-solid border-white outline-none text-base text-white Gilroy-normal">
-                            <option value="option1">Select Currency</option>
-                        </select>
+                    <div class="flex flex-wrap md:flex-nowrap gap-5 items-center">
+                        <div class="w-full md:w-[48%] flex flex-col">
+                            <label class="md:text-lg text-base Gilroy-normal text-white sm:mb-4 mb-2 Gilroy-medium">
+                                First Name
+                            </label>
+                            <input type="text" class="px-8 py-3 text-base border border-solid border-white outline-none rounded-xl bg-transparent text-white"/>
+                        </div>
+                        <div class="w-full md:w-[48%] flex flex-col">
+                            <label class="md:text-lg text-base Gilroy-normal text-white sm:mb-4 mb-2 Gilroy-medium">
+                                Last Name
+                            </label>
+                            <input type="text" class="px-8 py-3 text-base border border-solid border-white outline-none rounded-xl bg-transparent text-white"/>
+                        </div>
                     </div>
-                </div>
-                <div class="flex flex-col">
-                    <label class="text-base text-white Gilroy-normal">Amount</label>
-                    <input type="number" class="px-6 rounded-xl py-3 pt-3.5 mt-5 bg-transparent w-full border border-solid border-white outline-none text-base text-white Gilroy-normal" placeholder="Enter Amount"/>
-                </div>
-                <div class="flex flex-wrap md:flex-nowrap gap-5 items-center">
-                    <div class="flex flex-col w-full md:w-3/6">
-                        <label for="fname" class="text-base text-white Gilroy-normal">Required Action</label>
-                        <input type="text"  id="fname" class="px-6 rounded-xl py-3 pt-3.5 mt-5 bg-transparent w-full border border-solid border-white outline-none text-base text-white Gilroy-normal" placeholder="Enter Required Action"/>
-                    </div>
-                    <div class="flex flex-col w-full md:w-3/6">
-                        <label class="text-base text-white Gilroy-normal">Status</label>
-                        <select class="px-6 rounded-xl py-3 pt-3.5 mt-5 bg-transparent w-full border border-solid border-white outline-none text-base text-white Gilroy-normal">
-                            <option value="option1">Active</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="flex gap-5 items-center">
-                    <p class="text-lg text-white Gilroy-normal">Make the asset public</p>
                     <div>
-                        <label class="switch">
-                            <input type="checkbox" checked>
-                            <span class="slider round"></span>
+                        <label class="md:text-lg w-full text-base Gilroy-normal text-white Gilroy-medium">
+                            Gmail
+                        </label>
+                        <input type="email" class="px-8 py-3 mt-2 sm:mt-4 text-base border w-full border-solid border-white outline-none rounded-xl bg-transparent text-white"/>
+                    </div>
+                    <div>
+                        <label class="md:text-lg w-full text-base Gilroy-normal text-white Gilroy-medium">
+                            Phone &nbsp;<span class="text-[#979ca8] text-sm">(Optional)</span>
+                        </label>
+                        <input type="tel" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" class="px-8 py-3 mt-2 sm:mt-4 text-base border w-full border-solid border-white outline-none rounded-xl bg-transparent text-white"/>
+                    </div>
+                    <div>
+                        <label class="md:text-lg w-full text-base Gilroy-normal text-white Gilroy-medium">
+                            Gender
+                        </label>
+                        <div class="flex items-center lg:gap-6 gap-5 mt-2 sm:mt-4">
+                            <label class=" radioButtonContainer text-base text-white">Male
+                                <input type="radio" checked="checked" name="radio">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="radioButtonContainer text-base text-white">Female
+                                <input type="radio" name="radio">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="radioButtonContainer text-base text-white">Others
+                                <input type="radio" name="radio">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        
+                    </div>
+                    <div>
+                        <label class="md:text-lg w-full text-base Gilroy-normal text-white Gilroy-medium">
+                            Tagline :
+                        </label>
+                        <div class="border border-solid border-white rounded-xl mt-2 sm:mt-4">
+                            <div class="p-2 border-b border-solid border-white flex items-center">
+                                <select class="text-base text-white outline-none Gilroy-normal bg-transparent">
+                                    <option value="1">Normal</option>
+                                    <option value="2">Heading 1</option>
+                                </select>
+                                <div class="px-1.5">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M6 4V20M9.5 4H15.5C17.7091 4 19.5 5.79086 19.5 8C19.5 10.2091 17.7091 12 15.5 12H9.5H16.5C18.7091 12 20.5 13.7909 20.5 16C20.5 18.2091 18.7091 20 16.5 20H9.5M9.5 4V20M9.5 4H4M9.5 20H4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="px-1.5">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M19 4H10M14 20H5M15 4L9 20" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="px-1.5">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M18 4V11C18 14.3137 15.3137 17 12 17C8.68629 17 6 14.3137 6 11V4M4 21H20" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="px-1.5">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M21.1525 10.8995L12.1369 19.9151C10.0866 21.9653 6.7625 21.9653 4.71225 19.9151C2.662 17.8648 2.662 14.5407 4.71225 12.4904L13.7279 3.47483C15.0947 2.108 17.3108 2.108 18.6776 3.47483C20.0444 4.84167 20.0444 7.05775 18.6776 8.42458L10.0156 17.0866C9.33213 17.7701 8.22409 17.7701 7.54068 17.0866C6.85726 16.4032 6.85726 15.2952 7.54068 14.6118L15.1421 7.01037" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="px-1.5">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M16 10H3M20 6H3M20 14H3M16 18H3" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <textarea class="py-3 px-3.5 h-[200px] w-full bg-transparent outline-none text-white"></textarea>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="radioButtonContainer text-base text-white Gilroy-normal">I agree to the privacy & policy
+                            <input type="checkbox" checked="checked">
+                            <span class="radioTickcheckmark"></span>
+                          </label>
+                    </div>
+                    <div>
+                        <label class="radioButtonContainer text-base text-white Gilroy-normal">I agree with all terms & conditions
+                            <input type="checkbox" checked="checked">
+                            <span class="radioTickcheckmark"></span>
+                          </label>
+                    </div>
+                    <div class="gap-5 lg:gap-6 flex flex-wrap items-center pt-4">
+                        <button type="button" class="px-6 py-3 rounded-xl bg-[#E9901A] text-base text-white hover:text-[#E9901A] border border-solid border-[#E9901A] Gilroy-medium hover:bg-transparent transition-all">
+                            Save  Change
+                        </button>
+                        <button type="button" class="px-6 py-3 rounded-xl bg-transparent hover:bg-[#E9901A] text-base text-white text-[#E9901A] hover:text-white border border-solid border-[#E9901A] Gilroy-medium transition-all">
+                            Cancel
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="w-full xl:w-[48%] flex flex-col gap-y-6">
+                <div class="p-6 md:pt-6 md:pr-[31px] md:pb-[22px] md:pl-[26px] border border-white rounded-[15px] bg-gradient">
+                    <div class="flex border-b border-dashed border-white pb-4 mb-4 items-center gap-3">
+                        <h3 class="text-white Gilroy-semibold text-xl sm:text-2xl">
+                            Address
+                        </h3>
+                    </div>
+                    <form class="flex flex-col md:gap-6 gap-5">
+                        <div>
+                            <label class="md:text-lg w-full text-base Gilroy-normal text-white Gilroy-medium">
+                                Location
+                            </label>
+                            <select class="px-6 py-3 mt-4 sm:mt-2 w-full text-base border border-solid border-white outline-none rounded-xl bg-transparent text-white bg-transparent">
+                                <option value="option1">Select Country</option>
+                                <option value="option2">Option 2</option>
+                            </select>
+                        </div>
+                        <div class="flex flex-wrap md:flex-nowrap gap-5 items-center">
+                            <div class="w-full md:w-[48%] flex flex-col">
+                                <label class="md:text-lg text-base Gilroy-normal text-white sm:mb-4 mb-2 Gilroy-medium">
+                                    Address 1
+                                </label>
+                                <input type="text" placeholder="Enter Address" class="px-6 py-3 text-base border border-solid border-white outline-none rounded-xl bg-transparent text-white"/>
+                            </div>
+                            <div class="w-full md:w-[48%] flex flex-col">
+                                <label class="md:text-lg text-base Gilroy-normal text-white sm:mb-4 mb-2 Gilroy-medium">
+                                    Address 2
+                                </label>
+                                <input type="text" placeholder="Enter Address" class="px-6 py-3 text-base border border-solid border-white outline-none rounded-xl bg-transparent text-white"/>
+                            </div>
+                            
+                        </div>
+                        <div>
+                            <label class="md:text-lg w-full text-base Gilroy-normal text-white Gilroy-medium">
+                                Zip Code
+                            </label>
+                            <input type="number" placeholder="Enter Code" class="w-full px-6 py-3 text-base border border-solid border-white outline-none rounded-xl bg-transparent text-white mt-2 sm:mt-4"/>
+                        </div>
+                        <div class="gap-5 lg:gap-6 flex flex-wrap items-center pt-4">
+                            <button type="button" class="px-6 py-3 rounded-xl bg-[#E9901A] text-base text-white hover:text-[#E9901A] border border-solid border-[#E9901A] Gilroy-medium hover:bg-transparent transition-all">
+                                Save  Change
+                            </button>
+                            <button type="button" class="px-6 py-3 rounded-xl bg-transparent hover:bg-[#E9901A] text-base text-white text-[#E9901A] hover:text-white border border-solid border-[#E9901A] Gilroy-medium transition-all">
+                                Cancel
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="p-6 md:pt-6 md:pr-[31px] md:pb-[22px] md:pl-[26px] border border-white rounded-[15px] bg-gradient">
+                    <div class="flex border-b border-dashed border-white pb-4 mb-4 items-center gap-3">
+                        <h3 class="text-white Gilroy-semibold text-xl sm:text-2xl">
+                            Privacy
+                        </h3>
+                    </div>
+                    <form class="flex flex-col md:gap-6 gap-5">
+                        <div>
+                            <label class="md:text-lg w-full text-base Gilroy-normal text-white Gilroy-medium">
+                                Who can see your profile photo?
+                            </label>
+                            <select class="px-6 py-3 mt-4 sm:mt-2 w-full text-base border border-solid border-white outline-none rounded-xl bg-transparent text-white bg-transparent">
+                                <option value="option1">Anyone</option>
+                            </select>
+                        </div>
+                        <div class="gap-5 lg:gap-6 flex flex-wrap items-center pt-4">
+                            <button type="button" class="px-6 py-3 rounded-xl bg-[#E9901A] text-base text-white hover:text-[#E9901A] border border-solid border-[#E9901A] Gilroy-medium hover:bg-transparent transition-all">
+                                Save  Change
+                            </button>
+                            <button type="button" class="px-6 py-3 rounded-xl bg-transparent hover:bg-[#E9901A] text-base text-white text-[#E9901A] hover:text-white border border-solid border-[#E9901A] Gilroy-medium transition-all">
+                                Cancel
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="p-6 md:pt-6 md:pr-[31px] md:pb-[22px] md:pl-[26px] border border-white rounded-[15px] bg-gradient">
+                    <div class="flex border-b border-dashed border-white pb-4 mb-4 items-center gap-3">
+                        <h3 class="text-white Gilroy-semibold text-xl sm:text-2xl">
+                            Delete your account
+                        </h3>
+                    </div>
+                    <p class="text-sm text-white Gilroy-normal">
+                        When you delete your account, you lose access to Front account services, and we permanently delete your personal data. You can cancel the deletion for 14 days.
+                    </p>
+                    <div class="mt-5">
+                        <label class="radioButtonContainer text-base text-white Gilroy-normal">Confirm that I want to delete my account.
+                            <input type="checkbox" checked="checked">
+                            <span class="radioTickcheckmark"></span>
                         </label>
                     </div>
+                    <div class="gap-5 lg:gap-6 flex flex-wrap items-center pt-4">
+                    
+                        <button type="button" class="px-6 py-3 rounded-xl bg-transparent hover:bg-[#E9901A] text-base text-white text-[#E9901A] hover:text-white border border-solid border-[#E9901A] Gilroy-medium transition-all">
+                            Delete
+                        </button>
+                    </div>
                 </div>
-                <div class="border-t border-solid border-dashed border-white pt-8 flex gap-5 items-center">
-                    <button type="button" class="px-4 md:px-6 py-3 pt-3.5 bg-btnSecondary text-white border border-[#E9901A] rounded-lg hover:border hover:border-white hover:bg-transparent transition-all">
-                        Add New Asset
-                    </button>
-                    <button type="button" class="px-4 md:px-6 py-3 pt-3.5 bg-btnSecondary text-white rounded-lg border border-[#E9901A] hover:border hover:border-white hover:bg-transparent transition-all">
-                        Cancel
-                    </button>
-                </div>
-            </form>
+            </div>
           </div>
         </div>
     </div>
