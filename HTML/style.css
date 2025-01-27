@@ -333,7 +333,7 @@ input:checked + .slider:before {
 }
 
 .radioButtonContainer:hover input ~ .checkmark {
-  background-color: #e9901a;
+  background-color: transparent;
 }
 
 .radioButtonContainer input:checked ~ .checkmark {
@@ -352,8 +352,8 @@ input:checked + .slider:before {
 
 
 .radioButtonContainer .checkmark:after {
- 	top: 8px;
-	left: 8px;
+ 	top: 7.2px;
+	left: 7px;
 	width: 8px;
 	height: 8px;
 	border-radius: 50%;
