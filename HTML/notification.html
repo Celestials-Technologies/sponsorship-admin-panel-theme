@@ -168,7 +168,7 @@
               </a>
               <a href="./new-asset.html">
                 <li
-                  class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-2.5 cursor-pointer active"
+                  class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-2.5 cursor-pointer hover:bg-[#E9901A] transition-all"
                 >
                   <div
                     class="w-[34px] h-[34px] rounded-lg flex justify-center items-center"
@@ -184,10 +184,10 @@
                   </p>
                 </li>
               </a>
-              <div class="accountContainer">
+              <div>
                 <div class="accountMain">
                     <li
-                        class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-2.5 cursor-pointer hover:bg-[#E9901A] transition-all"
+                        class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-2.5 cursor-pointer active"
                     >
                         <div class="w-[34px] h-[34px] rounded-lg flex justify-center items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="size-6">
@@ -199,12 +199,12 @@
                         </p>
                     </li>
                 </div>
-                <div class="pl-8 accountList">
+                <div class="pl-8">
                     <div class="border-l border-solid border-[#E9901A]">
                         <ul>
                             <a href="./setting.html">
                                 <li
-                                    class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-0 cursor-pointer !bg-transparent transition-all"
+                                    class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center cursor-pointer transition-all"
                                 >
                                     <p class="text-base leading-5 text-white hover:text-[#E9901A] transition-all pt-0.5 h-auto Gilroy-semibold">
                                         Setting
@@ -212,41 +212,41 @@
                                 </li>
                             </a>
                             <a href="./password.html">
-                              <li
-                                  class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-0 cursor-pointer !bg-transparent transition-all"
-                              >
-                                  <p class="text-base leading-5 text-white hover:text-[#E9901A] transition-all pt-0.5 h-auto Gilroy-semibold">
-                                      Password
-                                  </p>
-                              </li>
-                          </a>
-                          <a href="./billing.html">
-                            <li
-                                class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-0 cursor-pointer !bg-transparent transition-all"
-                            >
-                                <p class="text-base leading-5 text-white hover:text-[#E9901A] transition-all pt-0.5 h-auto Gilroy-semibold">
-                                    Billing
-                                </p>
-                            </li>
-                        </a>
-                        <a href="./notification.html">
-                          <li
-                              class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-0 cursor-pointer !bg-transparent transition-all"
-                          >
-                              <p class="text-base leading-5 text-white hover:text-[#E9901A] transition-all pt-0.5 h-auto Gilroy-semibold">
-                                  Notification
-                              </p>
-                          </li>
-                        </a>
-                        <a href="./team.html">
-                          <li
-                              class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-0 cursor-pointer !bg-transparent transition-all"
-                          >
-                              <p class="text-base leading-5 text-white hover:text-[#E9901A] transition-all pt-0.5 h-auto Gilroy-semibold">
-                                  Team
-                              </p>
-                          </li>
-                        </a>
+                                <li
+                                    class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-0 cursor-pointer !bg-transparent transition-all"
+                                >
+                                    <p class="text-base leading-5 text-white hover:text-[#E9901A] transition-all pt-0.5 h-auto Gilroy-semibold">
+                                        Password
+                                    </p>
+                                </li>
+                            </a>
+                            <a href="./billing.html">
+                                <li
+                                    class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-0 cursor-pointer !bg-transparent transition-all"
+                                >
+                                    <p class="text-base leading-5 text-white hover:text-[#E9901A] transition-all pt-0.5 h-auto Gilroy-semibold">
+                                        Billing
+                                    </p>
+                                </li>
+                            </a>
+                            <a href="./notification.html">
+                                <li
+                                    class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center cursor-pointer transition-all"
+                                >
+                                    <p class="text-base leading-5 text-[#E9901A] transition-all pt-0.5 h-auto Gilroy-semibold">
+                                        Notification
+                                    </p>
+                                </li>
+                            </a>
+                            <a href="./team.html">
+                                <li
+                                    class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-0 cursor-pointer !bg-transparent transition-all"
+                                >
+                                    <p class="text-base leading-5 text-white hover:text-[#E9901A] transition-all pt-0.5 h-auto Gilroy-semibold">
+                                        Team
+                                    </p>
+                                </li>
+                            </a>
                         </ul>
                     </div>
                 </div>
@@ -457,112 +457,360 @@
 
         <div class="pt-12">
           <div class="flex flex-wrap gap-3 items-center justify-between mb-5">
-            <p class="text-3xl lg:text-[40px] text-white Gilroy-semibold">Add a New Asset</p>
-            <div class="flex items-center gap-3">
-              <button
-                type="button"
-                class="bg-btnSecondary px-5 py-2 md:px-8 md:py-4 text-base text-white rounded-lg flex items-center justify-center gap-2 Gilroy-semibold"
-              >
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M12 8V16M8 12H16M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-                <p class="pt-0.5">Liquidity</p>
-              </button>
-              <button
-                type="button"
-                class="bg-btnSecondary py-2 pt-2.5 px-[18px] md:px-8 md:py-4 md:pt-[18px] text-base text-white rounded-lg flex items-center justify-center Gilroy-semibold"
-              >
-                Trade
-              </button>
+            <p class="text-3xl lg:text-[40px] text-white Gilroy-semibold">
+                Notifications
+            </p>
+          </div>
+          <div class="flex flex-wrap xl:flex-nowrap gap-y-6 gap-x-5">
+            <div class="md:p-6 p-4 border border-white rounded-[15px] bg-gradient w-full xl:w-1/2">
+                <div class="flex border-b border-dashed border-white pb-4 mb-4 items-center gap-3 justify-between">
+                    <h2 class="text-white Gilroy-semibold pt-0.5 text-xl sm:text-2xl">
+                        Email Notification
+                    </h2>
+                </div>
+                <div class="flex flex-col gap-5 lg:gap-6">
+                    <div class="flex w-full gap-3 flex-wrap justify-between items-center">  
+                        <div class="flex flex-col gap-2">
+                            <h5 class="text-lg Gilroy-medium text-white">
+                                Account Activity
+                            </h5>
+                            <p class="text-sm text-white Gilroy-normal">
+                                Get important notifications about you or activity you've missed
+                            </p>
+                        </div>
+                        <div>
+                          <label class="switch">
+                              <input type="checkbox" checked="">
+                              <span class="slider round"></span>
+                          </label>
+                        </div>
+                    </div>
+                    <div class="flex w-full gap-3 flex-wrap justify-between items-center">  
+                        <div class="flex flex-col gap-2">
+                            <h5 class="text-lg Gilroy-medium text-white">
+                                Communications
+                            </h5>
+                            <p class="text-sm text-white Gilroy-normal">
+                                Get important notifications about you or activity you've missed
+                            </p>
+                        </div>
+                        <div>
+                          <label class="switch">
+                              <input type="checkbox">
+                              <span class="slider round"></span>
+                          </label>
+                        </div>
+                    </div>
+                    <div class="flex w-full gap-3 flex-wrap justify-between items-center">  
+                        <div class="flex flex-col gap-2">
+                            <h5 class="text-lg Gilroy-medium text-white">
+                                Meetups near you
+                            </h5>
+                            <p class="text-sm text-white Gilroy-normal">
+                                Get important notifications about you or activity you've missed
+                            </p>
+                        </div>
+                        <div>
+                          <label class="switch">
+                              <input type="checkbox" checked="">
+                              <span class="slider round"></span>
+                          </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="md:p-6 p-4 border border-white rounded-[15px] bg-gradient w-full xl:w-1/2">
+                <div class="flex border-b border-dashed border-white pb-4 mb-4 items-center gap-3 justify-between">
+                    <h2 class="text-white Gilroy-semibold pt-0.5 text-xl sm:text-2xl">
+                        SMS Notification
+                    </h2>
+                </div>
+                <div class="flex flex-col gap-5 lg:gap-6">
+                    <div class="flex w-full gap-3 flex-wrap justify-between items-center">  
+                        <div class="flex flex-col gap-2">
+                            <h5 class="text-lg Gilroy-medium text-white">
+                                Account Activity
+                            </h5>
+                            <p class="text-sm text-white Gilroy-normal">
+                                Get important notifications about you or activity you've missed
+                            </p>
+                        </div>
+                        <div>
+                          <label class="switch">
+                              <input type="checkbox">
+                              <span class="slider round"></span>
+                          </label>
+                        </div>
+                    </div>
+                    <div class="flex w-full gap-3 flex-wrap justify-between items-center">  
+                        <div class="flex flex-col gap-2">
+                            <h5 class="text-lg Gilroy-medium text-white">
+                                Communications
+                            </h5>
+                            <p class="text-sm text-white Gilroy-normal">
+                                Get important notifications about you or activity you've missed
+                            </p>
+                        </div>
+                        <div>
+                          <label class="switch">
+                              <input type="checkbox" checked="">
+                              <span class="slider round"></span>
+                          </label>
+                        </div>
+                    </div>
+                    <div class="flex w-full gap-3 flex-wrap justify-between items-center">  
+                        <div class="flex flex-col gap-2">
+                            <h5 class="text-lg Gilroy-medium text-white">
+                                Meetups near you
+                            </h5>
+                            <p class="text-sm text-white Gilroy-normal">
+                                Get important notifications about you or activity you've missed
+                            </p>
+                        </div>
+                        <div>
+                          <label class="switch">
+                              <input type="checkbox">
+                              <span class="slider round"></span>
+                          </label>
+                        </div>
+                    </div>
+                </div>
             </div>
           </div>
-          <div class="p-6 md:pt-6 md:pr-[31px] md:pb-[22px] md:pl-[26px] border border-white rounded-[15px] bg-gradient">
-            <div class="flex border-b border-dashed border-white pb-4 mb-4 items-center gap-3 w-full">
-                <p class="text-white Gilroy-semibold pt-0.5 text-xl sm:text-2xl">
-                    Add a New Asset
-                </p>
+          <div class="flex flex-wrap xl:flex-nowrap gap-y-6 gap-x-5 mt-6">
+            <div class="md:p-6 p-4 border border-white rounded-[15px] bg-gradient w-full xl:w-1/2">
+                <div class="flex border-b border-dashed border-white pb-4 mb-4 items-center gap-3 justify-between">
+                    <h2 class="text-white Gilroy-semibold pt-0.5 text-xl sm:text-2xl">
+                        Push Notification
+
+                    </h2>
+                </div>
+                <div class="flex flex-col gap-5 lg:gap-6">
+                    <div class="flex w-full gap-3 flex-wrap justify-between items-center">  
+                        <div class="flex flex-col gap-2">
+                            <h5 class="text-lg Gilroy-medium text-white">
+                                Account Activity
+                            </h5>
+                            <p class="text-sm text-white Gilroy-normal">
+                                Get important notifications about you or activity you've missed
+                            </p>
+                        </div>
+                        <div>
+                          <label class="switch">
+                              <input type="checkbox">
+                              <span class="slider round"></span>
+                          </label>
+                        </div>
+                    </div>
+                    <div class="flex w-full gap-3 flex-wrap justify-between items-center">  
+                        <div class="flex flex-col gap-2">
+                            <h5 class="text-lg Gilroy-medium text-white">
+                                Communications
+                            </h5>
+                            <p class="text-sm text-white Gilroy-normal">
+                                Get important notifications about you or activity you've missed
+                            </p>
+                        </div>
+                        <div>
+                          <label class="switch">
+                              <input type="checkbox" checked="">
+                              <span class="slider round"></span>
+                          </label>
+                        </div>
+                    </div>
+                    <div class="flex w-full gap-3 flex-wrap justify-between items-center">  
+                        <div class="flex flex-col gap-2">
+                            <h5 class="text-lg Gilroy-medium text-white">
+                                Meetups near you
+                            </h5>
+                            <p class="text-sm text-white Gilroy-normal">
+                                Get important notifications about you or activity you've missed
+                            </p>
+                        </div>
+                        <div>
+                          <label class="switch">
+                              <input type="checkbox">
+                              <span class="slider round"></span>
+                          </label>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <form class="flex flex-col gap-5">
-                <p class="text-base text-white Gilroy-normal">
-                    Icon
-                </p>
-                <div class="flex md:gap-6 gap-5 flex-wrap items-center">
-                    <div class="p-2 border border-solid border-white rounded-xl w-[72px] h-[72px]">
-                        <img src="./src/images/bit_xxxl.png" alt="Bitcoin" class="w-full h-auto"/>
-                    </div>
-                    <button type="button" class="bg-btnSecondary transition-all h-fit px-6 py-3 pt-3.5 text-base text-white Gilroy-normal hover:bg-transparent border border-solid rounded-lg border-[#E9901A] hover:border-white">
-                        Upload
-                    </button>
-                    <button type="button" class="bg-transparent transition-all h-fit px-6 py-3 pt-3.5 text-base text-white Gilroy-normal hover:bg-[#E9901A] border border-solid rounded-lg border-white hover:border-[#E9901A]">
-                        Remove
-                    </button>
+            <div class="md:p-6 p-4 border border-white rounded-[15px] bg-gradient w-full xl:w-1/2">
+                <div class="flex border-b border-dashed border-white pb-4 mb-4 items-center gap-3 justify-between">
+                    <h2 class="text-white Gilroy-semibold pt-0.5 text-xl sm:text-2xl">
+                        News Flash
+                    </h2>
                 </div>
-                <div class="flex flex-col">
-                    <label for="fname" class="text-base text-white Gilroy-normal">Asset Name</label>
-                    <input type="text"  id="fname" class="px-6 rounded-xl py-3 pt-3.5 mt-5 bg-transparent w-full border border-solid border-white outline-none text-base text-white Gilroy-normal" placeholder="Enter Name"/>
-                </div>
-                <div class="flex flex-wrap md:flex-nowrap gap-5 items-center">
-                    <div class="flex flex-col w-full md:w-3/6">
-                        <label class="text-base text-white Gilroy-normal">Select Category</label>
-                        <select class="px-6 rounded-xl py-3 pt-3.5 mt-5 bg-transparent w-full border border-solid border-white outline-none text-base text-white Gilroy-normal">
-                            <option value="option1">Bitcoin</option>
-                            <option value="option2">Cardano</option>
-                        </select>
+                <div class="flex flex-col gap-5 lg:gap-6">
+                    <div class="flex w-full gap-3 flex-wrap justify-between items-center">  
+                        <div class="flex flex-col gap-2">
+                            <h5 class="text-lg Gilroy-medium text-white">
+                                Account Activity
+                            </h5>
+                            <p class="text-sm text-white Gilroy-normal">
+                                Get important notifications about you or activity you've missed
+                            </p>
+                        </div>
+                        <div>
+                          <label class="switch">
+                              <input type="checkbox" checked="">
+                              <span class="slider round"></span>
+                          </label>
+                        </div>
                     </div>
-                    <div class="flex flex-col w-full md:w-3/6">
-                        <label class="text-base text-white Gilroy-normal">Convert Currency</label>
-                        <select class="px-6 rounded-xl py-3 pt-3.5 mt-5 bg-transparent w-full border border-solid border-white outline-none text-base text-white Gilroy-normal">
-                            <option value="option1">Select Currency</option>
-                        </select>
+                    <div class="flex w-full gap-3 flex-wrap justify-between items-center">  
+                        <div class="flex flex-col gap-2">
+                            <h5 class="text-lg Gilroy-medium text-white">
+                                Communications
+                            </h5>
+                            <p class="text-sm text-white Gilroy-normal">
+                                Get important notifications about you or activity you've missed
+                            </p>
+                        </div>
+                        <div>
+                          <label class="switch">
+                              <input type="checkbox">
+                              <span class="slider round"></span>
+                          </label>
+                        </div>
                     </div>
-                </div>
-                <div class="flex flex-col">
-                    <label class="text-base text-white Gilroy-normal">Amount</label>
-                    <input type="number" class="px-6 rounded-xl py-3 pt-3.5 mt-5 bg-transparent w-full border border-solid border-white outline-none text-base text-white Gilroy-normal" placeholder="Enter Amount"/>
-                </div>
-                <div class="flex flex-wrap md:flex-nowrap gap-5 items-center">
-                    <div class="flex flex-col w-full md:w-3/6">
-                        <label for="fname" class="text-base text-white Gilroy-normal">Required Action</label>
-                        <input type="text"  id="fname" class="px-6 rounded-xl py-3 pt-3.5 mt-5 bg-transparent w-full border border-solid border-white outline-none text-base text-white Gilroy-normal" placeholder="Enter Required Action"/>
-                    </div>
-                    <div class="flex flex-col w-full md:w-3/6">
-                        <label class="text-base text-white Gilroy-normal">Status</label>
-                        <select class="px-6 rounded-xl py-3 pt-3.5 mt-5 bg-transparent w-full border border-solid border-white outline-none text-base text-white Gilroy-normal">
-                            <option value="option1">Active</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="flex gap-5 items-center">
-                    <p class="text-lg text-white Gilroy-normal">Make the asset public</p>
-                    <div>
-                        <label class="switch">
-                            <input type="checkbox" checked>
-                            <span class="slider round"></span>
-                        </label>
+                    <div class="flex w-full gap-3 flex-wrap justify-between items-center">  
+                        <div class="flex flex-col gap-2">
+                            <h5 class="text-lg Gilroy-medium text-white">
+                                Meetups near you
+                            </h5>
+                            <p class="text-sm text-white Gilroy-normal">
+                                Get important notifications about you or activity you've missed
+                            </p>
+                        </div>
+                        <div>
+                          <label class="switch">
+                              <input type="checkbox" checked="">
+                              <span class="slider round"></span>
+                          </label>
+                        </div>
                     </div>
                 </div>
-                <div class="border-t border-solid border-dashed border-white pt-8 flex gap-5 items-center">
-                    <button type="button" class="px-4 md:px-6 py-3 pt-3.5 bg-btnSecondary text-white border border-[#E9901A] rounded-lg hover:border hover:border-white hover:bg-transparent transition-all">
-                        Add New Asset
-                    </button>
-                    <button type="button" class="px-4 md:px-6 py-3 pt-3.5 bg-btnSecondary text-white rounded-lg border border-[#E9901A] hover:border hover:border-white hover:bg-transparent transition-all">
-                        Cancel
-                    </button>
-                </div>
-            </form>
+            </div>
           </div>
+          <div class="flex flex-wrap xl:flex-nowrap gap-y-6 gap-x-5 mt-6">
+            <div class="md:p-6 p-4 border border-white rounded-[15px] bg-gradient w-full xl:w-1/2">
+                <div class="flex border-b border-dashed border-white pb-4 mb-4 items-center gap-3 justify-between">
+                    <h2 class="text-white Gilroy-semibold pt-0.5 text-xl sm:text-2xl">
+                        Buzz Alert
+                    </h2>
+                </div>
+                <div class="flex flex-col gap-5 lg:gap-6">
+                    <div class="flex w-full gap-3 flex-wrap justify-between items-center">  
+                        <div class="flex flex-col gap-2">
+                            <h5 class="text-lg Gilroy-medium text-white">
+                                Account Activity
+                            </h5>
+                            <p class="text-sm text-white Gilroy-normal">
+                                Get important notifications about you or activity you've missed
+                            </p>
+                        </div>
+                        <div>
+                          <label class="switch">
+                              <input type="checkbox" checked="">
+                              <span class="slider round"></span>
+                          </label>
+                        </div>
+                    </div>
+                    <div class="flex w-full gap-3 flex-wrap justify-between items-center">  
+                        <div class="flex flex-col gap-2">
+                            <h5 class="text-lg Gilroy-medium text-white">
+                                Communications
+                            </h5>
+                            <p class="text-sm text-white Gilroy-normal">
+                                Get important notifications about you or activity you've missed
+                            </p>
+                        </div>
+                        <div>
+                          <label class="switch">
+                              <input type="checkbox">
+                              <span class="slider round"></span>
+                          </label>
+                        </div>
+                    </div>
+                    <div class="flex w-full gap-3 flex-wrap justify-between items-center">  
+                        <div class="flex flex-col gap-2">
+                            <h5 class="text-lg Gilroy-medium text-white">
+                                Meetups near you
+                            </h5>
+                            <p class="text-sm text-white Gilroy-normal">
+                                Get important notifications about you or activity you've missed
+                            </p>
+                        </div>
+                        <div>
+                          <label class="switch">
+                              <input type="checkbox" checked="">
+                              <span class="slider round"></span>
+                          </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="md:p-6 p-4 border border-white rounded-[15px] bg-gradient w-full xl:w-1/2">
+                <div class="flex border-b border-dashed border-white pb-4 mb-4 items-center gap-3 justify-between">
+                    <h2 class="text-white Gilroy-semibold pt-0.5 text-xl sm:text-2xl">
+                        Update Notification
+                    </h2>
+                </div>
+                <div class="flex flex-col gap-5 lg:gap-6">
+                    <div class="flex w-full gap-3 flex-wrap justify-between items-center">  
+                        <div class="flex flex-col gap-2">
+                            <h5 class="text-lg Gilroy-medium text-white">
+                                Account Activity
+                            </h5>
+                            <p class="text-sm text-white Gilroy-normal">
+                                Get important notifications about you or activity you've missed
+                            </p>
+                        </div>
+                        <div>
+                          <label class="switch">
+                              <input type="checkbox">
+                              <span class="slider round"></span>
+                          </label>
+                        </div>
+                    </div>
+                    <div class="flex w-full gap-3 flex-wrap justify-between items-center">  
+                        <div class="flex flex-col gap-2">
+                            <h5 class="text-lg Gilroy-medium text-white">
+                                Communications
+                            </h5>
+                            <p class="text-sm text-white Gilroy-normal">
+                                Get important notifications about you or activity you've missed
+                            </p>
+                        </div>
+                        <div>
+                          <label class="switch">
+                              <input type="checkbox" checked="">
+                              <span class="slider round"></span>
+                          </label>
+                        </div>
+                    </div>
+                    <div class="flex w-full gap-3 flex-wrap justify-between items-center">  
+                        <div class="flex flex-col gap-2">
+                            <h5 class="text-lg Gilroy-medium text-white">
+                                Meetups near you
+                            </h5>
+                            <p class="text-sm text-white Gilroy-normal">
+                                Get important notifications about you or activity you've missed
+                            </p>
+                        </div>
+                        <div>
+                          <label class="switch">
+                              <input type="checkbox">
+                              <span class="slider round"></span>
+                          </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+          
         </div>
     </div>
     <div class="px-3 py-2.5 bg-sideBarBg backdrop-blur-lg flex items-center justify-around fixed left-0 bottom-0 md:hidden block w-full">
