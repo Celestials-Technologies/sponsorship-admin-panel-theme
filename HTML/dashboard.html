@@ -14,10 +14,12 @@
 
   <body class="min-h-screen">
     <div
-      class="flex gap-[25px] pt-[25px] pb-[53px] px-6 min-h-screen bg-bgPrimary"
+      class="flex gap-[25px] pt-[25px] pb-[53px] px-6 min-h-screen bg-bgPrimary relative"
     >
+    <div id="sideBar" class="absolute top-[25px]" style=" width: 260px; transition: all 0.5s ease; left: 24px;">
       <div
-        class="w-[260px] rounded-[20px] pt-[46px] pb-5 flex-col justify-between bg-sideBarBg border border-translucentWhite hidden lg:flex h-[92vh] sticky top-6 tableScroll overflow-y-auto"
+        style="transition: all 0.5s ease"
+        class=" w-full rounded-[20px] pt-[46px] pb-5 flex-col justify-between bg-sideBarBg border border-translucentWhite hidden lg:flex h-[92vh] sticky top-6 tableScroll overflow-y-auto"
       >
         <div class="px-2.5">
           <h1 class="text-[28px] leading-8 text-center Gilroy-extrabold">
@@ -187,84 +189,143 @@
                 <div
                   class="w-[34px] h-[34px] rounded-lg flex justify-center items-center"
                 >
-                <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M20 10.5V6.8C20 5.11984 20 4.27976 19.673 3.63803C19.3854 3.07354 18.9265 2.6146 18.362 2.32698C17.7202 2 16.8802 2 15.2 2H8.8C7.11984 2 6.27976 2 5.63803 2.32698C5.07354 2.6146 4.6146 3.07354 4.32698 3.63803C4 4.27976 4 5.11984 4 6.8V17.2C4 18.8802 4 19.7202 4.32698 20.362C4.6146 20.9265 5.07354 21.3854 5.63803 21.673C6.27976 22 7.11984 22 8.8 22H12M14 11H8M10 15H8M16 7H8M18 21V15M15 18H21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <svg
+                    width="100%"
+                    height="100%"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M20 10.5V6.8C20 5.11984 20 4.27976 19.673 3.63803C19.3854 3.07354 18.9265 2.6146 18.362 2.32698C17.7202 2 16.8802 2 15.2 2H8.8C7.11984 2 6.27976 2 5.63803 2.32698C5.07354 2.6146 4.6146 3.07354 4.32698 3.63803C4 4.27976 4 5.11984 4 6.8V17.2C4 18.8802 4 19.7202 4.32698 20.362C4.6146 20.9265 5.07354 21.3854 5.63803 21.673C6.27976 22 7.11984 22 8.8 22H12M14 11H8M10 15H8M16 7H8M18 21V15M15 18H21"
+                      stroke="white"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
                   </svg>
                 </div>
                 <p
                   class="text-base leading-5 text-white pt-0.5 h-auto Gilroy-semibold"
                 >
-                New Asset
+                  New Asset
                 </p>
               </li>
             </a>
             <div class="accountContainer">
               <div class="accountMain">
-                  <li
-                      class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-2.5 cursor-pointer hover:bg-[#E9901A] transition-all"
+                <li
+                  class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-2.5 cursor-pointer hover:bg-[#E9901A] transition-all"
+                >
+                  <div
+                    class="w-[34px] h-[34px] rounded-lg flex justify-center items-center"
                   >
-                      <div class="w-[34px] h-[34px] rounded-lg flex justify-center items-center">
-                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="size-6">
-                              <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
-                          </svg>
-                      </div>
-                      <p class="text-base leading-5 text-white pt-0.5 h-auto Gilroy-semibold">
-                          Account
-                      </p>
-                  </li>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="white"
+                      class="size-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"
+                      />
+                    </svg>
+                  </div>
+                  <p
+                    class="text-base leading-5 text-white pt-0.5 h-auto Gilroy-semibold"
+                  >
+                    Account
+                  </p>
+                </li>
               </div>
               <div class="pl-8 accountList">
-                  <div class="border-l border-solid border-[#E9901A]">
-                      <ul>
-                          <a href="./setting.html">
-                              <li
-                                  class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-0 cursor-pointer !bg-transparent transition-all"
-                              >
-                                  <p class="text-base leading-5 text-white hover:text-[#E9901A] transition-all pt-0.5 h-auto Gilroy-semibold">
-                                      Setting
-                                  </p>
-                              </li>
-                          </a>
-                          <a href="./password.html">
-                            <li
-                                class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-0 cursor-pointer !bg-transparent transition-all"
-                            >
-                                <p class="text-base leading-5 text-white hover:text-[#E9901A] transition-all pt-0.5 h-auto Gilroy-semibold">
-                                    Password
-                                </p>
-                            </li>
-                        </a>
-                        <a href="./billing.html">
-                          <li
-                              class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-0 cursor-pointer !bg-transparent transition-all"
-                          >
-                              <p class="text-base leading-5 text-white hover:text-[#E9901A] transition-all pt-0.5 h-auto Gilroy-semibold">
-                                  Billing
-                              </p>
-                          </li>
-                      </a>
-                      <a href="./notification.html">
-                        <li
-                            class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-0 cursor-pointer !bg-transparent transition-all"
+                <div class="border-l border-solid border-[#E9901A]">
+                  <ul>
+                    <a href="./setting.html">
+                      <li
+                        class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-0 cursor-pointer !bg-transparent transition-all"
+                      >
+                        <p
+                          class="text-base leading-5 text-white hover:text-[#E9901A] transition-all pt-0.5 h-auto Gilroy-semibold"
                         >
-                            <p class="text-base leading-5 text-white hover:text-[#E9901A] transition-all pt-0.5 h-auto Gilroy-semibold">
-                                Notification
-                            </p>
-                        </li>
-                      </a>
-                      <a href="./team.html">
-                        <li
-                            class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-0 cursor-pointer !bg-transparent transition-all"
+                          Setting
+                        </p>
+                      </li>
+                    </a>
+                    <a href="./password.html">
+                      <li
+                        class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-0 cursor-pointer !bg-transparent transition-all"
+                      >
+                        <p
+                          class="text-base leading-5 text-white hover:text-[#E9901A] transition-all pt-0.5 h-auto Gilroy-semibold"
                         >
-                            <p class="text-base leading-5 text-white hover:text-[#E9901A] transition-all pt-0.5 h-auto Gilroy-semibold">
-                                Team
-                            </p>
-                        </li>
-                      </a>
-                      </ul>
-                  </div>
+                          Password
+                        </p>
+                      </li>
+                    </a>
+                    <a href="./billing.html">
+                      <li
+                        class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-0 cursor-pointer !bg-transparent transition-all"
+                      >
+                        <p
+                          class="text-base leading-5 text-white hover:text-[#E9901A] transition-all pt-0.5 h-auto Gilroy-semibold"
+                        >
+                          Billing
+                        </p>
+                      </li>
+                    </a>
+                    <a href="./notification.html">
+                      <li
+                        class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-0 cursor-pointer !bg-transparent transition-all"
+                      >
+                        <p
+                          class="text-base leading-5 text-white hover:text-[#E9901A] transition-all pt-0.5 h-auto Gilroy-semibold"
+                        >
+                          Notification
+                        </p>
+                      </li>
+                    </a>
+                    <a href="./team.html">
+                      <li
+                        class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-0 cursor-pointer !bg-transparent transition-all"
+                      >
+                        <p
+                          class="text-base leading-5 text-white hover:text-[#E9901A] transition-all pt-0.5 h-auto Gilroy-semibold"
+                        >
+                          Team
+                        </p>
+                      </li>
+                    </a>
+                    <a href="./login.html">
+                      <li
+                        class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-0 cursor-pointer !bg-transparent transition-all"
+                      >
+                        <p
+                          class="text-base leading-5 text-white hover:text-[#E9901A] transition-all pt-0.5 h-auto Gilroy-semibold"
+                        >
+                          Login
+                        </p>
+                      </li>
+                    </a>
+                    <a href="./signup.html">
+                      <li
+                        class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-0 cursor-pointer !bg-transparent transition-all"
+                      >
+                        <p
+                          class="text-base leading-5 text-white hover:text-[#E9901A] transition-all pt-0.5 h-auto Gilroy-semibold"
+                        >
+                          Sign Up
+                        </p>
+                      </li>
+                    </a>
+                  </ul>
+                </div>
               </div>
-          </div>
+            </div>
             <!-- <li class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative">
                             <div class="w-[34px] h-[34px] rounded-lg flex justify-center items-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="19" height="18" viewBox="0 0 19 18" fill="none">
@@ -303,13 +364,14 @@
           </button>
         </div>
       </div>
-      <div class="w-full lg:w-[calc(100%-250px)]">
+    </div>
+      <div id="sideData" class="w-full lg:w-[calc(100%-285px)] ml-auto">
         <div
           class="w-full py-[9px] md:pr-[18px] md:px-[33px] rounded-[15px] flex justify-between items-center gap-2.5 bg-sideBarBg border border-translucentWhite px-3 z-10 sticky top-6 backdrop-blur-sm"
         >
           <div class="flex items-center gap-5 justify-between w-full">
             <div class="flex gap-3 items-center">
-              <button type="" class="">
+              <button type="" class="" onclick="sideBarControl()">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="40"
@@ -471,34 +533,189 @@
                   />
                 </svg>
               </button>
-              <button
-                type="button"
-                class="p-1 cursor-pointer iconMainBox rounded-full hidden md:block"
-              >
-                <img
-                  src="./src/images/australia.png"
-                  alt="nation"
-                  class="rounded-full w-5 h-5"
-                />
-              </button>
-              <button
-                type="button"
-                class="p-1 cursor-pointer iconMainBox rounded-lg hidden md:block"
-              >
-                <img
-                  src="src/images/profile-img.png"
-                  alt="Profile"
-                  class="w-6 h-6"
-                />
-              </button>
+              <div class="relative hidden md:block">
+                <button
+                  type="button"
+                  onclick="countrySelectBtn()"
+                  class="p-1 cursor-pointer iconMainBox rounded-full"
+                >
+                  <img
+                    src="./src/images/australia.png"
+                    alt="nation"
+                    class="rounded-full w-5 h-5"
+                    id="mainImg"
+                  />
+                </button>
+                <div
+                  class="absolute right-0 bg-bgPrimary rounded-lg px-2 py-1 border border-solid border-white w-[130px]"
+                  id="countrySelect"
+                  style="
+                    opacity: 0;
+                    margin-top: 50px;
+                    z-index: 0;
+                    transition: all 0.5s ease;
+                  "
+                >
+                  <button
+                  type="button"
+                    class="text-base Gilroy-normal hover:bg-[#E9901A] p-1 text-white w-full rounded-lg flex items-center gap-3"
+                    onclick="changeMainImage('./src/images/australia.png')"
+                  >
+                    <img
+                      src="./src/images/australia.png"
+                      alt="nation"
+                      class="rounded-full w-5 h-5"
+                    />
+                    <p class="text-sm text-white Gilroy-normal">
+                      Australia
+                    </p>
+                  </button>
+                  <button
+                  type="button"
+                    class="text-base Gilroy-normal hover:bg-[#E9901A] p-1 text-white w-full rounded-lg flex items-center gap-3"
+                    onclick="changeMainImage('./src/images/italy.png')"
+                  >
+                    <img
+                      src="./src/images/italy.png"
+                      alt="nation"
+                      class="rounded-full w-5 h-5"
+                    />
+                    <p class="text-sm text-white Gilroy-normal">
+                      Italy
+                    </p>
+                  </button>
+                  <button
+                  type="button"
+                    class="text-base Gilroy-normal hover:bg-[#E9901A] p-1 text-white w-full rounded-lg flex items-center gap-3"
+                    onclick="changeMainImage('./src/images/france.png')"
+                  >
+                    <img
+                      src="./src/images/france.png"
+                      alt="nation"
+                      class="rounded-full w-5 h-5"
+                    />
+                    <p class="text-sm text-white Gilroy-normal">
+                      France
+                    </p>
+                  </button>
+                  <button
+                  type="button"
+                    class="text-base Gilroy-normal hover:bg-[#E9901A] p-1 text-white w-full rounded-lg flex items-center gap-3"
+                    onclick="changeMainImage('./src/images/brazil.png')"
+                  >
+                    <img
+                      src="./src/images/brazil.png"
+                      alt="nation"
+                      class="rounded-full w-5 h-5"
+                    />
+                    <p class="text-sm text-white Gilroy-normal">
+                      Brazil
+                    </p>
+                  </button>
+                  <button
+                  type="button"
+                    class="text-base Gilroy-normal hover:bg-[#E9901A] p-1 text-white w-full rounded-lg flex items-center gap-3"
+                    onclick="changeMainImage('./src/images/canada.png')"
+                  >
+                    <img
+                      src="./src/images/canada.png"
+                      alt="nation"
+                      class="rounded-full w-5 h-5"
+                    />
+                    <p class="text-sm text-white Gilroy-normal">
+                      Canada
+                    </p>
+                  </button>
+                  <button
+                  type="button"
+                    class="text-base Gilroy-normal hover:bg-[#E9901A] p-1 text-white w-full rounded-lg flex items-center gap-3"
+                    onclick="changeMainImage('./src/images/china.png')"
+                  >
+                    <img
+                      src="./src/images/china.png"
+                      alt="nation"
+                      class="rounded-full w-5 h-5"
+                    />
+                    <p class="text-sm text-white Gilroy-normal">
+                      China
+                    </p>
+                  </button>
+                </div>
+              </div>
+              <div class="relative hidden md:block">
+                <button
+                  type="button"
+                  onclick="profileButton()"
+                  class="p-0 cursor-pointer iconMainBox rounded-full"
+                >
+                  <img
+                    src="src/images/profile-img.png"
+                    alt="Profile"
+                    class="w-8 h-8"
+                  />
+                </button>
+                <div
+                  class="absolute right-0 bg-bgPrimary rounded-lg px-2 py-1 border border-solid border-white w-[219px]"
+                  id="profileDropDown"
+                  style="
+                    opacity: 0;
+                    margin-top: 50px;
+                    z-index: 0;
+                    transition: all 0.5s ease;
+                  "
+                >
+                  <a
+                    href="#"
+                    class="text-base Gilroy-normal hover:bg-[#E9901A] p-1 text-white w-full rounded-lg flex items-center gap-3"
+                  >
+                    Account
+                  </a>
+                  <a
+                    href="#"
+                    class="text-base Gilroy-normal hover:bg-[#E9901A] p-1 text-white w-full rounded-lg flex items-center gap-3"
+                  >
+                    Setting
+                  </a>
+                  <a
+                    href="#"
+                    class="text-base Gilroy-normal hover:bg-[#E9901A] p-1 text-white w-full rounded-lg flex items-center gap-3"
+                  >
+                    Password
+                  </a>
+                  <a
+                    href="#"
+                    class="text-base Gilroy-normal hover:bg-[#E9901A] p-1 text-white w-full rounded-lg flex items-center gap-3"
+                  >
+                    Media
+                  </a>
+                  <a
+                    href="#"
+                    class="text-base Gilroy-normal hover:bg-[#E9901A] p-1 text-white w-full rounded-lg flex items-center gap-3"
+                  >
+                    Share
+                  </a>
+                  <a
+                    href="#"
+                    class="text-base Gilroy-normal hover:bg-[#E9901A] p-1 text-white w-full rounded-lg flex items-center gap-3"
+                  >
+                    Logout
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
         <div class="pt-12">
           <div class="flex flex-wrap gap-3 items-center justify-between mb-5">
-            <p class="text-3xl lg:text-[40px] text-white Gilroy-semibold">Default</p>
-            <div class="flex items-center gap-3">
+            <p class="text-3xl lg:text-[40px] text-white Gilroy-semibold">
+              Default
+            </p>
+            <div
+              class="flex items-center gap-3"
+              id="buttonHeader"
+              style="z-index: 9999"
+            >
               <button
                 type="button"
                 class="bg-btnSecondary px-5 py-2 md:px-8 md:py-4 text-base text-white rounded-lg flex items-center justify-center gap-2 Gilroy-semibold"
@@ -2726,5 +2943,6 @@
         <img src="src/images/profile-img.png" alt="Profile" class="w-6 h-6" />
       </button>
     </div>
+    <script src="./script.js"></script>
   </body>
 </html>

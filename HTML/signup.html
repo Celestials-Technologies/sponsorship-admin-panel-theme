@@ -1,133 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link
-            href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-            rel="stylesheet">
-        <link href="./src/output.css" rel="stylesheet">
-        <link href="style.css" rel="stylesheet">
-    </head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link href="./src/output.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
 
-    <body class="min-h-screen">
-        <!-- <div class="p-10 bg-[#F9F5F2] flex justify-center items-center min-h-screen">
-            <div class="flex justify-center w-full h-[732px]">
-                <div
-                    class="bg-white p-10 rounded-s-[25px] flex flex-col justify-center items-center w-full max-w-[719px] relative">
-                    <div class="">
-                        <img class="mx-auto" src="src/images/screenpopper-logo.png" alt="Screenpopper logo" />
-                    </div>
-                    <h2 class="text-2xl font-bold leading-normal text-[#182327] font-roboto text-center mt-4">Welcome Back
-                    </h2>
-                    <div class="w-full max-w-[429px]">
-                        <form action="#" class="mt-4">
-                            <input
-                                class="block w-full p-2.5 border border-[#e0e0e0] rounded-[5px] text-xs text-[#182327] placeholder:text-[#9ba0a1] bg-[#fafafa]"
-                                type="email" value="Email" />
-                            <input
-                                class="block w-full p-2.5 border border-[#e0e0e0] rounded-[5px] text-xs text-[#182327] placeholder:text-[#9ba0a1] bg-[#fafafa] mt-2.5"
-                                type="password" value="password" />
-                            <button type="button"
-                                class="w-full h-[52px] bg-[#00aa45] rounded-[140px] py-1.5 px-4 text-sm font-bold text-white text-center mt-4">
-                                Log In
-                            </button>
-                            <div class="text-right mt-4">
-                                <a href="#/" class="text-xs font-bold leading-4 text-[#aaaaaa]">Forgot password?</a>
-                            </div>
-                        </form>
-                        <a href="#"
-                            class="flex justify-center items-center gap-2 border border-[#e0e0e0] py-1.5 px-2 h-[52px]">
-                            <svg width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <g clip-path="url(#google_svg__clip0_4650_8836)">
-                                    <path
-                                        d="M18 9.2c0-.74-.061-1.28-.194-1.84H9.184v3.34h5.06c-.101.83-.652 2.08-1.877 2.92l-.017.111 2.726 2.07.19.018C17 14.25 18 11.94 18 9.2z"
-                                        fill="#4285F4"></path>
-                                    <path
-                                        d="M9.184 18.001c2.48 0 4.561-.8 6.082-2.18l-2.899-2.2c-.775.53-1.816.9-3.183.9a5.518 5.518 0 01-5.225-3.74l-.108.01-2.834 2.15-.038.1c1.51 2.94 4.613 4.96 8.205 4.96z"
-                                        fill="#34A853"></path>
-                                    <path
-                                        d="M3.96 10.782a5.44 5.44 0 01-.307-1.78c0-.62.112-1.22.296-1.78l-.005-.12-2.87-2.184-.094.044A8.862 8.862 0 000 9.002c0 1.45.357 2.82.98 4.04l2.98-2.26z"
-                                        fill="#FBBC05"></path>
-                                    <path
-                                        d="M9.184 3.48c1.724 0 2.888.73 3.55 1.34l2.593-2.48C13.735.89 11.663 0 9.184 0 5.592 0 2.49 2.02.979 4.96l2.97 2.26a5.541 5.541 0 015.235-3.74z"
-                                        fill="#EB4335"></path>
-                                </g>
-                                <defs>
-                                    <clipPath id="google_svg__clip0_4650_8836">
-                                        <path fill="#fff" d="M0 0h18v18H0z"></path>
-                                    </clipPath>
-                                </defs>
-                            </svg>
-                            <span class="text-sm font-bold text-[#182327]">Login width Google</span>
-                        </a>
-                        <div class="flex justify-center text-xs font-normal text-[#182327] mt-4">
-                            <span>Don`t have an account?</span><a href="#" class="font-bold pl-1 text-[#007aff]">Create An
-                                Account</a>
+  <body class="min-h-screen">
+    <div
+      class="min-h-screen bg-bgPrimary"
+    >
+      <div class="w-full h-screen">
+          <div class="flex items-center h-full md:justify-normal justify-center overflow-hidden">
+            <div class="bg-sideBarBg md:w-1/2 hidden min-h-screen md:flex items-center justify-center">
+                <img src="./src/images/signup.png" alt="Signup"/>
+            </div>
+            <div class="md:w-1/2">
+              <div class="p-6 w-full max-w-[650px] mx-auto">
+                <h1 class="text-[32px] text-white leading-normal Gilroy-semibold">
+                    Let’s Get Started!
+                </h1>
+                <p class="text-base Gilroy-normal text-white mt-4">
+                    Please Enter your Email Address to Start your Online Application
+                </p>
+                <form class="mt-8 lg:mt-10">
+                  <div class="flex flex-col gap-5">
+                    <div class="flex items-center gap-5 justify-between">
+                        <div class="w-1/2">
+                            <label class="text-[18px] Gilroy-medium text-white">
+                              First Name
+                            </label>
+                            <input type="text" class="w-full border border-solid border-white rounded-xl text-white text-base bg-transparent outline-none px-6 py-3 Gilroy-normal mt-2 md:mt-4" placeholder="First Name"/>
+                        </div>
+                        <div class="w-1/2">
+                            <label class="text-[18px] Gilroy-medium text-white">
+                              Last Name
+                            </label>
+                            <input type="text" class="w-full border border-solid border-white rounded-xl text-white text-base bg-transparent outline-none px-6 py-3 Gilroy-normal mt-2 md:mt-4" placeholder="Last Name"/>
+                        
                         </div>
                     </div>
-                    <img class="absolute top-[60px] -right-20 z-10" src="src/images/ribbon-blue.svg" alt="Ribbon" />
-                </div>
-                <div class="bg-black py-10 px-9 rounded-e-[25px] w-full max-w-[451px] flex flex-col justify-center relative overflow-hidden">
-                    <div class="flex gap-0.5">
-                        <img src="src/images/star-filled.svg" alt="Star" />
-                        <img src="src/images/star-filled.svg" alt="Star" />
-                        <img src="src/images/star-filled.svg" alt="Star" />
-                        <img src="src/images/star-filled.svg" alt="Star" />
-                        <img src="src/images/star-filled.svg" alt="Star" />
+                   
+                    <div>
+                        <label class="text-[18px] Gilroy-medium text-white">
+                          Enter Your Email ID
+                        </label>
+                        <input type="text" class="w-full border border-solid border-white rounded-xl text-white text-base bg-transparent outline-none px-6 py-3 Gilroy-normal mt-2 md:mt-4" placeholder="Enter your Email"/>
                     </div>
-                    <h3 class="text-xl font-bold leading-normal text-white pr-20 mt-[5px]">
-                        “Justuno is amazing! It's easy to build unique customer experiences with popups... and has a
-                        positive ROI almost immediately. It's one of the most important integrations to consider on Shopify
-                        Plus.”
-                    </h3>
-                    <p class="text-sx font-normal text-white mt-2.5">– DripDropORS</p>
-                    <img class="absolute -bottom-[90px] -right-[75px]" src="src/images/circle-three.svg" alt="Circle" />
-                </div>
-            </div>
-        </div> -->
-        <div class="min-h-screen bg-bgPrimary flex justify-center items-center">
-            <div class="w-full max-w-[473px]">
-                <h1 class="text-[34px] leading-8 text-center Gilroy-extrabold">
-                    <span class="text-primary">Screen</span><span class="text-white">Popper</span>
-                </h1>
-                <div class="border border-white rounded-2xl pt-[15px] pb-[30px] px-6 mt-[37px]">
-                    <p class="text-[26px] leading-[31px] text-white text-center Gilroy-bold mb-0">Enter your account credentials</p>
-                    <p class="text-lg leading-[24.1px] text-primary text-center Gilroy-medium mt-2.5">Don't have an account? <a href="#/" class="underline">Register now!</a></p>
-                    <div class="flex gap-[17.33px] mt-4">
-                        <a href="#/" class="w-1/2 h-[46.79px] bg-white rounded-[8.665px] flex justify-between items-center py-[15.6px] pl-[17.33px] pr-5">
-                            <span class="text-[13.864px] text-textPrimary Gilroy-medium">Login With Google</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
-                                <path d="M3.20048 8.41852L2.74448 10.2325H0.996498C-0.143491 8.26736 -0.21949 5.84878 0.8445 3.80811L2.44048 4.11043L3.12448 5.69762C2.82048 6.60459 2.82048 7.58713 3.20048 8.41852Z" fill="#191153"/>
-                                <path d="M13.8405 5.69775C14.2964 8.19191 13.3845 10.7617 11.3325 12.3488L9.3565 12.2733L9.0525 10.5349C9.88849 10.0814 10.4965 9.32562 10.8005 8.41865H7.22852V5.69775H13.8405Z" fill="#191153"/>
-                                <path d="M11.4088 12.4243C8.36883 14.8429 4.03687 14.3138 1.60489 11.3662C1.37689 11.0639 1.1489 10.686 0.920898 10.3081L3.20088 8.49414C4.03687 10.6104 6.39285 11.6685 8.52083 10.9127C8.74882 10.8371 8.97682 10.7616 9.12882 10.6104L11.4088 12.4243Z" fill="#191153"/>
-                                <path d="M11.4846 1.69202L9.20465 3.50596C7.30466 2.29667 4.72069 2.90131 3.5047 4.86641C3.3527 5.09315 3.2007 5.39547 3.1247 5.69779L0.844727 3.80828C2.66871 0.407153 6.84867 -0.877716 10.2686 0.860636C10.7246 1.08738 11.1046 1.3897 11.4846 1.69202Z" fill="#191153"/>
-                            </svg>
+                    <div>
+                        <label class="text-[18px] Gilroy-medium text-white">
+                          Enter Your Password
+                        </label>
+                        <div class="relative w-full border border-solid border-white rounded-xl text-white text-base bg-transparent outline-none px-6 py-3 Gilroy-normal mt-2 md:mt-4">
+                          <input type="password" class="w-[80%] bg-transparent h-full outline-none" placeholder="Enter your Password"/>
+                          <div class="absolute right-6 top-2.5 cursor-pointer">
+                            <div class="border-t border-solid border-white rotate-[29deg] relative top-3"></div>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-6 h-6">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                            </svg>                      
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+                  <p class="text-base text-white Gilroy-normal mt-4">Have an account? <span class="text-[#E9901A] Gilroy-semibold"> Sign In</span></p>
+                  <div class="flex gap-5 lg:mt-8 mt-6">
+                    <button type="button" class="bg-btnSecondary hover:bg-transparent border border-solid border-[#E9901A] py-2 pt-2.5 px-[18px] md:px-8 md:py-4 md:pt-[18px] text-base text-white hover:text-[#E9901A] rounded-lg flex items-center justify-center Gilroy-semibold">
+                      Sign Up
+                    </button>
+                    <button type="button" class="bg-transparent hover:bg-[#E9901A] border border-solid border-[#E9901A] py-2 pt-2.5 px-[18px] md:px-8 md:py-4 md:pt-[18px] text-base text-[#E9901A] hover:text-white rounded-lg flex items-center justify-center Gilroy-semibold">
+                        <a href="./dashboard.html" class="w-full h-full">
+                            Back Home
                         </a>
-                        <a href="#/" class="w-1/2 h-[46.79px] bg-white rounded-[8.665px] flex justify-between items-center py-[15.6px] pl-[17.33px] pr-5">
-                            <span class="text-[13.864px] text-textPrimary Gilroy-medium">Login With Microsoft</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" viewBox="0 0 15 14" fill="none">
-                                <path d="M0.908203 0.0883789H7.49535V6.67552H0.908203V0.0883789Z" fill="#191153"/>
-                                <path d="M8.18506 0.0883789H14.7722V6.67552H8.18506V0.0883789Z" fill="#191153"/>
-                                <path d="M0.908203 7.36523H7.49535V13.9524H0.908203V7.36523Z" fill="#191153"/>
-                                <path d="M8.18506 7.36523H14.7722V13.9524H8.18506V7.36523Z" fill="#191153"/>
-                            </svg>
-                        </a>
-                    </div>
-                    <div class="flex justify-center items-center gap-[11px] mt-5 opacity-50">
-                        <div class="w-full max-w-[143px] h-px bg-white"></div>
-                        <span class="text-[13.864px] font-normal leading-[13.864px] text-white">or</span>
-                        <div class="w-full max-w-[143px] h-px bg-white"></div>
-                    </div>
-                    <form action="#" class="mt-4">
-                        <input type="email" placeholder="Email" class="py-[15px] px-[17px] rounded-lg bg-white placeholder:text-inputText placeholder:opacity-50 text-[13.864px] text-inputText Gilroy-normal w-full h-[46.79px]" />
-                        <input type="password" placeholder="Password" class="py-[15px] px-[17px] rounded-lg bg-white placeholder:text-inputText placeholder:opacity-50 text-[13.864px] text-inputText font-normal w-full h-[46.79px] mt-[21.66px]" />
-                    </form>
-                    <p class="text-[13.864px] leading-[13.864px] text-white text-center Gilroy-normal mt-[33.19px]">By registering you agree to our <a href="#/" class="text-primary underline capitalize">terms of use.</a></p>
-                </div>
-                <button type="button" class="py-2 px-20 rounded-[50px] bg-btnPrimary text-[15px] text-white Gilroy-medium mt-[30px]">Sign up for free & get 10 new sponsorship opportunities every month</button>
-                <p class="text-[15.597px] leading-normal text-white Gilroy-semibold text-center mt-4">Do you have an account? <a href="#/" class="text-primary capitalize">Login</a></p>
+                    </button>
+                  </div>
+                </form>
+              </div>
             </div>
-        </div>
-    </body>
+          </div>
+      </div>
+    </div>
+  </body>
 </html>

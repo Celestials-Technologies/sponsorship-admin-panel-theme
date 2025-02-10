@@ -3176,3 +3176,8 @@ video {
     overflow: hidden;
   }
 }
+#sideData {
+  @media (max-width:1024px) {
+    width: 100% !important;
+  }
+ }
