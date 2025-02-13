@@ -49,6 +49,15 @@ function closeDropDowns() {
   document.querySelectorAll("#daysIcon").forEach((icon) => {
     icon.style.rotate = "0deg";
   });
+  document.querySelectorAll("#coinSelect").forEach((dropdown) => {
+    dropdown.style.opacity = "0";
+    dropdown.style.marginTop = "50px";
+    dropdown.style.zIndex = "0";
+  });
+
+  document.querySelectorAll(" #selectCoinIcon").forEach((icon) => {
+    icon.style.rotate = "0deg";
+  });
 }
 
 function profileButton() {
@@ -58,10 +67,10 @@ function profileButton() {
     profileDropDown.style.zIndex === "0"
   ) {
     profileDropDown.style.opacity = "1";
-    profileDropDown.style.marginTop = "20px";
+    profileDropDown.style.marginTop = "8px";
     profileDropDown.style.zIndex = "90";
-    buttonHeader.style.zIndex = "0";
-    blockZindex.style.zIndex = "0";
+    buttonHeader.style.zIndex = "auto";
+    blockZindex.style.zIndex = "auto";
     countrySelect.style.opacity = "0";
     bellDropDown.style.opacity = "0";
   } else {
@@ -76,10 +85,10 @@ function bellButton() {
     bellDropDown.style.zIndex === "0"
   ) {
     bellDropDown.style.opacity = "1";
-    bellDropDown.style.marginTop = "20px";
+    bellDropDown.style.marginTop = "8px";
     bellDropDown.style.zIndex = "90";
-    buttonHeader.style.zIndex = "0";
-    blockZindex.style.zIndex = "0";
+    buttonHeader.style.zIndex = "auto";
+    blockZindex.style.zIndex = "auto";
     countrySelect.style.opacity = "0";
     profileDropDown.style.opacity = "0";
   } else {
@@ -94,10 +103,10 @@ function countrySelectBtn() {
     countrySelect.style.zIndex === "0"
   ) {
     countrySelect.style.opacity = "1";
-    countrySelect.style.marginTop = "20px";
+    countrySelect.style.marginTop = "8px";
     countrySelect.style.zIndex = "90";
-    buttonHeader.style.zIndex = "0";
-    blockZindex.style.zIndex = "0";
+    buttonHeader.style.zIndex = "auto";
+    blockZindex.style.zIndex = "auto";
     profileDropDown.style.opacity = "0";
     bellDropDown.style.opacity = "0";
   } else {
@@ -124,13 +133,55 @@ function selectDays(button) {
   }
 }
 
+function selectCoin(button) {
+  let parentDiv = button.closest(".relative");
+  let coinSelect = parentDiv.querySelector("#coinSelect");
+  let selectCoinIcon = parentDiv.querySelector("#selectCoinIcon");
+
+  if (coinSelect.style.opacity === "0" && coinSelect.style.marginTop === "50px") {
+    closeDropDowns();
+    coinSelect.style.opacity = "1";
+    coinSelect.style.marginTop = "10px";
+    coinSelect.style.zIndex = "90";
+    selectCoinIcon.style.rotate = "180deg";
+  } else {
+    coinSelect.style.opacity = "0";
+    coinSelect.style.marginTop = "50px";
+    coinSelect.style.zIndex = "0";
+    selectCoinIcon.style.rotate = "0deg";
+  }
+}
+
+// function detailsBtn(button) {
+//   const dropdown = button.nextElementSibling;
+//   let detailsData = document.getElementById("#detailsData")
+//   if (dropdown.style.height === '0px' && dropdown.style.padding === '0px' && detailsData.style.display === 'none') {
+//     dropdown.style.height = 'auto';
+//     dropdown.style.padding = '12px';
+//     detailsData.style.display = 'block';
+//   } else {
+//     dropdown.style.height = '0px';
+//     dropdown.style.padding = '0px';
+//     detailsData.style.display = 'none';
+//   }
+// }
+
 
 function changeMainText(text) {
   let parentDiv = event.target.closest(".relative");
   let mainText = parentDiv.querySelector("#mainText");
   mainText.textContent = text;
 
-  closeDropDowns(); // Close dropdown after selecting an option
+  closeDropDowns();
+}
+
+function changeCoinData(text , newSrc) {
+  let parentDiv = event.target.closest(".relative");
+  let selectCoinText = parentDiv.querySelector("#selectCoinText");
+  let selectCoinImg = parentDiv.querySelector("#selectCoinImg")
+  selectCoinText.textContent = text;
+  selectCoinImg.src = newSrc;
+  closeDropDowns(); 
 }
 
 
@@ -206,12 +257,12 @@ function addMore() {
 let elements = document.querySelectorAll(".addMoreSelectButton");
 //  let addSelectToken = document.getElementById("addSelectToken");
 
-function selectBtn(element) {
-  elements.forEach((el) => {
-    el.style.backgroundColor = "transparent";
-  });
-  element.children[0].style.backgroundColor = "#E9901A";
-}
+// function selectBtn(element) {
+//   elements.forEach((el) => {
+//     el.style.backgroundColor = "transparent";
+//   });
+//   element.children[0].style.backgroundColor = "#E9901A";
+// }
 
 function mangeTokenButton() {
   // elements.forEach((el) => {
