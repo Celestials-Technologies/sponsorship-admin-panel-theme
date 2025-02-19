@@ -9,12 +9,14 @@ let connectModal = document.getElementById("connectModal");
 let bodyOverflowModal = document.getElementById("bodyOverflowModal");
 let bodyScreenData = document.getElementById("bodyScreenData");
 let addMoreBlockModal = document.getElementById("addMoreBlockModal");
+let newCardModal = document.getElementById("newCardModal");
+let topUpModal = document.getElementById("topUpModal");
 let selectedBtn = document.getElementById("selectedBtn");
 let blockZindex = document.getElementById("blockZindex");
 let addSelectToken = document.getElementById("addSelectToken");
-let daysSelect = document.getElementById("daysSelect")
-let selectedDays = document.getElementById("mainText")
-let daysIcon = document.getElementById("daysIcon")
+let daysSelect = document.getElementById("daysSelect");
+let selectedDays = document.getElementById("mainText");
+let daysIcon = document.getElementById("daysIcon");
 
 function sideBarControl() {
   if (sideBar.style.left === "24px") {
@@ -53,6 +55,12 @@ function closeDropDowns() {
     dropdown.style.opacity = "0";
     dropdown.style.marginTop = "50px";
     dropdown.style.zIndex = "0";
+  });
+  document.querySelectorAll("#detailDropDown").forEach((detailDropDown) => {
+    detailDropDown.style.opacity = "0";
+    detailDropDown.style.marginTop = "-40px";
+    detailDropDown.style.zIndex = "0";
+    blockZindex.style.zIndex = "9999";
   });
 
   document.querySelectorAll(" #selectCoinIcon").forEach((icon) => {
@@ -123,13 +131,15 @@ function selectDays(button) {
     closeDropDowns();
     daysSelect.style.scale = "1";
     daysSelect.style.marginTop = "10px";
-    daysSelect.style.zIndex = "90";
+    daysSelect.style.zIndex = "999999";
     daysIcon.style.rotate = "180deg";
+    blockZindex.style.zIndex = "auto";
   } else {
     daysSelect.style.scale = "0";
     daysSelect.style.marginTop = "-50px";
     daysSelect.style.zIndex = "0";
     daysIcon.style.rotate = "0deg";
+    blockZindex.style.zIndex = "9999";
   }
 }
 
@@ -138,7 +148,10 @@ function selectCoin(button) {
   let coinSelect = parentDiv.querySelector("#coinSelect");
   let selectCoinIcon = parentDiv.querySelector("#selectCoinIcon");
 
-  if (coinSelect.style.opacity === "0" && coinSelect.style.marginTop === "50px") {
+  if (
+    coinSelect.style.opacity === "0" &&
+    coinSelect.style.marginTop === "50px"
+  ) {
     closeDropDowns();
     coinSelect.style.opacity = "1";
     coinSelect.style.marginTop = "10px";
@@ -166,6 +179,26 @@ function selectCoin(button) {
 //   }
 // }
 
+function detailsBtn(button) {
+  let parentDiv = button.closest(".relative");
+  let detailDropDown = parentDiv.querySelector("#detailDropDown");
+
+  if (
+    detailDropDown.style.opacity === "0" &&
+    detailDropDown.style.marginTop === "-40px"
+  ) {
+    closeDropDowns();
+    detailDropDown.style.opacity = "1";
+    detailDropDown.style.marginTop = "-20px";
+    detailDropDown.style.zIndex = "99999";
+    blockZindex.style.zIndex = "auto";
+  } else {
+    detailDropDown.style.opacity = "0";
+    detailDropDown.style.marginTop = "-40px";
+    detailDropDown.style.zIndex = "0";
+    blockZindex.style.zIndex = "9999";
+  }
+}
 
 function changeMainText(text) {
   let parentDiv = event.target.closest(".relative");
@@ -175,22 +208,21 @@ function changeMainText(text) {
   closeDropDowns();
 }
 
-function changeCoinData(text , newSrc) {
+function changeCoinData(text, newSrc) {
   let parentDiv = event.target.closest(".relative");
   let selectCoinText = parentDiv.querySelector("#selectCoinText");
-  let selectCoinImg = parentDiv.querySelector("#selectCoinImg")
+  let selectCoinImg = parentDiv.querySelector("#selectCoinImg");
   selectCoinText.textContent = text;
   selectCoinImg.src = newSrc;
-  closeDropDowns(); 
+  closeDropDowns();
 }
-
 
 document.addEventListener("click", function (event) {
   if (
     !event.target.closest(
-      "#countrySelect , #profileDropDown , #bellDropDown , #daysSelect"
+      "#countrySelect , #profileDropDown , #bellDropDown , #daysSelect , #detailDropDown"
     ) &&
-    !event.target.closest(".iconMainBox , .selectDaysBox")
+    !event.target.closest(".iconMainBox , .selectDaysBox , .chooseOption")
   ) {
     closeDropDowns();
   }
@@ -200,10 +232,9 @@ function changeMainImage(newSrc) {
   countrySelected.src = newSrc;
   countrySelectBtn();
 }
-function changeMainText(text){
+function changeMainText(text) {
   selectedDays.textContent = text;
   selectDays();
-
 }
 function connectBtn() {
   if (connectModal.style.top === "-150%") {
@@ -218,14 +249,66 @@ function connectBtn() {
     bodyScreenData.style.opacity = "1";
   }
 }
-function closeBtn() {
-  connectModal.style.top = "-150%";
-  liquidityModal.style.top = "-150%";
-  addMoreBlockModal.style.top = "-150%";
-  bodyOverflowModal.style.overflow = "auto";
-  bodyScreenData.style.opacity = "1";
+
+function topUpBtn() {
+  if (topUpModal.style.top === "-150%") {
+    topUpModal.style.top = "0%";
+    topUpModal.style.opacity = "1";
+    bodyOverflowModal.style.overflow = "hidden";
+    bodyScreenData.style.opacity = "0.7";
+  } else {
+    topUpModal.style.top = "-150%";
+    topUpModal.style.opacity = "0";
+    bodyOverflowModal.style.overflow = "auto";
+    bodyScreenData.style.opacity = "1";
+  }
 }
 
+function closeBtn() {
+  if (connectModal && connectModal.style.top === "0%") {
+    connectModal.style.top = "-150%";
+    bodyOverflowModal.style.overflow = "auto";
+    bodyScreenData.style.opacity = "1";
+  }
+
+  if (liquidityModal && liquidityModal.style.top === "0%") {
+    liquidityModal.style.top = "-150%";
+    bodyOverflowModal.style.overflow = "auto";
+    bodyScreenData.style.opacity = "1";
+  }
+
+  if (addMoreBlockModal && addMoreBlockModal.style.top === "0%") {
+    addMoreBlockModal.style.top = "-150%";
+    bodyOverflowModal.style.overflow = "auto";
+    bodyScreenData.style.opacity = "1";
+  }
+
+  if (topUpModal && topUpModal.style.top === "0%") {
+    topUpModal.style.top = "-150%";
+    bodyOverflowModal.style.overflow = "auto";
+    bodyScreenData.style.opacity = "1";
+  }
+  if (newCardModal && newCardModal.style.top === "0%") {
+    newCardModal.style.top = "-150%";
+    bodyOverflowModal.style.overflow = "auto";
+    bodyScreenData.style.opacity = "1";
+  }
+}
+
+function makeACard() {
+  closeBtn();
+  if (newCardModal.style.top === "-150%") {
+    newCardModal.style.top = "0%";
+    newCardModal.style.opacity = "1";
+    bodyOverflowModal.style.overflow = "hidden";
+    bodyScreenData.style.opacity = "0.7";
+  } else {
+    newCardModal.style.top = "-150%";
+    newCardModal.style.opacity = "0";
+    bodyOverflowModal.style.overflow = "auto";
+    bodyScreenData.style.opacity = "1";
+  }
+}
 
 function liquidityBtn() {
   if (liquidityModal.style.top === "-150%") {
