@@ -11,6 +11,7 @@ let bodyScreenData = document.getElementById("bodyScreenData");
 let addMoreBlockModal = document.getElementById("addMoreBlockModal");
 let newCardModal = document.getElementById("newCardModal");
 let topUpModal = document.getElementById("topUpModal");
+let manageModal = document.getElementById("manageModal");
 let selectedBtn = document.getElementById("selectedBtn");
 let blockZindex = document.getElementById("blockZindex");
 let addSelectToken = document.getElementById("addSelectToken");
@@ -122,27 +123,6 @@ function countrySelectBtn() {
   }
 }
 
-function selectDays(button) {
-  let parentDiv = button.closest(".relative");
-  let daysSelect = parentDiv.querySelector("#daysSelect");
-  let daysIcon = parentDiv.querySelector("#daysIcon");
-
-  if (daysSelect.style.scale === "0" || daysSelect.style.scale === "") {
-    closeDropDowns();
-    daysSelect.style.scale = "1";
-    daysSelect.style.marginTop = "10px";
-    daysSelect.style.zIndex = "999999";
-    daysIcon.style.rotate = "180deg";
-    blockZindex.style.zIndex = "auto";
-  } else {
-    daysSelect.style.scale = "0";
-    daysSelect.style.marginTop = "-50px";
-    daysSelect.style.zIndex = "0";
-    daysIcon.style.rotate = "0deg";
-    blockZindex.style.zIndex = "9999";
-  }
-}
-
 function selectCoin(button) {
   let parentDiv = button.closest(".relative");
   let coinSelect = parentDiv.querySelector("#coinSelect");
@@ -200,12 +180,76 @@ function detailsBtn(button) {
   }
 }
 
-function changeMainText(text) {
-  let parentDiv = event.target.closest(".relative");
-  let mainText = parentDiv.querySelector("#mainText");
+function changeMainText(text, event) {
+  let BTCtoETCchart = event.target.closest(".BTCtoETCchart");
+  let mainText = BTCtoETCchart.querySelector("#mainText");
   mainText.textContent = text;
 
+  if (text === "Last 15 days") {
+    document.querySelector(".last15Days").style.display = "block";
+    document.querySelector(".last10Days").style.display = "none";
+  } else if (text === "Last 10 days") {
+    document.querySelector(".last15Days").style.display = "none";
+    document.querySelector(".last10Days").style.display = "block";
+  }
+
   closeDropDowns();
+}
+
+function ADCtoUSDchangeMainText(text, event) {
+  let ADAtoUSDchart = event.target.closest(".ADAtoUSDchart");
+  let ADCtoUSDtext = ADAtoUSDchart.querySelector("#ADCtoUSDtext");
+  ADCtoUSDtext.textContent = text;
+
+  if (text === "Last 15 days") {
+    document.querySelector(".ADCtoUSDlast15Days").style.display = "block";
+    document.querySelector(".ADCtoUSDlast10Days").style.display = "none";
+  } else if (text === "Last 10 days") {
+    document.querySelector(".ADCtoUSDlast15Days").style.display = "none";
+    document.querySelector(".ADCtoUSDlast10Days").style.display = "block";
+  }
+
+  closeDropDowns();
+}
+function performancechangeMainText(text, event) {
+  let performancetext = document.querySelector("#performancetext"); 
+  performancetext.textContent = text;
+
+  if (text === "Last 15 days") {
+    document.querySelector(".performancelast15Days").style.display = "block";
+    document.querySelector(".performancelast10Days").style.display = "none";
+  } else if (text === "Last 10 days") {
+    document.querySelector(".performancelast15Days").style.display = "none";
+    document.querySelector(".performancelast10Days").style.display = "block";
+  }
+
+    closeDropDowns();
+}
+
+// function changeSelectedDaysText(text) {
+//   selectedDays.textContent = text;
+//   selectDays();
+// }
+
+function selectDays(button) {
+  let parentDiv = button.closest(".relative");
+  let daysSelect = parentDiv.querySelector("#daysSelect");
+  let daysIcon = parentDiv.querySelector("#daysIcon");
+
+  if (daysSelect.style.scale === "0" || daysSelect.style.scale === "") {
+    closeDropDowns();
+    daysSelect.style.scale = "1";
+    daysSelect.style.marginTop = "10px";
+    daysSelect.style.zIndex = "999999";
+    daysIcon.style.rotate = "180deg";
+    blockZindex.style.zIndex = "auto";
+  } else {
+    daysSelect.style.scale = "0";
+    daysSelect.style.marginTop = "-50px";
+    daysSelect.style.zIndex = "0";
+    daysIcon.style.rotate = "0deg";
+    blockZindex.style.zIndex = "9999";
+  }
 }
 
 function changeCoinData(text, newSrc) {
@@ -232,12 +276,10 @@ function changeMainImage(newSrc) {
   countrySelected.src = newSrc;
   countrySelectBtn();
 }
-function changeMainText(text) {
-  selectedDays.textContent = text;
-  selectDays();
-}
+
 function connectBtn() {
   if (connectModal.style.top === "-150%") {
+    window.scrollTo(0, 0);
     connectModal.style.top = "0%";
     connectModal.style.opacity = "1";
     bodyOverflowModal.style.overflow = "hidden";
@@ -252,6 +294,7 @@ function connectBtn() {
 
 function topUpBtn() {
   if (topUpModal.style.top === "-150%") {
+    window.scrollTo(0, 0);
     topUpModal.style.top = "0%";
     topUpModal.style.opacity = "1";
     bodyOverflowModal.style.overflow = "hidden";
@@ -293,11 +336,17 @@ function closeBtn() {
     bodyOverflowModal.style.overflow = "auto";
     bodyScreenData.style.opacity = "1";
   }
+  if (manageModal && manageModal.style.top === "0%") {
+    manageModal.style.top = "-150%";
+    bodyOverflowModal.style.overflow = "auto";
+    bodyScreenData.style.opacity = "1";
+  }
 }
 
 function makeACard() {
   closeBtn();
   if (newCardModal.style.top === "-150%") {
+    window.scrollTo(0, 0);
     newCardModal.style.top = "0%";
     newCardModal.style.opacity = "1";
     bodyOverflowModal.style.overflow = "hidden";
@@ -312,6 +361,7 @@ function makeACard() {
 
 function liquidityBtn() {
   if (liquidityModal.style.top === "-150%") {
+    window.scrollTo(0, 0);
     liquidityModal.style.top = "0%";
     liquidityModal.style.opacity = "1";
     bodyOverflowModal.style.overflow = "hidden";
@@ -324,8 +374,24 @@ function liquidityBtn() {
   }
 }
 
+function manageBtn() {
+  if (manageModal.style.top === "-150%") {
+    window.scrollTo(0, 0);
+    manageModal.style.top = "0%";
+    manageModal.style.opacity = "1";
+    bodyOverflowModal.style.overflow = "hidden";
+    bodyScreenData.style.opacity = "0.7";
+  } else {
+    manageModal.style.top = "-150%";
+    manageModal.style.opacity = "0";
+    bodyOverflowModal.style.overflow = "auto";
+    bodyScreenData.style.opacity = "1";
+  }
+}
+
 function addMore() {
   if (addMoreBlockModal.style.top === "-150%") {
+    window.scrollTo(0, 0);
     addMoreBlockModal.style.top = "0%";
     addMoreBlockModal.style.opacity = "1";
     bodyOverflowModal.style.overflow = "hidden";
@@ -359,3 +425,14 @@ function mangeTokenButton() {
   bodyOverflowModal.style.overflow = "auto";
   bodyScreenData.style.opacity = "1";
 }
+
+// function changeMainText(text) {
+//   document.getElementById('mainText').innerText = text;
+//   if (text === 'Last 15 days') {
+//     document.querySelector('.last15Days').style.display = 'block';
+//     document.querySelector('.last10Days').style.display = 'none';
+//   } else if (text === 'Last 10 days') {
+//     document.querySelector('.last15Days').style.display = 'none';
+//     document.querySelector('.last10Days').style.display = 'block';
+//   }
+// }

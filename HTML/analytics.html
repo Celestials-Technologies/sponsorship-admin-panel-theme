@@ -1171,7 +1171,7 @@
         <div class="flex flex-wrap xl:flex-nowrap gap-6 mt-6">
           <div class="w-full xl:w-3/6">
             <div
-              class="p-6 md:pt-6 md:pr-[31px] md:pb-[22px] md:pl-[26px] border border-white rounded-[15px] bg-gradient"
+              class="p-6 md:pt-6 md:pr-[31px] md:pb-[22px] md:pl-[26px] border border-white rounded-[15px] bg-gradient BTCtoETCchart"
             >
               <div
                 class="border-b border-dashed pb-6 mb-2 border-white flex flex-wrap gap-3 items-center justify-between"
@@ -1229,7 +1229,7 @@
                       <button
                         type="button"
                         class="text-base Gilroy-normal hover:bg-[#E9901A] p-1 text-white w-full rounded-lg flex items-center gap-3"
-                        onclick="changeMainText('Last 15 days')"
+                        onclick="changeMainText('Last 15 days' , event)"
                       >
                         <p class="text-sm text-white Gilroy-normal">
                           Last 15 days
@@ -1238,7 +1238,7 @@
                       <button
                         type="button"
                         class="text-base Gilroy-normal hover:bg-[#E9901A] p-1 text-white w-full rounded-lg flex items-center gap-3"
-                        onclick="changeMainText('Last 10 days')"
+                        onclick="changeMainText('Last 10 days' , event)"
                       >
                         <p class="text-sm text-white Gilroy-normal">
                           Last 10 days
@@ -1252,14 +1252,23 @@
                 <img
                   src="./src/images/chart.png"
                   alt="chart"
-                  class="h-auto w-full"
+                  class="h-auto w-full last15Days"
+                  style="display: block;"
+                />
+              </div>
+              <div>
+                <img
+                  src="./src/images/chart2.png"
+                  alt="chart"
+                  class="h-auto w-full last10Days"
+                  style="display: none;"
                 />
               </div>
             </div>
           </div>
           <div class="w-full xl:w-3/6">
             <div
-              class="p-6 md:pt-6 md:pr-[31px] md:pb-[22px] md:pl-[26px] border border-white rounded-[15px] bg-gradient"
+              class="p-6 md:pt-6 md:pr-[31px] md:pb-[22px] md:pl-[26px] border border-white rounded-[15px] bg-gradient ADAtoUSDchart"
             >
               <div
                 class="border-b border-dashed pb-6 mb-2 border-white flex flex-wrap gap-3 items-center justify-between"
@@ -1281,7 +1290,7 @@
                       onclick="selectDays(this)"
                       class="px-2 py-1 flex items-center gap-3 justify-between cursor-pointer selectDaysBox rounded-lg border border-solid border-white bg-transparent p-1 text-xs text-white pt-1.5 rounded-lg Gilroy-normal"
                     >
-                      <p class="text-sm text-white Gilroy-normal" id="mainText">
+                      <p class="text-sm text-white Gilroy-normal" id="ADCtoUSDtext">
                         Last 15 days
                       </p>
                       <div class="w-4 h-4">
@@ -1317,7 +1326,7 @@
                       <button
                         type="button"
                         class="text-base Gilroy-normal hover:bg-[#E9901A] p-1 text-white w-full rounded-lg flex items-center gap-3"
-                        onclick="changeMainText('Last 15 days')"
+                        onclick="ADCtoUSDchangeMainText('Last 15 days' , event)"
                       >
                         <p class="text-sm text-white Gilroy-normal">
                           Last 15 days
@@ -1326,7 +1335,7 @@
                       <button
                         type="button"
                         class="text-base Gilroy-normal hover:bg-[#E9901A] p-1 text-white w-full rounded-lg flex items-center gap-3"
-                        onclick="changeMainText('Last 10 days')"
+                        onclick="ADCtoUSDchangeMainText('Last 10 days' , event)"
                       >
                         <p class="text-sm text-white Gilroy-normal">
                           Last 10 days
@@ -1340,7 +1349,16 @@
                 <img
                   src="./src/images/chart2.png"
                   alt="chart"
-                  class="h-auto w-full"
+                  class="h-auto w-full ADCtoUSDlast15Days"
+                  style="display: block;"
+                />
+              </div>
+              <div>
+                <img
+                  src="./src/images/chart.png"
+                  alt="chart"
+                  class="h-auto w-full ADCtoUSDlast10Days"
+                  style="display: none;"
                 />
               </div>
             </div>
@@ -1407,7 +1425,7 @@
                       <button
                         type="button"
                         class="text-base Gilroy-normal hover:bg-[#E9901A] p-1 text-white w-full rounded-lg flex items-center gap-3"
-                        onclick="changeMainText('Last 15 days')"
+                        onclick="changeMainText('Last 15 days' , event)"
                       >
                         <p class="text-sm text-white Gilroy-normal">
                           Last 15 days
@@ -1416,7 +1434,7 @@
                       <button
                         type="button"
                         class="text-base Gilroy-normal hover:bg-[#E9901A] p-1 text-white w-full rounded-lg flex items-center gap-3"
-                        onclick="changeMainText('Last 10 days')"
+                        onclick="changeMainText('Last 10 days' , event)"
                       >
                         <p class="text-sm text-white Gilroy-normal">
                           Last 10 days
@@ -1945,7 +1963,7 @@
                       <button
                         type="button"
                         class="text-base Gilroy-normal hover:bg-[#E9901A] p-1 text-white w-full rounded-lg flex items-center gap-3"
-                        onclick="changeMainText('Last 15 days')"
+                        onclick="changeMainText('Last 15 days' , event)"
                       >
                         <p class="text-sm text-white Gilroy-normal">
                           Last 15 days
@@ -1954,7 +1972,7 @@
                       <button
                         type="button"
                         class="text-base Gilroy-normal hover:bg-[#E9901A] p-1 text-white w-full rounded-lg flex items-center gap-3"
-                        onclick="changeMainText('Last 10 days')"
+                        onclick="changeMainText('Last 10 days' , event)"
                       >
                         <p class="text-sm text-white Gilroy-normal">
                           Last 10 days
@@ -1971,7 +1989,7 @@
                   <div class="h-full">
                     <img src="./src/images/bitcoin_mid.png" class="w-9 h-9" />
                   </div>
-                  <div class="w-full" id="blockZindex" style="z-index: 9999;">
+                  <div class="w-full" id="blockZindex" style="z-index: 9999">
                     <div class="flex items-center justify-between mb-2">
                       <h5
                         class="text-[18px] md:text-xl text-white Gilroy-medium"
@@ -1997,7 +2015,11 @@
                     </div>
                   </div>
                   <div class="relative">
-                    <button type="button" onclick="detailsBtn(this)" class="chooseOption">
+                    <button
+                      type="button"
+                      onclick="detailsBtn(this)"
+                      class="chooseOption"
+                    >
                       <svg
                         width="24"
                         height="24"
@@ -2029,21 +2051,32 @@
                         />
                       </svg>
                     </button>
-                    <div class=" absolute top-3 right-[27px] min-w-[140px] bg-bgPrimary rounded-lg text-base text-white Gilroy-normal p-3 grid"
-                      id="detailDropDown"  style="
-                      opacity: 0;
-                      margin-top: -50px;
-                      z-index: 0;
-                      transition: all 0.5s ease;
-                    "
+                    <div
+                      class="absolute top-3 right-[27px] min-w-[140px] bg-bgPrimary rounded-lg text-base text-white Gilroy-normal p-3 grid"
+                      id="detailDropDown"
+                      style="
+                        opacity: 0;
+                        margin-top: -50px;
+                        z-index: 0;
+                        transition: all 0.5s ease;
+                      "
                     >
-                      <a href="#" class="px-5 py-2 rounded-lg hover:bg-[#0f0f7ac7] transition-all">
+                      <a
+                        href="#"
+                        class="px-5 py-2 rounded-lg hover:bg-[#0f0f7ac7] transition-all"
+                      >
                         Print
                       </a>
-                      <a href="#" class="px-5 py-2 rounded-lg hover:bg-[#0f0f7ac7] transition-all">
+                      <a
+                        href="#"
+                        class="px-5 py-2 rounded-lg hover:bg-[#0f0f7ac7] transition-all"
+                      >
                         Remove
                       </a>
-                      <a href="#" class="px-5 py-2 rounded-lg hover:bg-[#0f0f7ac7] transition-all">
+                      <a
+                        href="#"
+                        class="px-5 py-2 rounded-lg hover:bg-[#0f0f7ac7] transition-all"
+                      >
                         Download
                       </a>
                     </div>
@@ -2055,7 +2088,7 @@
                   <div class="h-full">
                     <img src="./src/images/cardano_mid.png" class="w-9 h-9" />
                   </div>
-                  <div class="w-full" id="blockZindex" style="z-index: 9999;">
+                  <div class="w-full" id="blockZindex" style="z-index: 9999">
                     <div class="flex items-center justify-between mb-2">
                       <h5
                         class="text-[18px] md:text-xl text-white Gilroy-medium"
@@ -2081,7 +2114,11 @@
                     </div>
                   </div>
                   <div class="relative">
-                    <button type="button" onclick="detailsBtn(this)" class="chooseOption">
+                    <button
+                      type="button"
+                      onclick="detailsBtn(this)"
+                      class="chooseOption"
+                    >
                       <svg
                         width="24"
                         height="24"
@@ -2113,21 +2150,32 @@
                         />
                       </svg>
                     </button>
-                    <div class=" absolute top-3 right-[27px] min-w-[140px] bg-bgPrimary rounded-lg text-base text-white Gilroy-normal p-3 grid"
-                      id="detailDropDown"  style="
-                      opacity: 0;
-                      margin-top: -50px;
-                      z-index: 0;
-                      transition: all 0.5s ease;
-                    "
+                    <div
+                      class="absolute top-3 right-[27px] min-w-[140px] bg-bgPrimary rounded-lg text-base text-white Gilroy-normal p-3 grid"
+                      id="detailDropDown"
+                      style="
+                        opacity: 0;
+                        margin-top: -50px;
+                        z-index: 0;
+                        transition: all 0.5s ease;
+                      "
                     >
-                      <a href="#" class="px-5 py-2 rounded-lg hover:bg-[#0f0f7ac7] transition-all">
+                      <a
+                        href="#"
+                        class="px-5 py-2 rounded-lg hover:bg-[#0f0f7ac7] transition-all"
+                      >
                         Print
                       </a>
-                      <a href="#" class="px-5 py-2 rounded-lg hover:bg-[#0f0f7ac7] transition-all">
+                      <a
+                        href="#"
+                        class="px-5 py-2 rounded-lg hover:bg-[#0f0f7ac7] transition-all"
+                      >
                         Remove
                       </a>
-                      <a href="#" class="px-5 py-2 rounded-lg hover:bg-[#0f0f7ac7] transition-all">
+                      <a
+                        href="#"
+                        class="px-5 py-2 rounded-lg hover:bg-[#0f0f7ac7] transition-all"
+                      >
                         Download
                       </a>
                     </div>
@@ -2139,7 +2187,7 @@
                   <div class="h-full">
                     <img src="./src/images/binance_lg.png" class="w-9 h-9" />
                   </div>
-                  <div class="w-full" id="blockZindex" style="z-index: 9999;">
+                  <div class="w-full" id="blockZindex" style="z-index: 9999">
                     <div class="flex items-center justify-between mb-2">
                       <h5
                         class="text-[18px] md:text-xl text-white Gilroy-medium"
@@ -2165,7 +2213,11 @@
                     </div>
                   </div>
                   <div class="relative">
-                    <button type="button" onclick="detailsBtn(this)" class="chooseOption">
+                    <button
+                      type="button"
+                      onclick="detailsBtn(this)"
+                      class="chooseOption"
+                    >
                       <svg
                         width="24"
                         height="24"
@@ -2197,21 +2249,32 @@
                         />
                       </svg>
                     </button>
-                    <div class=" absolute top-3 right-[27px] min-w-[140px] bg-bgPrimary rounded-lg text-base text-white Gilroy-normal p-3 grid"
-                      id="detailDropDown"  style="
-                      opacity: 0;
-                      margin-top: -50px;
-                      z-index: 0;
-                      transition: all 0.5s ease;
-                    "
+                    <div
+                      class="absolute top-3 right-[27px] min-w-[140px] bg-bgPrimary rounded-lg text-base text-white Gilroy-normal p-3 grid"
+                      id="detailDropDown"
+                      style="
+                        opacity: 0;
+                        margin-top: -50px;
+                        z-index: 0;
+                        transition: all 0.5s ease;
+                      "
                     >
-                      <a href="#" class="px-5 py-2 rounded-lg hover:bg-[#0f0f7ac7] transition-all">
+                      <a
+                        href="#"
+                        class="px-5 py-2 rounded-lg hover:bg-[#0f0f7ac7] transition-all"
+                      >
                         Print
                       </a>
-                      <a href="#" class="px-5 py-2 rounded-lg hover:bg-[#0f0f7ac7] transition-all">
+                      <a
+                        href="#"
+                        class="px-5 py-2 rounded-lg hover:bg-[#0f0f7ac7] transition-all"
+                      >
                         Remove
                       </a>
-                      <a href="#" class="px-5 py-2 rounded-lg hover:bg-[#0f0f7ac7] transition-all">
+                      <a
+                        href="#"
+                        class="px-5 py-2 rounded-lg hover:bg-[#0f0f7ac7] transition-all"
+                      >
                         Download
                       </a>
                     </div>
@@ -2223,7 +2286,7 @@
                   <div class="h-full">
                     <img src="./src/images/bnb.png" class="w-9 h-9" />
                   </div>
-                  <div class="w-full" id="blockZindex" style="z-index: 9999;">
+                  <div class="w-full" id="blockZindex" style="z-index: 9999">
                     <div class="flex items-center justify-between mb-2">
                       <h5
                         class="text-[18px] md:text-xl text-white Gilroy-medium"
@@ -2249,7 +2312,11 @@
                     </div>
                   </div>
                   <div class="relative">
-                    <button type="button" onclick="detailsBtn(this)" class="chooseOption">
+                    <button
+                      type="button"
+                      onclick="detailsBtn(this)"
+                      class="chooseOption"
+                    >
                       <svg
                         width="24"
                         height="24"
@@ -2281,21 +2348,32 @@
                         />
                       </svg>
                     </button>
-                    <div class=" absolute top-3 right-[27px] min-w-[140px] bg-bgPrimary rounded-lg text-base text-white Gilroy-normal p-3 grid"
-                      id="detailDropDown"  style="
-                      opacity: 0;
-                      margin-top: -50px;
-                      z-index: 0;
-                      transition: all 0.5s ease;
-                    "
+                    <div
+                      class="absolute top-3 right-[27px] min-w-[140px] bg-bgPrimary rounded-lg text-base text-white Gilroy-normal p-3 grid"
+                      id="detailDropDown"
+                      style="
+                        opacity: 0;
+                        margin-top: -50px;
+                        z-index: 0;
+                        transition: all 0.5s ease;
+                      "
                     >
-                      <a href="#" class="px-5 py-2 rounded-lg hover:bg-[#0f0f7ac7] transition-all">
+                      <a
+                        href="#"
+                        class="px-5 py-2 rounded-lg hover:bg-[#0f0f7ac7] transition-all"
+                      >
                         Print
                       </a>
-                      <a href="#" class="px-5 py-2 rounded-lg hover:bg-[#0f0f7ac7] transition-all">
+                      <a
+                        href="#"
+                        class="px-5 py-2 rounded-lg hover:bg-[#0f0f7ac7] transition-all"
+                      >
                         Remove
                       </a>
-                      <a href="#" class="px-5 py-2 rounded-lg hover:bg-[#0f0f7ac7] transition-all">
+                      <a
+                        href="#"
+                        class="px-5 py-2 rounded-lg hover:bg-[#0f0f7ac7] transition-all"
+                      >
                         Download
                       </a>
                     </div>
@@ -2307,7 +2385,7 @@
                   <div class="h-full">
                     <img src="./src/images/bitcoin_mid.png" class="w-9 h-9" />
                   </div>
-                  <div class="w-full" id="blockZindex" style="z-index: 9999;">
+                  <div class="w-full" id="blockZindex" style="z-index: 9999">
                     <div class="flex items-center justify-between mb-2">
                       <h5
                         class="text-[18px] md:text-xl text-white Gilroy-medium"
@@ -2333,7 +2411,11 @@
                     </div>
                   </div>
                   <div class="relative">
-                    <button type="button" onclick="detailsBtn(this)" class="chooseOption">
+                    <button
+                      type="button"
+                      onclick="detailsBtn(this)"
+                      class="chooseOption"
+                    >
                       <svg
                         width="24"
                         height="24"
@@ -2365,21 +2447,32 @@
                         />
                       </svg>
                     </button>
-                    <div class=" absolute top-3 right-[27px] min-w-[140px] bg-bgPrimary rounded-lg text-base text-white Gilroy-normal p-3 grid"
-                      id="detailDropDown"  style="
-                      opacity: 0;
-                      margin-top: -50px;
-                      z-index: 0;
-                      transition: all 0.5s ease;
-                    "
+                    <div
+                      class="absolute top-3 right-[27px] min-w-[140px] bg-bgPrimary rounded-lg text-base text-white Gilroy-normal p-3 grid"
+                      id="detailDropDown"
+                      style="
+                        opacity: 0;
+                        margin-top: -50px;
+                        z-index: 0;
+                        transition: all 0.5s ease;
+                      "
                     >
-                      <a href="#" class="px-5 py-2 rounded-lg hover:bg-[#0f0f7ac7] transition-all">
+                      <a
+                        href="#"
+                        class="px-5 py-2 rounded-lg hover:bg-[#0f0f7ac7] transition-all"
+                      >
                         Print
                       </a>
-                      <a href="#" class="px-5 py-2 rounded-lg hover:bg-[#0f0f7ac7] transition-all">
+                      <a
+                        href="#"
+                        class="px-5 py-2 rounded-lg hover:bg-[#0f0f7ac7] transition-all"
+                      >
                         Remove
                       </a>
-                      <a href="#" class="px-5 py-2 rounded-lg hover:bg-[#0f0f7ac7] transition-all">
+                      <a
+                        href="#"
+                        class="px-5 py-2 rounded-lg hover:bg-[#0f0f7ac7] transition-all"
+                      >
                         Download
                       </a>
                     </div>
@@ -2391,7 +2484,7 @@
                   <div class="h-full">
                     <img src="./src/images/cardano_mid.png" class="w-9 h-9" />
                   </div>
-                  <div class="w-full" id="blockZindex" style="z-index: 9999;">
+                  <div class="w-full" id="blockZindex" style="z-index: 9999">
                     <div class="flex items-center justify-between mb-2">
                       <h5
                         class="text-[18px] md:text-xl text-white Gilroy-medium"
@@ -2417,7 +2510,11 @@
                     </div>
                   </div>
                   <div class="relative">
-                    <button type="button" onclick="detailsBtn(this)" class="chooseOption">
+                    <button
+                      type="button"
+                      onclick="detailsBtn(this)"
+                      class="chooseOption"
+                    >
                       <svg
                         width="24"
                         height="24"
@@ -2449,21 +2546,32 @@
                         />
                       </svg>
                     </button>
-                    <div class=" absolute top-3 right-[27px] min-w-[140px] bg-bgPrimary rounded-lg text-base text-white Gilroy-normal p-3 grid"
-                      id="detailDropDown"  style="
-                      opacity: 0;
-                      margin-top: -50px;
-                      z-index: 0;
-                      transition: all 0.5s ease;
-                    "
+                    <div
+                      class="absolute top-3 right-[27px] min-w-[140px] bg-bgPrimary rounded-lg text-base text-white Gilroy-normal p-3 grid"
+                      id="detailDropDown"
+                      style="
+                        opacity: 0;
+                        margin-top: -50px;
+                        z-index: 0;
+                        transition: all 0.5s ease;
+                      "
                     >
-                      <a href="#" class="px-5 py-2 rounded-lg hover:bg-[#0f0f7ac7] transition-all">
+                      <a
+                        href="#"
+                        class="px-5 py-2 rounded-lg hover:bg-[#0f0f7ac7] transition-all"
+                      >
                         Print
                       </a>
-                      <a href="#" class="px-5 py-2 rounded-lg hover:bg-[#0f0f7ac7] transition-all">
+                      <a
+                        href="#"
+                        class="px-5 py-2 rounded-lg hover:bg-[#0f0f7ac7] transition-all"
+                      >
                         Remove
                       </a>
-                      <a href="#" class="px-5 py-2 rounded-lg hover:bg-[#0f0f7ac7] transition-all">
+                      <a
+                        href="#"
+                        class="px-5 py-2 rounded-lg hover:bg-[#0f0f7ac7] transition-all"
+                      >
                         Download
                       </a>
                     </div>
@@ -2863,7 +2971,6 @@
         </button>
       </div>
     </div>
-   
 
     <script src="./script.js"></script>
   </body>

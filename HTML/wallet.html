@@ -12,7 +12,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
 
-  <body cclass="min-h-screen" id="bodyOverflowModal">
+  <body class="min-h-screen" id="bodyOverflowModal">
     <div
       class="flex gap-[25px] pt-[25px] pb-[53px] px-[25px] min-h-screen bg-bgPrimary opacity-1"
       id="bodyScreenData"
@@ -1201,19 +1201,82 @@
                 </p>
                 <div class="flex items-center gap-2">
                   <p class="text-sm Gilroy-normal text-white">Sort By</p>
-                  <select
-                    class="border border-solid border-white bg-transparent p-1 text-xs text-white pt-1.5 rounded-lg Gilroy-normal"
-                  >
-                    <option value="option1">Last 15 days</option>
-                    <option value="option2">Last 10 days</option>
-                  </select>
+                
+                  <div class="relative">
+                    <button
+                      type="button"
+                      onclick="selectDays(this)"
+                      class="px-2 py-1 flex items-center gap-3 justify-between cursor-pointer selectDaysBox rounded-lg border border-solid border-white bg-transparent p-1 text-xs text-white pt-1.5 rounded-lg Gilroy-normal"
+                    >
+                      <p class="text-sm text-white Gilroy-normal" id="performancetext">
+                        Last 15 days
+                      </p>
+                      <div class="w-4 h-4">
+                        <svg
+                          width="100%"
+                          height="100%"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                          id="daysIcon"
+                          style="rotate: 0deg; transition: all 0.5s ease"
+                        >
+                          <path
+                            d="M6 9L12 15L18 9"
+                            stroke="white"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </div>
+                    </button>
+                    <div
+                      class="absolute right-0 bg-bgPrimary rounded-lg px-2 py-1 border border-solid border-white w-[130px]"
+                      id="daysSelect"
+                      style="
+                        scale: 0;
+                        margin-top: -50px;
+                        z-index: 0;
+                        transition: all 0.2s ease;
+                      "
+                    >
+                      <button
+                        type="button"
+                        class="text-base Gilroy-normal hover:bg-[#E9901A] p-1 text-white w-full rounded-lg flex items-center gap-3"
+                        onclick="performancechangeMainText('Last 15 days' , event)"
+                      >
+                        <p class="text-sm text-white Gilroy-normal">
+                          Last 15 days
+                        </p>
+                      </button>
+                      <button
+                        type="button"
+                        class="text-base Gilroy-normal hover:bg-[#E9901A] p-1 text-white w-full rounded-lg flex items-center gap-3"
+                        onclick="performancechangeMainText('Last 10 days' , event)"
+                      >
+                        <p class="text-sm text-white Gilroy-normal">
+                          Last 10 days
+                        </p>
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div>
                 <img
                   src="./src/images/statistics.png"
                   alt="Performance"
-                  class="w-full h-auto"
+                  class="w-full h-auto performancelast15Days"
+                  style="display: block"
+                />
+              </div>
+              <div>
+                <img
+                  src="./src/images/detailsWeekChart.png"
+                  alt="Chart"
+                  class="w-full h-auto performancelast10Days"
+                  style="display: none"
                 />
               </div>
             </div>
@@ -1794,6 +1857,7 @@
                 </button>
                 <button
                   type="button"
+                  onclick="manageBtn()"
                   class="px-4 md:px-5 md:py-4 py-3 flex justify-center items-center md:gap-3 gap-2 border border-solid border-[#E9901A] transition-all hover:border-white hover:bg-[#E9901A] rounded-xl walletTopUp"
                 >
                   <svg
@@ -2749,6 +2813,118 @@
         </form>
       </div>
     </div>
+
+    <div
+      class="w-full h-screen absolute text-white z-[99999] flex justify-center items-center py-6"
+      id="manageModal"
+      style="top: -150%; transition: all 0.5s ease"
+    >
+      <div
+        class="w-[90%] max-w-[624px] mx-auto p-6 border border-solid border-white bg-bgPrimary rounded-lg h-auto max-h-[95%] overflow-auto scrollHidden"
+      >
+        <div
+          class="border-b border-dashed border-white lg:pb-6 pb-5 mb-5 flex items-center justify-between"
+        >
+          <h2
+            class="text-xl lg:text-2xl leading-normal text-white Gilroy-extrabold"
+          >
+            Your card details
+          </h2>
+          <button
+            type="button"
+            onclick="closeBtn()"
+            class="w-6 h-6 transition-all"
+          >
+            <svg
+              width="100%"
+              height="100%"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M18 6L6 18M6 6L18 18"
+                stroke="white"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+        </div>
+        <div class="flex flex-col gap-5 md:gap-6">
+          <div>
+            <img
+              src="./src/images/creditcard.png"
+              alt="creditcard"
+              class="w-full"
+            />
+          </div>
+          <div class="border border-solid border-white md:p-6 p-4 rounded-lg">
+            <h4 class="text-lg text-white Gilroy-medium mb-2">
+              Spending limits
+            </h4>
+            <div class="w-full h-[5px] rounded-[5px] bg-[#dfe0e4]">
+              <div class="w-[47%] h-full rounded-[5px] bg-btnSecondary"></div>
+            </div>
+            <p class="text-base text-white Gilroy-normal mt-3">
+              $399.00 spent of $2000.00
+            </p>
+          </div>
+          <div class="border border-solid border-white md:p-6 p-4 rounded-lg">
+            <h4 class="text-lg text-white Gilroy-medium mb-2">Security</h4>
+            <p class="text-base text-white Gilroy-normal">
+              Select the permissions you want to add to all the projects in this
+              account.
+            </p>
+            <div
+              class="border-t border-solid border-white mt-6 pt-4 flex items-center justify-between"
+            >
+              <p class="text-lg Gilroy-medium text-white">
+                Online transactions
+              </p>
+              <div>
+                <label class="switch">
+                  <input type="checkbox" checked="" />
+                  <span class="slider round"></span>
+                </label>
+              </div>
+            </div>
+            <div
+              class="border-t border-solid border-white mt-6 pt-4 flex items-center justify-between"
+            >
+              <p class="text-lg Gilroy-medium text-white">Swipe payments</p>
+              <div>
+                <label class="switch">
+                  <input type="checkbox" />
+                  <span class="slider round"></span>
+                </label>
+              </div>
+            </div>
+            <div
+              class="border-t border-solid border-white mt-6 pt-4 flex items-center justify-between"
+            >
+              <p class="text-lg Gilroy-medium text-white">
+                Contactless payments
+              </p>
+              <div>
+                <label class="switch">
+                  <input type="checkbox" checked="" />
+                  <span class="slider round"></span>
+                </label>
+              </div>
+            </div>
+          </div>
+          <button
+            type="button"
+            class="px-6 py-3 w-full text-base text-white Gilroy-medium text-center rounded-lg hover:bg-transparent bg-[#E9901A] border border-solid border-[#E9901A]"
+          >
+            Terminate Card
+          </button>
+        </div>
+      </div>
+    </div>
+
     <script src="./script.js"></script>
   </body>
 </html>
