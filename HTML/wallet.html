@@ -12,7 +12,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
 
-  <body class="min-h-screen" id="bodyOverflowModal">
+  <body class="min-h-screen !overflow-x-hidden" id="bodyOverflowModal">
     <div
       class="flex gap-[25px] pt-[25px] pb-[53px] px-[25px] min-h-screen bg-bgPrimary opacity-1"
       id="bodyScreenData"
@@ -1201,14 +1201,17 @@
                 </p>
                 <div class="flex items-center gap-2">
                   <p class="text-sm Gilroy-normal text-white">Sort By</p>
-                
+
                   <div class="relative">
                     <button
                       type="button"
                       onclick="selectDays(this)"
                       class="px-2 py-1 flex items-center gap-3 justify-between cursor-pointer selectDaysBox rounded-lg border border-solid border-white bg-transparent p-1 text-xs text-white pt-1.5 rounded-lg Gilroy-normal"
                     >
-                      <p class="text-sm text-white Gilroy-normal" id="performancetext">
+                      <p
+                        class="text-sm text-white Gilroy-normal"
+                        id="performancetext"
+                      >
                         Last 15 days
                       </p>
                       <div class="w-4 h-4">
@@ -2110,6 +2113,7 @@
       style="top: -150%; transition: all 0.5s ease"
     >
       <div
+        id="connectData"
         class="w-[90%] max-w-[624px] mx-auto p-6 border border-solid border-white bg-bgPrimary rounded-lg h-auto max-h-[95%] overflow-auto scrollHidden"
       >
         <div
@@ -2252,6 +2256,7 @@
       style="top: -150%; transition: all 0.5s ease"
     >
       <div
+        id="liquidityData"
         class="w-[90%] max-w-[500px] mx-auto p-6 border border-solid border-white bg-bgPrimary rounded-lg h-auto max-h-[95%] overflow-auto scrollHidden"
       >
         <div
@@ -2388,11 +2393,19 @@
             %
           </div>
           <input
-            type="text"
-            class="bg-transparent text-sm text-white Gilroy-normal outline-none"
+            id="liquidityInputValue"
+            type="number"
+            class="bg-transparent text-sm text-white Gilroy-normal outline-none w-[80%]"
             placeholder="0.00"
           />
         </div>
+        <p
+          id="liquidityErrorField"
+          class="text-sm mt-0.5 text-[#ff2323]"
+          style="display: none"
+        >
+          Enter the amount
+        </p>
         <div
           class="flex flex-wrap items-center justify-between flex-wrap gap-3 mt-5"
         >
@@ -2417,11 +2430,40 @@
         </div>
         <button
           type="button"
+          onclick="provideLiquidityBtn()"
           class="px-6 py-3 w-full mt-5 text-base text-white Gilroy-medium text-center rounded-lg hover:bg-transparent bg-[#E9901A] border border-solid border-[#E9901A]"
         >
           Provide liquidity
         </button>
       </div>
+    </div>
+    <div
+      id="SuccessfulMessage"
+      class="w-[15%] p-4 md:p-6 absolute text-center top-6 z-[99999] bg-white text-[#008000] rounded-lg tex-xl Gilroy-medium"
+      style="right: -50%; transition: all 0.7s ease"
+    >
+      Successfull
+      <button
+        type="button"
+        onclick="closeModalMessageBtn()"
+        class="absolute bg-white rounded-full -top-2 right-0 cursor-pointer w-6 h-6"
+      >
+        <svg
+          width="100%"
+          height="100%"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M17 7L7 17M7 7L17 17"
+            stroke="black"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </button>
     </div>
 
     <div
@@ -2430,6 +2472,7 @@
       style="top: -150%; transition: all 0.5s ease"
     >
       <div
+        id="topUpData"
         class="w-[90%] max-w-[624px] mx-auto p-6 border border-solid border-white bg-bgPrimary rounded-lg h-auto max-h-[95%] overflow-auto scrollHidden"
       >
         <div
@@ -2469,6 +2512,7 @@
           class="mb-5 border border-solid border-white rounded-lg p-2 flex items-center justify-between"
         >
           <input
+            id="depositInputValue"
             type="text"
             class="text-sm text-white Gilroy-normal px-4 bg-transparent outline-none w-[80%]"
             placeholder="0.00"
@@ -2575,6 +2619,13 @@
             </div>
           </div>
         </div>
+        <p
+          id="depositErrorMessage"
+          class="text-sm mt-0.5 text-[#ff2323]"
+          style="display: none"
+        >
+          Enter the amount
+        </p>
         <p class="text-base text-white Gilroy-normal mb-2 md:mb-4">
           Select card
         </p>
@@ -2669,6 +2720,7 @@
           <p class="text-base Gilroy-normal text-white">Add a new card</p>
         </a>
         <button
+          onclick="depositBtn()"
           type="button"
           class="py-3 px-4 border border-solid border-[#E9901A] bg-[#E9901A] transition-all hover:bg-transparent text-white text-base Gilroy-medium rounded-lg mt-5 w-full"
         >
@@ -2683,6 +2735,7 @@
       style="top: -150%; transition: all 0.5s ease"
     >
       <div
+        id="newCardData"
         class="w-[90%] max-w-[624px] mx-auto p-6 border border-solid border-white bg-bgPrimary rounded-lg h-auto max-h-[95%] overflow-auto scrollHidden"
       >
         <div
@@ -2722,9 +2775,11 @@
             >
             <input
               type="text"
+              id="cardHolderName"
               class="bg-transparent outline-none border border-solid border-white rounded-lg py-3 px-4"
               placeholder="Enter Name"
             />
+            <p id="cardHolderNameError" class="text-red-500 text-sm"></p>
           </div>
           <div class="flex items-center gap-3">
             <div class="flex flex-col gap-2 md:gap-4 w-1/2">
@@ -2732,10 +2787,13 @@
                 >Select Bank</label
               >
               <select
+                id="selectBank"
                 class="bg-transparent h-[50px] w-full outline-none border border-solid border-white rounded-lg py-3 px-4"
               >
-                <option value="Select Bank">Select Bank</option>
+                <option value="Select Bank" class="text-black">Select Bank</option>
+                <option value="Bank of America" class="text-black">Bank of America</option>
               </select>
+              <p id="selectBankError" class="text-red-500 text-sm"></p>
             </div>
             <div class="flex flex-col items-start gap-3 w-1/2">
               <label class="text-lg text-white Gilroy-normal"
@@ -2743,9 +2801,11 @@
               >
               <input
                 type="number"
+                id="accountNumber"
                 class="bg-transparent outline-none border border-solid border-white rounded-lg py-3 px-4"
                 placeholder="Enter Number"
               />
+              <p id="accountNumberError" class="text-red-500 text-sm"></p>
             </div>
           </div>
           <div class="flex flex-col gap-2 md:gap-4">
@@ -2754,20 +2814,24 @@
             >
             <input
               type="number"
+              id="mobileNumber"
               class="bg-transparent outline-none border border-solid border-white rounded-lg py-3 px-4"
               placeholder="Enter Number"
             />
+            <p id="mobileNumberError" class="text-red-500 text-sm"></p>
           </div>
           <div class="flex items-center gap-3">
             <div class="flex flex-col items-start gap-3 w-1/2">
-              <label class="text-lg text-white Gilroy-normal">
-                Card Number</label
+              <label class="text-lg text-white Gilroy-normal"
+                >Card Number</label
               >
               <input
                 type="number"
+                id="cardNumber"
                 class="bg-transparent outline-none border border-solid border-white rounded-lg py-3 px-4"
                 placeholder="Enter Number"
               />
+              <p id="cardNumberError" class="text-red-500 text-sm"></p>
             </div>
             <div class="flex flex-col items-start gap-3 w-1/2 text-white">
               <label class="text-lg text-white Gilroy-normal"
@@ -2775,40 +2839,51 @@
               >
               <input
                 type="date"
+                id="selectDate"
                 class="bg-transparent w-full text-white outline-none border border-solid border-white rounded-lg py-3 px-4"
                 placeholder="Enter Number"
               />
+              <p id="selectDateError" class="text-red-500 text-sm"></p>
             </div>
           </div>
           <div class="flex flex-col gap-2 md:gap-4">
             <label class="text-lg text-white Gilroy-normal">Address</label>
             <input
               type="text"
+              id="address"
               class="bg-transparent outline-none border border-solid border-white rounded-lg py-3 px-4"
               placeholder="Street , Number"
             />
+            <p id="addressError" class="text-red-500 text-sm"></p>
           </div>
           <div class="flex items-center gap-3">
             <div class="flex flex-col items-start gap-3 w-1/2">
+              <label class="text-lg text-white Gilroy-normal">Country</label>
               <input
                 type="text"
+                id="country"
                 class="bg-transparent outline-none border border-solid border-white rounded-lg py-3 px-4"
                 placeholder="Country"
               />
+              <p id="countryError" class="text-red-500 text-sm"></p>
             </div>
             <div class="flex flex-col items-start gap-3 w-1/2 text-white">
+              <label class="text-lg text-white Gilroy-normal">City</label>
               <input
                 type="text"
+                id="city"
                 class="bg-transparent w-full text-white outline-none border border-solid border-white rounded-lg py-3 px-4"
                 placeholder="City"
               />
+              <p id="cityError" class="text-red-500 text-sm"></p>
             </div>
           </div>
           <button
             type="button"
             class="px-6 py-3 w-full text-base text-white Gilroy-medium text-center rounded-lg hover:bg-transparent bg-[#E9901A] border border-solid border-[#E9901A]"
+            onclick="validateForm()"
           >
-            Add Bank Card
+            Add a new Card
           </button>
         </form>
       </div>
@@ -2820,6 +2895,7 @@
       style="top: -150%; transition: all 0.5s ease"
     >
       <div
+        id="modalData"
         class="w-[90%] max-w-[624px] mx-auto p-6 border border-solid border-white bg-bgPrimary rounded-lg h-auto max-h-[95%] overflow-auto scrollHidden"
       >
         <div
@@ -2916,6 +2992,7 @@
             </div>
           </div>
           <button
+            onclick="terminateBtn()"
             type="button"
             class="px-6 py-3 w-full text-base text-white Gilroy-medium text-center rounded-lg hover:bg-transparent bg-[#E9901A] border border-solid border-[#E9901A]"
           >

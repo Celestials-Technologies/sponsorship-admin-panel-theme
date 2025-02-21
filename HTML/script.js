@@ -180,7 +180,15 @@ function detailsBtn(button) {
   }
 }
 
-function changeMainText(text, event) {
+function changeMainText(text) {
+  let parentDiv = event.target.closest(".relative");
+  let mainText = parentDiv.querySelector("#mainText");
+  mainText.textContent = text;
+
+  closeDropDowns();
+}
+
+function btcToEURchangeMainText(text, event) {
   let BTCtoETCchart = event.target.closest(".BTCtoETCchart");
   let mainText = BTCtoETCchart.querySelector("#mainText");
   mainText.textContent = text;
@@ -212,7 +220,7 @@ function ADCtoUSDchangeMainText(text, event) {
   closeDropDowns();
 }
 function performancechangeMainText(text, event) {
-  let performancetext = document.querySelector("#performancetext"); 
+  let performancetext = document.querySelector("#performancetext");
   performancetext.textContent = text;
 
   if (text === "Last 15 days") {
@@ -223,7 +231,7 @@ function performancechangeMainText(text, event) {
     document.querySelector(".performancelast10Days").style.display = "block";
   }
 
-    closeDropDowns();
+  closeDropDowns();
 }
 
 // function changeSelectedDaysText(text) {
@@ -284,6 +292,16 @@ function connectBtn() {
     connectModal.style.opacity = "1";
     bodyOverflowModal.style.overflow = "hidden";
     bodyScreenData.style.opacity = "0.7";
+    document
+      .getElementById("connectModal")
+      .addEventListener("click", function (event) {
+        if (!event.target.closest("#connectData")) {
+          connectModal.style.top = "-150%";
+          connectModal.style.opacity = "0";
+          bodyOverflowModal.style.overflow = "auto";
+          bodyScreenData.style.opacity = "1";
+        }
+      });
   } else {
     connectModal.style.top = "-150%";
     connectModal.style.opacity = "0";
@@ -299,6 +317,16 @@ function topUpBtn() {
     topUpModal.style.opacity = "1";
     bodyOverflowModal.style.overflow = "hidden";
     bodyScreenData.style.opacity = "0.7";
+    document
+      .getElementById("topUpModal")
+      .addEventListener("click", function (event) {
+        if (!event.target.closest("#topUpData")) {
+          topUpModal.style.top = "-150%";
+          topUpModal.style.opacity = "0";
+          bodyOverflowModal.style.overflow = "auto";
+          bodyScreenData.style.opacity = "1";
+        }
+      });
   } else {
     topUpModal.style.top = "-150%";
     topUpModal.style.opacity = "0";
@@ -351,6 +379,16 @@ function makeACard() {
     newCardModal.style.opacity = "1";
     bodyOverflowModal.style.overflow = "hidden";
     bodyScreenData.style.opacity = "0.7";
+    document
+      .getElementById("newCardModal")
+      .addEventListener("click", function (event) {
+        if (!event.target.closest("#newCardData")) {
+          newCardModal.style.top = "-150%";
+          newCardModal.style.opacity = "0";
+          bodyOverflowModal.style.overflow = "auto";
+          bodyScreenData.style.opacity = "1";
+        }
+      });
   } else {
     newCardModal.style.top = "-150%";
     newCardModal.style.opacity = "0";
@@ -366,6 +404,16 @@ function liquidityBtn() {
     liquidityModal.style.opacity = "1";
     bodyOverflowModal.style.overflow = "hidden";
     bodyScreenData.style.opacity = "0.7";
+    document
+      .getElementById("liquidityModal")
+      .addEventListener("click", function (event) {
+        if (!event.target.closest("#liquidityData")) {
+          liquidityModal.style.top = "-150%";
+          liquidityModal.style.opacity = "0";
+          bodyOverflowModal.style.overflow = "auto";
+          bodyScreenData.style.opacity = "1";
+        }
+      });
   } else {
     liquidityModal.style.top = "-150%";
     liquidityModal.style.opacity = "0";
@@ -381,6 +429,16 @@ function manageBtn() {
     manageModal.style.opacity = "1";
     bodyOverflowModal.style.overflow = "hidden";
     bodyScreenData.style.opacity = "0.7";
+    document
+      .getElementById("manageModal")
+      .addEventListener("click", function (event) {
+        if (!event.target.closest("#modalData")) {
+          manageModal.style.top = "-150%";
+          manageModal.style.opacity = "0";
+          bodyOverflowModal.style.overflow = "auto";
+          bodyScreenData.style.opacity = "1";
+        }
+      });
   } else {
     manageModal.style.top = "-150%";
     manageModal.style.opacity = "0";
@@ -396,6 +454,16 @@ function addMore() {
     addMoreBlockModal.style.opacity = "1";
     bodyOverflowModal.style.overflow = "hidden";
     bodyScreenData.style.opacity = "0.7";
+    document
+      .getElementById("addMoreBlockModal")
+      .addEventListener("click", function (event) {
+        if (!event.target.closest("#addMoreData")) {
+          addMoreBlockModal.style.top = "-150%";
+          addMoreBlockModal.style.opacity = "0";
+          bodyOverflowModal.style.overflow = "auto";
+          bodyScreenData.style.opacity = "1";
+        }
+      });
   } else {
     addMoreBlockModal.style.top = "-150%";
     addMoreBlockModal.style.opacity = "0";
@@ -436,3 +504,120 @@ function mangeTokenButton() {
 //     document.querySelector('.last10Days').style.display = 'block';
 //   }
 // }
+
+let liquidityErrorField = document.getElementById("liquidityErrorField");
+let depositErrorMessage = document.getElementById("depositErrorMessage");
+let SuccessfulMessage = document.getElementById("SuccessfulMessage");
+
+function provideLiquidityBtn() {
+  let liquidityInputValue = document.getElementById(
+    "liquidityInputValue"
+  ).value;
+  if (liquidityInputValue === "") {
+    liquidityErrorField.style.display = "block";
+    return false;
+  } else {
+    liquidityErrorField.style.display = "none";
+    SuccessfulMessage.style.right = "24px";
+    liquidityModal.style.top = "-150%";
+    liquidityModal.style.opacity = "0";
+    bodyOverflowModal.style.overflow = "auto";
+    bodyScreenData.style.opacity = "1";
+  }
+}
+function depositBtn() {
+  let depositInputValue = document.getElementById("depositInputValue").value;
+  if (depositInputValue === "") {
+    depositErrorMessage.style.display = "block";
+    return false;
+  } else {
+    depositErrorMessage.style.display = "none";
+    SuccessfulMessage.style.right = "24px";
+    topUpModal.style.top = "-150%";
+    topUpModal.style.opacity = "0";
+    bodyOverflowModal.style.overflow = "auto";
+    bodyScreenData.style.opacity = "1";
+  }
+}
+
+function terminateBtn() {
+  SuccessfulMessage.style.right = "24px";
+  manageModal.style.top = "-150%";
+  manageModal.style.opacity = "0";
+  bodyOverflowModal.style.overflow = "auto";
+  bodyScreenData.style.opacity = "1";
+}
+
+
+function closeModalMessageBtn() {
+  SuccessfulMessage.style.right = "-50%";
+}
+
+
+function validateForm() {
+  let cardHolderName = document.getElementById("cardHolderName").value;
+  let selectBank = document.getElementById("selectBank").value;
+  let accountNumber = document.getElementById("accountNumber").value;
+  let mobileNumber = document.getElementById("mobileNumber").value;
+  let cardNumber = document.getElementById("cardNumber").value;
+  let selectDate = document.getElementById("selectDate").value;
+  let address = document.getElementById("address").value;
+  let country = document.getElementById("country").value;
+  let city = document.getElementById("city").value;
+
+  if (
+    cardHolderName === "" ||
+    selectBank === "Select Bank" ||
+    accountNumber === "" ||
+    mobileNumber === "" ||
+    cardNumber === "" ||
+    selectDate === "" ||
+    address === "" ||
+    country === "" ||
+    city === ""
+  ) {
+    document.getElementById("cardHolderNameError").innerHTML =
+      "Please enter your name";
+    document.getElementById("selectBankError").innerHTML =
+      "Please select a bank";
+    document.getElementById("accountNumberError").innerHTML =
+      "Please enter your account number";
+    document.getElementById("mobileNumberError").innerHTML =
+      "Please enter your mobile number";
+    document.getElementById("cardNumberError").innerHTML =
+      "Please enter your card number";
+    document.getElementById("selectDateError").innerHTML =
+      "Please select a date";
+    document.getElementById("addressError").innerHTML =
+      "Please enter your address";
+    document.getElementById("countryError").innerHTML =
+      "Please select a country";
+    document.getElementById("cityError").innerHTML = "Please select a city";
+  } else {
+    document.getElementById("cardHolderNameError").innerHTML = "";
+    document.getElementById("selectBankError").innerHTML = "";
+    document.getElementById("accountNumberError").innerHTML = "";
+    document.getElementById("mobileNumberError").innerHTML = "";
+    document.getElementById("cardNumberError").innerHTML = "";
+    document.getElementById("selectDateError").innerHTML = "";
+    document.getElementById("addressError").innerHTML = "";
+    document.getElementById("countryError").innerHTML = "";
+    document.getElementById("cityError").innerHTML = "";
+
+    document.getElementById("cardHolderName").value = "";
+    document.getElementById("selectBank").value = "Select Bank";
+    document.getElementById("accountNumber").value = "";
+    document.getElementById("mobileNumber").value = "";
+    document.getElementById("cardNumber").value = "";
+    document.getElementById("selectDate").value = "";
+    document.getElementById("address").value = "";
+    document.getElementById("country").value = "";
+    document.getElementById("city").value = "";
+   
+    SuccessfulMessage.style.right = "24px";
+    newCardModal.style.top = "-150%";
+    newCardModal.style.opacity = "0";
+    bodyOverflowModal.style.overflow = "auto";
+    bodyScreenData.style.opacity = "1";
+  }
+}

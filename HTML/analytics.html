@@ -1229,7 +1229,7 @@
                       <button
                         type="button"
                         class="text-base Gilroy-normal hover:bg-[#E9901A] p-1 text-white w-full rounded-lg flex items-center gap-3"
-                        onclick="changeMainText('Last 15 days' , event)"
+                        onclick="btcToEURchangeMainText('Last 15 days' , event)"
                       >
                         <p class="text-sm text-white Gilroy-normal">
                           Last 15 days
@@ -1238,7 +1238,7 @@
                       <button
                         type="button"
                         class="text-base Gilroy-normal hover:bg-[#E9901A] p-1 text-white w-full rounded-lg flex items-center gap-3"
-                        onclick="changeMainText('Last 10 days' , event)"
+                        onclick="btcToEURchangeMainText('Last 10 days' , event)"
                       >
                         <p class="text-sm text-white Gilroy-normal">
                           Last 10 days
@@ -2658,6 +2658,7 @@
       style="top: -150%; transition: all 0.5s ease"
     >
       <div
+      id="connectData"
         class="w-[90%] max-w-[624px] mx-auto p-6 border border-solid border-white bg-bgPrimary rounded-lg h-auto max-h-[95%] overflow-auto scrollHidden"
       >
         <div
@@ -2800,6 +2801,7 @@
       style="top: -150%; transition: all 0.5s ease"
     >
       <div
+      id="liquidityData"
         class="w-[90%] max-w-[500px] mx-auto p-6 border border-solid border-white bg-bgPrimary rounded-lg h-auto max-h-[95%] overflow-auto scrollHidden"
       >
         <div
