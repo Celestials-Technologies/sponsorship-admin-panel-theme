@@ -3276,3 +3276,24 @@ video {
   transform: rotate(180deg);
   transition: all 0.5s ease;
 }
+.totalTooltipContainer {
+  display: block;
+  position: relative;
+  cursor: pointer;
+}
+.totalToolTip {
+  display: none;
+  background-color: #E9901A;
+  padding: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  position: absolute;
+  white-space: nowrap;
+  top: -34px;
+  padding-top: 6px;
+  border-radius: 12px;
+}
+.totalTooltipContainer:hover .totalToolTip {
+  display: block;
+}

@@ -519,6 +519,11 @@ function provideLiquidityBtn() {
   } else {
     liquidityErrorField.style.display = "none";
     SuccessfulMessage.style.right = "24px";
+    SuccessfulMessage.style.display = "block";
+    setTimeout(function() {
+      SuccessfulMessage.style.display = "none";
+      SuccessfulMessage.style.right = "-50%";
+    }, 5000);
     liquidityModal.style.top = "-150%";
     liquidityModal.style.opacity = "0";
     bodyOverflowModal.style.overflow = "auto";
@@ -533,6 +538,11 @@ function depositBtn() {
   } else {
     depositErrorMessage.style.display = "none";
     SuccessfulMessage.style.right = "24px";
+    SuccessfulMessage.style.display = "block";
+    setTimeout(function() {
+      SuccessfulMessage.style.display = "none";
+      SuccessfulMessage.style.right = "-50%";
+    }, 5000);
     topUpModal.style.top = "-150%";
     topUpModal.style.opacity = "0";
     bodyOverflowModal.style.overflow = "auto";
@@ -542,14 +552,19 @@ function depositBtn() {
 
 function terminateBtn() {
   SuccessfulMessage.style.right = "24px";
+  SuccessfulMessage.style.display = "block";
+  setTimeout(function() {
+    SuccessfulMessage.style.display = "none";
+    SuccessfulMessage.style.right = "-50%";
+  }, 5000);
   manageModal.style.top = "-150%";
   manageModal.style.opacity = "0";
   bodyOverflowModal.style.overflow = "auto";
   bodyScreenData.style.opacity = "1";
 }
 
-
 function closeModalMessageBtn() {
+  SuccessfulMessage.style.display = "none";
   SuccessfulMessage.style.right = "-50%";
 }
 
@@ -613,11 +628,152 @@ function validateForm() {
     document.getElementById("address").value = "";
     document.getElementById("country").value = "";
     document.getElementById("city").value = "";
-   
+
     SuccessfulMessage.style.right = "24px";
+    SuccessfulMessage.style.display = "block";
+    setTimeout(function() {
+      SuccessfulMessage.style.display = "none";
+      SuccessfulMessage.style.right = "-50%";
+    }, 5000);
     newCardModal.style.top = "-150%";
     newCardModal.style.opacity = "0";
     bodyOverflowModal.style.overflow = "auto";
     bodyScreenData.style.opacity = "1";
   }
 }
+
+const ctx = document.getElementById("myChart").getContext("2d");
+ctx.width = window.innerWidth;
+ctx.height = 400;
+let gradient = ctx.createLinearGradient(0, 0, 0, 600);
+
+const xValues = [
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
+];
+
+new Chart(ctx, {
+  type: "line",
+  data: {
+    labels: xValues,
+    datasets: [
+      {
+        label: "Smooth Line",
+        data: [20, 39, 75, 58, 64, 43, 79, 55, 80, 40, 40 , 80],
+        borderColor: "rgba(138, 43, 226, 1)",
+        backgroundColor: gradient,
+        fill: true,
+        lineTension: 0.4,
+        borderWidth: 2,
+      },
+      {
+        label: "Dashed Yellow Line",
+        data: [84, 64, 69, 39, 82, 39, 62, 40, 40, 62, 46, 93],
+        borderColor: "yellow",
+        borderDash: [5, 5],
+        borderWidth: 2,
+        fill: false,
+      },
+    ],
+  },
+  options: {
+    legend: {
+      display: false,
+      labels: { fontColor: "white" },
+    },
+    scales: {
+      xAxes: [
+        {
+          ticks: { fontColor: "white" },
+          gridLines: { display: "none" },
+        },
+      ],
+      yAxes: [
+        {
+          ticks: {
+            fontColor: "white",
+            stepSize: 20,
+            min: 0,
+            max: 100,
+          },
+          gridLines: { color: "white" },
+        },
+      ],
+    },
+  },
+});
+
+const ctx2 = document.getElementById("myChart2").getContext("2d");
+
+let myChart2gradient = ctx.createLinearGradient(0, 0, 0, 300);
+myChart2gradient.addColorStop(0, "rgba(138, 43, 226, 0.8)");
+myChart2gradient.addColorStop(1, "rgba(138, 43, 226, 0)");
+
+const myChartxValues = [
+  "Mar '12",
+  "Apr '12",
+  "May '12",
+  "Jun '12",
+  "Jul '12",
+  "Aug '12",
+  "Sep '12",
+  "Oct '12",
+  "Nov '12",
+  "Dec '12",
+  "2013",
+  "Feb '13",
+];
+const yValues = [30, 32, 31, 29, 33, 35, 34, 36, 37, 39, 40, 41];
+
+new Chart(ctx2, {
+  type: "line",
+  data: {
+    labels: myChartxValues,
+    datasets: [
+      {
+        label: "Statistics",
+        data: yValues,
+        borderColor: "rgba(138, 43, 226, 1)",
+        backgroundColor: myChart2gradient,
+        fill: true,
+        lineTension: 0.3,
+        borderWidth: 2,
+        pointRadius: 0,
+      },
+    ],
+  },
+  options: {
+    legend: {
+      display: false,
+    },
+    scales: {
+      xAxes: [
+        {
+          ticks: { fontColor: "white" },
+          gridLines: { color: "rgba(255, 255, 255, 0.3)", borderDash: [5, 5] },
+        },
+      ],
+      yAxes: [
+        {
+          ticks: {
+            fontColor: "white",
+            stepSize: 3,
+            min: 27,
+            max: 42,
+          },
+          gridLines: { color: "rgba(255, 255, 255, 0.3)", borderDash: [5, 5] },
+        },
+      ],
+    },
+  },
+});
