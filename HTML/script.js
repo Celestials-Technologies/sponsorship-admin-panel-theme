@@ -233,6 +233,106 @@ function performancechangeMainText(text, event) {
 
   closeDropDowns();
 }
+let dChart = document.getElementById("1DChart");
+let wChart = document.getElementById("1WChart");
+let hChart = document.getElementById("1HChart");
+let mChart = document.getElementById("1MChart");
+let yChart = document.getElementById("1YChart");
+let dBlock = document.getElementById("1dBlock");
+let hBlock = document.getElementById("1hBlock");
+let mBlock = document.getElementById("1mBlock");
+let yBlock = document.getElementById("1yBlock");
+let wBlock = document.getElementById("1wBlock");
+
+function BTCtoEUR1DChart() {
+  if (
+    dChart.style.display === "none" &&
+    dBlock.style.background === "transparent"
+  ) {
+    dChart.style.display = "block";
+    wChart.style.display = "none";
+    hChart.style.display = "none";
+    mChart.style.display = "none";
+    yChart.style.display = "none";
+    dBlock.style.background = "#E9901A";
+    hBlock.style.background = "transparent";
+    mBlock.style.background = "transparent";
+    yBlock.style.background = "transparent";
+    wBlock.style.background = "transparent";
+  }
+}
+
+function BTCtoEUR1WChart() {
+  if (
+    wChart.style.display === "none" &&
+    wBlock.style.background === "transparent"
+  ) {
+    wChart.style.display = "block";
+    dChart.style.display = "none";
+    hChart.style.display = "none";
+    mChart.style.display = "none";
+    yChart.style.display = "none";
+    wBlock.style.background = "#E9901A";
+    dBlock.style.background = "transparent";
+    hBlock.style.background = "transparent";
+    mBlock.style.background = "transparent";
+    yBlock.style.background = "transparent";
+  }
+}
+
+function BTCtoEUR1MChart() {
+  if (
+    mChart.style.display === "none" &&
+    mBlock.style.background === "transparent"
+  ) {
+    mChart.style.display = "block";
+    dChart.style.display = "none";
+    hChart.style.display = "none";
+    wChart.style.display = "none";
+    yChart.style.display = "none";
+    mBlock.style.background = "#E9901A";
+    dBlock.style.background = "transparent";
+    wBlock.style.background = "transparent";
+    hBlock.style.background = "transparent";
+    yBlock.style.background = "transparent";
+  }
+}
+
+function BTCtoEUR1YChart() {
+  if (
+    yChart.style.display === "none" &&
+    yBlock.style.background === "transparent"
+  ) {
+    yChart.style.display = "block";
+    dChart.style.display = "none";
+    hChart.style.display = "none";
+    wChart.style.display = "none";
+    mChart.style.display = "none";
+    yBlock.style.background = "#E9901A";
+    dBlock.style.background = "transparent";
+    wBlock.style.background = "transparent";
+    hBlock.style.background = "transparent";
+    mBlock.style.background = "transparent";
+  }
+}
+
+function BTCtoEUR1hChart() {
+  if (
+    hChart.style.display === "none" &&
+    hBlock.style.background === "transparent"
+  ) {
+    hChart.style.display = "block";
+    dChart.style.display = "none";
+    wChart.style.display = "none";
+    yChart.style.display = "none";
+    mChart.style.display = "none";
+    hBlock.style.background = "#E9901A";
+    dBlock.style.background = "transparent";
+    wBlock.style.background = "transparent";
+    yBlock.style.background = "transparent";
+    mBlock.style.background = "transparent";
+  }
+}
 
 // function changeSelectedDaysText(text) {
 //   selectedDays.textContent = text;
@@ -520,7 +620,7 @@ function provideLiquidityBtn() {
     liquidityErrorField.style.display = "none";
     SuccessfulMessage.style.right = "24px";
     SuccessfulMessage.style.display = "block";
-    setTimeout(function() {
+    setTimeout(function () {
       SuccessfulMessage.style.display = "none";
       SuccessfulMessage.style.right = "-50%";
     }, 5000);
@@ -539,7 +639,7 @@ function depositBtn() {
     depositErrorMessage.style.display = "none";
     SuccessfulMessage.style.right = "24px";
     SuccessfulMessage.style.display = "block";
-    setTimeout(function() {
+    setTimeout(function () {
       SuccessfulMessage.style.display = "none";
       SuccessfulMessage.style.right = "-50%";
     }, 5000);
@@ -553,7 +653,7 @@ function depositBtn() {
 function terminateBtn() {
   SuccessfulMessage.style.right = "24px";
   SuccessfulMessage.style.display = "block";
-  setTimeout(function() {
+  setTimeout(function () {
     SuccessfulMessage.style.display = "none";
     SuccessfulMessage.style.right = "-50%";
   }, 5000);
@@ -567,7 +667,6 @@ function closeModalMessageBtn() {
   SuccessfulMessage.style.display = "none";
   SuccessfulMessage.style.right = "-50%";
 }
-
 
 function validateForm() {
   let cardHolderName = document.getElementById("cardHolderName").value;
@@ -631,7 +730,7 @@ function validateForm() {
 
     SuccessfulMessage.style.right = "24px";
     SuccessfulMessage.style.display = "block";
-    setTimeout(function() {
+    setTimeout(function () {
       SuccessfulMessage.style.display = "none";
       SuccessfulMessage.style.right = "-50%";
     }, 5000);
@@ -643,8 +742,6 @@ function validateForm() {
 }
 
 const ctx = document.getElementById("myChart").getContext("2d");
-ctx.width = window.innerWidth;
-ctx.height = 400;
 let gradient = ctx.createLinearGradient(0, 0, 0, 600);
 
 const xValues = [
@@ -669,10 +766,11 @@ new Chart(ctx, {
     datasets: [
       {
         label: "Smooth Line",
-        data: [20, 39, 75, 58, 64, 43, 79, 55, 80, 40, 40 , 80],
+        data: [20, 39, 75, 58, 64, 43, 79, 55, 80, 40, 40, 80],
         borderColor: "rgba(138, 43, 226, 1)",
         backgroundColor: gradient,
         fill: true,
+        borderDash: [5, 5],
         lineTension: 0.4,
         borderWidth: 2,
       },
@@ -680,7 +778,6 @@ new Chart(ctx, {
         label: "Dashed Yellow Line",
         data: [84, 64, 69, 39, 82, 39, 62, 40, 40, 62, 46, 93],
         borderColor: "yellow",
-        borderDash: [5, 5],
         borderWidth: 2,
         fill: false,
       },
@@ -688,7 +785,7 @@ new Chart(ctx, {
   },
   options: {
     legend: {
-      display: false,
+      display: true,
       labels: { fontColor: "white" },
     },
     scales: {
@@ -713,65 +810,55 @@ new Chart(ctx, {
   },
 });
 
+// Second chart
 const ctx2 = document.getElementById("myChart2").getContext("2d");
-
-let myChart2gradient = ctx.createLinearGradient(0, 0, 0, 300);
-myChart2gradient.addColorStop(0, "rgba(138, 43, 226, 0.8)");
-myChart2gradient.addColorStop(1, "rgba(138, 43, 226, 0)");
-
-const myChartxValues = [
-  "Mar '12",
-  "Apr '12",
-  "May '12",
-  "Jun '12",
-  "Jul '12",
-  "Aug '12",
-  "Sep '12",
-  "Oct '12",
-  "Nov '12",
-  "Dec '12",
-  "2013",
-  "Feb '13",
-];
-const yValues = [30, 32, 31, 29, 33, 35, 34, 36, 37, 39, 40, 41];
+let myChart2gradient = ctx2.createLinearGradient(0, 0, 0, 300);
 
 new Chart(ctx2, {
   type: "line",
   data: {
-    labels: myChartxValues,
+    labels: xValues,
     datasets: [
       {
-        label: "Statistics",
-        data: yValues,
+        label: "Smooth Line",
+        data: [84, 64, 69, 39, 82, 39, 62, 40, 40, 62, 46, 93],
         borderColor: "rgba(138, 43, 226, 1)",
         backgroundColor: myChart2gradient,
         fill: true,
-        lineTension: 0.3,
+        lineTension: 0.4,
         borderWidth: 2,
-        pointRadius: 0,
+      },
+      {
+        label: "Dashed Yellow Line",
+        data: [20, 39, 75, 58, 64, 43, 79, 55, 80, 40, 40, 80],
+        borderColor: "yellow",
+        borderDash: [5, 5],
+        borderWidth: 2,
+        fill: false,
       },
     ],
   },
   options: {
     legend: {
-      display: false,
+      display: true,
+      labels: { fontColor: "white" },
     },
     scales: {
       xAxes: [
         {
           ticks: { fontColor: "white" },
-          gridLines: { color: "rgba(255, 255, 255, 0.3)", borderDash: [5, 5] },
+          gridLines: { display: "none" },
         },
       ],
       yAxes: [
         {
           ticks: {
             fontColor: "white",
-            stepSize: 3,
-            min: 27,
-            max: 42,
+            stepSize: 20,
+            min: 0,
+            max: 100,
           },
-          gridLines: { color: "rgba(255, 255, 255, 0.3)", borderDash: [5, 5] },
+          gridLines: { color: "white" },
         },
       ],
     },
