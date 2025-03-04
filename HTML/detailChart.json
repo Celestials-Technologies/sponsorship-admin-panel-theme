@@ -1,0 +1,53 @@
+{
+    "charts": [
+      {
+        "id": "weekChart",
+        "data": [40, 29, 60, 80, 74, 90, 55],
+        "borderColor": "#5a9f5ae8",
+        "backgroundColor": "#5a9f5ae8"
+      },
+      {
+        "id": "dayChart",
+        "data": [34, 54, 78, 64, 67, 54, 82],
+        "borderColor": "#e99b28d4",
+        "backgroundColor": "#e99b28d4"
+      },
+      {
+        "id": "mounthChart",
+        "data": [25, 10, 15, 15, 30, 55, 43, 80, 76, 60],
+        "borderColor": "#4343efa3",
+        "backgroundColor": "#4343efa3"
+      },
+      {
+        "id": "yearChart",
+        "data": [40, 20, 15, 35, 40, 38, 55, 44, 60, 60, 45, 90],
+        "borderColor": "#f9aebbcc",
+        "backgroundColor": "#f9aebbcc"
+      },
+      {
+        "id": "hourChart",
+        "data": [40, 24, 36, 36, 50, 45, 65],
+        "borderColor": "#e74545bd",
+        "backgroundColor": "#e74545bd"
+      }
+    ],
+    "coinsChart":[
+      {
+        "id": "Bitcoin",
+        "data": [30,20,40,30,60,45,55]
+      }, 
+      {
+        "id": "marketCap",
+        "data": [20,40,35,55,40,70,55]
+      },
+      {
+        "id": "volume",
+        "data": [30,55,40,20,60,45,55]
+      },
+      {
+        "id": "volume2",
+        "data": [30,20,40,30,60,45,55]
+      }
+    ],
+    "xValues": ["10", "20", "30", "40", "50", "60", "70"]
+  }

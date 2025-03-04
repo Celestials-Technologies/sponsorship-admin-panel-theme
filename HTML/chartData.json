@@ -38,7 +38,7 @@
       "label": "Smooth Line",
       "data": [84, 64, 69, 39, 82, 39, 62, 40, 40, 62, 46, 93],
       "borderColor": "rgba(138, 43, 226, 1)",
-      "backgroundColor": "myChart2gradient",
+      "backgroundColor": "rgba(138, 43, 226, 0.2)",
       "fill": true,
       "lineTension": 0.4,
       "borderWidth": 3
@@ -54,3 +54,4 @@
     }
   ]
 }
+

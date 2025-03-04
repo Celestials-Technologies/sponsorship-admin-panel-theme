@@ -73,7 +73,7 @@
                   class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-2.5 cursor-pointer hover:bg-[#E9901A] transition-all"
                 >
                   <div
-                  class="w-[34px] h-[34px] rounded-lg flex justify-center items-center !bg-transparent"
+                    class="w-[34px] h-[34px] rounded-lg flex justify-center items-center !bg-transparent"
                   >
                     <svg
                       width="100%"
@@ -130,7 +130,7 @@
               </a>
               <a href="./wallet.html">
                 <li
-                class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-2.5 cursor-pointer hover:bg-[#E9901A] transition-all"
+                  class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-2.5 cursor-pointer hover:bg-[#E9901A] transition-all"
                 >
                   <div
                     class="w-[34px] h-[34px] rounded-lg flex justify-center items-center"
@@ -160,7 +160,7 @@
               </a>
               <a href="./details.html">
                 <li
-                class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-2.5 cursor-pointer active"
+                  class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-2.5 cursor-pointer active"
                 >
                   <div
                     class="w-[34px] h-[34px] rounded-lg flex justify-center items-center"
@@ -967,11 +967,12 @@
                   </div>
                 </div>
                 <div class="mt-6">
-                  <img
+                  <!-- <img
                     src="./src/images/detailsGraph.png"
                     alt="graph"
                     class="w-full h-auto"
-                  />
+                  /> -->
+                  <canvas id="Bitcoin" width="100%" height="35%"></canvas>
                 </div>
               </div>
             </div>
@@ -1023,11 +1024,7 @@
                   </div>
                 </div>
                 <div class="mt-6">
-                  <img
-                    src="./src/images/detailsGraph.png"
-                    alt="graph"
-                    class="w-full h-auto"
-                  />
+                  <canvas id="marketCap" width="100%" height="35%"></canvas>
                 </div>
               </div>
             </div>
@@ -1077,11 +1074,7 @@
                   </div>
                 </div>
                 <div class="mt-6">
-                  <img
-                    src="./src/images/detailsGraph.png"
-                    alt="graph"
-                    class="w-full h-auto"
-                  />
+                  <canvas id="volume" width="100%" height="35%"></canvas>
                 </div>
               </div>
             </div>
@@ -1131,11 +1124,7 @@
                   </div>
                 </div>
                 <div class="mt-6">
-                  <img
-                    src="./src/images/detailsGraph.png"
-                    alt="graph"
-                    class="w-full h-auto"
-                  />
+                  <canvas id="volume2" width="100%" height="35%"></canvas>
                 </div>
               </div>
             </div>
@@ -1154,48 +1143,48 @@
               class="flex items-center border border-solid border-[#E9901A] rounded-lg overflow-hidden cursor-pointer"
             >
               <p
-                onclick="BTCtoEUR1hChart()"
-                id="1hBlock"
-                style="background: transparent;"
+                onclick="changeChart('1h')"
+                id="chartBlock"
+                style="background: transparent"
                 class="px-4 py-2 pt-2.5 text-xs Gilroy-medium text-white text-center bg-transparent hover:bg-[#E9901A] transition-all"
               >
-                1h
+                1H
               </p>
               <p
-                onclick="BTCtoEUR1DChart()"
-                id="1dBlock"
-                style="background: transparent;"
+                onclick="changeChart('1d')"
+                id="chartBlock"
+                style="background: transparent"
                 class="px-4 py-2 pt-2.5 text-xs Gilroy-medium text-white text-center bg-transparent hover:bg-[#E9901A] transition-all"
               >
                 1D
               </p>
               <p
-                onclick="BTCtoEUR1WChart()"
-                id="1wBlock"
-                style="background: #E9901A;"
+                onclick="changeChart('1w')"
+                id="chartBlock"
+                style="background: #e9901a"
                 class="px-4 py-2 pt-2.5 text-xs Gilroy-medium text-white text-center bg-btnSecondary transition-all"
               >
                 1W
               </p>
               <p
-                onclick="BTCtoEUR1MChart()"
-                id="1mBlock"
-                style="background: transparent;"
+                onclick="changeChart('1m')"
+                id="chartBlock"
+                style="background: transparent"
                 class="px-4 py-2 pt-2.5 text-xs Gilroy-medium text-white text-center bg-transparent hover:bg-[#E9901A] transition-all"
               >
                 1M
               </p>
-              <button 
-                onclick="BTCtoEUR1YChart()"
-                id="1yBlock"
-                style="background: transparent;"
+              <p
+                onclick="changeChart('1y')"
+                id="chartBlock"
+                style="background: transparent"
                 class="px-4 py-2 pt-2.5 text-xs Gilroy-medium text-white text-center bg-transparent hover:bg-[#E9901A] transition-all"
               >
                 1Y
-            </button>
+              </p>
             </div>
           </div>
-          <div id="1WChart" style="display:block">
+          <div id="1WChart" style="display: block">
             <canvas id="weekChart" width="100%" height="40%"></canvas>
           </div>
           <div id="1DChart" style="display: none">
@@ -1224,12 +1213,35 @@
                 </p>
                 <div class="flex items-center gap-2">
                   <p class="text-sm Gilroy-normal text-white">Sort By</p>
-                  <select
-                    class="border border-solid border-white bg-transparent p-1 text-xs text-white pt-1.5 rounded-lg Gilroy-normal"
-                  >
-                    <option value="option1">Last 15 days</option>
-                    <option value="option2">Last 10 days</option>
-                  </select>
+                  <div class="relative">
+                    <button type="button" onclick="selectDays(this)" class="px-2 py-1 flex items-center gap-3 justify-between cursor-pointer selectDaysBox rounded-full border border-solid border-white bg-transparent p-1 text-xs text-white pt-1.5 rounded-lg Gilroy-normal">
+                      <p class="text-sm text-white Gilroy-normal" id="mainText">
+                        Last 15 days
+                      </p>
+                      <div class="w-4 h-4">
+                        <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" id="daysIcon" style="rotate: 0deg; transition: all 0.5s ease">
+                          <path d="M6 9L12 15L18 9" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                      </div>
+                    </button>
+                    <div class="absolute right-0 bg-bgPrimary rounded-lg px-2 py-1 border border-solid border-white w-[130px]" id="daysSelect" style="
+                        scale: 0;
+                        margin-top: -50px;
+                        z-index: 0;
+                        transition: all 0.2s ease;
+                      ">
+                      <button type="button" class="text-base Gilroy-normal hover:bg-[#E9901A] p-1 text-white w-full rounded-lg flex items-center gap-3" onclick="changeMainText('Last 15 days')">
+                        <p class="text-sm text-white Gilroy-normal">
+                          Last 15 days
+                        </p>
+                      </button>
+                      <button type="button" class="text-base Gilroy-normal hover:bg-[#E9901A] p-1 text-white w-full rounded-lg flex items-center gap-3" onclick="changeMainText('Last 10 days')">
+                        <p class="text-sm text-white Gilroy-normal">
+                          Last 10 days
+                        </p>
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div class="overflow-auto tableScroll pb-2.5">
@@ -1512,7 +1524,7 @@
               <div
                 class="flex border-b border-dashed border-white pb-4 mb-4 items-center gap-3 w-full justify-between"
               >
-                <div class="flex items-center">
+                <div class="flex items-center gap-3">
                   <button
                     type="button"
                     class="px-6 py-2 pt-2.5 text-base Gilroy-medium text-white bg-btnSecondary border border-solid border-white rounded-lg transition-all"
@@ -1569,13 +1581,14 @@
                       Balance: 10,000 ADA
                     </p>
                   </div>
-                  <div class="flex items-center gap-3">
+                  <div class="flex items-center gap-3" >
                     <input
-                      type="text"
+                      type="number"
+                      id="adaInput"
                       class="text-base md:text-xl outline-none text-white Gilroy-medium w-9/12 justify-between bg-transparent"
                       placeholder="0.00"
                     />
-                    <div class="flex gap-2">
+                    <div class="flex gap-2" id="ADADATA">
                       <img
                         src="./src/images/cardano_mid.png"
                         alt="cardano"
@@ -1588,7 +1601,9 @@
                   </div>
                 </div>
                 <div class="flex justify-center w-full">
-                  <div
+                  <button
+                  type="button"
+                  onclick="detailConverter()"
                     class="w-12 h-12 gap-px cursor-pointer absolute top-[40%] flex items-center justify-center convertArrow border border-solid rounded-lg border-[#E9901A] hover:bg-white bg-transparent hover:bg-[#E9901A] transition-all mx-auto"
                   >
                     <svg
@@ -1623,7 +1638,7 @@
                         stroke-linejoin="round"
                       />
                     </svg>
-                  </div>
+                  </button>
                 </div>
                 <div
                   class="p-4 md:p-6 lg:p-8 border border-translucentWhite w-full max-w-full bg-sideBarBg h-full rounded-xl mt-6"
@@ -1638,11 +1653,12 @@
                   </div>
                   <div class="flex items-center gap-3">
                     <input
-                      type="text"
+                      type="number"
+                      id="btcInput"
                       class="text-base md:text-xl text-white outline-none Gilroy-medium w-9/12 justify-between bg-transparent"
                       placeholder="0.00"
                     />
-                    <div class="flex gap-2">
+                    <div class="flex gap-2" id="BTCDATA">
                       <img
                         src="./src/images/bitcoin_mid.png"
                         alt="cardano"
@@ -1938,11 +1954,12 @@
             </div>
             <div class="flex items-center justify-between">
               <input
-                type="text"
+                type="number"
+                id="liquidityADAInput"
                 class="text-sm text-white bg-transparent text-white Gilroy-normal w-[70%] outline-none"
                 placeholder="0.00"
               />
-              <div class="flex items-center gap-3">
+              <div class="flex items-center gap-3" id="liquidityADAData">
                 <img
                   src="./src/images/cardano_mid.png"
                   alt="cardano"
@@ -1965,11 +1982,12 @@
             </div>
             <div class="flex items-center justify-between">
               <input
-                type="text"
+                type="number"
+                id="liquidityBTCInput"
                 class="text-sm text-white bg-transparent text-white Gilroy-normal w-[70%] outline-none"
                 placeholder="0.00"
               />
-              <div class="flex items-center gap-3">
+              <div class="flex items-center gap-3" id="liquidityBTCData">
                 <img
                   src="./src/images/bitcoin_mid.png"
                   alt="cardano"
@@ -1979,7 +1997,7 @@
               </div>
             </div>
           </div>
-          <div
+          <button type="button" onclick="liquidityConverter()"
             class="p-1 flex gap-0 items-center bg-[#E9901A] w-fit rounded-lg absolute top-[43%] left-[41%] mx-auto"
           >
             <svg
@@ -2012,7 +2030,7 @@
                 stroke-linejoin="round"
               />
             </svg>
-          </div>
+          </button>
         </div>
         <h2 class="text-lg text-white Gilroy-normal my-5">
           Slippage Tolerance
@@ -2030,6 +2048,8 @@
             type="number"
             class="bg-transparent text-sm text-white Gilroy-normal outline-none w-[80%]"
             placeholder="0.00"
+            min="0"
+            max="100"
           />
         </div>
         <p
@@ -2044,18 +2064,24 @@
         >
           <button
             type="button"
+            onclick="halfPercentBtn()"
+            id="halfPercentButton"
             class="py-3 px-6 border border-solid border-[#E9901A] rounded-lg hover:bg-[#E9901A] text-[#E9901A] hover:text-white transition-all w-[30%]"
           >
             0.5%
           </button>
           <button
             type="button"
-            class="py-3 px-6 border border-solid border-[#E9901A] rounded-lg bg-[#E9901A] hover:bg-transparent hover:text-[#E9901A] text-white transition-all w-[30%]"
+            onclick="onePercentBtn()"
+            id="onePercentButton"
+            class="py-3 px-6 border border-solid border-[#E9901A] rounded-lg hover:bg-transparent hover:text-[#E9901A] text-[#E9901A] transition-all w-[30%]"
           >
             1%
           </button>
           <button
             type="button"
+            onclick="threePercentBtn()"
+            id="threePercentButton"
             class="py-3 px-6 border border-solid border-[#E9901A] rounded-lg hover:bg-[#E9901A] text-[#E9901A] hover:text-white transition-all w-[30%]"
           >
             3%

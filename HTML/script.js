@@ -225,104 +225,28 @@ function performancechangeMainText(text, event) {
 
   closeDropDowns();
 }
-let dChart = document.getElementById("1DChart");
-let wChart = document.getElementById("1WChart");
-let hChart = document.getElementById("1HChart");
-let mChart = document.getElementById("1MChart");
-let yChart = document.getElementById("1YChart");
-let dBlock = document.getElementById("1dBlock");
-let hBlock = document.getElementById("1hBlock");
-let mBlock = document.getElementById("1mBlock");
-let yBlock = document.getElementById("1yBlock");
-let wBlock = document.getElementById("1wBlock");
+let charts = {
+  "1h": document.getElementById("1HChart"),
+  "1d": document.getElementById("1DChart"),
+  "1w": document.getElementById("1WChart"),
+  "1m": document.getElementById("1MChart"),
+  "1y": document.getElementById("1YChart"),
+};
 
-function BTCtoEUR1DChart() {
-  if (
-    dChart.style.display === "none" &&
-    dBlock.style.background === "transparent"
-  ) {
-    dChart.style.display = "block";
-    wChart.style.display = "none";
-    hChart.style.display = "none";
-    mChart.style.display = "none";
-    yChart.style.display = "none";
-    dBlock.style.background = "#E9901A";
-    hBlock.style.background = "transparent";
-    mBlock.style.background = "transparent";
-    yBlock.style.background = "transparent";
-    wBlock.style.background = "transparent";
-  }
-}
+let blocks = document.querySelectorAll("#chartBlock");
 
-function BTCtoEUR1WChart() {
-  if (
-    wChart.style.display === "none" &&
-    wBlock.style.background === "transparent"
-  ) {
-    wChart.style.display = "block";
-    dChart.style.display = "none";
-    hChart.style.display = "none";
-    mChart.style.display = "none";
-    yChart.style.display = "none";
-    wBlock.style.background = "#E9901A";
-    dBlock.style.background = "transparent";
-    hBlock.style.background = "transparent";
-    mBlock.style.background = "transparent";
-    yBlock.style.background = "transparent";
-  }
-}
+function changeChart(time) {
+  document.querySelectorAll("#chartBlock").forEach(block => {
+    block.style.background = "transparent"; 
+  });
 
-function BTCtoEUR1MChart() {
-  if (
-    mChart.style.display === "none" &&
-    mBlock.style.background === "transparent"
-  ) {
-    mChart.style.display = "block";
-    dChart.style.display = "none";
-    hChart.style.display = "none";
-    wChart.style.display = "none";
-    yChart.style.display = "none";
-    mBlock.style.background = "#E9901A";
-    dBlock.style.background = "transparent";
-    wBlock.style.background = "transparent";
-    hBlock.style.background = "transparent";
-    yBlock.style.background = "transparent";
-  }
-}
-
-function BTCtoEUR1YChart() {
-  if (
-    yChart.style.display === "none" &&
-    yBlock.style.background === "transparent"
-  ) {
-    yChart.style.display = "block";
-    dChart.style.display = "none";
-    hChart.style.display = "none";
-    wChart.style.display = "none";
-    mChart.style.display = "none";
-    yBlock.style.background = "#E9901A";
-    dBlock.style.background = "transparent";
-    wBlock.style.background = "transparent";
-    hBlock.style.background = "transparent";
-    mBlock.style.background = "transparent";
-  }
-}
-
-function BTCtoEUR1hChart() {
-  if (
-    hChart.style.display === "none" &&
-    hBlock.style.background === "transparent"
-  ) {
-    hChart.style.display = "block";
-    dChart.style.display = "none";
-    wChart.style.display = "none";
-    yChart.style.display = "none";
-    mChart.style.display = "none";
-    hBlock.style.background = "#E9901A";
-    dBlock.style.background = "transparent";
-    wBlock.style.background = "transparent";
-    yBlock.style.background = "transparent";
-    mBlock.style.background = "transparent";
+  for (let chart in charts) {
+    if (chart === time.toLowerCase()) {
+      charts[chart].style.display = "block";
+      document.querySelector(`#chartBlock[onclick="changeChart('${time}')"]`).style.background = "#e9901a"; 
+    } else {
+      charts[chart].style.display = "none";
+    }
   }
 }
 
@@ -605,7 +529,7 @@ function provideLiquidityBtn() {
   let liquidityInputValue = document.getElementById(
     "liquidityInputValue"
   ).value;
-  if (liquidityInputValue === "") {
+  if (liquidityInputValue === "" && liquidityInputValue > 100) {
     liquidityErrorField.style.display = "block";
     return false;
   } else {
@@ -731,4 +655,71 @@ function validateForm() {
     bodyOverflowModal.style.overflow = "auto";
     bodyScreenData.style.opacity = "1";
   }
+}
+
+
+
+function detailConverter() {
+  let ADAdata = document.getElementById("ADADATA");
+  let BTCdata = document.getElementById("BTCDATA");
+  let btcInput = document.getElementById("btcInput");
+  let adaInput = document.getElementById("adaInput");
+
+  const ADAHtml = ADAdata.innerHTML;
+  const adaInputValue = adaInput.value;
+
+  ADAdata.innerHTML = BTCdata.innerHTML;
+  adaInput.value = btcInput.value;
+  BTCdata.innerHTML = ADAHtml;
+  btcInput.value = adaInputValue;
+}
+
+function liquidityConverter() {
+  let liquidityADAInput = document.getElementById("liquidityADAInput")
+  let liquidityBTCInput = document.getElementById("liquidityBTCInput")
+  let liquidityADAdata = document.getElementById("liquidityADAData")
+  let liquidityBTCdata = document.getElementById("liquidityBTCData")
+
+  const liquidityADAHtml = liquidityADAdata.innerHTML;
+  const liquidityADAInputValue = liquidityADAInput.value;
+
+  liquidityADAdata.innerHTML = liquidityBTCdata.innerHTML;
+  liquidityADAInput.value = liquidityBTCInput.value;
+  liquidityBTCdata.innerHTML = liquidityADAHtml;
+  liquidityBTCInput.value = liquidityADAInputValue;
+}
+
+let liquidityInputValue = document.getElementById("liquidityInputValue")
+let halfPercentButton = document.getElementById("halfPercentButton")
+let onePercentButton = document.getElementById("onePercentButton")
+let threePercentButton = document.getElementById("threePercentButton")
+
+function halfPercentBtn() {
+  liquidityInputValue.value = 0.5;
+  halfPercentButton.style.background = "#E9901A"
+  halfPercentButton.style.color = "white"
+  onePercentButton.style.background = "transparent"
+  onePercentButton.style.color = "#E9901A"
+  threePercentButton.style.background = "transparent"
+  threePercentButton.style.color = "#E9901A"
+}
+
+function onePercentBtn() {
+  liquidityInputValue.value = 1;
+  onePercentButton.style.background = "#E9901A"
+  onePercentButton.style.color = "white"
+  halfPercentButton.style.background = "transparent"
+  halfPercentButton.style.color = "#E9901A"
+  threePercentButton.style.background = "transparent"
+  threePercentButton.style.color = "#E9901A"
+}
+
+function threePercentBtn() {
+  liquidityInputValue.value = 3;
+  threePercentButton.style.background = "#E9901A"
+  threePercentButton.style.color = "white"
+  onePercentButton.style.background = "transparent"
+  onePercentButton.style.color = "#E9901A"
+  halfPercentButton.style.background = "transparent"
+  halfPercentButton.style.color = "#E9901A"
 }
