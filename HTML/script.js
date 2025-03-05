@@ -225,6 +225,29 @@ function performancechangeMainText(text, event) {
 
   closeDropDowns();
 }
+
+let detailSelectTableText = document.querySelector("#detailSelectTableText");
+
+function changeSelectTableText(text, event) {
+  detailSelectTableText.textContent = text;
+
+  if (text === "Last 15 days") {
+    document.querySelector(".tableLast15daysData").style.display = "block";
+    document.querySelector(".last10Days").style.display = "none";
+  } else if (text === "Last 10 days") {
+    document.querySelector(".tableLast15daysData").style.display = "none";
+    document.querySelector(".last10Days").style.display = "block";
+  }
+
+  closeDropDowns();
+}
+
+let tableLast15daysData = document.getElementById("tableLast15daysData");
+
+if (detailSelectTableText.textContent === "Last 10 Days") {
+  tableLast15daysData.style.display = "none";
+}
+
 let charts = {
   "1h": document.getElementById("1HChart"),
   "1d": document.getElementById("1DChart"),
@@ -236,14 +259,16 @@ let charts = {
 let blocks = document.querySelectorAll("#chartBlock");
 
 function changeChart(time) {
-  document.querySelectorAll("#chartBlock").forEach(block => {
-    block.style.background = "transparent"; 
+  document.querySelectorAll("#chartBlock").forEach((block) => {
+    block.style.background = "transparent";
   });
 
   for (let chart in charts) {
     if (chart === time.toLowerCase()) {
       charts[chart].style.display = "block";
-      document.querySelector(`#chartBlock[onclick="changeChart('${time}')"]`).style.background = "#e9901a"; 
+      document.querySelector(
+        `#chartBlock[onclick="changeChart('${time}')"]`
+      ).style.background = "#e9901a";
     } else {
       charts[chart].style.display = "none";
     }
@@ -529,7 +554,7 @@ function provideLiquidityBtn() {
   let liquidityInputValue = document.getElementById(
     "liquidityInputValue"
   ).value;
-  if (liquidityInputValue === "" && liquidityInputValue > 100) {
+  if (liquidityInputValue === "" || liquidityInputValue > 100) {
     liquidityErrorField.style.display = "block";
     return false;
   } else {
@@ -544,6 +569,7 @@ function provideLiquidityBtn() {
     liquidityModal.style.opacity = "0";
     bodyOverflowModal.style.overflow = "auto";
     bodyScreenData.style.opacity = "1";
+    liquidityInputValue = "";
   }
 }
 function depositBtn() {
@@ -657,28 +683,33 @@ function validateForm() {
   }
 }
 
-
-
 function detailConverter() {
   let ADAdata = document.getElementById("ADADATA");
   let BTCdata = document.getElementById("BTCDATA");
   let btcInput = document.getElementById("btcInput");
   let adaInput = document.getElementById("adaInput");
+  let converterArrowBox = document.getElementById("converterArrowBox");
 
-  const ADAHtml = ADAdata.innerHTML;
-  const adaInputValue = adaInput.value;
+  // Toggle rotation state
+  if (converterArrowBox.style.rotate === "180deg") {
+    converterArrowBox.style.rotate = "0deg";
+  } else {
+    converterArrowBox.style.rotate = "180deg";
+    const ADAHtml = ADAdata.innerHTML;
+    const adaInputValue = adaInput.value;
 
-  ADAdata.innerHTML = BTCdata.innerHTML;
-  adaInput.value = btcInput.value;
-  BTCdata.innerHTML = ADAHtml;
-  btcInput.value = adaInputValue;
+    ADAdata.innerHTML = BTCdata.innerHTML;
+    adaInput.value = btcInput.value;
+    BTCdata.innerHTML = ADAHtml;
+    btcInput.value = adaInputValue;
+  }
 }
 
 function liquidityConverter() {
-  let liquidityADAInput = document.getElementById("liquidityADAInput")
-  let liquidityBTCInput = document.getElementById("liquidityBTCInput")
-  let liquidityADAdata = document.getElementById("liquidityADAData")
-  let liquidityBTCdata = document.getElementById("liquidityBTCData")
+  let liquidityADAInput = document.getElementById("liquidityADAInput");
+  let liquidityBTCInput = document.getElementById("liquidityBTCInput");
+  let liquidityADAdata = document.getElementById("liquidityADAData");
+  let liquidityBTCdata = document.getElementById("liquidityBTCData");
 
   const liquidityADAHtml = liquidityADAdata.innerHTML;
   const liquidityADAInputValue = liquidityADAInput.value;
@@ -689,37 +720,121 @@ function liquidityConverter() {
   liquidityBTCInput.value = liquidityADAInputValue;
 }
 
-let liquidityInputValue = document.getElementById("liquidityInputValue")
-let halfPercentButton = document.getElementById("halfPercentButton")
-let onePercentButton = document.getElementById("onePercentButton")
-let threePercentButton = document.getElementById("threePercentButton")
+let liquidityInputValue = document.getElementById("liquidityInputValue");
+let halfPercentButton = document.getElementById("halfPercentButton");
+let onePercentButton = document.getElementById("onePercentButton");
+let threePercentButton = document.getElementById("threePercentButton");
 
 function halfPercentBtn() {
   liquidityInputValue.value = 0.5;
-  halfPercentButton.style.background = "#E9901A"
-  halfPercentButton.style.color = "white"
-  onePercentButton.style.background = "transparent"
-  onePercentButton.style.color = "#E9901A"
-  threePercentButton.style.background = "transparent"
-  threePercentButton.style.color = "#E9901A"
+  halfPercentButton.style.background = "#E9901A";
+  halfPercentButton.style.color = "white";
+  onePercentButton.style.background = "transparent";
+  onePercentButton.style.color = "#E9901A";
+  threePercentButton.style.background = "transparent";
+  threePercentButton.style.color = "#E9901A";
 }
 
 function onePercentBtn() {
   liquidityInputValue.value = 1;
-  onePercentButton.style.background = "#E9901A"
-  onePercentButton.style.color = "white"
-  halfPercentButton.style.background = "transparent"
-  halfPercentButton.style.color = "#E9901A"
-  threePercentButton.style.background = "transparent"
-  threePercentButton.style.color = "#E9901A"
+  onePercentButton.style.background = "#E9901A";
+  onePercentButton.style.color = "white";
+  halfPercentButton.style.background = "transparent";
+  halfPercentButton.style.color = "#E9901A";
+  threePercentButton.style.background = "transparent";
+  threePercentButton.style.color = "#E9901A";
 }
 
 function threePercentBtn() {
   liquidityInputValue.value = 3;
-  threePercentButton.style.background = "#E9901A"
-  threePercentButton.style.color = "white"
-  onePercentButton.style.background = "transparent"
-  onePercentButton.style.color = "#E9901A"
-  halfPercentButton.style.background = "transparent"
-  halfPercentButton.style.color = "#E9901A"
+  threePercentButton.style.background = "#E9901A";
+  threePercentButton.style.color = "white";
+  onePercentButton.style.background = "transparent";
+  onePercentButton.style.color = "#E9901A";
+  halfPercentButton.style.background = "transparent";
+  halfPercentButton.style.color = "#E9901A";
 }
+
+const cardsPerPage = 4;
+const dataContainer = document.getElementById("data-container");
+const pagination = document.getElementById("pagination");
+const prevButton = document.getElementById("prev");
+const nextButton = document.getElementById("next");
+const pageNumbers = document.getElementById("page-numbers");
+const pageToTotalPage = document.getElementById("pageToTotalPage");
+
+const cards = Array.from(dataContainer.getElementsByClassName("mainData"));
+
+if (cards.length > 4) {
+  pagination.style.display = "flex";
+} else {
+  pagination.style.display = "none";
+}
+
+const totalPages = Math.ceil(cards.length / cardsPerPage);
+let currentPage = 1;
+
+function displayPage(page) {
+  const startIndex = (page - 1) * cardsPerPage;
+  const endIndex = startIndex + cardsPerPage;
+  cards.forEach((card, index) => {
+    card.style.display =
+      index >= startIndex && index < endIndex ? "table-row" : "none";
+  });
+}
+
+function generatePagination() {
+  pageNumbers.innerHTML = "";
+  for (let i = 1; i <= totalPages; i++) {
+    
+    
+    const a = document.createElement("a");
+    a.classList.add("page-link");
+    a.href = "#";
+    a.textContent = i;
+    a.setAttribute("data-page", i);
+    
+    pageNumbers.appendChild(a);
+
+    a.addEventListener("click", (e) => {
+      e.preventDefault();
+      currentPage = i;
+      displayPage(currentPage);
+      updatePagination();
+    });
+  }
+}
+
+function updatePagination() {
+  prevButton.disabled = currentPage === 1;
+  nextButton.disabled = currentPage === totalPages;
+
+  pageToTotalPage.innerHTML = `Showing ${currentPage} to ${totalPages} of ${cards.length} enteries`
+  
+  document.querySelectorAll(".page-link").forEach((link) => {
+    const page = parseInt(link.getAttribute("data-page"));
+    link.classList.toggle("active", page === currentPage);
+  });
+}
+
+// Event listeners for Next and Previous buttons
+prevButton.addEventListener("click", () => {
+  if (currentPage > 1) {
+    currentPage--;
+    displayPage(currentPage);
+    updatePagination();
+  }
+});
+
+nextButton.addEventListener("click", () => {
+  if (currentPage < totalPages) {
+    currentPage++;
+    displayPage(currentPage);
+    updatePagination();
+  }
+});
+
+// Initialize pagination
+generatePagination();
+displayPage(currentPage);
+updatePagination();
