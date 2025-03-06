@@ -231,14 +231,6 @@ let detailSelectTableText = document.querySelector("#detailSelectTableText");
 function changeSelectTableText(text, event) {
   detailSelectTableText.textContent = text;
 
-  if (text === "Last 15 days") {
-    document.querySelector(".tableLast15daysData").style.display = "block";
-    document.querySelector(".last10Days").style.display = "none";
-  } else if (text === "Last 10 days") {
-    document.querySelector(".tableLast15daysData").style.display = "none";
-    document.querySelector(".last10Days").style.display = "block";
-  }
-
   closeDropDowns();
 }
 
@@ -755,86 +747,3 @@ function threePercentBtn() {
   halfPercentButton.style.color = "#E9901A";
 }
 
-const cardsPerPage = 4;
-const dataContainer = document.getElementById("data-container");
-const pagination = document.getElementById("pagination");
-const prevButton = document.getElementById("prev");
-const nextButton = document.getElementById("next");
-const pageNumbers = document.getElementById("page-numbers");
-const pageToTotalPage = document.getElementById("pageToTotalPage");
-
-const cards = Array.from(dataContainer.getElementsByClassName("mainData"));
-
-if (cards.length > 4) {
-  pagination.style.display = "flex";
-} else {
-  pagination.style.display = "none";
-}
-
-const totalPages = Math.ceil(cards.length / cardsPerPage);
-let currentPage = 1;
-
-function displayPage(page) {
-  const startIndex = (page - 1) * cardsPerPage;
-  const endIndex = startIndex + cardsPerPage;
-  cards.forEach((card, index) => {
-    card.style.display =
-      index >= startIndex && index < endIndex ? "table-row" : "none";
-  });
-}
-
-function generatePagination() {
-  pageNumbers.innerHTML = "";
-  for (let i = 1; i <= totalPages; i++) {
-    
-    
-    const a = document.createElement("a");
-    a.classList.add("page-link");
-    a.href = "#";
-    a.textContent = i;
-    a.setAttribute("data-page", i);
-    
-    pageNumbers.appendChild(a);
-
-    a.addEventListener("click", (e) => {
-      e.preventDefault();
-      currentPage = i;
-      displayPage(currentPage);
-      updatePagination();
-    });
-  }
-}
-
-function updatePagination() {
-  prevButton.disabled = currentPage === 1;
-  nextButton.disabled = currentPage === totalPages;
-
-  pageToTotalPage.innerHTML = `Showing ${currentPage} to ${totalPages} of ${cards.length} enteries`
-  
-  document.querySelectorAll(".page-link").forEach((link) => {
-    const page = parseInt(link.getAttribute("data-page"));
-    link.classList.toggle("active", page === currentPage);
-  });
-}
-
-// Event listeners for Next and Previous buttons
-prevButton.addEventListener("click", () => {
-  if (currentPage > 1) {
-    currentPage--;
-    displayPage(currentPage);
-    updatePagination();
-  }
-});
-
-nextButton.addEventListener("click", () => {
-  if (currentPage < totalPages) {
-    currentPage++;
-    displayPage(currentPage);
-    updatePagination();
-  }
-});
-
-// Initialize pagination
-generatePagination();
-displayPage(currentPage);
-updatePagination();

@@ -3315,3 +3315,55 @@ video {
 #page-numbers .active {
   background-color: #E9901A;
 }
+tr td {
+  padding: 10px 24px;
+  white-space: nowrap;
+  color: white;
+  font-size: 16px;
+  font-weight: 400;
+  text-align: left;
+}
+.mainData:nth-child(odd) {
+  background-color: #302964;
+}
+.mainResult {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.maintitleContainer {
+  display: flex;
+  align-items: center;
+  gap: 12px
+}
+
+.mainTitleText {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.mainTitleText h2 {
+  padding-top: 2px;
+  font-size: 16px;
+  color: white;
+  font-weight: medium;
+}
+.mainTitleText p {
+  font-size: 12px;
+  color: white;
+}
+
+.maintransactionContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  white-space: nowrap;
+  text-align: right;
+}
+.tableHeader {
+  background-color: #302964;
+}
+.tableHeader td:last-child {
+  text-align: right;
+}

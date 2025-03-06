@@ -11,6 +11,7 @@
     <link href="style.css" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </head>
 
   <body class="min-h-screen !overflow-x-hidden" id="bodyOverflowModal">
@@ -1277,9 +1278,8 @@
                   </div>
                 </div>
               </div>
-              <div class="overflow-auto tableScroll pb-2.5" id="data-container">
-                <table class="w-full">
-                  <thead>
+             
+                  <!-- <thead>
                     <tr class="bg-[#302964]">
                       <th
                         class="py-5 px-6 whitespace-nowrap text-white text-base Gilroy-semibold text-left"
@@ -1480,9 +1480,9 @@
                         </p>
                       </td>
                     </tr>
-                  </tbody>
-                </table>
-              </div>
+                  </tbody> -->
+                  <div id="data-container" class="overflow-auto tableScroll pb-2.5"></div>
+               
               <div
                 class="mt-5 flex flex-wrap justify-between gap-3 items-center"
               >
