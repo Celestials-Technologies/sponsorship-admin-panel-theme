@@ -1278,8 +1278,8 @@
                   </div>
                 </div>
               </div>
-             
-                  <!-- <thead>
+
+              <!-- <thead>
                     <tr class="bg-[#302964]">
                       <th
                         class="py-5 px-6 whitespace-nowrap text-white text-base Gilroy-semibold text-left"
@@ -1481,8 +1481,11 @@
                       </td>
                     </tr>
                   </tbody> -->
-                  <div id="data-container" class="overflow-auto tableScroll pb-2.5"></div>
-               
+              <div
+                id="data-container"
+                class="overflow-auto tableScroll pb-2.5"
+              ></div>
+
               <div
                 class="mt-5 flex flex-wrap justify-between gap-3 items-center"
               >
@@ -1606,7 +1609,10 @@
               <div
                 class="flex border-b border-dashed border-white pb-4 mb-4 items-center gap-3 w-full justify-between"
               >
-                <div class="flex items-center gap-3">
+                <div
+                  class="flex items-center gap-3 blockZindex"
+                  style="z-index: 999"
+                >
                   <button
                     type="button"
                     class="px-6 py-2 pt-2.5 text-base Gilroy-medium text-white bg-btnSecondary border border-solid border-white rounded-lg transition-all"
@@ -1620,38 +1626,78 @@
                     Sell
                   </button>
                 </div>
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="cursor-pointer"
-                >
-                  <path
-                    d="M12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12C11 12.5523 11.4477 13 12 13Z"
-                    stroke="white"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  ></path>
-                  <path
-                    d="M12 6C12.5523 6 13 5.55228 13 5C13 4.44772 12.5523 4 12 4C11.4477 4 11 4.44772 11 5C11 5.55228 11.4477 6 12 6Z"
-                    stroke="white"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  ></path>
-                  <path
-                    d="M12 20C12.5523 20 13 19.5523 13 19C13 18.4477 12.5523 18 12 18C11.4477 18 11 18.4477 11 19C11 19.5523 11.4477 20 12 20Z"
-                    stroke="white"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  ></path>
-                </svg>
+                <div class="relative">
+                  <button
+                    type="button"
+                    onclick="detailsBtn(this)"
+                    class="chooseOption"
+                  >
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="cursor-pointer"
+                    >
+                      <path
+                        d="M12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12C11 12.5523 11.4477 13 12 13Z"
+                        stroke="white"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      ></path>
+                      <path
+                        d="M12 6C12.5523 6 13 5.55228 13 5C13 4.44772 12.5523 4 12 4C11.4477 4 11 4.44772 11 5C11 5.55228 11.4477 6 12 6Z"
+                        stroke="white"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      ></path>
+                      <path
+                        d="M12 20C12.5523 20 13 19.5523 13 19C13 18.4477 12.5523 18 12 18C11.4477 18 11 18.4477 11 19C11 19.5523 11.4477 20 12 20Z"
+                        stroke="white"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      ></path>
+                    </svg>
+                  </button>
+                  <div
+                    class="absolute top-3 right-[27px] min-w-[140px] bg-bgPrimary rounded-lg text-base text-white Gilroy-normal p-3 grid"
+                    id="detailDropDown"
+                    style="
+                      opacity: 0;
+                      margin-top: -50px;
+                      z-index: 0;
+                      transition: all 0.5s ease;
+                    "
+                  >
+                    <a
+                      href="#"
+                      class="px-5 py-2 rounded-lg hover:bg-[#0f0f7ac7] transition-all"
+                    >
+                      Print
+                    </a>
+                    <a
+                      href="#"
+                      class="px-5 py-2 rounded-lg hover:bg-[#0f0f7ac7] transition-all"
+                    >
+                      Remove
+                    </a>
+                    <a
+                      href="#"
+                      class="px-5 py-2 rounded-lg hover:bg-[#0f0f7ac7] transition-all"
+                    >
+                      Download
+                    </a>
+                  </div>
+                </div>
               </div>
-              <div class="relative border-b border-dashed border-white pb-6">
+              <div
+                class="relative border-b border-dashed border-white pb-6 blockZindex"
+                style="z-index: 999"
+              >
                 <div
                   class="p-4 md:p-6 lg:p-8 border border-translucentWhite w-full max-w-full bg-sideBarBg h-full rounded-xl"
                 >
@@ -1696,7 +1742,8 @@
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                       class="-mt-2.5"
-                      id="converterArrows" style="rotate: 0deg;"
+                      id="converterArrows"
+                      style="rotate: 0deg"
                     >
                       <path
                         d="M9.8 21C9.51997 21 9.37996 21 9.273 20.9455C9.17892 20.8976 9.10243 20.8211 9.0545 20.727C9 20.62 9 20.48 9 20.2V10H5L12 3L19 10H15V20.2C15 20.48 15 20.62 14.9455 20.727C14.8976 20.8211 14.8211 20.8976 14.727 20.9455C14.62 21 14.48 21 14.2 21H9.8Z"
@@ -1713,7 +1760,8 @@
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                       class="mt-2.5"
-                      id="converterArrows" style="rotate: 0deg;"
+                      id="converterArrows"
+                      style="rotate: 0deg"
                     >
                       <path
                         d="M9 3.8C9 3.51997 9 3.37996 9.0545 3.273C9.10243 3.17892 9.17892 3.10243 9.273 3.0545C9.37996 3 9.51997 3 9.8 3H14.2C14.48 3 14.62 3 14.727 3.0545C14.8211 3.10243 14.8976 3.17892 14.9455 3.273C15 3.37996 15 3.51997 15 3.8V14H19L12 21L5 14H9V3.8Z"

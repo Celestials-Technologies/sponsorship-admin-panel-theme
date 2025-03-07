@@ -10,6 +10,7 @@
     <link href="./src/output.css" rel="stylesheet" />
     <link href="./style.css" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
   </head>
 
   <body class="min-h-screen" id="bodyOverflowModal">
@@ -953,24 +954,9 @@
                       </p>
                     </div>
                   </div>
-                  <div>
-                    <svg
-                      width="100%"
-                      height="100%"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="w-full max-w-[283px] max-h-[97px]"
-                    >
-                      <path
-                        d="M3 11L3 21M15 11L15 21M9 3L9 21M21 3V21"
-                        stroke="#8957ff"
-                        stroke-width="4"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                  </div>
+                  <div class="h-[35%]">
+                    <canvas id="Bitcoin" width="100%" height="100%"></canvas>
+                   </div>
                 </div>
               </div>
             </div>
@@ -1017,23 +1003,8 @@
                       </p>
                     </div>
                   </div>
-                  <div>
-                    <svg
-                      width="100%"
-                      height="100%"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="w-full max-w-[283px] max-h-[97px]"
-                    >
-                      <path
-                        d="M3 11L3 21M15 11L15 21M9 3L9 21M21 3V21"
-                        stroke="#8957ff"
-                        stroke-width="4"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
+                  <div class="h-[35%]">
+                   <canvas id="marketCap" width="100%" height="100%"></canvas>
                   </div>
                 </div>
               </div>
@@ -1081,23 +1052,8 @@
                       </p>
                     </div>
                   </div>
-                  <div>
-                    <svg
-                      width="100%"
-                      height="100%"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="w-full max-w-[283px] max-h-[97px]"
-                    >
-                      <path
-                        d="M3 11L3 21M15 11L15 21M9 3L9 21M21 3V21"
-                        stroke="#8957ff"
-                        stroke-width="4"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
+                  <div class="h-[35%]">
+                    <canvas id="volume" width="100%" height="100%"></canvas>
                   </div>
                 </div>
               </div>
@@ -1145,23 +1101,8 @@
                       </p>
                     </div>
                   </div>
-                  <div>
-                    <svg
-                      width="100%"
-                      height="100%"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="w-full max-w-[283px] max-h-[97px]"
-                    >
-                      <path
-                        d="M3 11L3 21M15 11L15 21M9 3L9 21M21 3V21"
-                        stroke="#8957ff"
-                        stroke-width="4"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
+                  <div class="h-[35%]">
+                    <canvas id="volume2" width="100%" height="100%"></canvas>
                   </div>
                 </div>
               </div>
@@ -1179,14 +1120,8 @@
                 <p class="text-xl md:text-[26px] text-white Gilroy-semibold">
                   BTC to EUR Chart
                 </p>
-                <div class="flex items-center gap-2">
+                <!-- <div class="flex items-center gap-2">
                   <p class="text-sm Gilroy-normal text-white">Sort By</p>
-                  <!-- <select
-                    class="border border-solid border-white bg-transparent p-1 text-xs text-white pt-1.5 rounded-lg Gilroy-normal"
-                  >
-                    <option value="option1">Last 15 days</option>
-                    <option value="option2">Last 10 days</option>
-                  </select> -->
                   <div class="relative">
                     <button
                       type="button"
@@ -1246,24 +1181,75 @@
                       </button>
                     </div>
                   </div>
+                </div> -->
+                <div class="flex items-center gap-2">
+                  <p class="text-sm Gilroy-normal text-white">Sort By</p>
+
+                  <div class="relative">
+                    <button
+                      type="button"
+                      onclick="selectDays(this)"
+                      class="px-2 py-1 flex items-center gap-3 justify-between cursor-pointer selectDaysBox rounded-lg border border-solid border-white bg-transparent p-1 text-xs text-white pt-1.5 rounded-lg Gilroy-normal"
+                    >
+                      <p
+                        class="text-sm text-white Gilroy-normal"
+                        id="mainText"
+                      >
+                        Last 15 days
+                      </p>
+                      <div class="w-4 h-4">
+                        <svg
+                          width="100%"
+                          height="100%"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                          id="daysIcon"
+                          style="rotate: 0deg; transition: all 0.5s ease"
+                        >
+                          <path
+                            d="M6 9L12 15L18 9"
+                            stroke="white"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </div>
+                    </button>
+                    <div
+                      class="absolute right-0 bg-bgPrimary rounded-lg px-2 py-1 border border-solid border-white w-[130px]"
+                      id="daysSelect"
+                      style="
+                        scale: 0;
+                        margin-top: -50px;
+                        z-index: 0;
+                        transition: all 0.2s ease;
+                      "
+                    >
+                      <button
+                        type="button"
+                        class="text-base Gilroy-normal hover:bg-[#E9901A] p-1 text-white w-full rounded-lg flex items-center gap-3"
+                        onclick="btcToEURchangeMainText('Last 15 days' , event)"
+                      >
+                        <p class="text-sm text-white Gilroy-normal">
+                          Last 15 days
+                        </p>
+                      </button>
+                      <button
+                        type="button"
+                        class="text-base Gilroy-normal hover:bg-[#E9901A] p-1 text-white w-full rounded-lg flex items-center gap-3"
+                        onclick="btcToEURchangeMainText('Last 10 days' , event)"
+                      >
+                        <p class="text-sm text-white Gilroy-normal">
+                          Last 10 days
+                        </p>
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div>
-                <img
-                  src="./src/images/chart.png"
-                  alt="chart"
-                  class="h-auto w-full last15Days"
-                  style="display: block;"
-                />
-              </div>
-              <div>
-                <img
-                  src="./src/images/chart2.png"
-                  alt="chart"
-                  class="h-auto w-full last10Days"
-                  style="display: none;"
-                />
-              </div>
+              <canvas id="myChart2" width="100%" height="40%"></canvas>
             </div>
           </div>
           <div class="w-full xl:w-3/6">
@@ -1276,14 +1262,8 @@
                 <p class="text-xl md:text-[26px] text-white Gilroy-semibold">
                   ADA to USD Chart
                 </p>
-                <div class="flex items-center gap-2">
+                <!-- <div class="flex items-center gap-2">
                   <p class="text-sm Gilroy-normal text-white">Sort By</p>
-                  <!-- <select
-                    class="border border-solid border-white bg-transparent p-1 text-xs text-white pt-1.5 rounded-lg Gilroy-normal"
-                  >
-                    <option value="option1">Last 15 days</option>
-                    <option value="option2">Last 10 days</option>
-                  </select> -->
                   <div class="relative">
                     <button
                       type="button"
@@ -1343,24 +1323,78 @@
                       </button>
                     </div>
                   </div>
+                </div> -->
+
+                <div class="flex items-center gap-2">
+                  <p class="text-sm Gilroy-normal text-white">Sort By</p>
+
+                  <div class="relative">
+                    <button
+                      type="button"
+                      onclick="selectDays(this)"
+                      class="px-2 py-1 flex items-center gap-3 justify-between cursor-pointer selectDaysBox rounded-lg border border-solid border-white bg-transparent p-1 text-xs text-white pt-1.5 rounded-lg Gilroy-normal"
+                    >
+                      <p
+                        class="text-sm text-white Gilroy-normal"
+                        id="ADCtoUSDtext"
+                      >
+                        Last 15 days
+                      </p>
+                      <div class="w-4 h-4">
+                        <svg
+                          width="100%"
+                          height="100%"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                          id="daysIcon"
+                          style="rotate: 0deg; transition: all 0.5s ease"
+                        >
+                          <path
+                            d="M6 9L12 15L18 9"
+                            stroke="white"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </div>
+                    </button>
+                    <div
+                      class="absolute right-0 bg-bgPrimary rounded-lg px-2 py-1 border border-solid border-white w-[130px]"
+                      id="daysSelect"
+                      style="
+                        scale: 0;
+                        margin-top: -50px;
+                        z-index: 0;
+                        transition: all 0.2s ease;
+                      "
+                    >
+                      <button
+                        type="button"
+                        class="text-base Gilroy-normal hover:bg-[#E9901A] p-1 text-white w-full rounded-lg flex items-center gap-3"
+                        onclick="ADCtoUSDchangeMainText('Last 15 days' , event)"
+                      >
+                        <p class="text-sm text-white Gilroy-normal">
+                          Last 15 days
+                        </p>
+                      </button>
+                      <button
+                        type="button"
+                        class="text-base Gilroy-normal hover:bg-[#E9901A] p-1 text-white w-full rounded-lg flex items-center gap-3"
+                        onclick="ADCtoUSDchangeMainText('Last 10 days' , event)"
+                      >
+                        <p class="text-sm text-white Gilroy-normal">
+                          Last 10 days
+                        </p>
+                      </button>
+                    </div>
+                  </div>
                 </div>
+
+                
               </div>
-              <div>
-                <img
-                  src="./src/images/chart2.png"
-                  alt="chart"
-                  class="h-auto w-full ADCtoUSDlast15Days"
-                  style="display: block;"
-                />
-              </div>
-              <div>
-                <img
-                  src="./src/images/chart.png"
-                  alt="chart"
-                  class="h-auto w-full ADCtoUSDlast10Days"
-                  style="display: none;"
-                />
-              </div>
+              <canvas id="myChart" width="100%" height="40%"></canvas>
             </div>
           </div>
         </div>
@@ -1491,7 +1525,7 @@
                       </td>
                       <td class="py-2.5 px-6 whitespace-nowrap">
                         <div
-                          class="w-full px-5 py-2 rounded-full border border-solid border-white text-[#00a185] text-base bg-[#b9d7d2] Gilroy-medium text-center"
+                          class="w-full px-5 py-2 rounded-full border border-solid pt-2.5 border-white text-[#00a185] text-base bg-[#b9d7d2] Gilroy-medium text-center"
                         >
                           Successful
                         </div>
@@ -1527,7 +1561,7 @@
                       </td>
                       <td class="py-2.5 px-6 whitespace-nowrap">
                         <div
-                          class="w-full px-5 py-2 rounded-full border border-solid border-white text-[#00a185] text-base bg-[#b9d7d2] Gilroy-medium text-center"
+                          class="w-full px-5 py-2 rounded-full border border-solid pt-2.5 border-white text-[#00a185] text-base bg-[#b9d7d2] Gilroy-medium text-center"
                         >
                           Successful
                         </div>
@@ -1565,7 +1599,7 @@
                       </td>
                       <td class="py-2.5 px-6 whitespace-nowrap">
                         <div
-                          class="w-full px-5 py-2 rounded-full border border-solid border-white text-[#ffc861] text-base bg-[#fdedcff2] Gilroy-medium text-center"
+                          class="w-full px-5 py-2 rounded-full border border-solid pt-2.5 border-white text-[#ffc861] text-base bg-[#fdedcff2] Gilroy-medium text-center"
                         >
                           Pending
                         </div>
@@ -1601,7 +1635,7 @@
                       </td>
                       <td class="py-2.5 px-6 whitespace-nowrap">
                         <div
-                          class="w-full px-5 py-2 rounded-full border border-solid border-white text-[#00a185] text-base bg-[#b9d7d2] Gilroy-medium text-center"
+                          class="w-full px-5 py-2 rounded-full border border-solid pt-2.5 border-white text-[#00a185] text-base bg-[#b9d7d2] Gilroy-medium text-center"
                         >
                           Successful
                         </div>
@@ -1637,7 +1671,7 @@
                       </td>
                       <td class="py-2.5 px-6 whitespace-nowrap">
                         <div
-                          class="w-full px-5 py-2 rounded-full border border-solid border-white text-[#ff6161] text-base bg-[#ffbebe] Gilroy-medium text-center"
+                          class="w-full px-5 py-2 rounded-full border border-solid pt-2.5 border-white text-[#ff6161] text-base bg-[#ffbebe] Gilroy-medium text-center"
                         >
                           Cancelled
                         </div>
@@ -1673,7 +1707,7 @@
                       </td>
                       <td class="py-2.5 px-6 whitespace-nowrap">
                         <div
-                          class="w-full px-5 py-2 rounded-full border border-solid border-white text-[#ffc861] text-base bg-[#fdedcff2] Gilroy-medium text-center"
+                          class="w-full px-5 py-2 rounded-full border border-solid pt-2.5 border-white text-[#ffc861] text-base bg-[#fdedcff2] Gilroy-medium text-center"
                         >
                           Pending
                         </div>
@@ -1709,7 +1743,7 @@
                       </td>
                       <td class="py-2.5 px-6 whitespace-nowrap">
                         <div
-                          class="w-full px-5 py-2 rounded-full border border-solid border-white text-[#00a185] text-base bg-[#b9d7d2] Gilroy-medium text-center"
+                          class="w-full px-5 py-2 rounded-full border border-solid pt-2.5 border-white text-[#00a185] text-base bg-[#b9d7d2] Gilroy-medium text-center"
                         >
                           Successful
                         </div>
@@ -1745,7 +1779,7 @@
                       </td>
                       <td class="py-2.5 px-6 whitespace-nowrap">
                         <div
-                          class="w-full px-5 py-2 rounded-full border border-solid border-white text-[#ffc861] text-base bg-[#fdedcff2] Gilroy-medium text-center"
+                          class="w-full px-5 py-2 rounded-full border border-solid pt-2.5 border-white text-[#ffc861] text-base bg-[#fdedcff2] Gilroy-medium text-center"
                         >
                           Pending
                         </div>
@@ -1781,7 +1815,7 @@
                       </td>
                       <td class="py-2.5 px-6 whitespace-nowrap">
                         <div
-                          class="w-full px-5 py-2 rounded-full border border-solid border-white text-[#ffc861] text-base bg-[#fdedcff2] Gilroy-medium text-center"
+                          class="w-full px-5 py-2 rounded-full border border-solid pt-2.5 border-white text-[#ffc861] text-base bg-[#fdedcff2] Gilroy-medium text-center"
                         >
                           Pending
                         </div>
@@ -1817,7 +1851,7 @@
                       </td>
                       <td class="py-2.5 px-6 whitespace-nowrap">
                         <div
-                          class="w-full px-5 py-2 rounded-full border border-solid border-white text-[#00a185] text-base bg-[#b9d7d2] Gilroy-medium text-center"
+                          class="w-full px-5 py-2 rounded-full border border-solid pt-2.5 border-white text-[#00a185] text-base bg-[#b9d7d2] Gilroy-medium text-center"
                         >
                           Successful
                         </div>
@@ -2975,5 +3009,6 @@
     </div>
 
     <script src="./script.js"></script>
+    <script src="./analytics.js"></script>
   </body>
 </html>

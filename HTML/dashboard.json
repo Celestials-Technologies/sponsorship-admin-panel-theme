@@ -1,0 +1,21 @@
+{
+    "coinsChart": [
+        {
+          "id": "Bitcoin",
+          "data": [30, 50, 80, 45]
+        },
+        {
+          "id": "marketCap",
+          "data": [20, 40, 35, 55]
+        },
+        {
+          "id": "volume",
+          "data": [40, 85, 40, 90]
+        },
+        {
+          "id": "volume2",
+          "data": [30, 45, 60, 30]
+        }
+    ],
+    "xBarValues": ["10", "20", "30", "40"]
+}

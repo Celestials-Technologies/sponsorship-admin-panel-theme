@@ -193,13 +193,6 @@ function btcToEURchangeMainText(text, event) {
   let mainText = BTCtoETCchart.querySelector("#mainText");
   mainText.textContent = text;
 
-  if (text === "Last 15 days") {
-    document.querySelector(".last15Days").style.display = "block";
-    document.querySelector(".last10Days").style.display = "none";
-  } else if (text === "Last 10 days") {
-    document.querySelector(".last15Days").style.display = "none";
-    document.querySelector(".last10Days").style.display = "block";
-  }
 
   closeDropDowns();
 }

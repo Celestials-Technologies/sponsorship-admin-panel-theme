@@ -253,9 +253,12 @@ function initPagination() {
   });
 
 if (detailSelectTableText.textContent === "Last 10 days") {
-  displayPage(3);
+  currentPage = 3;
+  prevButton.disabled = true;
+  displayPage(currentPage);
   updatePagination();
-} 
+  console.log("page3");
+}
 
   // Initialize pagination
   generatePagination();
