@@ -3367,3 +3367,6 @@ tr td {
 .tableHeader td:last-child {
   text-align: right;
 }
+.tb-container input {
+  display: none;
+}

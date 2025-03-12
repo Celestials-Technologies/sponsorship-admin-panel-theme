@@ -1,15 +1,11 @@
 function detailPageCharts() {
   fetch("detailChart.json")
-    .then(response => response.json())
-    .then(jsonData => {
+    .then((response) => response.json())
+    .then((jsonData) => {
       const xValues = jsonData.xValues;
 
-      jsonData.charts.forEach(({ id, data , borderColor , backgroundColor }) => {
+      jsonData.charts.forEach(({ id, data, borderColor, backgroundColor }) => {
         const ctx = document.getElementById(id).getContext("2d");
-
-        // let gradient = ctx.createLinearGradient(0, 0, 0, 300);
-        // gradient.addColorStop(0, "rgba(138, 43, 226, 0.5)");
-        // gradient.addColorStop(1, "rgba(138, 43, 226, 0)");
 
         new Chart(ctx, {
           type: "bar",
@@ -21,8 +17,8 @@ function detailPageCharts() {
                 data: data,
                 borderColor: borderColor,
                 backgroundColor: backgroundColor,
-              }
-            ]
+              },
+            ],
           },
           options: {
             legend: { display: false },
@@ -30,8 +26,8 @@ function detailPageCharts() {
               xAxes: [
                 {
                   ticks: { fontColor: "white" },
-                  gridLines: { display: false }
-                }
+                  gridLines: { display: false },
+                },
               ],
               yAxes: [
                 {
@@ -39,28 +35,26 @@ function detailPageCharts() {
                     fontColor: "white",
                     stepSize: 20,
                     min: 0,
-                    max: 100
+                    max: 100,
                   },
                   gridLines: { color: "white" },
-                
-                  beginAtZero: true
-                  
-                }
-              ]
-            }
-          }
+                  beginAtZero: true,
+                },
+              ],
+            },
+          },
         });
       });
     })
-    .catch(error => console.error("Error loading charts:", error));
+    .catch((error) => console.error("Error loading charts:", error));
 }
 
 detailPageCharts();
 
 function coinsChart() {
   fetch("detailChart.json")
-    .then(response => response.json())
-    .then(jsonData => {
+    .then((response) => response.json())
+    .then((jsonData) => {
       const xValues = jsonData.xValues;
 
       jsonData.coinsChart.forEach(({ id, data }) => {
@@ -78,13 +72,13 @@ function coinsChart() {
               {
                 label: "Smooth Line",
                 data: data,
-                borderColor: gradient, 
-                backgroundColor: gradient, 
+                borderColor: gradient,
+                backgroundColor: gradient,
                 fill: true,
                 lineTension: 0.4,
-                borderWidth: 3
-              }
-            ]
+                borderWidth: 3,
+              },
+            ],
           },
           options: {
             legend: { display: false },
@@ -92,8 +86,8 @@ function coinsChart() {
               xAxes: [
                 {
                   ticks: { fontColor: "white" },
-                  gridLines: { display: false }
-                }
+                  gridLines: { display: false },
+                },
               ],
               yAxes: [
                 {
@@ -101,30 +95,49 @@ function coinsChart() {
                     fontColor: "white",
                     stepSize: 20,
                     min: 0,
-                    max: 100
+                    max: 100,
                   },
                   gridLines: { display: false },
-                  
-                  
-                }
-              ]
-            }
-          }
+                },
+              ],
+            },
+          },
         });
       });
     })
-    .catch(error => console.error("Error loading charts:", error));
+    .catch((error) => console.error("Error loading charts:", error));
 }
 
 coinsChart();
 
+let detailSelectTableText = document.querySelector("#detailSelectTableText");
 
-$.getJSON('detailChart.json', function(data) {
-  console.log(data.result);
-  makeResultsTable(data.results);
-}); 
+function changeSelectTableText(text, event) {
+  detailSelectTableText.textContent = text;
 
-function makeResultsTable(results) {
+  if (detailSelectTableText.textContent === "Last 10 days") {
+    handleLast10Days();
+  }
+
+  closeDropDowns();
+}
+
+function handleLast10Days() {
+  $.getJSON("detailChart.json", function (data) {
+    console.log("Data loaded for Last 10 Days:", data);
+    let last10Days = data.last10Days;
+    makeResultsTable(last10Days, data.last15Days);
+  });
+}
+
+$.getJSON("detailChart.json", function (data) {
+  console.log("Data loaded:", data);
+  let last15Days = data.last15Days;
+  let last10Days = data.last10Days;
+  makeResultsTable(last15Days, last10Days);
+});
+
+function makeResultsTable(last15Days, last10Days) {
   let tbl = document.createElement("table");
   tbl.classList.add("w-full");
   let headerRow = tbl.insertRow();
@@ -132,7 +145,39 @@ function makeResultsTable(results) {
   headerRow.insertCell().textContent = "Title";
   headerRow.insertCell().textContent = "Transaction";
 
-  results.forEach(result => {
+  last15Days.forEach((result) => {
+    let newRow = tbl.insertRow();
+    newRow.classList.add("mainData");
+
+    var mainResultTitleContainer = document.createElement("div");
+    mainResultTitleContainer.classList.add("maintitleContainer");
+    var mainResultTitle = new Image();
+    mainResultTitle.src = result.img;
+    mainResultTitleContainer.appendChild(mainResultTitle);
+    let mainResultTitleText = document.createElement("div");
+    mainResultTitleText.classList.add("mainTitleText");
+    var mainTitleHeading = document.createElement("h2");
+    var mainTitleDetail = document.createElement("p");
+    mainTitleHeading.textContent = result.title;
+    mainTitleDetail.textContent = result.detail;
+    mainResultTitleText.appendChild(mainTitleHeading);
+    mainResultTitleText.appendChild(mainTitleDetail);
+    mainResultTitleContainer.appendChild(mainResultTitleText);
+
+    newRow.insertCell().appendChild(mainResultTitleContainer);
+
+    var mainResultTransaction = document.createElement("div");
+    mainResultTransaction.classList.add("maintransactionContainer");
+    var mainResultTransactionText = document.createElement("h2");
+    var mainResultTransactionDetailText = document.createElement("p");
+    mainResultTransactionText.textContent = result.transaction;
+    mainResultTransactionDetailText.textContent = result.transactionDetail;
+    mainResultTransaction.appendChild(mainResultTransactionText);
+    mainResultTransaction.appendChild(mainResultTransactionDetailText);
+
+    newRow.insertCell().appendChild(mainResultTransaction);
+  });
+  last10Days.forEach((result) => {
     let newRow = tbl.insertRow();
     newRow.classList.add("mainData");
 
@@ -165,11 +210,9 @@ function makeResultsTable(results) {
     newRow.insertCell().appendChild(mainResultTransaction);
   });
 
-  // Append the table to the element with ID target1
   let dataContainer = document.getElementById("data-container");
   dataContainer.appendChild(tbl);
 
-  // Initialize Pagination After Table is Created
   initPagination();
 }
 
@@ -225,15 +268,19 @@ function initPagination() {
   function updatePagination() {
     prevButton.disabled = currentPage === 1;
     nextButton.disabled = currentPage === totalPages;
+    let allCards = cards.length;
 
-    pageToTotalPage.innerHTML = `Showing ${currentPage} to ${totalPages} of ${cards.length} entries`;
+    // Calculate the range of cards being displayed
+    const startCard = (currentPage - 1) * cardsPerPage + 1;
+    const endCard = Math.min(currentPage * cardsPerPage, cards.length);
+
+    pageToTotalPage.innerHTML = `Showing ${startCard} to ${endCard} of ${cards.length} entries`;
 
     document.querySelectorAll(".page-link").forEach((link) => {
       const page = parseInt(link.getAttribute("data-page"));
       link.classList.toggle("active", page === currentPage);
     });
   }
-
 
   // Event listeners for Next and Previous buttons
   prevButton.addEventListener("click", () => {
@@ -252,16 +299,39 @@ function initPagination() {
     }
   });
 
-if (detailSelectTableText.textContent === "Last 10 days") {
-  currentPage = 3;
-  prevButton.disabled = true;
-  displayPage(currentPage);
-  updatePagination();
-  console.log("page3");
-}
-
   // Initialize pagination
   generatePagination();
   displayPage(currentPage);
   updatePagination();
+}
+
+function printTable() {
+  let dataContainer = document.getElementById("data-container");
+  let printWindow = window.open("", "", "height=600,width=800");
+  printWindow.document.write("<html><head><title>Print</title></head><body>");
+  printWindow.document.write(dataContainer.innerHTML);
+  printWindow.document.write("</body></html>");
+  printWindow.document.close();
+  printWindow.print();
+}
+
+// Download Table
+function downloadTable() {
+  let dataContainer = document.getElementById("data-container");
+  let csvContent =
+    "data:text/csv;charset=utf-8," +
+    encodeURIComponent(
+      dataContainer.outerHTML
+        .replace(/<table>/g, "")
+        .replace(/<\/table>/g, "")
+        .replace(/<tr>/g, "\n")
+        .replace(/<\/tr>/g, "\n")
+        .replace(/<td>/g, ",")
+        .replace(/<\/td>/g, "")
+    );
+  let csvLink = document.createElement("a");
+  csvLink.href = csvContent;
+  csvLink.target = "_blank";
+  csvLink.download = "table.csv";
+  csvLink.click();
 }

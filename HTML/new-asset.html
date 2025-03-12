@@ -517,12 +517,14 @@
                     Icon
                 </p>
                 <div class="flex md:gap-6 gap-5 flex-wrap items-center">
-                    <div class="p-2 border border-solid border-white rounded-xl w-[72px] h-[72px]">
+                  <input type="file" id="actual-btn" hidden/>
+<label for="actual-btn" class="bg-btnSecondary transition-all h-fit px-6 py-3 pt-3.5 text-base text-white Gilroy-normal hover:bg-transparent border border-solid rounded-lg border-[#E9901A] hover:border-white">Choose File</label>
+<span id="file-chosen">No file chosen</span>
+                    <!-- <div class="p-2 border border-solid border-white rounded-xl w-[72px] h-[72px]" id="file-chosen">
                         <img src="./src/images/bit_xxxl.png" alt="Bitcoin" class="w-full h-auto"/>
                     </div>
-                    <button type="button" class="bg-btnSecondary transition-all h-fit px-6 py-3 pt-3.5 text-base text-white Gilroy-normal hover:bg-transparent border border-solid rounded-lg border-[#E9901A] hover:border-white">
-                        Upload
-                    </button>
+                    <input type="file" id="actual-btn" hidden/>
+                    <label for="actual-btn" class="bg-btnSecondary transition-all h-fit px-6 py-3 pt-3.5 text-base text-white Gilroy-normal hover:bg-transparent border border-solid rounded-lg border-[#E9901A] hover:border-white">Choose File</label> -->
                     <button type="button" class="bg-transparent transition-all h-fit px-6 py-3 pt-3.5 text-base text-white Gilroy-normal hover:bg-[#E9901A] border border-solid rounded-lg border-white hover:border-[#E9901A]">
                         Remove
                     </button>
@@ -645,5 +647,6 @@
         />
       </button>
     </div>
+    <script src="./script.js"></script>
   </body>
 </html>

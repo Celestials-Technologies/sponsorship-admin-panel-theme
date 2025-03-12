@@ -51,7 +51,7 @@
   ],
   "xValues": ["10", "20", "30", "40", "50", "60", "70"],
 
-  "results": [
+  "last15Days": [
     {
       "title": "Bitcoin",
       "img": "./src/images/bitcoin_mid.png",
@@ -63,37 +63,39 @@
       "title": "Cardano",
       "img": "./src/images/cardano_mid.png",
       "detail": "Canceled - 3 min ago",
-      "transaction": "+0.2948 BTC",
-      "transactionDetail": "+$10,930.90"
+      "transaction": "+0.2256 BTC",
+      "transactionDetail": "+$10,590.90"
     },
     {
       "title": "Bitcoin",
       "img": "./src/images/bitcoin_mid.png",
       "detail": "Pending - 3 min ago",
-      "transaction": "+0.2948 BTC",
-      "transactionDetail": "+$10,930.90"
+      "transaction": "+0.2367 BTC",
+      "transactionDetail": "+$11,210.90"
     },
     {
       "title": "Cardano",
       "img": "./src/images/cardano_mid.png",
       "detail": "Canceled - 3 min ago",
-      "transaction": "+0.2948 BTC",
-      "transactionDetail": "+$10,930.90"
+      "transaction": "+0.2432 BTC",
+      "transactionDetail": "+$12,320.90"
     },
     {
       "title": "Electro",
       "img": "./src/images/electro_mid.png",
       "detail": "Pending - 3 min ago",
-      "transaction": "+0.2948 BTC",
-      "transactionDetail": "+$10,930.90"
+      "transaction": "+0.2589 BTC",
+      "transactionDetail": "+$13,930.90"
     },
     {
       "title": "Bitcoin",
       "img": "./src/images/bitcoin_mid.png",
       "detail": "Pending - 3 min ago",
-      "transaction": "+0.2948 BTC",
+      "transaction": "+0.2907 BTC",
       "transactionDetail": "+$10,930.90"
-    },
+    }
+  ],
+  "last10Days": [
     {
       "title": "Cardano",
       "img": "./src/images/cardano_mid.png",

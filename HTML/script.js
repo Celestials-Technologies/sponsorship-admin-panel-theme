@@ -193,7 +193,6 @@ function btcToEURchangeMainText(text, event) {
   let mainText = BTCtoETCchart.querySelector("#mainText");
   mainText.textContent = text;
 
-
   closeDropDowns();
 }
 
@@ -219,10 +218,9 @@ function performancechangeMainText(text, event) {
   closeDropDowns();
 }
 
-let detailSelectTableText = document.querySelector("#detailSelectTableText");
-
-function changeSelectTableText(text, event) {
-  detailSelectTableText.textContent = text;
+function earningchangeMainText(text, event) {
+  let earningText = document.querySelector("#earningtext");
+  earningText.textContent = text;
 
   closeDropDowns();
 }
@@ -668,25 +666,65 @@ function validateForm() {
   }
 }
 
+// function detailConverter() {
+//   let ADAdata = document.getElementById("ADADATA");
+//   let BTCdata = document.getElementById("BTCDATA");
+//   let btcInput = document.getElementById("btcInput");
+//   let adaInput = document.getElementById("adaInput");
+//   let converterArrowBox = document.getElementById("converterArrowBox");
+
+//   // Toggle rotation state
+//   if (converterArrowBox.style.rotate === "180deg") {
+//     converterArrowBox.style.rotate = "0deg";
+//   } else {
+//     converterArrowBox.style.rotate = "180deg";
+//     const ADAHtml = ADAdata.innerHTML;
+//     const adaInputValue = adaInput.value;
+
+//     ADAdata.innerHTML = BTCdata.innerHTML;
+//     adaInput.value = btcInput.value;
+//     BTCdata.innerHTML = ADAHtml;
+//     btcInput.value = adaInputValue;
+//   }
+// }
+
 function detailConverter() {
   let ADAdata = document.getElementById("ADADATA");
   let BTCdata = document.getElementById("BTCDATA");
-  let btcInput = document.getElementById("btcInput");
-  let adaInput = document.getElementById("adaInput");
+  let buyInput = document.getElementById("buyInput");
+  let buyToInput = document.getElementById("buyToInput");
   let converterArrowBox = document.getElementById("converterArrowBox");
 
-  // Toggle rotation state
+  const ADAHtml = ADAdata.innerHTML;
+  const buyInputValue = buyInput.value;
+
+  ADAdata.innerHTML = BTCdata.innerHTML;
+  buyInput.value = buyToInput.value;
+  BTCdata.innerHTML = ADAHtml;
+  buyToInput.value = buyInputValue;
   if (converterArrowBox.style.rotate === "180deg") {
     converterArrowBox.style.rotate = "0deg";
   } else {
     converterArrowBox.style.rotate = "180deg";
-    const ADAHtml = ADAdata.innerHTML;
-    const adaInputValue = adaInput.value;
+  }
+}
 
-    ADAdata.innerHTML = BTCdata.innerHTML;
-    adaInput.value = btcInput.value;
-    BTCdata.innerHTML = ADAHtml;
-    btcInput.value = adaInputValue;
+function sellDetailConverter() {
+  let sellADADATA = document.getElementById("sellADADATA");
+  let sellBTCDATA = document.getElementById("sellBTCDATA");
+  let sellInput = document.getElementById("sellInput");
+  let sellToInput = document.getElementById("sellToInput");
+  let sellConverterArrowBox = document.getElementById("sellConverterArrowBox");
+  const sellADAHtmL = sellADADATA.innerHTML;
+  const sellInputValue = sellInput.value;
+  sellADADATA.innerHTML = sellBTCDATA.innerHTML;
+  sellInput.value = sellToInput.value;
+  sellBTCDATA.innerHTML = sellADAHtmL;
+  sellToInput.value = sellInputValue;
+  if (sellConverterArrowBox.style.rotate === "180deg") {
+    sellConverterArrowBox.style.rotate = "0deg";
+  } else {
+    sellConverterArrowBox.style.rotate = "180deg";
   }
 }
 
@@ -740,3 +778,112 @@ function threePercentBtn() {
   halfPercentButton.style.color = "#E9901A";
 }
 
+let buyBackground = document.getElementById("buyBackground");
+let sellBackground = document.getElementById("sellBackground");
+let buyData = document.getElementById("buyData");
+let sellData = document.getElementById("sellData");
+
+function buyBtn() {
+  buyBackground.style.backgroundColor = "#E9901A";
+  sellBackground.style.backgroundColor = "transparent";
+  buyData.style.display = "block";
+  sellData.style.display = "none";
+
+  if (
+    sellBackground.style.backgroundColor === "#E9901A" &&
+    buyBackground.style.backgroundColor === "transparent" &&
+    buyData.style.display === "none" &&
+    sellData.style.display === "block"
+  ) {
+    buyBackground.style.backgroundColor = "#E9901A";
+    sellBackground.style.backgroundColor = "transparent";
+    buyData.style.display = "block";
+    sellData.style.display = "none";
+  }
+}
+function sellBtn() {
+  sellBackground.style.backgroundColor = "#E9901A";
+  buyBackground.style.backgroundColor = "transparent";
+  sellData.style.display = "block";
+  buyData.style.display = "none";
+
+  if (
+    buyBackground.style.backgroundColor === "#E9901A" &&
+    sellBackground.style.backgroundColor === "transparent" &&
+    sellData.style.display === "none" &&
+    buyData.style.display === "block"
+  ) {
+    sellBackground.style.backgroundColor = "#E9901A";
+    buyBackground.style.backgroundColor = "transparent";
+    sellData.style.display = "block";
+    buyData.style.display = "none";
+  }
+}
+
+function mainBuyBtn() {
+  let buyInputError = document.getElementById("buyInputError");
+  let buyToInputError = document.getElementById("buyToInputError");
+  let buyToInput = document.getElementById("buyToInput");
+  let buyInput = document.getElementById("buyInput");
+  let buyToInputValue = buyToInput.value;
+  let buyInputValue = buyInput.value;
+  if (buyInputValue === "") {
+    buyInputError.style.display = "block";
+  } else {
+    buyInputError.style.display = "none";
+  }
+  if (buyToInputValue === "") {
+    buyToInputError.style.display = "block";
+  } else {
+    buyToInputError.style.display = "none";
+  }
+  if (buyInputValue !== "" && buyToInputValue !== "") {
+    buyInputValue = "";
+    buyToInputValue = "";
+  }
+}
+
+function mainSellBtn() {
+  let sellInputError = document.getElementById("sellInputError");
+  let sellToInputError = document.getElementById("sellToInputError");
+  let sellInput = document.getElementById("sellInput");
+  let sellToInput = document.getElementById("sellToInput");
+  let sellToInputValue = sellToInput.value;
+  let sellInputValue = sellInput.value;
+  if (sellInputValue === "") {
+    sellInputError.style.display = "block";
+  } else {
+    sellInputError.style.display = "none";
+  }
+  if (sellToInputValue === "") {
+    sellToInputError.style.display = "block";
+  } else {
+    sellToInputError.style.display = "none";
+  }
+}
+
+// var counter = 0;
+//     function AddFileUpload()
+//     {
+//          var div = document.createElement('DIV');
+//          div.innerHTML = '<input id="file' + counter + '" name = "file' + counter +
+//                          '" type="file" />' +
+//                          '<input id="Button' + counter + '" type="button" ' +
+//                          'value="Remove" onclick = "RemoveFileUpload(this)" />';
+//          document.getElementById("FileUploadContainer").appendChild(div);
+//          counter++;
+//     }
+//     function RemoveFileUpload(div)
+//     {
+//          document.getElementById("FileUploadContainer").removeChild(div.parentNode);
+
+const actualBtn = document.getElementById("actual-btn");
+const fileChosen = document.getElementById("file-chosen");
+
+actualBtn.addEventListener("change", function () {
+  if (this.files.length > 0) {
+    fileChosen.textContent = this.files[0].name;
+  } else {
+    fileChosen.textContent = "No file chosen";
+  }
+});

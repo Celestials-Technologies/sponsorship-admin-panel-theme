@@ -1139,7 +1139,7 @@
                 <p class="text-xl md:text-[26px] text-white Gilroy-semibold">
                   Earnings
                 </p>
-                <div class="flex items-center gap-2">
+                <!-- <div class="flex items-center gap-2">
                   <p class="text-sm Gilroy-normal text-white">Sort By</p>
 
                   <div class="relative">
@@ -1201,13 +1201,77 @@
                       </button>
                     </div>
                   </div>
+                </div> -->
+              
+                <div class="flex items-center gap-2">
+                  <p class="text-sm Gilroy-normal text-white">Sort By</p>
+
+                  <div class="relative">
+                    <button
+                      type="button"
+                      onclick="selectDays(this)"
+                      class="px-2 py-1 flex items-center gap-3 justify-between cursor-pointer selectDaysBox rounded-lg border border-solid border-white bg-transparent p-1 text-xs text-white pt-1.5 rounded-lg Gilroy-normal"
+                    >
+                      <p
+                        class="text-sm text-white Gilroy-normal"
+                        id="earningtext"
+                      >
+                        Last 15 days
+                      </p>
+                      <div class="w-4 h-4">
+                        <svg
+                          width="100%"
+                          height="100%"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                          id="daysIcon"
+                          style="rotate: 0deg; transition: all 0.5s ease"
+                        >
+                          <path
+                            d="M6 9L12 15L18 9"
+                            stroke="white"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </div>
+                    </button>
+                    <div
+                      class="absolute right-0 bg-bgPrimary rounded-lg px-2 py-1 border border-solid border-white w-[130px]"
+                      id="daysSelect"
+                      style="
+                        scale: 0;
+                        margin-top: -50px;
+                        z-index: 0;
+                        transition: all 0.2s ease;
+                      "
+                    >
+                      <button
+                        type="button"
+                        class="text-base Gilroy-normal hover:bg-[#E9901A] p-1 text-white w-full rounded-lg flex items-center gap-3"
+                        onclick="earningchangeMainText('Last 15 days' , event)"
+                      >
+                        <p class="text-sm text-white Gilroy-normal">
+                          Last 15 days
+                        </p>
+                      </button>
+                      <button
+                        type="button"
+                        class="text-base Gilroy-normal hover:bg-[#E9901A] p-1 text-white w-full rounded-lg flex items-center gap-3"
+                        onclick="earningchangeMainText('Last 10 days' , event)"
+                      >
+                        <p class="text-sm text-white Gilroy-normal">
+                          Last 10 days
+                        </p>
+                      </button>
+                    </div>
+                  </div>
                 </div>
+              
               </div>
-              <img
-                src="./src/images/graph.png"
-                alt="graph"
-                class="w-full h-auto"
-              />
+              <canvas id="myChart" width="100%" height="40%"></canvas>
             </div>
             <div
               class="p-6 md:pt-6 md:pr-[31px] md:pb-[22px] md:pl-[26px] border border-white rounded-[15px] bg-gradient mt-6"
@@ -1921,20 +1985,22 @@
                 <h4 class="text-xl md:text-2xl text-white Gilroy-semibold">
                   Staking rewards
                 </h4>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="white"
-                  class="w-6 h-6 cursor-pointer"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99"
-                  />
-                </svg>
+                <button type="button" onclick="rewardsRefresh()">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="white"
+                    class="w-6 h-6 cursor-pointer"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99"
+                    />
+                  </svg>
+                </button>
               </div>
               <div class="flex flex-col gap-6">
                 <div
@@ -1962,7 +2028,9 @@
                       <p class="text-base text-white">73%</p>
                       <div class="w-full h-[5px] rounded-[5px] bg-[#dfe0e4]">
                         <div
-                          class="w-[73%] h-full rounded-[5px] bg-btnSecondary"
+                        id="rewardsPercent"
+                        style="width: 73%;"
+                          class=" h-full rounded-[5px] bg-btnSecondary"
                         ></div>
                       </div>
                     </div>
@@ -1993,7 +2061,9 @@
                       <p class="text-base text-white">73%</p>
                       <div class="w-full h-[5px] rounded-[5px] bg-[#dfe0e4]">
                         <div
-                          class="w-[73%] h-full rounded-[5px] bg-btnSecondary"
+                        id="rewardsPercent"
+                        style="width: 73%;"
+                        class=" h-full rounded-[5px] bg-btnSecondary"
                         ></div>
                       </div>
                     </div>
@@ -2020,7 +2090,9 @@
                       <p class="text-base text-white">73%</p>
                       <div class="w-full h-[5px] rounded-[5px] bg-[#dfe0e4]">
                         <div
-                          class="w-[73%] h-full rounded-[5px] bg-btnSecondary"
+                        id="rewardsPercent"
+                        style="width: 73%;"
+                        class=" h-full rounded-[5px] bg-btnSecondary"
                         ></div>
                       </div>
                     </div>
@@ -2051,7 +2123,9 @@
                       <p class="text-base text-white">73%</p>
                       <div class="w-full h-[5px] rounded-[5px] bg-[#dfe0e4]">
                         <div
-                          class="w-[73%] h-full rounded-[5px] bg-btnSecondary"
+                        id="rewardsPercent"
+                        style="width: 73%;"
+                        class=" h-full rounded-[5px] bg-btnSecondary"
                         ></div>
                       </div>
                     </div>

@@ -1615,12 +1615,18 @@
                 >
                   <button
                     type="button"
-                    class="px-6 py-2 pt-2.5 text-base Gilroy-medium text-white bg-btnSecondary border border-solid border-white rounded-lg transition-all"
+                    onclick="buyBtn()"
+                    id="buyBackground"
+                    style="background-color: #E9901A;"
+                    class="px-6 py-2 pt-2.5 text-base Gilroy-medium text-white border border-solid border-white rounded-lg transition-all"
                   >
                     Buy
                   </button>
                   <button
                     type="button"
+                    onclick="sellBtn()"
+                    id="sellBackground"
+                    style="background-color: transparent;"
                     class="px-6 py-2 pt-2.5 text-base Gilroy-medium text-white bg-transparent rounded-lg border border-solid border-[#E9901A] hover:border-white hover:bg-[#E9901A] transition-all"
                   >
                     Sell
@@ -1673,168 +1679,321 @@
                       transition: all 0.5s ease;
                     "
                   >
-                    <a
-                      href="#"
+                    <button
+                    type="button"
+                    onclick="printTable()"
+                  
                       class="px-5 py-2 rounded-lg hover:bg-[#0f0f7ac7] transition-all"
                     >
                       Print
-                    </a>
+                </button>
                     <a
                       href="#"
                       class="px-5 py-2 rounded-lg hover:bg-[#0f0f7ac7] transition-all"
                     >
                       Remove
                     </a>
-                    <a
+                    <button type="button" onclick="downloadTable()"
                       href="#"
                       class="px-5 py-2 rounded-lg hover:bg-[#0f0f7ac7] transition-all"
                     >
                       Download
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div
-                class="relative border-b border-dashed border-white pb-6 blockZindex"
-                style="z-index: 999"
-              >
-                <div
-                  class="p-4 md:p-6 lg:p-8 border border-translucentWhite w-full max-w-full bg-sideBarBg h-full rounded-xl"
-                >
-                  <div
-                    class="flex border-b border-dashed border-white pb-4 mb-4 items-center gap-3 justify-between"
-                  >
-                    <p class="text-base Gilroy-normal text-white">From</p>
-                    <p class="text-base Gilroy-normal text-white">
-                      Balance: 10,000 ADA
-                    </p>
-                  </div>
-                  <div class="flex items-center gap-3">
-                    <input
-                      type="number"
-                      id="adaInput"
-                      class="text-base md:text-xl outline-none text-white Gilroy-medium w-9/12 justify-between bg-transparent"
-                      placeholder="0.00"
-                    />
-                    <div class="flex gap-2" id="ADADATA">
-                      <img
-                        src="./src/images/cardano_mid.png"
-                        alt="cardano"
-                        class="w-7 h-7"
-                      />
-                      <p class="text-base md:text-xl Gilroy-normal text-white">
-                        ADA
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="flex justify-center w-full">
-                  <button
-                    type="button"
-                    onclick="detailConverter()"
-                    id="converterArrowBox"
-                    class="w-12 h-12 gap-px cursor-pointer absolute top-[40%] flex items-center justify-center convertArrow border border-solid rounded-lg border-[#E9901A] hover:bg-white bg-transparent hover:bg-[#E9901A] transition-all mx-auto"
-                  >
-                    <svg
-                      width="16"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="-mt-2.5"
-                      id="converterArrows"
-                      style="rotate: 0deg"
-                    >
-                      <path
-                        d="M9.8 21C9.51997 21 9.37996 21 9.273 20.9455C9.17892 20.8976 9.10243 20.8211 9.0545 20.727C9 20.62 9 20.48 9 20.2V10H5L12 3L19 10H15V20.2C15 20.48 15 20.62 14.9455 20.727C14.8976 20.8211 14.8211 20.8976 14.727 20.9455C14.62 21 14.48 21 14.2 21H9.8Z"
-                        stroke="white"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                    <svg
-                      width="16"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="mt-2.5"
-                      id="converterArrows"
-                      style="rotate: 0deg"
-                    >
-                      <path
-                        d="M9 3.8C9 3.51997 9 3.37996 9.0545 3.273C9.10243 3.17892 9.17892 3.10243 9.273 3.0545C9.37996 3 9.51997 3 9.8 3H14.2C14.48 3 14.62 3 14.727 3.0545C14.8211 3.10243 14.8976 3.17892 14.9455 3.273C15 3.37996 15 3.51997 15 3.8V14H19L12 21L5 14H9V3.8Z"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
                   </button>
+                  </div>
                 </div>
+              </div>
+              <div id="buyData" style="display: block;">
                 <div
-                  class="p-4 md:p-6 lg:p-8 border border-translucentWhite w-full max-w-full bg-sideBarBg h-full rounded-xl mt-6"
+                  class="relative border-b border-dashed border-white pb-6 blockZindex"
+                  style="z-index: 999"
                 >
                   <div
-                    class="flex border-b border-dashed border-white pb-4 mb-4 items-center gap-3 justify-between"
+                    class="p-4 md:p-6 lg:p-8 border border-translucentWhite w-full max-w-full bg-sideBarBg h-full rounded-xl"
                   >
-                    <p class="text-base Gilroy-normal text-white">To</p>
-                    <p class="text-base Gilroy-normal text-white">
-                      Balance: 10,000 ADA
-                    </p>
-                  </div>
-                  <div class="flex items-center gap-3">
-                    <input
-                      type="number"
-                      id="btcInput"
-                      class="text-base md:text-xl text-white outline-none Gilroy-medium w-9/12 justify-between bg-transparent"
-                      placeholder="0.00"
-                    />
-                    <div class="flex gap-2" id="BTCDATA">
-                      <img
-                        src="./src/images/bitcoin_mid.png"
-                        alt="cardano"
-                        class="w-7 h-7"
+                    <div
+                      class="flex border-b border-dashed border-white pb-4 mb-4 items-center gap-3 justify-between"
+                    >
+                      <p class="text-base Gilroy-normal text-white">From</p>
+                      <p class="text-base Gilroy-normal text-white">
+                        Balance: 10,000 ADA
+                      </p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                      <input
+                        type="number"
+                        id="buyInput"
+                        class="text-base md:text-xl outline-none text-white Gilroy-medium w-9/12 justify-between bg-transparent"
+                        placeholder="0.00"
                       />
-                      <p class="text-base md:text-xl Gilroy-normal text-white">
-                        BTC
+                      <div class="flex gap-2" id="ADADATA">
+                        <img
+                          src="./src/images/cardano_mid.png"
+                          alt="cardano"
+                          class="w-7 h-7"
+                        />
+                        <p class="text-base md:text-xl Gilroy-normal text-white">
+                          ADA
+                        </p>
+                      </div>
+                    </div>
+                    <p class="m-0 text-sm text-[#ff2d2d]" id="buyInputError" style="display: none;">Enter The Value</p>
+                  </div>
+                  <div class="flex justify-center w-full">
+                    <button
+                      type="button"
+                      onclick="detailConverter()"
+                      id="converterArrowBox"
+                      class="w-12 h-12 gap-px cursor-pointer absolute top-[40%] flex items-center justify-center convertArrow border border-solid rounded-lg border-[#E9901A] hover:bg-white bg-transparent hover:bg-[#E9901A] transition-all mx-auto"
+                    >
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="-mt-2.5"
+                        id="converterArrows"
+                        style="rotate: 0deg"
+                      >
+                        <path
+                          d="M9.8 21C9.51997 21 9.37996 21 9.273 20.9455C9.17892 20.8976 9.10243 20.8211 9.0545 20.727C9 20.62 9 20.48 9 20.2V10H5L12 3L19 10H15V20.2C15 20.48 15 20.62 14.9455 20.727C14.8976 20.8211 14.8211 20.8976 14.727 20.9455C14.62 21 14.48 21 14.2 21H9.8Z"
+                          stroke="white"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="mt-2.5"
+                        id="converterArrows"
+                        style="rotate: 0deg"
+                      >
+                        <path
+                          d="M9 3.8C9 3.51997 9 3.37996 9.0545 3.273C9.10243 3.17892 9.17892 3.10243 9.273 3.0545C9.37996 3 9.51997 3 9.8 3H14.2C14.48 3 14.62 3 14.727 3.0545C14.8211 3.10243 14.8976 3.17892 14.9455 3.273C15 3.37996 15 3.51997 15 3.8V14H19L12 21L5 14H9V3.8Z"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                  <div
+                    class="p-4 md:p-6 lg:p-8 border border-translucentWhite w-full max-w-full bg-sideBarBg h-full rounded-xl mt-6"
+                  >
+                    <div
+                      class="flex border-b border-dashed border-white pb-4 mb-4 items-center gap-3 justify-between"
+                    >
+                      <p class="text-base Gilroy-normal text-white">To</p>
+                      <p class="text-base Gilroy-normal text-white">
+                        Balance: 10,000 ADA
                       </p>
                     </div>
+                    <div class="flex items-center gap-3">
+                      <input
+                        type="number"
+                        id="buyToInput"
+                        class="text-base md:text-xl text-white outline-none Gilroy-medium w-9/12 justify-between bg-transparent"
+                        placeholder="0.00"
+                      />
+                      <div class="flex gap-2" id="BTCDATA">
+                        <img
+                          src="./src/images/bitcoin_mid.png"
+                          alt="cardano"
+                          class="w-7 h-7"
+                        />
+                        <p class="text-base md:text-xl Gilroy-normal text-white">
+                          BTC
+                        </p>
+                      </div>
+                    </div>
+                    <p class="m-0 text-sm text-[#ff2d2d]" id="buyToInputError" style="display: none;">Enter The Value</p>
                   </div>
                 </div>
-              </div>
-              <div class="mt-6 flex flex-col md:gap-6 gap-5">
-                <h4 class="md:text-lg text-base text-white Gilroy-medium">
-                  Payment Method
-                </h4>
-                <div
-                  class="border border-dashed border-white rounded-lg p-3 flex flex-wrap gap-3 justify-between items-center"
+                <div class="mt-6 flex flex-col md:gap-6 gap-5">
+                  <h4 class="md:text-lg text-base text-white Gilroy-medium">
+                    Payment Method
+                  </h4>
+                  <div
+                    class="border border-dashed border-white rounded-lg p-3 flex flex-wrap gap-3 justify-between items-center"
+                  >
+                    <div class="flex items-center gap-3">
+                      <img
+                        src="./src/images/card.png"
+                        alt="card"
+                        class="w-[60px] h-[46px]"
+                      />
+                      <div class="flex flex-col gap-2">
+                        <h5 class="text-base text-white Gilroy-medium">
+                          John Snow - Metal
+                        </h5>
+                        <p class="text-xs text-white Gilroy-normal">
+                          **4291 - Exp: 12/26
+                        </p>
+                      </div>
+                    </div>
+                    <p class="text-base text-white Gilroy-normal">246546 BTC</p>
+                  </div>
+                </div>
+                <button
+                  type="button"
+                  onclick="mainBuyBtn()"
+                  class="mt-6 px-6 py-3 pt-3.5 flex items-center justify-center w-full rounded-lg text-base text-white Gilroy-medium border border-solid border-white hover:border-[#E9901A] hover:text-[#E9901A] bg-btnSecondary hover:bg-transparent transition-all"
                 >
-                  <div class="flex items-center gap-3">
-                    <img
-                      src="./src/images/card.png"
-                      alt="card"
-                      class="w-[60px] h-[46px]"
-                    />
-                    <div class="flex flex-col gap-2">
-                      <h5 class="text-base text-white Gilroy-medium">
-                        John Snow - Metal
-                      </h5>
-                      <p class="text-xs text-white Gilroy-normal">
-                        **4291 - Exp: 12/26
+                  Buy
+                </button>
+              </div>
+              <div id="sellData" style="display: none;">
+                <div
+                  class="relative border-b border-dashed border-white pb-6 blockZindex"
+                  style="z-index: 999"
+                >
+                  <div
+                    class="p-4 md:p-6 lg:p-8 border border-translucentWhite w-full max-w-full bg-sideBarBg h-full rounded-xl"
+                  >
+                    <div
+                      class="flex border-b border-dashed border-white pb-4 mb-4 items-center gap-3 justify-between"
+                    >
+                      <p class="text-base Gilroy-normal text-white">From</p>
+                      <p class="text-base Gilroy-normal text-white">
+                        Balance: 10,000 ADA
                       </p>
                     </div>
+                    <div class="flex items-center gap-3">
+                      <input
+                        type="number"
+                        id="sellInput"
+                        class="text-base md:text-xl outline-none text-white Gilroy-medium w-9/12 justify-between bg-transparent"
+                        placeholder="0.00"
+                      />
+                      <div class="flex gap-2" id="sellADADATA">
+                        <img
+                          src="./src/images/cardano_mid.png"
+                          alt="cardano"
+                          class="w-7 h-7"
+                        />
+                        <p class="text-base md:text-xl Gilroy-normal text-white">
+                          ADA
+                        </p>
+                      </div>
+                    </div>
+                    <p class="m-0 text-sm text-[#ff2d2d]" id="sellInputError" style="display: none;">Enter The Value</p>
                   </div>
-                  <p class="text-base text-white Gilroy-normal">246546 BTC</p>
+                  <div class="flex justify-center w-full">
+                    <button
+                      type="button"
+                      onclick="sellDetailConverter()"
+                      id="sellConverterArrowBox"
+                      class="w-12 h-12 gap-px cursor-pointer absolute top-[40%] flex items-center justify-center convertArrow border border-solid rounded-lg border-[#E9901A] hover:bg-white bg-transparent hover:bg-[#E9901A] transition-all mx-auto"
+                    >
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="-mt-2.5"
+                        id="converterArrows"
+                        style="rotate: 0deg"
+                      >
+                        <path
+                          d="M9.8 21C9.51997 21 9.37996 21 9.273 20.9455C9.17892 20.8976 9.10243 20.8211 9.0545 20.727C9 20.62 9 20.48 9 20.2V10H5L12 3L19 10H15V20.2C15 20.48 15 20.62 14.9455 20.727C14.8976 20.8211 14.8211 20.8976 14.727 20.9455C14.62 21 14.48 21 14.2 21H9.8Z"
+                          stroke="white"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="mt-2.5"
+                        id="converterArrows"
+                        style="rotate: 0deg"
+                      >
+                        <path
+                          d="M9 3.8C9 3.51997 9 3.37996 9.0545 3.273C9.10243 3.17892 9.17892 3.10243 9.273 3.0545C9.37996 3 9.51997 3 9.8 3H14.2C14.48 3 14.62 3 14.727 3.0545C14.8211 3.10243 14.8976 3.17892 14.9455 3.273C15 3.37996 15 3.51997 15 3.8V14H19L12 21L5 14H9V3.8Z"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                  <div
+                    class="p-4 md:p-6 lg:p-8 border border-translucentWhite w-full max-w-full bg-sideBarBg h-full rounded-xl mt-6"
+                  >
+                    <div
+                      class="flex border-b border-dashed border-white pb-4 mb-4 items-center gap-3 justify-between"
+                    >
+                      <p class="text-base Gilroy-normal text-white">To</p>
+                      <p class="text-base Gilroy-normal text-white">
+                        Balance: 10,000 ADA
+                      </p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                      <input
+                        type="number"
+                        id="sellToInput"
+                        class="text-base md:text-xl text-white outline-none Gilroy-medium w-9/12 justify-between bg-transparent"
+                        placeholder="0.00"
+                      />
+                      <div class="flex gap-2" id="sellBTCDATA">
+                        <img
+                          src="./src/images/bitcoin_mid.png"
+                          alt="cardano"
+                          class="w-7 h-7"
+                        />
+                        <p class="text-base md:text-xl Gilroy-normal text-white">
+                          BTC
+                        </p>
+                      </div>
+                    </div>
+                    <p class="m-0 text-sm text-[#ff2d2d]" id="sellToInputError" style="display: none;">Enter The Value</p>
+                  </div>
                 </div>
+                <div class="mt-6 flex flex-col md:gap-6 gap-5">
+                  <h4 class="md:text-lg text-base text-white Gilroy-medium">
+                    Payment Method
+                  </h4>
+                  <div
+                    class="border border-dashed border-white rounded-lg p-3 flex flex-wrap gap-3 justify-between items-center"
+                  >
+                    <div class="flex items-center gap-3">
+                      <img
+                        src="./src/images/card.png"
+                        alt="card"
+                        class="w-[60px] h-[46px]"
+                      />
+                      <div class="flex flex-col gap-2">
+                        <h5 class="text-base text-white Gilroy-medium">
+                          John Snow - Metal
+                        </h5>
+                        <p class="text-xs text-white Gilroy-normal">
+                          **4291 - Exp: 12/26
+                        </p>
+                      </div>
+                    </div>
+                    <p class="text-base text-white Gilroy-normal">246546 BTC</p>
+                  </div>
+                </div>
+                <button
+                  type="button"
+                  onclick="mainSellBtn()"
+                  class="mt-6 px-6 py-3 pt-3.5 flex items-center justify-center w-full rounded-lg text-base text-white Gilroy-medium border border-solid border-white hover:border-[#E9901A] hover:text-[#E9901A] bg-btnSecondary hover:bg-transparent transition-all"
+                >
+                  Sell
+                </button>
               </div>
-              <button
-                type="button"
-                class="mt-6 px-6 py-3 pt-3.5 flex items-center justify-center w-full rounded-lg text-base text-white Gilroy-medium border border-solid border-white hover:border-[#E9901A] hover:text-[#E9901A] bg-btnSecondary hover:bg-transparent transition-all"
-              >
-                Buy
-              </button>
             </div>
           </div>
         </div>
