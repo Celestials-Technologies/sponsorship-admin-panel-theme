@@ -3222,7 +3222,7 @@ video {
 
 .select-selected {
   background-color: transparent;
-  border: 1px solid #E9901A !important;
+  border: 1px solid #e9901a !important;
   border-radius: 12px;
 }
 
@@ -3245,7 +3245,8 @@ video {
 }
 
 /*style the items (options), including the selected item:*/
-.select-items div,.select-selected {
+.select-items div,
+.select-selected {
   color: #ffffff;
   padding: 8px 16px;
   border: 1px solid transparent;
@@ -3257,7 +3258,7 @@ video {
 /*style items (options):*/
 .select-items {
   position: absolute;
-  background-color: #E9901A;
+  background-color: #e9901a;
   top: 100%;
   left: 0;
   right: 0;
@@ -3269,7 +3270,8 @@ video {
   display: none;
 }
 
-.select-items div:hover, .same-as-selected {
+.select-items div:hover,
+.same-as-selected {
   background-color: rgba(0, 0, 0, 0.1);
 }
 .select-arrow-rotate {
@@ -3283,7 +3285,7 @@ video {
 }
 .totalToolTip {
   display: none;
-  background-color: #E9901A;
+  background-color: #e9901a;
   padding: 4px;
   font-size: 14px;
   font-weight: 600;
@@ -3298,7 +3300,7 @@ video {
   display: block;
 }
 #page-numbers .page-link {
-  border: 1px solid #E9901A;
+  border: 1px solid #e9901a;
   border-radius: 8px;
   width: 40px;
   height: 40px;
@@ -3307,13 +3309,13 @@ video {
   align-items: center;
   justify-content: center;
   color: white;
-  @media (max-width:768px) {
+  @media (max-width: 768px) {
     width: 32px;
     height: 32px;
   }
 }
 #page-numbers .active {
-  background-color: #E9901A;
+  background-color: #e9901a;
 }
 tr td {
   padding: 10px 24px;
@@ -3335,7 +3337,7 @@ tr td {
 .maintitleContainer {
   display: flex;
   align-items: center;
-  gap: 12px
+  gap: 12px;
 }
 
 .mainTitleText {
@@ -3369,4 +3371,87 @@ tr td {
 }
 .tb-container input {
   display: none;
+}
+
+.tableData {
+  font-size: 16px;
+  color: white;
+  white-space: nowrap;
+}
+.succesfullStatusBox {
+  width: 100%;
+  padding: 8px 20px;
+  border-radius: 60px;
+  border: 1px solid #00a185;
+  background-color: #b9d7d2;
+  font-size: 16px;
+  color: #00a185;
+  text-align: center;
+  padding-top: 10px;
+  font-weight: medium;
+}
+.pendingStatusBox {
+  width: 100%;
+  padding: 8px 20px;
+  border-radius: 60px;
+  border: 1px solid #ffc861;
+  background-color: #fdedcff2;
+  font-size: 16px;
+  color: #ffc861;
+  text-align: center;
+  padding-top: 10px;
+  font-weight: medium;
+}
+.canceledStatusBox {
+  width: 100%;
+  padding: 8px 20px;
+  border-radius: 60px;
+  border: 1px solid #ff6161;
+  background-color: #ffbebe;
+  font-size: 16px;
+  text-align: center;
+  padding-top: 10px;
+  color: #ff6161;
+  font-weight: medium;
+}
+.balanceDetailLastSevenDays {
+  font-size: 16px;
+  color: white;
+  white-space: nowrap;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.resultBarContainer {
+  width: 100%;
+  background: #dfe0e4;
+  height: 4px;
+  border-radius: 50px;
+}
+.balanceDetailLastSevenDaysBar {
+  background-color: #e9901a;
+  height: 100%;
+  border-radius: 50px;
+}
+
+.balanceDetailTrade {
+  border: 1px solid white;
+  border-radius: 12px;
+  padding: 8px 20px;
+  font-size: 16px;
+  width: fit-content;
+  color: white;
+  font-weight: 400;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  @media (max-width: 768px) {
+    padding: 6px 16px;
+  }
+}
+.balanceDetailTrade:hover {
+  border: 1px solid #e9901a;
+  background-color: #e9901a;
 }

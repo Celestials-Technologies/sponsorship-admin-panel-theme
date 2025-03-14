@@ -11,6 +11,7 @@
     <link href="./style.css" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </head>
 
   <body class="min-h-screen !overflow-x-hidden" id="bodyOverflowModal">
@@ -1322,11 +1323,11 @@
                         <button
                           type="button"
                           onclick="selectDays(this)"
-                          class="px-2 py-1 flex items-center gap-3 justify-between cursor-pointer selectDaysBox rounded-full border border-solid border-white bg-transparent p-1 text-xs text-white pt-1.5 rounded-lg Gilroy-normal"
+                          class="px-2 py-1 flex items-center gap-3 justify-between cursor-pointer selectDaysBox rounded-lg border border-solid border-white bg-transparent p-1 text-xs text-white pt-1.5 rounded-lg Gilroy-normal"
                         >
                           <p
                             class="text-sm text-white Gilroy-normal"
-                            id="mainText"
+                            id="detailSelectTableText"
                           >
                             Last 15 days
                           </p>
@@ -1346,7 +1347,7 @@
                                 stroke-width="2"
                                 stroke-linecap="round"
                                 stroke-linejoin="round"
-                              ></path>
+                              />
                             </svg>
                           </div>
                         </button>
@@ -1363,7 +1364,7 @@
                           <button
                             type="button"
                             class="text-base Gilroy-normal hover:bg-[#E9901A] p-1 text-white w-full rounded-lg flex items-center gap-3"
-                            onclick="changeMainText('Last 15 days')"
+                            onclick="changeSelectTableText('Last 15 days' , event)"
                           >
                             <p class="text-sm text-white Gilroy-normal">
                               Last 15 days
@@ -1372,7 +1373,7 @@
                           <button
                             type="button"
                             class="text-base Gilroy-normal hover:bg-[#E9901A] p-1 text-white w-full rounded-lg flex items-center gap-3"
-                            onclick="changeMainText('Last 10 days')"
+                            onclick="changeSelectTableText('Last 10 days' , event)"
                           >
                             <p class="text-sm text-white Gilroy-normal">
                               Last 10 days
@@ -1384,7 +1385,7 @@
                   </div>
                 </div>
               </div>
-              <div class="overflow-auto tableScroll pb-2.5">
+              <!-- <div class="overflow-auto tableScroll pb-2.5">
                 <table class="w-full">
                   <thead>
                     <tr class="bg-[#302964]">
@@ -1838,8 +1839,14 @@
                     </tr>
                   </tbody>
                 </table>
-              </div>
-              <a href="#" class="flex items-center mt-6 gap-2">
+              </div> -->
+
+
+              <div
+                id="data-container"
+                class="overflow-auto tableScroll pb-2.5"
+              ></div>
+              <a onclick="seeAll()" id="seeAll" class="flex items-center mt-6 gap-2 cursor-pointer">
                 <p class="text-base text-[#E9901A] Gilroy-medium">See All</p>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -1853,6 +1860,23 @@
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+                  ></path>
+                </svg>
+              </a>
+              <a onclick="showLess()" id="seeLess" class="flex items-center mt-6 gap-2 cursor-pointer" style="display: none;">
+                <p class="text-base text-[#E9901A] Gilroy-medium">See Less</p>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="#e9901a"
+                  class="w-6 h-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"
                   ></path>
                 </svg>
               </a>

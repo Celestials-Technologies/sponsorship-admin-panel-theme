@@ -117,6 +117,8 @@ function changeSelectTableText(text, event) {
 
   if (detailSelectTableText.textContent === "Last 10 days") {
     handleLast10Days();
+  } else {
+    handleLast15Days();
   }
 
   closeDropDowns();
@@ -130,6 +132,14 @@ function handleLast10Days() {
   });
 }
 
+function handleLast15Days() {
+  $.getJSON("detailChart.json", function (data) {
+    console.log("Data loaded for Last 15 Days:", data);
+    let last15Days = data.last15Days;
+    makeResultsTable(last15Days, data.last10Days);
+  });
+}
+
 $.getJSON("detailChart.json", function (data) {
   console.log("Data loaded:", data);
   let last15Days = data.last15Days;
@@ -138,6 +148,11 @@ $.getJSON("detailChart.json", function (data) {
 });
 
 function makeResultsTable(last15Days, last10Days) {
+  let dataContainer = document.getElementById("data-container");
+  
+  // Clear existing table content
+  dataContainer.innerHTML = '';
+
   let tbl = document.createElement("table");
   tbl.classList.add("w-full");
   let headerRow = tbl.insertRow();
@@ -177,6 +192,7 @@ function makeResultsTable(last15Days, last10Days) {
 
     newRow.insertCell().appendChild(mainResultTransaction);
   });
+
   last10Days.forEach((result) => {
     let newRow = tbl.insertRow();
     newRow.classList.add("mainData");
@@ -210,9 +226,7 @@ function makeResultsTable(last15Days, last10Days) {
     newRow.insertCell().appendChild(mainResultTransaction);
   });
 
-  let dataContainer = document.getElementById("data-container");
   dataContainer.appendChild(tbl);
-
   initPagination();
 }
 

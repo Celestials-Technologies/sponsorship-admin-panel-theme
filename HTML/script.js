@@ -862,28 +862,5 @@ function mainSellBtn() {
   }
 }
 
-// var counter = 0;
-//     function AddFileUpload()
-//     {
-//          var div = document.createElement('DIV');
-//          div.innerHTML = '<input id="file' + counter + '" name = "file' + counter +
-//                          '" type="file" />' +
-//                          '<input id="Button' + counter + '" type="button" ' +
-//                          'value="Remove" onclick = "RemoveFileUpload(this)" />';
-//          document.getElementById("FileUploadContainer").appendChild(div);
-//          counter++;
-//     }
-//     function RemoveFileUpload(div)
-//     {
-//          document.getElementById("FileUploadContainer").removeChild(div.parentNode);
 
-const actualBtn = document.getElementById("actual-btn");
-const fileChosen = document.getElementById("file-chosen");
 
-actualBtn.addEventListener("change", function () {
-  if (this.files.length > 0) {
-    fileChosen.textContent = this.files[0].name;
-  } else {
-    fileChosen.textContent = "No file chosen";
-  }
-});

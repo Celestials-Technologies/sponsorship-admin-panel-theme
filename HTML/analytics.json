@@ -76,7 +76,220 @@
           "data": [30, 45, 60, 30]
         }
     ],
-    "xBarValues": ["10", "20", "30", "40"]
+    "xBarValues": ["10", "20", "30", "40"],
+
+    "last15Days": [
+      {
+        "title": "Bitcoin",
+        "date": "03/05/2024",
+        "history": "0df3635...eq23",
+        "status": "Successful",
+        "img": "./src/images/bitcoin_mid.png",
+        "transaction": "+0.2948 BTC",
+        "transactionDetail": "+$10,930.90"
+      },
+      {
+        "title": "Cardano",
+        "img": "./src/images/cardano_mid.png",
+        "date": "03/05/2024",
+        "history": "0df3635...eq23",
+        "status": "Successful",
+        "transaction": "+0.8475 ADA",
+        "transactionDetail": "+$10,930.90"
+      },
+      {
+        "title": "Bitcoin",
+        "img": "./src/images/bitcoin_mid.png",
+        "date": "03/05/2024",
+        "history": "0df3635...eq23",
+        "status": "Pending",
+        "transaction": "+0.2948 BTC",
+        "transactionDetail": "+$11,210.90"
+      },
+      {
+        "title": "Cardano",
+        "img": "./src/images/cardano_mid.png",
+        "date": "03/05/2024",
+        "history": "0df3635...eq23",
+        "status": "Canceled",
+        "transaction": "+0.8475 ADA",
+        "transactionDetail": "+$10,930.90"
+      },
+      {
+        "title": "Bitcoin",
+        "img": "./src/images/bitcoin_mid.png",
+        "date": "03/05/2024",
+        "history": "0df3635...eq23",
+        "status": "Canceled",
+        "transaction": "+0.2948 BTC",
+        "transactionDetail": "+$10,930.90"
+      },
+      {
+        "title": "Bitcoin",
+        "img": "./src/images/bitcoin_mid.png",
+        "date": "03/05/2024",
+        "history": "0df3635...eq23",
+        "status": "Pending",
+        "transaction": "+0.2948 BTC",
+        "transactionDetail": "+$10,930.90"
+      },
+      {
+        "title": "Electro",
+        "img": "./src/images/electro_mid.png",
+        "date": "03/05/2024",
+        "history": "0df3635...eq23",
+        "status": "Successful",
+        "transaction": "+0.9545 EOS",
+        "transactionDetail": "+$10,930.90"
+      },
+      {
+        "title": "Bitcoin",
+        "img": "./src/images/bitcoin_mid.png",
+        "date": "03/05/2024",
+        "history": "0df3635...eq23",
+        "status": "Canceled",
+        "transaction": "+0.2948 BTC",
+        "transactionDetail": "+$10,930.90"
+      },
+      {
+        "title": "Cardano",
+        "img": "./src/images/cardano_mid.png",
+        "date": "03/05/2024",
+        "history": "0df3635...eq23",
+        "status": "Canceled",
+        "transaction": "+0.8475 ADA",
+        "transactionDetail": "+$10,930.90" 
+      },
+      {
+        "title": "Bitcoin",
+        "img": "./src/images/bitcoin_mid.png",
+        "date": "03/05/2024",
+        "history": "0df3635...eq23",
+        "status": "Pending",
+        "transaction": "+0.2948 BTC",
+        "transactionDetail": "+$10,930.90"
+      },
+      {
+        "title": "Electro",
+        "img": "./src/images/electro_mid.png",
+        "date": "03/05/2024",
+        "history": "0df3635...eq23",
+        "status": "Successful",
+        "transaction": "+0.9545 EOS",
+        "transactionDetail": "+$10,930.90" 
+      }
+    ],
+    "last10Days": [
+     
+      {
+        "title": "Cardano",
+        "img": "./src/images/cardano_mid.png",
+        "date": "03/05/2024",
+        "history": "0df3635...eq23",
+        "status": "Successful",
+        "transaction": "+0.8475 ADA",
+        "transactionDetail": "+$10,930.90"
+      },
+      {
+        "title": "Bitcoin",
+        "img": "./src/images/bitcoin_mid.png",
+        "date": "03/05/2024",
+        "history": "0df3635...eq23",
+        "status": "Pending",
+        "transaction": "+0.2948 BTC",
+        "transactionDetail": "+$11,210.90"
+      },
+      {
+        "title": "Cardano",
+        "img": "./src/images/cardano_mid.png",
+        "date": "03/05/2024",
+        "history": "0df3635...eq23",
+        "status": "Canceled",
+        "transaction": "+0.8475 ADA",
+        "transactionDetail": "+$10,930.90"
+      },
+      {
+        "title": "Bitcoin",
+        "date": "03/05/2024",
+        "history": "0df3635...eq23",
+        "status": "Successful",
+        "img": "./src/images/bitcoin_mid.png",
+        "transaction": "+0.2948 BTC",
+        "transactionDetail": "+$10,930.90"
+      },
+      {
+        "title": "Bitcoin",
+        "img": "./src/images/bitcoin_mid.png",
+        "date": "03/05/2024",
+        "history": "0df3635...eq23",
+        "status": "Canceled",
+        "transaction": "+0.2948 BTC",
+        "transactionDetail": "+$10,930.90"
+      },
+      {
+        "title": "Bitcoin",
+        "img": "./src/images/bitcoin_mid.png",
+        "date": "03/05/2024",
+        "history": "0df3635...eq23",
+        "status": "Pending",
+        "transaction": "+0.2948 BTC",
+        "transactionDetail": "+$10,930.90"
+      },
+      {
+        "title": "Electro",
+        "img": "./src/images/electro_mid.png",
+        "date": "03/05/2024",
+        "history": "0df3635...eq23",
+        "status": "Successful",
+        "transaction": "+0.9545 EOS",
+        "transactionDetail": "+$10,930.90"
+      },
+      {
+        "title": "Bitcoin",
+        "img": "./src/images/bitcoin_mid.png",
+        "date": "03/05/2024",
+        "history": "0df3635...eq23",
+        "status": "Canceled",
+        "transaction": "+0.2948 BTC",
+        "transactionDetail": "+$10,930.90"
+      },
+      {
+        "title": "Cardano",
+        "img": "./src/images/cardano_mid.png",
+        "date": "03/05/2024",
+        "history": "0df3635...eq23",
+        "status": "Canceled",
+        "transaction": "+0.8475 ADA",
+        "transactionDetail": "+$10,930.90" 
+      },
+      {
+        "title": "Bitcoin",
+        "img": "./src/images/bitcoin_mid.png",
+        "date": "03/05/2024",
+        "history": "0df3635...eq23",
+        "status": "Pending",
+        "transaction": "+0.2948 BTC",
+        "transactionDetail": "+$10,930.90"
+      },
+      {
+        "title": "Electro",
+        "img": "./src/images/electro_mid.png",
+        "date": "03/05/2024",
+        "history": "0df3635...eq23",
+        "status": "Successful",
+        "transaction": "+0.9545 EOS",
+        "transactionDetail": "+$10,930.90" 
+      },
+      {
+        "title": "Bitcoin",
+        "img": "./src/images/bitcoin_mid.png",
+        "date": "03/05/2024",
+        "history": "0df3635...eq23",
+        "status": "Canceled",
+        "transaction": "+0.2948 BTC",
+        "transactionDetail": "+$10,930.90"
+      }
+    ]
 }
   
   
