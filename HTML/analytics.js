@@ -461,3 +461,244 @@ function initPagination() {
   displayPage(currentPage);
   updatePagination();
 }
+
+
+let detailSelectAssetText = document.querySelector("#detailSelectAssetText");
+
+function changeSelectAssetText(text, event) {
+  detailSelectAssetText.textContent = text;
+
+  closeDropDowns();
+}
+
+function assetLast10Days() {
+  $.getJSON("analytics.json", function (data) {
+    console.log("Data loaded for Last 10 Days:", data);
+    let assetLast10Days = data.assetsLast10Days;
+    makeAssetsDataList(assetLast10Days, data.assetsLast10Days);
+  });
+}
+
+function assetLast15Days() {
+  $.getJSON("analytics.json", function (data) {
+    console.log("Data loaded for Last 15 Days:", data);
+    let assetLast15Days = data.assetsLast15Days;
+    makeAssetsDataList(assetLast15Days, data.assetsLast15Days);
+  });
+}
+$.getJSON("analytics.json", function (data) {
+  console.log("Data loaded:", data);
+  let assetLast15Days = data.assetsLast15Days;
+  let assetLast10Days = data.assetsLast10Days;
+  makeAssetsDataList(assetLast15Days, assetLast10Days);
+});
+
+function makeAssetsDataList(assetLast15Days, assetLast10Days) {
+  let dataContainerAssets = document.getElementById("data-container-assets");
+  dataContainerAssets.innerHTML = '';
+
+  let maindiv = document.createElement("div");
+  maindiv.classList.add("mainAssets");
+
+  assetLast15Days.forEach((result) => {
+    let listCardContainer = document.createElement("div");
+    listCardContainer.classList.add("listCardContainer");
+    let listCardImage = document.createElement("img");
+    listCardImage.src = result.img;
+    listCardImage.classList.add("listCardImage");
+    listCardContainer.appendChild(listCardImage);
+
+    let listCardDataMain = document.createElement("div");
+    listCardDataMain.classList.add("listCardDataMain");
+    let listCardTitleContainer = document.createElement("div");
+    listCardTitleContainer.classList.add("listCardTitleContainer");
+    let listCardTitle = document.createElement("div");
+    listCardTitle.classList.add("listCardTitle");
+    listCardTitle.textContent = result.title;
+    let listCardPercentage = document.createElement("div");
+    listCardPercentage.classList.add("listCardPercentage");
+    listCardPercentage.textContent = result.percentage;
+    listCardTitleContainer.appendChild(listCardTitle);
+    listCardTitleContainer.appendChild(listCardPercentage);
+    listCardDataMain.appendChild(listCardTitleContainer);
+
+    let listCardBarContainer = document.createElement("div");
+    listCardBarContainer.classList.add("listCardBarContainer");
+    let listCardBar = document.createElement("div");
+    listCardBar.classList.add("listCardBar");
+    listCardBar.style.width = result.percentage;
+    listCardBarContainer.appendChild(listCardBar);
+    listCardDataMain.appendChild(listCardBarContainer);
+    listCardContainer.appendChild(listCardDataMain);
+
+    let listCardPricesAndValuesContainer = document.createElement("div");
+    listCardPricesAndValuesContainer.classList.add("listCardPricesAndValuesContainer");
+    let listCardPrice = document.createElement("div");
+    listCardPrice.classList.add("listCardPrice");
+    listCardPrice.textContent = `Price: ${result.price}`;
+    let listCardValue = document.createElement("div");
+    listCardValue.classList.add("listCardValue");
+    listCardValue.textContent = `Value: ${result.value}`;
+    listCardDataMain.appendChild(listCardPricesAndValuesContainer);
+    listCardPricesAndValuesContainer.appendChild(listCardPrice);
+    listCardPricesAndValuesContainer.appendChild(listCardValue);
+
+    let listCardButtonSvg = document.createElement("button");
+    listCardButtonSvg.classList.add("listCardButtonSvg");
+    listCardButtonSvg.innerHTML = `
+                      
+                         <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="cursor-pointer"
+                      >
+                        <path
+                          d="M12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12C11 12.5523 11.4477 13 12 13Z"
+                          stroke="white"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M12 6C12.5523 6 13 5.55228 13 5C13 4.44772 12.5523 4 12 4C11.4477 4 11 4.44772 11 5C11 5.55228 11.4477 6 12 6Z"
+                          stroke="white"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M12 20C12.5523 20 13 19.5523 13 19C13 18.4477 12.5523 18 12 18C11.4477 18 11 18.4477 11 19C11 19.5523 11.4477 20 12 20Z"
+                          stroke="white"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                      `
+    let detailDropDown = document.createElement("div");
+    detailDropDown.classList.add("detailDropDown");
+    detailDropDown.innerHTML = `
+      <a href="#">Print</a>
+      <a href="#">Export</a>
+      <a href="#">Delete</a>
+    `
+    listCardButtonSvg.appendChild(detailDropDown);
+    
+
+    listCardButtonSvg.addEventListener("click", () => {
+      detailDropDown.style.opacity = detailDropDown.style.opacity === "0" ? "1" : "0";
+      detailDropDown.style.marginTop = detailDropDown.style.marginTop === "0px" ? "-40px" : "0px";
+      detailDropDown.style.zIndex = detailDropDown.style.zIndex === "0" ? "1" : "0";
+      listCardDataMain.style.zIndex = listCardDataMain.style.zIndex === "9999" ? "0" : "9999";
+      detailDropDown.style.transition = "all 0.3s ease";
+    });
+    listCardContainer.appendChild(listCardButtonSvg);
+
+    maindiv.appendChild(listCardContainer);
+  });
+  assetLast10Days.forEach((result) => {
+    let listCardContainer = document.createElement("div");
+    listCardContainer.classList.add("listCardContainer");
+    let listCardImage = document.createElement("img");
+    listCardImage.src = result.img;
+    listCardImage.classList.add("listCardImage");
+    listCardContainer.appendChild(listCardImage);
+
+    let listCardDataMain = document.createElement("div");
+    listCardDataMain.classList.add("listCardDataMain");
+    let listCardTitleContainer = document.createElement("div");
+    listCardTitleContainer.classList.add("listCardTitleContainer");
+    let listCardTitle = document.createElement("div");
+    listCardTitle.classList.add("listCardTitle");
+    listCardTitle.textContent = result.title;
+    let listCardPercentage = document.createElement("div");
+    listCardPercentage.classList.add("listCardPercentage");
+    listCardPercentage.textContent = result.percentage;
+    listCardTitleContainer.appendChild(listCardTitle);
+    listCardTitleContainer.appendChild(listCardPercentage);
+    listCardDataMain.appendChild(listCardTitleContainer);
+
+    let listCardBarContainer = document.createElement("div");
+    listCardBarContainer.classList.add("listCardBarContainer");
+    let listCardBar = document.createElement("div");
+    listCardBar.classList.add("listCardBar");
+    listCardBar.style.width = result.percentage;
+    listCardBarContainer.appendChild(listCardBar);
+    listCardDataMain.appendChild(listCardBarContainer);
+    listCardContainer.appendChild(listCardDataMain);
+
+    let listCardPricesAndValuesContainer = document.createElement("div");
+    listCardPricesAndValuesContainer.classList.add("listCardPricesAndValuesContainer");
+    let listCardPrice = document.createElement("div");
+    listCardPrice.classList.add("listCardPrice");
+    listCardPrice.textContent = `Price: ${result.price}`;
+    let listCardValue = document.createElement("div");
+    listCardValue.classList.add("listCardValue");
+    listCardValue.textContent = `Value: ${result.value}`;
+    listCardDataMain.appendChild(listCardPricesAndValuesContainer);
+    listCardPricesAndValuesContainer.appendChild(listCardPrice);
+    listCardPricesAndValuesContainer.appendChild(listCardValue);
+
+    let listCardButtonSvg = document.createElement("button");
+    listCardButtonSvg.classList.add("listCardButtonSvg");
+    listCardButtonSvg.innerHTML = `
+                      
+                         <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="cursor-pointer"
+                      >
+                        <path
+                          d="M12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12C11 12.5523 11.4477 13 12 13Z"
+                          stroke="white"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M12 6C12.5523 6 13 5.55228 13 5C13 4.44772 12.5523 4 12 4C11.4477 4 11 4.44772 11 5C11 5.55228 11.4477 6 12 6Z"
+                          stroke="white"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M12 20C12.5523 20 13 19.5523 13 19C13 18.4477 12.5523 18 12 18C11.4477 18 11 18.4477 11 19C11 19.5523 11.4477 20 12 20Z"
+                          stroke="white"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                      `
+    let detailDropDown = document.createElement("div");
+    detailDropDown.classList.add("detailDropDown");
+    detailDropDown.innerHTML = `
+      <a href="#">Print</a>
+      <a href="#">Export</a>
+      <a href="#">Delete</a>
+    `
+    listCardButtonSvg.appendChild(detailDropDown);
+    
+
+    listCardButtonSvg.addEventListener("click", () => {
+      detailDropDown.style.opacity = detailDropDown.style.opacity === "0" ? "1" : "0";
+      detailDropDown.style.marginTop = detailDropDown.style.marginTop === "0px" ? "-40px" : "0px";
+      detailDropDown.style.zIndex = detailDropDown.style.zIndex === "0" ? "1" : "0";
+      listCardDataMain.style.zIndex = listCardDataMain.style.zIndex === "9999" ? "0" : "9999";
+      detailDropDown.style.transition = "all 0.3s ease";
+    });
+    listCardContainer.appendChild(listCardButtonSvg);
+
+    maindiv.appendChild(listCardContainer);
+  });
+
+  dataContainerAssets.appendChild(maindiv);
+
+}

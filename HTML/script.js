@@ -733,6 +733,7 @@ function liquidityConverter() {
   let liquidityBTCInput = document.getElementById("liquidityBTCInput");
   let liquidityADAdata = document.getElementById("liquidityADAData");
   let liquidityBTCdata = document.getElementById("liquidityBTCData");
+  let liquidityConverterBtn = document.getElementById("liquidityConverterBtn");
 
   const liquidityADAHtml = liquidityADAdata.innerHTML;
   const liquidityADAInputValue = liquidityADAInput.value;
@@ -741,6 +742,12 @@ function liquidityConverter() {
   liquidityADAInput.value = liquidityBTCInput.value;
   liquidityBTCdata.innerHTML = liquidityADAHtml;
   liquidityBTCInput.value = liquidityADAInputValue;
+
+  if (liquidityConverterBtn.style.rotate === "180deg") {
+    liquidityConverterBtn.style.rotate = "0deg";
+  } else {
+    liquidityConverterBtn.style.rotate = "180deg";
+  }
 }
 
 let liquidityInputValue = document.getElementById("liquidityInputValue");
@@ -864,3 +871,90 @@ function mainSellBtn() {
 
 
 
+var $animation_elements = $('.rewardsPercentAnimation');
+var $rewardsValue = $('.rewardsValue');
+var $window = $(window);
+
+function check_if_in_view() {
+  var window_height = $window.height();
+  var window_top_position = $window.scrollTop();
+  var window_bottom_position = (window_top_position + window_height);
+
+  $.each($animation_elements, function() {
+    var $element = $(this);
+    var element_height = $element.outerHeight();
+    var element_top_position = $element.offset().top;
+    var element_bottom_position = (element_top_position + element_height);
+
+    //check to see if this current container is within viewport
+    if ($element.hasClass('in-view')) {
+      return;
+    }
+    if ((element_bottom_position >= window_top_position) &&
+      (element_top_position <= window_bottom_position)) {
+      $element.addClass('in-view');
+    } else {
+      $element.removeClass('in-view');
+    }
+  });
+  // $each($rewardsValue, function(obj, start, end, duration) {
+   
+  //   var $element = $(this);
+  //   var element_height = $element.outerHeight();
+  //   var element_top_position = $element.offset().top;
+  //   var element_bottom_position = (element_top_position + element_height);
+  //   if ((element_bottom_position >= window_top_position) &&
+  //     (element_top_position <= window_bottom_position)) {
+  //     $element.addClass('in-view');
+  //     let startTimestamp = null;
+  //     const step = (timestamp) => {
+  //       if (!startTimestamp) startTimestamp = timestamp;
+  //       const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+  //       obj.innerHTML = `${Math.floor(progress * (end - start) + start)}%`;
+  //       if (progress < 1) {
+  //         window.requestAnimationFrame(step);
+  //       }
+  //     };
+  //     window.requestAnimationFrame(step);
+  //     const obj = document.getElementById("rewardsValue");
+  //     animateValue(obj, 0, 73, 2000);
+  //   } else {
+  //     $element.removeClass('in-view');
+  //   }
+
+  // })
+}
+
+$window.on('scroll resize', check_if_in_view);
+$window.trigger('scroll');
+
+function rewardsRefresh() {
+  
+  //each subject with 0 and 73 will animate
+  const subjects = document.querySelectorAll(".subject");
+  subjects.forEach((subject) => {
+    subject.style.width = "0";
+    setTimeout(() => {
+      subject.style.width = "73%";
+    }, 1000);
+  });
+
+  
+  // function animateValue(obj, start, end, duration) {
+  //   let startTimestamp = null;
+  //   const step = (timestamp) => {
+  //     if (!startTimestamp) startTimestamp = timestamp;
+  //     const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+      
+  //     obj.innerHTML = `${Math.floor(progress * (end - start) + start)}%`;
+  //     if (progress < 1) {
+  //       window.requestAnimationFrame(step);
+  //     }
+  //   };
+  //   window.requestAnimationFrame(step);
+  // }
+  // const rewardsValue = document.querySelectorAll(".rewardsValue");
+  // rewardsValue.forEach((reward) => {
+  //   animateValue(reward, 0, 73, 3000);
+  // });
+}

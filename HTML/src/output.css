@@ -3339,6 +3339,10 @@ tr td {
   align-items: center;
   gap: 12px;
 }
+.maintitleContainer img {
+  width: 30px;
+  height: 30px;
+}
 
 .mainTitleText {
   display: flex;
@@ -3454,4 +3458,113 @@ tr td {
 .balanceDetailTrade:hover {
   border: 1px solid #e9901a;
   background-color: #e9901a;
+}
+
+.rewardsPercentAnimation {
+  position: relative;
+}
+.bounce-up .subject {
+  width: 0%;
+  /*only one time transition perform*/
+  transition: all 0.8s linear;
+}
+
+.bounce-up.in-view .subject {
+  width: 73%;
+}
+.mainAssets {
+  display: flex;
+  flex-direction: column;
+  gap:24px;
+  @media (max-width:768px) {
+    gap: 16px;
+  }
+}
+.listCardContainer {
+  display: flex;
+  gap: 12px;
+}
+.listCardTitle {
+  font-size: 20px;
+  color: white;
+  font-weight: 500;
+}
+.listCardPercentage {
+  font-size: 16px;
+  color: white;
+  font-weight: 400;
+}
+.listCardTitleContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+.listCardDataMain {
+  width:100%;
+  position: relative;
+  z-index: 9999;
+}
+.listCardImage {
+  width:34px;
+  height:34px;
+}
+.listCardBarContainer {
+  width:100%;
+  height: 4px;
+  background-color: #dfe0e4;
+  border-radius: 50px;
+  margin-top: 4px;
+}
+.listCardBar {
+  background-color: #e9901a;
+  height: 100%;
+  border-radius: 50px;
+}
+.listCardPricesAndValuesContainer {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 4px;
+}
+.listCardPrice {
+  font-size: 16px;
+  color: white;
+  font-weight: 400;
+}
+.listCardValue {
+  font-size: 16px;
+  color: white;
+  font-weight: 400;
+}
+.listCardButtonSvg {
+  display: flex;
+  align-items: center;
+  position: relative;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+.detailDropDown {
+  opacity: 0;
+  margin-top: -40px;
+  position: absolute;
+  min-width: 140px;
+  background-color: #0f0f7ac7;
+  border-radius: 12px;
+  padding: 4px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  top: 12px;
+  right: 27px;
+}
+.detailDropDown a {
+  color: white;
+  text-decoration: none;
+  padding: 4px 8px;
 }

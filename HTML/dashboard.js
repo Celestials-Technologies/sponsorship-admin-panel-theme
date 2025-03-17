@@ -173,6 +173,7 @@ function makeResultsTable(last15Days, last10Days) {
 
   let tbl = document.createElement("table");
   tbl.classList.add("w-full");
+  tbl.id = "myTable";
   let headerRow = tbl.insertRow();
   headerRow.classList.add("tableHeader");
   headerRow.insertCell().textContent = "Title";
@@ -307,6 +308,34 @@ function makeResultsTable(last15Days, last10Days) {
   initPagination();
 }
 
+function searchFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+     
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+       
+      } else {
+        tr[i].style.display = "none";
+        pagination.style.display = "none";
+        pageToTotalPage.style.display = "none";
+      }
+      if (filter === "") {
+        tr[i].style.display = "";
+        pagination.style.display = "flex";
+        pageToTotalPage.style.display = "block";
+      }
+    }  
+  } 
+}
+
 function initPagination() {
   const cardsPerPage = 10;
   const dataContainer = document.getElementById("data-container");
@@ -395,3 +424,5 @@ function initPagination() {
   displayPage(currentPage);
   updatePagination();
 }
+
+

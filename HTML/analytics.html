@@ -2028,7 +2028,10 @@
                       onclick="selectDays(this)"
                       class="px-2 py-1 flex items-center gap-3 justify-between cursor-pointer selectDaysBox rounded-lg border border-solid border-white bg-transparent p-1 text-xs text-white pt-1.5 rounded-lg Gilroy-normal"
                     >
-                      <p class="text-sm text-white Gilroy-normal" id="mainText">
+                      <p
+                        class="text-sm text-white Gilroy-normal"
+                        id="detailSelectAssetText"
+                      >
                         Last 15 days
                       </p>
                       <div class="w-4 h-4">
@@ -2064,7 +2067,7 @@
                       <button
                         type="button"
                         class="text-base Gilroy-normal hover:bg-[#E9901A] p-1 text-white w-full rounded-lg flex items-center gap-3"
-                        onclick="changeMainText('Last 15 days' , event)"
+                        onclick="changeSelectAssetText('Last 15 days' , event)"
                       >
                         <p class="text-sm text-white Gilroy-normal">
                           Last 15 days
@@ -2073,7 +2076,7 @@
                       <button
                         type="button"
                         class="text-base Gilroy-normal hover:bg-[#E9901A] p-1 text-white w-full rounded-lg flex items-center gap-3"
-                        onclick="changeMainText('Last 10 days' , event)"
+                        onclick="changeSelectAssetText('Last 10 days' , event)"
                       >
                         <p class="text-sm text-white Gilroy-normal">
                           Last 10 days
@@ -2083,7 +2086,7 @@
                   </div>
                 </div>
               </div>
-              <div class="flex flex-col gap-4 md:gap-6">
+              <!-- <div class="flex flex-col gap-4 md:gap-6">
                 <div
                   class="flex pb-4 md:pb-6 gap-3 md:gap-5 border-b border-white items-center"
                 >
@@ -2698,7 +2701,9 @@
                     </svg>
                   </a>
                 </div>
-              </div>
+              </div> -->
+
+                <div id="data-container-assets"></div>
             </div>
           </div>
         </div>
