@@ -1,133 +1,398 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 .font-poppins {
-    font-family: "Poppins", sans-serif;
+  font-family: "Poppins", sans-serif;
+}
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #e9901a;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #e98f1ab2;
 }
 
 .sidbar-list li.active {
-    background-color: #E9901A;
-    align-items: center;
+  background-color: #e9901a;
+  align-items: center;
 }
 
 .sidbar-list li.active::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -11px;
-    width: 6px;
-    height: 100%;
-    border-radius: 0px 10px 10px 0px;
-    background-color: #E9901A;
-}
-
-.sidbar-list li.active div {
-    background-color: white;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -11px;
+  width: 6px;
+  height: 100%;
+  border-radius: 0px 10px 10px 0px;
 }
 
 .sidbar-list li.active p {
-    padding-top: 0px;
+  padding-top: 0px;
 }
 
 .logout-btn-shadow {
-    box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.18);
+  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.18);
 }
 
 @font-face {
-    font-family: Gilroy-normal;
-    src: url(src/fonts/gilroy/Gilroy-Regular.ttf);
+  font-family: Gilroy-normal;
+  src: url(src/fonts/gilroy/Gilroy-Regular.ttf);
 }
 
 @font-face {
-    font-family: Gilroy-medium;
-    src: url(src/fonts/gilroy/Gilroy-Medium.ttf);
+  font-family: Gilroy-medium;
+  src: url(src/fonts/gilroy/Gilroy-Medium.ttf);
 }
 
 @font-face {
-    font-family: Gilroy-semibold;
-    src: url(src/fonts/gilroy/Gilroy-SemiBold.ttf);
+  font-family: Gilroy-semibold;
+  src: url(src/fonts/gilroy/Gilroy-SemiBold.ttf);
 }
 
 @font-face {
-    font-family: Gilroy-bold;
-    src: url(src/fonts/gilroy/Gilroy-Bold.ttf);
+  font-family: Gilroy-bold;
+  src: url(src/fonts/gilroy/Gilroy-Bold.ttf);
 }
 
 @font-face {
-    font-family: Gilroy-extrabold;
-    src: url(src/fonts/gilroy/Gilroy-ExtraBold.ttf);
+  font-family: Gilroy-extrabold;
+  src: url(src/fonts/gilroy/Gilroy-ExtraBold.ttf);
 }
 
 @font-face {
-    font-family: Gilroy-black;
-    src: url(src/fonts/gilroy/Gilroy-Black.ttf);
+  font-family: Gilroy-black;
+  src: url(src/fonts/gilroy/Gilroy-Black.ttf);
 }
 
 .Gilroy-normal {
-    font-family: 'Gilroy-normal', sans-serif;
+  font-family: "Gilroy-normal", sans-serif;
 }
 
 .Gilroy-medium {
-    font-family: 'Gilroy-medium', sans-serif;
+  font-family: "Gilroy-medium", sans-serif;
 }
 
 .Gilroy-semibold {
-    font-family: 'Gilroy-semibold', sans-serif;
+  font-family: "Gilroy-semibold", sans-serif;
 }
 
 .Gilroy-bold {
-    font-family: 'Gilroy-bold', sans-serif;
+  font-family: "Gilroy-bold", sans-serif;
 }
 
 .Gilroy-extrabold {
-    font-family: 'Gilroy-extrabold', sans-serif;
+  font-family: "Gilroy-extrabold", sans-serif;
 }
 
 .Gilroy-black {
-    font-family: 'Gilroy-black', sans-serif;
+  font-family: "Gilroy-black", sans-serif;
 }
 
 .faqs-bg {
-    background-image: url(src/images/faqs-bg.png);
+  background-image: url(src/images/faqs-bg.png);
 }
 
 .scrollBar-hidden::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 .searchIconBox {
-    background-color: white;
-    transition:all 0.5s ease;
+  background-color: white;
+  transition: all 0.5s ease;
 }
 .searchIconBox:hover {
-    background-color: #E9901A;
+  background-color: #e9901a;
 }
 .searchIconBox:hover .searchIcon {
-    stroke: white;
-    transition:all 0.5s ease;
+  stroke: white;
+  transition: all 0.5s ease;
 }
 .layerIconBox {
-    background-color: white;
-    transition:all 0.5s ease;
+  background-color: white;
+  transition: all 0.5s ease;
 }
 .layerIconBox:hover {
-    background-color: #E9901A;
+  background-color: #e9901a;
 }
 .layerIcon path {
-    stroke: #E9901A;
+  stroke: #e9901a;
 }
 .layerIconBox:hover .layerIcon path {
-    stroke: white;
-    transition:all 0.5s ease;
+  stroke: white;
+  transition: all 0.5s ease;
 }
 .layoutText {
-    opacity: 0;
-    margin-top: 6px;
-    transition:all 0.5s ease;
+  opacity: 0;
+  margin-top: 6px;
+  transition: all 0.5s ease;
 }
 .layoutContainer:hover .layoutText {
-    opacity: 1;
-    margin-top: 0px;
+  opacity: 1;
+  margin-top: 0px;
 }
 .connectBox {
-    position: relative;
+  position: relative;
+}
+.iconMainBox {
+  background-color: #e9901a;
+  transition: all 0.5s ease;
+}
+.iconMainBox:hover {
+  background-color: white;
+}
+.iconMainBox svg path {
+  stroke: white;
+  transition: all 0.5s ease;
+}
+.iconMainBox:hover svg path {
+  stroke: #e9901a;
+}
+.tableScroll::-webkit-scrollbar {
+  width: 0.5px;
+  height:4px;
+}
+
+/* Track */
+.tableScroll::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+.tableScroll::-webkit-scrollbar-thumb {
+  background: #e9901a;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.tableScroll::-webkit-scrollbar-thumb:hover {
+  background: #e98f1ab2;
+}
+.walletTopUp svg path {
+  stroke: #e9901a;
+  transition: all 0.5s ease;
+}
+.walletTopUp:hover svg path {
+  stroke: white;
+}
+.walletTopUp p {
+  color: #e9901a;
+  transition: all 0.5s ease;
+}
+.walletTopUp:hover p {
+  color: white;
+}
+
+.circle-bg {
+  fill: none;
+  stroke: white;
+  stroke-width: 2;
+}
+
+.circle {
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  animation: progress 5s ease forwards;
+}
+
+@keyframes progress {
+  0% {
+    stroke-dasharray: 0 100;
+  }
+}
+
+.circle {
+  stroke: #e9901a;
+}
+.circleText {
+  font-size: 0.5em;
+  text-anchor: middle;
+}
+.convertArrow svg {
+  fill:white
+}
+.convertArrow svg path {
+  stroke: #e9901a;
+}
+.convertArrow:hover svg {
+  fill:#e9901a
+}
+.convertArrow:hover svg path {
+  stroke: white;
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 32px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fcbc69a2;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 8px;
+  bottom: 6px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #e9901a;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #e9901a;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+.accountMain {
+  display: block;
+  position: relative;
+}
+
+.accountList {
+  display: none;
+ 
+}
+
+.accountMain:hover + .accountList,
+.accountList:hover {
+  display: block !important;
+}
+.accountContainer:hover li {
+  background-color: #e9901a;
+}
+
+.radioButtonContainer {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.radioButtonContainer input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: transparent;
+  border: 1px solid #e9901a;
+  border-radius: 50%;
+}
+
+.radioButtonContainer:hover input ~ .checkmark {
+  background-color: transparent;
+}
+
+.radioButtonContainer input:checked ~ .checkmark {
+  background-color: transparent;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.radioButtonContainer input:checked ~ .checkmark:after {
+  display: block;
+}
+
+
+.radioButtonContainer .checkmark:after {
+ 	top: 7.2px;
+	left: 7px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: #e9901a;
+}
+
+.radioTickcheckmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: transparent;
+  border: 1px solid #e9901a;
+  border-radius: 50%;
+}
+
+.radioButtonContainer input:checked ~ .radioTickcheckmark {
+  background-color: transparent;
+}
+
+.radioTickcheckmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.radioButtonContainer input:checked ~ .radioTickcheckmark:after {
+  display: block;
+}
+
+.radioButtonContainer .radioTickcheckmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid #e9901a;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
 }

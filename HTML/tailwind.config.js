@@ -11,6 +11,7 @@ module.exports = {
         'textPrimary': '#191153',
         'sideBarBg': '#ffffff1a',
         'black-800': '#151515',
+        'translucentWhite': '#ffffff33',
       },
     },
   },

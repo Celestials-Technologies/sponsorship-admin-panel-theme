@@ -1,59 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link
-            href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-            rel="stylesheet">
-        <link href="./src/output.css" rel="stylesheet">
-        <link href="style.css" rel="stylesheet">
-    </head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link href="./src/output.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
 
-    <body class="min-h-screen">
-        <div class="min-h-screen bg-bgPrimary flex justify-center items-center">
-            <div class="w-full max-w-[473px]">
-                <h1 class="text-[34px] leading-8 text-center Gilroy-extrabold">
-                    <span class="text-primary">Screen</span><span class="text-white">Popper</span>
-                </h1>
-                <div class="border border-white rounded-t-2xl pt-[15px] pb-[30px] px-6 mt-[37px] bg-gradient">
-                    <p class="text-[26px] leading-[31px] text-white Gilroy-bold text-center mb-0">Login</p>
-                    <p class="text-[17.589px] leading-[17.589px] text-white Gilroy-normal text-center mt-2.5">To find & close your sponsors</p>
-                    <div class="flex gap-[17.33px] mt-4">
-                        <a href="#/" class="w-1/2 h-[46.79px] bg-white rounded-[8.665px] flex justify-between items-center py-[15.6px] pl-[17.33px] pr-5">
-                            <span class="text-[13.864px] text-textPrimary Gilroy-medium">Login With Google</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
-                                <path d="M3.20048 8.41852L2.74448 10.2325H0.996498C-0.143491 8.26736 -0.21949 5.84878 0.8445 3.80811L2.44048 4.11043L3.12448 5.69762C2.82048 6.60459 2.82048 7.58713 3.20048 8.41852Z" fill="#191153"/>
-                                <path d="M13.8405 5.69775C14.2964 8.19191 13.3845 10.7617 11.3325 12.3488L9.3565 12.2733L9.0525 10.5349C9.88849 10.0814 10.4965 9.32562 10.8005 8.41865H7.22852V5.69775H13.8405Z" fill="#191153"/>
-                                <path d="M11.4088 12.4243C8.36883 14.8429 4.03687 14.3138 1.60489 11.3662C1.37689 11.0639 1.1489 10.686 0.920898 10.3081L3.20088 8.49414C4.03687 10.6104 6.39285 11.6685 8.52083 10.9127C8.74882 10.8371 8.97682 10.7616 9.12882 10.6104L11.4088 12.4243Z" fill="#191153"/>
-                                <path d="M11.4846 1.69202L9.20465 3.50596C7.30466 2.29667 4.72069 2.90131 3.5047 4.86641C3.3527 5.09315 3.2007 5.39547 3.1247 5.69779L0.844727 3.80828C2.66871 0.407153 6.84867 -0.877716 10.2686 0.860636C10.7246 1.08738 11.1046 1.3897 11.4846 1.69202Z" fill="#191153"/>
-                            </svg>
-                        </a>
-                        <a href="#/" class="w-1/2 h-[46.79px] bg-white rounded-[8.665px] flex justify-between items-center py-[15.6px] pl-[17.33px] pr-5">
-                            <span class="text-[13.864px] text-textPrimary Gilroy-medium">Login With Microsoft</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" viewBox="0 0 15 14" fill="none">
-                                <path d="M0.908203 0.0883789H7.49535V6.67552H0.908203V0.0883789Z" fill="#191153"/>
-                                <path d="M8.18506 0.0883789H14.7722V6.67552H8.18506V0.0883789Z" fill="#191153"/>
-                                <path d="M0.908203 7.36523H7.49535V13.9524H0.908203V7.36523Z" fill="#191153"/>
-                                <path d="M8.18506 7.36523H14.7722V13.9524H8.18506V7.36523Z" fill="#191153"/>
-                            </svg>
-                        </a>
-                    </div>
-                    <div class="flex justify-center items-center gap-[11px] mt-5 opacity-50">
-                        <div class="w-full max-w-[143px] h-px bg-white"></div>
-                        <span class="text-[13.864px] leading-[13.864px] text-white Gilroy-normal">or</span>
-                        <div class="w-full max-w-[143px] h-px bg-white"></div>
-                    </div>
-                    <form action="#" class="mt-4">
-                        <input type="email" placeholder="Email" class="py-[15px] px-[17px] rounded-lg bg-white placeholder:text-inputText placeholder:opacity-50 text-[13.864px] text-inputText Gilroy-normal w-full h-[46.79px]" />
-                        <input type="password" placeholder="Password" class="py-[15px] px-[17px] rounded-lg bg-white placeholder:text-inputText placeholder:opacity-50 text-[13.864px] text-inputText Gilroy-normal w-full h-[46.79px] mt-[21.66px]" />
-                    </form>
-                    <p class="text-[13.864px] leading-[13.864px] text-white text-center Gilroy-normal mt-[33.19px]">By registering you agree to our <a href="#/" class="text-primary underline capitalize">terms of use.</a></p>
-                </div>
-                <button type="button" class="py-2 px-4 bg-primary rounded-b-2xl text-md leading-[17px] text-white text-center Gilroy-semibold w-full h-[34.3px]">Forgot password</button>
-                <button type="button" class="py-2 px-5 rounded-[50px] bg-btnPrimary text-[15px] text-white Gilroy-medium w-[170.6px] h-[49.49px] mx-auto block mt-11">Login App</button>
-                <p class="text-[15.597px] leading-normal text-white text-center Gilroy-semibold mt-4">Don’t you have an account? <a href="#/" class="text-primary capitalize">Sign up</a></p>
+  <body class="min-h-screen">
+    <div
+      class="min-h-screen bg-bgPrimary"
+    >
+      <div class="w-full h-screen">
+          <div class="flex items-center h-full md:justify-normal justify-center overflow-hidden">
+            <div class="bg-sideBarBg md:w-1/2 hidden min-h-screen md:flex items-center justify-center">
+                <img src="./src/images/login.png" alt="login"/>
             </div>
-        </div>
-    </body>
+            <div class="md:w-1/2">
+              <div class="p-6 w-full max-w-[650px] mx-auto">
+                <h1 class="text-[32px] text-white leading-normal Gilroy-semibold">
+                  Welcome Back!
+                </h1>
+                <p class="text-base Gilroy-normal text-white mt-4">
+                  Sign in to your account and join us
+                </p>
+                <form class="mt-8 lg:mt-10">
+                  <div class="flex flex-col gap-5">
+                    <div>
+                      <label class="text-[18px] Gilroy-medium text-white">
+                        Enter Your Email ID
+                      </label>
+                      <input type="text" class="w-full border border-solid border-white rounded-xl text-white text-base bg-transparent outline-none px-6 py-3 Gilroy-normal mt-2 md:mt-4" placeholder="Enter your Email"/>
+                    </div>
+                    <div>
+                      <label class="text-[18px] Gilroy-medium text-white">
+                        Enter Your Password
+                      </label>
+                      <div class="relative w-full border border-solid border-white rounded-xl text-white text-base bg-transparent outline-none px-6 py-3 Gilroy-normal mt-2 md:mt-4">
+                        <input type="password" class="w-[80%] bg-transparent h-full outline-none" placeholder="Enter your Password"/>
+                        <div class="absolute right-6 top-2.5 cursor-pointer">
+                          <div class="border-t border-solid border-white rotate-[29deg] relative top-3"></div>
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                          </svg>                      
+                        </div>
+                      </div>
+                    </div>
+                    <a href="#" class="text-[#E9901A] text-base Gilroy-semibold text-right">Forgot Password</a>
+                  </div>
+                  <p class="text-base text-white Gilroy-normal">Don’t have an account? <span class="text-[#E9901A] Gilroy-semibold"> Signup</span></p>
+                  <div class="flex gap-5 lg:mt-8 mt-6">
+                    <button type="button" class="bg-btnSecondary hover:bg-transparent border border-solid border-[#E9901A] py-2 pt-2.5 px-[18px] md:px-8 md:py-4 md:pt-[18px] text-base text-white hover:text-[#E9901A] rounded-lg flex items-center justify-center Gilroy-semibold">
+                      Login
+                    </button>
+                    <button onclick="history.back()" type="button" class="bg-transparent hover:bg-[#E9901A] border border-solid border-[#E9901A] py-2 pt-2.5 px-[18px] md:px-8 md:py-4 md:pt-[18px] text-base text-[#E9901A] hover:text-white rounded-lg flex items-center justify-center Gilroy-semibold">
+                     
+                        Back Home
+                      
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </body>
 </html>

@@ -1,4 +1,6 @@
-*, ::before, ::after {
+*,
+::before,
+::after {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
   --tw-translate-x: 0;
@@ -8,19 +10,19 @@
   --tw-skew-y: 0;
   --tw-scale-x: 1;
   --tw-scale-y: 1;
-  --tw-pan-x:  ;
-  --tw-pan-y:  ;
-  --tw-pinch-zoom:  ;
+  --tw-pan-x: ;
+  --tw-pan-y: ;
+  --tw-pinch-zoom: ;
   --tw-scroll-snap-strictness: proximity;
-  --tw-gradient-from-position:  ;
-  --tw-gradient-via-position:  ;
-  --tw-gradient-to-position:  ;
-  --tw-ordinal:  ;
-  --tw-slashed-zero:  ;
-  --tw-numeric-figure:  ;
-  --tw-numeric-spacing:  ;
-  --tw-numeric-fraction:  ;
-  --tw-ring-inset:  ;
+  --tw-gradient-from-position: ;
+  --tw-gradient-via-position: ;
+  --tw-gradient-to-position: ;
+  --tw-ordinal: ;
+  --tw-slashed-zero: ;
+  --tw-numeric-figure: ;
+  --tw-numeric-spacing: ;
+  --tw-numeric-fraction: ;
+  --tw-ring-inset: ;
   --tw-ring-offset-width: 0px;
   --tw-ring-offset-color: #fff;
   --tw-ring-color: rgb(59 130 246 / 0.5);
@@ -28,28 +30,28 @@
   --tw-ring-shadow: 0 0 #0000;
   --tw-shadow: 0 0 #0000;
   --tw-shadow-colored: 0 0 #0000;
-  --tw-blur:  ;
-  --tw-brightness:  ;
-  --tw-contrast:  ;
-  --tw-grayscale:  ;
-  --tw-hue-rotate:  ;
-  --tw-invert:  ;
-  --tw-saturate:  ;
-  --tw-sepia:  ;
-  --tw-drop-shadow:  ;
-  --tw-backdrop-blur:  ;
-  --tw-backdrop-brightness:  ;
-  --tw-backdrop-contrast:  ;
-  --tw-backdrop-grayscale:  ;
-  --tw-backdrop-hue-rotate:  ;
-  --tw-backdrop-invert:  ;
-  --tw-backdrop-opacity:  ;
-  --tw-backdrop-saturate:  ;
-  --tw-backdrop-sepia:  ;
-  --tw-contain-size:  ;
-  --tw-contain-layout:  ;
-  --tw-contain-paint:  ;
-  --tw-contain-style:  ;
+  --tw-blur: ;
+  --tw-brightness: ;
+  --tw-contrast: ;
+  --tw-grayscale: ;
+  --tw-hue-rotate: ;
+  --tw-invert: ;
+  --tw-saturate: ;
+  --tw-sepia: ;
+  --tw-drop-shadow: ;
+  --tw-backdrop-blur: ;
+  --tw-backdrop-brightness: ;
+  --tw-backdrop-contrast: ;
+  --tw-backdrop-grayscale: ;
+  --tw-backdrop-hue-rotate: ;
+  --tw-backdrop-invert: ;
+  --tw-backdrop-opacity: ;
+  --tw-backdrop-saturate: ;
+  --tw-backdrop-sepia: ;
+  --tw-contain-size: ;
+  --tw-contain-layout: ;
+  --tw-contain-paint: ;
+  --tw-contain-style: ;
 }
 
 ::backdrop {
@@ -62,19 +64,19 @@
   --tw-skew-y: 0;
   --tw-scale-x: 1;
   --tw-scale-y: 1;
-  --tw-pan-x:  ;
-  --tw-pan-y:  ;
-  --tw-pinch-zoom:  ;
+  --tw-pan-x: ;
+  --tw-pan-y: ;
+  --tw-pinch-zoom: ;
   --tw-scroll-snap-strictness: proximity;
-  --tw-gradient-from-position:  ;
-  --tw-gradient-via-position:  ;
-  --tw-gradient-to-position:  ;
-  --tw-ordinal:  ;
-  --tw-slashed-zero:  ;
-  --tw-numeric-figure:  ;
-  --tw-numeric-spacing:  ;
-  --tw-numeric-fraction:  ;
-  --tw-ring-inset:  ;
+  --tw-gradient-from-position: ;
+  --tw-gradient-via-position: ;
+  --tw-gradient-to-position: ;
+  --tw-ordinal: ;
+  --tw-slashed-zero: ;
+  --tw-numeric-figure: ;
+  --tw-numeric-spacing: ;
+  --tw-numeric-fraction: ;
+  --tw-ring-inset: ;
   --tw-ring-offset-width: 0px;
   --tw-ring-offset-color: #fff;
   --tw-ring-color: rgb(59 130 246 / 0.5);
@@ -82,28 +84,28 @@
   --tw-ring-shadow: 0 0 #0000;
   --tw-shadow: 0 0 #0000;
   --tw-shadow-colored: 0 0 #0000;
-  --tw-blur:  ;
-  --tw-brightness:  ;
-  --tw-contrast:  ;
-  --tw-grayscale:  ;
-  --tw-hue-rotate:  ;
-  --tw-invert:  ;
-  --tw-saturate:  ;
-  --tw-sepia:  ;
-  --tw-drop-shadow:  ;
-  --tw-backdrop-blur:  ;
-  --tw-backdrop-brightness:  ;
-  --tw-backdrop-contrast:  ;
-  --tw-backdrop-grayscale:  ;
-  --tw-backdrop-hue-rotate:  ;
-  --tw-backdrop-invert:  ;
-  --tw-backdrop-opacity:  ;
-  --tw-backdrop-saturate:  ;
-  --tw-backdrop-sepia:  ;
-  --tw-contain-size:  ;
-  --tw-contain-layout:  ;
-  --tw-contain-paint:  ;
-  --tw-contain-style:  ;
+  --tw-blur: ;
+  --tw-brightness: ;
+  --tw-contrast: ;
+  --tw-grayscale: ;
+  --tw-hue-rotate: ;
+  --tw-invert: ;
+  --tw-saturate: ;
+  --tw-sepia: ;
+  --tw-drop-shadow: ;
+  --tw-backdrop-blur: ;
+  --tw-backdrop-brightness: ;
+  --tw-backdrop-contrast: ;
+  --tw-backdrop-grayscale: ;
+  --tw-backdrop-hue-rotate: ;
+  --tw-backdrop-invert: ;
+  --tw-backdrop-opacity: ;
+  --tw-backdrop-saturate: ;
+  --tw-backdrop-sepia: ;
+  --tw-contain-size: ;
+  --tw-contain-layout: ;
+  --tw-contain-paint: ;
+  --tw-contain-style: ;
 }
 
 /*
@@ -130,7 +132,7 @@
 
 ::before,
 ::after {
-  --tw-content: '';
+  --tw-content: "";
 }
 
 /*
@@ -152,9 +154,10 @@ html,
   -moz-tab-size: 4;
   /* 3 */
   -o-tab-size: 4;
-     tab-size: 4;
+  tab-size: 4;
   /* 3 */
-  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   /* 4 */
   font-feature-settings: normal;
   /* 5 */
@@ -197,7 +200,7 @@ Add the correct text decoration in Chrome, Edge, and Safari.
 
 abbr:where([title]) {
   -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted;
+  text-decoration: underline dotted;
 }
 
 /*
@@ -243,7 +246,8 @@ code,
 kbd,
 samp,
 pre {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
   /* 1 */
   font-feature-settings: normal;
   /* 2 */
@@ -344,9 +348,9 @@ select {
 */
 
 button,
-input:where([type='button']),
-input:where([type='reset']),
-input:where([type='submit']) {
+input:where([type="button"]),
+input:where([type="reset"]),
+input:where([type="submit"]) {
   -webkit-appearance: button;
   /* 1 */
   background-color: transparent;
@@ -393,7 +397,7 @@ Correct the cursor style of increment and decrement buttons in Safari.
 2. Correct the outline style in Safari.
 */
 
-[type='search'] {
+[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
   outline-offset: -2px;
@@ -486,7 +490,8 @@ textarea {
 2. Set the default placeholder color to the user's configured gray 400 color.
 */
 
-input::-moz-placeholder, textarea::-moz-placeholder {
+input::-moz-placeholder,
+textarea::-moz-placeholder {
   opacity: 1;
   /* 1 */
   color: #9ca3af;
@@ -1555,7 +1560,9 @@ video {
 .scale-\[1\.045\] {
   --tw-scale-x: 1.045;
   --tw-scale-y: 1.045;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .resize-none {
@@ -1688,7 +1695,7 @@ video {
 
 .gap-x-\[25px\] {
   -moz-column-gap: 25px;
-       column-gap: 25px;
+  column-gap: 25px;
 }
 
 .overflow-auto {
@@ -2742,7 +2749,7 @@ video {
 }
 
 .leading-3 {
-  line-height: .75rem;
+  line-height: 0.75rem;
 }
 
 .leading-4 {
@@ -2953,7 +2960,7 @@ video {
   color: rgb(21 21 21 / var(--tw-text-opacity, 1));
 }
 
-.text-btnSecondary {
+.text-[#E9901A] {
   --tw-text-opacity: 1;
   color: rgb(233 144 26 / var(--tw-text-opacity, 1));
 }
@@ -3008,13 +3015,25 @@ video {
 
 .backdrop-blur-\[3px\] {
   --tw-backdrop-blur: blur(3px);
-  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
-  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness)
+    var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale)
+    var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert)
+    var(--tw-backdrop-opacity) var(--tw-backdrop-saturate)
+    var(--tw-backdrop-sepia);
+  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness)
+    var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale)
+    var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert)
+    var(--tw-backdrop-opacity) var(--tw-backdrop-saturate)
+    var(--tw-backdrop-sepia);
 }
 
 .bg-gradient {
   /* background-image: linear-gradient(270deg, #1e1e1e 0.77%, #3c3c3c 99.92%); */
-  background: linear-gradient(270deg, #191153 0.77%, rgba(56, 38, 185, 0.42) 99.92%);
+  background: linear-gradient(
+    270deg,
+    #191153 0.77%,
+    rgba(56, 38, 185, 0.42) 99.92%
+  );
 }
 
 .font-inter {
@@ -3022,10 +3041,11 @@ video {
 }
 
 .custom-checkbox::before {
-  content: '';
+  content: "";
   -webkit-appearance: none;
   background-color: transparent;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
+    inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
   padding: 0px;
   display: block;
   position: relative;
@@ -3033,11 +3053,11 @@ video {
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  border: 1px solid #FFA51F;
+  border: 1px solid #ffa51f;
 }
 
-.custom-checkbox input:checked+label:after {
-  content: '';
+.custom-checkbox input:checked + label:after {
+  content: "";
   display: block;
   position: absolute;
   top: 4px;
@@ -3045,17 +3065,18 @@ video {
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background-color: #FFA51F;
+  background-color: #ffa51f;
   /* border: solid #ffffff;
     border-width: 0 2px 2px 0;
     transform: rotate(45deg); */
 }
 
 .custom-checkbox-number::before {
-  content: '';
+  content: "";
   -webkit-appearance: none;
   background-color: transparent;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
+    inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
   padding: 0px;
   display: block;
   position: relative;
@@ -3066,8 +3087,8 @@ video {
   border: 2px solid #ffffff;
 }
 
-.custom-checkbox-number input:checked+label:after {
-  content: '';
+.custom-checkbox-number input:checked + label:after {
+  content: "";
   display: block;
   position: absolute;
   top: 0px;
@@ -3082,15 +3103,20 @@ video {
 }
 
 .boxShadow-sec {
-  box-shadow: 0px 1.793px 4.481px 1.793px rgba(0, 0, 0, 0.40);
+  box-shadow: 0px 1.793px 4.481px 1.793px rgba(0, 0, 0, 0.4);
 }
 
 .divider-bg-gradient {
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.35) 0%, #FFF 45%, rgba(255, 255, 255, 0.35) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.35) 0%,
+    #fff 45%,
+    rgba(255, 255, 255, 0.35) 100%
+  );
 }
 
 .pricing-card-boxShadow {
-  box-shadow: 0px 1.341px 3.352px 1.341px rgba(0, 0, 0, 0.40);
+  box-shadow: 0px 1.341px 3.352px 1.341px rgba(0, 0, 0, 0.4);
 }
 
 .placeholder\:text-\[\#00000033\]::-moz-placeholder {
@@ -3175,4 +3201,257 @@ video {
   .xl\:overflow-hidden {
     overflow: hidden;
   }
+}
+#sideData {
+  @media (max-width: 1024px) {
+    width: 100% !important;
+  }
+}
+.scrollHidden::-webkit-scrollbar {
+  display: none;
+}
+
+.custom-select {
+  position: relative;
+  font-family: Arial;
+}
+
+.custom-select select {
+  display: none; /*hide original SELECT element:*/
+}
+
+.select-selected {
+  background-color: transparent;
+  border: 1px solid #e9901a !important;
+  border-radius: 12px;
+}
+
+/*style the arrow inside the select element:*/
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+
+/*point the arrow upwards when the select box is open (active):*/
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+}
+
+/*style the items (options), including the selected item:*/
+.select-items div,
+.select-selected {
+  color: #ffffff;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+  user-select: none;
+}
+
+/*style items (options):*/
+.select-items {
+  position: absolute;
+  background-color: #e9901a;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+/*hide the items when the select box is closed:*/
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover,
+.same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.select-arrow-rotate {
+  transform: rotate(180deg);
+  transition: all 0.5s ease;
+}
+.totalTooltipContainer {
+  display: block;
+  position: relative;
+  cursor: pointer;
+}
+.totalToolTip {
+  display: none;
+  background-color: #e9901a;
+  padding: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  position: absolute;
+  white-space: nowrap;
+  top: -34px;
+  padding-top: 6px;
+  border-radius: 12px;
+}
+.totalTooltipContainer:hover .totalToolTip {
+  display: block;
+}
+#page-numbers .page-link {
+  border: 1px solid #e9901a;
+  border-radius: 8px;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  @media (max-width: 768px) {
+    width: 32px;
+    height: 32px;
+  }
+}
+#page-numbers .active {
+  background-color: #e9901a;
+}
+tr td {
+  padding: 10px 24px;
+  white-space: nowrap;
+  color: white;
+  font-size: 16px;
+  font-weight: 400;
+  text-align: left;
+}
+.mainData:nth-child(odd) {
+  background-color: #302964;
+}
+.mainResult {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.maintitleContainer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.mainTitleText {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.mainTitleText h2 {
+  padding-top: 2px;
+  font-size: 16px;
+  color: white;
+  font-weight: medium;
+}
+.mainTitleText p {
+  font-size: 12px;
+  color: white;
+}
+
+.maintransactionContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  white-space: nowrap;
+  text-align: right;
+}
+.tableHeader {
+  background-color: #302964;
+}
+.tableHeader td:last-child {
+  text-align: right;
+}
+.tb-container input {
+  display: none;
+}
+
+.tableData {
+  font-size: 16px;
+  color: white;
+  white-space: nowrap;
+}
+.succesfullStatusBox {
+  width: 100%;
+  padding: 8px 20px;
+  border-radius: 60px;
+  border: 1px solid #00a185;
+  background-color: #b9d7d2;
+  font-size: 16px;
+  color: #00a185;
+  text-align: center;
+  padding-top: 10px;
+  font-weight: medium;
+}
+.pendingStatusBox {
+  width: 100%;
+  padding: 8px 20px;
+  border-radius: 60px;
+  border: 1px solid #ffc861;
+  background-color: #fdedcff2;
+  font-size: 16px;
+  color: #ffc861;
+  text-align: center;
+  padding-top: 10px;
+  font-weight: medium;
+}
+.canceledStatusBox {
+  width: 100%;
+  padding: 8px 20px;
+  border-radius: 60px;
+  border: 1px solid #ff6161;
+  background-color: #ffbebe;
+  font-size: 16px;
+  text-align: center;
+  padding-top: 10px;
+  color: #ff6161;
+  font-weight: medium;
+}
+.balanceDetailLastSevenDays {
+  font-size: 16px;
+  color: white;
+  white-space: nowrap;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.resultBarContainer {
+  width: 100%;
+  background: #dfe0e4;
+  height: 4px;
+  border-radius: 50px;
+}
+.balanceDetailLastSevenDaysBar {
+  background-color: #e9901a;
+  height: 100%;
+  border-radius: 50px;
+}
+
+.balanceDetailTrade {
+  border: 1px solid white;
+  border-radius: 12px;
+  padding: 8px 20px;
+  font-size: 16px;
+  width: fit-content;
+  color: white;
+  font-weight: 400;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  @media (max-width: 768px) {
+    padding: 6px 16px;
+  }
+}
+.balanceDetailTrade:hover {
+  border: 1px solid #e9901a;
+  background-color: #e9901a;
 }

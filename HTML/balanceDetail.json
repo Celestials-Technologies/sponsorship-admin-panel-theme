@@ -1,0 +1,318 @@
+{
+  "balanceChart": [
+    {
+      "id": "estimatedBalance",
+      "data": [30, 20, 40, 30, 60, 45, 55]
+    },
+    {
+      "id": "spotBalance",
+      "data": [20, 40, 35, 55, 40, 70, 55]
+    },
+    {
+      "id": "fiatBalance",
+      "data": [30, 55, 40, 20, 60, 45, 55]
+    },
+    {
+      "id": "todaysPNL",
+      "data": [30, 20, 40, 30, 60, 45, 55]
+    }
+  ],
+  "xValues": ["10", "20", "30", "40", "50", "60", "70"],
+
+  "last24Days": [
+    {
+      "title": "Bitcoin",
+      "img": "./src/images/bitcoin_mid.png",
+      "detail": "BTC",
+      "price": "$516,55",
+      "oneHour": "+7.4%",
+      "twentyFourHour": "+27.3%",
+      "sevenDay": "-2.3%",
+      "volume": "$4.97M",
+      "last7Days": "50%",
+      "trade": "Trade"
+    },
+    {
+      "title": "Cardano",
+      "img": "./src/images/cardano_mid.png",
+      "detail": "ADA",
+      "price": "$516,55",
+      "oneHour": "+7.4%",
+      "twentyFourHour": "+27.3%",
+      "sevenDay": "-2.3%",
+      "volume": "$4.97M",
+      "last7Days": "30%",
+      "trade": "Trade"
+    },
+    {
+      "title": "Bitcoin",
+      "img": "./src/images/bitcoin_mid.png",
+      "detail": "BTC",
+      "price": "$516,55",
+      "oneHour": "+7.4%",
+      "twentyFourHour": "+27.3%",
+      "sevenDay": "-2.3%",
+      "volume": "$4.97M",
+      "last7Days": "80%",
+      "trade": "Trade"
+    },
+    {
+      "title": "Cardano",
+      "img": "./src/images/cardano_mid.png",
+      "detail": "ADA",
+      "price": "$516,55",
+      "oneHour": "+7.4%",
+      "twentyFourHour": "+27.3%",
+      "sevenDay": "-2.3%",
+      "volume": "$4.97M",
+      "last7Days": "20%",
+      "trade": "Trade"
+    },
+    {
+      "title": "Binance",
+      "img": "./src/images/bnb.png",
+      "detail": "BNB",
+      "price": "$516,55",
+      "oneHour": "+7.4%",
+      "twentyFourHour": "+27.3%",
+      "sevenDay": "-2.3%",
+      "volume": "$4.97M",
+      "last7Days": "60%",
+      "trade": "Trade"
+    },
+    {
+      "title": "Bitcoin",
+      "img": "./src/images/bitcoin_mid.png",
+      "detail": "BTC",
+      "price": "$516,55",
+      "oneHour": "+7.4%",
+      "twentyFourHour": "+27.3%",
+      "sevenDay": "-2.3%",
+      "volume": "$4.97M",
+      "last7Days": "90%",
+      "trade": "Trade"
+    },
+    {
+      "title": "Cardano",
+      "img": "./src/images/cardano_mid.png",
+      "detail": "ADA",
+      "price": "$516,55",
+      "oneHour": "+7.4%",
+      "twentyFourHour": "+27.3%",
+      "sevenDay": "-2.3%",
+      "volume": "$4.97M",
+      "last7Days": "20%",
+      "trade": "Trade"
+    },
+    {
+      "title": "Electro",
+      "img": "./src/images/electro_mid.png",
+      "detail": "EOS",
+      "price": "$516,55",
+      "oneHour": "+7.4%",
+      "twentyFourHour": "+27.3%",
+      "sevenDay": "-2.3%",
+      "volume": "$4.97M",
+      "last7Days": "10%",
+      "trade": "Trade"
+    },
+    {
+      "title": "Bitcoin",
+      "img": "./src/images/bitcoin_mid.png",
+      "detail": "BTC",
+      "price": "$516,55",
+      "oneHour": "+7.4%",
+      "twentyFourHour": "+27.3%",
+      "sevenDay": "-2.3%",
+      "volume": "$4.97M",
+      "last7Days": "40%",
+      "trade": "Trade"
+    },
+    {
+      "title": "Cardano",
+      "img": "./src/images/cardano_mid.png",
+      "detail": "ADA",
+      "price": "$516,55",
+      "oneHour": "+7.4%",
+      "twentyFourHour": "+27.3%",
+      "sevenDay": "-2.3%",
+      "volume": "$4.97M",
+      "last7Days": "70%",
+      "trade": "Trade"
+    }
+  ],
+  "last7Days": [
+    {
+      "title": "Binance",
+      "img": "./src/images/bnb.png",
+      "detail": "BNB",
+      "price": "$516,55",
+      "oneHour": "+7.4%",
+      "twentyFourHour": "+27.3%",
+      "sevenDay": "-2.3%",
+      "volume": "$4.97M",
+      "last7Days": "60%",
+      "trade": "Trade"
+    },
+    {
+      "title": "Bitcoin",
+      "img": "./src/images/bitcoin_mid.png",
+      "detail": "BTC",
+      "price": "$516,55",
+      "oneHour": "+7.4%",
+      "twentyFourHour": "+27.3%",
+      "sevenDay": "-2.3%",
+      "volume": "$4.97M",
+      "last7Days": "90%",
+      "trade": "Trade"
+    },
+    {
+      "title": "Cardano",
+      "img": "./src/images/cardano_mid.png",
+      "detail": "ADA",
+      "price": "$516,55",
+      "oneHour": "+7.4%",
+      "twentyFourHour": "+27.3%",
+      "sevenDay": "-2.3%",
+      "volume": "$4.97M",
+      "last7Days": "20%",
+      "trade": "Trade"
+    },
+    {
+      "title": "Electro",
+      "img": "./src/images/electro_mid.png",
+      "detail": "EOS",
+      "price": "$516,55",
+      "oneHour": "+7.4%",
+      "twentyFourHour": "+27.3%",
+      "sevenDay": "-2.3%",
+      "volume": "$4.97M",
+      "last7Days": "10%",
+      "trade": "Trade"
+    },
+    {
+      "title": "Bitcoin",
+      "img": "./src/images/bitcoin_mid.png",
+      "detail": "BTC",
+      "price": "$516,55",
+      "oneHour": "+7.4%",
+      "twentyFourHour": "+27.3%",
+      "sevenDay": "-2.3%",
+      "volume": "$4.97M",
+      "last7Days": "40%",
+      "trade": "Trade"
+    },
+    {
+      "title": "Cardano",
+      "img": "./src/images/cardano_mid.png",
+      "detail": "ADA",
+      "price": "$516,55",
+      "oneHour": "+7.4%",
+      "twentyFourHour": "+27.3%",
+      "sevenDay": "-2.3%",
+      "volume": "$4.97M",
+      "last7Days": "70%",
+      "trade": "Trade"
+    }
+  ],
+  "last1Mounth": [
+    {
+      "title": "Electro",
+      "img": "./src/images/electro_mid.png",
+      "detail": "EOS",
+      "price": "$516,55",
+      "oneHour": "+7.4%",
+      "twentyFourHour": "+27.3%",
+      "sevenDay": "-2.3%",
+      "volume": "$4.97M",
+      "last7Days": "10%",
+      "trade": "Trade"
+    },
+    {
+      "title": "Cardano",
+      "img": "./src/images/cardano_mid.png",
+      "detail": "ADA",
+      "price": "$516,55",
+      "oneHour": "+7.4%",
+      "twentyFourHour": "+27.3%",
+      "sevenDay": "-2.3%",
+      "volume": "$4.97M",
+      "last7Days": "40%",
+      "trade": "Trade"
+    },
+    {
+      "title": "Bitcoin",
+      "img": "./src/images/bitcoin_mid.png",
+      "detail": "BTC",
+      "price": "$516,55",
+      "oneHour": "+7.4%",
+      "twentyFourHour": "+27.3%",
+      "sevenDay": "-2.3%",
+      "volume": "$4.97M",
+      "last7Days": "70%",
+      "trade": "Trade"
+    },
+    {
+      "title": "Cardano",
+      "img": "./src/images/cardano_mid.png",
+      "detail": "ADA",
+      "price": "$516,55",
+      "oneHour": "+7.4%",
+      "twentyFourHour": "+27.3%",
+      "sevenDay": "-2.3%",
+      "volume": "$4.97M",
+      "last7Days": "10%",
+      "trade": "Trade"
+    }
+  ],
+  "last1Year": [
+    {
+      "title": "Bitcoin",
+      "img": "./src/images/bitcoin_mid.png",
+      "detail": "BTC",
+      "price": "$516,55",
+      "oneHour": "+7.4%",
+      "twentyFourHour": "+27.3%",
+      "sevenDay": "-2.3%",
+      "volume": "$4.97M",
+      "last7Days": "10%",
+      "trade": "Trade"
+    },
+    {
+      "title": "Cardano",
+      "img": "./src/images/cardano_mid.png",
+      "detail": "ADA",
+      "price": "$516,55",
+      "oneHour": "+7.4%",
+      "twentyFourHour": "+27.3%",
+      "sevenDay": "-2.3%",
+      "volume": "$4.97M",
+      "last7Days": "40%",
+      "trade": "Trade"
+    },
+    {
+      "title": "Binance",
+      "img": "./src/images/bnb.png",
+      "detail": "BNB",
+      "price": "$516,55",
+      "oneHour": "+7.4%",
+      "twentyFourHour": "+27.3%",
+      "sevenDay": "-2.3%",
+      "volume": "$4.97M",
+      "last7Days": "70%",
+      "trade": "Trade"
+    },
+    {
+      "title": "Cardano",
+      "img": "./src/images/cardano_mid.png",
+      "detail": "ADA",
+      "price": "$516,55",
+      "oneHour": "+7.4%",
+      "twentyFourHour": "+27.3%",
+      "sevenDay": "-2.3%",
+      "volume": "$4.97M",
+      "last7Days": "10%",
+      "trade": "Trade"
+    }
+  ]
+}
