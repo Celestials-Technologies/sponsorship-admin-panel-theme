@@ -973,8 +973,21 @@
                     id="assetsCategory"
                     class="px-6 rounded-xl py-3 pt-3.5 mt-5 bg-transparent w-full border border-solid border-white outline-none text-base text-white Gilroy-normal"
                   >
-                    <option value="option1">Bitcoin</option>
-                    <option value="option2">Cardano</option>
+                    <option value="Select Coin" class="text-black">
+                      Select Coin
+                    </option>
+                    <option value="Bitcoin" class="text-black">Bitcoin</option>
+                    <option value="Cardano" class="text-black">Cardano</option>
+                    <option value="Ethereum" class="text-black">
+                      Ethereum
+                    </option>
+                    <option value="Litecoin" class="text-black">
+                      Litecoin
+                    </option>
+                    <option value="Ripple" class="text-black">Ripple</option>
+                    <option value="Stellar" class="text-black">Stellar</option>
+                    <option value="Tether" class="text-black">Tether</option>
+                    <option value="USDC" class="text-black">USDC</option>
                   </select>
                   <p
                     id="assetsCategoryError"
@@ -991,16 +1004,16 @@
                     id="assetsConvertCurrency"
                     class="px-6 rounded-xl py-3 pt-3.5 mt-5 bg-transparent w-full border border-solid border-white outline-none text-base text-white Gilroy-normal"
                   >
-                    <option value="option1" class="text-gray-500">
+                    <option value="Select Currency" class="text-gray-500">
                       Select Currency
                     </option>
-                    <option value="option2" class="text-black">USD</option>
-                    <option value="option3" class="text-black">EUR</option>
-                    <option value="option4" class="text-black">GBP</option>
-                    <option value="option5" class="text-black">CAD</option>
-                    <option value="option6" class="text-black">AUD</option>
-                    <option value="option7" class="text-black">JPY</option>
-                    <option value="option8" class="text-black">CHF</option>
+                    <option value="USD" class="text-black">USD</option>
+                    <option value="EUR" class="text-black">EUR</option>
+                    <option value="GBP" class="text-black">GBP</option>
+                    <option value="CAD" class="text-black">CAD</option>
+                    <option value="AUD" class="text-black">AUD</option>
+                    <option value="JPY" class="text-black">JPY</option>
+                    <option value="CHF" class="text-black">CHF</option>
                   </select>
                   <p
                     id="assetsConvertCurrencyError"
@@ -1048,9 +1061,16 @@
                     id="assetsStatus"
                     class="px-6 rounded-xl py-3 pt-3.5 mt-5 bg-transparent w-full border border-solid border-white outline-none text-base text-white Gilroy-normal"
                   >
-                  <option value="option1" class="text-black">Select status</option>
-                    <option value="option2" class="text-black">Active</option>
-                    <option value="option3" class="text-black">Inactive</option>
+                    <option value="Select Status" class="text-black">
+                      Select status
+                    </option>
+                    <option value="Successful" class="text-black">
+                      Successful
+                    </option>
+                    <option value="Pending" class="text-black">Pending</option>
+                    <option value="Cancelled" class="text-black">
+                      Cancelled
+                    </option>
                   </select>
                   <p id="assetsStatusError" class="text-red-500 text-sm hidden">
                     Please select a valid status
@@ -1553,7 +1573,8 @@
         );
         let assetsStatusError = document.getElementById("assetsStatusError");
         let SuccessfulMessage = document.getElementById("SuccessfulMessage");
-
+        let coinImage = document.getElementById("coin-img");
+        let assetsCoverImage = coinImage.src;
         if (assetsName.value === "") {
           assetsNameError.style.display = "block";
         } else {
@@ -1598,18 +1619,46 @@
           assetsRequiredActionError.style.display === "none" &&
           assetsStatusError.style.display === "none"
         ) {
+          let assets = {
+            name: assetsName.value,
+            category: assetsCategory.value,
+            coverImage: assetsCoverImage,
+            amount: assetsAmount.value,
+            requiredAction: assetsRequiredAction.value,
+            status: assetsStatus.value,
+            convertCurrency: assetsConvertCurrency.value,
+          };
+
+          console.log("Saving to localStorage:", assets); // Log the data
+
+          let storedAssets = JSON.parse(localStorage.getItem(assets));
+
+          // //push storedAssets to assets
+          // assets.push(storedAssets);
+
+          // // Save updated assets to localStorage
+          // localStorage.setItem("assets", JSON.stringify(storedAssets));
+          // console.log("Updated assets:", storedAssets);
+
+          localStorage.setItem("assets", JSON.stringify(assets)); // Save as an object
+
+          // Clear form fields
           assetsName.value = "";
           assetsCategory.value = "option1";
           assetsConvertCurrency.value = "option1";
           assetsAmount.value = "";
           assetsRequiredAction.value = "";
           assetsStatus.value = "option1";
+
           SuccessfulMessage.style.display = "block";
           setTimeout(() => {
             SuccessfulMessage.style.display = "none";
           }, 3000);
         }
       }
+
+      // Save to localStorage as an object instead of an array
+      // Save as an object
 
       function cancelAddNewAsset() {
         assetsName.value = "";

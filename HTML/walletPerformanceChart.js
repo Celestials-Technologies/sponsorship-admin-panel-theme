@@ -90,21 +90,47 @@ function handleLast15Days() {
   });
 }
 
+// Fetch the data from "wallet.json"
 $.getJSON("wallet.json", function (data) {
   console.log("Data loaded:", data);
+  
+  // Retrieve assets from localStorage
+  const assets = JSON.parse(localStorage.getItem("assets"));
+  
+  if (assets) {
+    console.log("Assets Data:", assets);
+
+    // Add the assets to the `last15Days` array without clearing previous data
+    data.last15Days.push({
+      "title": assets.category,  // Use assets' category as title
+      "img": assets.coverImage,  // Use assets' cover image
+      "date": new Date().toLocaleDateString(),  // Use current date
+      "history": "0df3635...eq23",  // Update this field as needed
+      "status": assets.status,  // Use assets' status
+      "transaction": `+${assets.amount}`,  // Use assets' amount as transaction value
+      "currency": assets.convertCurrency,
+      "transactionDetail": `+$${assets.amount * 10}`  // Adjust this calculation as needed
+    });
+  } else {
+    console.log("No assets found in local storage.");
+  }
+
+  // Now call the function to create the results table with the updated data
   let last15Days = data.last15Days;
   let last10Days = data.last10Days;
   makeResultsTable(last15Days, last10Days);
 });
 
+// Your existing makeResultsTable function remains unchanged
 function makeResultsTable(last15Days, last10Days) {
   let dataContainer = document.getElementById("data-container");
-  
+
   // Clear existing table content
   dataContainer.innerHTML = '';
 
   let tbl = document.createElement("table");
   tbl.classList.add("w-full");
+  tbl.id = "myTable";
   let headerRow = tbl.insertRow();
   headerRow.classList.add("tableHeader");
   headerRow.insertCell().textContent = "Title";
@@ -113,10 +139,12 @@ function makeResultsTable(last15Days, last10Days) {
   headerRow.insertCell().textContent = "Status";
   headerRow.insertCell().textContent = "Transaction";
 
+  // Create table rows for the last 15 days data
   last15Days.forEach((result) => {
     let newRow = tbl.insertRow();
     newRow.classList.add("mainData");
 
+    // Title and image
     var mainResultTitleContainer = document.createElement("div");
     mainResultTitleContainer.classList.add("maintitleContainer");
     var mainResultTitle = new Image();
@@ -125,15 +153,12 @@ function makeResultsTable(last15Days, last10Days) {
     let mainResultTitleText = document.createElement("div");
     mainResultTitleText.classList.add("mainTitleText");
     var mainTitleHeading = document.createElement("h2");
-    // var mainTitleDetail = document.createElement("p");
     mainTitleHeading.textContent = result.title;
-    // mainTitleDetail.textContent = result.detail;
     mainResultTitleText.appendChild(mainTitleHeading);
-    // mainResultTitleText.appendChild(mainTitleDetail);
     mainResultTitleContainer.appendChild(mainResultTitleText);
-
     newRow.insertCell().appendChild(mainResultTitleContainer);
 
+    // Date
     var mainResultDate = document.createElement("div");
     mainResultDate.classList.add("tableData");
     var mainResultDateText = document.createElement("h2");
@@ -141,6 +166,7 @@ function makeResultsTable(last15Days, last10Days) {
     mainResultDate.appendChild(mainResultDateText);
     newRow.insertCell().appendChild(mainResultDate);
 
+    // History
     var mainResultHistory = document.createElement("div");
     mainResultHistory.classList.add("tableData");
     var mainResultHistoryText = document.createElement("h2");
@@ -148,29 +174,29 @@ function makeResultsTable(last15Days, last10Days) {
     mainResultHistory.appendChild(mainResultHistoryText);
     newRow.insertCell().appendChild(mainResultHistory);
 
+    // Status
     var mainResultStatus = document.createElement("div");
     var mainResultStatusText = document.createElement("h2");
     mainResultStatusText.textContent = result.status;
     if(result.status === "Successful"){
       mainResultStatus.classList.add("succesfullStatusBox");
-    }else if(result.status === "Pending"){
+    } else if(result.status === "Pending"){
       mainResultStatus.classList.add("pendingStatusBox");
-    }else if(result.status === "Canceled"){
+    } else if(result.status === "Canceled"){
       mainResultStatus.classList.add("canceledStatusBox");
     }
     mainResultStatus.appendChild(mainResultStatusText);
     newRow.insertCell().appendChild(mainResultStatus);
-    
 
+    // Transaction details
     var mainResultTransaction = document.createElement("div");
     mainResultTransaction.classList.add("maintransactionContainer");
     var mainResultTransactionText = document.createElement("h2");
     var mainResultTransactionDetailText = document.createElement("p");
-    mainResultTransactionText.textContent = result.transaction;
+    mainResultTransactionText.textContent = result.transaction + " " + result.currency;
     mainResultTransactionDetailText.textContent = result.transactionDetail;
     mainResultTransaction.appendChild(mainResultTransactionText);
     mainResultTransaction.appendChild(mainResultTransactionDetailText);
-
     newRow.insertCell().appendChild(mainResultTransaction);
   });
 
@@ -178,6 +204,7 @@ function makeResultsTable(last15Days, last10Days) {
     let newRow = tbl.insertRow();
     newRow.classList.add("mainData");
 
+    // Title and image
     var mainResultTitleContainer = document.createElement("div");
     mainResultTitleContainer.classList.add("maintitleContainer");
     var mainResultTitle = new Image();
@@ -186,15 +213,12 @@ function makeResultsTable(last15Days, last10Days) {
     let mainResultTitleText = document.createElement("div");
     mainResultTitleText.classList.add("mainTitleText");
     var mainTitleHeading = document.createElement("h2");
-    // var mainTitleDetail = document.createElement("p");
     mainTitleHeading.textContent = result.title;
-    // mainTitleDetail.textContent = result.detail;
     mainResultTitleText.appendChild(mainTitleHeading);
-    // mainResultTitleText.appendChild(mainTitleDetail);
     mainResultTitleContainer.appendChild(mainResultTitleText);
-
     newRow.insertCell().appendChild(mainResultTitleContainer);
 
+    // Date
     var mainResultDate = document.createElement("div");
     mainResultDate.classList.add("tableData");
     var mainResultDateText = document.createElement("h2");
@@ -202,6 +226,7 @@ function makeResultsTable(last15Days, last10Days) {
     mainResultDate.appendChild(mainResultDateText);
     newRow.insertCell().appendChild(mainResultDate);
 
+    // History
     var mainResultHistory = document.createElement("div");
     mainResultHistory.classList.add("tableData");
     var mainResultHistoryText = document.createElement("h2");
@@ -209,20 +234,21 @@ function makeResultsTable(last15Days, last10Days) {
     mainResultHistory.appendChild(mainResultHistoryText);
     newRow.insertCell().appendChild(mainResultHistory);
 
+    // Status
     var mainResultStatus = document.createElement("div");
     var mainResultStatusText = document.createElement("h2");
     mainResultStatusText.textContent = result.status;
     if(result.status === "Successful"){
       mainResultStatus.classList.add("succesfullStatusBox");
-    }else if(result.status === "Pending"){
+    } else if(result.status === "Pending"){
       mainResultStatus.classList.add("pendingStatusBox");
-    }else if(result.status === "Canceled"){
+    } else if(result.status === "Canceled"){
       mainResultStatus.classList.add("canceledStatusBox");
     }
     mainResultStatus.appendChild(mainResultStatusText);
     newRow.insertCell().appendChild(mainResultStatus);
-    
 
+    // Transaction details
     var mainResultTransaction = document.createElement("div");
     mainResultTransaction.classList.add("maintransactionContainer");
     var mainResultTransactionText = document.createElement("h2");
@@ -231,14 +257,43 @@ function makeResultsTable(last15Days, last10Days) {
     mainResultTransactionDetailText.textContent = result.transactionDetail;
     mainResultTransaction.appendChild(mainResultTransactionText);
     mainResultTransaction.appendChild(mainResultTransactionDetailText);
-
     newRow.insertCell().appendChild(mainResultTransaction);
   });
 
+  // Add table to the container
   dataContainer.appendChild(tbl);
 
-  showLess()
+  showLess();
 }
+
+function searchFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+     
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+       
+      } else {
+        tr[i].style.display = "none";
+        document.getElementById("seeLess").style.display = "none";
+        document.getElementById("seeAll").style.display = "none";
+      }
+      if (filter === "") {
+        tr[i].style.display = "";
+        document.getElementById("seeLess").style.display = "none";
+        document.getElementById("seeAll").style.display = "none";
+      }
+    }  
+  } 
+}
+
 function showLess(){
   showLess();
   document.getElementById("seeLess").style.display = "none";
@@ -278,3 +333,24 @@ function showAll() {
     card.style.display = "table-row";
   });
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+  const assets = JSON.parse(localStorage.getItem("assets"));
+  
+  console.log("Retrieved assets:", assets);  // Log the data after retrieval
+  
+  if (assets) {
+      console.log("Assets Data:", assets);
+      
+      // Example: If you want to display this data somewhere on the page
+      document.getElementById("assetsCoverImageDisplay").src = assets.coverImage;
+      document.getElementById("assetsNameDisplay").textContent = assets.name;
+      document.getElementById("assetsCategoryDisplay").textContent = assets.category;
+      document.getElementById("assetsAmountDisplay").textContent = assets.amount;
+      document.getElementById("assetsRequiredActionDisplay").textContent = assets.requiredAction;
+      document.getElementById("assetsStatusDisplay").textContent = assets.status;
+  } else {
+      console.log("No assets found in local storage.");
+  }
+});
+

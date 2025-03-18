@@ -1295,11 +1295,12 @@
                       class="bg-sideBarBg border border-translucentWhite py-1.5 pl-5 pr-2 gap-4 rounded-full flex items-center"
                     >
                       <input
-                        type="text"
+                        type="text" id="myInput" onkeyup="searchFunction()"
                         placeholder="Search"
                         class="text-base bg-transparent leading-6 text-white outline-none Gilroy-medium w-[calc(100%-20%)]"
                       />
                       <div
+                        onclick="searchFunction()"
                         class="p-1 flex items-center justify-center bg-white cursor-pointer w-fit rounded-full searchIconBox"
                       >
                         <svg
@@ -2177,6 +2178,15 @@
         <img src="src/images/profile-img.png" alt="Profile" class="w-6 h-6" />
       </button>
     </div>
+
+
+    <div id="assetsNameDisplay"></div>
+<div id="assetsCategoryDisplay"></div>
+<div id="assetsAmountDisplay"></div>
+<div id="assetsRequiredActionDisplay"></div>
+<div id="assetsStatusDisplay"></div>
+<div id="assetsConvertCurrencyDisplay"></div>
+<img id="assetsCoverImageDisplay" alt="assetsCoverImage" class="w-8 h-8">
 
     <div
       class="w-full h-screen absolute text-white z-[99999] flex justify-center items-center py-6"

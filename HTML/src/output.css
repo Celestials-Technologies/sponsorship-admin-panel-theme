@@ -3342,6 +3342,7 @@ tr td {
 .maintitleContainer img {
   width: 30px;
   height: 30px;
+  border-radius:60px;
 }
 
 .mainTitleText {
