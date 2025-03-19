@@ -594,6 +594,12 @@ function closeModalMessageBtn() {
 }
 
 function validateForm() {
+  let cardHolderNameError = document.getElementById("cardHolderNameError");
+  let selectBankError = document.getElementById("selectBankError");
+  let accountNumberError = document.getElementById("accountNumberError");
+  let mobileNumberError = document.getElementById("mobileNumberError");
+  let cardNumberError = document.getElementById("cardNumberError");
+  let selectDateError = document.getElementById("selectDateError");
   let cardHolderName = document.getElementById("cardHolderName").value;
   let selectBank = document.getElementById("selectBank").value;
   let accountNumber = document.getElementById("accountNumber").value;
@@ -664,7 +670,73 @@ function validateForm() {
     bodyOverflowModal.style.overflow = "auto";
     bodyScreenData.style.opacity = "1";
   }
+
+  if (
+    cardHolderNameError.style.display === "none" &&
+    selectBankError.style.display === "none" &&
+    accountNumberError.style.display === "none" &&
+    mobileNumberError.style.display === "none" &&
+    cardNumberError.style.display === "none" &&
+    selectDateError.style.display === "none" &&
+    addressError.style.display === "none" &&
+    countryError.style.display === "none" &&
+    cityError.style.display === "none"
+  ) {
+    let addCard ={
+      cardHolderName: cardHolderName,
+      selectBank: selectBank,
+      accountNumber: accountNumber,
+      mobileNumber: mobileNumber,
+      cardNumber: cardNumber,
+      selectDate: selectDate,
+      address: address,
+    };
+    console.log("Saving to localStorage:", addCard);
+    let storedCards = JSON.parse(localStorage.getItem("cards")) || [];
+    storedCards.push(addCard);
+    localStorage.setItem("cards", JSON.stringify(storedCards));
+    SuccessfulMessage.style.display = "block";
+    setTimeout(() => {
+        SuccessfulMessage.style.display = "none";
+    }, 3000);
+  }
 }
+document.addEventListener('DOMContentLoaded', function () {
+  displayAddedCard();
+});
+
+function displayAddedCard() {
+  const storedAllCards = JSON.parse(localStorage.getItem("cards")) || [];
+  console.log("Stored All Cards:", storedAllCards);
+
+  // Clear the container before rendering (to avoid duplicates)
+  const addedCardContainer = document.getElementById("addedCardContainer");
+  addedCardContainer.innerHTML = "";
+
+  storedAllCards.forEach((card) => {
+    let storedCardContainer = document.createElement("div");
+    storedCardContainer.classList.add("storedCardContainer");
+
+    const cardHolderNameDiv = document.createElement("div");
+    cardHolderNameDiv.classList.add("cardHolderName");
+    cardHolderNameDiv.textContent = card.cardHolderName;
+
+    const selectBankDiv = document.createElement("div");
+    selectBankDiv.classList.add("selectBank");
+    selectBankDiv.textContent = card.selectBank;
+
+    const accountNumberDiv = document.createElement("div");
+    accountNumberDiv.classList.add("accountNumber");
+    accountNumberDiv.textContent = card.accountNumber;
+
+    storedCardContainer.appendChild(cardHolderNameDiv);
+    storedCardContainer.appendChild(selectBankDiv);
+    storedCardContainer.appendChild(accountNumberDiv);
+
+    addedCardContainer.appendChild(storedCardContainer);
+  });
+}
+
 
 // function detailConverter() {
 //   let ADAdata = document.getElementById("ADADATA");

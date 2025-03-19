@@ -3569,3 +3569,15 @@ tr td {
   text-decoration: none;
   padding: 4px 8px;
 }
+.assetContainer {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  font-size: 18px;
+  color: white;
+}
+.assetContainer img {
+  width: 34px;
+  height: 34px;
+  border-radius: 60px;
+}

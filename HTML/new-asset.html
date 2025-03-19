@@ -917,7 +917,7 @@
                 Add a New Asset
               </p>
             </div>
-            <form class="flex flex-col gap-5">
+            <form class="flex flex-col gap-6">
               <p class="text-base text-white Gilroy-normal">Icon</p>
               <div class="flex md:gap-6 gap-5 flex-wrap items-center">
                 <div
@@ -950,28 +950,28 @@
                   Remove
                 </button>
               </div>
-              <div class="flex flex-col">
+              <div class="flex flex-col relative">
                 <label for="fname" class="text-base text-white Gilroy-normal"
                   >Asset Name</label
                 >
                 <input
                   type="text"
                   id="assetsName"
-                  class="px-6 rounded-xl py-3 pt-3.5 mt-5 bg-transparent w-full border border-solid border-white outline-none text-base text-white Gilroy-normal"
+                  class="px-6 rounded-xl py-3 pt-3.5 mt-5 bg-transparent w-full border border-solid border-white outline-none text-base text-white Gilroy-normal h-11"
                   placeholder="Enter Name"
                 />
-                <p id="assetsNameError" class="text-red-500 text-sm hidden">
+                <p id="assetsNameError" class="text-red-500 text-xs absolute -bottom-5 hidden">
                   Please enter a valid asset name
                 </p>
               </div>
               <div class="flex flex-wrap md:flex-nowrap gap-5 items-center">
-                <div class="flex flex-col w-full md:w-3/6">
+                <div class="flex flex-col w-full md:w-3/6 relative">
                   <label class="text-base text-white Gilroy-normal"
                     >Select Category</label
                   >
                   <select
                     id="assetsCategory"
-                    class="px-6 rounded-xl py-3 pt-3.5 mt-5 bg-transparent w-full border border-solid border-white outline-none text-base text-white Gilroy-normal"
+                    class="px-6 rounded-xl py-3 pt-3.5 mt-5 bg-transparent w-full border border-solid border-white outline-none text-base text-white Gilroy-normal h-11"
                   >
                     <option value="Select Coin" class="text-black">
                       Select Coin
@@ -991,18 +991,18 @@
                   </select>
                   <p
                     id="assetsCategoryError"
-                    class="text-red-500 text-sm hidden"
+                    class="text-red-500 text-xs absolute -bottom-5 hidden"
                   >
                     Please select a valid category
                   </p>
                 </div>
-                <div class="flex flex-col w-full md:w-3/6">
+                <div class="flex flex-col w-full md:w-3/6 relative">
                   <label class="text-base text-white Gilroy-normal"
                     >Convert Currency</label
                   >
                   <select
                     id="assetsConvertCurrency"
-                    class="px-6 rounded-xl py-3 pt-3.5 mt-5 bg-transparent w-full border border-solid border-white outline-none text-base text-white Gilroy-normal"
+                    class="px-6 rounded-xl py-3 pt-3.5 mt-5 bg-transparent w-full border border-solid border-white outline-none text-base text-white Gilroy-normal h-11"
                   >
                     <option value="Select Currency" class="text-gray-500">
                       Select Currency
@@ -1017,49 +1017,49 @@
                   </select>
                   <p
                     id="assetsConvertCurrencyError"
-                    class="text-red-500 text-sm hidden"
+                    class="text-red-500 text-xs absolute -bottom-5 hidden"
                   >
                     Please select a valid currency
                   </p>
                 </div>
               </div>
-              <div class="flex flex-col">
+              <div class="flex flex-col relative">
                 <label class="text-base text-white Gilroy-normal">Amount</label>
                 <input
                   type="number"
                   id="assetsAmount"
-                  class="px-6 rounded-xl py-3 pt-3.5 mt-5 bg-transparent w-full border border-solid border-white outline-none text-base text-white Gilroy-normal"
+                  class="px-6 rounded-xl py-3 pt-3.5 mt-5 bg-transparent w-full border border-solid border-white outline-none text-base text-white Gilroy-normal h-11"
                   placeholder="Enter Amount"
                 />
-                <p id="assetsAmountError" class="text-red-500 text-sm hidden">
+                <p id="assetsAmountError" class="text-red-500 text-xs absolute -bottom-5 hidden">
                   Please enter a valid amount
                 </p>
               </div>
               <div class="flex flex-wrap md:flex-nowrap gap-5 items-center">
-                <div class="flex flex-col w-full md:w-3/6">
+                <div class="flex flex-col w-full md:w-3/6 relative">
                   <label for="fname" class="text-base text-white Gilroy-normal"
                     >Required Action</label
                   >
                   <input
                     type="text"
                     id="assetsRequiredAction"
-                    class="px-6 rounded-xl py-3 pt-3.5 mt-5 bg-transparent w-full border border-solid border-white outline-none text-base text-white Gilroy-normal"
+                    class="px-6 rounded-xl py-3 pt-3.5 mt-5 bg-transparent w-full border border-solid border-white outline-none text-base text-white Gilroy-normal h-11"
                     placeholder="Enter Required Action"
                   />
                   <p
                     id="assetsRequiredActionError"
-                    class="text-red-500 text-sm hidden"
+                    class="text-red-500 text-xs absolute -bottom-5 hidden"
                   >
                     Please enter a valid required action
                   </p>
                 </div>
-                <div class="flex flex-col w-full md:w-3/6">
+                <div class="flex flex-col w-full md:w-3/6 relative">
                   <label class="text-base text-white Gilroy-normal"
                     >Status</label
                   >
                   <select
                     id="assetsStatus"
-                    class="px-6 rounded-xl py-3 pt-3.5 mt-5 bg-transparent w-full border border-solid border-white outline-none text-base text-white Gilroy-normal"
+                    class="px-6 rounded-xl py-3 pt-3.5 mt-5 bg-transparent w-full border border-solid border-white outline-none text-base text-white Gilroy-normal h-11"
                   >
                     <option value="Select Status" class="text-black">
                       Select status
@@ -1072,7 +1072,7 @@
                       Cancelled
                     </option>
                   </select>
-                  <p id="assetsStatusError" class="text-red-500 text-sm hidden">
+                  <p id="assetsStatusError" class="text-red-500 text-xs absolute -bottom-5 hidden">
                     Please select a valid status
                   </p>
                 </div>
@@ -1105,6 +1105,10 @@
                 >
                   Cancel
                 </button>
+                <a href="./all-assets.html" target="_blank" class="px-4 md:px-6 py-3 pt-3.5 bg-btnSecondary text-white rounded-lg border border-[#E9901A] hover:border hover:border-white hover:bg-transparent transition-all">
+                  All Assets
+
+                </a>
               </div>
             </form>
           </div>
@@ -1560,66 +1564,61 @@
       let assetsStatus = document.getElementById("assetsStatus");
 
       function addNewAsset() {
-        let assetsNameError = document.getElementById("assetsNameError");
-        let assetsCategoryError = document.getElementById(
-          "assetsCategoryError"
-        );
-        let assetsConvertCurrencyError = document.getElementById(
-          "assetsConvertCurrencyError"
-        );
-        let assetsAmountError = document.getElementById("assetsAmountError");
-        let assetsRequiredActionError = document.getElementById(
-          "assetsRequiredActionError"
-        );
-        let assetsStatusError = document.getElementById("assetsStatusError");
-        let SuccessfulMessage = document.getElementById("SuccessfulMessage");
-        let coinImage = document.getElementById("coin-img");
-        let assetsCoverImage = coinImage.src;
-        if (assetsName.value === "") {
-          assetsNameError.style.display = "block";
-        } else {
-          assetsNameError.style.display = "none";
-        }
+    let assetsNameError = document.getElementById("assetsNameError");
+    let assetsCategoryError = document.getElementById("assetsCategoryError");
+    let assetsConvertCurrencyError = document.getElementById("assetsConvertCurrencyError");
+    let assetsAmountError = document.getElementById("assetsAmountError");
+    let assetsRequiredActionError = document.getElementById("assetsRequiredActionError");
+    let assetsStatusError = document.getElementById("assetsStatusError");
+    let SuccessfulMessage = document.getElementById("SuccessfulMessage");
+    let coinImage = document.getElementById("coin-img");
+    let assetsCoverImage = coinImage.src;
+    
+    if (assetsName.value === "") {
+        assetsNameError.style.display = "block";
+    } else {
+        assetsNameError.style.display = "none";
+    }
 
-        if (assetsCategory.value === "option1") {
-          assetsCategoryError.style.display = "block";
-        } else {
-          assetsCategoryError.style.display = "none";
-        }
+    if (assetsCategory.value === "Select Coin") {
+        assetsCategoryError.style.display = "block";
+    } else {
+        assetsCategoryError.style.display = "none";
+    }
 
-        if (assetsConvertCurrency.value === "option1") {
-          assetsConvertCurrencyError.style.display = "block";
-        } else {
-          assetsConvertCurrencyError.style.display = "none";
-        }
+    if (assetsConvertCurrency.value === "Select Currency") {
+        assetsConvertCurrencyError.style.display = "block";
+    } else {
+        assetsConvertCurrencyError.style.display = "none";
+    }
 
-        if (assetsAmount.value === "") {
-          assetsAmountError.style.display = "block";
-        } else {
-          assetsAmountError.style.display = "none";
-        }
+    if (assetsAmount.value === "") {
+        assetsAmountError.style.display = "block";
+    } else {
+        assetsAmountError.style.display = "none";
+    }
 
-        if (assetsRequiredAction.value === "") {
-          assetsRequiredActionError.style.display = "block";
-        } else {
-          assetsRequiredActionError.style.display = "none";
-        }
+    if (assetsRequiredAction.value === "") {
+        assetsRequiredActionError.style.display = "block";
+    } else {
+        assetsRequiredActionError.style.display = "none";
+    }
 
-        if (assetsStatus.value === "option1") {
-          assetsStatusError.style.display = "block";
-        } else {
-          assetsStatusError.style.display = "none";
-        }
+    if (assetsStatus.value === "Select Status") {
+        assetsStatusError.style.display = "block";
+    } else {
+        assetsStatusError.style.display = "none";
+    }
 
-        if (
-          assetsNameError.style.display === "none" &&
-          assetsCategoryError.style.display === "none" &&
-          assetsConvertCurrencyError.style.display === "none" &&
-          assetsAmountError.style.display === "none" &&
-          assetsRequiredActionError.style.display === "none" &&
-          assetsStatusError.style.display === "none"
-        ) {
-          let assets = {
+    if (
+        assetsNameError.style.display === "none" &&
+        assetsCategoryError.style.display === "none" &&
+        assetsConvertCurrencyError.style.display === "none" &&
+        assetsAmountError.style.display === "none" &&
+        assetsRequiredActionError.style.display === "none" &&
+        assetsStatusError.style.display === "none"
+    ) {
+        let assets = {
             name: assetsName.value,
             category: assetsCategory.value,
             coverImage: assetsCoverImage,
@@ -1627,46 +1626,42 @@
             requiredAction: assetsRequiredAction.value,
             status: assetsStatus.value,
             convertCurrency: assetsConvertCurrency.value,
-          };
+        };
 
-          console.log("Saving to localStorage:", assets); // Log the data
+        console.log("Saving to localStorage:", assets);
 
-          let storedAssets = JSON.parse(localStorage.getItem(assets));
+        // Retrieve previous assets from localStorage, if any
+        let storedAssets = JSON.parse(localStorage.getItem("assets")) || [];
 
-          // //push storedAssets to assets
-          // assets.push(storedAssets);
+        // Add the new asset to the stored assets array
+        storedAssets.push(assets);
 
-          // // Save updated assets to localStorage
-          // localStorage.setItem("assets", JSON.stringify(storedAssets));
-          // console.log("Updated assets:", storedAssets);
+        // Save the updated assets array back to localStorage
+        localStorage.setItem("assets", JSON.stringify(storedAssets));
 
-          localStorage.setItem("assets", JSON.stringify(assets)); // Save as an object
+        // Clear form fields
+        assetsName.value = "";
+        assetsCategory.value = "Select Coin";
+        assetsConvertCurrency.value = "Select Currency";
+        assetsAmount.value = "";
+        assetsRequiredAction.value = "";
+        assetsStatus.value = "Select Status";
 
-          // Clear form fields
-          assetsName.value = "";
-          assetsCategory.value = "option1";
-          assetsConvertCurrency.value = "option1";
-          assetsAmount.value = "";
-          assetsRequiredAction.value = "";
-          assetsStatus.value = "option1";
-
-          SuccessfulMessage.style.display = "block";
-          setTimeout(() => {
+        SuccessfulMessage.style.display = "block";
+        setTimeout(() => {
             SuccessfulMessage.style.display = "none";
-          }, 3000);
-        }
-      }
+        }, 3000);
+    }
+}
 
-      // Save to localStorage as an object instead of an array
-      // Save as an object
 
       function cancelAddNewAsset() {
         assetsName.value = "";
-        assetsCategory.value = "option1";
-        assetsConvertCurrency.value = "option1";
+        assetsCategory.value = "Select Coin";
+        assetsConvertCurrency.value = "Select Currency";
         assetsAmount.value = "";
         assetsRequiredAction.value = "";
-        assetsStatus.value = "option1";
+        assetsStatus.value = "Select Status";
       }
     </script>
   </body>
