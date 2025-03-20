@@ -3581,3 +3581,37 @@ tr td {
   height: 34px;
   border-radius: 60px;
 }
+.storedCardContainer {
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  border: 1px dashed white;
+  transition: all 0.3s ease;
+  border-radius: 12px;
+}
+.cardImageContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px; 
+}
+.cardHolderName {
+  font-size: 16px;
+  color: white;
+  font-weight: 400;
+  text-align: left;
+  text-transform: capitalize;
+}
+.selectBank {
+  font-size: 12px;
+  color: white;
+  font-weight: 400;
+}
+.deleteIcon {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+  

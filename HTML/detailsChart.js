@@ -4,9 +4,18 @@ function detailPageCharts() {
     .then((jsonData) => {
       const xValues = jsonData.xValues;
 
+      function stripAlpha(hex) {
+        return hex.length === 9 ? hex.slice(0, 7) : hex; // If the color includes alpha, remove it
+      }
+      
+
       jsonData.charts.forEach(({ id, data, borderColor, backgroundColor }) => {
         const ctx = document.getElementById(id).getContext("2d");
-
+      
+        // Remove alpha if it's in the color string
+        borderColor = stripAlpha(borderColor);
+        backgroundColor = stripAlpha(backgroundColor);
+      
         new Chart(ctx, {
           type: "bar",
           data: {
@@ -45,6 +54,7 @@ function detailPageCharts() {
           },
         });
       });
+      
     })
     .catch((error) => console.error("Error loading charts:", error));
 }

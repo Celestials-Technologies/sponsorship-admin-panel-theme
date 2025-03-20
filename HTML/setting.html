@@ -886,7 +886,7 @@
                 <p class="md:text-lg text-base Gilroy-normal text-white">
                   Profile photo
                 </p>
-                <div
+                <!-- <div
                   class="flex flex-wrap items-center lg:gap-6 gap-5 border-b border-dashed border-white pb-6"
                 >
                   <img
@@ -909,6 +909,37 @@
                     type="button"
                     onclick="removeProfilePhoto()"
                     class="px-6 py-3.5 rounded-xl text-base Gilroy-medium bg-transparent border border-solid border-[#E9901A] text-[#E9901A] hover:text-white hover:bg-[#E9901A] transition-all"
+                  >
+                    Cancel
+                  </button>
+                </div> -->
+                <div class="flex md:gap-6 gap-5 flex-wrap items-center">
+                  <div
+                  class="w-[120px] h-[120px]"
+                    id="file-chosen"
+                  >
+                    <img
+                      src="./src/images/upload.png"
+                      alt="upload"
+                      class="w-full h-auto object-cover"
+                      id="coin-img"
+                    />
+                  </div>
+                  <label
+                    for="input-file"
+                    class="bg-btnSecondary transition-all h-fit px-6 py-3 pt-3.5 text-base text-white Gilroy-normal hover:bg-transparent border border-solid rounded-lg border-[#E9901A] hover:border-white"
+                    >Upload Image</label
+                  >
+                  <input
+                    type="file"
+                    accept="image/jpeg, image/png, image/jpg"
+                    id="input-file"
+                    style="display: none"
+                  />
+                  <button
+                    type="button"
+                    onclick="removeCoinImage()"
+                    class="bg-transparent transition-all h-fit px-6 py-3 pt-3.5 text-base text-white Gilroy-normal hover:bg-[#E9901A] border border-solid rounded-lg border-white hover:border-[#E9901A]"
                   >
                     Cancel
                   </button>
@@ -1505,19 +1536,6 @@
     </div>
 
     <script src="./script.js"></script>
-
-    <script>
-      let profilePhoto = document.getElementById("profile-photo");
-     let uploadFile = document.getElementById("upload-file");
-
-     uploadFile.onchange = function () {
-       profilePhoto.src = URL.createObjectURL(this.files[0]);
-     };
-
-     function removeProfilePhoto() {
-       profilePhoto.src = "./src/images/bit_xxxl.png";
-       uploadFile.value = "";
-     }
-   </script>
+    <script src="./settings.js"></script>
   </body>
 </html>

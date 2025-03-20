@@ -555,26 +555,6 @@ function provideLiquidityBtn() {
     liquidityInputValue = "";
   }
 }
-function depositBtn() {
-  let depositInputValue = document.getElementById("depositInputValue").value;
-  if (depositInputValue === "") {
-    depositErrorMessage.style.display = "block";
-    return false;
-  } else {
-    depositErrorMessage.style.display = "none";
-    SuccessfulMessage.style.right = "24px";
-    SuccessfulMessage.style.display = "block";
-    setTimeout(function () {
-      SuccessfulMessage.style.display = "none";
-      SuccessfulMessage.style.right = "-50%";
-    }, 5000);
-    topUpModal.style.top = "-150%";
-    topUpModal.style.opacity = "0";
-    bodyOverflowModal.style.overflow = "auto";
-    bodyScreenData.style.opacity = "1";
-  }
-}
-
 function terminateBtn() {
   SuccessfulMessage.style.right = "24px";
   SuccessfulMessage.style.display = "block";
@@ -594,12 +574,6 @@ function closeModalMessageBtn() {
 }
 
 function validateForm() {
-  let cardHolderNameError = document.getElementById("cardHolderNameError");
-  let selectBankError = document.getElementById("selectBankError");
-  let accountNumberError = document.getElementById("accountNumberError");
-  let mobileNumberError = document.getElementById("mobileNumberError");
-  let cardNumberError = document.getElementById("cardNumberError");
-  let selectDateError = document.getElementById("selectDateError");
   let cardHolderName = document.getElementById("cardHolderName").value;
   let selectBank = document.getElementById("selectBank").value;
   let accountNumber = document.getElementById("accountNumber").value;
@@ -610,6 +584,7 @@ function validateForm() {
   let country = document.getElementById("country").value;
   let city = document.getElementById("city").value;
 
+  // Check if all required fields are filled
   if (
     cardHolderName === "" ||
     selectBank === "Select Bank" ||
@@ -621,121 +596,191 @@ function validateForm() {
     country === "" ||
     city === ""
   ) {
-    document.getElementById("cardHolderNameError").innerHTML =
-      "Please enter your name";
-    document.getElementById("selectBankError").innerHTML =
-      "Please select a bank";
-    document.getElementById("accountNumberError").innerHTML =
-      "Please enter your account number";
-    document.getElementById("mobileNumberError").innerHTML =
-      "Please enter your mobile number";
-    document.getElementById("cardNumberError").innerHTML =
-      "Please enter your card number";
-    document.getElementById("selectDateError").innerHTML =
-      "Please select a date";
-    document.getElementById("addressError").innerHTML =
-      "Please enter your address";
-    document.getElementById("countryError").innerHTML =
-      "Please select a country";
+    // Show error messages
+    document.getElementById("cardHolderNameError").innerHTML = "Please enter your name";
+    document.getElementById("selectBankError").innerHTML = "Please select a bank";
+    document.getElementById("accountNumberError").innerHTML = "Please enter your account number";
+    document.getElementById("mobileNumberError").innerHTML = "Please enter your mobile number";
+    document.getElementById("cardNumberError").innerHTML = "Please enter your card number";
+    document.getElementById("selectDateError").innerHTML = "Please select a date";
+    document.getElementById("addressError").innerHTML = "Please enter your address";
+    document.getElementById("countryError").innerHTML = "Please select a country";
     document.getElementById("cityError").innerHTML = "Please select a city";
+    return; // Exit if any required fields are empty
+  }
+
+  // Clear error messages if fields are valid
+  document.getElementById("cardHolderNameError").innerHTML = "";
+  document.getElementById("selectBankError").innerHTML = "";
+  document.getElementById("accountNumberError").innerHTML = "";
+  document.getElementById("mobileNumberError").innerHTML = "";
+  document.getElementById("cardNumberError").innerHTML = "";
+  document.getElementById("selectDateError").innerHTML = "";
+  document.getElementById("addressError").innerHTML = "";
+  document.getElementById("countryError").innerHTML = "";
+  document.getElementById("cityError").innerHTML = "";
+
+  // Create an object to store the form data
+  let addCard = {
+    cardHolderName: cardHolderName,
+    selectBank: selectBank,
+    accountNumber: accountNumber,
+    mobileNumber: mobileNumber,
+    cardNumber: cardNumber,
+    selectDate: selectDate,
+    address: address,
+    country: country,
+    city: city,
+  };
+
+  // Save the data to localStorage
+  let storedCards = JSON.parse(localStorage.getItem("addCard")) || [];
+  storedCards.push(addCard);
+  localStorage.setItem("addCard", JSON.stringify(storedCards));
+
+  // Display success message
+  SuccessfulMessage.style.display = "block";
+  setTimeout(() => {
+    SuccessfulMessage.style.display = "none";
+  }, 3000);
+
+  // Clear the form fields
+  document.getElementById("cardHolderName").value = "";
+  document.getElementById("selectBank").value = "Select Bank";
+  document.getElementById("accountNumber").value = "";
+  document.getElementById("mobileNumber").value = "";
+  document.getElementById("cardNumber").value = "";
+  document.getElementById("selectDate").value = "";
+  document.getElementById("address").value = "";
+  document.getElementById("country").value = "";
+  document.getElementById("city").value = "";
+
+  // Close modal and reset UI
+  newCardModal.style.top = "-150%";
+  newCardModal.style.opacity = "0";
+  bodyOverflowModal.style.overflow = "auto";
+  bodyScreenData.style.opacity = "1";
+
+  // Call function to display all added cards
+  displayAddedCard();
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  displayAddedCard(); // Display cards when the page loads
+});
+
+// Function to display all stored cards in the container
+function displayAddedCard() {
+  const storedAllCards = JSON.parse(localStorage.getItem("addCard")) || [];
+  const addedCardContainer = document.getElementById("addedCardContainer");
+
+  // Clear the container before rendering (to avoid duplicates)
+  addedCardContainer.innerHTML = "";
+
+  storedAllCards.forEach((card) => {//change //change date format to mm/yy//change date format to mm/yy//change date format to mm/yye format to mm/yy
+    let storedCardContainer = document.createElement("button");
+    storedCardContainer.classList.add("storedCardContainer");
+
+    let cardImageContainer = document.createElement("div");
+    cardImageContainer.classList.add("cardImageContainer");
+    let cardImage = document.createElement("img");
+    cardImage.src = "./src/images/card.png";
+    cardImage.classList.add("cardImage");
+    cardImageContainer.appendChild(cardImage);
+
+    let cardInformationContainer = document.createElement("div")
+    cardInformationContainer.classList.add("cardInformationContainer");
+
+    const cardHolderNameDiv = document.createElement("div");
+    cardHolderNameDiv.classList.add("cardHolderName");
+    cardHolderNameDiv.textContent = `${card.cardHolderName} - Metal`;
+
+    const selectBankDiv = document.createElement("div");
+    selectBankDiv.classList.add("selectBank");
+    //only shows card last end number
+    let cardNumber = card.cardNumber;
+    let cardExpireDate = card.selectDate;
+    let last4Digits = cardNumber.slice(-4);
+    selectBankDiv.textContent = `** ${last4Digits} -  Exp ${cardExpireDate}`;
+
+    const deleteIcon = document.createElement("button");
+    deleteIcon.classList.add("deleteIcon");
+    deleteIcon.innerHTML = '<svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">' +
+                '<path d="M9 3H15M3 6H21M19 6L18.2987 16.5193C18.1935 18.0975 18.1409 18.8867 17.8 19.485C17.4999 20.0118 17.0472 20.4353 16.5017 20.6997C15.882 21 15.0911 21 13.5093 21H10.4907C8.90891 21 8.11803 21 7.49834 20.6997C6.95276 20.4353 6.50009 20.0118 6.19998 19.485C5.85911 18.8867 5.8065 18.0975 5.70129 16.5193L5 6M10 10.5V15.5M14 10.5V15.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>' +
+                '</svg>';
+    deleteIcon.addEventListener("click", function () {
+      let storedCards = JSON.parse(localStorage.getItem("addCard")) || [];
+      storedCards = storedCards.filter((card) => card.cardNumber !== cardNumber);
+      localStorage.setItem("addCard", JSON.stringify(storedCards));
+      displayAddedCard();
+    });
+    //card scale 0.7 not only one time unlimeted when i want than click 
+  
+    let isScaled = false;
+    storedCardContainer.addEventListener("click", function () {
+      //IF OTHER STOREDCONTAINER IS CLICKED THAN REMOVE ITS SCALE AND OPACITY
+      let allStoredContainers = document.querySelectorAll(".storedCardContainer");
+      allStoredContainers.forEach((container) => {
+        if (container !== storedCardContainer) {
+          container.style.transform = "scale(1)";
+          container.style.opacity = "1";
+        }
+      });
+      if (!isScaled) {
+        storedCardContainer.style.transform = "scale(0.95)";
+        storedCardContainer.style.opacity = "0.8";
+        isScaled = true;
+      } else {
+        storedCardContainer.style.transform = "scale(1)";
+        storedCardContainer.style.opacity = "1";
+        isScaled = false;
+      }
+    });
+
+    cardInformationContainer.appendChild(cardHolderNameDiv);
+    cardImageContainer.appendChild(cardInformationContainer);
+    storedCardContainer.appendChild(cardImageContainer);
+
+    cardInformationContainer.appendChild(selectBankDiv);
+    storedCardContainer.appendChild(deleteIcon);
+
+    addedCardContainer.appendChild(storedCardContainer);
+  });
+}
+
+function depositBtn() {
+  let depositInputValue = document.getElementById("depositInputValue").value;
+  let storedCardContainer = document.querySelector(".storedCardContainer");
+  let selectCardError = document.getElementById("selectCardError");
+
+  // Validate deposit input
+  if (depositInputValue === "") {
+    depositErrorMessage.style.display = "block"; // Show error if input is invalid
+    return false;
   } else {
-    document.getElementById("cardHolderNameError").innerHTML = "";
-    document.getElementById("selectBankError").innerHTML = "";
-    document.getElementById("accountNumberError").innerHTML = "";
-    document.getElementById("mobileNumberError").innerHTML = "";
-    document.getElementById("cardNumberError").innerHTML = "";
-    document.getElementById("selectDateError").innerHTML = "";
-    document.getElementById("addressError").innerHTML = "";
-    document.getElementById("countryError").innerHTML = "";
-    document.getElementById("cityError").innerHTML = "";
+    depositErrorMessage.style.display = "none"; // Hide error message
+  }
 
-    document.getElementById("cardHolderName").value = "";
-    document.getElementById("selectBank").value = "Select Bank";
-    document.getElementById("accountNumber").value = "";
-    document.getElementById("mobileNumber").value = "";
-    document.getElementById("cardNumber").value = "";
-    document.getElementById("selectDate").value = "";
-    document.getElementById("address").value = "";
-    document.getElementById("country").value = "";
-    document.getElementById("city").value = "";
-
+  // Check if a card is selected
+  if (storedCardContainer.style.transform === "scale(0.95)") {
     SuccessfulMessage.style.right = "24px";
     SuccessfulMessage.style.display = "block";
     setTimeout(function () {
       SuccessfulMessage.style.display = "none";
       SuccessfulMessage.style.right = "-50%";
     }, 5000);
-    newCardModal.style.top = "-150%";
-    newCardModal.style.opacity = "0";
+    topUpModal.style.top = "-150%";
+    topUpModal.style.opacity = "0";
     bodyOverflowModal.style.overflow = "auto";
     bodyScreenData.style.opacity = "1";
-  }
-
-  if (
-    cardHolderNameError.style.display === "none" &&
-    selectBankError.style.display === "none" &&
-    accountNumberError.style.display === "none" &&
-    mobileNumberError.style.display === "none" &&
-    cardNumberError.style.display === "none" &&
-    selectDateError.style.display === "none" &&
-    addressError.style.display === "none" &&
-    countryError.style.display === "none" &&
-    cityError.style.display === "none"
-  ) {
-    let addCard ={
-      cardHolderName: cardHolderName,
-      selectBank: selectBank,
-      accountNumber: accountNumber,
-      mobileNumber: mobileNumber,
-      cardNumber: cardNumber,
-      selectDate: selectDate,
-      address: address,
-    };
-    console.log("Saving to localStorage:", addCard);
-    let storedCards = JSON.parse(localStorage.getItem("cards")) || [];
-    storedCards.push(addCard);
-    localStorage.setItem("cards", JSON.stringify(storedCards));
-    SuccessfulMessage.style.display = "block";
-    setTimeout(() => {
-        SuccessfulMessage.style.display = "none";
-    }, 3000);
+    selectCardError.style.display = "none";
+  } else {
+    selectCardError.style.display = "block";
   }
 }
-document.addEventListener('DOMContentLoaded', function () {
-  displayAddedCard();
-});
 
-function displayAddedCard() {
-  const storedAllCards = JSON.parse(localStorage.getItem("cards")) || [];
-  console.log("Stored All Cards:", storedAllCards);
 
-  // Clear the container before rendering (to avoid duplicates)
-  const addedCardContainer = document.getElementById("addedCardContainer");
-  addedCardContainer.innerHTML = "";
 
-  storedAllCards.forEach((card) => {
-    let storedCardContainer = document.createElement("div");
-    storedCardContainer.classList.add("storedCardContainer");
-
-    const cardHolderNameDiv = document.createElement("div");
-    cardHolderNameDiv.classList.add("cardHolderName");
-    cardHolderNameDiv.textContent = card.cardHolderName;
-
-    const selectBankDiv = document.createElement("div");
-    selectBankDiv.classList.add("selectBank");
-    selectBankDiv.textContent = card.selectBank;
-
-    const accountNumberDiv = document.createElement("div");
-    accountNumberDiv.classList.add("accountNumber");
-    accountNumberDiv.textContent = card.accountNumber;
-
-    storedCardContainer.appendChild(cardHolderNameDiv);
-    storedCardContainer.appendChild(selectBankDiv);
-    storedCardContainer.appendChild(accountNumberDiv);
-
-    addedCardContainer.appendChild(storedCardContainer);
-  });
-}
 
 
 // function detailConverter() {
