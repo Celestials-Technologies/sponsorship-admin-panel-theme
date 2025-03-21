@@ -85,7 +85,7 @@ function handleLast10Days() {
           data.last10Days.push({
             title: asset.category,
             img: asset.coverImage,
-            date: new Date().toLocaleDateString(),
+            date: asset.date,
             history: "0df3635...eq23",
             status: asset.status,
             transaction: `+${asset.amount}`,
@@ -113,7 +113,7 @@ function handleLast15Days() {
           data.last15Days.push({
             title: asset.category,
             img: asset.coverImage,
-            date: new Date().toLocaleDateString(),
+            date: asset.date,
             history: "0df3635...eq23",
             status: asset.status,
             transaction: `+${asset.amount}`,
@@ -139,11 +139,11 @@ $.getJSON("wallet.json", function (data) {
 
     assets.forEach((asset) => {
       if (asset && asset.category) {
-        if (new Date().toLocaleDateString() > new Date(Date.now() - 10 * 24 * 60 * 60 * 1000)) {
+        if (asset.date > new Date(Date.now() - 10 * 24 * 60 * 60 * 1000)) {
           data.last15Days.push({
             title: asset.category,
             img: asset.coverImage,
-            date: new Date().toLocaleDateString(),
+            date: asset.date,
             history: "0df3635...eq23",
             status: asset.status,
             transaction: `+${asset.amount}`,
@@ -154,7 +154,7 @@ $.getJSON("wallet.json", function (data) {
           data.last10Days.push({
             title: asset.category,
             img: asset.coverImage,
-            date: new Date().toLocaleDateString(),
+            date: asset.date,
             history: "0df3635...eq23",
             status: asset.status,
             transaction: `+${asset.amount}`,

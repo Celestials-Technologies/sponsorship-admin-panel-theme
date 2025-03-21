@@ -777,6 +777,11 @@ function depositBtn() {
   } else {
     selectCardError.style.display = "block";
   }
+
+    storedCardContainer.style.transform = "scale(1)";
+    storedCardContainer.style.opacity = "1";
+    depositInputValue = "";
+  
 }
 
 

@@ -921,7 +921,7 @@
                     <img
                       src="./src/images/upload.png"
                       alt="upload"
-                      class="w-full h-auto object-cover"
+                      class="w-full h-full object-cover"
                       id="coin-img"
                     />
                   </div>
@@ -945,7 +945,7 @@
                   </button>
                 </div>
                 <div class="flex flex-wrap md:flex-nowrap gap-5 items-center">
-                  <div class="w-full md:w-[48%] flex flex-col">
+                  <div class="w-full md:w-[48%] flex flex-col relative">
                     <label
                       class="md:text-lg text-base Gilroy-normal text-white sm:mb-4 mb-2 Gilroy-medium"
                     >
@@ -953,10 +953,13 @@
                     </label>
                     <input
                       type="text"
+                      required
+                      id="firstNameInput"
                       class="px-8 py-3 text-base border border-solid border-white outline-none rounded-xl bg-transparent text-white"
                     />
+                    <p class="text-red-500 text-sm" id="firstNameError" style="display: none;">Please enter your first name</p>
                   </div>
-                  <div class="w-full md:w-[48%] flex flex-col">
+                  <div class="w-full md:w-[48%] flex flex-col relative">
                     <label
                       class="md:text-lg text-base Gilroy-normal text-white sm:mb-4 mb-2 Gilroy-medium"
                     >
@@ -964,11 +967,14 @@
                     </label>
                     <input
                       type="text"
+                      required
+                      id="lastNameInput"
                       class="px-8 py-3 text-base border border-solid border-white outline-none rounded-xl bg-transparent text-white"
                     />
+                    <p class="text-red-500 text-sm" id="lastNameError" style="display: none;">Please enter your last name</p>
                   </div>
                 </div>
-                <div>
+                <div class="relative">
                   <label
                     class="md:text-lg w-full text-base Gilroy-normal text-white Gilroy-medium"
                   >
@@ -976,10 +982,13 @@
                   </label>
                   <input
                     type="email"
+                    required
+                    id="emailInput"
                     class="px-8 py-3 mt-2 sm:mt-4 text-base border w-full border-solid border-white outline-none rounded-xl bg-transparent text-white"
                   />
+                  <p class="text-red-500 text-sm" id="emailError" style="display: none;">Please enter your email</p>
                 </div>
-                <div>
+                <div class="relative">
                   <label
                     class="md:text-lg w-full text-base Gilroy-normal text-white Gilroy-medium"
                   >
@@ -990,8 +999,10 @@
                   <input
                     type="tel"
                     pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+                    id="phoneInput"
                     class="px-8 py-3 mt-2 sm:mt-4 text-base border w-full border-solid border-white outline-none rounded-xl bg-transparent text-white"
                   />
+                  <p class="text-red-500 text-sm" id="phoneError" style="display: none;">Please enter your phone number</p>
                 </div>
                 <div>
                   <label
@@ -1017,7 +1028,7 @@
                     </label>
                   </div>
                 </div>
-                <div>
+                <div class="relative">
                   <label
                     class="md:text-lg w-full text-base Gilroy-normal text-white Gilroy-medium"
                   >
@@ -1122,9 +1133,13 @@
                       </div>
                     </div>
                     <textarea
+                      required
+                      id="taglineInput"
                       class="py-3 px-3.5 h-[200px] w-full bg-transparent outline-none text-white"
                     ></textarea>
+                   
                   </div>
+                  <p class="text-red-500 text-sm" id="taglineError" style="display: none;">Please enter your tagline</p>
                 </div>
                 <div>
                   <label
@@ -1145,12 +1160,14 @@
                 <div class="gap-5 lg:gap-6 flex flex-wrap items-center pt-4">
                   <button
                     type="button"
+                    onclick="saveChange()"
                     class="px-6 py-3 rounded-xl bg-[#E9901A] text-base text-white hover:text-[#E9901A] border border-solid border-[#E9901A] Gilroy-medium hover:bg-transparent transition-all"
                   >
                     Save Change
                   </button>
                   <button
                     type="button"
+                    onclick="cancelChange()"
                     class="px-6 py-3 rounded-xl bg-transparent hover:bg-[#E9901A] text-base text-white text-[#E9901A] hover:text-white border border-solid border-[#E9901A] Gilroy-medium transition-all"
                   >
                     Cancel
@@ -1170,46 +1187,57 @@
                   </h3>
                 </div>
                 <form class="flex flex-col md:gap-6 gap-5">
-                  <div>
+                  <div class="relative">
                     <label
                       class="md:text-lg w-full text-base Gilroy-normal text-white Gilroy-medium"
                     >
                       Location
                     </label>
                     <select
-                      class="px-6 py-3 mt-4 sm:mt-2 w-full text-base border border-solid border-white outline-none rounded-xl bg-transparent text-white bg-transparent"
+                      id="locationInput"
+                      class="px-6 py-3 mt-4 sm:mt-2 w-full text-base cursor-pointer border border-solid border-white outline-none rounded-xl bg-transparent text-white bg-transparent"
                     >
-                      <option value="option1">Select Country</option>
-                      <option value="option2">Option 2</option>
+                      <option value="Select Country" class="text-gray-500">Select Country</option>
+                      <option value="United States" class="text-gray-500">United States</option>
+                      <option value="United Kingdom" class="text-gray-500">United Kingdom</option>
+                      <option value="Canada" class="text-gray-500">Canada</option>
+                      <option value="Australia" class="text-gray-500">Australia</option>
+                      <option value="New Zealand" class="text-gray-500">New Zealand</option>
+                      <option value="India" class="text-gray-500">India</option>
                     </select>
+                    <p class="text-red-500 text-sm" id="locationError" style="display: none;">Please select your location</p>
                   </div>
                   <div class="flex flex-wrap md:flex-nowrap gap-5 items-center">
-                    <div class="w-full md:w-[48%] flex flex-col">
+                    <div class="w-full md:w-[48%] flex flex-col relative">
                       <label
                         class="md:text-lg text-base Gilroy-normal text-white sm:mb-4 mb-2 Gilroy-medium"
                       >
                         Address 1
                       </label>
                       <input
-                        type="text"
+                        type="address"
+                        id="address1Input"
                         placeholder="Enter Address"
                         class="px-6 py-3 text-base border border-solid border-white outline-none rounded-xl bg-transparent text-white"
                       />
+                      <p class="text-red-500 text-sm" id="address1Error" style="display: none;">Please enter your address</p>
                     </div>
-                    <div class="w-full md:w-[48%] flex flex-col">
+                    <div class="w-full md:w-[48%] flex flex-col relative">
                       <label
                         class="md:text-lg text-base Gilroy-normal text-white sm:mb-4 mb-2 Gilroy-medium"
                       >
                         Address 2
                       </label>
                       <input
-                        type="text"
+                        type="address"
+                        id="address2Input"
                         placeholder="Enter Address"
                         class="px-6 py-3 text-base border border-solid border-white outline-none rounded-xl bg-transparent text-white"
                       />
+                      <p class="text-red-500 text-sm" id="address2Error" style="display: none;">Please enter your address</p>
                     </div>
                   </div>
-                  <div>
+                  <div class="relative">
                     <label
                       class="md:text-lg w-full text-base Gilroy-normal text-white Gilroy-medium"
                     >
@@ -1217,19 +1245,23 @@
                     </label>
                     <input
                       type="number"
+                      id="zipCodeInput"
                       placeholder="Enter Code"
                       class="w-full px-6 py-3 text-base border border-solid border-white outline-none rounded-xl bg-transparent text-white mt-2 sm:mt-4"
                     />
+                    <p class="text-red-500 text-sm" id="zipCodeError" style="display: none;">Please enter your zip code</p>
                   </div>
                   <div class="gap-5 lg:gap-6 flex flex-wrap items-center pt-4">
                     <button
                       type="button"
+                      onclick="addressSaveChange()"
                       class="px-6 py-3 rounded-xl bg-[#E9901A] text-base text-white hover:text-[#E9901A] border border-solid border-[#E9901A] Gilroy-medium hover:bg-transparent transition-all"
                     >
                       Save Change
                     </button>
                     <button
                       type="button"
+                      onclick="addressCancelChange()"
                       class="px-6 py-3 rounded-xl bg-transparent hover:bg-[#E9901A] text-base text-white text-[#E9901A] hover:text-white border border-solid border-[#E9901A] Gilroy-medium transition-all"
                     >
                       Cancel
@@ -1248,27 +1280,33 @@
                   </h3>
                 </div>
                 <form class="flex flex-col md:gap-6 gap-5">
-                  <div>
+                  <div class="relative">
                     <label
                       class="md:text-lg w-full text-base Gilroy-normal text-white Gilroy-medium"
                     >
                       Who can see your profile photo?
                     </label>
                     <select
-                      class="px-6 py-3 mt-4 sm:mt-2 w-full text-base border border-solid border-white outline-none rounded-xl bg-transparent text-white bg-transparent"
+                      id="profilePhotoVisibilityInput"
+                      class="px-6 py-3 mt-4 sm:mt-2 w-full text-base cursor-pointer border border-solid border-white outline-none rounded-xl bg-transparent text-white bg-transparent"
                     >
-                      <option value="option1">Anyone</option>
+                      <option value="Select" class="text-gray-500">Select</option>
+                      <option value="Anyone" class="text-gray-500">Anyone</option>
+                      <option value="Only me" class="text-gray-500">Only me</option>
                     </select>
+                    <p class="text-red-500 text-sm" id="profilePhotoVisibilityError" style="display: none;">Please select your profile photo visibility</p>
                   </div>
                   <div class="gap-5 lg:gap-6 flex flex-wrap items-center pt-4">
                     <button
                       type="button"
+                      onclick="privacySaveChange()"
                       class="px-6 py-3 rounded-xl bg-[#E9901A] text-base text-white hover:text-[#E9901A] border border-solid border-[#E9901A] Gilroy-medium hover:bg-transparent transition-all"
                     >
                       Save Change
                     </button>
                     <button
                       type="button"
+                      onclick="privacyCancelChange()"
                       class="px-6 py-3 rounded-xl bg-transparent hover:bg-[#E9901A] text-base text-white text-[#E9901A] hover:text-white border border-solid border-[#E9901A] Gilroy-medium transition-all"
                     >
                       Cancel
@@ -1277,7 +1315,7 @@
                 </form>
               </div>
               <div
-                class="p-6 md:pt-6 md:pr-[31px] md:pb-[22px] md:pl-[26px] border border-white rounded-[15px] bg-gradient"
+                class="p-6 md:pt-6 md:pr-[31px] md:pb-[22px] md:pl-[26px] border border-white rounded-[15px] bg-gradient relative"
               >
                 <div
                   class="flex border-b border-dashed border-white pb-4 mb-4 items-center gap-3"
@@ -1295,13 +1333,15 @@
                   <label
                     class="radioButtonContainer text-base text-white Gilroy-normal"
                     >Confirm that I want to delete my account.
-                    <input type="checkbox" checked="checked" />
+                    <input type="checkbox" checked="checked" id="deleteAccountInput" />
                     <span class="radioTickcheckmark"></span>
                   </label>
+                  <p class="text-red-500 text-sm" id="deleteAccountError" style="display: none;">Please confirm that you want to delete your account</p>
                 </div>
                 <div class="gap-5 lg:gap-6 flex flex-wrap items-center pt-4">
                   <button
                     type="button"
+                    onclick="deleteAccount()"
                     class="px-6 py-3 rounded-xl bg-transparent hover:bg-[#E9901A] text-base text-white text-[#E9901A] hover:text-white border border-solid border-[#E9901A] Gilroy-medium transition-all"
                   >
                     Delete
