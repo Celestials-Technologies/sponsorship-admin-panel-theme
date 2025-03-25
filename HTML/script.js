@@ -85,6 +85,7 @@ function profileButton() {
   } else {
     closeDropDowns();
   }
+  blockZindex.style.zIndex = "auto";
 }
 
 function bellButton() {
@@ -103,6 +104,7 @@ function bellButton() {
   } else {
     closeDropDowns();
   }
+  blockZindex.style.zIndex = "auto";
 }
 
 function countrySelectBtn() {
@@ -121,6 +123,7 @@ function countrySelectBtn() {
   } else {
     closeDropDowns();
   }
+   blockZindex.style.zIndex = "auto";
 }
 
 function selectCoin(button) {

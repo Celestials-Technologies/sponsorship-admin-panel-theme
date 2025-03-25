@@ -2770,11 +2770,13 @@
           class="bg-sideBarBg border border-translucentWhite py-1.5 pl-5 pr-2 gap-4 rounded-full flex items-center hidden md:flex justify-between"
         >
           <input
-            type="text"
+            type="text" id="myInput" onkeyup="searchCoins()"
             placeholder="Search"
             class="text-base bg-transparent leading-6 w-[80%] text-white outline-none Gilroy-medium"
           />
           <div
+          onclick="searchCoins()"
+
             class="p-1 flex items-center justify-center bg-white cursor-pointer w-fit rounded-full searchIconBox"
           >
             <svg
@@ -2793,12 +2795,11 @@
           </div>
         </div>
         <div
-          class="mt-5 flex flex-col border-b border-dashed border-white pb-5"
+          class="mt-5 flex flex-col border-b border-dashed border-white pb-5" id="coins"
         >
-          <button type="button" onclick="selectBtn(this)">
             <div
-              id="selectedBtn"
-              class="p-4 flex gap-3 justify-between hover:bg-[#E9901A] rounded-lg addMoreSelectButton"
+              id="selectedCoin"
+              class="selectedBtn p-4 flex gap-3 justify-between hover:bg-[#E9901A] rounded-lg addMoreSelectButton"
             >
               <div class="flex gap-3 items-center">
                 <img
@@ -2843,11 +2844,10 @@
                 </div>
               </div>
             </div>
-          </button>
-          <button type="button" onclick="selectBtn(this)">
+
             <div
-              id="selectedBtn"
-              class="p-4 flex gap-3 justify-between hover:bg-[#E9901A] rounded-lg addMoreSelectButton"
+              style="background-color: transparent; color: #E9901A;"
+              class="selectedBtn p-4 flex gap-3 justify-between hover:bg-[#E9901A] rounded-lg addMoreSelectButton"
             >
               <div class="flex gap-3 items-center">
                 <img
@@ -2892,11 +2892,11 @@
                 </div>
               </div>
             </div>
-          </button>
-          <button type="button" onclick="selectBtn(this)">
+          
+        
             <div
-              id="selectedBtn"
-              class="p-4 flex gap-3 justify-between hover:bg-[#E9901A] rounded-lg addMoreSelectButton"
+              style="background-color: transparent; color: #E9901A;"
+              class="selectedBtn p-4 flex gap-3 justify-between hover:bg-[#E9901A] rounded-lg addMoreSelectButton"
             >
               <div class="flex gap-3 items-center">
                 <img
@@ -2941,11 +2941,10 @@
                 </div>
               </div>
             </div>
-          </button>
-          <button type="button" onclick="selectBtn(this)">
+
             <div
-              id="selectedBtn"
-              class="p-4 flex gap-3 justify-between hover:bg-[#E9901A] rounded-lg addMoreSelectButton"
+              style="background-color: transparent; color: #E9901A;"
+              class="selectedBtn p-4 flex gap-3 justify-between hover:bg-[#E9901A] rounded-lg addMoreSelectButton"
             >
               <div class="flex gap-3 items-center">
                 <img
@@ -2990,11 +2989,10 @@
                 </div>
               </div>
             </div>
-          </button>
-          <button type="button" onclick="selectBtn(this)">
+        
             <div
-              id="selectedBtn"
-              class="p-4 flex gap-3 justify-between hover:bg-[#E9901A] rounded-lg addMoreSelectButton"
+              style="background-color: transparent; color: #E9901A;"
+              class="selectedBtn p-4 flex gap-3 justify-between hover:bg-[#E9901A] rounded-lg addMoreSelectButton"
             >
               <div class="flex gap-3 items-center">
                 <img
@@ -3039,7 +3037,7 @@
                 </div>
               </div>
             </div>
-          </button>
+          
         </div>
         <button
           type="button"

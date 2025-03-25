@@ -16,7 +16,6 @@ function removeCoinImage() {
   coinImage.src = "./src/images/upload.png";
   inputFile.value = "";
 }
-
 function saveChange() {
   let coinImage = document.getElementById("coin-img").src;
   let firstName = document.getElementById("firstNameInput").value;
@@ -25,6 +24,10 @@ function saveChange() {
   let phone = document.getElementById("phoneInput").value;
   let tagline = document.getElementById("taglineInput").value;
 
+  // Capture the selected radio button value
+  let gender = document.querySelector('input[name="radio"]:checked')?.value;
+
+  // Display errors if any required fields are empty
   if (firstName === "") {
     document.getElementById("firstNameError").style.display = "block";
   }
@@ -37,8 +40,9 @@ function saveChange() {
   if (tagline === "") {
     document.getElementById("taglineError").style.display = "block";
   }
-  
-  if (firstName !== "" && lastName !== "" && email !== "" && phone !== "" && tagline !== "") {
+
+  // If all required fields are filled, save the data
+  if (firstName !== "" && lastName !== "" && email !== "" && phone !== "" && tagline !== "" && gender) {
     document.getElementById("firstNameError").style.display = "none";
     document.getElementById("lastNameError").style.display = "none";
     document.getElementById("emailError").style.display = "none";
@@ -51,23 +55,30 @@ function saveChange() {
       lastName: lastName,
       email: email,
       phone: phone,
-      tagline: tagline
-    }
+      tagline: tagline,
+      gender: gender // Store the selected gender here
+    };
 
+    // Retrieve existing data from localStorage, if any
     let storedUserInformation = JSON.parse(localStorage.getItem("allUserInformation")) || [];
+    
+    // Push the new data to the array
     storedUserInformation.push(allUserInformation);
+
+    // Save the updated data back to localStorage
     localStorage.setItem("allUserInformation", JSON.stringify(storedUserInformation));
   }
 }
 
+
 function getUserInformation() {
   const defaultImage = './src/images/upload.png';
   const allUserInformation = JSON.parse(localStorage.getItem("allUserInformation")) || [];
-  
+
+  // Get the most recent data from localStorage or default values
   const lastUserInfo = allUserInformation.length > 0 ? allUserInformation[allUserInformation.length - 1] : {};
   console.log(lastUserInfo);
 
-  // Set default values if lastUserInfo is empty
   const {
     coinImage = defaultImage,
     firstName = '',
@@ -77,7 +88,7 @@ function getUserInformation() {
     tagline = ''
   } = lastUserInfo;
 
-  // Update the DOM elements
+  // Set form input fields
   document.getElementById("coin-img").src = coinImage;
   document.getElementById("firstNameInput").value = firstName;
   document.getElementById("lastNameInput").value = lastName;
@@ -88,9 +99,14 @@ function getUserInformation() {
 
 getUserInformation();
 
-function cancelChange() {
-  getUserInformation();
 
+function cancelChange() {
+  coinImage.src = "./src/images/upload.png";
+  document.getElementById("firstNameInput").value = "";
+  document.getElementById("lastNameInput").value = "";
+  document.getElementById("emailInput").value = "";
+  document.getElementById("phoneInput").value = "";
+  document.getElementById("taglineInput").value = "";
 }
 
 function addressSaveChange() {

@@ -3624,6 +3624,9 @@ tr td {
   border-radius: 12px;
   padding: 12px;
   flex-wrap: wrap;
+  flex-direction: column;
+  width: 32%;
+  height: fit-content;
 }
 .card-header {
   display: flex;

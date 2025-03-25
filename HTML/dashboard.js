@@ -425,4 +425,24 @@ function initPagination() {
   updatePagination();
 }
 
+let selectedBtns = document.querySelectorAll(".selectedBtn");
+
+selectedBtns.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    // First, reset all buttons to unselected state
+    selectedBtns.forEach((button) => {
+      button.style.backgroundColor = "transparent";
+      button.style.color = "#E9901A";
+    });
+
+    // Now, select the clicked button
+    btn.style.backgroundColor = "#E9901A";
+    btn.style.color = "white";
+  });
+});
+
+function mangeTokenButton() {
+  let selectedCoin = document.getElementById("selectedCoin");
+  console.log(selectedCoin);
+}
 
