@@ -127,96 +127,130 @@
                   </p>
                 </li>
               </a>
-              <a href="./wallet.html">
-                <li
-                  class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-2.5 cursor-pointer hover:bg-[#E9901A] transition-all"
-                >
-                  <div
-                    class="w-[34px] h-[34px] rounded-lg flex justify-center items-center"
+              <div class="relative walletMain">
+                <a href="./wallet.html">
+                  <li
+                    class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-2.5 cursor-pointer hover:bg-[#E9901A] walletHead transition-all"
                   >
-                    <svg
-                      width="100%"
-                      height="100%"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
+                    <div
+                      class="w-[34px] h-[34px] rounded-lg flex justify-center items-center"
                     >
-                      <path
-                        d="M16 7.99983V4.50048C16 3.66874 16 3.25287 15.8248 2.9973C15.6717 2.77401 15.4346 2.62232 15.1678 2.57691C14.8623 2.52493 14.4847 2.6992 13.7295 3.04775L4.85901 7.14182C4.18551 7.45267 3.84875 7.6081 3.60211 7.84915C3.38406 8.06225 3.21762 8.32238 3.1155 8.60966C3 8.93462 3 9.30551 3 10.0473V14.9998M16.5 14.4998H16.51M3 11.1998L3 17.7998C3 18.9199 3 19.48 3.21799 19.9078C3.40973 20.2841 3.71569 20.5901 4.09202 20.7818C4.51984 20.9998 5.07989 20.9998 6.2 20.9998H17.8C18.9201 20.9998 19.4802 20.9998 19.908 20.7818C20.2843 20.5901 20.5903 20.2841 20.782 19.9078C21 19.48 21 18.9199 21 17.7998V11.1998C21 10.0797 21 9.51967 20.782 9.09185C20.5903 8.71552 20.2843 8.40956 19.908 8.21782C19.4802 7.99983 18.9201 7.99983 17.8 7.99983L6.2 7.99983C5.0799 7.99983 4.51984 7.99983 4.09202 8.21781C3.7157 8.40956 3.40973 8.71552 3.21799 9.09185C3 9.51967 3 10.0797 3 11.1998ZM17 14.4998C17 14.776 16.7761 14.9998 16.5 14.9998C16.2239 14.9998 16 14.776 16 14.4998C16 14.2237 16.2239 13.9998 16.5 13.9998C16.7761 13.9998 17 14.2237 17 14.4998Z"
-                        stroke="white"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                  </div>
-                  <p
-                    class="text-base leading-5 text-white h-auto pt-0.5 Gilroy-semibold"
-                  >
-                    Wallet
-                  </p>
-                </li>
-              </a>
-              <a href="./details.html">
-                <li
-                  class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-2.5 cursor-pointer hover:bg-[#E9901A] transition-all"
-                >
-                  <div
-                    class="w-[34px] h-[34px] rounded-lg flex justify-center items-center"
-                  >
-                    <svg
-                      width="100%"
-                      height="100%"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
+                      <svg
+                        width="100%"
+                        height="100%"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M16 7.99983V4.50048C16 3.66874 16 3.25287 15.8248 2.9973C15.6717 2.77401 15.4346 2.62232 15.1678 2.57691C14.8623 2.52493 14.4847 2.6992 13.7295 3.04775L4.85901 7.14182C4.18551 7.45267 3.84875 7.6081 3.60211 7.84915C3.38406 8.06225 3.21762 8.32238 3.1155 8.60966C3 8.93462 3 9.30551 3 10.0473V14.9998M16.5 14.4998H16.51M3 11.1998L3 17.7998C3 18.9199 3 19.48 3.21799 19.9078C3.40973 20.2841 3.71569 20.5901 4.09202 20.7818C4.51984 20.9998 5.07989 20.9998 6.2 20.9998H17.8C18.9201 20.9998 19.4802 20.9998 19.908 20.7818C20.2843 20.5901 20.5903 20.2841 20.782 19.9078C21 19.48 21 18.9199 21 17.7998V11.1998C21 10.0797 21 9.51967 20.782 9.09185C20.5903 8.71552 20.2843 8.40956 19.908 8.21782C19.4802 7.99983 18.9201 7.99983 17.8 7.99983L6.2 7.99983C5.0799 7.99983 4.51984 7.99983 4.09202 8.21781C3.7157 8.40956 3.40973 8.71552 3.21799 9.09185C3 9.51967 3 10.0797 3 11.1998ZM17 14.4998C17 14.776 16.7761 14.9998 16.5 14.9998C16.2239 14.9998 16 14.776 16 14.4998C16 14.2237 16.2239 13.9998 16.5 13.9998C16.7761 13.9998 17 14.2237 17 14.4998Z"
+                          stroke="white"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </div>
+                    <p
+                      class="text-base leading-5 text-white h-auto pt-0.5 Gilroy-semibold"
                     >
-                      <path
-                        d="M14 11H8M10 15H8M16 7H8M20 10.5V6.8C20 5.11984 20 4.27976 19.673 3.63803C19.3854 3.07354 18.9265 2.6146 18.362 2.32698C17.7202 2 16.8802 2 15.2 2H8.8C7.11984 2 6.27976 2 5.63803 2.32698C5.07354 2.6146 4.6146 3.07354 4.32698 3.63803C4 4.27976 4 5.11984 4 6.8V17.2C4 18.8802 4 19.7202 4.32698 20.362C4.6146 20.9265 5.07354 21.3854 5.63803 21.673C6.27976 22 7.11984 22 8.8 22H11.5M22 22L20.5 20.5M21.5 18C21.5 19.933 19.933 21.5 18 21.5C16.067 21.5 14.5 19.933 14.5 18C14.5 16.067 16.067 14.5 18 14.5C19.933 14.5 21.5 16.067 21.5 18Z"
-                        stroke="white"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                  </div>
-                  <p
-                    class="text-base leading-5 text-white pt-0.5 h-auto Gilroy-semibold"
+                      Wallet
+                    </p>
+                  </li>
+                </a>
+                <a href="./allCards.html" class="walletCards">
+                  <li
+                    class="py-2 px-2 rounded-r-xl flex gap-[7px] h-[50px] relative items-center mt-2.5 cursor-pointer hover:bg-[#E9901A] transition-all"
                   >
-                    Asset Details
-                  </p>
-                </li>
-              </a>
-              <a href="./new-asset.html">
-                <li
-                  class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-2.5 cursor-pointer active"
-                >
-                  <div
-                    class="w-[34px] h-[34px] rounded-lg flex justify-center items-center"
-                  >
-                    <svg
-                      width="100%"
-                      height="100%"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
+                    <div
+                      class="w-6 h-6 rounded-lg flex justify-center items-center"
                     >
-                      <path
-                        d="M20 10.5V6.8C20 5.11984 20 4.27976 19.673 3.63803C19.3854 3.07354 18.9265 2.6146 18.362 2.32698C17.7202 2 16.8802 2 15.2 2H8.8C7.11984 2 6.27976 2 5.63803 2.32698C5.07354 2.6146 4.6146 3.07354 4.32698 3.63803C4 4.27976 4 5.11984 4 6.8V17.2C4 18.8802 4 19.7202 4.32698 20.362C4.6146 20.9265 5.07354 21.3854 5.63803 21.673C6.27976 22 7.11984 22 8.8 22H12M14 11H8M10 15H8M16 7H8M18 21V15M15 18H21"
-                        stroke="white"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                  </div>
-                  <p
-                    class="text-base leading-5 text-white pt-0.5 h-auto Gilroy-semibold"
+                      <svg
+                        width="100%"
+                        height="100%"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M22 22L20.5 20.5M22 10H2M22 12V8.2C22 7.0799 22 6.51984 21.782 6.09202C21.5903 5.7157 21.2843 5.40974 20.908 5.21799C20.4802 5 19.9201 5 18.8 5H5.2C4.0799 5 3.51984 5 3.09202 5.21799C2.7157 5.40973 2.40973 5.71569 2.21799 6.09202C2 6.51984 2 7.0799 2 8.2V15.8C2 16.9201 2 17.4802 2.21799 17.908C2.40973 18.2843 2.71569 18.5903 3.09202 18.782C3.51984 19 4.0799 19 5.2 19H10.5M21.5 18C21.5 19.933 19.933 21.5 18 21.5C16.067 21.5 14.5 19.933 14.5 18C14.5 16.067 16.067 14.5 18 14.5C19.933 14.5 21.5 16.067 21.5 18Z"
+                          stroke="white"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </div>
+                    <p
+                      class="text-base leading-5 text-white pt-1 h-auto Gilroy-semibold"
+                    >
+                      Wallets Cards
+                    </p>
+                  </li>
+                </a>
+              </div>
+              <div class="relative assetsDetailsMain">
+                <a href="./details.html">
+                  <li
+                    class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-2.5 cursor-pointer active"
                   >
-                    New Asset
-                  </p>
-                </li>
-              </a>
+                    <div
+                      class="w-[34px] h-[34px] rounded-lg flex justify-center items-center"
+                    >
+                      <svg
+                        width="100%"
+                        height="100%"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M14 11H8M10 15H8M16 7H8M20 10.5V6.8C20 5.11984 20 4.27976 19.673 3.63803C19.3854 3.07354 18.9265 2.6146 18.362 2.32698C17.7202 2 16.8802 2 15.2 2H8.8C7.11984 2 6.27976 2 5.63803 2.32698C5.07354 2.6146 4.6146 3.07354 4.32698 3.63803C4 4.27976 4 5.11984 4 6.8V17.2C4 18.8802 4 19.7202 4.32698 20.362C4.6146 20.9265 5.07354 21.3854 5.63803 21.673C6.27976 22 7.11984 22 8.8 22H11.5M22 22L20.5 20.5M21.5 18C21.5 19.933 19.933 21.5 18 21.5C16.067 21.5 14.5 19.933 14.5 18C14.5 16.067 16.067 14.5 18 14.5C19.933 14.5 21.5 16.067 21.5 18Z"
+                          stroke="white"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </div>
+                    <p
+                      class="text-base leading-5 text-white pt-0.5 h-auto Gilroy-semibold"
+                    >
+                      Asset Details
+                    </p>
+                  </li>
+                </a>
+                <a href="./new-asset.html" class="newAssetsDisplay">
+                  <li
+                    class="py-2 px-2 rounded-r-xl flex gap-[7px] h-[50px] relative items-center mt-2.5 cursor-pointer bg-[#E9901A] transition-all"
+                  >
+                    <div
+                      class="w-[34px] h-[34px] rounded-lg flex justify-center items-center"
+                    >
+                      <svg
+                        width="100%"
+                        height="100%"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M20 10.5V6.8C20 5.11984 20 4.27976 19.673 3.63803C19.3854 3.07354 18.9265 2.6146 18.362 2.32698C17.7202 2 16.8802 2 15.2 2H8.8C7.11984 2 6.27976 2 5.63803 2.32698C5.07354 2.6146 4.6146 3.07354 4.32698 3.63803C4 4.27976 4 5.11984 4 6.8V17.2C4 18.8802 4 19.7202 4.32698 20.362C4.6146 20.9265 5.07354 21.3854 5.63803 21.673C6.27976 22 7.11984 22 8.8 22H12M14 11H8M10 15H8M16 7H8M18 21V15M15 18H21"
+                          stroke="white"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </div>
+                    <p
+                      class="text-base leading-5 text-white pt-0.5 h-auto Gilroy-semibold"
+                    >
+                      New Asset
+                    </p>
+                  </li>
+                </a>
+              </div>
               <div class="accountContainer">
                 <div class="accountMain">
                   <li
@@ -248,14 +282,14 @@
                   </li>
                 </div>
                 <div class="pl-8 accountList">
-                  <div class="border-l border-solid border-[#E9901A]">
+                  <div class="border-l border-solid border-[#E9901A] pt-2.5">
                     <ul>
                       <a href="./setting.html">
                         <li
-                          class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-0 cursor-pointer !bg-transparent transition-all"
+                          class="rounded-xl flex gap-[7px] h-[50px] relative items-center mt-0 cursor-pointer !bg-transparent transition-all"
                         >
                           <p
-                            class="text-base leading-5 text-white hover:text-[#E9901A] transition-all pt-0.5 h-auto Gilroy-semibold"
+                            class="text-base leading-5 text-white transition-all py-2.5 pt-3 px-2 h-full w-full Gilroy-semibold flex items-center hover:bg-[#E9901A] rounded-r-xl"
                           >
                             Setting
                           </p>
@@ -263,10 +297,10 @@
                       </a>
                       <a href="./password.html">
                         <li
-                          class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-0 cursor-pointer !bg-transparent transition-all"
+                          class="rounded-xl flex gap-[7px] h-[50px] relative items-center mt-0 cursor-pointer !bg-transparent transition-all"
                         >
                           <p
-                            class="text-base leading-5 text-white hover:text-[#E9901A] transition-all pt-0.5 h-auto Gilroy-semibold"
+                            class="text-base leading-5 text-white transition-all py-2.5 pt-3 px-2 h-full w-full Gilroy-semibold flex items-center hover:bg-[#E9901A] rounded-r-xl"
                           >
                             Password
                           </p>
@@ -274,10 +308,10 @@
                       </a>
                       <a href="./billing.html">
                         <li
-                          class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-0 cursor-pointer !bg-transparent transition-all"
+                          class="rounded-xl flex gap-[7px] h-[50px] relative items-center mt-0 cursor-pointer !bg-transparent transition-all"
                         >
                           <p
-                            class="text-base leading-5 text-white hover:text-[#E9901A] transition-all pt-0.5 h-auto Gilroy-semibold"
+                            class="text-base leading-5 text-white transition-all py-2.5 pt-3 px-2 h-full w-full Gilroy-semibold flex items-center hover:bg-[#E9901A] rounded-r-xl"
                           >
                             Billing
                           </p>
@@ -285,10 +319,10 @@
                       </a>
                       <a href="./notification.html">
                         <li
-                          class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-0 cursor-pointer !bg-transparent transition-all"
+                          class="rounded-xl flex gap-[7px] h-[50px] relative items-center mt-0 cursor-pointer !bg-transparent transition-all"
                         >
                           <p
-                            class="text-base leading-5 text-white hover:text-[#E9901A] transition-all pt-0.5 h-auto Gilroy-semibold"
+                            class="text-base leading-5 text-white transition-all py-2.5 pt-3 px-2 h-full w-full Gilroy-semibold flex items-center hover:bg-[#E9901A] rounded-r-xl"
                           >
                             Notification
                           </p>
@@ -296,10 +330,10 @@
                       </a>
                       <a href="./team.html">
                         <li
-                          class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-0 cursor-pointer !bg-transparent transition-all"
+                          class="rounded-xl flex gap-[7px] h-[50px] relative items-center mt-0 cursor-pointer !bg-transparent transition-all"
                         >
                           <p
-                            class="text-base leading-5 text-white hover:text-[#E9901A] transition-all pt-0.5 h-auto Gilroy-semibold"
+                            class="text-base leading-5 text-white transition-all py-2.5 pt-3 px-2 h-full w-full Gilroy-semibold flex items-center hover:bg-[#E9901A] rounded-r-xl"
                           >
                             Team
                           </p>
@@ -307,10 +341,10 @@
                       </a>
                       <a href="./login.html">
                         <li
-                          class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-0 cursor-pointer !bg-transparent transition-all"
+                          class="rounded-xl flex gap-[7px] h-[50px] relative items-center mt-0 cursor-pointer !bg-transparent transition-all"
                         >
                           <p
-                            class="text-base leading-5 text-white hover:text-[#E9901A] transition-all pt-0.5 h-auto Gilroy-semibold"
+                            class="text-base leading-5 text-white transition-all py-2.5 pt-3 px-2 h-full w-full Gilroy-semibold flex items-center hover:bg-[#E9901A] rounded-r-xl"
                           >
                             Login
                           </p>
@@ -318,10 +352,10 @@
                       </a>
                       <a href="./signup.html">
                         <li
-                          class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-0 cursor-pointer !bg-transparent transition-all"
+                          class="rounded-xl flex gap-[7px] h-[50px] relative items-center mt-0 cursor-pointer !bg-transparent transition-all"
                         >
                           <p
-                            class="text-base leading-5 text-white hover:text-[#E9901A] transition-all pt-0.5 h-auto Gilroy-semibold"
+                            class="text-base leading-5 text-white transition-all py-2.5 pt-3 px-2 h-full w-full Gilroy-semibold flex items-center hover:bg-[#E9901A] rounded-r-xl"
                           >
                             Sign Up
                           </p>
@@ -960,7 +994,10 @@
                   class="px-6 rounded-xl py-3 pt-3.5 mt-5 bg-transparent w-full border border-solid border-white outline-none text-base text-white Gilroy-normal h-11"
                   placeholder="Enter Name"
                 />
-                <p id="assetsNameError" class="text-red-500 text-xs absolute -bottom-5 hidden">
+                <p
+                  id="assetsNameError"
+                  class="text-red-500 text-xs absolute -bottom-5 hidden"
+                >
                   Please enter a valid asset name
                 </p>
               </div>
@@ -1031,7 +1068,10 @@
                   class="px-6 rounded-xl py-3 pt-3.5 mt-5 bg-transparent w-full border border-solid border-white outline-none text-base text-white Gilroy-normal h-11"
                   placeholder="Enter Amount"
                 />
-                <p id="assetsAmountError" class="text-red-500 text-xs absolute -bottom-5 hidden">
+                <p
+                  id="assetsAmountError"
+                  class="text-red-500 text-xs absolute -bottom-5 hidden"
+                >
                   Please enter a valid amount
                 </p>
               </div>
@@ -1072,7 +1112,10 @@
                       Cancelled
                     </option>
                   </select>
-                  <p id="assetsStatusError" class="text-red-500 text-xs absolute -bottom-5 hidden">
+                  <p
+                    id="assetsStatusError"
+                    class="text-red-500 text-xs absolute -bottom-5 hidden"
+                  >
                     Please select a valid status
                   </p>
                 </div>
@@ -1105,9 +1148,12 @@
                 >
                   Cancel
                 </button>
-                <a href="./all-assets.html" target="_blank" class="px-4 md:px-6 py-3 pt-3.5 bg-btnSecondary text-white rounded-lg border border-[#E9901A] hover:border hover:border-white hover:bg-transparent transition-all">
+                <a
+                  href="./all-assets.html"
+                  target="_blank"
+                  class="px-4 md:px-6 py-3 pt-3.5 bg-btnSecondary text-white rounded-lg border border-[#E9901A] hover:border hover:border-white hover:bg-transparent transition-all"
+                >
                   All Assets
-
                 </a>
               </div>
             </form>
@@ -1564,61 +1610,67 @@
       let assetsStatus = document.getElementById("assetsStatus");
 
       function addNewAsset() {
-    let assetsNameError = document.getElementById("assetsNameError");
-    let assetsCategoryError = document.getElementById("assetsCategoryError");
-    let assetsConvertCurrencyError = document.getElementById("assetsConvertCurrencyError");
-    let assetsAmountError = document.getElementById("assetsAmountError");
-    let assetsRequiredActionError = document.getElementById("assetsRequiredActionError");
-    let assetsStatusError = document.getElementById("assetsStatusError");
-    let SuccessfulMessage = document.getElementById("SuccessfulMessage");
-    let coinImage = document.getElementById("coin-img");
-    let assetsCoverImage = coinImage.src;
-    
-    if (assetsName.value === "") {
-        assetsNameError.style.display = "block";
-    } else {
-        assetsNameError.style.display = "none";
-    }
+        let assetsNameError = document.getElementById("assetsNameError");
+        let assetsCategoryError = document.getElementById(
+          "assetsCategoryError"
+        );
+        let assetsConvertCurrencyError = document.getElementById(
+          "assetsConvertCurrencyError"
+        );
+        let assetsAmountError = document.getElementById("assetsAmountError");
+        let assetsRequiredActionError = document.getElementById(
+          "assetsRequiredActionError"
+        );
+        let assetsStatusError = document.getElementById("assetsStatusError");
+        let SuccessfulMessage = document.getElementById("SuccessfulMessage");
+        let coinImage = document.getElementById("coin-img");
+        let assetsCoverImage = coinImage.src;
 
-    if (assetsCategory.value === "Select Coin") {
-        assetsCategoryError.style.display = "block";
-    } else {
-        assetsCategoryError.style.display = "none";
-    }
+        if (assetsName.value === "") {
+          assetsNameError.style.display = "block";
+        } else {
+          assetsNameError.style.display = "none";
+        }
 
-    if (assetsConvertCurrency.value === "Select Currency") {
-        assetsConvertCurrencyError.style.display = "block";
-    } else {
-        assetsConvertCurrencyError.style.display = "none";
-    }
+        if (assetsCategory.value === "Select Coin") {
+          assetsCategoryError.style.display = "block";
+        } else {
+          assetsCategoryError.style.display = "none";
+        }
 
-    if (assetsAmount.value === "") {
-        assetsAmountError.style.display = "block";
-    } else {
-        assetsAmountError.style.display = "none";
-    }
+        if (assetsConvertCurrency.value === "Select Currency") {
+          assetsConvertCurrencyError.style.display = "block";
+        } else {
+          assetsConvertCurrencyError.style.display = "none";
+        }
 
-    if (assetsRequiredAction.value === "") {
-        assetsRequiredActionError.style.display = "block";
-    } else {
-        assetsRequiredActionError.style.display = "none";
-    }
+        if (assetsAmount.value === "") {
+          assetsAmountError.style.display = "block";
+        } else {
+          assetsAmountError.style.display = "none";
+        }
 
-    if (assetsStatus.value === "Select Status") {
-        assetsStatusError.style.display = "block";
-    } else {
-        assetsStatusError.style.display = "none";
-    }
+        if (assetsRequiredAction.value === "") {
+          assetsRequiredActionError.style.display = "block";
+        } else {
+          assetsRequiredActionError.style.display = "none";
+        }
 
-    if (
-        assetsNameError.style.display === "none" &&
-        assetsCategoryError.style.display === "none" &&
-        assetsConvertCurrencyError.style.display === "none" &&
-        assetsAmountError.style.display === "none" &&
-        assetsRequiredActionError.style.display === "none" &&
-        assetsStatusError.style.display === "none"
-    ) {
-        let assets = {
+        if (assetsStatus.value === "Select Status") {
+          assetsStatusError.style.display = "block";
+        } else {
+          assetsStatusError.style.display = "none";
+        }
+
+        if (
+          assetsNameError.style.display === "none" &&
+          assetsCategoryError.style.display === "none" &&
+          assetsConvertCurrencyError.style.display === "none" &&
+          assetsAmountError.style.display === "none" &&
+          assetsRequiredActionError.style.display === "none" &&
+          assetsStatusError.style.display === "none"
+        ) {
+          let assets = {
             name: assetsName.value,
             category: assetsCategory.value,
             coverImage: assetsCoverImage,
@@ -1627,34 +1679,33 @@
             status: assetsStatus.value,
             convertCurrency: assetsConvertCurrency.value,
             date: new Date().toLocaleDateString(),
-        };
+          };
 
-        console.log("Saving to localStorage:", assets);
+          console.log("Saving to localStorage:", assets);
 
-        // Retrieve previous assets from localStorage, if any
-        let storedAssets = JSON.parse(localStorage.getItem("assets")) || [];
+          // Retrieve previous assets from localStorage, if any
+          let storedAssets = JSON.parse(localStorage.getItem("assets")) || [];
 
-        // Add the new asset to the stored assets array
-        storedAssets.push(assets);
+          // Add the new asset to the stored assets array
+          storedAssets.push(assets);
 
-        // Save the updated assets array back to localStorage
-        localStorage.setItem("assets", JSON.stringify(storedAssets));
+          // Save the updated assets array back to localStorage
+          localStorage.setItem("assets", JSON.stringify(storedAssets));
 
-        // Clear form fields
-        assetsName.value = "";
-        assetsCategory.value = "Select Coin";
-        assetsConvertCurrency.value = "Select Currency";
-        assetsAmount.value = "";
-        assetsRequiredAction.value = "";
-        assetsStatus.value = "Select Status";
+          // Clear form fields
+          assetsName.value = "";
+          assetsCategory.value = "Select Coin";
+          assetsConvertCurrency.value = "Select Currency";
+          assetsAmount.value = "";
+          assetsRequiredAction.value = "";
+          assetsStatus.value = "Select Status";
 
-        SuccessfulMessage.style.display = "block";
-        setTimeout(() => {
+          SuccessfulMessage.style.display = "block";
+          setTimeout(() => {
             SuccessfulMessage.style.display = "none";
-        }, 3000);
-    }
-}
-
+          }, 3000);
+        }
+      }
 
       function cancelAddNewAsset() {
         assetsName.value = "";

@@ -1,0 +1,94 @@
+{
+  "last15Days": [
+    {
+      "invoice": "#526520",
+      "client": "Dribbble",
+      "date": "27/10/23",
+      "value": "$1.274,89",
+      "taxes": "$516,55",
+      "status": "Successful"
+    },
+    {
+      "invoice": "#982340",
+      "client": "Dribbble",
+      "date": "27/10/23",
+      "value": "$1.274,89",
+      "taxes": "$516,55",
+      "status": "Pending"
+    },
+    {
+      "invoice": "#984540",
+      "client": "Dribbble",
+      "date": "27/10/23",
+      "value": "$1.274,89",
+      "taxes": "$516,55",
+      "status": "Canceled"
+    },
+    {
+      "invoice": "#984540",
+      "client": "Dribbble",
+      "date": "27/10/23",
+      "value": "$1.274,89",
+      "taxes": "$516,55",
+      "status": "Successful"
+    },
+    {
+      "invoice": "#100023",
+      "client": "Dribbble",
+      "date": "27/10/23",
+      "value": "$1.274,89",
+      "taxes": "$516,55",
+      "status": "Canceled"
+    },
+    {
+      "invoice": "#100023",
+      "client": "Dribbble",
+      "date": "27/10/23",
+      "value": "$1.274,89",
+      "taxes": "$516,55",
+      "status": "Successful"
+    }
+  ],
+  "last10Days": [
+    {
+      "invoice": "#765320",
+      "client": "Dribbble",
+      "date": "27/10/23",
+      "value": "$1.274,89",
+      "taxes": "$516,55",
+      "status": "Successful"
+    },
+    {
+      "invoice": "#456310",
+      "client": "Dribbble",
+      "date": "27/10/23",
+      "value": "$1.274,89",
+      "taxes": "$516,55",
+      "status": "Successful"
+    },
+    {
+      "invoice": "#566002",
+      "client": "Dribbble",
+      "date": "27/10/23",
+      "value": "$1.274,89",
+      "taxes": "$516,55",
+      "status": "Successful"
+    },
+    {
+      "invoice": "#456310",
+      "client": "Dribbble",
+      "date": "27/10/23",
+      "value": "$1.274,89",
+      "taxes": "$516,55",
+      "status": "Successful"
+    },
+    {
+      "invoice": "#456310",
+      "client": "Dribbble",
+      "date": "27/10/23",
+      "value": "$1.274,89",
+      "taxes": "$516,55",
+      "status": "Successful"
+    }
+  ]
+}

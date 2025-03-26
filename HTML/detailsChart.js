@@ -241,7 +241,7 @@ function makeResultsTable(last15Days, last10Days) {
 }
 
 function initPagination() {
-  const cardsPerPage = 4;
+  const cardsPerPage = 6;
   const dataContainer = document.getElementById("data-container");
   const pagination = document.getElementById("pagination");
   const prevButton = document.getElementById("prev");

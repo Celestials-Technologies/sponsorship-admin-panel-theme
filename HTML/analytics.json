@@ -362,8 +362,21 @@
         "price": "$10,930.90",
         "percentage": "28%",
         "value": "$23,000.00"
+      },
+      {
+        "title":"Electro",
+        "img": "./src/images/electro_mid.png",
+        "price": "$10,930.90",
+        "percentage": "30%",
+        "value": "$23,000.00"
+      }, 
+      {
+        "title":"Bitcoin",
+        "img": "./src/images/bitcoin_mid.png",
+        "price": "$10,930.90",
+        "percentage": "47%",
+        "value": "$23,000.00"
       }
-      
     ]
 }
   

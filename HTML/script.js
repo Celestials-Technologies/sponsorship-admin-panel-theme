@@ -398,6 +398,31 @@ function closeBtn() {
   }
 }
 
+function makeinAllCard() {
+  if (newCardModal.style.top === "-150%") {
+    window.scrollTo(0, 0);
+    newCardModal.style.top = "0%";
+    newCardModal.style.opacity = "1";
+    bodyOverflowModal.style.overflow = "hidden";
+    bodyScreenData.style.opacity = "0.7";
+    document
+      .getElementById("newCardModal")
+      .addEventListener("click", function (event) {
+        if (!event.target.closest("#newCardData")) {
+          newCardModal.style.top = "-150%";
+          newCardModal.style.opacity = "0";
+          bodyOverflowModal.style.overflow = "auto";
+          bodyScreenData.style.opacity = "1";
+        }
+      });
+  } else {
+    newCardModal.style.top = "-150%";
+    newCardModal.style.opacity = "0";
+    bodyOverflowModal.style.overflow = "auto";
+    bodyScreenData.style.opacity = "1";
+  }
+  closeBtn();
+}
 function makeACard() {
   closeBtn();
   if (newCardModal.style.top === "-150%") {
@@ -574,6 +599,98 @@ function terminateBtn() {
 function closeModalMessageBtn() {
   SuccessfulMessage.style.display = "none";
   SuccessfulMessage.style.right = "-50%";
+}
+function AllCardValidateForm() {
+  let cardHolderName = document.getElementById("cardHolderName").value;
+  let selectBank = document.getElementById("selectBank").value;
+  let accountNumber = document.getElementById("accountNumber").value;
+  let mobileNumber = document.getElementById("mobileNumber").value;
+  let cardNumber = document.getElementById("cardNumber").value;
+  let selectDate = document.getElementById("selectDate").value;
+  let address = document.getElementById("address").value;
+  let country = document.getElementById("country").value;
+  let city = document.getElementById("city").value;
+
+  // Check if all required fields are filled
+  if (
+    cardHolderName === "" ||
+    selectBank === "Select Bank" ||
+    accountNumber === "" ||
+    mobileNumber === "" ||
+    cardNumber === "" ||
+    selectDate === "" ||
+    address === "" ||
+    country === "" ||
+    city === ""
+  ) {
+    // Show error messages
+    document.getElementById("cardHolderNameError").innerHTML = "Please enter your name";
+    document.getElementById("selectBankError").innerHTML = "Please select a bank";
+    document.getElementById("accountNumberError").innerHTML = "Please enter your account number";
+    document.getElementById("mobileNumberError").innerHTML = "Please enter your mobile number";
+    document.getElementById("cardNumberError").innerHTML = "Please enter your card number";
+    document.getElementById("selectDateError").innerHTML = "Please select a date";
+    document.getElementById("addressError").innerHTML = "Please enter your address";
+    document.getElementById("countryError").innerHTML = "Please select a country";
+    document.getElementById("cityError").innerHTML = "Please select a city";
+    return; // Exit if any required fields are empty
+  }
+
+  // Clear error messages if fields are valid
+  document.getElementById("cardHolderNameError").innerHTML = "";
+  document.getElementById("selectBankError").innerHTML = "";
+  document.getElementById("accountNumberError").innerHTML = "";
+  document.getElementById("mobileNumberError").innerHTML = "";
+  document.getElementById("cardNumberError").innerHTML = "";
+  document.getElementById("selectDateError").innerHTML = "";
+  document.getElementById("addressError").innerHTML = "";
+  document.getElementById("countryError").innerHTML = "";
+  document.getElementById("cityError").innerHTML = "";
+
+  // Create an object to store the form data
+  let addCard = {
+    cardHolderName: cardHolderName,
+    selectBank: selectBank,
+    accountNumber: accountNumber,
+    mobileNumber: mobileNumber,
+    cardNumber: cardNumber,
+    selectDate: selectDate,
+    address: address,
+    country: country,
+    city: city,
+  };
+
+  // Save the data to localStorage
+  let storedCards = JSON.parse(localStorage.getItem("addCard")) || [];
+  storedCards.push(addCard);
+  localStorage.setItem("addCard", JSON.stringify(storedCards));
+
+  // Display success message
+  // SuccessfulMessage.style.display = "block";
+  // setTimeout(() => {
+  //   SuccessfulMessage.style.display = "none";
+  // }, 3000);
+
+  // Clear the form fields
+  document.getElementById("cardHolderName").value = "";
+  document.getElementById("selectBank").value = "Select Bank";
+  document.getElementById("accountNumber").value = "";
+  document.getElementById("mobileNumber").value = "";
+  document.getElementById("cardNumber").value = "";
+  document.getElementById("selectDate").value = "";
+  document.getElementById("address").value = "";
+  document.getElementById("country").value = "";
+  document.getElementById("city").value = "";
+
+  // Close modal and reset UI
+  newCardModal.style.top = "-150%";
+  newCardModal.style.opacity = "0";
+  bodyOverflowModal.style.overflow = "auto";
+  bodyScreenData.style.opacity = "1";
+
+  // Call function to display all added cards
+  displayAddedCard();
+  location.reload();
 }
 
 function validateForm() {

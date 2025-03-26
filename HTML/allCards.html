@@ -129,54 +129,70 @@
                   </p>
                 </li>
               </a>
-              <a href="./wallet.html">
-                <li
-                  class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-2.5 cursor-pointer hover:bg-[#E9901A] transition-all"
-                >
-                  <div
-                    class="w-[34px] h-[34px] rounded-lg flex justify-center items-center"
+
+              <div class="relative walletMain">
+                <a href="./wallet.html">
+                  <li
+                    class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] mt-2.5 relative items-center active cursor-pointer"
                   >
-                  <svg
-                      width="100%"
-                      height="100%"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
+                    <div
+                      class="w-[34px] h-[34px] rounded-lg flex justify-center items-center"
                     >
-                      <path
-                        d="M16 7.99983V4.50048C16 3.66874 16 3.25287 15.8248 2.9973C15.6717 2.77401 15.4346 2.62232 15.1678 2.57691C14.8623 2.52493 14.4847 2.6992 13.7295 3.04775L4.85901 7.14182C4.18551 7.45267 3.84875 7.6081 3.60211 7.84915C3.38406 8.06225 3.21762 8.32238 3.1155 8.60966C3 8.93462 3 9.30551 3 10.0473V14.9998M16.5 14.4998H16.51M3 11.1998L3 17.7998C3 18.9199 3 19.48 3.21799 19.9078C3.40973 20.2841 3.71569 20.5901 4.09202 20.7818C4.51984 20.9998 5.07989 20.9998 6.2 20.9998H17.8C18.9201 20.9998 19.4802 20.9998 19.908 20.7818C20.2843 20.5901 20.5903 20.2841 20.782 19.9078C21 19.48 21 18.9199 21 17.7998V11.1998C21 10.0797 21 9.51967 20.782 9.09185C20.5903 8.71552 20.2843 8.40956 19.908 8.21782C19.4802 7.99983 18.9201 7.99983 17.8 7.99983L6.2 7.99983C5.0799 7.99983 4.51984 7.99983 4.09202 8.21781C3.7157 8.40956 3.40973 8.71552 3.21799 9.09185C3 9.51967 3 10.0797 3 11.1998ZM17 14.4998C17 14.776 16.7761 14.9998 16.5 14.9998C16.2239 14.9998 16 14.776 16 14.4998C16 14.2237 16.2239 13.9998 16.5 13.9998C16.7761 13.9998 17 14.2237 17 14.4998Z"
-                        stroke="white"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                  </div>
-                  <p
-                    class="text-base leading-5 text-white pt-0.5 h-auto Gilroy-semibold"
+                      <svg
+                        width="100%"
+                        height="100%"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M16 7.99983V4.50048C16 3.66874 16 3.25287 15.8248 2.9973C15.6717 2.77401 15.4346 2.62232 15.1678 2.57691C14.8623 2.52493 14.4847 2.6992 13.7295 3.04775L4.85901 7.14182C4.18551 7.45267 3.84875 7.6081 3.60211 7.84915C3.38406 8.06225 3.21762 8.32238 3.1155 8.60966C3 8.93462 3 9.30551 3 10.0473V14.9998M16.5 14.4998H16.51M3 11.1998L3 17.7998C3 18.9199 3 19.48 3.21799 19.9078C3.40973 20.2841 3.71569 20.5901 4.09202 20.7818C4.51984 20.9998 5.07989 20.9998 6.2 20.9998H17.8C18.9201 20.9998 19.4802 20.9998 19.908 20.7818C20.2843 20.5901 20.5903 20.2841 20.782 19.9078C21 19.48 21 18.9199 21 17.7998V11.1998C21 10.0797 21 9.51967 20.782 9.09185C20.5903 8.71552 20.2843 8.40956 19.908 8.21782C19.4802 7.99983 18.9201 7.99983 17.8 7.99983L6.2 7.99983C5.0799 7.99983 4.51984 7.99983 4.09202 8.21781C3.7157 8.40956 3.40973 8.71552 3.21799 9.09185C3 9.51967 3 10.0797 3 11.1998ZM17 14.4998C17 14.776 16.7761 14.9998 16.5 14.9998C16.2239 14.9998 16 14.776 16 14.4998C16 14.2237 16.2239 13.9998 16.5 13.9998C16.7761 13.9998 17 14.2237 17 14.4998Z"
+                          stroke="white"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </div>
+                    <p
+                      class="text-base leading-5 text-white h-auto pt-0.5 Gilroy-semibold"
+                    >
+                      Wallet
+                    </p>
+                  </li>
+                </a>
+                <a href="./allCards.html" class="walletCardsDisplay">
+                  <li
+                    class="py-2 px-2 rounded-r-xl flex gap-[7px] h-[50px] relative items-center mt-2.5 cursor-pointer bg-[#E9901A] transition-all"
                   >
-                    Wallet
-                  </p>
-                </li>
-              </a>
-              <a href="./allCards.html">
-                <li
-                  class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] mt-2.5 relative items-center active cursor-pointer"
-                >
-                  <div
-                    class="w-[34px] h-[34px] rounded-lg flex justify-center items-center"
-                  >
-                  <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M22 22L20.5 20.5M22 10H2M22 12V8.2C22 7.0799 22 6.51984 21.782 6.09202C21.5903 5.7157 21.2843 5.40974 20.908 5.21799C20.4802 5 19.9201 5 18.8 5H5.2C4.0799 5 3.51984 5 3.09202 5.21799C2.7157 5.40973 2.40973 5.71569 2.21799 6.09202C2 6.51984 2 7.0799 2 8.2V15.8C2 16.9201 2 17.4802 2.21799 17.908C2.40973 18.2843 2.71569 18.5903 3.09202 18.782C3.51984 19 4.0799 19 5.2 19H10.5M21.5 18C21.5 19.933 19.933 21.5 18 21.5C16.067 21.5 14.5 19.933 14.5 18C14.5 16.067 16.067 14.5 18 14.5C19.933 14.5 21.5 16.067 21.5 18Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                  </div>
-                  <p
-                    class="text-base leading-5 text-white h-auto pt-0.5 Gilroy-semibold"
-                  >
-                    Wallets Cards
-                  </p>
-                </li>
-              </a>
+                    <div
+                      class="w-6 h-6 rounded-lg flex justify-center items-center"
+                    >
+                      <svg
+                        width="100%"
+                        height="100%"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M22 22L20.5 20.5M22 10H2M22 12V8.2C22 7.0799 22 6.51984 21.782 6.09202C21.5903 5.7157 21.2843 5.40974 20.908 5.21799C20.4802 5 19.9201 5 18.8 5H5.2C4.0799 5 3.51984 5 3.09202 5.21799C2.7157 5.40973 2.40973 5.71569 2.21799 6.09202C2 6.51984 2 7.0799 2 8.2V15.8C2 16.9201 2 17.4802 2.21799 17.908C2.40973 18.2843 2.71569 18.5903 3.09202 18.782C3.51984 19 4.0799 19 5.2 19H10.5M21.5 18C21.5 19.933 19.933 21.5 18 21.5C16.067 21.5 14.5 19.933 14.5 18C14.5 16.067 16.067 14.5 18 14.5C19.933 14.5 21.5 16.067 21.5 18Z"
+                          stroke="white"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </div>
+                    <p
+                      class="text-base leading-5 text-white pt-1 h-auto Gilroy-semibold"
+                    >
+                      Wallets Cards
+                    </p>
+                  </li>
+                </a>
+              </div>
+
               <a href="./details.html">
                 <li
                   class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-2.5 cursor-pointer hover:bg-[#E9901A] transition-all"
@@ -885,165 +901,383 @@
           </div>
         </div>
 
-        <div class="pt-12" >
-          <p class="text-3xl lg:text-[40px] text-white Gilroy-semibold">
-            All Cards
-          </p>
+        <div class="pt-12">
+          <div class="flex items-center gap-5">
+            <p class="text-3xl lg:text-[40px] text-white Gilroy-semibold">
+              All Cards
+            </p>
+            <button
+              type="button"
+              onclick="makeinAllCard()"
+              class="px-4 py-3 flex justify-center items-center md:gap-3 gap-2 border border-solid border-[#E9901A] transition-all hover:border-white hover:bg-[#E9901A] rounded-xl walletTopUp"
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 8V16M8 12H16M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <p class="text-white text-base Gilroy-medium whitespace-nowrap">
+                New Card
+              </p>
+            </button>
+          </div>
           <div
-          class="flex gap-[25px] pt-[25px] pb-[53px] px-[25px] min-h-screen bg-bgPrimary opacity-1"
-          id="bodyScreenData"
-        >
-
-            <ul id="allCardsContainer" class="text-white text-base Gilroy-normal flex flex-wrap w-full gap-5"></ul>
-            </div>
+            class="flex gap-[25px] pt-[25px] pb-[53px] px-[25px] min-h-screen bg-bgPrimary opacity-1"
+            id="bodyScreenData"
+          >
+            <ul
+              id="allCardsContainer"
+              class="text-white text-base Gilroy-normal flex flex-wrap w-full gap-5"
+            ></ul>
+          </div>
         </div>
       </div>
     </div>
     <div
-    class="w-full h-screen absolute text-white z-[99999] flex justify-center items-center py-6"
-    id="connectModal"
-    style="top: -150%; transition: all 0.5s ease"
-  >
-    <div
-    id="connectData"
-      class="w-[90%] max-w-[624px] mx-auto p-6 border border-solid border-white bg-bgPrimary rounded-lg h-auto max-h-[95%] overflow-auto scrollHidden"
+      class="w-full h-screen absolute text-white z-[99999] flex justify-center items-center py-6"
+      id="connectModal"
+      style="top: -150%; transition: all 0.5s ease"
     >
       <div
-        class="border-b border-dashed border-white lg:pb-6 pb-5 mb-5 flex items-center justify-between"
+        id="connectData"
+        class="w-[90%] max-w-[624px] mx-auto p-6 border border-solid border-white bg-bgPrimary rounded-lg h-auto max-h-[95%] overflow-auto scrollHidden"
       >
-        <h2
-          class="text-xl lg:text-2xl leading-normal text-white Gilroy-extrabold"
+        <div
+          class="border-b border-dashed border-white lg:pb-6 pb-5 mb-5 flex items-center justify-between"
         >
-          Connect your wallet
-        </h2>
-        <button
-          type="button"
-          onclick="closeBtn()"
-          class="w-6 h-6 transition-all"
-        >
-          <svg
-            width="100%"
-            height="100%"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
+          <h2
+            class="text-xl lg:text-2xl leading-normal text-white Gilroy-extrabold"
           >
-            <path
-              d="M18 6L6 18M6 6L18 18"
-              stroke="white"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-        </button>
+            Connect your wallet
+          </h2>
+          <button
+            type="button"
+            onclick="closeBtn()"
+            class="w-6 h-6 transition-all"
+          >
+            <svg
+              width="100%"
+              height="100%"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M18 6L6 18M6 6L18 18"
+                stroke="white"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+        </div>
+        <div class="flex flex-col gap-3">
+          <a
+            href="/#"
+            class="border border-solid border-white rounded-lg flex justify-between items-center lg:px-6 px-5 lg:py-4 py-3"
+          >
+            <div class="flex gap-3 items-center">
+              <img
+                src="./src/images/meta_mask.png"
+                alt="metaMask"
+                class="w-8 h-8"
+              />
+              <p class="text-lg Gilroy-medium text-white">MetaMask</p>
+            </div>
+            <button
+              type="button"
+              class="bg-[#E9901A] px-6 py-2 text-white Gilroy-medium text-base rounded-lg"
+            >
+              Solana
+            </button>
+          </a>
+          <a
+            href="/#"
+            class="border border-solid border-white rounded-lg flex justify-between items-center lg:px-6 px-5 lg:py-4 py-3"
+          >
+            <div class="flex gap-3 items-center">
+              <img
+                src="./src/images/coinbase.png"
+                alt="metaMask"
+                class="w-8 h-8"
+              />
+              <p class="text-lg Gilroy-medium text-white">Coinbase Wallet</p>
+            </div>
+          </a>
+          <a
+            href="/#"
+            class="border border-solid border-white rounded-lg flex justify-between items-center lg:px-6 px-5 lg:py-4 py-3"
+          >
+            <div class="flex gap-3 items-center">
+              <img
+                src="./src/images/cardano.png"
+                alt="metaMask"
+                class="w-8 h-8"
+              />
+              <p class="text-lg Gilroy-medium text-white">WalletConnect</p>
+            </div>
+          </a>
+          <a
+            href="/#"
+            class="border border-solid border-white rounded-lg flex justify-between items-center lg:px-6 px-5 lg:py-4 py-3"
+          >
+            <div class="flex gap-3 items-center">
+              <img
+                src="./src/images/phantom.png"
+                alt="metaMask"
+                class="w-8 h-8"
+              />
+              <p class="text-lg Gilroy-medium text-white">Phantom</p>
+            </div>
+            <button
+              type="button"
+              class="border border-solid border-[#E9901A] px-6 py-2 text-white Gilroy-medium text-base rounded-lg"
+            >
+              Solana
+            </button>
+          </a>
+          <a
+            href="/#"
+            class="border border-solid border-white rounded-lg flex justify-between items-center lg:px-6 px-5 lg:py-4 py-3"
+          >
+            <div class="flex gap-3 items-center">
+              <img src="./src/images/core.png" alt="Core" class="w-8 h-8" />
+              <p class="text-lg Gilroy-medium text-white">Avalanche</p>
+            </div>
+            <button
+              type="button"
+              class="border border-solid border-[#E9901A] px-6 py-2 text-white Gilroy-medium text-base rounded-lg"
+            >
+              Avalanche
+            </button>
+          </a>
+          <a
+            href="/#"
+            class="border border-solid border-white rounded-lg flex justify-between items-center lg:px-6 px-5 lg:py-4 py-3"
+          >
+            <div class="flex gap-3 items-center">
+              <img src="./src/images/glow.png" alt="Glow" class="w-8 h-8" />
+              <p class="text-lg Gilroy-medium text-white">Glow</p>
+            </div>
+            <button
+              type="button"
+              class="border border-solid border-[#E9901A] px-6 py-2 text-white Gilroy-medium text-base rounded-lg"
+            >
+              Solana
+            </button>
+          </a>
+        </div>
+        <p class="mt-5 lg:mt-6 text-sm text-white Gilroy-normal">
+          By connecting wallet, you agree to Finvista
+          <a href="/#" class="text-[#E9901A] Gilroy-medium">
+            Terms of Service
+          </a>
+        </p>
       </div>
-      <div class="flex flex-col gap-3">
-        <a
-          href="/#"
-          class="border border-solid border-white rounded-lg flex justify-between items-center lg:px-6 px-5 lg:py-4 py-3"
-        >
-          <div class="flex gap-3 items-center">
-            <img
-              src="./src/images/meta_mask.png"
-              alt="metaMask"
-              class="w-8 h-8"
-            />
-            <p class="text-lg Gilroy-medium text-white">MetaMask</p>
-          </div>
-          <button
-            type="button"
-            class="bg-[#E9901A] px-6 py-2 text-white Gilroy-medium text-base rounded-lg"
-          >
-            Solana
-          </button>
-        </a>
-        <a
-          href="/#"
-          class="border border-solid border-white rounded-lg flex justify-between items-center lg:px-6 px-5 lg:py-4 py-3"
-        >
-          <div class="flex gap-3 items-center">
-            <img
-              src="./src/images/coinbase.png"
-              alt="metaMask"
-              class="w-8 h-8"
-            />
-            <p class="text-lg Gilroy-medium text-white">Coinbase Wallet</p>
-          </div>
-        </a>
-        <a
-          href="/#"
-          class="border border-solid border-white rounded-lg flex justify-between items-center lg:px-6 px-5 lg:py-4 py-3"
-        >
-          <div class="flex gap-3 items-center">
-            <img
-              src="./src/images/cardano.png"
-              alt="metaMask"
-              class="w-8 h-8"
-            />
-            <p class="text-lg Gilroy-medium text-white">WalletConnect</p>
-          </div>
-        </a>
-        <a
-          href="/#"
-          class="border border-solid border-white rounded-lg flex justify-between items-center lg:px-6 px-5 lg:py-4 py-3"
-        >
-          <div class="flex gap-3 items-center">
-            <img
-              src="./src/images/phantom.png"
-              alt="metaMask"
-              class="w-8 h-8"
-            />
-            <p class="text-lg Gilroy-medium text-white">Phantom</p>
-          </div>
-          <button
-            type="button"
-            class="border border-solid border-[#E9901A] px-6 py-2 text-white Gilroy-medium text-base rounded-lg"
-          >
-            Solana
-          </button>
-        </a>
-        <a
-          href="/#"
-          class="border border-solid border-white rounded-lg flex justify-between items-center lg:px-6 px-5 lg:py-4 py-3"
-        >
-          <div class="flex gap-3 items-center">
-            <img src="./src/images/core.png" alt="Core" class="w-8 h-8" />
-            <p class="text-lg Gilroy-medium text-white">Avalanche</p>
-          </div>
-          <button
-            type="button"
-            class="border border-solid border-[#E9901A] px-6 py-2 text-white Gilroy-medium text-base rounded-lg"
-          >
-            Avalanche
-          </button>
-        </a>
-        <a
-          href="/#"
-          class="border border-solid border-white rounded-lg flex justify-between items-center lg:px-6 px-5 lg:py-4 py-3"
-        >
-          <div class="flex gap-3 items-center">
-            <img src="./src/images/glow.png" alt="Glow" class="w-8 h-8" />
-            <p class="text-lg Gilroy-medium text-white">Glow</p>
-          </div>
-          <button
-            type="button"
-            class="border border-solid border-[#E9901A] px-6 py-2 text-white Gilroy-medium text-base rounded-lg"
-          >
-            Solana
-          </button>
-        </a>
-      </div>
-      <p class="mt-5 lg:mt-6 text-sm text-white Gilroy-normal">
-        By connecting wallet, you agree to Finvista
-        <a href="/#" class="text-[#E9901A] Gilroy-medium">
-          Terms of Service
-        </a>
-      </p>
     </div>
-  </div>
+    <div
+      class="w-full h-screen absolute text-white z-[99999] flex justify-center items-center py-6"
+      id="newCardModal"
+      style="top: -150%; transition: all 0.5s ease"
+    >
+      <div
+        id="newCardData"
+        class="w-[90%] max-w-[624px] mx-auto p-6 border border-solid border-white bg-bgPrimary rounded-lg h-auto max-h-[95%] overflow-auto scrollHidden"
+      >
+        <div
+          class="border-b border-dashed border-white lg:pb-6 pb-5 mb-5 flex items-center justify-between"
+        >
+          <h2
+            class="text-xl lg:text-2xl leading-normal text-white Gilroy-extrabold"
+          >
+            Add Card
+          </h2>
+          <button
+            type="button"
+            onclick="closeNewCardBtn()"
+            class="w-6 h-6 transition-all"
+          >
+            <svg
+              width="100%"
+              height="100%"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M18 6L6 18M6 6L18 18"
+                stroke="white"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+        </div>
+        <form class="flex gap-5 flex-col">
+          <div class="flex flex-col gap-2 md:gap-4">
+            <label class="text-lg text-white Gilroy-normal"
+              >Card Holder Name</label
+            >
+            <input
+              type="text"
+              id="cardHolderName"
+              class="bg-transparent outline-none border border-solid border-white rounded-lg py-3 px-4"
+              placeholder="Enter Name"
+            />
+            <p id="cardHolderNameError" class="text-red-500 text-sm"></p>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="flex flex-col gap-2 md:gap-4 w-1/2">
+              <label class="text-lg text-white Gilroy-normal"
+                >Select Bank</label
+              >
+              <select
+                id="selectBank"
+                class="bg-transparent h-[50px] w-full outline-none border border-solid border-white rounded-lg py-3 px-4"
+              >
+                <option value="Select Bank" class="text-black">
+                  Select Bank
+                </option>
+                <option value="Bank of America" class="text-black">
+                  Bank of America
+                </option>
+              </select>
+              <p id="selectBankError" class="text-red-500 text-sm"></p>
+            </div>
+            <div class="flex flex-col items-start gap-3 w-1/2">
+              <label class="text-lg text-white Gilroy-normal"
+                >Account Number</label
+              >
+              <input
+                type="number"
+                id="accountNumber"
+                class="bg-transparent outline-none border border-solid border-white rounded-lg py-3 px-4"
+                placeholder="Enter Number"
+              />
+              <p id="accountNumberError" class="text-red-500 text-sm"></p>
+            </div>
+          </div>
+          <div class="flex flex-col gap-2 md:gap-4">
+            <label class="text-lg text-white Gilroy-normal"
+              >Mobile Number</label
+            >
+            <input
+              type="number"
+              id="mobileNumber"
+              class="bg-transparent outline-none border border-solid border-white rounded-lg py-3 px-4"
+              placeholder="Enter Number"
+            />
+            <p id="mobileNumberError" class="text-red-500 text-sm"></p>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="flex flex-col items-start gap-3 w-1/2">
+              <label class="text-lg text-white Gilroy-normal"
+                >Card Number</label
+              >
+              <input
+                type="number"
+                id="cardNumber"
+                class="bg-transparent outline-none border border-solid border-white rounded-lg py-3 px-4"
+                placeholder="Enter Number"
+              />
+              <p id="cardNumberError" class="text-red-500 text-sm"></p>
+            </div>
+            <div class="flex flex-col items-start gap-3 w-1/2 text-white">
+              <label class="text-lg text-white Gilroy-normal"
+                >Expiry Date</label
+              >
+              <input
+                type="date"
+                id="selectDate"
+                class="bg-transparent w-full text-white outline-none border border-solid border-white rounded-lg py-3 px-4"
+                placeholder="Enter Number"
+              />
+              <p id="selectDateError" class="text-red-500 text-sm"></p>
+            </div>
+          </div>
+          <div class="flex flex-col gap-2 md:gap-4">
+            <label class="text-lg text-white Gilroy-normal">Address</label>
+            <input
+              type="text"
+              id="address"
+              class="bg-transparent outline-none border border-solid border-white rounded-lg py-3 px-4"
+              placeholder="Street , Number"
+            />
+            <p id="addressError" class="text-red-500 text-sm"></p>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="flex flex-col items-start gap-3 w-1/2">
+              <label class="text-lg text-white Gilroy-normal">Country</label>
+              <input
+                type="text"
+                id="country"
+                class="bg-transparent outline-none border border-solid border-white rounded-lg py-3 px-4"
+                placeholder="Country"
+              />
+              <p id="countryError" class="text-red-500 text-sm"></p>
+            </div>
+            <div class="flex flex-col items-start gap-3 w-1/2 text-white">
+              <label class="text-lg text-white Gilroy-normal">City</label>
+              <input
+                type="text"
+                id="city"
+                class="bg-transparent w-full text-white outline-none border border-solid border-white rounded-lg py-3 px-4"
+                placeholder="City"
+              />
+              <p id="cityError" class="text-red-500 text-sm"></p>
+            </div>
+          </div>
+          <button
+            type="button"
+            class="px-6 py-3 w-full text-base text-white Gilroy-medium text-center rounded-lg hover:bg-transparent bg-[#E9901A] border border-solid border-[#E9901A]"
+            onclick="AllCardValidateForm()"
+          >
+            Add a new Card
+          </button>
+        </form>
+      </div>
+    </div>
 
-
+    <div
+      id="SuccessfulMessage"
+      class="w-[15%] p-4 md:p-6 absolute text-center top-6 z-[99999] bg-white text-[#008000] rounded-lg tex-xl Gilroy-medium"
+      style="right: -50%; display: none; transition: all 0.7s ease"
+    >
+      Successfull
+      <button
+        type="button"
+        onclick="closeModalMessageBtn()"
+        class="absolute bg-white rounded-full -top-2 right-0 cursor-pointer w-6 h-6"
+      >
+        <svg
+          width="100%"
+          height="100%"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M17 7L7 17M7 7L17 17"
+            stroke="black"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </button>
+    </div>
     <script src="./script.js"></script>
     <script src="./allcards.js"></script>
   </body>
