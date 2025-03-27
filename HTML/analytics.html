@@ -9,6 +9,7 @@
     />
     <link href="./src/output.css" rel="stylesheet" />
     <link href="./style.css" rel="stylesheet" />
+    <link href="./src/input.css" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -16,7 +17,7 @@
 
   <body class="min-h-screen" id="bodyOverflowModal">
     <div
-      class="flex gap-[25px] pt-[25px] pb-[53px] px-[25px] min-h-screen bg-bgPrimary opacity-1"
+      class="flex gap-[25px] pt-[25px] pb-[53px] px-[25px] min-h-screen primaryColor opacity-1"
       id="bodyScreenData"
     >
       <div
@@ -427,7 +428,7 @@
                   </svg>
                 </div>
               </div>
-              <div class="relative layoutContainer">
+              <!-- <div class="relative layoutContainer">
                 <div
                   class="relative p-1 bg-white rounded-lg layerIconBox cursor-pointer w-fit flex items-center"
                 >
@@ -474,7 +475,7 @@
                 >
                   Layout
                 </div>
-              </div>
+              </div> -->
             </div>
             <div class="gap-3 flex items-center">
               <button
@@ -513,6 +514,7 @@
 
               <button
                 type="button"
+                onclick="darkModeBtn()"
                 class="p-1 cursor-pointer iconMainBox rounded-lg hidden md:block"
               >
                 <svg

@@ -396,7 +396,13 @@ function closeBtn() {
     bodyOverflowModal.style.overflow = "auto";
     bodyScreenData.style.opacity = "1";
   }
+  if (addMemberModal && addMemberModal.style.top === "0%") {
+    addMemberModal.style.top = "-150%";
+    bodyOverflowModal.style.overflow = "auto";
+    bodyScreenData.style.opacity = "1";
+  }
 }
+
 
 function makeinAllCard() {
   if (newCardModal.style.top === "-150%") {
@@ -1200,3 +1206,22 @@ function rewardsRefresh() {
   //   animateValue(reward, 0, 73, 3000);
   // });
 }
+
+//body class add dark
+
+
+
+function darkModeBtn() {
+  let addDarkMode = document.getElementById("bodyOverflowModal")
+  addDarkMode.classList.toggle("dark")
+  if(addDarkMode.classList.contains("dark")) {
+    localStorage.setItem("dark", "enabled")
+  } else {
+    localStorage.setItem("dark", "disabled")
+  }
+}
+document.addEventListener("DOMContentLoaded" , function () {
+  if (localStorage.getItem("dark") === "enabled") {
+    document.getElementById("bodyOverflowModal").classList.add("dark");
+  }
+})
