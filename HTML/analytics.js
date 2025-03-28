@@ -461,3 +461,182 @@ function initPagination() {
   displayPage(currentPage);
   updatePagination();
 }
+
+
+let detailSelectAssetText = document.querySelector("#detailSelectAssetText");
+
+function changeSelectAssetText(text, event) {
+  detailSelectAssetText.textContent = text;
+  if(detailSelectAssetText.textContent === "Last 10 days"){
+    assetLast10Days();
+  }else {
+    assetLast15Days();
+  }
+
+  closeDropDowns();
+}
+
+function assetLast10Days() {
+  $.getJSON("analytics.json", function (data) {
+    console.log("Data loaded for Last 10 Days:", data);
+    let assetLast10Days = data.assetsLast10Days;
+    makeAssetsDataList(assetLast10Days, data.assetsLast15Days);
+  });
+}
+
+function assetLast15Days() {
+  $.getJSON("analytics.json", function (data) {
+    console.log("Data loaded for Last 15 Days:", data);
+    let assetLast15Days = data.assetsLast15Days;
+    makeAssetsDataList(assetLast15Days, data.assetsLast10Days);
+  });
+}
+$.getJSON("analytics.json", function (data) {
+  console.log("Data loaded:", data);
+  let assetLast15Days = data.assetsLast15Days;
+  let assetLast10Days = data.assetsLast10Days;
+  makeAssetsDataList(assetLast15Days, assetLast10Days);
+});
+
+function makeAssetsDataList(assetLast15Days, assetLast10Days) {
+  let dataContainerAssets = document.getElementById("data-container-assets");
+  dataContainerAssets.innerHTML = '';
+
+  let maindiv = document.createElement("div");
+  maindiv.classList.add("mainAssets");
+
+  assetLast15Days.forEach((result) => {
+    let listCardContainer = document.createElement("div");
+    listCardContainer.classList.add("listCardContainer");
+    let listCardImage = document.createElement("img");
+    listCardImage.src = result.img;
+    listCardImage.classList.add("listCardImage");
+    listCardContainer.appendChild(listCardImage);
+
+    let listCardDataMain = document.createElement("div");
+    listCardDataMain.classList.add("listCardDataMain");
+    let listCardTitleContainer = document.createElement("div");
+    listCardTitleContainer.classList.add("listCardTitleContainer");
+    let listCardTitle = document.createElement("div");
+    listCardTitle.classList.add("listCardTitle");
+    listCardTitle.textContent = result.title;
+    let listCardPercentage = document.createElement("div");
+    listCardPercentage.classList.add("listCardPercentage");
+    listCardPercentage.textContent = result.percentage;
+    listCardTitleContainer.appendChild(listCardTitle);
+    listCardTitleContainer.appendChild(listCardPercentage);
+    listCardDataMain.appendChild(listCardTitleContainer);
+
+    let listCardBarContainer = document.createElement("div");
+    listCardBarContainer.classList.add("listCardBarContainer");
+    let listCardBar = document.createElement("div");
+    listCardBar.classList.add("listCardBar");
+    listCardBar.style.width = result.percentage;
+    listCardBarContainer.appendChild(listCardBar);
+    listCardDataMain.appendChild(listCardBarContainer);
+    listCardContainer.appendChild(listCardDataMain);
+
+    let listCardPricesAndValuesContainer = document.createElement("div");
+    listCardPricesAndValuesContainer.classList.add("listCardPricesAndValuesContainer");
+    let listCardPrice = document.createElement("div");
+    listCardPrice.classList.add("listCardPrice");
+    listCardPrice.textContent = `Price: ${result.price}`;
+    let listCardValue = document.createElement("div");
+    listCardValue.classList.add("listCardValue");
+    listCardValue.textContent = `Value: ${result.value}`;
+    listCardDataMain.appendChild(listCardPricesAndValuesContainer);
+    listCardPricesAndValuesContainer.appendChild(listCardPrice);
+    listCardPricesAndValuesContainer.appendChild(listCardValue);
+
+    maindiv.appendChild(listCardContainer);
+  });
+  assetLast10Days.forEach((result) => {
+    let listCardContainer = document.createElement("div");
+    listCardContainer.classList.add("listCardContainer");
+    let listCardImage = document.createElement("img");
+    listCardImage.src = result.img;
+    listCardImage.classList.add("listCardImage");
+    listCardContainer.appendChild(listCardImage);
+
+    let listCardDataMain = document.createElement("div");
+    listCardDataMain.classList.add("listCardDataMain");
+    let listCardTitleContainer = document.createElement("div");
+    listCardTitleContainer.classList.add("listCardTitleContainer");
+    let listCardTitle = document.createElement("div");
+    listCardTitle.classList.add("listCardTitle");
+    listCardTitle.textContent = result.title;
+    let listCardPercentage = document.createElement("div");
+    listCardPercentage.classList.add("listCardPercentage");
+    listCardPercentage.textContent = result.percentage;
+    listCardTitleContainer.appendChild(listCardTitle);
+    listCardTitleContainer.appendChild(listCardPercentage);
+    listCardDataMain.appendChild(listCardTitleContainer);
+
+    let listCardBarContainer = document.createElement("div");
+    listCardBarContainer.classList.add("listCardBarContainer");
+    let listCardBar = document.createElement("div");
+    listCardBar.classList.add("listCardBar");
+    listCardBar.style.width = result.percentage;
+    listCardBarContainer.appendChild(listCardBar);
+    listCardDataMain.appendChild(listCardBarContainer);
+    listCardContainer.appendChild(listCardDataMain);
+
+    let listCardPricesAndValuesContainer = document.createElement("div");
+    listCardPricesAndValuesContainer.classList.add("listCardPricesAndValuesContainer");
+    let listCardPrice = document.createElement("div");
+    listCardPrice.classList.add("listCardPrice");
+    listCardPrice.textContent = `Price: ${result.price}`;
+    let listCardValue = document.createElement("div");
+    listCardValue.classList.add("listCardValue");
+    listCardValue.textContent = `Value: ${result.value}`;
+    listCardDataMain.appendChild(listCardPricesAndValuesContainer);
+    listCardPricesAndValuesContainer.appendChild(listCardPrice);
+    listCardPricesAndValuesContainer.appendChild(listCardValue);
+
+
+    maindiv.appendChild(listCardContainer);
+  });
+
+  dataContainerAssets.appendChild(maindiv);
+
+  showLess();
+}
+
+function showLess(){
+  showLess();
+  document.getElementById("seeLess").style.display = "none";
+  document.getElementById("seeAll").style.display = "flex";
+}
+
+function seeAll(){
+  showAll();
+  document.getElementById("seeAll").style.display = "none";
+  // document.getElementById("seeLess").style.display = "flex";
+}
+
+function showLess(){
+  const cardsPerPage = 9;
+  const cards = Array.from(document.getElementsByClassName("listCardContainer"));
+  const currentPage = 1;
+
+  function displayPage(page) {
+    const startIndex = (page - 1) * cardsPerPage;
+    const endIndex = startIndex + cardsPerPage;
+    cards.forEach((card, index) => {
+      card.style.display =
+        index >= startIndex && index < endIndex ? "flex" : "none";
+    });
+  }
+
+  
+
+  displayPage(currentPage);
+}
+
+
+function showAll() {
+  const cards = Array.from(document.getElementsByClassName("listCardContainer"));
+  cards.forEach((card) => {
+    card.style.display = "flex";
+  });
+}

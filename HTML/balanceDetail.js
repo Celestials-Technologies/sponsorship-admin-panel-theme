@@ -32,19 +32,16 @@ function balanceChart() {
               scales: {
                 xAxes: [
                   {
-                    ticks: { fontColor: "white" },
+                    ticks: { display: false },
                     gridLines: { display: false }
                   }
                 ],
                 yAxes: [
                   {
                     ticks: {
-                      fontColor: "white",
-                      stepSize: 20,
-                      min: 0,
-                      max: 100
+                      display: false
                     },
-                    gridLines: { color: "white" },
+                    gridLines: { display: false },
                     
                     
                   }
@@ -129,6 +126,7 @@ function makeResultsTable(last24Days, last7Days, last1Mounth, last1Year) {
 
   let tbl = document.createElement("table");
   tbl.classList.add("w-full");
+  tbl.id = "myTable";
   let headerRow = tbl.insertRow();
   headerRow.classList.add("tableHeader");
   headerRow.insertCell().textContent = "Title";
@@ -462,6 +460,34 @@ function makeResultsTable(last24Days, last7Days, last1Mounth, last1Year) {
 
   dataContainer.appendChild(tbl);
   initPagination();
+}
+
+function searchFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+     
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+       
+      } else {
+        tr[i].style.display = "none";
+        pagination.style.display = "none";
+        pageToTotalPage.style.display = "none";
+      }
+      if (filter === "") {
+        tr[i].style.display = "";
+        pagination.style.display = "flex";
+        pageToTotalPage.style.display = "block";
+      }
+    }  
+  } 
 }
 
 function initPagination() {

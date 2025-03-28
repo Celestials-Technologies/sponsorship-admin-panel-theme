@@ -3339,6 +3339,11 @@ tr td {
   align-items: center;
   gap: 12px;
 }
+.maintitleContainer img {
+  width: 30px;
+  height: 30px;
+  border-radius: 60px;
+}
 
 .mainTitleText {
   display: flex;
@@ -3453,5 +3458,359 @@ tr td {
 }
 .balanceDetailTrade:hover {
   border: 1px solid #e9901a;
+  background-color: #e9901a;
+}
+
+.rewardsPercentAnimation {
+  position: relative;
+}
+.bounce-up .subject {
+  width: 0%;
+  /*only one time transition perform*/
+  transition: all 0.8s linear;
+}
+
+.bounce-up.in-view .subject {
+  width: 73%;
+}
+.mainAssets {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  @media (max-width: 768px) {
+    gap: 16px;
+  }
+}
+.listCardContainer {
+  display: flex;
+  gap: 12px;
+}
+.listCardTitle {
+  font-size: 20px;
+  color: white;
+  font-weight: 500;
+}
+.listCardPercentage {
+  font-size: 16px;
+  color: white;
+  font-weight: 400;
+}
+.listCardTitleContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+.listCardDataMain {
+  width: 100%;
+  position: relative;
+  z-index: 9999;
+}
+.listCardImage {
+  width: 34px;
+  height: 34px;
+}
+.listCardBarContainer {
+  width: 100%;
+  height: 4px;
+  background-color: #dfe0e4;
+  border-radius: 50px;
+  margin-top: 4px;
+}
+.listCardBar {
+  background-color: #e9901a;
+  height: 100%;
+  border-radius: 50px;
+}
+.listCardPricesAndValuesContainer {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 4px;
+}
+.listCardPrice {
+  font-size: 16px;
+  color: white;
+  font-weight: 400;
+}
+.listCardValue {
+  font-size: 16px;
+  color: white;
+  font-weight: 400;
+}
+.listCardButtonSvg {
+  display: flex;
+  align-items: center;
+  position: relative;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+.detailDropDown {
+  opacity: 0;
+  margin-top: -40px;
+  position: absolute;
+  min-width: 140px;
+  background-color: #0f0f7ac7;
+  border-radius: 12px;
+  padding: 4px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  top: 12px;
+  right: 27px;
+}
+.detailDropDown a {
+  color: white;
+  text-decoration: none;
+  padding: 4px 8px;
+}
+.assetContainer {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  font-size: 18px;
+  color: white;
+}
+.assetContainer img {
+  width: 34px;
+  height: 34px;
+  border-radius: 60px;
+}
+.storedCardContainer {
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  border: 1px dashed white;
+  transition: all 0.3s ease;
+  border-radius: 12px;
+}
+.cardImageContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+.cardHolderName {
+  font-size: 16px;
+  color: white;
+  font-weight: 400;
+  text-align: left;
+  text-transform: capitalize;
+}
+.selectBank {
+  font-size: 12px;
+  color: white;
+  font-weight: 400;
+}
+.deleteIcon {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+.card {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  width: 100%;
+  border: 1px dashed white;
+  transition: all 0.3s ease;
+  border-radius: 12px;
+  padding: 12px;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 32%;
+  height: fit-content;
+}
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.walletMain {
+  position: relative;
+}
+.walletCards {
+  width: 86.5%;
+  border-left: 1px solid #e9901a;
+  display: none;
+  margin-left: auto;
+}
+.walletCardsDisplay {
+  width: 86.5%;
+  border-left: 1px solid #e9901a;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-left: auto;
+}
+.walletMain:hover .walletCards {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.checkBoxMainDiv {
+  padding: 20px 24px;
+  white-space: nowrap;
+  color: white;
+  font-size: 16px;
+  text-align: left;
+}
+.chexkBoxLabel {
+  font-size: 16px;
+  color: white;
+}
+
+.checkMarkRadioButtonContainer {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.checkMarkRadioButtonContainer input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: transparent;
+  border: 1px solid #e9901a;
+  border-radius: 50%;
+}
+
+.checkMarkRadioButtonContainer:hover input ~ .checkmark {
+  background-color: transparent;
+}
+
+.checkMarkRadioButtonContainer input:checked ~ .checkmark {
+  background-color: transparent;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.checkMarkRadioButtonContainer input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.checkMarkRadioButtonContainer .checkmark:after {
+  top: 7.2px;
+  left: 7px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #e9901a;
+}
+
+.checkMarkRadioTick {
+  position: absolute;
+  top: -19px;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: transparent;
+  border: 1px solid #e9901a;
+  border-radius: 50%;
+}
+
+.checkMarkRadioButtonContainer input:checked ~ .checkMarkRadioTick {
+  background-color: transparent;
+}
+
+.checkMarkRadioTick:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.checkMarkRadioButtonContainer input:checked ~ .checkMarkRadioTick:after {
+  display: block;
+}
+
+.checkMarkRadioButtonContainer .checkMarkRadioTick:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid #e9901a;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.mainResultInvoice {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.mainResultInvoiceSvg {
+  width: 24px;
+  height: 24px;
+}
+.mainResultInvoiceText {
+  font-size: 16px;
+  color: white;
+  font-weight: 400;
+}
+.mainData td .checkMarkRadioTick {
+  top: -6px;
+}
+.billingTableText {
+  font-size: 16px;
+  color: white;
+  font-weight: 400;
+}
+.mainResultAction {
+  display: flex;
+  justify-content: right;
+}
+.assetsDetailsMain {
+  position: relative;
+}
+.newAsset {
+  width: 86.5%;
+  border-left: 1px solid #e9901a;
+  display: none;
+  margin-left: auto;
+}
+.assetsDetailsMain:hover .newAsset {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.newAssetsDisplay {
+  width: 86.5%;
+  border-left: 1px solid #e9901a;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-left: auto;
+}
+.walletMain:hover .walletHead {
   background-color: #e9901a;
 }
