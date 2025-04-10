@@ -146,6 +146,7 @@
 }
 .iconMainBox:hover {
   background-color: white;
+  color: #e9901a !important;
 }
 .iconMainBox svg path {
   stroke: white;

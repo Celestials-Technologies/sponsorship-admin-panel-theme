@@ -10,6 +10,8 @@
     <link href="./src/output.css" rel="stylesheet" />
     <link href="style.css" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </head>
 
   <body class="min-h-screen !overflow-x-hidden" id="bodyOverflowModal">
@@ -93,7 +95,7 @@
                   <p
                     class="text-base leading-5 text-white h-auto pt-0.5 Gilroy-semibold"
                   >
-                    Pages
+                    Balance Details
                   </p>
                 </li>
               </a>
@@ -189,66 +191,68 @@
                   </li>
                 </a>
               </div>
-              <a href="./details.html">
-                <li
-                  class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-2.5 cursor-pointer hover:bg-[#E9901A] transition-all"
-                >
-                  <div
-                    class="w-[34px] h-[34px] rounded-lg flex justify-center items-center"
+              <div class="relative assetsDetailsMain">
+                <a href="./details.html">
+                  <li
+                    class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-2.5 cursor-pointer detailsMain hover:bg-[#E9901A] transition-all"
                   >
-                    <svg
-                      width="100%"
-                      height="100%"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
+                    <div
+                      class="w-[34px] h-[34px] rounded-lg flex justify-center items-center"
                     >
-                      <path
-                        d="M14 11H8M10 15H8M16 7H8M20 10.5V6.8C20 5.11984 20 4.27976 19.673 3.63803C19.3854 3.07354 18.9265 2.6146 18.362 2.32698C17.7202 2 16.8802 2 15.2 2H8.8C7.11984 2 6.27976 2 5.63803 2.32698C5.07354 2.6146 4.6146 3.07354 4.32698 3.63803C4 4.27976 4 5.11984 4 6.8V17.2C4 18.8802 4 19.7202 4.32698 20.362C4.6146 20.9265 5.07354 21.3854 5.63803 21.673C6.27976 22 7.11984 22 8.8 22H11.5M22 22L20.5 20.5M21.5 18C21.5 19.933 19.933 21.5 18 21.5C16.067 21.5 14.5 19.933 14.5 18C14.5 16.067 16.067 14.5 18 14.5C19.933 14.5 21.5 16.067 21.5 18Z"
-                        stroke="white"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                  </div>
-                  <p
-                    class="text-base leading-5 text-white pt-0.5 h-auto Gilroy-semibold"
-                  >
-                    Asset Details
-                  </p>
-                </li>
-              </a>
-              <a href="./new-asset.html">
-                <li
-                  class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-2.5 cursor-pointer hover:bg-[#E9901A] transition-all"
-                >
-                  <div
-                    class="w-[34px] h-[34px] rounded-lg flex justify-center items-center"
-                  >
-                    <svg
-                      width="100%"
-                      height="100%"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
+                      <svg
+                        width="100%"
+                        height="100%"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M14 11H8M10 15H8M16 7H8M20 10.5V6.8C20 5.11984 20 4.27976 19.673 3.63803C19.3854 3.07354 18.9265 2.6146 18.362 2.32698C17.7202 2 16.8802 2 15.2 2H8.8C7.11984 2 6.27976 2 5.63803 2.32698C5.07354 2.6146 4.6146 3.07354 4.32698 3.63803C4 4.27976 4 5.11984 4 6.8V17.2C4 18.8802 4 19.7202 4.32698 20.362C4.6146 20.9265 5.07354 21.3854 5.63803 21.673C6.27976 22 7.11984 22 8.8 22H11.5M22 22L20.5 20.5M21.5 18C21.5 19.933 19.933 21.5 18 21.5C16.067 21.5 14.5 19.933 14.5 18C14.5 16.067 16.067 14.5 18 14.5C19.933 14.5 21.5 16.067 21.5 18Z"
+                          stroke="white"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </div>
+                    <p
+                      class="text-base leading-5 text-white pt-0.5 h-auto Gilroy-semibold"
                     >
-                      <path
-                        d="M20 10.5V6.8C20 5.11984 20 4.27976 19.673 3.63803C19.3854 3.07354 18.9265 2.6146 18.362 2.32698C17.7202 2 16.8802 2 15.2 2H8.8C7.11984 2 6.27976 2 5.63803 2.32698C5.07354 2.6146 4.6146 3.07354 4.32698 3.63803C4 4.27976 4 5.11984 4 6.8V17.2C4 18.8802 4 19.7202 4.32698 20.362C4.6146 20.9265 5.07354 21.3854 5.63803 21.673C6.27976 22 7.11984 22 8.8 22H12M14 11H8M10 15H8M16 7H8M18 21V15M15 18H21"
-                        stroke="white"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                  </div>
-                  <p
-                    class="text-base leading-5 text-white pt-0.5 h-auto Gilroy-semibold"
+                      Asset Details
+                    </p>
+                  </li>
+                </a>
+                <a href="./new-asset.html" class="newAsset">
+                  <li
+                    class="py-2 px-2 rounded-r-xl flex gap-[7px] h-[50px] relative items-center mt-2.5 cursor-pointer hover:bg-[#E9901A] transition-all"
                   >
-                    New Asset
-                  </p>
-                </li>
-              </a>
+                    <div
+                      class="w-[34px] h-[34px] rounded-lg flex justify-center items-center"
+                    >
+                      <svg
+                        width="100%"
+                        height="100%"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M20 10.5V6.8C20 5.11984 20 4.27976 19.673 3.63803C19.3854 3.07354 18.9265 2.6146 18.362 2.32698C17.7202 2 16.8802 2 15.2 2H8.8C7.11984 2 6.27976 2 5.63803 2.32698C5.07354 2.6146 4.6146 3.07354 4.32698 3.63803C4 4.27976 4 5.11984 4 6.8V17.2C4 18.8802 4 19.7202 4.32698 20.362C4.6146 20.9265 5.07354 21.3854 5.63803 21.673C6.27976 22 7.11984 22 8.8 22H12M14 11H8M10 15H8M16 7H8M18 21V15M15 18H21"
+                          stroke="white"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </div>
+                    <p
+                      class="text-base leading-5 text-white pt-0.5 h-auto Gilroy-semibold"
+                    >
+                      New Asset
+                    </p>
+                  </li>
+                </a>
+              </div>
               <div>
                 <div class="accountMain">
                   <li
@@ -903,30 +907,55 @@
             <p class="text-3xl lg:text-[40px] text-white Gilroy-semibold">
               Team
             </p>
-            <button
-              type="button"
-              onclick="addTeamMemberBtn()"
-              class="bg-btnSecondary px-5 py-2 md:px-8 md:py-4 text-base text-white rounded-lg flex items-center justify-center gap-2 Gilroy-semibold"
-              id="blockZindex"
-              style="z-index: 9999"
-            >
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
+            <div class="flex gap-4 items-center">
+              <button
+                type="button"
+                onclick="addTeamMemberBtn()"
+                class="bg-btnSecondary px-5 py-2 md:px-8 md:py-4 text-base text-white rounded-lg flex items-center justify-center gap-2 Gilroy-semibold"
+                id="blockZindex"
+                style="z-index: 9999"
               >
-                <path
-                  d="M12 8V16M8 12H16M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                ></path>
-              </svg>
-              <p class="pt-0.5">Add Team Member</p>
-            </button>
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12 8V16M8 12H16M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </svg>
+                <p class="pt-0.5">Add Team Member</p>
+              </button>
+              <!-- <a
+                href="./allTeamMembers.html"
+                class="bg-btnSecondary px-5 py-2 md:px-8 md:py-4 text-base text-white rounded-lg flex items-center justify-center gap-2 Gilroy-semibold"
+                id="blockZindex"
+                style="z-index: 9999"
+              >
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M3.33789 7C5.06694 4.01099 8.29866 2 12.0001 2C17.5229 2 22.0001 6.47715 22.0001 12C22.0001 17.5228 17.5229 22 12.0001 22C8.29866 22 5.06694 19.989 3.33789 17M12 16L16 12M16 12L12 8M16 12H2"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <p class="pt-0.5">All Members</p>
+              </a> -->
+            </div>
           </div>
           <div
             class="p-6 md:pt-6 md:pr-[31px] md:pb-[22px] md:pl-[26px] border border-white rounded-[15px] bg-gradient mt-6"
@@ -935,18 +964,25 @@
               class="border-b border-dashed pb-6 mb-2 border-white flex items-center justify-between mb-6 pb-6 flex-wrap gap-x-1"
             >
               <p class="text-xl md:text-[26px] text-white Gilroy-semibold">
-                Invoice History
+                Members
               </p>
-              <div class="flex gap-3 flex-wrap">
+              <div
+                class="flex gap-3 flex-wrap"
+                id="blockZindex"
+                style="z-index: 9999"
+              >
                 <div
                   class="bg-sideBarBg border border-translucentWhite py-1.5 pl-5 pr-2 gap-4 rounded-full flex items-center"
                 >
                   <input
                     type="text"
-                    placeholder="Search"
+                    id="myInput"
+                    onkeyup="searchFunction()"
+                    placeholder="Search by name.."
                     class="text-base bg-transparent leading-6 text-white outline-none Gilroy-medium w-[calc(100%-20%)]"
                   />
                   <div
+                    onclick="searchFunction()"
                     class="p-1 flex items-center justify-center bg-white cursor-pointer w-fit rounded-full searchIconBox"
                   >
                     <svg
@@ -966,16 +1002,132 @@
                 </div>
                 <div class="flex items-center gap-2">
                   <p class="text-sm Gilroy-normal text-white">Sort By</p>
-                  <select
-                    class="border border-solid border-white bg-transparent p-1 text-xs text-white pt-1.5 rounded-lg Gilroy-normal"
-                  >
-                    <option value="option1">Last 15 days</option>
-                    <option value="option2">Last 10 days</option>
-                  </select>
+                  <div class="relative">
+                    <button
+                      type="button"
+                      onclick="selectDays(this)"
+                      class="px-2 py-1 flex items-center gap-3 justify-between cursor-pointer selectDaysBox rounded-lg border border-solid border-white bg-transparent p-1 text-xs text-white pt-1.5 rounded-lg Gilroy-normal"
+                    >
+                      <p
+                        class="text-sm text-white Gilroy-normal"
+                        id="detailSelectTableText"
+                      >
+                        Last 15 days
+                      </p>
+                      <div class="w-4 h-4">
+                        <svg
+                          width="100%"
+                          height="100%"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                          id="daysIcon"
+                          style="rotate: 0deg; transition: all 0.5s ease"
+                        >
+                          <path
+                            d="M6 9L12 15L18 9"
+                            stroke="white"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </div>
+                    </button>
+                    <div
+                      class="absolute right-0 bg-bgPrimary rounded-lg px-2 py-1 border border-solid border-white w-[130px]"
+                      id="daysSelect"
+                      style="
+                        scale: 0;
+                        margin-top: -50px;
+                        z-index: 0;
+                        transition: all 0.2s ease;
+                      "
+                    >
+                      <button
+                        type="button"
+                        class="text-base Gilroy-normal hover:bg-[#E9901A] p-1 text-white w-full rounded-lg flex items-center gap-3"
+                        onclick="changeSelectTableText('Last 15 days' , event)"
+                      >
+                        <p class="text-sm text-white Gilroy-normal">
+                          Last 15 days
+                        </p>
+                      </button>
+                      <button
+                        type="button"
+                        class="text-base Gilroy-normal hover:bg-[#E9901A] p-1 text-white w-full rounded-lg flex items-center gap-3"
+                        onclick="changeSelectTableText('Last 10 days' , event)"
+                      >
+                        <p class="text-sm text-white Gilroy-normal">
+                          Last 10 days
+                        </p>
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="overflow-auto tableScroll pb-2.5">
+
+            <div
+              id="data-container"
+              class="overflow-auto tableScroll pb-2.5"
+            ></div>
+
+            <div class="mt-5 flex flex-wrap justify-between gap-3 items-center">
+              <p
+                class="text-white text-sm md:text-base Gilroy-normal"
+                id="pageToTotalPage"
+              ></p>
+
+              <div
+                class="pagination gap-3"
+                id="pagination"
+                style="display: none"
+              >
+                <div
+                  id="prev"
+                  class="md:w-10 md:h-10 w-8 h-8 flex items-center justify-center rounded-lg border border-white bg-transparent hover:bg-[#E9901A] transition-all"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="white"
+                    class="w-6 h-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M15.75 19.5 8.25 12l7.5-7.5"
+                    ></path>
+                  </svg>
+                </div>
+
+                <p id="page-numbers" class="flex items-center gap-3"></p>
+                <div
+                  id="next"
+                  class="md:w-10 md:h-10 w-8 h-8 flex items-center justify-center rounded-lg border border-white bg-transparent hover:bg-[#E9901A] transition-all"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="white"
+                    class="w-6 h-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <!-- <div class="overflow-auto tableScroll pb-2.5">
               <table class="w-full">
                 <thead>
                   <tr class="bg-[#302964]">
@@ -2226,70 +2378,7 @@
                   </tr>
                 </tbody>
               </table>
-            </div>
-            <div class="mt-5 flex flex-wrap justify-between gap-3 items-center">
-              <p class="text-white text-sm md:text-base Gilroy-normal">
-                Showing 1 to 10 of 500 entries
-              </p>
-              <ul class="flex items-center gap-2">
-                <li
-                  class="md:w-10 md:h-10 w-8 h-8 flex items-center justify-center rounded-lg border border-white bg-transparent hover:bg-[#E9901A] transition-all"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.5"
-                    stroke="white"
-                    class="w-6 h-6"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M15.75 19.5 8.25 12l7.5-7.5"
-                    ></path>
-                  </svg>
-                </li>
-                <li
-                  class="w-8 h-8 md:w-10 md:h-10 flex text-base text-white Gilroy-medium items-center justify-center rounded-lg border border-white hover:bg-transparent bg-btnSecondary transition-all pt-0.5"
-                >
-                  1
-                </li>
-                <li
-                  class="w-8 h-8 md:w-10 md:h-10 flex text-base text-white Gilroy-medium items-center justify-center rounded-lg border border-white bg-transparent hover:bg-[#E9901A] transition-all pt-0.5"
-                >
-                  2
-                </li>
-                <li
-                  class="w-8 h-8 md:w-10 md:h-10 flex text-base text-white Gilroy-medium items-center justify-center rounded-lg border border-white bg-transparent hover:bg-[#E9901A] transition-all pt-0.5"
-                >
-                  ...
-                </li>
-                <li
-                  class="w-8 h-8 md:w-10 md:h-10 flex text-base text-white Gilroy-medium items-center justify-center rounded-lg border border-white bg-transparent hover:bg-[#E9901A] transition-all pt-0.5"
-                >
-                  5
-                </li>
-                <li
-                  class="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center rounded-lg border border-white hover:bg-transparent bg-btnSecondary transition-all"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.5"
-                    stroke="white"
-                    class="w-6 h-6"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="m8.25 4.5 7.5 7.5-7.5 7.5"
-                    ></path>
-                  </svg>
-                </li>
-              </ul>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -2389,7 +2478,7 @@
                 src="./src/images/upload.png"
                 alt="upload"
                 class="w-full h-full object-cover"
-                id="coin-img"
+                id="profileImg"
               />
             </div>
             <label
@@ -2433,87 +2522,91 @@
           </div>
           <div class="relative">
             <label
-            class="md:text-lg text-base Gilroy-normal text-white sm:mb-4 mb-2 Gilroy-medium"
-          >
-            Email
-          </label>
-          <input
-            type="email"
-            required
-            id="emailInput"
-            class="px-8 py-3 text-base border border-solid border-white outline-none rounded-xl bg-transparent text-white w-full"
-          />
-          <p
-            class="text-red-500 text-sm"
-            id="emailInputError"
-            style="display: none"
-          >
-            Please enter Email
-          </p>
+              class="md:text-lg text-base Gilroy-normal text-white sm:mb-4 mb-2 Gilroy-medium"
+            >
+              Email
+            </label>
+            <input
+              type="email"
+              required
+              id="emailInput"
+              class="px-8 py-3 text-base border border-solid border-white outline-none rounded-xl bg-transparent text-white w-full"
+            />
+            <p
+              class="text-red-500 text-sm"
+              id="emailInputError"
+              style="display: none"
+            >
+              Please enter Email
+            </p>
           </div>
           <div class="relative">
             <label
-            class="md:text-lg text-base Gilroy-normal text-white sm:mb-4 mb-2 Gilroy-medium"
-          >
-            Number
-          </label>
-          <input
-            type="number"
-            required
-            id="numberInput"
-            class="px-8 py-3 text-base border border-solid border-white outline-none rounded-xl bg-transparent text-white w-full"
-          />
-          <p
-            class="text-red-500 text-sm"
-            id="numberInputError"
-            style="display: none"
-          >
-            Please enter Email
-          </p>
+              class="md:text-lg text-base Gilroy-normal text-white sm:mb-4 mb-2 Gilroy-medium"
+            >
+              Number
+            </label>
+            <input
+              type="number"
+              required
+              id="numberInput"
+              class="px-8 py-3 text-base border border-solid border-white outline-none rounded-xl bg-transparent text-white w-full"
+            />
+            <p
+              class="text-red-500 text-sm"
+              id="numberInputError"
+              style="display: none"
+            >
+              Please enter Email
+            </p>
           </div>
           <div class="relative">
             <label
-            class="md:text-lg text-base Gilroy-normal text-white sm:mb-4 mb-2 Gilroy-medium"
-          >
-            Work
-          </label>
-          <input
-            type="text"
-            required
-            id="workInput"
-            class="px-8 py-3 text-base border border-solid border-white outline-none rounded-xl bg-transparent text-white w-full"
-          />
-          <p
-            class="text-red-500 text-sm"
-            id="workInputError"
-            style="display: none"
-          >
-            Please enter Work
-          </p>
+              class="md:text-lg text-base Gilroy-normal text-white sm:mb-4 mb-2 Gilroy-medium"
+            >
+              Work
+            </label>
+            <input
+              type="text"
+              required
+              id="workInput"
+              class="px-8 py-3 text-base border border-solid border-white outline-none rounded-xl bg-transparent text-white w-full"
+            />
+            <p
+              class="text-red-500 text-sm"
+              id="workInputError"
+              style="display: none"
+            >
+              Please enter Work
+            </p>
           </div>
           <div class="relative">
             <label class="text-base text-white Gilroy-normal">Status</label>
-            <select id="teamStatus" class="px-6 rounded-xl py-3 pt-3.5 bg-transparent w-full border border-solid border-white outline-none text-base text-white Gilroy-normal h-11">
+            <select
+              id="teamStatus"
+              class="px-6 rounded-xl py-3 pt-3.5 bg-transparent w-full border border-solid border-white outline-none text-base text-white Gilroy-normal h-11"
+            >
               <option value="Select Status" class="text-black">
                 Select Status
               </option>
-              <option value="Admin" class="text-black">
-                Admin
-              </option>
+              <option value="Admin" class="text-black">Admin</option>
               <option value="Editor" class="text-black">Editor</option>
-              <option value="Guest" class="text-black">
-                Guest
-              </option>
-              <option value="Null" class="text-black">
-                Null
-              </option>
+              <option value="Guest" class="text-black">Guest</option>
+              <option value="Null" class="text-black">Null</option>
             </select>
-            <p id="teamStatusError" class="text-red-500 text-xs absolute -bottom-5 hidden">
+            <p
+              id="teamStatusError"
+              class="text-red-500 text-xs absolute -bottom-5 hidden"
+            >
               Please select a valid status
             </p>
           </div>
 
-          <button type="button" onclick="submitNewMember()" class="px-4 md:px-6 py-3 pt-3.5 bg-btnSecondary text-white border border-[#E9901A] rounded-lg hover:border hover:border-white hover:bg-transparent transition-all">
+          <button
+            type="button"
+            onclick="submitNewMember()"
+            class="px-4 md:px-6 py-3 pt-3.5 bg-btnSecondary text-white border border-[#E9901A] rounded-lg hover:border hover:border-white hover:bg-transparent transition-all"
+          >
             Add New Member
           </button>
         </form>

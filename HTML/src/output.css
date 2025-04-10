@@ -3791,6 +3791,9 @@ tr td {
 .assetsDetailsMain {
   position: relative;
 }
+.assetsDetailsMain:hover .detailsMain {
+  background-color: #e9901a;
+}
 .newAsset {
   width: 86.5%;
   border-left: 1px solid #e9901a;
@@ -3813,4 +3816,26 @@ tr td {
 }
 .walletMain:hover .walletHead {
   background-color: #e9901a;
+}
+
+.nameContainer {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.nameContainer img {
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+  border-radius: 100%;
+}
+.actionContainer {
+  display: flex;
+  justify-content: end;
+  align-items: end;
+}
+.deleteButton {
+  background-color: red;
+  color: white;
+  padding: 8px 16px;
 }

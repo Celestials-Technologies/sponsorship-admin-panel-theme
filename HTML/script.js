@@ -69,11 +69,59 @@ function closeDropDowns() {
   });
 }
 
+const profileImg = document.getElementById("profileImg");
+const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+
+if (localStorage.getItem("loginSuccess") === "true" && currentUser) {
+  
+  profileImg.textContent = currentUser.firstName[0].toUpperCase();
+  profileImg.style.width = "32px";
+  profileImg.style.height = "32px";
+  profileImg.style.display = "flex";
+  profileImg.style.justifyContent = "center";
+  profileImg.style.alignItems = "center";
+  profileImg.style.color = "white"
+} else {
+  // create img element IN PROFILE IMG BUTTON
+  profileImg = document.createElement("img");
+  profileImg.src = "src/images/profile-img.png"
+  profileImg.style.width = "32px";
+  profileImg.style.height = "32px";
+}
+
+// Update button text based on login state
+const logout = document.getElementById("logout");
+const login = document.getElementById("login");
+const accountLogin = document.getElementById("accountLogin")
+const accountSignUp = document.getElementById("accountSignUp")
+if (localStorage.getItem("loginSuccess") === "true") {
+  logout.style.display = "block";
+  login.style.display = "none";
+  accountLogin.style.display = "none";
+  accountSignUp.style.display = "none";
+} else {
+  logout.style.display = "none";
+  login.style.display = "block";
+  accountLogin.style.display = "block";
+  accountSignUp.style.display = "block";
+}
+
+function logoutBtn() {
+  localStorage.removeItem("loginSuccess");
+  localStorage.removeItem("currentUser");
+  window.location.reload();
+}
+
+function loginBtn() {
+  window.location.href = "login.html";
+}
+
 function profileButton() {
   if (
     profileDropDown.style.opacity === "0" &&
     profileDropDown.style.marginTop === "50px" &&
-    profileDropDown.style.zIndex === "0"
+    profileDropDown.style.zIndex === "0" &&
+    localStorage.getItem("loginSuccess") === "true"
   ) {
     profileDropDown.style.opacity = "1";
     profileDropDown.style.marginTop = "8px";
