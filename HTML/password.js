@@ -29,20 +29,36 @@ function savePasswords() {
     if (confirmPassword.value !== newPassword.value) {
         confirmPasswordError.style.display = "block";
     }
-    if (oldPassword.value !== "" && newPassword.value !== "" && confirmPassword.value !== "" && oldPassword.value !== newPassword.value && confirmPassword.value === newPassword.value) {
+
+    const storedUsers = JSON.parse(localStorage.getItem("user")) || [];
+
+    const userIndex = storedUsers.findIndex((u) => u.password === oldPassword.value);
+
+    if (userIndex !== -1 && 
+        oldPassword.value !== "" && 
+        newPassword.value !== "" && 
+        confirmPassword.value !== "" && 
+        oldPassword.value !== newPassword.value && 
+        confirmPassword.value === newPassword.value) {
+        
         oldPasswordError.style.display = "none";
         newPasswordError.style.display = "none";
         confirmPasswordError.style.display = "none";
 
-       let userPassword = {
-        oldPassword: oldPassword.value,
-        newPassword: newPassword.value,
-        confirmPassword: confirmPassword.value
-       }
-        let storedUserPassword = JSON.parse(localStorage.getItem("userPassword")) || [];
-        storedUserPassword.push(userPassword);
-        localStorage.setItem("userPassword", JSON.stringify(storedUserPassword));
-       console.log(localStorage.getItem("userPassword"));
+        // Update only the password while keeping other user properties
+        storedUsers[userIndex].password = newPassword.value;
+        
+        // Save the updated array back to localStorage
+        localStorage.setItem("user", JSON.stringify(storedUsers));
+        alert("Password updated successfully");
+        
+        // Clear the form
+        oldPassword.value = "";
+        newPassword.value = "";
+        confirmPassword.value = "";
+    } else if (userIndex === -1) {
+        oldPasswordError.style.display = "block";
+        oldPasswordError.textContent = "Incorrect old password";
     }
 }
 

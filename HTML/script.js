@@ -1258,14 +1258,19 @@ function rewardsRefresh() {
 //body class add dark
 
 
-
+let darkMode = document.getElementById("darkMode");
+let lightMode = document.getElementById("lightMode")
 function darkModeBtn() {
   let addDarkMode = document.getElementById("bodyOverflowModal")
   addDarkMode.classList.toggle("dark")
   if(addDarkMode.classList.contains("dark")) {
     localStorage.setItem("dark", "enabled")
+    darkMode.style.display = "none";
+    lightMode.style.display = "block";
   } else {
     localStorage.setItem("dark", "disabled")
+    darkMode.style.display = "block";
+    lightMode.style.display = "none";
   }
 }
 document.addEventListener("DOMContentLoaded" , function () {
@@ -1273,3 +1278,4 @@ document.addEventListener("DOMContentLoaded" , function () {
     document.getElementById("bodyOverflowModal").classList.add("dark");
   }
 })
+
