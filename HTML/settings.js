@@ -16,13 +16,13 @@ function removeCoinImage() {
   coinImage.src = "./src/images/upload.png";
   inputFile.value = "";
 }
+let tagline = document.getElementById("taglineInput").value;
 function saveChange() {
   let coinImage = document.getElementById("coin-img").src;
   let firstName = document.getElementById("firstNameInput").value;
   let lastName = document.getElementById("lastNameInput").value;
   let email = document.getElementById("emailInput").value;
   let phone = document.getElementById("phoneInput").value;
-  let tagline = document.getElementById("taglineInput").value;
 
   // Capture the selected radio button value
   let gender = document.querySelector('input[name="radio"]:checked')?.value;
@@ -222,4 +222,24 @@ function deleteAccount() {
     localStorage.removeItem("userPrivacyInformation");
     window.location.href = "./setting.html";
   }
+}
+
+function boldBtn() {
+  const taglineInput = document.getElementById("taglineInput");
+  taglineInput.style.fontWeight = taglineInput.style.fontWeight === 'bold' ? 'normal' : 'bold';
+}
+
+function italicBtn() {
+  const taglineInput = document.getElementById("taglineInput");
+  taglineInput.style.fontStyle = taglineInput.style.fontStyle === 'italic' ? 'normal' : 'italic';
+}
+
+function underlineBtn() {
+  const taglineInput = document.getElementById("taglineInput");
+  taglineInput.style.textDecoration = taglineInput.style.textDecoration === 'underline' ? 'none' : 'underline';
+}
+
+function alignCenter() {
+  const taglineInput = document.getElementById("taglineInput");
+  taglineInput.style.textAlign = taglineInput.style.textAlign === 'center' ? 'left': 'center';
 }

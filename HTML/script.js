@@ -444,11 +444,6 @@ function closeBtn() {
     bodyOverflowModal.style.overflow = "auto";
     bodyScreenData.style.opacity = "1";
   }
-  if (addMemberModal && addMemberModal.style.top === "0%") {
-    addMemberModal.style.top = "-150%";
-    bodyOverflowModal.style.overflow = "auto";
-    bodyScreenData.style.opacity = "1";
-  }
 }
 
 
@@ -488,13 +483,13 @@ function makeACard() {
     document
       .getElementById("newCardModal")
       .addEventListener("click", function (event) {
-        if (!event.target.closest("#newCardData")) {
+      if (!event.target.closest("#newCardData")) {
           newCardModal.style.top = "-150%";
           newCardModal.style.opacity = "0";
           bodyOverflowModal.style.overflow = "auto";
           bodyScreenData.style.opacity = "1";
-        }
-      });
+      }
+    });
   } else {
     newCardModal.style.top = "-150%";
     newCardModal.style.opacity = "0";

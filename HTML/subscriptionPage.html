@@ -10,11 +10,13 @@
     <link href="./src/output.css" rel="stylesheet" />
     <link href="style.css" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </head>
 
-  <body class="min-h-screen !overflow-x-hidden" id="bodyOverflowModal">
+  <body class="min-h-screen" id="bodyOverflowModal">
     <div
-      class="flex gap-[25px] pt-[25px] pb-[53px] px-[25px] min-h-screen bg-bgPrimary opacity-1"
+      class="flex gap-[25px] pt-[25px] pb-[53px] px-[25px] min-h-screen bg-bgPrimary"
       id="bodyScreenData"
     >
       <div
@@ -34,7 +36,7 @@
             <ul class="mt-[90px] sidbar-list pl-px">
               <a href="./dashboard.html">
                 <li
-                  class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center cursor-pointer hover:bg-[#E9901A] transition-all"
+                  class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center hover:bg-[#E9901A] hover:text-white cursor-pointer"
                 >
                   <div
                     class="w-[34px] h-[34px] rounded-lg flex justify-center items-center"
@@ -72,7 +74,7 @@
                   class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-2.5 cursor-pointer hover:bg-[#E9901A] transition-all"
                 >
                   <div
-                    class="w-[34px] h-[34px] rounded-lg flex justify-center items-center !bg-transparent"
+                    class="w-[34px] h-[34px] rounded-lg flex justify-center items-center"
                   >
                     <svg
                       width="100%"
@@ -251,10 +253,10 @@
                   </li>
                 </a>
               </div>
-              <div>
+              <div class="accountContainer">
                 <div class="accountMain">
                   <li
-                    class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-2.5 cursor-pointer bg-[#E9901A] transition-all"
+                    class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-2.5 cursor-pointer hover:bg-[#E9901A] transition-all"
                   >
                     <div
                       class="w-[34px] h-[34px] rounded-lg flex justify-center items-center"
@@ -281,15 +283,15 @@
                     </p>
                   </li>
                 </div>
-                <div class="pl-8">
+                <div class="pl-8 accountList">
                   <div class="border-l border-solid border-[#E9901A] pt-2.5">
-                    <ul class="flex flex-col gap-1">
+                    <ul>
                       <a href="./setting.html">
                         <li
-                          class="rounded-xl flex gap-[7px] h-[50px] relative items-center cursor-pointer transition-all"
+                          class="rounded-xl flex gap-[7px] h-[50px] relative items-center mt-0 cursor-pointer !bg-transparent transition-all"
                         >
                           <p
-                            class="text-base leading-5 text-white flex items-center transition-all py-2 px-2 pt-2.5 h-full w-full bg-[#E9901A] rounded-r-xl Gilroy-semibold"
+                            class="text-base leading-5 text-white transition-all py-2.5 pt-3 px-2 h-full w-full Gilroy-semibold flex items-center hover:bg-[#E9901A] rounded-r-xl"
                           >
                             Setting
                           </p>
@@ -297,10 +299,10 @@
                       </a>
                       <a href="./password.html">
                         <li
-                          class="rounded-xl flex gap-[7px] h-[50px] relative items-center cursor-pointer transition-all"
+                          class="rounded-xl flex gap-[7px] h-[50px] relative items-center mt-0 cursor-pointer !bg-transparent transition-all"
                         >
                           <p
-                            class="text-base leading-5 text-white flex items-center transition-all py-2 px-2 pt-2.5 w-full h-full hover:bg-[#E9901A] rounded-r-xl Gilroy-semibold"
+                            class="text-base leading-5 text-white transition-all py-2.5 pt-3 px-2 h-full w-full Gilroy-semibold flex items-center hover:bg-[#E9901A] rounded-r-xl"
                           >
                             Password
                           </p>
@@ -308,10 +310,10 @@
                       </a>
                       <a href="./billing.html">
                         <li
-                          class="rounded-xl flex gap-[7px] h-[50px] relative items-center cursor-pointer transition-all"
+                          class="rounded-xl flex gap-[7px] h-[50px] relative items-center mt-0 cursor-pointer !bg-transparent transition-all"
                         >
                           <p
-                            class="text-base leading-5 text-white flex items-center transition-all py-2 px-2 pt-2.5 w-full h-full hover:bg-[#E9901A] rounded-r-xl Gilroy-semibold"
+                            class="text-base leading-5 text-white transition-all py-2.5 pt-3 px-2 h-full w-full Gilroy-semibold flex items-center hover:bg-[#E9901A] rounded-r-xl"
                           >
                             Billing
                           </p>
@@ -319,21 +321,21 @@
                       </a>
                       <a href="./notification.html">
                         <li
-                          class="rounded-xl flex gap-[7px] h-[50px] relative items-center cursor-pointer transition-all"
+                          class="rounded-xl flex gap-[7px] h-[50px] relative items-center mt-0 cursor-pointer !bg-transparent transition-all"
                         >
                           <p
-                            class="text-base leading-5 text-white flex items-center transition-all py-2 px-2 pt-2.5 w-full h-full hover:bg-[#E9901A] rounded-r-xl Gilroy-semibold"
+                            class="text-base leading-5 text-white transition-all py-2.5 pt-3 px-2 h-full w-full Gilroy-semibold flex items-center hover:bg-[#E9901A] rounded-r-xl"
                           >
-                            Notifications
+                            Notification
                           </p>
                         </li>
                       </a>
                       <a href="./team.html">
                         <li
-                          class="rounded-xl flex gap-[7px] h-[50px] relative items-center cursor-pointer transition-all"
+                          class="rounded-xl flex gap-[7px] h-[50px] relative items-center mt-0 cursor-pointer !bg-transparent transition-all"
                         >
                           <p
-                            class="text-base leading-5 text-white flex items-center transition-all py-2 px-2 pt-2.5 w-full h-full hover:bg-[#E9901A] rounded-r-xl Gilroy-semibold"
+                            class="text-base leading-5 text-white transition-all py-2.5 pt-3 px-2 h-full w-full Gilroy-semibold flex items-center hover:bg-[#E9901A] rounded-r-xl"
                           >
                             Team
                           </p>
@@ -341,10 +343,10 @@
                       </a>
                       <a href="./login.html" id="accountLogin">
                         <li
-                          class="rounded-xl flex gap-[7px] h-[50px] relative items-center cursor-pointer transition-all"
+                          class="rounded-xl flex gap-[7px] h-[50px] relative items-center mt-0 cursor-pointer !bg-transparent transition-all"
                         >
                           <p
-                            class="text-base leading-5 text-white flex items-center transition-all py-2 px-2 pt-2.5 w-full h-full hover:bg-[#E9901A] rounded-r-xl Gilroy-semibold"
+                            class="text-base leading-5 text-white transition-all py-2.5 pt-3 px-2 h-full w-full Gilroy-semibold flex items-center hover:bg-[#E9901A] rounded-r-xl"
                           >
                             Login
                           </p>
@@ -352,10 +354,10 @@
                       </a>
                       <a href="./signup.html" id="accountSignUp">
                         <li
-                          class="rounded-xl flex gap-[7px] h-[50px] relative items-center cursor-pointer transition-all"
+                          class="rounded-xl flex gap-[7px] h-[50px] relative items-center mt-0 cursor-pointer !bg-transparent transition-all"
                         >
                           <p
-                            class="text-base leading-5 text-white flex items-center transition-all py-2 px-2 pt-2.5 w-full h-full hover:bg-[#E9901A] rounded-r-xl Gilroy-semibold"
+                            class="text-base leading-5 text-white transition-all py-2.5 pt-3 px-2 h-full w-full Gilroy-semibold flex items-center hover:bg-[#E9901A] rounded-r-xl"
                           >
                             Sign Up
                           </p>
@@ -926,633 +928,141 @@
           </div>
         </div>
 
-        <div class="pt-12" id="blockZindex" style="z-index: 9999">
-          <div class="flex flex-wrap gap-3 items-center justify-between mb-5">
-            <p class="text-3xl lg:text-[40px] text-white Gilroy-semibold">
-              Setting
-            </p>
-          </div>
-          <div class="flex flex-wrap gap-y-6 gap-5">
+        <div class="pt-12 relative" id="buttonHeader" style="z-index: 9999">
+          <p class="text-3xl lg:text-[40px] text-white Gilroy-semibold">
+            Subscriptions
+          </p>
+          <div class="flex flex-col gap-4 mt-6">
             <div
-              class="p-6 md:pt-6 md:pr-[31px] w-full xl:w-[48%] md:pb-[22px] md:pl-[26px] border border-white rounded-[15px] bg-gradient"
+              class="border border-translucentWhite w-full max-w-full bg-sideBarBg p-4 rounded-xl"
             >
-              <div
-                class="flex border-b border-dashed border-white pb-4 mb-4 items-center gap-3"
-              >
-                <h3 class="text-white Gilroy-semibold text-xl sm:text-2xl">
-                  Account Settings
-                </h3>
-              </div>
-              <form class="flex flex-col md:gap-6 gap-5">
-                <p class="md:text-lg text-base Gilroy-normal text-white">
-                  Profile photo
-                </p>
-                <!-- <div
-                  class="flex flex-wrap items-center lg:gap-6 gap-5 border-b border-dashed border-white pb-6"
-                >
+              <div class="flex justify-between">
+                <div class="flex gap-5">
                   <img
-                    src="./src/images/upload.png"
-                    alt="Profile Photo"
-                    id="profile-photo"
+                    src="./src/images/youtube.png"
+                    alt="youtube"
+                    class="w-6 h-6"
                   />
-                  <label
-                  for="upload-file"
-                  class="bg-btnSecondary transition-all h-fit px-6 py-3 pt-3.5 text-base text-white Gilroy-normal hover:bg-transparent border border-solid rounded-lg border-[#E9901A] hover:border-white"
-                  >Upload Image</label
-                  >
-                  <input
-                  type="file"
-                  accept="image/jpeg, image/png, image/jpg"
-                  id="upload-file"
-                  style="display: none"
-                />
-                  <button
-                    type="button"
-                    onclick="removeProfilePhoto()"
-                    class="px-6 py-3.5 rounded-xl text-base Gilroy-medium bg-transparent border border-solid border-[#E9901A] text-[#E9901A] hover:text-white hover:bg-[#E9901A] transition-all"
-                  >
-                    Cancel
-                  </button>
-                </div> -->
-                <div class="flex md:gap-6 gap-5 flex-wrap items-center">
-                  <div class="w-[120px] h-[120px]" id="file-chosen">
-                    <img
-                      src="./src/images/upload.png"
-                      alt="upload"
-                      class="w-full h-full object-cover"
-                      id="coin-img"
-                    />
-                  </div>
-                  <label
-                    for="input-file"
-                    class="bg-btnSecondary transition-all h-fit px-6 py-3 pt-3.5 text-base text-white Gilroy-normal hover:bg-transparent border border-solid rounded-lg border-[#E9901A] hover:border-white"
-                    >Upload Image</label
-                  >
-                  <input
-                    type="file"
-                    accept="image/jpeg, image/png, image/jpg"
-                    id="input-file"
-                    style="display: none"
-                  />
-                  <button
-                    type="button"
-                    onclick="removeCoinImage()"
-                    class="bg-transparent transition-all h-fit px-6 py-3 pt-3.5 text-base text-white Gilroy-normal hover:bg-[#E9901A] border border-solid rounded-lg border-white hover:border-[#E9901A]"
-                  >
-                    Cancel
-                  </button>
-                </div>
-                <div class="flex flex-wrap md:flex-nowrap gap-5 items-center">
-                  <div class="w-full md:w-[48%] flex flex-col relative">
-                    <label
-                      class="md:text-lg text-base Gilroy-normal text-white sm:mb-4 mb-2 Gilroy-medium"
-                    >
-                      First Name
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      id="firstNameInput"
-                      class="px-8 py-3 text-base border border-solid border-white outline-none rounded-xl bg-transparent text-white"
-                    />
-                    <p
-                      class="text-red-500 text-sm"
-                      id="firstNameError"
-                      style="display: none"
-                    >
-                      Please enter your first name
-                    </p>
-                  </div>
-                  <div class="w-full md:w-[48%] flex flex-col relative">
-                    <label
-                      class="md:text-lg text-base Gilroy-normal text-white sm:mb-4 mb-2 Gilroy-medium"
-                    >
-                      Last Name
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      id="lastNameInput"
-                      class="px-8 py-3 text-base border border-solid border-white outline-none rounded-xl bg-transparent text-white"
-                    />
-                    <p
-                      class="text-red-500 text-sm"
-                      id="lastNameError"
-                      style="display: none"
-                    >
-                      Please enter your last name
-                    </p>
-                  </div>
-                </div>
-                <div class="relative">
-                  <label
-                    class="md:text-lg w-full text-base Gilroy-normal text-white Gilroy-medium"
-                  >
-                    Gmail
-                  </label>
-                  <input
-                    type="email"
-                    required
-                    id="emailInput"
-                    class="px-8 py-3 mt-2 sm:mt-4 text-base border w-full border-solid border-white outline-none rounded-xl bg-transparent text-white"
-                  />
-                  <p
-                    class="text-red-500 text-sm"
-                    id="emailError"
-                    style="display: none"
-                  >
-                    Please enter your email
+                  <p class="text-[18px] md:text-xl text-white Gilroy-medium">
+                    Youtube
                   </p>
                 </div>
-                <div class="relative">
-                  <label
-                    class="md:text-lg w-full text-base Gilroy-normal text-white Gilroy-medium"
-                  >
-                    Phone &nbsp;<span class="text-[#979ca8] text-sm"
-                      >(Optional)</span
-                    >
-                  </label>
-                  <input
-                    type="tel"
-                    pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
-                    id="phoneInput"
-                    class="px-8 py-3 mt-2 sm:mt-4 text-base border w-full border-solid border-white outline-none rounded-xl bg-transparent text-white"
-                  />
-                  <p
-                    class="text-red-500 text-sm"
-                    id="phoneError"
-                    style="display: none"
-                  >
-                    Please enter your phone number
-                  </p>
-                </div>
-                <div>
-                  <label
-                    class="md:text-lg w-full text-base Gilroy-normal text-white Gilroy-medium"
-                  >
-                    Gender
-                  </label>
-                  <div class="flex items-center lg:gap-6 gap-5 mt-2 sm:mt-4">
-                    <label class="radioButtonContainer text-base text-white">
-                      Male
-                      <input
-                        type="radio"
-                        name="radio"
-                        value="Male"
-                        checked="checked"
-                      />
-                      <span class="checkmark"></span>
-                    </label>
-                    <label class="radioButtonContainer text-base text-white">
-                      Female
-                      <input type="radio" name="radio" value="Female" />
-                      <span class="checkmark"></span>
-                    </label>
-                    <label class="radioButtonContainer text-base text-white">
-                      Others
-                      <input type="radio" name="radio" value="Others" />
-                      <span class="checkmark"></span>
-                    </label>
-                  </div>
-                </div>
-                <div class="relative">
-                  <label
-                    class="md:text-lg w-full text-base Gilroy-normal text-white Gilroy-medium"
-                  >
-                    Tagline :
-                  </label>
-                  <div
-                    class="border border-solid border-white rounded-xl mt-2 sm:mt-4"
-                  >
-                    <div
-                      class="p-2 border-b border-solid border-white flex items-center"
-                    >
-                      <select
-                        class="text-base text-white outline-none Gilroy-normal bg-transparent"
-                      >
-                        <option value="normal" class="text-black">Normal</option>
-                        <option value="heading" class="text-black">Heading 1</option>
-                      </select>
-                      <button type="button" onclick="boldBtn()" class="px-1.5">
-                        <svg
-                          width="18"
-                          height="18"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M6 4V20M9.5 4H15.5C17.7091 4 19.5 5.79086 19.5 8C19.5 10.2091 17.7091 12 15.5 12H9.5H16.5C18.7091 12 20.5 13.7909 20.5 16C20.5 18.2091 18.7091 20 16.5 20H9.5M9.5 4V20M9.5 4H4M9.5 20H4"
-                            stroke="white"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                          />
-                        </svg>
-                      </button>
-                      <button type="button" onclick="italicBtn()" class="px-1.5">
-                        <svg
-                          width="18"
-                          height="18"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M19 4H10M14 20H5M15 4L9 20"
-                            stroke="white"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                          />
-                        </svg>
-                      </button>
-                      <button type="button" onclick="underlineBtn()" class="px-1.5">
-                        <svg
-                          width="18"
-                          height="18"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M18 4V11C18 14.3137 15.3137 17 12 17C8.68629 17 6 14.3137 6 11V4M4 21H20"
-                            stroke="white"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                          />
-                        </svg>
-                      </button>
-                      <!-- <div class="px-1.5">
-                        <svg
-                          width="18"
-                          height="18"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M21.1525 10.8995L12.1369 19.9151C10.0866 21.9653 6.7625 21.9653 4.71225 19.9151C2.662 17.8648 2.662 14.5407 4.71225 12.4904L13.7279 3.47483C15.0947 2.108 17.3108 2.108 18.6776 3.47483C20.0444 4.84167 20.0444 7.05775 18.6776 8.42458L10.0156 17.0866C9.33213 17.7701 8.22409 17.7701 7.54068 17.0866C6.85726 16.4032 6.85726 15.2952 7.54068 14.6118L15.1421 7.01037"
-                            stroke="white"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                          />
-                        </svg>
-                      </div> -->
-                      <button type="button" onclick="alignCenter()" class="px-1.5">
-                        <svg
-                          width="18"
-                          height="18"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M16 10H3M20 6H3M20 14H3M16 18H3"
-                            stroke="white"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                          />
-                        </svg>
-                      </button>
-                    </div>
-                    <textarea
-                      required
-                      id="taglineInput"
-                      class="py-3 px-3.5 h-[200px] w-full bg-transparent outline-none text-white"
-                    ></textarea>
-                  </div>
-                  <p
-                    class="text-red-500 text-sm"
-                    id="taglineError"
-                    style="display: none"
-                  >
-                    Please enter your tagline
-                  </p>
-                </div>
-                <div>
-                  <label
-                    class="radioButtonContainer text-base text-white Gilroy-normal"
-                    >I agree to the privacy & policy
-                    <input type="checkbox" checked="checked" />
-                    <span class="radioTickcheckmark"></span>
-                  </label>
-                </div>
-                <div>
-                  <label
-                    class="radioButtonContainer text-base text-white Gilroy-normal"
-                    >I agree with all terms & conditions
-                    <input type="checkbox" checked="checked" />
-                    <span class="radioTickcheckmark"></span>
-                  </label>
-                </div>
-                <div class="gap-5 lg:gap-6 flex flex-wrap items-center pt-4">
-                  <button
-                    type="button"
-                    onclick="saveChange()"
-                    class="px-6 py-3 rounded-xl bg-[#E9901A] text-base text-white hover:text-[#E9901A] border border-solid border-[#E9901A] Gilroy-medium hover:bg-transparent transition-all"
-                  >
-                    Save Change
-                  </button>
-                  <button
-                    type="button"
-                    onclick="cancelChange()"
-                    class="px-6 py-3 rounded-xl bg-transparent hover:bg-[#E9901A] text-base text-white text-[#E9901A] hover:text-white border border-solid border-[#E9901A] Gilroy-medium transition-all"
-                  >
-                    Cancel
-                  </button>
-                </div>
-              </form>
+                <button
+                  type="button"
+                  class="py-2 pt-2.5 px-4 bg-[#E9901A] text-white rounded-xl border border-solid border-[#E9901A] hover:bg-transparent hover:text-[#E9901A] transition-all"
+                >
+                  Subscribe
+                </button>
+              </div>
+              <p class="pt-4 text-xl md:text-2xl Gilroy-semibold text-white">
+                $10.99
+              </p>
             </div>
-            <div class="w-full xl:w-[48%] flex flex-col gap-y-6">
-              <div
-                class="p-6 md:pt-6 md:pr-[31px] md:pb-[22px] md:pl-[26px] border border-white rounded-[15px] bg-gradient"
-              >
-                <div
-                  class="flex border-b border-dashed border-white pb-4 mb-4 items-center gap-3"
-                >
-                  <h3 class="text-white Gilroy-semibold text-xl sm:text-2xl">
-                    Address
-                  </h3>
-                </div>
-                <form class="flex flex-col md:gap-6 gap-5">
-                  <div class="relative">
-                    <label
-                      class="md:text-lg w-full text-base Gilroy-normal text-white Gilroy-medium"
-                    >
-                      Location
-                    </label>
-                    <select
-                      id="locationInput"
-                      class="px-6 py-3 mt-4 sm:mt-2 w-full text-base cursor-pointer border border-solid border-white outline-none rounded-xl bg-transparent text-white bg-transparent"
-                    >
-                      <option value="Select Country" class="text-gray-500">
-                        Select Country
-                      </option>
-                      <option value="United States" class="text-gray-500">
-                        United States
-                      </option>
-                      <option value="United Kingdom" class="text-gray-500">
-                        United Kingdom
-                      </option>
-                      <option value="Canada" class="text-gray-500">
-                        Canada
-                      </option>
-                      <option value="Australia" class="text-gray-500">
-                        Australia
-                      </option>
-                      <option value="New Zealand" class="text-gray-500">
-                        New Zealand
-                      </option>
-                      <option value="India" class="text-gray-500">India</option>
-                    </select>
-                    <p
-                      class="text-red-500 text-sm"
-                      id="locationError"
-                      style="display: none"
-                    >
-                      Please select your location
-                    </p>
-                  </div>
-                  <div class="flex flex-wrap md:flex-nowrap gap-5 items-center">
-                    <div class="w-full md:w-[48%] flex flex-col relative">
-                      <label
-                        class="md:text-lg text-base Gilroy-normal text-white sm:mb-4 mb-2 Gilroy-medium"
-                      >
-                        Address 1
-                      </label>
-                      <input
-                        type="address"
-                        id="address1Input"
-                        placeholder="Enter Address"
-                        class="px-6 py-3 text-base border border-solid border-white outline-none rounded-xl bg-transparent text-white"
-                      />
-                      <p
-                        class="text-red-500 text-sm"
-                        id="address1Error"
-                        style="display: none"
-                      >
-                        Please enter your address
-                      </p>
-                    </div>
-                    <div class="w-full md:w-[48%] flex flex-col relative">
-                      <label
-                        class="md:text-lg text-base Gilroy-normal text-white sm:mb-4 mb-2 Gilroy-medium"
-                      >
-                        Address 2
-                      </label>
-                      <input
-                        type="address"
-                        id="address2Input"
-                        placeholder="Enter Address"
-                        class="px-6 py-3 text-base border border-solid border-white outline-none rounded-xl bg-transparent text-white"
-                      />
-                      <p
-                        class="text-red-500 text-sm"
-                        id="address2Error"
-                        style="display: none"
-                      >
-                        Please enter your address
-                      </p>
-                    </div>
-                  </div>
-                  <div class="relative">
-                    <label
-                      class="md:text-lg w-full text-base Gilroy-normal text-white Gilroy-medium"
-                    >
-                      Zip Code
-                    </label>
-                    <input
-                      type="number"
-                      id="zipCodeInput"
-                      placeholder="Enter Code"
-                      class="w-full px-6 py-3 text-base border border-solid border-white outline-none rounded-xl bg-transparent text-white mt-2 sm:mt-4"
-                    />
-                    <p
-                      class="text-red-500 text-sm"
-                      id="zipCodeError"
-                      style="display: none"
-                    >
-                      Please enter your zip code
-                    </p>
-                  </div>
-                  <div class="gap-5 lg:gap-6 flex flex-wrap items-center pt-4">
-                    <button
-                      type="button"
-                      onclick="addressSaveChange()"
-                      class="px-6 py-3 rounded-xl bg-[#E9901A] text-base text-white hover:text-[#E9901A] border border-solid border-[#E9901A] Gilroy-medium hover:bg-transparent transition-all"
-                    >
-                      Save Change
-                    </button>
-                    <button
-                      type="button"
-                      onclick="addressCancelChange()"
-                      class="px-6 py-3 rounded-xl bg-transparent hover:bg-[#E9901A] text-base text-white text-[#E9901A] hover:text-white border border-solid border-[#E9901A] Gilroy-medium transition-all"
-                    >
-                      Cancel
-                    </button>
-                  </div>
-                </form>
-              </div>
-              <div
-                class="p-6 md:pt-6 md:pr-[31px] md:pb-[22px] md:pl-[26px] border border-white rounded-[15px] bg-gradient"
-              >
-                <div
-                  class="flex border-b border-dashed border-white pb-4 mb-4 items-center gap-3"
-                >
-                  <h3 class="text-white Gilroy-semibold text-xl sm:text-2xl">
-                    Privacy
-                  </h3>
-                </div>
-                <form class="flex flex-col md:gap-6 gap-5">
-                  <div class="relative">
-                    <label
-                      class="md:text-lg w-full text-base Gilroy-normal text-white Gilroy-medium"
-                    >
-                      Who can see your profile photo?
-                    </label>
-                    <select
-                      id="profilePhotoVisibilityInput"
-                      class="px-6 py-3 mt-4 sm:mt-2 w-full text-base cursor-pointer border border-solid border-white outline-none rounded-xl bg-transparent text-white bg-transparent"
-                    >
-                      <option value="Select" class="text-gray-500">
-                        Select
-                      </option>
-                      <option value="Anyone" class="text-gray-500">
-                        Anyone
-                      </option>
-                      <option value="Only me" class="text-gray-500">
-                        Only me
-                      </option>
-                    </select>
-                    <p
-                      class="text-red-500 text-sm"
-                      id="profilePhotoVisibilityError"
-                      style="display: none"
-                    >
-                      Please select your profile photo visibility
-                    </p>
-                  </div>
-                  <div class="gap-5 lg:gap-6 flex flex-wrap items-center pt-4">
-                    <button
-                      type="button"
-                      onclick="privacySaveChange()"
-                      class="px-6 py-3 rounded-xl bg-[#E9901A] text-base text-white hover:text-[#E9901A] border border-solid border-[#E9901A] Gilroy-medium hover:bg-transparent transition-all"
-                    >
-                      Save Change
-                    </button>
-                    <button
-                      type="button"
-                      onclick="privacyCancelChange()"
-                      class="px-6 py-3 rounded-xl bg-transparent hover:bg-[#E9901A] text-base text-white text-[#E9901A] hover:text-white border border-solid border-[#E9901A] Gilroy-medium transition-all"
-                    >
-                      Cancel
-                    </button>
-                  </div>
-                </form>
-              </div>
-              <div
-                class="p-6 md:pt-6 md:pr-[31px] md:pb-[22px] md:pl-[26px] border border-white rounded-[15px] bg-gradient relative"
-              >
-                <div
-                  class="flex border-b border-dashed border-white pb-4 mb-4 items-center gap-3"
-                >
-                  <h3 class="text-white Gilroy-semibold text-xl sm:text-2xl">
-                    Delete your account
-                  </h3>
-                </div>
-                <p class="text-sm text-white Gilroy-normal">
-                  When you delete your account, you lose access to Front account
-                  services, and we permanently delete your personal data. You
-                  can cancel the deletion for 14 days.
-                </p>
-                <div class="mt-5">
-                  <label
-                    class="radioButtonContainer text-base text-white Gilroy-normal"
-                    >Confirm that I want to delete my account.
-                    <input
-                      type="checkbox"
-                      checked="checked"
-                      id="deleteAccountInput"
-                    />
-                    <span class="radioTickcheckmark"></span>
-                  </label>
-                  <p
-                    class="text-red-500 text-sm"
-                    id="deleteAccountError"
-                    style="display: none"
-                  >
-                    Please confirm that you want to delete your account
+            <div
+              class="border border-translucentWhite w-full max-w-full bg-sideBarBg p-4 rounded-xl"
+            >
+              <div class="flex justify-between">
+                <div class="flex gap-5">
+                  <img
+                    src="./src/images/spotify.png"
+                    alt="spotify"
+                    class="w-6 h-6"
+                  />
+                  <p class="text-[18px] md:text-xl text-white Gilroy-medium">
+                    Spotify
                   </p>
                 </div>
-                <div class="gap-5 lg:gap-6 flex flex-wrap items-center pt-4">
-                  <button
-                    type="button"
-                    onclick="deleteAccount()"
-                    class="px-6 py-3 rounded-xl bg-transparent hover:bg-[#E9901A] text-base text-white text-[#E9901A] hover:text-white border border-solid border-[#E9901A] Gilroy-medium transition-all"
-                  >
-                    Delete
-                  </button>
-                </div>
+                <button
+                  type="button"
+                  class="py-2 pt-2.5 px-4 bg-[#E9901A] text-white rounded-xl border border-solid border-[#E9901A] hover:bg-transparent hover:text-[#E9901A] transition-all"
+                >
+                  Subscribe
+                </button>
               </div>
+              <p class="pt-4 text-xl md:text-2xl Gilroy-semibold text-white">
+                $10.99
+              </p>
+            </div>
+            <div
+              class="border border-translucentWhite w-full max-w-full bg-sideBarBg p-4 rounded-xl"
+            >
+              <div class="flex justify-between">
+                <div class="flex gap-5">
+                  <img
+                    src="./src/images/github.png"
+                    alt="github"
+                    class="w-6 h-6"
+                  />
+                  <p class="text-[18px] md:text-xl text-white Gilroy-medium">
+                    GitHub
+                  </p>
+                </div>
+                <button
+                  type="button"
+                  class="py-2 pt-2.5 px-4 bg-[#E9901A] text-white rounded-xl border border-solid border-[#E9901A] hover:bg-transparent hover:text-[#E9901A] transition-all"
+                >
+                  Subscribe
+                </button>
+              </div>
+              <p class="pt-4 text-xl md:text-2xl Gilroy-semibold text-white">
+                $10.99
+              </p>
             </div>
           </div>
         </div>
       </div>
-    </div>
-
-    <div
-      class="px-3 py-2.5 bg-sideBarBg backdrop-blur-lg flex items-center justify-around fixed left-0 bottom-0 md:hidden block w-full"
-    >
-      <button type="button" class="p-1 cursor-pointer iconMainBox rounded-lg">
-        <svg
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
+      <div
+        class="px-3 py-2.5 bg-sideBarBg backdrop-blur-lg flex items-center justify-around fixed left-0 bottom-0 md:hidden block w-full"
+      >
+        <button type="button" class="p-1 cursor-pointer iconMainBox rounded-lg">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M22 15.8442C20.6866 16.4382 19.2286 16.7688 17.6935 16.7688C11.9153 16.7688 7.23116 12.0847 7.23116 6.30654C7.23116 4.77135 7.5618 3.3134 8.15577 2C4.52576 3.64163 2 7.2947 2 11.5377C2 17.3159 6.68414 22 12.4623 22C16.7053 22 20.3584 19.4742 22 15.8442Z"
+              stroke="white"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+        <button type="button" class="p-1 cursor-pointer iconMainBox rounded-lg">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M9.35419 21C10.0593 21.6224 10.9856 22 12 22C13.0145 22 13.9407 21.6224 14.6458 21M18 8C18 6.4087 17.3679 4.88258 16.2427 3.75736C15.1174 2.63214 13.5913 2 12 2C10.4087 2 8.8826 2.63214 7.75738 3.75736C6.63216 4.88258 6.00002 6.4087 6.00002 8C6.00002 11.0902 5.22049 13.206 4.34968 14.6054C3.61515 15.7859 3.24788 16.3761 3.26134 16.5408C3.27626 16.7231 3.31488 16.7926 3.46179 16.9016C3.59448 17 4.19261 17 5.38887 17H18.6112C19.8074 17 20.4056 17 20.5382 16.9016C20.6852 16.7926 20.7238 16.7231 20.7387 16.5408C20.7522 16.3761 20.3849 15.7859 19.6504 14.6054C18.7795 13.206 18 11.0902 18 8Z"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+        <button
+          type="button"
+          class="p-1 cursor-pointer iconMainBox rounded-full"
         >
-          <path
-            d="M22 15.8442C20.6866 16.4382 19.2286 16.7688 17.6935 16.7688C11.9153 16.7688 7.23116 12.0847 7.23116 6.30654C7.23116 4.77135 7.5618 3.3134 8.15577 2C4.52576 3.64163 2 7.2947 2 11.5377C2 17.3159 6.68414 22 12.4623 22C16.7053 22 20.3584 19.4742 22 15.8442Z"
-            stroke="white"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+          <img
+            src="./src/images/australia.png"
+            alt="nation"
+            class="rounded-full w-5 h-5"
           />
-        </svg>
-      </button>
-      <button type="button" class="p-1 cursor-pointer iconMainBox rounded-lg">
-        <svg
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M9.35419 21C10.0593 21.6224 10.9856 22 12 22C13.0145 22 13.9407 21.6224 14.6458 21M18 8C18 6.4087 17.3679 4.88258 16.2427 3.75736C15.1174 2.63214 13.5913 2 12 2C10.4087 2 8.8826 2.63214 7.75738 3.75736C6.63216 4.88258 6.00002 6.4087 6.00002 8C6.00002 11.0902 5.22049 13.206 4.34968 14.6054C3.61515 15.7859 3.24788 16.3761 3.26134 16.5408C3.27626 16.7231 3.31488 16.7926 3.46179 16.9016C3.59448 17 4.19261 17 5.38887 17H18.6112C19.8074 17 20.4056 17 20.5382 16.9016C20.6852 16.7926 20.7238 16.7231 20.7387 16.5408C20.7522 16.3761 20.3849 15.7859 19.6504 14.6054C18.7795 13.206 18 11.0902 18 8Z"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-        </svg>
-      </button>
-      <button type="button" class="p-1 cursor-pointer iconMainBox rounded-full">
-        <img
-          src="./src/images/australia.png"
-          alt="nation"
-          class="rounded-full w-5 h-5"
-        />
-      </button>
-      <button type="button" class="p-1 cursor-pointer iconMainBox rounded-lg">
-        <img src="src/images/profile-img.png" alt="Profile" class="w-6 h-6" />
-      </button>
+        </button>
+        <button type="button" class="p-1 cursor-pointer iconMainBox rounded-lg">
+          <img src="src/images/profile-img.png" alt="Profile" class="w-6 h-6" />
+        </button>
+      </div>
     </div>
-
     <div
       class="w-full h-screen absolute text-white z-[99999] flex justify-center items-center py-6"
       id="connectModal"
@@ -1696,12 +1206,213 @@
         </p>
       </div>
     </div>
+
+    <div
+      class="w-full h-screen absolute text-white z-[99999] flex justify-center items-center py-6"
+      id="liquidityModal"
+      style="top: -150%; transition: all 0.5s ease"
+    >
+      <div
+        id="liquidityData"
+        class="w-[90%] max-w-[500px] mx-auto p-6 border border-solid border-white bg-bgPrimary rounded-lg h-auto max-h-[95%] overflow-auto scrollHidden"
+      >
+        <div
+          class="border-b border-dashed border-white lg:pb-6 pb-5 mb-5 flex items-center justify-between"
+        >
+          <h2
+            class="text-xl lg:text-2xl leading-normal text-white Gilroy-extrabold"
+          >
+            Deposit Liquidity
+          </h2>
+          <button
+            type="button"
+            onclick="closeBtn()"
+            class="w-6 h-6 transition-all"
+          >
+            <svg
+              width="100%"
+              height="100%"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M18 6L6 18M6 6L18 18"
+                stroke="white"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          class="relative border-b border-dashed border-white lg:pb-6 pb-5 flex flex-col gap-5"
+        >
+          <div
+            class="border border-solid border-white p-4 lg:p-6 xl:p-8 rounded-lg"
+          >
+            <div
+              class="flex mb-6 pb-6 justify-between items-center border-b border-solid border-white"
+            >
+              <p class="text-sm text-white text-white Gilroy-normal">From</p>
+              <p class="text-sm text-white text-white Gilroy-normal">
+                Balance: 10,000 ADA
+              </p>
+            </div>
+            <div class="flex items-center justify-between">
+              <input
+                type="number"
+                id="liquidityADAInput"
+                class="text-sm text-white bg-transparent text-white Gilroy-normal w-[70%] outline-none"
+                placeholder="0.00"
+              />
+              <div class="flex items-center gap-3" id="liquidityADAData">
+                <img
+                  src="./src/images/cardano_mid.png"
+                  alt="cardano"
+                  class="w-7 h-7"
+                />
+                <p class="text-base text-white Gilroy-extrabold pt-0.5">ADA</p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="border border-solid border-white p-4 lg:p-6 xl:p-8 rounded-lg"
+          >
+            <div
+              class="flex mb-6 pb-6 justify-between items-center border-b border-solid border-white"
+            >
+              <p class="text-sm text-white text-white Gilroy-normal">To</p>
+              <p class="text-sm text-white text-white Gilroy-normal">
+                Balance: 10,000 BTC
+              </p>
+            </div>
+            <div class="flex items-center justify-between">
+              <input
+                type="number"
+                id="liquidityBTCInput"
+                class="text-sm text-white bg-transparent text-white Gilroy-normal w-[70%] outline-none"
+                placeholder="0.00"
+              />
+              <div class="flex items-center gap-3" id="liquidityBTCData">
+                <img
+                  src="./src/images/bitcoin_mid.png"
+                  alt="cardano"
+                  class="w-7 h-7"
+                />
+                <p class="text-base text-white Gilroy-extrabold pt-0.5">BTC</p>
+              </div>
+            </div>
+          </div>
+          <button
+            type="button"
+            id="liquidityConverterBtn"
+            onclick="liquidityConverter()"
+            class="p-1 flex gap-0 items-center bg-[#E9901A] w-fit rounded-lg absolute top-[43%] left-[41%] mx-auto transition-all"
+          >
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 4V20M12 20L18 14M12 20L6 14"
+                stroke="white"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 20V4M12 4L6 10M12 4L18 10"
+                stroke="white"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+        </div>
+        <h2 class="text-lg text-white Gilroy-normal my-5">
+          Slippage Tolerance
+        </h2>
+        <div
+          class="border border-solid border-white p-1 pr-6 flex gap-5 rounded-lg"
+        >
+          <div
+            class="bg-[#E9901A] w-7 h-7 flex items-center justify-center text-base text-white rounded-lg"
+          >
+            %
+          </div>
+          <input
+            id="liquidityInputValue"
+            type="number"
+            class="bg-transparent text-sm text-white Gilroy-normal outline-none w-[80%]"
+            placeholder="0.00"
+            min="0"
+            max="100"
+          />
+        </div>
+        <p
+          id="liquidityErrorField"
+          class="text-sm mt-0.5 text-[#ff2323]"
+          style="display: none"
+        >
+          Enter the amount (1 to 100)
+        </p>
+        <div
+          class="flex flex-wrap items-center justify-between flex-wrap gap-3 mt-5"
+        >
+          <button
+            type="button"
+            onclick="halfPercentBtn()"
+            id="halfPercentButton"
+            class="py-3 px-6 border border-solid border-[#E9901A] rounded-lg hover:bg-[#E9901A] text-[#E9901A] hover:text-white transition-all w-[30%]"
+          >
+            0.5%
+          </button>
+          <button
+            type="button"
+            onclick="onePercentBtn()"
+            id="onePercentButton"
+            class="py-3 px-6 border border-solid border-[#E9901A] rounded-lg hover:bg-transparent hover:text-[#E9901A] text-[#E9901A] transition-all w-[30%]"
+          >
+            1%
+          </button>
+          <button
+            type="button"
+            onclick="threePercentBtn()"
+            id="threePercentButton"
+            class="py-3 px-6 border border-solid border-[#E9901A] rounded-lg hover:bg-[#E9901A] text-[#E9901A] hover:text-white transition-all w-[30%]"
+          >
+            3%
+          </button>
+        </div>
+        <button
+          type="button"
+          onclick="provideLiquidityBtn()"
+          class="px-6 py-3 w-full mt-5 text-base text-white Gilroy-medium text-center rounded-lg hover:bg-transparent bg-[#E9901A] border border-solid border-[#E9901A]"
+        >
+          Provide liquidity
+        </button>
+      </div>
+    </div>
     <div
       id="SuccessfulMessage"
-      class="w-[15%] p-4 md:p-6 absolute text-center top-6 z-[99999] bg-white text-[#008000] rounded-lg tex-xl Gilroy-medium"
-      style="right: -50%; display: none; transition: all 0.7s ease"
+      class="w-[15%] p-4 md:p-6 fixed text-center top-6 z-[99999] bg-white text-[#008000] rounded-lg tex-xl Gilroy-medium right-5"
+      style="display: none; transition: all 0.7s ease"
     >
-      Successfull
+      Successfully Added
       <button
         type="button"
         onclick="closeModalMessageBtn()"
@@ -1724,8 +1435,7 @@
         </svg>
       </button>
     </div>
-
+    <script src="./balanceDetail.js"></script>
     <script src="./script.js"></script>
-    <script src="./settings.js"></script>
   </body>
 </html>

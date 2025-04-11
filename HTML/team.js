@@ -1,4 +1,4 @@
-let addMemberModal = document.getElementById("addMemberModal");
+
 
 function addTeamMemberBtn() {
   if (addMemberModal.style.top === "-150%") {
@@ -20,6 +20,13 @@ function addTeamMemberBtn() {
   } else {
     addMemberModal.style.top = "-150%";
     addMemberModal.style.opacity = "0";
+    bodyOverflowModal.style.overflow = "auto";
+    bodyScreenData.style.opacity = "1";
+  }
+}
+function closeBtn() {
+  if (addMemberModal && addMemberModal.style.top === "0%") {
+    addMemberModal.style.top = "-150%";
     bodyOverflowModal.style.overflow = "auto";
     bodyScreenData.style.opacity = "1";
   }
