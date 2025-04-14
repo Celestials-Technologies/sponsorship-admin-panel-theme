@@ -1,8 +1,7 @@
-
 let logo = document.getElementById("logo");
-let editImage = document.getElementById("editImage")
+let editImage = document.getElementById("editImage");
 let inputFile = document.getElementById("input-file");
-let uploadInputImage = document.getElementById("uploadInputImage")
+let uploadInputImage = document.getElementById("uploadInputImage");
 
 inputFile.onchange = function () {
   const file = this.files[0];
@@ -20,12 +19,11 @@ function removeCoinImage() {
   inputFile.value = "";
 }
 
-
 uploadInputImage.onchange = function () {
   const file = this.files[0];
   const reader = new FileReader();
   reader.onloadend = function () {
-    editImage.src = reader.result // Set the image src to the base64 string
+    editImage.src = reader.result; // Set the image src to the base64 string
   };
   if (file) {
     reader.readAsDataURL(file); // Convert the file to base64
@@ -54,9 +52,9 @@ function uploadSubscriptionBtn() {
       price: priceInput.value,
       image: logo.src,
     };
-    nameInput.value = ""
-    priceInput.value = ""
-    logo.src = "./src/images/upload.png"
+    nameInput.value = "";
+    priceInput.value = "";
+    logo.src = "./src/images/upload.png";
 
     let storedSubscriptionValue =
       JSON.parse(localStorage.getItem("subscriptionValue")) || [];
@@ -73,7 +71,7 @@ function uploadSubscriptionBtn() {
 let editSubsriptionModal = document.getElementById("editSubsriptionModal");
 let bodyOverflowModal = document.getElementById("bodyOverflowModal");
 let bodyScreenData = document.getElementById("bodyScreenData");
-// show all sunbsription Value on dataSubscriptionValue
+
 function showAllSubscriptionValue() {
   let dataSubscriptionValue = document.getElementById("dataSubscriptionValue");
   dataSubscriptionValue.innerHTML = "";
@@ -110,10 +108,11 @@ function showAllSubscriptionValue() {
   editButtons.forEach((editButton) => {
     editButton.addEventListener("click", () => {
       const index = editButton.dataset.index;
-      const subscriptionValue = JSON.parse(localStorage.getItem("subscriptionValue")) || [];
+      const subscriptionValue =
+        JSON.parse(localStorage.getItem("subscriptionValue")) || [];
       if (editSubsriptionModal.style.top === "-150%") {
         editSubsriptionModal.dataset.index = index;
-        let editImage= document.getElementById("editImage");
+        let editImage = document.getElementById("editImage");
         let editNameInput = document.getElementById("editNameInput");
         let editPriceInput = document.getElementById("editPriceInput");
         window.scrollTo(0, 0);
@@ -123,34 +122,30 @@ function showAllSubscriptionValue() {
         bodyScreenData.style.opacity = "0.7";
         editNameInput.value = subscriptionValue[index].name;
         editPriceInput.value = subscriptionValue[index].price;
-        editImage.src = subscriptionValue[index].image || defaultImage
-          
+        editImage.src = subscriptionValue[index].image || defaultImage;
 
-
-            document
-            .getElementById("editSubsriptionModal")
-            .addEventListener("click", function (event) {
-              if (!event.target.closest("#subscriptionData")) {
-                editSubsriptionModal.style.top = "-150%";
-                editSubsriptionModal.style.opacity = "0";
-                bodyOverflowModal.style.overflow = "auto";
-                bodyScreenData.style.opacity = "1";
-              }
-            });
-        } else {
-            editSubsriptionModal.style.top = "-150%";
-            editSubsriptionModal.style.opacity = "0";
-          bodyOverflowModal.style.overflow = "auto";
-          bodyScreenData.style.opacity = "1";
-        }
+        document
+          .getElementById("editSubsriptionModal")
+          .addEventListener("click", function (event) {
+            if (!event.target.closest("#subscriptionData")) {
+              editSubsriptionModal.style.top = "-150%";
+              editSubsriptionModal.style.opacity = "0";
+              bodyOverflowModal.style.overflow = "auto";
+              bodyScreenData.style.opacity = "1";
+            }
+          });
+      } else {
+        editSubsriptionModal.style.top = "-150%";
+        editSubsriptionModal.style.opacity = "0";
+        bodyOverflowModal.style.overflow = "auto";
+        bodyScreenData.style.opacity = "1";
+      }
     });
   });
 }
 showAllSubscriptionValue();
 
-
 function closeEditModal() {
-
   if (editSubsriptionModal && editSubsriptionModal.style.top === "0%") {
     editSubsriptionModal.style.top = "-150%";
     bodyOverflowModal.style.overflow = "auto";
@@ -162,25 +157,28 @@ function finalEditBtn() {
   const editNameInput = document.getElementById("editNameInput");
   const editPriceInput = document.getElementById("editPriceInput");
   const editImage = document.getElementById("editImage");
-  
-  // all value is set on subscription Value array
-  const subscriptionValue = JSON.parse(localStorage.getItem("subscriptionValue")) || [];
-  const index = editSubsriptionModal.dataset.index; // Corrected variable name
+
+  const subscriptionValue =
+    JSON.parse(localStorage.getItem("subscriptionValue")) || [];
+  const index = editSubsriptionModal.dataset.index;
   const name = editNameInput.value;
   const price = editPriceInput.value;
   const image = editImage.src;
 
-  if (index >= 0 && index < subscriptionValue.length) {
+
     const data = {
       name,
       price,
       image,
     };
     subscriptionValue[index] = data;
-    localStorage.setItem("subscriptionValue", JSON.stringify(subscriptionValue));
+    localStorage.setItem(
+      "subscriptionValue",
+      JSON.stringify(subscriptionValue)
+    );
     editSubsriptionModal.style.top = "-150%";
     bodyOverflowModal.style.overflow = "auto";
     bodyScreenData.style.opacity = "1";
     showAllSubscriptionValue();
-  }
+  
 }
