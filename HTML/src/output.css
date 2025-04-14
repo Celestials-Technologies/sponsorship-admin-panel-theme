@@ -3841,3 +3841,55 @@ tr td {
   color: white;
   padding: 8px 16px;
 }
+.subscriptionValue {
+  display: flex;
+    gap: 20px;
+    align-items: center;
+    color: white;
+    flex-wrap: wrap;
+    justify-content: start;
+}
+.subscriptionValue img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+.subscriptionValue button {
+  padding: 8px 12px;
+  background-color: #e9901a;
+  border-radius: 10px;
+}
+.subscriptionCard__header {
+  border: 1px solid white;
+  border-radius: 0.75rem;
+  padding: 16px;
+  background-color: #ffffff1a;
+  border-color: #e5e7eb;
+}
+.subscriptionCard__name {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.subscriptionCard__name h2 {
+  font-size: 20px;
+  font-weight: 400;
+  color: white;
+  text-transform: capitalize;
+  @media (max-width:768px) {
+    font-size:18px
+  }
+}
+.subscriptionCard__name img {
+  width: 24px;
+  height: 24px;
+}
+.subscriptionCard__header p {
+  padding-top: 16px;
+  font-size: 24px;
+  color: white;
+  font-weight: 600;
+  @media (max-width:768px) {
+    font-size: 20px;
+  }
+}

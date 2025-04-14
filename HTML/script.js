@@ -1274,3 +1274,21 @@ document.addEventListener("DOMContentLoaded" , function () {
   }
 })
 
+let storedSubscriptionValue =
+JSON.parse(localStorage.getItem("subscriptionValue")) || [];
+let subscriptionData = document.getElementById("subscriptionData")
+
+storedSubscriptionValue.forEach((subscribeCard) => {
+  const subscriptionCard = document.createElement("div");
+  subscriptionCard.classList.add("subscriptionCard");
+  subscriptionCard.innerHTML = `
+  <div class="subscriptionCard__header">
+  <div class="subscriptionCard__name">
+  <img src="${subscribeCard.image}" alt="image">
+  <h2>${subscribeCard.name}</h2>
+  </div>
+  <p>$${subscribeCard.price}</p>
+  </div>
+  `
+  subscriptionData.appendChild(subscriptionCard)
+})
