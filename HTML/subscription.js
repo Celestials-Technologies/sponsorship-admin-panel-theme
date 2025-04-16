@@ -1,3 +1,4 @@
+document.addEventListener("DOMContentLoaded", () => {
 let logo = document.getElementById("logo");
 let editImage = document.getElementById("editImage");
 let inputFile = document.getElementById("input-file");
@@ -13,7 +14,7 @@ inputFile.onchange = function () {
     reader.readAsDataURL(file); // Convert the file to base64
   }
 };
-
+document.getElementById("removeCoinImage").addEventListener("click", removeCoinImage);
 function removeCoinImage() {
   logo.src = "./src/images/upload.png";
   inputFile.value = "";
@@ -35,6 +36,7 @@ const nameError = document.getElementById("nameError");
 const priceInput = document.getElementById("priceInput");
 const priceError = document.getElementById("priceError");
 
+document.getElementById("uploadSubscriptionBtn").addEventListener("click", uploadSubscriptionBtn);
 function uploadSubscriptionBtn() {
   if (nameInput.value === "") {
     nameError.style.display = "block";
@@ -81,11 +83,15 @@ function showAllSubscriptionValue() {
   subscriptionValue.forEach((subscriptionValue, index) => {
     const subscriptionValueHTML = `
         <div class="subscriptionValue">
-        <img src="${subscriptionValue.image || defaultImage}" alt="image">
-        <h2>${subscriptionValue.name}</h2>
-        <p>Price: ${subscriptionValue.price}$</p>
-        <button class="editButton" data-index="${index}">Edit</button>
-        <button class="removeButton" data-index="${index}">Remove</button>
+        <div class="subscriptionContainer">
+          <img src="${subscriptionValue.image || defaultImage}" alt="image">
+          <h2>${subscriptionValue.name}</h2>
+          <p>Price: ${subscriptionValue.price}$</p>
+        </div>
+        <div class="subscriptionContainer">
+          <button class="editButton" data-index="${index}">Edit</button>
+          <button class="removeButton" data-index="${index}">Remove</button>
+        </div>
         </div>
         `;
     dataSubscriptionValue.innerHTML += subscriptionValueHTML;
@@ -145,6 +151,7 @@ function showAllSubscriptionValue() {
 }
 showAllSubscriptionValue();
 
+document.getElementById("closeEditModal").addEventListener("click", closeEditModal);
 function closeEditModal() {
   if (editSubsriptionModal && editSubsriptionModal.style.top === "0%") {
     editSubsriptionModal.style.top = "-150%";
@@ -152,7 +159,7 @@ function closeEditModal() {
     bodyScreenData.style.opacity = "1";
   }
 }
-
+document.getElementById("finalEditBtn").addEventListener("click", finalEditBtn);
 function finalEditBtn() {
   const editNameInput = document.getElementById("editNameInput");
   const editPriceInput = document.getElementById("editPriceInput");
@@ -182,3 +189,4 @@ function finalEditBtn() {
     showAllSubscriptionValue();
   
 }
+})

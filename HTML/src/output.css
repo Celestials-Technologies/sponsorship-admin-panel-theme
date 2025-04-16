@@ -3618,7 +3618,7 @@ tr td {
 }
 .card {
   display: flex;
-  align-items: center;
+  align-items: start;
   gap: 18px;
   width: 100%;
   border: 1px dashed white;
@@ -3843,11 +3843,19 @@ tr td {
 }
 .subscriptionValue {
   display: flex;
-    gap: 20px;
-    align-items: center;
-    color: white;
-    flex-wrap: wrap;
-    justify-content: start;
+  gap: 20px;
+  align-items: center;
+  color: white;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border: 1px dashed white;
+    border-radius: 10px;
+    padding: 12px 20px;
+}
+.subscriptionContainer {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 .subscriptionValue img {
   width: 100px;
@@ -3893,3 +3901,38 @@ tr td {
     font-size: 20px;
   }
 }
+.manageBtn {
+  padding: 8px 12px;
+  background-color: #e9901a;
+  border: 1px solid #e9901a;
+  border-radius: 10px;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  padding-top: 10px;
+}
+.manageBtn:hover {
+  background-color: transparent;
+  color: #e9901a;
+  }
+  .growthSvg {
+    display: flex;
+    gap: 2px;
+  }
+  .addMoreSelectButton {
+    padding: 16px;
+    display: flex;
+    gap: 12px;
+    justify-content: space-between;
+    border-radius: 20px
+  }
+  .addMoreSelectButton:hover {
+    background-color: #e9901a;
+  }
+  .mainTokenDataContainer {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }

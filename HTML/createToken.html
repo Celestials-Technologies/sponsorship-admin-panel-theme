@@ -8,7 +8,7 @@
       rel="stylesheet"
     />
     <link href="./src/output.css" rel="stylesheet" />
-    <link href="style.css" rel="stylesheet" />
+    <link href="./style.css" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -16,7 +16,7 @@
 
   <body class="min-h-screen" id="bodyOverflowModal">
     <div
-      class="flex gap-[25px] pt-[25px] pb-[53px] px-[25px] min-h-screen bg-bgPrimary"
+      class="flex gap-[25px] pt-[25px] pb-[53px] px-6 min-h-screen bg-bgPrimary relative"
       id="bodyScreenData"
     >
       <div
@@ -36,7 +36,7 @@
             <ul class="mt-[90px] sidbar-list pl-px">
               <a href="./dashboard.html">
                 <li
-                  class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center hover:bg-[#E9901A] hover:text-white cursor-pointer"
+                  class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center active cursor-pointer"
                 >
                   <div
                     class="w-[34px] h-[34px] rounded-lg flex justify-center items-center"
@@ -929,9 +929,9 @@
           </div>
         </div>
 
-        <div class="pt-12 relative" id="buttonHeader" style="z-index: 9999">
+        <div class="pt-12" id="buttonHeader" style="z-index: 9999">
           <p class="text-3xl lg:text-[40px] text-white Gilroy-semibold">
-            Subscriptions
+            Create Tokens
           </p>
           <div class="mt-6">
             <form class="flex flex-col gap-6">
@@ -957,8 +957,8 @@
                 />
                 <button
                   type="button"
-                  onclick="removeCoinImage()"
                   id="removeCoinImage"
+                  onclick="removeCoinImage()"
                   class="bg-transparent transition-all h-fit px-6 py-3 pt-3.5 text-base text-white Gilroy-normal hover:bg-[#E9901A] border border-solid rounded-lg border-white hover:border-[#E9901A]"
                 >
                   Cancel
@@ -969,7 +969,7 @@
                   <label
                     class="md:text-lg text-base Gilroy-normal text-white sm:mb-4 mb-2 Gilroy-medium"
                   >
-                    Subscription Name
+                    Coin Name
                   </label>
                   <input
                     type="text"
@@ -1006,417 +1006,97 @@
                   </p>
                 </div>
               </div>
+              <div class="flex flex-wrap md:flex-nowrap gap-5 items-center">
+                <div class="w-full md:w-[48%] flex flex-col relative">
+                  <label
+                    class="md:text-lg text-base Gilroy-normal text-white sm:mb-4 mb-2 Gilroy-medium"
+                  >
+                    Select Coin
+                  </label>
+                  <select
+                    id="coinCurrency"
+                    class="px-6 rounded-xl py-3 pt-3.5 bg-transparent w-full border border-solid border-white outline-none text-base text-white Gilroy-normal h-11"
+                  >
+                    <option value="Select Coin" class="text-black">
+                      Select Coin
+                    </option>
+                    <option value="$" class="text-black">$</option>
+                    <option value="DOGE" class="text-black">DOGE</option>
+                    <option value="ADA" class="text-black">ADA</option>
+                    <option value="BNB" class="text-black">BNB</option>
+                    <option value="CHAIN" class="text-black">CHAIN</option>
+                  </select>
+                  <p
+                    class="text-red-500 text-sm absolute -bottom-6"
+                    id="currencyError"
+                    style="display: none"
+                  >
+                    Please select a valid Currency
+                  </p>
+                </div>
+                <div class="w-full md:w-[48%] flex flex-col relative">
+                  <label
+                    class="md:text-lg text-base Gilroy-normal text-white sm:mb-4 mb-2 Gilroy-medium"
+                  >
+                    Select Category
+                  </label>
+                  <select
+                    id="coinCategory"
+                    class="px-6 rounded-xl py-3 pt-3.5 bg-transparent w-full border border-solid border-white outline-none text-base text-white Gilroy-normal h-11"
+                  >
+                    <option value="Select Category" class="text-black">
+                      Select Category
+                    </option>
+                    <option value="BTC" class="text-black">BTC</option>
+                    <option value="DOGE" class="text-black">DOGE</option>
+                    <option value="ADA" class="text-black">ADA</option>
+                    <option value="BNB" class="text-black">BNB</option>
+                    <option value="CHAIN" class="text-black">CHAIN</option>
+                  </select>
+                  <p
+                    class="text-red-500 text-sm absolute -bottom-6"
+                    id="categoryError"
+                    style="display: none"
+                  >
+                    Please select a valid category
+                  </p>
+                </div>
+              </div>
+              <div class="w-full flex flex-col relative">
+                <label
+                  class="md:text-lg text-base Gilroy-normal text-white sm:mb-4 mb-2 Gilroy-medium"
+                >
+                  Coin Growth
+                </label>
+                <input
+                  type="number"
+                  required
+                  id="growthInput"
+                  class="px-8 py-3 text-base border border-solid border-white outline-none rounded-xl bg-transparent text-white"
+                />
+                <p
+                  class="text-red-500 text-sm absolute -bottom-6"
+                  id="growthError"
+                  style="display: none"
+                >
+                  Please enter your Growth
+                </p>
+              </div>
               <button
                 type="button"
-                id="uploadSubscriptionBtn"
-                class="mt-4 px-3 py-2 rounded-xl bg-[#E9901A] border border-solid border-[#E9901A] hover:bg-transparent text-white hover:text-[#E9901A]"
+                id="uploadTokenBtn"
+                class="mt-4 px-4 w-fit py-2 rounded-xl bg-[#E9901A] border border-solid border-[#E9901A] hover:bg-transparent text-white hover:text-[#E9901A]"
               >
-                Upload
+                Create
               </button>
             </form>
-            <div
-              class="mt-6 flex flex-col gap-6"
-              id="dataSubscriptionValue"
-            ></div>
+            <h3 class="text-2xl Gilroy-semibold mt-6 text-white">All Tokens</h3>
+            <div class="mt-6 flex flex-col gap-6" id="dataTokenValue"></div>
           </div>
         </div>
-      </div>
-      <div
-        class="px-3 py-2.5 bg-sideBarBg backdrop-blur-lg flex items-center justify-around fixed left-0 bottom-0 md:hidden block w-full"
-      >
-        <button type="button" class="p-1 cursor-pointer iconMainBox rounded-lg">
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M22 15.8442C20.6866 16.4382 19.2286 16.7688 17.6935 16.7688C11.9153 16.7688 7.23116 12.0847 7.23116 6.30654C7.23116 4.77135 7.5618 3.3134 8.15577 2C4.52576 3.64163 2 7.2947 2 11.5377C2 17.3159 6.68414 22 12.4623 22C16.7053 22 20.3584 19.4742 22 15.8442Z"
-              stroke="white"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-        </button>
-        <button type="button" class="p-1 cursor-pointer iconMainBox rounded-lg">
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M9.35419 21C10.0593 21.6224 10.9856 22 12 22C13.0145 22 13.9407 21.6224 14.6458 21M18 8C18 6.4087 17.3679 4.88258 16.2427 3.75736C15.1174 2.63214 13.5913 2 12 2C10.4087 2 8.8826 2.63214 7.75738 3.75736C6.63216 4.88258 6.00002 6.4087 6.00002 8C6.00002 11.0902 5.22049 13.206 4.34968 14.6054C3.61515 15.7859 3.24788 16.3761 3.26134 16.5408C3.27626 16.7231 3.31488 16.7926 3.46179 16.9016C3.59448 17 4.19261 17 5.38887 17H18.6112C19.8074 17 20.4056 17 20.5382 16.9016C20.6852 16.7926 20.7238 16.7231 20.7387 16.5408C20.7522 16.3761 20.3849 15.7859 19.6504 14.6054C18.7795 13.206 18 11.0902 18 8Z"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-        </button>
-        <button
-          type="button"
-          class="p-1 cursor-pointer iconMainBox rounded-full"
-        >
-          <img
-            src="./src/images/australia.png"
-            alt="nation"
-            class="rounded-full w-5 h-5"
-          />
-        </button>
-        <button type="button" class="p-1 cursor-pointer iconMainBox rounded-lg">
-          <img src="src/images/profile-img.png" alt="Profile" class="w-6 h-6" />
-        </button>
-      </div>
-    </div>
-    <div
-      class="w-full h-screen absolute text-white z-[99999] flex justify-center items-center py-6"
-      id="connectModal"
-      style="top: -150%; transition: all 0.5s ease"
-    >
-      <div
-        id="connectData"
-        class="w-[90%] max-w-[624px] mx-auto p-6 border border-solid border-white bg-bgPrimary rounded-lg h-auto max-h-[95%] overflow-auto scrollHidden"
-      >
-        <div
-          class="border-b border-dashed border-white lg:pb-6 pb-5 mb-5 flex items-center justify-between"
-        >
-          <h2
-            class="text-xl lg:text-2xl leading-normal text-white Gilroy-extrabold"
-          >
-            Connect your wallet
-          </h2>
-          <button
-            type="button"
-            onclick="closeBtn()"
-            class="w-6 h-6 transition-all"
-          >
-            <svg
-              width="100%"
-              height="100%"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M18 6L6 18M6 6L18 18"
-                stroke="white"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-          </button>
-        </div>
-        <div class="flex flex-col gap-3">
-          <a
-            href="/#"
-            class="border border-solid border-white rounded-lg flex justify-between items-center lg:px-6 px-5 lg:py-4 py-3"
-          >
-            <div class="flex gap-3 items-center">
-              <img
-                src="./src/images/meta_mask.png"
-                alt="metaMask"
-                class="w-8 h-8"
-              />
-              <p class="text-lg Gilroy-medium text-white">MetaMask</p>
-            </div>
-            <button
-              type="button"
-              class="bg-[#E9901A] px-6 py-2 text-white Gilroy-medium text-base rounded-lg"
-            >
-              Solana
-            </button>
-          </a>
-          <a
-            href="/#"
-            class="border border-solid border-white rounded-lg flex justify-between items-center lg:px-6 px-5 lg:py-4 py-3"
-          >
-            <div class="flex gap-3 items-center">
-              <img
-                src="./src/images/coinbase.png"
-                alt="metaMask"
-                class="w-8 h-8"
-              />
-              <p class="text-lg Gilroy-medium text-white">Coinbase Wallet</p>
-            </div>
-          </a>
-          <a
-            href="/#"
-            class="border border-solid border-white rounded-lg flex justify-between items-center lg:px-6 px-5 lg:py-4 py-3"
-          >
-            <div class="flex gap-3 items-center">
-              <img
-                src="./src/images/cardano.png"
-                alt="metaMask"
-                class="w-8 h-8"
-              />
-              <p class="text-lg Gilroy-medium text-white">WalletConnect</p>
-            </div>
-          </a>
-          <a
-            href="/#"
-            class="border border-solid border-white rounded-lg flex justify-between items-center lg:px-6 px-5 lg:py-4 py-3"
-          >
-            <div class="flex gap-3 items-center">
-              <img
-                src="./src/images/phantom.png"
-                alt="metaMask"
-                class="w-8 h-8"
-              />
-              <p class="text-lg Gilroy-medium text-white">Phantom</p>
-            </div>
-            <button
-              type="button"
-              class="border border-solid border-[#E9901A] px-6 py-2 text-white Gilroy-medium text-base rounded-lg"
-            >
-              Solana
-            </button>
-          </a>
-          <a
-            href="/#"
-            class="border border-solid border-white rounded-lg flex justify-between items-center lg:px-6 px-5 lg:py-4 py-3"
-          >
-            <div class="flex gap-3 items-center">
-              <img src="./src/images/core.png" alt="Core" class="w-8 h-8" />
-              <p class="text-lg Gilroy-medium text-white">Avalanche</p>
-            </div>
-            <button
-              type="button"
-              class="border border-solid border-[#E9901A] px-6 py-2 text-white Gilroy-medium text-base rounded-lg"
-            >
-              Avalanche
-            </button>
-          </a>
-          <a
-            href="/#"
-            class="border border-solid border-white rounded-lg flex justify-between items-center lg:px-6 px-5 lg:py-4 py-3"
-          >
-            <div class="flex gap-3 items-center">
-              <img src="./src/images/glow.png" alt="Glow" class="w-8 h-8" />
-              <p class="text-lg Gilroy-medium text-white">Glow</p>
-            </div>
-            <button
-              type="button"
-              class="border border-solid border-[#E9901A] px-6 py-2 text-white Gilroy-medium text-base rounded-lg"
-            >
-              Solana
-            </button>
-          </a>
-        </div>
-        <p class="mt-5 lg:mt-6 text-sm text-white Gilroy-normal">
-          By connecting wallet, you agree to Finvista
-          <a href="/#" class="text-[#E9901A] Gilroy-medium">
-            Terms of Service
-          </a>
-        </p>
       </div>
     </div>
 
-    <div
-      class="w-full h-screen absolute text-white z-[99999] flex justify-center items-center py-6"
-      id="liquidityModal"
-      style="top: -150%; transition: all 0.5s ease"
-    >
-      <div
-        id="liquidityData"
-        class="w-[90%] max-w-[500px] mx-auto p-6 border border-solid border-white bg-bgPrimary rounded-lg h-auto max-h-[95%] overflow-auto scrollHidden"
-      >
-        <div
-          class="border-b border-dashed border-white lg:pb-6 pb-5 mb-5 flex items-center justify-between"
-        >
-          <h2
-            class="text-xl lg:text-2xl leading-normal text-white Gilroy-extrabold"
-          >
-            Deposit Liquidity
-          </h2>
-          <button
-            type="button"
-            onclick="closeBtn()"
-            class="w-6 h-6 transition-all"
-          >
-            <svg
-              width="100%"
-              height="100%"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M18 6L6 18M6 6L18 18"
-                stroke="white"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-          </button>
-        </div>
-        <div
-          class="relative border-b border-dashed border-white lg:pb-6 pb-5 flex flex-col gap-5"
-        >
-          <div
-            class="border border-solid border-white p-4 lg:p-6 xl:p-8 rounded-lg"
-          >
-            <div
-              class="flex mb-6 pb-6 justify-between items-center border-b border-solid border-white"
-            >
-              <p class="text-sm text-white text-white Gilroy-normal">From</p>
-              <p class="text-sm text-white text-white Gilroy-normal">
-                Balance: 10,000 ADA
-              </p>
-            </div>
-            <div class="flex items-center justify-between">
-              <input
-                type="number"
-                id="liquidityADAInput"
-                class="text-sm text-white bg-transparent text-white Gilroy-normal w-[70%] outline-none"
-                placeholder="0.00"
-              />
-              <div class="flex items-center gap-3" id="liquidityADAData">
-                <img
-                  src="./src/images/cardano_mid.png"
-                  alt="cardano"
-                  class="w-7 h-7"
-                />
-                <p class="text-base text-white Gilroy-extrabold pt-0.5">ADA</p>
-              </div>
-            </div>
-          </div>
-          <div
-            class="border border-solid border-white p-4 lg:p-6 xl:p-8 rounded-lg"
-          >
-            <div
-              class="flex mb-6 pb-6 justify-between items-center border-b border-solid border-white"
-            >
-              <p class="text-sm text-white text-white Gilroy-normal">To</p>
-              <p class="text-sm text-white text-white Gilroy-normal">
-                Balance: 10,000 BTC
-              </p>
-            </div>
-            <div class="flex items-center justify-between">
-              <input
-                type="number"
-                id="liquidityBTCInput"
-                class="text-sm text-white bg-transparent text-white Gilroy-normal w-[70%] outline-none"
-                placeholder="0.00"
-              />
-              <div class="flex items-center gap-3" id="liquidityBTCData">
-                <img
-                  src="./src/images/bitcoin_mid.png"
-                  alt="cardano"
-                  class="w-7 h-7"
-                />
-                <p class="text-base text-white Gilroy-extrabold pt-0.5">BTC</p>
-              </div>
-            </div>
-          </div>
-          <button
-            type="button"
-            id="liquidityConverterBtn"
-            onclick="liquidityConverter()"
-            class="p-1 flex gap-0 items-center bg-[#E9901A] w-fit rounded-lg absolute top-[43%] left-[41%] mx-auto transition-all"
-          >
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M12 4V20M12 20L18 14M12 20L6 14"
-                stroke="white"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M12 20V4M12 4L6 10M12 4L18 10"
-                stroke="white"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-          </button>
-        </div>
-        <h2 class="text-lg text-white Gilroy-normal my-5">
-          Slippage Tolerance
-        </h2>
-        <div
-          class="border border-solid border-white p-1 pr-6 flex gap-5 rounded-lg"
-        >
-          <div
-            class="bg-[#E9901A] w-7 h-7 flex items-center justify-center text-base text-white rounded-lg"
-          >
-            %
-          </div>
-          <input
-            id="liquidityInputValue"
-            type="number"
-            class="bg-transparent text-sm text-white Gilroy-normal outline-none w-[80%]"
-            placeholder="0.00"
-            min="0"
-            max="100"
-          />
-        </div>
-        <p
-          id="liquidityErrorField"
-          class="text-sm mt-0.5 text-[#ff2323]"
-          style="display: none"
-        >
-          Enter the amount (1 to 100)
-        </p>
-        <div
-          class="flex flex-wrap items-center justify-between flex-wrap gap-3 mt-5"
-        >
-          <button
-            type="button"
-            onclick="halfPercentBtn()"
-            id="halfPercentButton"
-            class="py-3 px-6 border border-solid border-[#E9901A] rounded-lg hover:bg-[#E9901A] text-[#E9901A] hover:text-white transition-all w-[30%]"
-          >
-            0.5%
-          </button>
-          <button
-            type="button"
-            onclick="onePercentBtn()"
-            id="onePercentButton"
-            class="py-3 px-6 border border-solid border-[#E9901A] rounded-lg hover:bg-transparent hover:text-[#E9901A] text-[#E9901A] transition-all w-[30%]"
-          >
-            1%
-          </button>
-          <button
-            type="button"
-            onclick="threePercentBtn()"
-            id="threePercentButton"
-            class="py-3 px-6 border border-solid border-[#E9901A] rounded-lg hover:bg-[#E9901A] text-[#E9901A] hover:text-white transition-all w-[30%]"
-          >
-            3%
-          </button>
-        </div>
-        <button
-          type="button"
-          onclick="provideLiquidityBtn()"
-          class="px-6 py-3 w-full mt-5 text-base text-white Gilroy-medium text-center rounded-lg hover:bg-transparent bg-[#E9901A] border border-solid border-[#E9901A]"
-        >
-          Provide liquidity
-        </button>
-      </div>
-    </div>
     <div
       id="SuccessfulMessage"
       class="w-[15%] p-4 md:p-6 fixed text-center top-6 z-[99999] bg-white text-[#008000] rounded-lg tex-xl Gilroy-medium right-5"
@@ -1448,11 +1128,11 @@
 
     <div
       class="w-full h-screen absolute text-white z-[99999] flex justify-center items-center py-6"
-      id="editSubsriptionModal"
+      id="editTokenModal"
       style="top: -150%; transition: all 0.5s ease"
     >
       <div
-        id="subscriptionData"
+        id="tokenData"
         class="w-[90%] max-w-[500px] mx-auto p-6 border border-solid border-white bg-bgPrimary rounded-lg h-auto max-h-[95%] overflow-auto scrollHidden"
       >
         <div
@@ -1514,7 +1194,7 @@
             <label
               class="md:text-lg w-full text-base Gilroy-normal text-white Gilroy-medium"
             >
-              Subscription Name
+              Coin Name
             </label>
             <input
               type="text"
@@ -1534,6 +1214,60 @@
               class="px-8 py-3 mt-2 sm:mt-4 text-base border w-full border-solid border-white outline-none rounded-xl bg-transparent text-white"
             />
           </div>
+          <div>
+            <label
+              class="md:text-lg w-full text-base Gilroy-normal text-white Gilroy-medium"
+            >
+              Select Coin
+            </label>
+            <select
+              id="editCurrency"
+              class="px-6 rounded-xl py-3 pt-3.5 bg-transparent w-full border border-solid border-white outline-none text-base text-white Gilroy-normal h-11"
+            >
+              <option value="Select Coin" class="text-black">
+                Select Coin
+              </option>
+              <option value="$" class="text-black">$</option>
+              <option value="DOGE" class="text-black">DOGE</option>
+              <option value="ADA" class="text-black">ADA</option>
+              <option value="BNB" class="text-black">BNB</option>
+              <option value="CHAIN" class="text-black">CHAIN</option>
+            </select>
+          </div>
+          <div>
+            <label
+              class="md:text-lg w-full text-base Gilroy-normal text-white Gilroy-medium"
+            >
+              Select Category
+            </label>
+            <select
+              id="editCategory"
+              class="px-6 rounded-xl py-3 pt-3.5 bg-transparent w-full border border-solid border-white outline-none text-base text-white Gilroy-normal h-11"
+            >
+              <option value="Select Category" class="text-black">
+                Select Category
+              </option>
+              <option value="BTC" class="text-black">BTC</option>
+              <option value="DOGE" class="text-black">DOGE</option>
+              <option value="ADA" class="text-black">ADA</option>
+              <option value="BNB" class="text-black">BNB</option>
+              <option value="CHAIN" class="text-black">CHAIN</option>
+            </select>
+          </div>
+
+          <div>
+            <label
+              class="md:text-lg w-full text-base Gilroy-normal text-white Gilroy-medium"
+            >
+              Growth
+            </label>
+            <input
+              type="number"
+              id="editGrowthInput"
+              class="px-8 py-3 mt-2 sm:mt-4 text-base border w-full border-solid border-white outline-none rounded-xl bg-transparent text-white"
+            />
+          </div>
+
           <button
             type="button"
             id="finalEditBtn"
@@ -1544,7 +1278,7 @@
         </form>
       </div>
     </div>
-    <script src="./subscription.js"></script>
     <script src="./script.js"></script>
+    <script src="./createToken.js"></script>
   </body>
 </html>
