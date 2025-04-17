@@ -21,19 +21,19 @@
     >
       <div
         id="sideBar"
-        class="fixed top-[25px]"
+        class="fixed siderBarMainContainer"
         style="width: 260px; transition: all 0.5s ease; left: 24px"
       >
         <div
           style="transition: all 0.5s ease"
-          class="w-full rounded-[20px] pt-[46px] pb-5 flex-col justify-between bg-sideBarBg border border-translucentWhite hidden lg:flex h-[92vh] sticky top-6 tableScroll overflow-y-auto"
+          class="w-full rounded-[20px] pt-[46px] pb-5 flex-col justify-between bg-sideBarBg border border-[#fff3] siderBarMobile h-[92vh] sticky top-6 tableScroll overflow-y-auto"
         >
           <div class="px-2.5">
             <h1 class="text-[28px] leading-8 text-center Gilroy-extrabold">
               <span class="text-primary">Fin</span
               ><span class="text-white">Vista</span>
             </h1>
-            <ul class="mt-[90px] sidbar-list pl-px">
+            <ul class="mt-5 md:mt-[90px] sidbar-list pl-px">
               <a href="./dashboard.html">
                 <li
                   class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center cursor-pointer hover:bg-[#E9901A] transition-all"
@@ -63,7 +63,7 @@
                     </svg>
                   </div>
                   <p
-                    class="text-base leading-5 text-white pt-0.5 Gilroy-semibold"
+                    class="text-base leading-5 text-white !pt-[3px] Gilroy-semibold"
                   >
                     Dashboards
                   </p>
@@ -93,7 +93,7 @@
                     </svg>
                   </div>
                   <p
-                    class="text-base leading-5 text-white h-auto pt-0.5 Gilroy-semibold"
+                    class="text-base leading-5 text-white !pt-[3px] Gilroy-semibold"
                   >
                     Balance Details
                   </p>
@@ -123,7 +123,7 @@
                     </svg>
                   </div>
                   <p
-                    class="text-base leading-5 text-white pt-0.5 h-auto Gilroy-semibold"
+                    class="text-base leading-5 text-white !pt-[3px] h-auto Gilroy-semibold"
                   >
                     Analytics
                   </p>
@@ -154,7 +154,7 @@
                       </svg>
                     </div>
                     <p
-                      class="text-base leading-5 text-white h-auto pt-0.5 Gilroy-semibold"
+                      class="text-base leading-5 text-white !pt-[3px] Gilroy-semibold"
                     >
                       Wallet
                     </p>
@@ -216,7 +216,7 @@
                       </svg>
                     </div>
                     <p
-                      class="text-base leading-5 text-white pt-0.5 h-auto Gilroy-semibold"
+                      class="text-base leading-5 text-white !pt-[3px] h-auto Gilroy-semibold"
                     >
                       Asset Details
                     </p>
@@ -246,7 +246,7 @@
                       </svg>
                     </div>
                     <p
-                      class="text-base leading-5 text-white pt-0.5 h-auto Gilroy-semibold"
+                      class="text-base leading-5 text-white !pt-[3px] h-auto Gilroy-semibold"
                     >
                       New Asset
                     </p>
@@ -256,7 +256,7 @@
               <div>
                 <div class="accountMain">
                   <li
-                    class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-2.5 cursor-pointer bg-[#E9901A] transition-all"
+                    class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center active cursor-pointer mt-2.5"
                   >
                     <div
                       class="w-[34px] h-[34px] rounded-lg flex justify-center items-center"
@@ -277,7 +277,7 @@
                       </svg>
                     </div>
                     <p
-                      class="text-base leading-5 text-white pt-0.5 h-auto Gilroy-semibold"
+                      class="text-base leading-5 text-white !pt-[3px] h-auto Gilroy-semibold"
                     >
                       Account
                     </p>
@@ -396,7 +396,7 @@
         style="transition: all 0.5s ease"
       >
         <div
-          class="w-full py-[9px] md:pr-[18px] md:px-[33px] rounded-[15px] flex justify-between items-center gap-2.5 bg-sideBarBg border border-translucentWhite px-3 z-10 backdrop-blur-sm z-[999] relative"
+          class="w-full py-[9px] md:pr-[18px] md:px-[33px] rounded-[15px] flex justify-between items-center gap-2.5 bg-sideBarBg border border-[#fff3] px-3 z-10 backdrop-blur-sm z-[999] relative"
         >
           <div class="flex items-center gap-5 justify-between w-full">
             <div class="flex gap-3 items-center">
@@ -525,46 +525,46 @@
               </div>
 
               <button
-                type="button"
-                onclick="darkModeBtn()"
-                id="darkModeSvg"
-                class="p-1 cursor-pointer iconMainBox rounded-lg hidden md:block"
-              >
-                <div class="w-6 h-6" id="darkMode">
-                  <svg
-                    width="100%"
-                    height="100%"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M22 15.8442C20.6866 16.4382 19.2286 16.7688 17.6935 16.7688C11.9153 16.7688 7.23116 12.0847 7.23116 6.30654C7.23116 4.77135 7.5618 3.3134 8.15577 2C4.52576 3.64163 2 7.2947 2 11.5377C2 17.3159 6.68414 22 12.4623 22C16.7053 22 20.3584 19.4742 22 15.8442Z"
-                      stroke="white"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </div>
-                <div class="w-6 h-6" id="lightMode" style="display: none">
-                  <svg
-                    width="100%"
-                    height="100%"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M12 2V4M12 20V22M4 12H2M6.31412 6.31412L4.8999 4.8999M17.6859 6.31412L19.1001 4.8999M6.31412 17.69L4.8999 19.1042M17.6859 17.69L19.1001 19.1042M22 12H20M17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12Z"
-                      stroke="white"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </div>
-              </button>
+              type="button"
+              onclick="darkModeBtn()"
+              id="darkModeSvg"
+              class="p-1 cursor-pointer iconMainBox rounded-lg hidden md:block"
+            >
+              <div class="w-6 h-6" id="darkMode">
+                <svg
+                  width="100%"
+                  height="100%"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M22 15.8442C20.6866 16.4382 19.2286 16.7688 17.6935 16.7688C11.9153 16.7688 7.23116 12.0847 7.23116 6.30654C7.23116 4.77135 7.5618 3.3134 8.15577 2C4.52576 3.64163 2 7.2947 2 11.5377C2 17.3159 6.68414 22 12.4623 22C16.7053 22 20.3584 19.4742 22 15.8442Z"
+                    stroke="white"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <div class="w-6 h-6" id="lightMode" style="display: none">
+                <svg
+                  width="100%"
+                  height="100%"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12 2V4M12 20V22M4 12H2M6.31412 6.31412L4.8999 4.8999M17.6859 6.31412L19.1001 4.8999M6.31412 17.69L4.8999 19.1042M17.6859 17.69L19.1001 19.1042M22 12H20M17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12Z"
+                    stroke="white"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+            </button>
               <div class="relative">
                 <button
                   type="button"
@@ -601,7 +601,7 @@
                     class="text-base Gilroy-normal hover:bg-[#E9901A] p-1 text-white w-full rounded-lg flex items-center gap-3 justify-between"
                   >
                     <div class="flex items-center gap-3">
-                      <a href="/#">
+                      <a href="#">
                         <img
                           src="./src/images/user_profile10.png"
                           class="w-10 h-10 object-cover rounded-full"
@@ -627,7 +627,7 @@
                     class="text-base Gilroy-normal hover:bg-[#E9901A] p-1 text-white w-full rounded-lg flex items-center gap-3 justify-between"
                   >
                     <div class="flex items-center gap-3">
-                      <a href="/#">
+                      <a href="#">
                         <img
                           src="./src/images/user_profile9.png"
                           class="w-10 h-10 object-cover rounded-full"
@@ -653,7 +653,7 @@
                     class="text-base Gilroy-normal hover:bg-[#E9901A] p-1 text-white w-full rounded-lg flex items-center gap-3 justify-between"
                   >
                     <div class="flex items-center gap-3">
-                      <a href="/#">
+                      <a href="#">
                         <img
                           src="./src/images/user_profile3.png"
                           class="w-10 h-10 object-cover rounded-full"
@@ -1700,7 +1700,7 @@
         </div>
         <div class="flex flex-col gap-3">
           <a
-            href="/#"
+            href="#"
             class="border border-solid border-white rounded-lg flex justify-between items-center lg:px-6 px-5 lg:py-4 py-3"
           >
             <div class="flex gap-3 items-center">
@@ -1719,7 +1719,7 @@
             </button>
           </a>
           <a
-            href="/#"
+            href="#"
             class="border border-solid border-white rounded-lg flex justify-between items-center lg:px-6 px-5 lg:py-4 py-3"
           >
             <div class="flex gap-3 items-center">
@@ -1732,7 +1732,7 @@
             </div>
           </a>
           <a
-            href="/#"
+            href="#"
             class="border border-solid border-white rounded-lg flex justify-between items-center lg:px-6 px-5 lg:py-4 py-3"
           >
             <div class="flex gap-3 items-center">
@@ -1745,7 +1745,7 @@
             </div>
           </a>
           <a
-            href="/#"
+            href="#"
             class="border border-solid border-white rounded-lg flex justify-between items-center lg:px-6 px-5 lg:py-4 py-3"
           >
             <div class="flex gap-3 items-center">
@@ -1764,7 +1764,7 @@
             </button>
           </a>
           <a
-            href="/#"
+            href="#"
             class="border border-solid border-white rounded-lg flex justify-between items-center lg:px-6 px-5 lg:py-4 py-3"
           >
             <div class="flex gap-3 items-center">
@@ -1779,7 +1779,7 @@
             </button>
           </a>
           <a
-            href="/#"
+            href="#"
             class="border border-solid border-white rounded-lg flex justify-between items-center lg:px-6 px-5 lg:py-4 py-3"
           >
             <div class="flex gap-3 items-center">
@@ -1796,7 +1796,7 @@
         </div>
         <p class="mt-5 lg:mt-6 text-sm text-white Gilroy-normal">
           By connecting wallet, you agree to Finvista
-          <a href="/#" class="text-[#E9901A] Gilroy-medium">
+          <a href="#" class="text-[#E9901A] Gilroy-medium">
             Terms of Service
           </a>
         </p>

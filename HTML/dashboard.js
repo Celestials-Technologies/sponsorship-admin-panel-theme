@@ -380,7 +380,6 @@ function initPagination() {
     nextButton.disabled = currentPage === totalPages;
     let allCards = cards.length;
 
-    // Calculate the range of cards being displayed
     const startCard = (currentPage - 1) * cardsPerPage + 1;
     const endCard = Math.min(currentPage * cardsPerPage, cards.length);
 
@@ -415,83 +414,76 @@ function initPagination() {
   updatePagination();
 }
 
-// tokenCard.classList.add("selectedBtn");
 let storedTokenValue = JSON.parse(localStorage.getItem("tokenValue")) || [];
 let storedTokenData = document.getElementById("storedTokenData");
+
 storedTokenValue.forEach((token) => {
   const tokenCard = document.createElement("li");
-  tokenCard.classList.add("selectedBtn");
-  tokenCard.classList.add("addMoreSelectButton");
+  tokenCard.classList.add("selectedBtn", "addMoreSelectButton");
   tokenCard.id = "selectedCoin";
   tokenCard.innerHTML = `
-  <div class="mainTokenDataContainer justify-between w-full">
-  <div class="flex gap-3 items-center">
-      <img src="${token.image}" alt="tokenImage" class="w-12 h-12 rounded-full"/>
-      <div class="flex flex-col gap-1">
-        <h2 class="text-lg text-white Gilroy-medium text-left">${token.category}</h2>
-        <span class="text-base text-white Gilroy-normal">${token.name}</span>
-      </div>
-    </div>
-         <div class="flex flex-col gap-1">
-            <h2 class="text-lg text-white Gilroy-medium text-left">
-              ${token.price} ${token.currency}
-            </h2>
-            <div class="flex items-center gap-2">
-             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M22 7L14.1314 14.8686C13.7354 15.2646 13.5373 15.4627 13.309 15.5368C13.1082 15.6021 12.8918 15.6021 12.691 15.5368C12.4627 15.4627 12.2646 15.2646 11.8686 14.8686L9.13137 12.1314C8.73535 11.7354 8.53735 11.5373 8.30902 11.4632C8.10817 11.3979 7.89183 11.3979 7.69098 11.4632C7.46265 11.5373 7.26465 11.7354 6.86863 12.1314L2 17M22 7H15M22 7V14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-              </svg>
-              <p
-                class="text-sm sm:text-base Gilroy-normal growthColor pt-0.5"
-              >
-              ${token.growth}%
-              </p>
-            </div>
+      <div class="mainTokenDataContainer justify-between w-full">
+        <div class="flex gap-3 items-center">
+          <img src="${token.image}" alt="tokenImage" class="w-12 h-12 rounded-full"/>
+          <div class="flex flex-col gap-1">
+            <h2 class="text-lg text-white Gilroy-medium text-left">${token.category}</h2>
+            <span class="text-base text-white Gilroy-normal">${token.name}</span>
           </div>
-  </div>
-  `;
+        </div>
+        <div class="flex flex-col gap-1">
+          <h2 class="text-lg text-white Gilroy-medium text-left">${token.price} ${token.currency}</h2>
+          <div class="flex items-center gap-2">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path d="M22 7L14.1314 14.8686C13.7354 15.2646 13.5373 15.4627 13.309 15.5368C13.1082 15.6021 12.8918 15.6021 12.691 15.5368C12.4627 15.4627 12.2646 15.2646 11.8686 14.8686L9.13137 12.1314C8.73535 11.7354 8.53735 11.5373 8.30902 11.4632C8.10817 11.3979 7.89183 11.3979 7.69098 11.4632C7.46265 11.5373 7.26465 11.7354 6.86863 12.1314L2 17M22 7H15M22 7V14"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+            <p class="text-sm sm:text-base Gilroy-normal growthColor pt-0.5">${token.growth}%</p>
+          </div>
+        </div>
+      </div>`;
+
+  // Apply growth color
+  const svgPath = tokenCard.querySelector("svg path");
+  const growthText = tokenCard.querySelector(".growthColor");
+
   if (token.growth < 70) {
-    tokenCard.querySelector("svg").style.stroke = "#ff6161";
-    tokenCard.querySelector(".growthColor").style.color = "#ff6161";
+    svgPath.style.stroke = "#ff6161";
+    growthText.style.color = "#ff6161";
   } else if (token.growth < 100) {
-    tokenCard.querySelector("svg").style.stroke = "#ffc861";
-    tokenCard.querySelector(".growthColor").style.color = "#ffc861";
+    svgPath.style.stroke = "#ffc861";
+    growthText.style.color = "#ffc861";
   } else {
-    tokenCard.querySelector("svg").style.stroke = "#00A385";
-    tokenCard.querySelector(".growthColor").style.color = "#00A385";
+    svgPath.style.stroke = "#00A385";
+    growthText.style.color = "#00A385";
   }
+
   storedTokenData.appendChild(tokenCard);
 });
 
 const searchCoin = document.getElementById("searchCoin");
+
 searchCoin.addEventListener("input", (e) => {
   const filter = e.target.value.toUpperCase();
-  const ul = document.getElementById("storedTokenData");
-  const li = ul.getElementsByTagName("li");
+  const li = document.querySelectorAll("#storedTokenData li");
 
-  for (let i = 0; i < li.length; i++) {
-    const searchableElement = li[i].querySelector(".mainTokenDataContainer");
-    const txtValue =
-      searchableElement?.textContent || searchableElement?.innerText || "";
+  li.forEach((item) => {
+    const name = item.querySelector("span").textContent.toUpperCase() || "";
+    const category = item.querySelector("h2").textContent.toUpperCase() || "";
+    const combined = `${name} ${category}`;
 
-    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-      li[i].style.display = "";
-    } else {
-      li[i].style.display = "none";
-    }
-  }
+    item.style.display = combined.includes(filter) ? "" : "none";
+  });
 });
-
 let selectedBtns = document.querySelectorAll(".selectedBtn");
 
 selectedBtns.forEach((btn) => {
   btn.addEventListener("click", () => {
-    // First, reset all buttons to unselected state
     selectedBtns.forEach((button) => {
       button.style.backgroundColor = "transparent";
       button.style.color = "#E9901A";
     });
 
-    // Now, select the clicked button
     btn.style.backgroundColor = "#E9901A";
     btn.style.color = "white";
   });
