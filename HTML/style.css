@@ -24,6 +24,8 @@
   align-items: center;
 }
 
+
+
 .sidbar-list li.active::before {
   content: "";
   position: absolute;
@@ -32,6 +34,7 @@
   width: 6px;
   height: 100%;
   border-radius: 0px 10px 10px 0px;
+  background-color: #e9901a;
 }
 
 .sidbar-list li.active p {
@@ -146,6 +149,7 @@
 }
 .iconMainBox:hover {
   background-color: white;
+  color: #e9901a !important;
 }
 .iconMainBox svg path {
   stroke: white;
@@ -183,7 +187,7 @@
   stroke: white;
 }
 .walletTopUp p {
-  color: #e9901a;
+  color: #FFA51F;
   transition: all 0.5s ease;
 }
 .walletTopUp:hover p {

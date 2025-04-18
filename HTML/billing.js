@@ -416,3 +416,14 @@ function initPagination() {
   displayPage(currentPage);
   updatePagination();
 }
+let selectCountry = document.getElementById("selectCountry")
+selectCountry.addEventListener("change", function() {
+  if (selectCountry.value === "Select Country") {
+    selectCountry.style.color = "#D0D0D0";
+  } else {
+    selectCountry.style.color = "black";
+  }
+})
+if (selectCountry.value === "Select Country") {
+  selectCountry.style.color = "#D0D0D0";
+  }

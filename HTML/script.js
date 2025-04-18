@@ -69,11 +69,58 @@ function closeDropDowns() {
   });
 }
 
+const profileImg = document.getElementById("profileImg");
+const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+
+if (localStorage.getItem("loginSuccess") === "true" && currentUser) {
+  profileImg.textContent = currentUser.firstName[0].toUpperCase();
+  profileImg.style.width = "32px";
+  profileImg.style.height = "32px";
+  profileImg.style.display = "flex";
+  profileImg.style.justifyContent = "center";
+  profileImg.style.alignItems = "center";
+  profileImg.style.color = "white";
+} else {
+  // create img element IN PROFILE IMG BUTTON
+  profileImg = document.createElement("img");
+  profileImg.src = "src/images/profile-img.png";
+  profileImg.style.width = "32px";
+  profileImg.style.height = "32px";
+}
+
+// Update button text based on login state
+const logout = document.getElementById("logout");
+const login = document.getElementById("login");
+const accountLogin = document.getElementById("accountLogin");
+const accountSignUp = document.getElementById("accountSignUp");
+if (localStorage.getItem("loginSuccess") === "true") {
+  logout.style.display = "block";
+  login.style.display = "none";
+  accountLogin.style.display = "none";
+  accountSignUp.style.display = "none";
+} else {
+  logout.style.display = "none";
+  login.style.display = "block";
+  accountLogin.style.display = "block";
+  accountSignUp.style.display = "block";
+}
+
+function logoutBtn() {
+  localStorage.removeItem("loginSuccess");
+  localStorage.removeItem("currentUser");
+  window.location.reload();
+}
+
+function loginBtn() {
+  window.location.href = "login.html";
+}
+
 function profileButton() {
   if (
     profileDropDown.style.opacity === "0" &&
     profileDropDown.style.marginTop === "50px" &&
-    profileDropDown.style.zIndex === "0"
+    profileDropDown.style.zIndex === "0" &&
+    localStorage.getItem("loginSuccess") === "true"
   ) {
     profileDropDown.style.opacity = "1";
     profileDropDown.style.marginTop = "8px";
@@ -123,7 +170,7 @@ function countrySelectBtn() {
   } else {
     closeDropDowns();
   }
-   blockZindex.style.zIndex = "auto";
+  blockZindex.style.zIndex = "auto";
 }
 
 function selectCoin(button) {
@@ -396,13 +443,7 @@ function closeBtn() {
     bodyOverflowModal.style.overflow = "auto";
     bodyScreenData.style.opacity = "1";
   }
-  if (addMemberModal && addMemberModal.style.top === "0%") {
-    addMemberModal.style.top = "-150%";
-    bodyOverflowModal.style.overflow = "auto";
-    bodyScreenData.style.opacity = "1";
-  }
 }
-
 
 function makeinAllCard() {
   if (newCardModal.style.top === "-150%") {
@@ -630,14 +671,22 @@ function AllCardValidateForm() {
     city === ""
   ) {
     // Show error messages
-    document.getElementById("cardHolderNameError").innerHTML = "Please enter your name";
-    document.getElementById("selectBankError").innerHTML = "Please select a bank";
-    document.getElementById("accountNumberError").innerHTML = "Please enter your account number";
-    document.getElementById("mobileNumberError").innerHTML = "Please enter your mobile number";
-    document.getElementById("cardNumberError").innerHTML = "Please enter your card number";
-    document.getElementById("selectDateError").innerHTML = "Please select a date";
-    document.getElementById("addressError").innerHTML = "Please enter your address";
-    document.getElementById("countryError").innerHTML = "Please select a country";
+    document.getElementById("cardHolderNameError").innerHTML =
+      "Please enter your name";
+    document.getElementById("selectBankError").innerHTML =
+      "Please select a bank";
+    document.getElementById("accountNumberError").innerHTML =
+      "Please enter your account number";
+    document.getElementById("mobileNumberError").innerHTML =
+      "Please enter your mobile number";
+    document.getElementById("cardNumberError").innerHTML =
+      "Please enter your card number";
+    document.getElementById("selectDateError").innerHTML =
+      "Please select a date";
+    document.getElementById("addressError").innerHTML =
+      "Please enter your address";
+    document.getElementById("countryError").innerHTML =
+      "Please select a country";
     document.getElementById("cityError").innerHTML = "Please select a city";
     return; // Exit if any required fields are empty
   }
@@ -723,14 +772,22 @@ function validateForm() {
     city === ""
   ) {
     // Show error messages
-    document.getElementById("cardHolderNameError").innerHTML = "Please enter your name";
-    document.getElementById("selectBankError").innerHTML = "Please select a bank";
-    document.getElementById("accountNumberError").innerHTML = "Please enter your account number";
-    document.getElementById("mobileNumberError").innerHTML = "Please enter your mobile number";
-    document.getElementById("cardNumberError").innerHTML = "Please enter your card number";
-    document.getElementById("selectDateError").innerHTML = "Please select a date";
-    document.getElementById("addressError").innerHTML = "Please enter your address";
-    document.getElementById("countryError").innerHTML = "Please select a country";
+    document.getElementById("cardHolderNameError").innerHTML =
+      "Please enter your name";
+    document.getElementById("selectBankError").innerHTML =
+      "Please select a bank";
+    document.getElementById("accountNumberError").innerHTML =
+      "Please enter your account number";
+    document.getElementById("mobileNumberError").innerHTML =
+      "Please enter your mobile number";
+    document.getElementById("cardNumberError").innerHTML =
+      "Please enter your card number";
+    document.getElementById("selectDateError").innerHTML =
+      "Please select a date";
+    document.getElementById("addressError").innerHTML =
+      "Please enter your address";
+    document.getElementById("countryError").innerHTML =
+      "Please select a country";
     document.getElementById("cityError").innerHTML = "Please select a city";
     return; // Exit if any required fields are empty
   }
@@ -791,7 +848,7 @@ function validateForm() {
   displayAddedCard();
 }
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener("DOMContentLoaded", function () {
   displayAddedCard(); // Display cards when the page loads
 });
 
@@ -803,7 +860,8 @@ function displayAddedCard() {
   // Clear the container before rendering (to avoid duplicates)
   addedCardContainer.innerHTML = "";
 
-  storedAllCards.forEach((card) => {//change //change date format to mm/yy//change date format to mm/yy//change date format to mm/yye format to mm/yy
+  storedAllCards.forEach((card) => {
+    //change //change date format to mm/yy//change date format to mm/yy//change date format to mm/yye format to mm/yy
     let storedCardContainer = document.createElement("button");
     storedCardContainer.classList.add("storedCardContainer");
 
@@ -814,7 +872,7 @@ function displayAddedCard() {
     cardImage.classList.add("cardImage");
     cardImageContainer.appendChild(cardImage);
 
-    let cardInformationContainer = document.createElement("div")
+    let cardInformationContainer = document.createElement("div");
     cardInformationContainer.classList.add("cardInformationContainer");
 
     const cardHolderNameDiv = document.createElement("div");
@@ -831,21 +889,26 @@ function displayAddedCard() {
 
     const deleteIcon = document.createElement("button");
     deleteIcon.classList.add("deleteIcon");
-    deleteIcon.innerHTML = '<svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">' +
-                '<path d="M9 3H15M3 6H21M19 6L18.2987 16.5193C18.1935 18.0975 18.1409 18.8867 17.8 19.485C17.4999 20.0118 17.0472 20.4353 16.5017 20.6997C15.882 21 15.0911 21 13.5093 21H10.4907C8.90891 21 8.11803 21 7.49834 20.6997C6.95276 20.4353 6.50009 20.0118 6.19998 19.485C5.85911 18.8867 5.8065 18.0975 5.70129 16.5193L5 6M10 10.5V15.5M14 10.5V15.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>' +
-                '</svg>';
+    deleteIcon.innerHTML =
+      '<svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">' +
+      '<path d="M9 3H15M3 6H21M19 6L18.2987 16.5193C18.1935 18.0975 18.1409 18.8867 17.8 19.485C17.4999 20.0118 17.0472 20.4353 16.5017 20.6997C15.882 21 15.0911 21 13.5093 21H10.4907C8.90891 21 8.11803 21 7.49834 20.6997C6.95276 20.4353 6.50009 20.0118 6.19998 19.485C5.85911 18.8867 5.8065 18.0975 5.70129 16.5193L5 6M10 10.5V15.5M14 10.5V15.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>' +
+      "</svg>";
     deleteIcon.addEventListener("click", function () {
       let storedCards = JSON.parse(localStorage.getItem("addCard")) || [];
-      storedCards = storedCards.filter((card) => card.cardNumber !== cardNumber);
+      storedCards = storedCards.filter(
+        (card) => card.cardNumber !== cardNumber
+      );
       localStorage.setItem("addCard", JSON.stringify(storedCards));
       displayAddedCard();
     });
-    //card scale 0.7 not only one time unlimeted when i want than click 
-  
+    //card scale 0.7 not only one time unlimeted when i want than click
+
     let isScaled = false;
     storedCardContainer.addEventListener("click", function () {
       //IF OTHER STOREDCONTAINER IS CLICKED THAN REMOVE ITS SCALE AND OPACITY
-      let allStoredContainers = document.querySelectorAll(".storedCardContainer");
+      let allStoredContainers = document.querySelectorAll(
+        ".storedCardContainer"
+      );
       allStoredContainers.forEach((container) => {
         if (container !== storedCardContainer) {
           container.style.transform = "scale(1)";
@@ -904,15 +967,10 @@ function depositBtn() {
     selectCardError.style.display = "block";
   }
 
-    storedCardContainer.style.transform = "scale(1)";
-    storedCardContainer.style.opacity = "1";
-    depositInputValue = "";
-  
+  storedCardContainer.style.transform = "scale(1)";
+  storedCardContainer.style.opacity = "1";
+  depositInputValue = "";
 }
-
-
-
-
 
 // function detailConverter() {
 //   let ADAdata = document.getElementById("ADADATA");
@@ -1117,36 +1175,36 @@ function mainSellBtn() {
   }
 }
 
-
-
-var $animation_elements = $('.rewardsPercentAnimation');
-var $rewardsValue = $('.rewardsValue');
+var $animation_elements = $(".rewardsPercentAnimation");
+var $rewardsValue = $(".rewardsValue");
 var $window = $(window);
 
 function check_if_in_view() {
   var window_height = $window.height();
   var window_top_position = $window.scrollTop();
-  var window_bottom_position = (window_top_position + window_height);
+  var window_bottom_position = window_top_position + window_height;
 
-  $.each($animation_elements, function() {
+  $.each($animation_elements, function () {
     var $element = $(this);
     var element_height = $element.outerHeight();
     var element_top_position = $element.offset().top;
-    var element_bottom_position = (element_top_position + element_height);
+    var element_bottom_position = element_top_position + element_height;
 
     //check to see if this current container is within viewport
-    if ($element.hasClass('in-view')) {
+    if ($element.hasClass("in-view")) {
       return;
     }
-    if ((element_bottom_position >= window_top_position) &&
-      (element_top_position <= window_bottom_position)) {
-      $element.addClass('in-view');
+    if (
+      element_bottom_position >= window_top_position &&
+      element_top_position <= window_bottom_position
+    ) {
+      $element.addClass("in-view");
     } else {
-      $element.removeClass('in-view');
+      $element.removeClass("in-view");
     }
   });
   // $each($rewardsValue, function(obj, start, end, duration) {
-   
+
   //   var $element = $(this);
   //   var element_height = $element.outerHeight();
   //   var element_top_position = $element.offset().top;
@@ -1173,11 +1231,10 @@ function check_if_in_view() {
   // })
 }
 
-$window.on('scroll resize', check_if_in_view);
-$window.trigger('scroll');
+$window.on("scroll resize", check_if_in_view);
+$window.trigger("scroll");
 
 function rewardsRefresh() {
-  
   //each subject with 0 and 73 will animate
   const subjects = document.querySelectorAll(".subject");
   subjects.forEach((subject) => {
@@ -1187,13 +1244,12 @@ function rewardsRefresh() {
     }, 1000);
   });
 
-  
   // function animateValue(obj, start, end, duration) {
   //   let startTimestamp = null;
   //   const step = (timestamp) => {
   //     if (!startTimestamp) startTimestamp = timestamp;
   //     const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-      
+
   //     obj.innerHTML = `${Math.floor(progress * (end - start) + start)}%`;
   //     if (progress < 1) {
   //       window.requestAnimationFrame(step);
@@ -1209,19 +1265,45 @@ function rewardsRefresh() {
 
 //body class add dark
 
-
-
+let darkMode = document.getElementById("darkMode");
+let lightMode = document.getElementById("lightMode");
 function darkModeBtn() {
-  let addDarkMode = document.getElementById("bodyOverflowModal")
-  addDarkMode.classList.toggle("dark")
-  if(addDarkMode.classList.contains("dark")) {
-    localStorage.setItem("dark", "enabled")
+  let addDarkMode = document.getElementById("bodyOverflowModal");
+  addDarkMode.classList.toggle("dark");
+  if (addDarkMode.classList.contains("dark")) {
+    localStorage.setItem("dark", "enabled");
+    darkMode.style.display = "none";
+    lightMode.style.display = "block";
   } else {
-    localStorage.setItem("dark", "disabled")
+    localStorage.setItem("dark", "disabled");
+    darkMode.style.display = "block";
+    lightMode.style.display = "none";
   }
 }
-document.addEventListener("DOMContentLoaded" , function () {
+document.addEventListener("DOMContentLoaded", function () {
   if (localStorage.getItem("dark") === "enabled") {
     document.getElementById("bodyOverflowModal").classList.add("dark");
   }
-})
+});
+
+let storedSubscriptionValue =
+  JSON.parse(localStorage.getItem("subscriptionValue")) || [];
+let subscriptionData = document.getElementById("subscriptionData");
+
+storedSubscriptionValue.forEach((subscribeCard) => {
+  const subscriptionCard = document.createElement("div");
+  subscriptionCard.classList.add("subscriptionCard");
+  subscriptionCard.innerHTML = `
+  <div class="subscriptionCard__header">
+  <div class="subscriptionCard__name">
+  <img src="${subscribeCard.image}" alt="image">
+  <h2>${subscribeCard.name}</h2>
+  </div>
+  <p>$${subscribeCard.price}</p>
+  </div>
+  `;
+  subscriptionData.appendChild(subscriptionCard);
+});
+
+
+

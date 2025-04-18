@@ -944,7 +944,7 @@ video {
   height: 2.5rem;
 }
 
-.h-11 {
+.h-[45px] {
   height: 2.75rem;
 }
 
@@ -1870,7 +1870,7 @@ video {
   border-color: rgb(255 165 31 / var(--tw-border-opacity, 1));
 }
 
-.border-white {
+.border-[#e5e5e585] {
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity, 1));
 }
@@ -2960,7 +2960,7 @@ video {
   color: rgb(21 21 21 / var(--tw-text-opacity, 1));
 }
 
-.text-[#E9901A] {
+.text-[#FFA51F] {
   --tw-text-opacity: 1;
   color: rgb(233 144 26 / var(--tw-text-opacity, 1));
 }
@@ -3317,16 +3317,42 @@ video {
 #page-numbers .active {
   background-color: #e9901a;
 }
+
 tr td {
-  padding: 10px 24px;
+  padding: 3px 24px;
   white-space: nowrap;
   color: white;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 400;
   text-align: left;
 }
-.mainData:nth-child(odd) {
-  background-color: #302964;
+.tableHeader td {
+  color: #FFA51F;
+  padding: 17px 24px;
+  font-size: 20px;
+  font-weight: 600;
+}
+.tableHeader td:first-child {
+  border-top-left-radius: 17.84px;
+  border-bottom-left-radius: 17.84px;
+}
+.tableHeader td:last-child {
+  border-top-right-radius: 17.84px;
+  border-bottom-right-radius: 17.84px;
+  }
+  .mainData {
+    height:63px;
+  }
+.mainData:nth-child(odd) td {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.mainData td:first-child {
+  border-top-left-radius: 17.84px;
+  border-bottom-left-radius: 17.84px;
+}
+.mainData td:last-child {
+  border-top-right-radius: 17.84px;
+  border-bottom-right-radius: 17.84px;
 }
 .mainResult {
   display: flex;
@@ -3352,12 +3378,12 @@ tr td {
 }
 .mainTitleText h2 {
   padding-top: 2px;
-  font-size: 16px;
+  font-size: 18px;
   color: white;
   font-weight: medium;
 }
 .mainTitleText p {
-  font-size: 12px;
+  font-size: 14px;
   color: white;
 }
 
@@ -3369,7 +3395,7 @@ tr td {
   text-align: right;
 }
 .tableHeader {
-  background-color: #302964;
+  background-color: rgba(255, 255, 255, 0.1);
 }
 .tableHeader td:last-child {
   text-align: right;
@@ -3379,7 +3405,7 @@ tr td {
 }
 
 .tableData {
-  font-size: 16px;
+  font-size: 18px;
   color: white;
   white-space: nowrap;
 }
@@ -3389,7 +3415,7 @@ tr td {
   border-radius: 60px;
   border: 1px solid #00a185;
   background-color: #b9d7d2;
-  font-size: 16px;
+  font-size: 18px;
   color: #00a185;
   text-align: center;
   padding-top: 10px;
@@ -3401,7 +3427,7 @@ tr td {
   border-radius: 60px;
   border: 1px solid #ffc861;
   background-color: #fdedcff2;
-  font-size: 16px;
+  font-size: 18px;
   color: #ffc861;
   text-align: center;
   padding-top: 10px;
@@ -3413,14 +3439,14 @@ tr td {
   border-radius: 60px;
   border: 1px solid #ff6161;
   background-color: #ffbebe;
-  font-size: 16px;
+  font-size: 18px;
   text-align: center;
   padding-top: 10px;
   color: #ff6161;
   font-weight: medium;
 }
 .balanceDetailLastSevenDays {
-  font-size: 16px;
+  font-size: 18px;
   color: white;
   white-space: nowrap;
   display: flex;
@@ -3445,13 +3471,15 @@ tr td {
   border: 1px solid white;
   border-radius: 12px;
   padding: 8px 20px;
-  font-size: 16px;
+  font-size: 18px;
   width: fit-content;
   color: white;
   font-weight: 400;
   text-align: center;
   cursor: pointer;
   transition: all 0.3s ease;
+  position: relative;
+  z-index: 9999;
   @media (max-width: 768px) {
     padding: 6px 16px;
   }
@@ -3616,10 +3644,10 @@ tr td {
 }
 .card {
   display: flex;
-  align-items: center;
+  align-items: start;
   gap: 18px;
   width: 100%;
-  border: 1px dashed white;
+  border: 1px dashed #fff3;
   transition: all 0.3s ease;
   border-radius: 12px;
   padding: 12px;
@@ -3662,6 +3690,10 @@ tr td {
   color: white;
   font-size: 16px;
   text-align: left;
+}
+.checkBoxMainDiv {
+  border-top-left-radius: 17.84px;
+  border-bottom-left-radius: 17.84px;
 }
 .chexkBoxLabel {
   font-size: 16px;
@@ -3791,6 +3823,9 @@ tr td {
 .assetsDetailsMain {
   position: relative;
 }
+.assetsDetailsMain:hover .detailsMain {
+  background-color: #e9901a;
+}
 .newAsset {
   width: 86.5%;
   border-left: 1px solid #e9901a;
@@ -3814,3 +3849,136 @@ tr td {
 .walletMain:hover .walletHead {
   background-color: #e9901a;
 }
+
+.nameContainer {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.nameContainer img {
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+  border-radius: 100%;
+}
+.actionContainer {
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  margin-left: auto;
+}
+.deleteButton {
+  background-color: red;
+  color: white;
+  padding: 8px 16px;
+}
+.subscriptionValue {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  color: white;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border: 1px dashed white;
+    border-radius: 10px;
+    padding: 12px 20px;
+}
+.subscriptionContainer {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.subscriptionValue img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+.subscriptionValue button {
+  padding: 8px 12px;
+  background-color: #e9901a;
+  border-radius: 10px;
+}
+.subscriptionCard__header {
+  border: 1px solid #fff3;
+  border-radius: 0.75rem;
+  padding: 16px;
+  background-color: #ffffff1a;
+}
+.subscriptionCard__name {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.subscriptionCard__name h2 {
+  font-size: 20px;
+  font-weight: 400;
+  color: white;
+  text-transform: capitalize;
+  @media (max-width:768px) {
+    font-size:18px
+  }
+}
+.subscriptionCard__name img {
+  width: 24px;
+  height: 24px;
+}
+.subscriptionCard__header p {
+  padding-top: 16px;
+  font-size: 24px;
+  color: white;
+  font-weight: 600;
+  @media (max-width:768px) {
+    font-size: 20px;
+  }
+}
+.manageBtn {
+  padding: 8px 12px;
+  background-color: #e9901a;
+  border: 1px solid #e9901a;
+  border-radius: 10px;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  padding-top: 10px;
+}
+.manageBtn:hover {
+  background-color: transparent;
+  color: #FFA51F;
+  }
+  .growthSvg {
+    display: flex;
+    gap: 2px;
+  }
+  .addMoreSelectButton {
+    padding: 16px;
+    display: flex;
+    gap: 12px;
+    justify-content: space-between;
+    border-radius: 20px
+  }
+  .addMoreSelectButton:hover {
+    background-color: #e9901a;
+  }
+  .mainTokenDataContainer {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+  .siderBarMobile {
+    display: flex;
+   @media (max-width:1024px) {
+    backdrop-filter: blur(6px);
+   }
+  }
+  .siderBarMainContainer {
+    top: 25px;
+    z-index: 999999;
+    @media (max-width:1024px) {
+      top:100px;
+    }
+  }
+  .navBarContainer button {
+    min-width:auto !important;
+  }

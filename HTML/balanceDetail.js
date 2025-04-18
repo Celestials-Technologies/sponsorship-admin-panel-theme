@@ -213,6 +213,9 @@ function makeResultsTable(last24Days, last7Days, last1Mounth, last1Year) {
     mainResultTrade.classList.add("balanceDetailTrade");
     var mainResultTradeText = document.createElement("p");
     mainResultTradeText.textContent = result.trade;
+    mainResultTrade.addEventListener("click", function() {
+      window.location.href = "details.html";
+      });
     mainResultTrade.appendChild(mainResultTradeText);
     newRow.insertCell().appendChild(mainResultTrade);
     
