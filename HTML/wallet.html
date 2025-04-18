@@ -374,7 +374,7 @@
               type="button"
               id="login"
               onclick="loginBtn()"
-              class="text-lg leading-[18px] text-white w-full h-12 text-center border border-white capitalize rounded-[50px] Gilroy-normal logout-btn-shadow"
+              class="text-lg leading-[18px] text-white w-full h-12 text-center border border-[#e5e5e585] capitalize rounded-[50px] Gilroy-normal logout-btn-shadow"
             >
               Login
             </button>
@@ -383,7 +383,7 @@
               id="logout"
               onclick="logoutBtn()"
               style="display: none"
-              class="text-lg leading-[18px] text-white w-full h-12 text-center border border-white capitalize rounded-[50px] Gilroy-normal logout-btn-shadow"
+              class="text-lg leading-[18px] text-white w-full h-12 text-center border border-[#e5e5e585] capitalize rounded-[50px] Gilroy-normal logout-btn-shadow"
             >
               Logout
             </button>
@@ -396,7 +396,7 @@
         style="transition: all 0.5s ease"
       >
         <div
-          class="w-full py-[9px] md:pr-[18px] md:px-[33px] rounded-[15px] flex justify-between items-center gap-2.5 bg-sideBarBg border border-[#fff3] px-3 z-10 backdrop-blur-sm z-[999] relative"
+          class="w-full py-[9px] md:pr-[18px] md:px-[33px] rounded-[15px] flex justify-between items-center gap-2.5 bg-sideBarBg border border-[#fff3] px-3 z-10 backdrop-blur-sm z-[999] relative navBarContainer"
         >
           <div class="flex items-center gap-5 justify-between w-full">
             <div class="flex gap-3 items-center">
@@ -415,7 +415,7 @@
                 </svg>
               </button>
               <div
-                class="bg-sideBarBg border border-translucentWhite py-1.5 pl-5 pr-2 gap-4 rounded-full flex items-center hidden md:flex"
+                class="bg-sideBarBg border border-[#e5e5e585] py-1.5 pl-5 pr-2 gap-4 rounded-full flex items-center hidden md:flex"
               >
                 <input
                   type="text"
@@ -493,12 +493,12 @@
               <button
                 type="button"
                 onclick="connectBtn()"
-                class="py-1 pt-1.5 px-2 bg-btnSecondary text-base text-white border border-solid border-white hover:border-[#E9901A] rounded-lg cursor-pointer hover:bg-white transition-all duration-[0.5s] hover:text-[#E9901A] Gilroy-normal"
+                class="py-1 pt-1.5 px-2 bg-btnSecondary text-base text-white border border-solid border-[#e5e5e585] hover:border-[#E9901A] rounded-lg cursor-pointer hover:bg-white transition-all duration-[0.5s] hover:text-[#FFA51F] Gilroy-normal"
               >
                 Connect
               </button>
               <div
-                class="bg-sideBarBg md:border border-translucentWhite md:py-1.5 p-0 md:pl-5 md:pr-2 gap-4 rounded-full flex items-center md:hidden"
+                class="bg-sideBarBg md:border border-[#e5e5e585] md:py-1.5 p-0 md:pl-5 md:pr-2 gap-4 rounded-full flex items-center md:hidden"
               >
                 <input
                   type="text"
@@ -528,7 +528,7 @@
                 type="button"
                 onclick="darkModeBtn()"
                 id="darkModeSvg"
-                class="p-1 cursor-pointer iconMainBox rounded-lg hidden md:block"
+                class="p-1 cursor-pointer iconMainBox min-w-auto rounded-lg hidden md:block" style="min-width: auto"
               >
                 <div class="w-6 h-6" id="darkMode">
                   <svg
@@ -569,7 +569,7 @@
                 <button
                   type="button"
                   onclick="bellButton()"
-                  class="p-1 cursor-pointer iconMainBox rounded-lg hidden md:block"
+                  class="p-1 cursor-pointer iconMainBox min-w-auto rounded-lg hidden md:block" style="min-width: auto"
                 >
                   <svg
                     width="24"
@@ -588,7 +588,7 @@
                   </svg>
                 </button>
                 <div
-                  class="absolute right-0 bg-bgPrimary rounded-lg px-2 py-1 border border-solid border-white w-[300px]"
+                  class="absolute right-0 bg-bgPrimary rounded-lg px-2 py-1 border border-solid border-[#e5e5e585] w-[300px]"
                   id="bellDropDown"
                   style="
                     opacity: 0;
@@ -689,7 +689,7 @@
                   />
                 </button>
                 <div
-                  class="absolute right-0 bg-bgPrimary rounded-lg px-2 py-1 border border-solid border-white w-[130px]"
+                  class="absolute right-0 bg-bgPrimary rounded-lg px-2 py-1 border border-solid border-[#e5e5e585] w-[130px]"
                   id="countrySelect"
                   style="
                     opacity: 0;
@@ -780,7 +780,7 @@
                   class="p-0 cursor-pointer iconMainBox rounded-full"
                 ></button>
                 <div
-                  class="absolute right-0 bg-bgPrimary rounded-lg px-2 py-1 border border-solid border-white w-[219px]"
+                  class="absolute right-0 bg-bgPrimary rounded-lg px-2 py-1 border border-solid border-[#e5e5e585] w-[219px]"
                   id="profileDropDown"
                   style="
                     opacity: 0;
@@ -1002,7 +1002,7 @@
             <button
               type="button"
               onclick="topUpBtn()"
-              class="xl:px-8 md:px-5 px-4 xl:py-4 md:py-3 py-2 border border-solid border-[#E9901A] hover:border-white hover:bg-[#E9901A] transition-all bg-transparent rounded-xl walletTopUp flex md:gap-3 gap-2"
+              class="xl:px-8 md:px-5 px-4 xl:py-4 md:py-3 py-2 border border-solid border-[#E9901A]  hover:bg-[#E9901A] transition-all bg-transparent rounded-xl walletTopUp flex md:gap-3 gap-2"
             >
               <svg
                 width="24"
@@ -1024,7 +1024,7 @@
             <a
               href="./allCards.html"
               target="_blank"
-              class="txl:px-8 md:px-5 px-4 xl:py-4 md:py-3 py-2 border border-solid border-[#E9901A] hover:border-white hover:bg-[#E9901A] transition-all bg-transparent rounded-xl text-white"
+              class="txl:px-8 md:px-5 px-4 xl:py-4 md:py-3 py-2 border border-solid border-[#E9901A]  hover:bg-[#E9901A] transition-all bg-transparent rounded-xl text-[#FFA51F] hover:text-white"
               >All Cards</a
             >
           </div>
@@ -1034,10 +1034,10 @@
             class="sm:w-[48%] xl:w-[31.333%] 2xl:w-full w-full max-w-full h-full"
           >
             <div
-              class="py-6 px-3.5 border border-translucentWhite w-full max-w-full bg-sideBarBg h-full rounded-xl"
+              class="py-6 px-3.5 border border-[#fff3] w-full max-w-full bg-sideBarBg h-full rounded-xl"
             >
               <div
-                class="flex border-b border-dashed border-white pb-4 mb-4 items-center gap-3 w-full"
+                class="flex border-b border-dashed border-[#e5e5e585] pb-4 mb-4 items-center gap-3 w-full"
               >
                 <p
                   class="text-white Gilroy-semibold pt-0.5 text-xl sm:text-2xl"
@@ -1111,10 +1111,10 @@
             class="sm:w-[48%] xl:w-[31.333%] 2xl:w-full w-full max-w-full h-full"
           >
             <div
-              class="py-6 px-3.5 border border-translucentWhite w-full max-w-full bg-sideBarBg h-full rounded-xl"
+              class="py-6 px-3.5 border border-[#fff3] w-full max-w-full bg-sideBarBg h-full rounded-xl"
             >
               <div
-                class="flex border-b border-dashed border-white pb-4 mb-4 items-center gap-3 w-full"
+                class="flex border-b border-dashed border-[#e5e5e585] pb-4 mb-4 items-center gap-3 w-full"
               >
                 <p
                   class="text-white Gilroy-semibold pt-0.5 text-xl sm:text-2xl"
@@ -1188,10 +1188,10 @@
             class="sm:w-[48%] xl:w-[31.333%] 2xl:w-full w-full max-w-full h-full"
           >
             <div
-              class="py-6 px-3.5 border border-translucentWhite w-full max-w-full bg-sideBarBg h-full rounded-xl"
+              class="py-6 px-3.5 border border-[#fff3] w-full max-w-full bg-sideBarBg h-full rounded-xl"
             >
               <div
-                class="flex border-b border-dashed border-white pb-4 mb-4 items-center gap-3 w-full"
+                class="flex border-b border-dashed border-[#e5e5e585] pb-4 mb-4 items-center gap-3 w-full"
               >
                 <p
                   class="text-white Gilroy-semibold pt-0.5 text-xl sm:text-2xl"
@@ -1265,10 +1265,10 @@
         <div class="flex xl:flex-nowrap flex-wrap gap-5 mt-6">
           <div class="w-full xl:w-[66.66%]">
             <div
-              class="p-6 md:pt-6 md:pr-[31px] md:pb-[22px] md:pl-[26px] border border-white rounded-[15px] bg-gradient"
+              class="p-6 md:pt-6 md:pr-[31px] md:pb-[22px] md:pl-[26px] border border-[#e5e5e585] rounded-[15px] bg-gradient"
             >
               <div
-                class="border-b border-dashed pb-6 mb-2 border-white flex flex-wrap gap-3 items-center justify-between"
+                class="border-b border-dashed pb-6 mb-2 border-[#e5e5e585] flex flex-wrap gap-3 items-center justify-between"
               >
                 <p class="text-xl md:text-[26px] text-white Gilroy-semibold">
                   Performance
@@ -1280,7 +1280,7 @@
                     <button
                       type="button"
                       onclick="selectDays(this)"
-                      class="px-2 py-1 flex items-center gap-3 justify-between cursor-pointer selectDaysBox rounded-lg border border-solid border-white bg-transparent p-1 text-xs text-white pt-1.5 rounded-lg Gilroy-normal"
+                      class="px-2 py-1 flex items-center gap-3 justify-between cursor-pointer selectDaysBox rounded-lg border border-solid border-[#e5e5e585] bg-transparent p-1 text-xs text-white pt-1.5 rounded-lg Gilroy-normal"
                     >
                       <p
                         class="text-sm text-white Gilroy-normal"
@@ -1309,7 +1309,7 @@
                       </div>
                     </button>
                     <div
-                      class="absolute right-0 bg-bgPrimary rounded-lg px-2 py-1 border border-solid border-white w-[130px]"
+                      class="absolute right-0 bg-bgPrimary rounded-lg px-2 py-1 border border-solid border-[#e5e5e585] w-[130px]"
                       id="daysSelect"
                       style="
                         scale: 0;
@@ -1344,13 +1344,13 @@
               <canvas id="myChart" width="100%" height="40%"></canvas>
             </div>
             <div
-              class="md:p-6 p-4 border border-white rounded-[15px] mt-6 bg-gradient w-full"
+              class="md:p-6 p-4 border border-[#e5e5e585] rounded-[15px] mt-6 bg-gradient w-full"
             >
               <div
-                class="flex flex-wrap border-b border-dashed border-white pb-4 mb-4 items-center gap-3 justify-between"
+                class="flex flex-wrap border-b border-dashed border-[#e5e5e585] pb-4 mb-4 items-center gap-3 justify-between"
               >
                 <div
-                  class="flex flex-wrap gap-3 xl:gap-x-8 md:gap-6 items-center justify-between w-full"
+                  class="flex flex-wrap gap-3 xl:gap-x-8 md:gap-6 items-center items-center justify-between w-full"
                 >
                   <h2
                     class="text-white Gilroy-semibold pt-0.5 text-xl sm:text-2xl"
@@ -1360,7 +1360,7 @@
 
                   <div class="gap-3 flex items-center flex-wrap">
                     <div
-                      class="bg-sideBarBg border border-translucentWhite py-1.5 pl-5 pr-2 gap-4 rounded-full flex items-center"
+                      class="bg-sideBarBg border border-[#e5e5e585] py-1.5 pl-5 pr-2 gap-4 rounded-full flex items-center"
                     >
                       <input
                         type="text"
@@ -1394,7 +1394,7 @@
                         <button
                           type="button"
                           onclick="selectDays(this)"
-                          class="px-2 py-1 flex items-center gap-3 justify-between cursor-pointer selectDaysBox rounded-lg border border-solid border-white bg-transparent p-1 text-xs text-white pt-1.5 rounded-lg Gilroy-normal"
+                          class="px-2 py-1 flex items-center gap-3 justify-between cursor-pointer selectDaysBox rounded-lg border border-solid border-[#e5e5e585] bg-transparent p-1 text-xs text-white pt-1.5 rounded-lg Gilroy-normal"
                         >
                           <p
                             class="text-sm text-white Gilroy-normal"
@@ -1423,7 +1423,7 @@
                           </div>
                         </button>
                         <div
-                          class="absolute right-0 bg-bgPrimary rounded-lg px-2 py-1 border border-solid border-white w-[130px]"
+                          class="absolute right-0 bg-bgPrimary rounded-lg px-2 py-1 border border-solid border-[#e5e5e585] w-[130px]"
                           id="daysSelect"
                           style="
                             scale: 0;
@@ -1459,29 +1459,29 @@
               <!-- <div class="overflow-auto tableScroll pb-2.5">
                 <table class="w-full">
                   <thead>
-                    <tr class="bg-[#302964]">
+                    <tr class="bg-[#ffffff1a]">
                       <th
-                        class="py-5 px-6 whitespace-nowrap text-white text-base Gilroy-semibold text-left"
+                        class="py-4 px-6 whitespace-nowrap text-[#FFA51F] text-lg Gilroy-semibold text-left"
                       >
                         Title
                       </th>
                       <th
-                        class="py-5 px-6 whitespace-nowrap text-white text-base Gilroy-semibold text-left"
+                        class="py-4 px-6 whitespace-nowrap text-[#FFA51F] text-lg Gilroy-semibold text-left"
                       >
                         Transaction ID
                       </th>
                       <th
-                        class="py-5 px-6 whitespace-nowrap text-white text-base Gilroy-semibold text-left"
+                        class="py-4 px-6 whitespace-nowrap text-[#FFA51F] text-lg Gilroy-semibold text-left"
                       >
                         Payments
                       </th>
                       <th
-                        class="py-5 px-6 whitespace-nowrap text-white text-base Gilroy-semibold text-left"
+                        class="py-4 px-6 whitespace-nowrap text-[#FFA51F] text-lg Gilroy-semibold text-left"
                       >
                         Status
                       </th>
                       <th
-                        class="py-5 px-6 whitespace-nowrap text-white text-base Gilroy-semibold text-left"
+                        class="py-4 px-6 whitespace-nowrap text-[#FFA51F] text-lg Gilroy-semibold text-left"
                       >
                         Action
                       </th>
@@ -1498,11 +1498,11 @@
                           />
                           <div class="flex flex-col gap-1">
                             <p
-                              class="pt-0.5 text-base Gilroy-medium text-white"
+                              class="pt-0.5 text-lg Gilroy-medium text-white"
                             >
                               Bitcoin
                             </p>
-                            <p class="text-xs Gilroy-normal text-white">
+                            <p class="text-sm Gilroy-normal text-white">
                               Pending - 3 min ago
                             </p>
                           </div>
@@ -1520,7 +1520,7 @@
                       </td>
                       <td class="py-2.5 px-6 whitespace-nowrap">
                         <div
-                          class="w-full px-5 py-2 rounded-full border border-solid pt-2.5 border-white text-[#00a185] text-base bg-[#b9d7d2] Gilroy-medium text-center"
+                          class="w-full px-5 py-2 rounded-full border border-solid pt-2.5 border-[#e5e5e585] text-[#00a185] text-base bg-[#b9d7d2] Gilroy-medium text-center"
                         >
                           Successful
                         </div>
@@ -1558,7 +1558,7 @@
                         </svg>
                       </td>
                     </tr>
-                    <tr class="bg-[#302964]">
+                    <tr class="bg-[#ffffff1a]">
                       <td class="px-6 py-2.5 whitespace-nowrap">
                         <div class="flex items-center gap-3">
                           <img
@@ -1568,11 +1568,11 @@
                           />
                           <div class="flex flex-col gap-1">
                             <p
-                              class="pt-0.5 text-base Gilroy-medium text-white"
+                              class="pt-0.5 text-lg Gilroy-medium text-white"
                             >
                               Cardano
                             </p>
-                            <p class="text-xs Gilroy-normal text-white">
+                            <p class="text-sm Gilroy-normal text-white">
                               Canceled - 3 min ago
                             </p>
                           </div>
@@ -1590,7 +1590,7 @@
                       </td>
                       <td class="py-2.5 px-6 whitespace-nowrap">
                         <div
-                          class="w-full px-5 py-2 rounded-full border border-solid pt-2.5 border-white text-[#ffc861] text-base bg-[#fdedcff2] Gilroy-medium text-center"
+                          class="w-full px-5 py-2 rounded-full border border-solid pt-2.5 border-[#e5e5e585] text-[#ffc861] text-base bg-[#fdedcff2] Gilroy-medium text-center"
                         >
                           Pending
                         </div>
@@ -1638,11 +1638,11 @@
                           />
                           <div class="flex flex-col gap-1">
                             <p
-                              class="pt-0.5 text-base Gilroy-medium text-white"
+                              class="pt-0.5 text-lg Gilroy-medium text-white"
                             >
                               Electro
                             </p>
-                            <p class="text-xs Gilroy-normal text-white">
+                            <p class="text-sm Gilroy-normal text-white">
                               Pending - 3 min ago
                             </p>
                           </div>
@@ -1660,7 +1660,7 @@
                       </td>
                       <td class="py-2.5 px-6 whitespace-nowrap">
                         <div
-                          class="w-full px-5 py-2 rounded-full border border-solid pt-2.5 border-white text-[#ff6161] text-base bg-[#ffbebe] Gilroy-medium text-center"
+                          class="w-full px-5 py-2 rounded-full border border-solid pt-2.5 border-[#e5e5e585] text-[#ff6161] text-base bg-[#ffbebe] Gilroy-medium text-center"
                         >
                           Cancel
                         </div>
@@ -1698,7 +1698,7 @@
                         </svg>
                       </td>
                     </tr>
-                    <tr class="bg-[#302964]">
+                    <tr class="bg-[#ffffff1a]">
                       <td class="px-6 py-2.5 whitespace-nowrap">
                         <div class="flex items-center gap-3">
                           <img
@@ -1708,11 +1708,11 @@
                           />
                           <div class="flex flex-col gap-1">
                             <p
-                              class="pt-0.5 text-base Gilroy-medium text-white"
+                              class="pt-0.5 text-lg Gilroy-medium text-white"
                             >
                               Cardano
                             </p>
-                            <p class="text-xs Gilroy-normal text-white">
+                            <p class="text-sm Gilroy-normal text-white">
                               Canceled - 3 min ago
                             </p>
                           </div>
@@ -1730,7 +1730,7 @@
                       </td>
                       <td class="py-2.5 px-6 whitespace-nowrap">
                         <div
-                          class="w-full px-5 py-2 rounded-full border border-solid pt-2.5 border-white text-[#ffc861] text-base bg-[#fdedcff2] Gilroy-medium text-center"
+                          class="w-full px-5 py-2 rounded-full border border-solid pt-2.5 border-[#e5e5e585] text-[#ffc861] text-base bg-[#fdedcff2] Gilroy-medium text-center"
                         >
                           Pending
                         </div>
@@ -1778,11 +1778,11 @@
                           />
                           <div class="flex flex-col gap-1">
                             <p
-                              class="pt-0.5 text-base Gilroy-medium text-white"
+                              class="pt-0.5 text-lg Gilroy-medium text-white"
                             >
                               Electro
                             </p>
-                            <p class="text-xs Gilroy-normal text-white">
+                            <p class="text-sm Gilroy-normal text-white">
                               Pending - 3 min ago
                             </p>
                           </div>
@@ -1800,7 +1800,7 @@
                       </td>
                       <td class="py-2.5 px-6 whitespace-nowrap">
                         <div
-                          class="w-full px-5 py-2 rounded-full border border-solid pt-2.5 border-white text-[#ff6161] text-base bg-[#ffbebe] Gilroy-medium text-center"
+                          class="w-full px-5 py-2 rounded-full border border-solid pt-2.5 border-[#e5e5e585] text-[#ff6161] text-base bg-[#ffbebe] Gilroy-medium text-center"
                         >
                           Cancel
                         </div>
@@ -1838,7 +1838,7 @@
                         </svg>
                       </td>
                     </tr>
-                    <tr class="bg-[#302964]">
+                    <tr class="bg-[#ffffff1a]">
                       <td class="px-6 py-2.5 whitespace-nowrap">
                         <div class="flex items-center gap-3">
                           <img
@@ -1848,11 +1848,11 @@
                           />
                           <div class="flex flex-col gap-1">
                             <p
-                              class="pt-0.5 text-base Gilroy-medium text-white"
+                              class="pt-0.5 text-lg Gilroy-medium text-white"
                             >
                               Cardano
                             </p>
-                            <p class="text-xs Gilroy-normal text-white">
+                            <p class="text-sm Gilroy-normal text-white">
                               Canceled - 3 min ago
                             </p>
                           </div>
@@ -1870,7 +1870,7 @@
                       </td>
                       <td class="py-2.5 px-6 whitespace-nowrap">
                         <div
-                          class="w-full px-5 py-2 rounded-full border border-solid pt-2.5 border-white text-[#ffc861] text-base bg-[#fdedcff2] Gilroy-medium text-center"
+                          class="w-full px-5 py-2 rounded-full border border-solid pt-2.5 border-[#e5e5e585] text-[#ffc861] text-base bg-[#fdedcff2] Gilroy-medium text-center"
                         >
                           Pending
                         </div>
@@ -1921,7 +1921,7 @@
                 id="seeAll"
                 class="flex items-center mt-6 gap-2 cursor-pointer"
               >
-                <p class="text-base text-[#E9901A] Gilroy-medium">See All</p>
+                <p class="text-base text-[#FFA51F] Gilroy-medium">See All</p>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -1943,7 +1943,7 @@
                 class="flex items-center mt-6 gap-2 cursor-pointer"
                 style="display: none"
               >
-                <p class="text-base text-[#E9901A] Gilroy-medium">See Less</p>
+                <p class="text-base text-[#FFA51F] Gilroy-medium">See Less</p>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -1963,10 +1963,10 @@
           </div>
           <div class="w-full xl:w-[33.33%]">
             <div
-              class="p-6 md:pt-6 md:pr-[31px] md:pb-[22px] md:pl-[26px] border border-white rounded-[15px] bg-gradient"
+              class="p-6 md:pt-6 md:pr-[31px] md:pb-[22px] md:pl-[26px] border border-[#e5e5e585] rounded-[15px] bg-gradient"
             >
               <div
-                class="flex border-b border-dashed border-white pb-4 mb-4 items-center gap-3 w-full"
+                class="flex border-b border-dashed border-[#e5e5e585] pb-4 mb-4 items-center gap-3 w-full"
               >
                 <p
                   class="text-white Gilroy-semibold pt-0.5 text-xl sm:text-2xl"
@@ -1985,7 +1985,7 @@
                 <button
                   type="button"
                   onclick="makeACard()"
-                  class="px-4 py-3 flex justify-center items-center md:gap-3 gap-2 border border-solid border-[#E9901A] transition-all hover:border-white hover:bg-[#E9901A] rounded-xl walletTopUp"
+                  class="px-4 py-3 flex justify-center items-center md:gap-3 gap-2 border border-solid border-[#E9901A] transition-all  hover:bg-[#E9901A] rounded-xl walletTopUp"
                 >
                   <svg
                     width="20"
@@ -2011,7 +2011,7 @@
                 <button
                   type="button"
                   onclick="manageBtn()"
-                  class="px-4 md:px-5 md:py-4 py-3 flex justify-center items-center md:gap-3 gap-2 border border-solid border-[#E9901A] transition-all hover:border-white hover:bg-[#E9901A] rounded-xl walletTopUp"
+                  class="px-4 md:px-5 md:py-4 py-3 flex justify-center items-center md:gap-3 gap-2 border border-solid border-[#E9901A] transition-all  hover:bg-[#E9901A] rounded-xl walletTopUp"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -2030,10 +2030,10 @@
               </div>
             </div>
             <div
-              class="p-6 md:pt-6 md:pr-[31px] md:pb-[22px] md:pl-[26px] border border-white rounded-[15px] bg-gradient mt-6 lg:mt-[34px]"
+              class="p-6 md:pt-6 md:pr-[31px] md:pb-[22px] md:pl-[26px] border border-[#e5e5e585] rounded-[15px] bg-gradient mt-6 lg:mt-[34px]"
             >
               <div
-                class="flex border-b border-dashed border-white pb-4 mb-4 items-center gap-3 w-full"
+                class="flex border-b border-dashed border-[#e5e5e585] pb-4 mb-4 items-center gap-3 w-full"
               >
                 <p
                   class="text-white Gilroy-semibold pt-0.5 text-xl sm:text-2xl"
@@ -2044,15 +2044,15 @@
               <div class="overflow-auto tableScroll pb-2.5">
                 <table class="w-full">
                   <thead>
-                    <tr class="bg-[#302964]">
+                    <tr class="">
                       <th
-                        class="py-5 px-6 whitespace-nowrap text-white text-base Gilroy-semibold text-left"
+                        class="py-4 px-6 whitespace-nowrap text-[#FFA51F] text-lg Gilroy-semibold text-left bg-[#ffffff1a] rounded-l-[17.84px]"
                       >
                         Title
                       </th>
 
                       <th
-                        class="py-5 px-6 whitespace-nowrap text-white text-base Gilroy-semibold text-left"
+                        class="py-4 px-6 whitespace-nowrap text-[#FFA51F] text-lg Gilroy-semibold text-left bg-[#ffffff1a] rounded-r-[17.84px]"
                       >
                         Transaction
                       </th>
@@ -2069,11 +2069,11 @@
                           />
                           <div class="flex flex-col gap-1">
                             <p
-                              class="pt-0.5 text-base Gilroy-medium text-white"
+                              class="pt-0.5 text-lg Gilroy-medium text-white"
                             >
                               Bitcoin
                             </p>
-                            <p class="text-xs Gilroy-normal text-white">
+                            <p class="text-sm Gilroy-normal text-white">
                               Pending - 3 min ago
                             </p>
                           </div>
@@ -2082,7 +2082,7 @@
                       <td
                         class="flex flex-col gap-1 py-2.5 px-6 whitespace-nowrap"
                       >
-                        <p class="text-base text-white Gilroy-medium">
+                        <p class="text-lg text-white Gilroy-medium">
                           +0.2948 BTC
                         </p>
                         <p class="text-sm text-white Gilroy-normal">
@@ -2090,8 +2090,8 @@
                         </p>
                       </td>
                     </tr>
-                    <tr class="bg-[#302964]">
-                      <td class="px-6 py-2.5 whitespace-nowrap">
+                    <tr class="">
+                      <td class="px-6 py-2.5 whitespace-nowrap bg-[#ffffff1a] rounded-l-[17.84px]">
                         <div class="flex items-center gap-3">
                           <img
                             src="./src/images/cardano_mid.png"
@@ -2100,20 +2100,20 @@
                           />
                           <div class="flex flex-col gap-1">
                             <p
-                              class="pt-0.5 text-base Gilroy-medium text-white"
+                              class="pt-0.5 text-lg Gilroy-medium text-white"
                             >
                               Cardano
                             </p>
-                            <p class="text-xs Gilroy-normal text-white">
+                            <p class="text-sm Gilroy-normal text-white">
                               Canceled - 3 min ago
                             </p>
                           </div>
                         </div>
                       </td>
                       <td
-                        class="flex flex-col gap-1 py-2.5 px-6 whitespace-nowrap"
+                        class="flex flex-col gap-1 py-2.5 px-6 whitespace-nowrap bg-[#ffffff1a] rounded-r-[17.84px]"
                       >
-                        <p class="text-base text-white Gilroy-medium">
+                        <p class="text-lg text-white Gilroy-medium">
                           +0.8475 ADA
                         </p>
                         <p class="text-sm text-white Gilroy-normal">
@@ -2131,11 +2131,11 @@
                           />
                           <div class="flex flex-col gap-1">
                             <p
-                              class="pt-0.5 text-base Gilroy-medium text-white"
+                              class="pt-0.5 text-lg Gilroy-medium text-white"
                             >
                               Bitcoin
                             </p>
-                            <p class="text-xs Gilroy-normal text-white">
+                            <p class="text-sm Gilroy-normal text-white">
                               Pending - 3 min ago
                             </p>
                           </div>
@@ -2144,7 +2144,7 @@
                       <td
                         class="flex flex-col gap-1 py-2.5 px-6 whitespace-nowrap"
                       >
-                        <p class="text-base text-white Gilroy-medium">
+                        <p class="text-lg text-white Gilroy-medium">
                           +0.2948 BTC
                         </p>
                         <p class="text-sm text-white Gilroy-normal">
@@ -2152,8 +2152,8 @@
                         </p>
                       </td>
                     </tr>
-                    <tr class="bg-[#302964]">
-                      <td class="px-6 py-2.5 whitespace-nowrap">
+                    <tr class="">
+                      <td class="px-6 py-2.5 whitespace-nowrap bg-[#ffffff1a] rounded-l-[17.84px]">
                         <div class="flex items-center gap-3">
                           <img
                             src="./src/images/cardano_mid.png"
@@ -2162,20 +2162,20 @@
                           />
                           <div class="flex flex-col gap-1">
                             <p
-                              class="pt-0.5 text-base Gilroy-medium text-white"
+                              class="pt-0.5 text-lg Gilroy-medium text-white"
                             >
                               Cardano
                             </p>
-                            <p class="text-xs Gilroy-normal text-white">
+                            <p class="text-sm Gilroy-normal text-white">
                               Canceled - 3 min ago
                             </p>
                           </div>
                         </div>
                       </td>
                       <td
-                        class="flex flex-col gap-1 py-2.5 px-6 whitespace-nowrap"
+                        class="flex flex-col gap-1 py-2.5 px-6 whitespace-nowrap bg-[#ffffff1a] rounded-r-[17.84px]"
                       >
-                        <p class="text-base text-white Gilroy-medium">
+                        <p class="text-lg text-white Gilroy-medium">
                           +0.8475 ADA
                         </p>
                         <p class="text-sm text-white Gilroy-normal">
@@ -2187,7 +2187,7 @@
                 </table>
               </div>
               <a href="#" class="flex items-center mt-6 gap-2">
-                <p class="text-base text-[#E9901A] Gilroy-medium">See All</p>
+                <p class="text-base text-[#FFA51F] Gilroy-medium">See All</p>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -2258,16 +2258,16 @@
     </div>
 
     <div
-      class="w-full h-screen absolute text-white z-[99999] flex justify-center items-center py-6"
+      class="w-full h-screen absolute text-white z-[99999] bg-bgPrimary flex justify-center items-center py-6"
       id="connectModal"
       style="top: -150%; transition: all 0.5s ease"
     >
       <div
         id="connectData"
-        class="w-[90%] max-w-[624px] mx-auto p-6 border border-solid border-white bg-bgPrimary rounded-lg h-auto max-h-[95%] overflow-auto scrollHidden"
+        class="w-[90%] max-w-[624px] mx-auto p-6 border border-solid border-[#e5e5e585] bg-bgPrimary rounded-lg h-auto max-h-[95%] overflow-auto scrollHidden"
       >
         <div
-          class="border-b border-dashed border-white lg:pb-6 pb-5 mb-5 flex items-center justify-between"
+          class="border-b border-dashed border-[#e5e5e585] lg:pb-6 pb-5 mb-5 flex items-center justify-between"
         >
           <h2
             class="text-xl lg:text-2xl leading-normal text-white Gilroy-extrabold"
@@ -2299,7 +2299,7 @@
         <div class="flex flex-col gap-3">
           <a
             href="#"
-            class="border border-solid border-white rounded-lg flex justify-between items-center lg:px-6 px-5 lg:py-4 py-3"
+            class="border border-solid border-[#e5e5e585] rounded-lg flex justify-between items-center lg:px-6 px-5 lg:py-4 py-3"
           >
             <div class="flex gap-3 items-center">
               <img
@@ -2318,7 +2318,7 @@
           </a>
           <a
             href="#"
-            class="border border-solid border-white rounded-lg flex justify-between items-center lg:px-6 px-5 lg:py-4 py-3"
+            class="border border-solid border-[#e5e5e585] rounded-lg flex justify-between items-center lg:px-6 px-5 lg:py-4 py-3"
           >
             <div class="flex gap-3 items-center">
               <img
@@ -2331,7 +2331,7 @@
           </a>
           <a
             href="#"
-            class="border border-solid border-white rounded-lg flex justify-between items-center lg:px-6 px-5 lg:py-4 py-3"
+            class="border border-solid border-[#e5e5e585] rounded-lg flex justify-between items-center lg:px-6 px-5 lg:py-4 py-3"
           >
             <div class="flex gap-3 items-center">
               <img
@@ -2344,7 +2344,7 @@
           </a>
           <a
             href="#"
-            class="border border-solid border-white rounded-lg flex justify-between items-center lg:px-6 px-5 lg:py-4 py-3"
+            class="border border-solid border-[#e5e5e585] rounded-lg flex justify-between items-center lg:px-6 px-5 lg:py-4 py-3"
           >
             <div class="flex gap-3 items-center">
               <img
@@ -2363,7 +2363,7 @@
           </a>
           <a
             href="#"
-            class="border border-solid border-white rounded-lg flex justify-between items-center lg:px-6 px-5 lg:py-4 py-3"
+            class="border border-solid border-[#e5e5e585] rounded-lg flex justify-between items-center lg:px-6 px-5 lg:py-4 py-3"
           >
             <div class="flex gap-3 items-center">
               <img src="./src/images/core.png" alt="Core" class="w-8 h-8" />
@@ -2378,7 +2378,7 @@
           </a>
           <a
             href="#"
-            class="border border-solid border-white rounded-lg flex justify-between items-center lg:px-6 px-5 lg:py-4 py-3"
+            class="border border-solid border-[#e5e5e585] rounded-lg flex justify-between items-center lg:px-6 px-5 lg:py-4 py-3"
           >
             <div class="flex gap-3 items-center">
               <img src="./src/images/glow.png" alt="Glow" class="w-8 h-8" />
@@ -2394,23 +2394,23 @@
         </div>
         <p class="mt-5 lg:mt-6 text-sm text-white Gilroy-normal">
           By connecting wallet, you agree to Finvista
-          <a href="#" class="text-[#E9901A] Gilroy-medium">
+          <a href="#" class="text-[#FFA51F] Gilroy-medium">
             Terms of Service
           </a>
         </p>
       </div>
     </div>
     <div
-      class="w-full h-screen absolute text-white z-[99999] flex justify-center items-center py-6"
+      class="w-full h-screen absolute text-white z-[99999] bg-bgPrimary flex justify-center items-center py-6"
       id="liquidityModal"
       style="top: -150%; transition: all 0.5s ease"
     >
       <div
         id="liquidityData"
-        class="w-[90%] max-w-[500px] mx-auto p-6 border border-solid border-white bg-bgPrimary rounded-lg h-auto max-h-[95%] overflow-auto scrollHidden"
+        class="w-[90%] max-w-[500px] mx-auto p-6 border border-solid border-[#e5e5e585] bg-gradient rounded-lg h-auto max-h-[95%] overflow-auto scrollHidden"
       >
         <div
-          class="border-b border-dashed border-white lg:pb-6 pb-5 mb-5 flex items-center justify-between"
+          class="border-b border-dashed border-[#e5e5e585] lg:pb-6 pb-5 mb-5 flex items-center justify-between"
         >
           <h2
             class="text-xl lg:text-2xl leading-normal text-white Gilroy-extrabold"
@@ -2440,13 +2440,13 @@
           </button>
         </div>
         <div
-          class="relative border-b border-dashed border-white lg:pb-6 pb-5 flex flex-col gap-5"
+          class="relative border-b border-dashed border-[#e5e5e585] lg:pb-6 pb-5 flex flex-col gap-5"
         >
           <div
-            class="border border-solid border-white p-4 lg:p-6 xl:p-8 rounded-lg"
+            class="border border-solid border-[#e5e5e585] p-4 lg:p-6 xl:p-8 rounded-lg"
           >
             <div
-              class="flex mb-6 pb-6 justify-between items-center border-b border-solid border-white"
+              class="flex mb-6 pb-6 justify-between items-center border-b border-solid border-[#e5e5e585]"
             >
               <p class="text-sm text-white text-white Gilroy-normal">From</p>
               <p class="text-sm text-white text-white Gilroy-normal">
@@ -2471,10 +2471,10 @@
             </div>
           </div>
           <div
-            class="border border-solid border-white p-4 lg:p-6 xl:p-8 rounded-lg"
+            class="border border-solid border-[#e5e5e585] p-4 lg:p-6 xl:p-8 rounded-lg"
           >
             <div
-              class="flex mb-6 pb-6 justify-between items-center border-b border-solid border-white"
+              class="flex mb-6 pb-6 justify-between items-center border-b border-solid border-[#e5e5e585]"
             >
               <p class="text-sm text-white text-white Gilroy-normal">To</p>
               <p class="text-sm text-white text-white Gilroy-normal">
@@ -2540,7 +2540,7 @@
           Slippage Tolerance
         </h2>
         <div
-          class="border border-solid border-white p-1 pr-6 flex gap-5 rounded-lg"
+          class="border border-solid border-[#e5e5e585] p-1 pr-6 flex gap-5 rounded-lg"
         >
           <div
             class="bg-[#E9901A] w-7 h-7 flex items-center justify-center text-base text-white rounded-lg"
@@ -2570,7 +2570,7 @@
             type="button"
             onclick="halfPercentBtn()"
             id="halfPercentButton"
-            class="py-3 px-6 border border-solid border-[#E9901A] rounded-lg hover:bg-[#E9901A] text-[#E9901A] hover:text-white transition-all w-[30%]"
+            class="py-3 px-6 border border-solid border-[#E9901A] rounded-lg hover:bg-[#E9901A] text-[#FFA51F] hover:text-white transition-all w-[30%]"
           >
             0.5%
           </button>
@@ -2578,7 +2578,7 @@
             type="button"
             onclick="onePercentBtn()"
             id="onePercentButton"
-            class="py-3 px-6 border border-solid border-[#E9901A] rounded-lg hover:bg-transparent hover:text-[#E9901A] text-[#E9901A] transition-all w-[30%]"
+            class="py-3 px-6 border border-solid border-[#E9901A] rounded-lg hover:bg-transparent hover:text-[#FFA51F] text-[#FFA51F] transition-all w-[30%]"
           >
             1%
           </button>
@@ -2586,7 +2586,7 @@
             type="button"
             onclick="threePercentBtn()"
             id="threePercentButton"
-            class="py-3 px-6 border border-solid border-[#E9901A] rounded-lg hover:bg-[#E9901A] text-[#E9901A] hover:text-white transition-all w-[30%]"
+            class="py-3 px-6 border border-solid border-[#E9901A] rounded-lg hover:bg-[#E9901A] text-[#FFA51F] hover:text-white transition-all w-[30%]"
           >
             3%
           </button>
@@ -2594,7 +2594,7 @@
         <button
           type="button"
           onclick="provideLiquidityBtn()"
-          class="px-6 py-3 w-full mt-5 text-base text-white Gilroy-medium text-center rounded-lg hover:bg-transparent bg-[#E9901A] border border-solid border-[#E9901A]"
+          class="px-6 py-3 w-full mt-5 text-lg text-white Gilroy-medium text-center rounded-lg hover:bg-transparent bg-[#E9901A] border border-solid border-[#E9901A]"
         >
           Provide liquidity
         </button>
@@ -2630,16 +2630,16 @@
     </div>
 
     <div
-      class="w-full h-screen absolute text-white z-[99999] flex justify-center items-center py-6"
+      class="w-full h-screen absolute text-white z-[99999] bg-bgPrimary flex justify-center items-center py-6"
       id="topUpModal"
       style="top: -150%; transition: all 0.5s ease"
     >
       <div
         id="topUpData"
-        class="w-[90%] max-w-[624px] mx-auto p-6 border border-solid border-white bg-bgPrimary rounded-lg h-auto max-h-[95%] overflow-auto scrollHidden"
+        class="w-[90%] max-w-[624px] mx-auto p-6 border border-solid border-[#e5e5e585] bg-bgPrimary rounded-lg h-auto max-h-[95%] overflow-auto scrollHidden"
       >
         <div
-          class="border-b border-dashed border-white lg:pb-6 pb-5 mb-5 flex items-center justify-between"
+          class="border-b border-dashed border-[#e5e5e585] lg:pb-6 pb-5 mb-5 flex items-center justify-between"
         >
           <h2
             class="text-xl lg:text-2xl leading-normal text-white Gilroy-extrabold"
@@ -2672,7 +2672,7 @@
           I want to spend
         </p>
         <div
-          class="mb-5 border border-solid border-white rounded-lg p-2 flex items-center justify-between"
+          class="mb-5 border border-solid border-[#e5e5e585] rounded-lg p-2 flex items-center justify-between"
         >
           <input
             id="depositInputValue"
@@ -2684,7 +2684,7 @@
             <button
               type="button"
               onclick="selectCoin(this)"
-              class="px-2 py-[7px] flex items-center gap-3 justify-between cursor-pointer selectDaysBox rounded-lg border border-solid border-white bg-transparent text-xs text-white rounded-lg Gilroy-normal"
+              class="px-2 py-[7px] flex items-center gap-3 justify-between cursor-pointer selectDaysBox rounded-lg border border-solid border-[#e5e5e585] bg-transparent text-xs text-white rounded-lg Gilroy-normal"
             >
               <div class="flex items-center gap-2">
                 <img
@@ -2721,7 +2721,7 @@
               </div>
             </button>
             <div
-              class="absolute right-0 bg-bgPrimary rounded-lg px-2 py-1 border border-solid border-white w-[130px]"
+              class="absolute right-0 bg-bgPrimary rounded-lg px-2 py-1 border border-solid border-[#e5e5e585] w-[130px]"
               id="coinSelect"
               style="
                 opacity: 0;
@@ -2838,16 +2838,16 @@
     </div>
 
     <div
-      class="w-full h-screen absolute text-white z-[99999] flex justify-center items-center py-6"
+      class="w-full h-screen absolute text-white z-[99999] bg-bgPrimary flex justify-center items-center py-6"
       id="newCardModal"
       style="top: -150%; transition: all 0.5s ease"
     >
       <div
         id="newCardData"
-        class="w-[90%] max-w-[624px] mx-auto p-6 border border-solid border-white bg-bgPrimary rounded-lg h-auto max-h-[95%] overflow-auto scrollHidden"
+        class="w-[90%] max-w-[624px] mx-auto p-6 border border-solid border-[#e5e5e585] bg-bgPrimary rounded-lg h-auto max-h-[95%] overflow-auto scrollHidden"
       >
         <div
-          class="border-b border-dashed border-white lg:pb-6 pb-5 mb-5 flex items-center justify-between"
+          class="border-b border-dashed border-[#e5e5e585] lg:pb-6 pb-5 mb-5 flex items-center justify-between"
         >
           <h2
             class="text-xl lg:text-2xl leading-normal text-white Gilroy-extrabold"
@@ -2884,7 +2884,7 @@
             <input
               type="text"
               id="cardHolderName"
-              class="bg-transparent outline-none border border-solid border-white rounded-lg py-3 px-4"
+              class="bg-transparent outline-none border border-solid border-[#e5e5e585] rounded-lg py-3 px-4"
               placeholder="Enter Name"
             />
             <p id="cardHolderNameError" class="text-red-500 text-sm"></p>
@@ -2896,7 +2896,7 @@
               >
               <select
                 id="selectBank"
-                class="bg-transparent h-[50px] w-full outline-none border border-solid border-white rounded-lg py-3 px-4"
+                class="bg-transparent h-[50px] w-full outline-none border border-solid border-[#e5e5e585] rounded-lg py-3 px-4"
               >
                 <option value="Select Bank" class="text-black">
                   Select Bank
@@ -2914,7 +2914,7 @@
               <input
                 type="number"
                 id="accountNumber"
-                class="bg-transparent outline-none border border-solid border-white rounded-lg py-3 px-4"
+                class="bg-transparent outline-none border border-solid border-[#e5e5e585] rounded-lg py-3 px-4"
                 placeholder="Enter Number"
               />
               <p id="accountNumberError" class="text-red-500 text-sm"></p>
@@ -2927,7 +2927,7 @@
             <input
               type="number"
               id="mobileNumber"
-              class="bg-transparent outline-none border border-solid border-white rounded-lg py-3 px-4"
+              class="bg-transparent outline-none border border-solid border-[#e5e5e585] rounded-lg py-3 px-4"
               placeholder="Enter Number"
             />
             <p id="mobileNumberError" class="text-red-500 text-sm"></p>
@@ -2940,7 +2940,7 @@
               <input
                 type="number"
                 id="cardNumber"
-                class="bg-transparent outline-none border border-solid border-white rounded-lg py-3 px-4"
+                class="bg-transparent outline-none border border-solid border-[#e5e5e585] rounded-lg py-3 px-4"
                 placeholder="Enter Number"
               />
               <p id="cardNumberError" class="text-red-500 text-sm"></p>
@@ -2952,7 +2952,7 @@
               <input
                 type="date"
                 id="selectDate"
-                class="bg-transparent w-full text-white outline-none border border-solid border-white rounded-lg py-3 px-4"
+                class="bg-transparent w-full text-white outline-none border border-solid border-[#e5e5e585] rounded-lg py-3 px-4"
                 placeholder="Enter Number"
               />
               <p id="selectDateError" class="text-red-500 text-sm"></p>
@@ -2963,7 +2963,7 @@
             <input
               type="text"
               id="address"
-              class="bg-transparent outline-none border border-solid border-white rounded-lg py-3 px-4"
+              class="bg-transparent outline-none border border-solid border-[#e5e5e585] rounded-lg py-3 px-4"
               placeholder="Street , Number"
             />
             <p id="addressError" class="text-red-500 text-sm"></p>
@@ -2974,7 +2974,7 @@
               <input
                 type="text"
                 id="country"
-                class="bg-transparent outline-none border border-solid border-white rounded-lg py-3 px-4"
+                class="bg-transparent outline-none border border-solid border-[#e5e5e585] rounded-lg py-3 px-4"
                 placeholder="Country"
               />
               <p id="countryError" class="text-red-500 text-sm"></p>
@@ -2984,7 +2984,7 @@
               <input
                 type="text"
                 id="city"
-                class="bg-transparent w-full text-white outline-none border border-solid border-white rounded-lg py-3 px-4"
+                class="bg-transparent w-full text-white outline-none border border-solid border-[#e5e5e585] rounded-lg py-3 px-4"
                 placeholder="City"
               />
               <p id="cityError" class="text-red-500 text-sm"></p>
@@ -2992,7 +2992,7 @@
           </div>
           <button
             type="button"
-            class="px-6 py-3 w-full text-base text-white Gilroy-medium text-center rounded-lg hover:bg-transparent bg-[#E9901A] border border-solid border-[#E9901A]"
+            class="px-6 py-3 w-full text-lg text-white Gilroy-medium text-center rounded-lg hover:bg-transparent bg-[#E9901A] border border-solid border-[#E9901A]"
             onclick="validateForm()"
           >
             Add a new Card
@@ -3002,16 +3002,16 @@
     </div>
 
     <div
-      class="w-full h-screen absolute text-white z-[99999] flex justify-center items-center py-6"
+      class="w-full h-screen absolute text-white z-[99999] bg-bgPrimary flex justify-center items-center py-6"
       id="manageModal"
       style="top: -150%; transition: all 0.5s ease"
     >
       <div
         id="modalData"
-        class="w-[90%] max-w-[624px] mx-auto p-6 border border-solid border-white bg-bgPrimary rounded-lg h-auto max-h-[95%] overflow-auto scrollHidden"
+        class="w-[90%] max-w-[624px] mx-auto p-6 border border-solid border-[#e5e5e585] bg-bgPrimary rounded-lg h-auto max-h-[95%] overflow-auto scrollHidden"
       >
         <div
-          class="border-b border-dashed border-white lg:pb-6 pb-5 mb-5 flex items-center justify-between"
+          class="border-b border-dashed border-[#e5e5e585] lg:pb-6 pb-5 mb-5 flex items-center justify-between"
         >
           <h2
             class="text-xl lg:text-2xl leading-normal text-white Gilroy-extrabold"
@@ -3048,7 +3048,7 @@
               class="w-full"
             />
           </div>
-          <div class="border border-solid border-white md:p-6 p-4 rounded-lg">
+          <div class="border border-solid border-[#e5e5e585] md:p-6 p-4 rounded-lg">
             <h4 class="text-lg text-white Gilroy-medium mb-2">
               Spending limits
             </h4>
@@ -3059,14 +3059,14 @@
               $399.00 spent of $2000.00
             </p>
           </div>
-          <div class="border border-solid border-white md:p-6 p-4 rounded-lg">
+          <div class="border border-solid border-[#e5e5e585] md:p-6 p-4 rounded-lg">
             <h4 class="text-lg text-white Gilroy-medium mb-2">Security</h4>
             <p class="text-base text-white Gilroy-normal">
               Select the permissions you want to add to all the projects in this
               account.
             </p>
             <div
-              class="border-t border-solid border-white mt-6 pt-4 flex items-center justify-between"
+              class="border-t border-solid border-[#e5e5e585] mt-6 pt-4 flex items-center justify-between"
             >
               <p class="text-lg Gilroy-medium text-white">
                 Online transactions
@@ -3079,7 +3079,7 @@
               </div>
             </div>
             <div
-              class="border-t border-solid border-white mt-6 pt-4 flex items-center justify-between"
+              class="border-t border-solid border-[#e5e5e585] mt-6 pt-4 flex items-center justify-between"
             >
               <p class="text-lg Gilroy-medium text-white">Swipe payments</p>
               <div>
@@ -3090,7 +3090,7 @@
               </div>
             </div>
             <div
-              class="border-t border-solid border-white mt-6 pt-4 flex items-center justify-between"
+              class="border-t border-solid border-[#e5e5e585] mt-6 pt-4 flex items-center justify-between"
             >
               <p class="text-lg Gilroy-medium text-white">
                 Contactless payments
@@ -3106,7 +3106,7 @@
           <button
             onclick="terminateBtn()"
             type="button"
-            class="px-6 py-3 w-full text-base text-white Gilroy-medium text-center rounded-lg hover:bg-transparent bg-[#E9901A] border border-solid border-[#E9901A]"
+            class="px-6 py-3 w-full text-lg text-white Gilroy-medium text-center rounded-lg hover:bg-transparent bg-[#E9901A] border border-solid border-[#E9901A]"
           >
             Terminate Card
           </button>

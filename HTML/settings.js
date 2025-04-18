@@ -109,6 +109,30 @@ function cancelChange() {
   document.getElementById("taglineInput").value = "";
 }
 
+let locationSelect = document.getElementById("locationInput")
+locationSelect.addEventListener("change", function() {
+  if (locationSelect.value === "Select Country") {
+    locationSelect.style.color = "#D0D0D0";
+  } else {
+    locationSelect.style.color = "black";
+  }
+})
+if (locationSelect.value === "Select Country") {
+  locationSelect.style.color = "#D0D0D0";
+  }
+  let profilePhotoVisibilitySelect = document.getElementById("profilePhotoVisibilityInput")
+  profilePhotoVisibilitySelect.addEventListener("change", function() {
+    if (profilePhotoVisibilitySelect.value === "Select") {
+      profilePhotoVisibilitySelect.style.color = "#D0D0D0";
+      } else {
+        profilePhotoVisibilitySelect.style.color = "black";
+        }
+        })
+        if (profilePhotoVisibilitySelect.value === "Select") {
+          profilePhotoVisibilitySelect.style.color = "#D0D0D0";
+          }
+
+
 function addressSaveChange() {
   let location = document.getElementById("locationInput").value;
   let address1 = document.getElementById("address1Input").value;

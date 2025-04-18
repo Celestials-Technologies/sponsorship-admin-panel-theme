@@ -944,7 +944,7 @@ video {
   height: 2.5rem;
 }
 
-.h-11 {
+.h-[45px] {
   height: 2.75rem;
 }
 
@@ -1870,7 +1870,7 @@ video {
   border-color: rgb(255 165 31 / var(--tw-border-opacity, 1));
 }
 
-.border-white {
+.border-[#e5e5e585] {
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity, 1));
 }
@@ -2960,7 +2960,7 @@ video {
   color: rgb(21 21 21 / var(--tw-text-opacity, 1));
 }
 
-.text-[#E9901A] {
+.text-[#FFA51F] {
   --tw-text-opacity: 1;
   color: rgb(233 144 26 / var(--tw-text-opacity, 1));
 }
@@ -3319,19 +3319,40 @@ video {
 }
 
 tr td {
-  padding: 6px 24px;
+  padding: 3px 24px;
   white-space: nowrap;
   color: white;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 400;
   text-align: left;
 }
 .tableHeader td {
-  padding: 20px 24px;
+  color: #FFA51F;
+  padding: 17px 24px;
+  font-size: 20px;
+  font-weight: 600;
 }
-.mainData:nth-child(odd) {
+.tableHeader td:first-child {
+  border-top-left-radius: 17.84px;
+  border-bottom-left-radius: 17.84px;
+}
+.tableHeader td:last-child {
+  border-top-right-radius: 17.84px;
+  border-bottom-right-radius: 17.84px;
+  }
+  .mainData {
+    height:63px;
+  }
+.mainData:nth-child(odd) td {
   background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 17.84px
+}
+.mainData td:first-child {
+  border-top-left-radius: 17.84px;
+  border-bottom-left-radius: 17.84px;
+}
+.mainData td:last-child {
+  border-top-right-radius: 17.84px;
+  border-bottom-right-radius: 17.84px;
 }
 .mainResult {
   display: flex;
@@ -3357,12 +3378,12 @@ tr td {
 }
 .mainTitleText h2 {
   padding-top: 2px;
-  font-size: 16px;
+  font-size: 18px;
   color: white;
   font-weight: medium;
 }
 .mainTitleText p {
-  font-size: 12px;
+  font-size: 14px;
   color: white;
 }
 
@@ -3384,7 +3405,7 @@ tr td {
 }
 
 .tableData {
-  font-size: 16px;
+  font-size: 18px;
   color: white;
   white-space: nowrap;
 }
@@ -3394,7 +3415,7 @@ tr td {
   border-radius: 60px;
   border: 1px solid #00a185;
   background-color: #b9d7d2;
-  font-size: 16px;
+  font-size: 18px;
   color: #00a185;
   text-align: center;
   padding-top: 10px;
@@ -3406,7 +3427,7 @@ tr td {
   border-radius: 60px;
   border: 1px solid #ffc861;
   background-color: #fdedcff2;
-  font-size: 16px;
+  font-size: 18px;
   color: #ffc861;
   text-align: center;
   padding-top: 10px;
@@ -3418,14 +3439,14 @@ tr td {
   border-radius: 60px;
   border: 1px solid #ff6161;
   background-color: #ffbebe;
-  font-size: 16px;
+  font-size: 18px;
   text-align: center;
   padding-top: 10px;
   color: #ff6161;
   font-weight: medium;
 }
 .balanceDetailLastSevenDays {
-  font-size: 16px;
+  font-size: 18px;
   color: white;
   white-space: nowrap;
   display: flex;
@@ -3450,7 +3471,7 @@ tr td {
   border: 1px solid white;
   border-radius: 12px;
   padding: 8px 20px;
-  font-size: 16px;
+  font-size: 18px;
   width: fit-content;
   color: white;
   font-weight: 400;
@@ -3626,7 +3647,7 @@ tr td {
   align-items: start;
   gap: 18px;
   width: 100%;
-  border: 1px dashed white;
+  border: 1px dashed #fff3;
   transition: all 0.3s ease;
   border-radius: 12px;
   padding: 12px;
@@ -3669,6 +3690,10 @@ tr td {
   color: white;
   font-size: 16px;
   text-align: left;
+}
+.checkBoxMainDiv {
+  border-top-left-radius: 17.84px;
+  border-bottom-left-radius: 17.84px;
 }
 .chexkBoxLabel {
   font-size: 16px;
@@ -3840,6 +3865,7 @@ tr td {
   display: flex;
   justify-content: end;
   align-items: end;
+  margin-left: auto;
 }
 .deleteButton {
   background-color: red;
@@ -3873,11 +3899,10 @@ tr td {
   border-radius: 10px;
 }
 .subscriptionCard__header {
-  border: 1px solid white;
+  border: 1px solid #fff3;
   border-radius: 0.75rem;
   padding: 16px;
   background-color: #ffffff1a;
-  border-color: #e5e7eb;
 }
 .subscriptionCard__name {
   display: flex;
@@ -3920,7 +3945,7 @@ tr td {
 }
 .manageBtn:hover {
   background-color: transparent;
-  color: #e9901a;
+  color: #FFA51F;
   }
   .growthSvg {
     display: flex;
@@ -3953,4 +3978,7 @@ tr td {
     @media (max-width:1024px) {
       top:100px;
     }
+  }
+  .navBarContainer button {
+    min-width:auto !important;
   }

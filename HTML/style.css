@@ -187,7 +187,7 @@
   stroke: white;
 }
 .walletTopUp p {
-  color: #e9901a;
+  color: #FFA51F;
   transition: all 0.5s ease;
 }
 .walletTopUp:hover p {
