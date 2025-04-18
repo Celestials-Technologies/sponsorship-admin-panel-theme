@@ -8,8 +8,10 @@
       rel="stylesheet"
     />
     <link href="./src/output.css" rel="stylesheet" />
-    <link href="style.css" rel="stylesheet" />
+    <link href="./style.css" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </head>
 
   <body class="min-h-screen !overflow-x-hidden" id="bodyOverflowModal">
@@ -72,7 +74,7 @@
                   class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-2.5 cursor-pointer hover:bg-[#E9901A] transition-all"
                 >
                   <div
-                    class="w-[34px] h-[34px] rounded-lg flex justify-center items-center !bg-transparent"
+                    class="w-[34px] h-[34px] rounded-lg flex justify-center items-center"
                   >
                     <svg
                       width="100%"
@@ -130,7 +132,7 @@
               <div class="relative walletMain">
                 <a href="./wallet.html">
                   <li
-                    class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-2.5 cursor-pointer hover:bg-[#E9901A] walletHead transition-all"
+                    class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] mt-2.5 relative items-center active cursor-pointer"
                   >
                     <div
                       class="w-[34px] h-[34px] rounded-lg flex justify-center items-center"
@@ -158,9 +160,9 @@
                     </p>
                   </li>
                 </a>
-                <a href="./allCards.html" class="walletCards">
+                <a href="./allCards.html" class="walletCardsDisplay">
                   <li
-                    class="py-2 px-2 rounded-r-xl flex gap-[7px] h-[50px] relative items-center mt-2.5 cursor-pointer hover:bg-[#E9901A] transition-all"
+                    class="py-2 px-2 rounded-r-xl flex gap-[7px] h-[50px] relative items-center mt-2.5 cursor-pointer bg-[#E9901A] transition-all"
                   >
                     <div
                       class="w-6 h-6 rounded-lg flex justify-center items-center"
@@ -251,10 +253,10 @@
                   </li>
                 </a>
               </div>
-              <div>
+              <div class="accountContainer">
                 <div class="accountMain">
                   <li
-                    class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center active cursor-pointer mt-2.5"
+                    class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-2.5 cursor-pointer hover:bg-[#E9901A] transition-all"
                   >
                     <div
                       class="w-[34px] h-[34px] rounded-lg flex justify-center items-center"
@@ -281,15 +283,15 @@
                     </p>
                   </li>
                 </div>
-                <div class="pl-8">
+                <div class="pl-8 accountList">
                   <div class="border-l border-solid border-[#E9901A] pt-2.5">
-                    <ul class="flex flex-col gap-1">
+                    <ul>
                       <a href="./setting.html">
                         <li
-                          class="rounded-xl flex gap-[7px] h-[50px] relative items-center cursor-pointer transition-all"
+                          class="rounded-xl flex gap-[7px] h-[50px] relative items-center mt-0 cursor-pointer !bg-transparent transition-all"
                         >
                           <p
-                            class="text-base leading-5 text-white flex items-center transition-all py-2 px-2 pt-2.5 w-full h-full hover:bg-[#E9901A] rounded-r-xl Gilroy-semibold"
+                            class="text-base leading-5 text-white transition-all py-2.5 pt-3 px-2 h-full w-full Gilroy-semibold flex items-center hover:bg-[#E9901A] rounded-r-xl"
                           >
                             Setting
                           </p>
@@ -297,10 +299,10 @@
                       </a>
                       <a href="./password.html">
                         <li
-                          class="rounded-xl flex gap-[7px] h-[50px] relative items-center cursor-pointer transition-all"
+                          class="rounded-xl flex gap-[7px] h-[50px] relative items-center mt-0 cursor-pointer !bg-transparent transition-all"
                         >
                           <p
-                            class="text-base leading-5 text-white flex items-center transition-all py-2 px-2 pt-2.5 w-full h-full hover:bg-[#E9901A] rounded-r-xl Gilroy-semibold"
+                            class="text-base leading-5 text-white transition-all py-2.5 pt-3 px-2 h-full w-full Gilroy-semibold flex items-center hover:bg-[#E9901A] rounded-r-xl"
                           >
                             Password
                           </p>
@@ -308,10 +310,10 @@
                       </a>
                       <a href="./billing.html">
                         <li
-                          class="rounded-xl flex gap-[7px] h-[50px] relative items-center cursor-pointer transition-all"
+                          class="rounded-xl flex gap-[7px] h-[50px] relative items-center mt-0 cursor-pointer !bg-transparent transition-all"
                         >
                           <p
-                            class="text-base leading-5 text-white flex items-center transition-all py-2 px-2 pt-2.5 w-full h-full hover:bg-[#E9901A] rounded-r-xl Gilroy-semibold"
+                            class="text-base leading-5 text-white transition-all py-2.5 pt-3 px-2 h-full w-full Gilroy-semibold flex items-center hover:bg-[#E9901A] rounded-r-xl"
                           >
                             Billing
                           </p>
@@ -319,21 +321,21 @@
                       </a>
                       <a href="./notification.html">
                         <li
-                          class="rounded-xl flex gap-[7px] h-[50px] relative items-center cursor-pointer transition-all"
+                          class="rounded-xl flex gap-[7px] h-[50px] relative items-center mt-0 cursor-pointer !bg-transparent transition-all"
                         >
                           <p
-                            class="text-base leading-5 text-white flex items-center transition-all py-2 px-2 pt-2.5 h-full w-full bg-[#E9901A] rounded-r-xl Gilroy-semibold"
+                            class="text-base leading-5 text-white transition-all py-2.5 pt-3 px-2 h-full w-full Gilroy-semibold flex items-center hover:bg-[#E9901A] rounded-r-xl"
                           >
-                            Notifications
+                            Notification
                           </p>
                         </li>
                       </a>
                       <a href="./team.html">
                         <li
-                          class="rounded-xl flex gap-[7px] h-[50px] relative items-center cursor-pointer transition-all"
+                          class="rounded-xl flex gap-[7px] h-[50px] relative items-center mt-0 cursor-pointer !bg-transparent transition-all"
                         >
                           <p
-                            class="text-base leading-5 text-white flex items-center transition-all py-2 px-2 pt-2.5 w-full h-full hover:bg-[#E9901A] rounded-r-xl Gilroy-semibold"
+                            class="text-base leading-5 text-white transition-all py-2.5 pt-3 px-2 h-full w-full Gilroy-semibold flex items-center hover:bg-[#E9901A] rounded-r-xl"
                           >
                             Team
                           </p>
@@ -341,10 +343,10 @@
                       </a>
                       <a href="./login.html" id="accountLogin">
                         <li
-                          class="rounded-xl flex gap-[7px] h-[50px] relative items-center cursor-pointer transition-all"
+                          class="rounded-xl flex gap-[7px] h-[50px] relative items-center mt-0 cursor-pointer !bg-transparent transition-all"
                         >
                           <p
-                            class="text-base leading-5 text-white flex items-center transition-all py-2 px-2 pt-2.5 w-full h-full hover:bg-[#E9901A] rounded-r-xl Gilroy-semibold"
+                            class="text-base leading-5 text-white transition-all py-2.5 pt-3 px-2 h-full w-full Gilroy-semibold flex items-center hover:bg-[#E9901A] rounded-r-xl"
                           >
                             Login
                           </p>
@@ -352,10 +354,10 @@
                       </a>
                       <a href="./signup.html" id="accountSignUp">
                         <li
-                          class="rounded-xl flex gap-[7px] h-[50px] relative items-center cursor-pointer transition-all"
+                          class="rounded-xl flex gap-[7px] h-[50px] relative items-center mt-0 cursor-pointer !bg-transparent transition-all"
                         >
                           <p
-                            class="text-base leading-5 text-white flex items-center transition-all py-2 px-2 pt-2.5 w-full h-full hover:bg-[#E9901A] rounded-r-xl Gilroy-semibold"
+                            class="text-base leading-5 text-white transition-all py-2.5 pt-3 px-2 h-full w-full Gilroy-semibold flex items-center hover:bg-[#E9901A] rounded-r-xl"
                           >
                             Sign Up
                           </p>
@@ -523,46 +525,46 @@
               </div>
 
               <button
-              type="button"
-              onclick="darkModeBtn()"
-              id="darkModeSvg"
-              class="p-1 cursor-pointer iconMainBox rounded-lg hidden md:block"
-            >
-              <div class="w-6 h-6" id="darkMode">
-                <svg
-                  width="100%"
-                  height="100%"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M22 15.8442C20.6866 16.4382 19.2286 16.7688 17.6935 16.7688C11.9153 16.7688 7.23116 12.0847 7.23116 6.30654C7.23116 4.77135 7.5618 3.3134 8.15577 2C4.52576 3.64163 2 7.2947 2 11.5377C2 17.3159 6.68414 22 12.4623 22C16.7053 22 20.3584 19.4742 22 15.8442Z"
-                    stroke="white"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </div>
-              <div class="w-6 h-6" id="lightMode" style="display: none">
-                <svg
-                  width="100%"
-                  height="100%"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M12 2V4M12 20V22M4 12H2M6.31412 6.31412L4.8999 4.8999M17.6859 6.31412L19.1001 4.8999M6.31412 17.69L4.8999 19.1042M17.6859 17.69L19.1001 19.1042M22 12H20M17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12Z"
-                    stroke="white"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </div>
-            </button>
+                type="button"
+                onclick="darkModeBtn()"
+                id="darkModeSvg"
+                class="p-1 cursor-pointer iconMainBox rounded-lg hidden md:block"
+              >
+                <div class="w-6 h-6" id="darkMode">
+                  <svg
+                    width="100%"
+                    height="100%"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M22 15.8442C20.6866 16.4382 19.2286 16.7688 17.6935 16.7688C11.9153 16.7688 7.23116 12.0847 7.23116 6.30654C7.23116 4.77135 7.5618 3.3134 8.15577 2C4.52576 3.64163 2 7.2947 2 11.5377C2 17.3159 6.68414 22 12.4623 22C16.7053 22 20.3584 19.4742 22 15.8442Z"
+                      stroke="white"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+                <div class="w-6 h-6" id="lightMode" style="display: none">
+                  <svg
+                    width="100%"
+                    height="100%"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M12 2V4M12 20V22M4 12H2M6.31412 6.31412L4.8999 4.8999M17.6859 6.31412L19.1001 4.8999M6.31412 17.69L4.8999 19.1042M17.6859 17.69L19.1001 19.1042M22 12H20M17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12Z"
+                      stroke="white"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+              </button>
               <div class="relative">
                 <button
                   type="button"
@@ -926,502 +928,500 @@
           </div>
         </div>
 
-        <div class="pt-12" id="blockZindex" style="z-index: 9999">
-          <div class="flex flex-wrap gap-3 items-center justify-between mb-5">
+        <div class="pt-12">
+          <div class="flex items-center gap-5">
             <p class="text-3xl lg:text-[40px] text-white Gilroy-semibold">
-              Notifications
+              All Cards
             </p>
+            <button
+              type="button"
+              onclick="makeinAllCard()"
+              class="px-4 py-3 flex justify-center items-center md:gap-3 gap-2 border border-solid border-[#E9901A] transition-all hover:border-white hover:bg-[#E9901A] rounded-xl walletTopUp"
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 8V16M8 12H16M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <p class="text-white text-base Gilroy-medium whitespace-nowrap">
+                New Card
+              </p>
+            </button>
           </div>
-          <div class="flex flex-wrap xl:flex-nowrap gap-y-6 gap-x-5">
-            <div
-              class="md:p-6 p-4 border border-white rounded-[15px] bg-gradient w-full xl:w-1/2"
-            >
-              <div
-                class="flex border-b border-dashed border-white pb-4 mb-4 items-center gap-3 justify-between"
-              >
-                <h2
-                  class="text-white Gilroy-semibold pt-0.5 text-xl sm:text-2xl"
-                >
-                  Email Notification
-                </h2>
-              </div>
-              <div class="flex flex-col gap-5 lg:gap-6">
-                <div
-                  class="flex w-full gap-3 flex-wrap justify-between items-center"
-                >
-                  <div class="flex flex-col gap-2">
-                    <h5 class="text-lg Gilroy-medium text-white">
-                      Account Activity
-                    </h5>
-                    <p class="text-sm text-white Gilroy-normal">
-                      Get important notifications about you or activity you've
-                      missed
-                    </p>
-                  </div>
-                  <div>
-                    <label class="switch">
-                      <input type="checkbox" checked="" />
-                      <span class="slider round"></span>
-                    </label>
-                  </div>
-                </div>
-                <div
-                  class="flex w-full gap-3 flex-wrap justify-between items-center"
-                >
-                  <div class="flex flex-col gap-2">
-                    <h5 class="text-lg Gilroy-medium text-white">
-                      Communications
-                    </h5>
-                    <p class="text-sm text-white Gilroy-normal">
-                      Get important notifications about you or activity you've
-                      missed
-                    </p>
-                  </div>
-                  <div>
-                    <label class="switch">
-                      <input type="checkbox" />
-                      <span class="slider round"></span>
-                    </label>
-                  </div>
-                </div>
-                <div
-                  class="flex w-full gap-3 flex-wrap justify-between items-center"
-                >
-                  <div class="flex flex-col gap-2">
-                    <h5 class="text-lg Gilroy-medium text-white">
-                      Meetups near you
-                    </h5>
-                    <p class="text-sm text-white Gilroy-normal">
-                      Get important notifications about you or activity you've
-                      missed
-                    </p>
-                  </div>
-                  <div>
-                    <label class="switch">
-                      <input type="checkbox" checked="" />
-                      <span class="slider round"></span>
-                    </label>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="md:p-6 p-4 border border-white rounded-[15px] bg-gradient w-full xl:w-1/2"
-            >
-              <div
-                class="flex border-b border-dashed border-white pb-4 mb-4 items-center gap-3 justify-between"
-              >
-                <h2
-                  class="text-white Gilroy-semibold pt-0.5 text-xl sm:text-2xl"
-                >
-                  SMS Notification
-                </h2>
-              </div>
-              <div class="flex flex-col gap-5 lg:gap-6">
-                <div
-                  class="flex w-full gap-3 flex-wrap justify-between items-center"
-                >
-                  <div class="flex flex-col gap-2">
-                    <h5 class="text-lg Gilroy-medium text-white">
-                      Account Activity
-                    </h5>
-                    <p class="text-sm text-white Gilroy-normal">
-                      Get important notifications about you or activity you've
-                      missed
-                    </p>
-                  </div>
-                  <div>
-                    <label class="switch">
-                      <input type="checkbox" />
-                      <span class="slider round"></span>
-                    </label>
-                  </div>
-                </div>
-                <div
-                  class="flex w-full gap-3 flex-wrap justify-between items-center"
-                >
-                  <div class="flex flex-col gap-2">
-                    <h5 class="text-lg Gilroy-medium text-white">
-                      Communications
-                    </h5>
-                    <p class="text-sm text-white Gilroy-normal">
-                      Get important notifications about you or activity you've
-                      missed
-                    </p>
-                  </div>
-                  <div>
-                    <label class="switch">
-                      <input type="checkbox" checked="" />
-                      <span class="slider round"></span>
-                    </label>
-                  </div>
-                </div>
-                <div
-                  class="flex w-full gap-3 flex-wrap justify-between items-center"
-                >
-                  <div class="flex flex-col gap-2">
-                    <h5 class="text-lg Gilroy-medium text-white">
-                      Meetups near you
-                    </h5>
-                    <p class="text-sm text-white Gilroy-normal">
-                      Get important notifications about you or activity you've
-                      missed
-                    </p>
-                  </div>
-                  <div>
-                    <label class="switch">
-                      <input type="checkbox" />
-                      <span class="slider round"></span>
-                    </label>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="flex flex-wrap xl:flex-nowrap gap-y-6 gap-x-5 mt-6">
-            <div
-              class="md:p-6 p-4 border border-white rounded-[15px] bg-gradient w-full xl:w-1/2"
-            >
-              <div
-                class="flex border-b border-dashed border-white pb-4 mb-4 items-center gap-3 justify-between"
-              >
-                <h2
-                  class="text-white Gilroy-semibold pt-0.5 text-xl sm:text-2xl"
-                >
-                  Push Notification
-                </h2>
-              </div>
-              <div class="flex flex-col gap-5 lg:gap-6">
-                <div
-                  class="flex w-full gap-3 flex-wrap justify-between items-center"
-                >
-                  <div class="flex flex-col gap-2">
-                    <h5 class="text-lg Gilroy-medium text-white">
-                      Account Activity
-                    </h5>
-                    <p class="text-sm text-white Gilroy-normal">
-                      Get important notifications about you or activity you've
-                      missed
-                    </p>
-                  </div>
-                  <div>
-                    <label class="switch">
-                      <input type="checkbox" />
-                      <span class="slider round"></span>
-                    </label>
-                  </div>
-                </div>
-                <div
-                  class="flex w-full gap-3 flex-wrap justify-between items-center"
-                >
-                  <div class="flex flex-col gap-2">
-                    <h5 class="text-lg Gilroy-medium text-white">
-                      Communications
-                    </h5>
-                    <p class="text-sm text-white Gilroy-normal">
-                      Get important notifications about you or activity you've
-                      missed
-                    </p>
-                  </div>
-                  <div>
-                    <label class="switch">
-                      <input type="checkbox" checked="" />
-                      <span class="slider round"></span>
-                    </label>
-                  </div>
-                </div>
-                <div
-                  class="flex w-full gap-3 flex-wrap justify-between items-center"
-                >
-                  <div class="flex flex-col gap-2">
-                    <h5 class="text-lg Gilroy-medium text-white">
-                      Meetups near you
-                    </h5>
-                    <p class="text-sm text-white Gilroy-normal">
-                      Get important notifications about you or activity you've
-                      missed
-                    </p>
-                  </div>
-                  <div>
-                    <label class="switch">
-                      <input type="checkbox" />
-                      <span class="slider round"></span>
-                    </label>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="md:p-6 p-4 border border-white rounded-[15px] bg-gradient w-full xl:w-1/2"
-            >
-              <div
-                class="flex border-b border-dashed border-white pb-4 mb-4 items-center gap-3 justify-between"
-              >
-                <h2
-                  class="text-white Gilroy-semibold pt-0.5 text-xl sm:text-2xl"
-                >
-                  News Flash
-                </h2>
-              </div>
-              <div class="flex flex-col gap-5 lg:gap-6">
-                <div
-                  class="flex w-full gap-3 flex-wrap justify-between items-center"
-                >
-                  <div class="flex flex-col gap-2">
-                    <h5 class="text-lg Gilroy-medium text-white">
-                      Account Activity
-                    </h5>
-                    <p class="text-sm text-white Gilroy-normal">
-                      Get important notifications about you or activity you've
-                      missed
-                    </p>
-                  </div>
-                  <div>
-                    <label class="switch">
-                      <input type="checkbox" checked="" />
-                      <span class="slider round"></span>
-                    </label>
-                  </div>
-                </div>
-                <div
-                  class="flex w-full gap-3 flex-wrap justify-between items-center"
-                >
-                  <div class="flex flex-col gap-2">
-                    <h5 class="text-lg Gilroy-medium text-white">
-                      Communications
-                    </h5>
-                    <p class="text-sm text-white Gilroy-normal">
-                      Get important notifications about you or activity you've
-                      missed
-                    </p>
-                  </div>
-                  <div>
-                    <label class="switch">
-                      <input type="checkbox" />
-                      <span class="slider round"></span>
-                    </label>
-                  </div>
-                </div>
-                <div
-                  class="flex w-full gap-3 flex-wrap justify-between items-center"
-                >
-                  <div class="flex flex-col gap-2">
-                    <h5 class="text-lg Gilroy-medium text-white">
-                      Meetups near you
-                    </h5>
-                    <p class="text-sm text-white Gilroy-normal">
-                      Get important notifications about you or activity you've
-                      missed
-                    </p>
-                  </div>
-                  <div>
-                    <label class="switch">
-                      <input type="checkbox" checked="" />
-                      <span class="slider round"></span>
-                    </label>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="flex flex-wrap xl:flex-nowrap gap-y-6 gap-x-5 mt-6">
-            <div
-              class="md:p-6 p-4 border border-white rounded-[15px] bg-gradient w-full xl:w-1/2"
-            >
-              <div
-                class="flex border-b border-dashed border-white pb-4 mb-4 items-center gap-3 justify-between"
-              >
-                <h2
-                  class="text-white Gilroy-semibold pt-0.5 text-xl sm:text-2xl"
-                >
-                  Buzz Alert
-                </h2>
-              </div>
-              <div class="flex flex-col gap-5 lg:gap-6">
-                <div
-                  class="flex w-full gap-3 flex-wrap justify-between items-center"
-                >
-                  <div class="flex flex-col gap-2">
-                    <h5 class="text-lg Gilroy-medium text-white">
-                      Account Activity
-                    </h5>
-                    <p class="text-sm text-white Gilroy-normal">
-                      Get important notifications about you or activity you've
-                      missed
-                    </p>
-                  </div>
-                  <div>
-                    <label class="switch">
-                      <input type="checkbox" checked="" />
-                      <span class="slider round"></span>
-                    </label>
-                  </div>
-                </div>
-                <div
-                  class="flex w-full gap-3 flex-wrap justify-between items-center"
-                >
-                  <div class="flex flex-col gap-2">
-                    <h5 class="text-lg Gilroy-medium text-white">
-                      Communications
-                    </h5>
-                    <p class="text-sm text-white Gilroy-normal">
-                      Get important notifications about you or activity you've
-                      missed
-                    </p>
-                  </div>
-                  <div>
-                    <label class="switch">
-                      <input type="checkbox" />
-                      <span class="slider round"></span>
-                    </label>
-                  </div>
-                </div>
-                <div
-                  class="flex w-full gap-3 flex-wrap justify-between items-center"
-                >
-                  <div class="flex flex-col gap-2">
-                    <h5 class="text-lg Gilroy-medium text-white">
-                      Meetups near you
-                    </h5>
-                    <p class="text-sm text-white Gilroy-normal">
-                      Get important notifications about you or activity you've
-                      missed
-                    </p>
-                  </div>
-                  <div>
-                    <label class="switch">
-                      <input type="checkbox" checked="" />
-                      <span class="slider round"></span>
-                    </label>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="md:p-6 p-4 border border-white rounded-[15px] bg-gradient w-full xl:w-1/2"
-            >
-              <div
-                class="flex border-b border-dashed border-white pb-4 mb-4 items-center gap-3 justify-between"
-              >
-                <h2
-                  class="text-white Gilroy-semibold pt-0.5 text-xl sm:text-2xl"
-                >
-                  Update Notification
-                </h2>
-              </div>
-              <div class="flex flex-col gap-5 lg:gap-6">
-                <div
-                  class="flex w-full gap-3 flex-wrap justify-between items-center"
-                >
-                  <div class="flex flex-col gap-2">
-                    <h5 class="text-lg Gilroy-medium text-white">
-                      Account Activity
-                    </h5>
-                    <p class="text-sm text-white Gilroy-normal">
-                      Get important notifications about you or activity you've
-                      missed
-                    </p>
-                  </div>
-                  <div>
-                    <label class="switch">
-                      <input type="checkbox" />
-                      <span class="slider round"></span>
-                    </label>
-                  </div>
-                </div>
-                <div
-                  class="flex w-full gap-3 flex-wrap justify-between items-center"
-                >
-                  <div class="flex flex-col gap-2">
-                    <h5 class="text-lg Gilroy-medium text-white">
-                      Communications
-                    </h5>
-                    <p class="text-sm text-white Gilroy-normal">
-                      Get important notifications about you or activity you've
-                      missed
-                    </p>
-                  </div>
-                  <div>
-                    <label class="switch">
-                      <input type="checkbox" checked="" />
-                      <span class="slider round"></span>
-                    </label>
-                  </div>
-                </div>
-                <div
-                  class="flex w-full gap-3 flex-wrap justify-between items-center"
-                >
-                  <div class="flex flex-col gap-2">
-                    <h5 class="text-lg Gilroy-medium text-white">
-                      Meetups near you
-                    </h5>
-                    <p class="text-sm text-white Gilroy-normal">
-                      Get important notifications about you or activity you've
-                      missed
-                    </p>
-                  </div>
-                  <div>
-                    <label class="switch">
-                      <input type="checkbox" />
-                      <span class="slider round"></span>
-                    </label>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div
+            class="flex gap-[25px] pt-[25px] pb-[53px] px-[25px] min-h-screen bg-bgPrimary opacity-1"
+            id="bodyScreenData"
+          >
+            <ul
+              id="allCardsContainer"
+              class="text-white text-base Gilroy-normal flex flex-wrap w-full gap-5"
+            ></ul>
           </div>
         </div>
       </div>
     </div>
     <div
-      class="px-3 py-2.5 bg-sideBarBg backdrop-blur-lg flex items-center justify-around fixed left-0 bottom-0 md:hidden block w-full"
+      class="w-full h-screen absolute text-white z-[99999] flex justify-center items-center py-6"
+      id="connectModal"
+      style="top: -150%; transition: all 0.5s ease"
     >
-      <button type="button" class="p-1 cursor-pointer iconMainBox rounded-lg">
-        <svg
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
+      <div
+        id="connectData"
+        class="w-[90%] max-w-[624px] mx-auto p-6 border border-solid border-white bg-bgPrimary rounded-lg h-auto max-h-[95%] overflow-auto scrollHidden"
+      >
+        <div
+          class="border-b border-dashed border-white lg:pb-6 pb-5 mb-5 flex items-center justify-between"
         >
-          <path
-            d="M22 15.8442C20.6866 16.4382 19.2286 16.7688 17.6935 16.7688C11.9153 16.7688 7.23116 12.0847 7.23116 6.30654C7.23116 4.77135 7.5618 3.3134 8.15577 2C4.52576 3.64163 2 7.2947 2 11.5377C2 17.3159 6.68414 22 12.4623 22C16.7053 22 20.3584 19.4742 22 15.8442Z"
-            stroke="white"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-        </svg>
-      </button>
-      <button type="button" class="p-1 cursor-pointer iconMainBox rounded-lg">
-        <svg
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
+          <h2
+            class="text-xl lg:text-2xl leading-normal text-white Gilroy-extrabold"
+          >
+            Connect your wallet
+          </h2>
+          <button
+            type="button"
+            onclick="closeBtn()"
+            class="w-6 h-6 transition-all"
+          >
+            <svg
+              width="100%"
+              height="100%"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M18 6L6 18M6 6L18 18"
+                stroke="white"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+        </div>
+        <div class="flex flex-col gap-3">
+          <a
+            href="#"
+            class="border border-solid border-white rounded-lg flex justify-between items-center lg:px-6 px-5 lg:py-4 py-3"
+          >
+            <div class="flex gap-3 items-center">
+              <img
+                src="./src/images/meta_mask.png"
+                alt="metaMask"
+                class="w-8 h-8"
+              />
+              <p class="text-lg Gilroy-medium text-white">MetaMask</p>
+            </div>
+            <button
+              type="button"
+              class="bg-[#E9901A] px-6 py-2 text-white Gilroy-medium text-base rounded-lg"
+            >
+              Solana
+            </button>
+          </a>
+          <a
+            href="#"
+            class="border border-solid border-white rounded-lg flex justify-between items-center lg:px-6 px-5 lg:py-4 py-3"
+          >
+            <div class="flex gap-3 items-center">
+              <img
+                src="./src/images/coinbase.png"
+                alt="metaMask"
+                class="w-8 h-8"
+              />
+              <p class="text-lg Gilroy-medium text-white">Coinbase Wallet</p>
+            </div>
+          </a>
+          <a
+            href="#"
+            class="border border-solid border-white rounded-lg flex justify-between items-center lg:px-6 px-5 lg:py-4 py-3"
+          >
+            <div class="flex gap-3 items-center">
+              <img
+                src="./src/images/cardano.png"
+                alt="metaMask"
+                class="w-8 h-8"
+              />
+              <p class="text-lg Gilroy-medium text-white">WalletConnect</p>
+            </div>
+          </a>
+          <a
+            href="#"
+            class="border border-solid border-white rounded-lg flex justify-between items-center lg:px-6 px-5 lg:py-4 py-3"
+          >
+            <div class="flex gap-3 items-center">
+              <img
+                src="./src/images/phantom.png"
+                alt="metaMask"
+                class="w-8 h-8"
+              />
+              <p class="text-lg Gilroy-medium text-white">Phantom</p>
+            </div>
+            <button
+              type="button"
+              class="border border-solid border-[#E9901A] px-6 py-2 text-white Gilroy-medium text-base rounded-lg"
+            >
+              Solana
+            </button>
+          </a>
+          <a
+            href="#"
+            class="border border-solid border-white rounded-lg flex justify-between items-center lg:px-6 px-5 lg:py-4 py-3"
+          >
+            <div class="flex gap-3 items-center">
+              <img src="./src/images/core.png" alt="Core" class="w-8 h-8" />
+              <p class="text-lg Gilroy-medium text-white">Avalanche</p>
+            </div>
+            <button
+              type="button"
+              class="border border-solid border-[#E9901A] px-6 py-2 text-white Gilroy-medium text-base rounded-lg"
+            >
+              Avalanche
+            </button>
+          </a>
+          <a
+            href="#"
+            class="border border-solid border-white rounded-lg flex justify-between items-center lg:px-6 px-5 lg:py-4 py-3"
+          >
+            <div class="flex gap-3 items-center">
+              <img src="./src/images/glow.png" alt="Glow" class="w-8 h-8" />
+              <p class="text-lg Gilroy-medium text-white">Glow</p>
+            </div>
+            <button
+              type="button"
+              class="border border-solid border-[#E9901A] px-6 py-2 text-white Gilroy-medium text-base rounded-lg"
+            >
+              Solana
+            </button>
+          </a>
+        </div>
+        <p class="mt-5 lg:mt-6 text-sm text-white Gilroy-normal">
+          By connecting wallet, you agree to Finvista
+          <a href="#" class="text-[#E9901A] Gilroy-medium">
+            Terms of Service
+          </a>
+        </p>
+      </div>
+    </div>
+    <div
+      class="w-full h-screen absolute text-white z-[99999] flex justify-center items-center py-6"
+      id="newCardModal"
+      style="top: -150%; transition: all 0.5s ease"
+    >
+      <div
+        id="newCardData"
+        class="w-[90%] max-w-[624px] mx-auto p-6 border border-solid border-white bg-bgPrimary rounded-lg h-auto max-h-[95%] overflow-auto scrollHidden"
+      >
+        <div
+          class="border-b border-dashed border-white lg:pb-6 pb-5 mb-5 flex items-center justify-between"
         >
-          <path
-            d="M9.35419 21C10.0593 21.6224 10.9856 22 12 22C13.0145 22 13.9407 21.6224 14.6458 21M18 8C18 6.4087 17.3679 4.88258 16.2427 3.75736C15.1174 2.63214 13.5913 2 12 2C10.4087 2 8.8826 2.63214 7.75738 3.75736C6.63216 4.88258 6.00002 6.4087 6.00002 8C6.00002 11.0902 5.22049 13.206 4.34968 14.6054C3.61515 15.7859 3.24788 16.3761 3.26134 16.5408C3.27626 16.7231 3.31488 16.7926 3.46179 16.9016C3.59448 17 4.19261 17 5.38887 17H18.6112C19.8074 17 20.4056 17 20.5382 16.9016C20.6852 16.7926 20.7238 16.7231 20.7387 16.5408C20.7522 16.3761 20.3849 15.7859 19.6504 14.6054C18.7795 13.206 18 11.0902 18 8Z"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-        </svg>
-      </button>
-      <button type="button" class="p-1 cursor-pointer iconMainBox rounded-full">
-        <img
-          src="./src/images/australia.png"
-          alt="nation"
-          class="rounded-full w-5 h-5"
-        />
-      </button>
-      <button type="button" class="p-1 cursor-pointer iconMainBox rounded-lg">
-        <img src="src/images/profile-img.png" alt="Profile" class="w-6 h-6" />
-      </button>
+          <h2
+            class="text-xl lg:text-2xl leading-normal text-white Gilroy-extrabold"
+          >
+            Add Card
+          </h2>
+          <button
+            type="button"
+            onclick="closeNewCardBtn()"
+            class="w-6 h-6 transition-all"
+          >
+            <svg
+              width="100%"
+              height="100%"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M18 6L6 18M6 6L18 18"
+                stroke="white"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+        </div>
+        <form class="flex gap-5 flex-col">
+          <div class="flex flex-col gap-2 md:gap-4">
+            <label class="text-lg text-white Gilroy-normal"
+              >Card Holder Name</label
+            >
+            <input
+              type="text"
+              id="cardHolderName"
+              class="bg-transparent outline-none border border-solid border-white rounded-lg py-3 px-4"
+              placeholder="Enter Name"
+            />
+            <p id="cardHolderNameError" class="text-red-500 text-sm"></p>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="flex flex-col gap-2 md:gap-4 w-1/2">
+              <label class="text-lg text-white Gilroy-normal"
+                >Select Bank</label
+              >
+              <select
+                id="selectBank"
+                class="bg-transparent h-[50px] w-full outline-none border border-solid border-white rounded-lg py-3 px-4"
+              >
+                <option value="Select Bank" class="text-black">
+                  Select Bank
+                </option>
+                <option value="Bank of America" class="text-black">
+                  Bank of America
+                </option>
+              </select>
+              <p id="selectBankError" class="text-red-500 text-sm"></p>
+            </div>
+            <div class="flex flex-col items-start gap-3 w-1/2">
+              <label class="text-lg text-white Gilroy-normal"
+                >Account Number</label
+              >
+              <input
+                type="number"
+                id="accountNumber"
+                class="bg-transparent outline-none border border-solid border-white rounded-lg py-3 px-4"
+                placeholder="Enter Number"
+              />
+              <p id="accountNumberError" class="text-red-500 text-sm"></p>
+            </div>
+          </div>
+          <div class="flex flex-col gap-2 md:gap-4">
+            <label class="text-lg text-white Gilroy-normal"
+              >Mobile Number</label
+            >
+            <input
+              type="number"
+              id="mobileNumber"
+              class="bg-transparent outline-none border border-solid border-white rounded-lg py-3 px-4"
+              placeholder="Enter Number"
+            />
+            <p id="mobileNumberError" class="text-red-500 text-sm"></p>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="flex flex-col items-start gap-3 w-1/2">
+              <label class="text-lg text-white Gilroy-normal"
+                >Card Number</label
+              >
+              <input
+                type="number"
+                id="cardNumber"
+                class="bg-transparent outline-none border border-solid border-white rounded-lg py-3 px-4"
+                placeholder="Enter Number"
+              />
+              <p id="cardNumberError" class="text-red-500 text-sm"></p>
+            </div>
+            <div class="flex flex-col items-start gap-3 w-1/2 text-white">
+              <label class="text-lg text-white Gilroy-normal"
+                >Expiry Date</label
+              >
+              <input
+                type="date"
+                id="selectDate"
+                class="bg-transparent w-full text-white outline-none border border-solid border-white rounded-lg py-3 px-4"
+                placeholder="Enter Number"
+              />
+              <p id="selectDateError" class="text-red-500 text-sm"></p>
+            </div>
+          </div>
+          <div class="flex flex-col gap-2 md:gap-4">
+            <label class="text-lg text-white Gilroy-normal">Address</label>
+            <input
+              type="text"
+              id="address"
+              class="bg-transparent outline-none border border-solid border-white rounded-lg py-3 px-4"
+              placeholder="Street , Number"
+            />
+            <p id="addressError" class="text-red-500 text-sm"></p>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="flex flex-col items-start gap-3 w-1/2">
+              <label class="text-lg text-white Gilroy-normal">Country</label>
+              <input
+                type="text"
+                id="country"
+                class="bg-transparent outline-none border border-solid border-white rounded-lg py-3 px-4"
+                placeholder="Country"
+              />
+              <p id="countryError" class="text-red-500 text-sm"></p>
+            </div>
+            <div class="flex flex-col items-start gap-3 w-1/2 text-white">
+              <label class="text-lg text-white Gilroy-normal">City</label>
+              <input
+                type="text"
+                id="city"
+                class="bg-transparent w-full text-white outline-none border border-solid border-white rounded-lg py-3 px-4"
+                placeholder="City"
+              />
+              <p id="cityError" class="text-red-500 text-sm"></p>
+            </div>
+          </div>
+          <button
+            type="button"
+            class="px-6 py-3 w-full text-base text-white Gilroy-medium text-center rounded-lg hover:bg-transparent bg-[#E9901A] border border-solid border-[#E9901A]"
+            onclick="AllCardValidateForm()"
+          >
+            Add a new Card
+          </button>
+        </form>
+      </div>
     </div>
 
+    <div
+      id="SuccessfulMessage"
+      class="w-[15%] p-4 md:p-6 absolute text-center top-6 z-[99999] bg-white text-[#008000] rounded-lg tex-xl Gilroy-medium"
+      style="right: -50%; display: none; transition: all 0.7s ease"
+    >
+      Successfull
+      <button
+        type="button"
+        onclick="closeModalMessageBtn()"
+        class="absolute bg-white rounded-full -top-2 right-0 cursor-pointer w-6 h-6"
+      >
+        <svg
+          width="100%"
+          height="100%"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M17 7L7 17M7 7L17 17"
+            stroke="black"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </button>
+    </div>
+    <div
+    class="w-full h-screen absolute text-white z-[99999] flex justify-center items-center py-6"
+    id="manageModal"
+    style="top: -150%; transition: all 0.5s ease"
+  >
+    <div
+      id="modalData"
+      class="w-[90%] max-w-[624px] mx-auto p-6 border border-solid border-white bg-bgPrimary rounded-lg h-auto max-h-[95%] overflow-auto scrollHidden"
+    >
+      <div
+        class="border-b border-dashed border-white lg:pb-6 pb-5 mb-5 flex items-center justify-between"
+      >
+        <h2
+          class="text-xl lg:text-2xl leading-normal text-white Gilroy-extrabold"
+        >
+          Your card details
+        </h2>
+        <button
+          type="button"
+          onclick="closeMangeModal()"
+          id="closeModalBtn"
+          class="w-6 h-6 transition-all"
+        >
+          <svg
+            width="100%"
+            height="100%"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M18 6L6 18M6 6L18 18"
+              stroke="white"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+      </div>
+      <div class="flex flex-col gap-5 md:gap-6">
+        <div>
+          <img
+            src="./src/images/creditcard.png"
+            alt="creditcard"
+            class="w-full"
+          />
+        </div>
+        <div id="manageCardNumber"></div>
+
+        <div class="border border-solid border-white md:p-6 p-4 rounded-lg">
+          <h4 class="text-lg text-white Gilroy-medium mb-2">
+            Spending limits
+          </h4>
+          <div class="w-full h-[5px] rounded-[5px] bg-[#dfe0e4]">
+            <div class="w-[47%] h-full rounded-[5px] bg-btnSecondary"></div>
+          </div>
+          <p class="text-base text-white Gilroy-normal mt-3">
+            $399.00 spent of $2000.00
+          </p>
+        </div>
+        <div class="border border-solid border-white md:p-6 p-4 rounded-lg">
+          <h4 class="text-lg text-white Gilroy-medium mb-2">Security</h4>
+          <p class="text-base text-white Gilroy-normal">
+            Select the permissions you want to add to all the projects in this
+            account.
+          </p>
+          <div
+            class="border-t border-solid border-white mt-6 pt-4 flex items-center justify-between"
+          >
+            <p class="text-lg Gilroy-medium text-white">
+              Online transactions
+            </p>
+            <div>
+              <label class="switch">
+                <input type="checkbox" checked="" />
+                <span class="slider round"></span>
+              </label>
+            </div>
+          </div>
+          <div
+            class="border-t border-solid border-white mt-6 pt-4 flex items-center justify-between"
+          >
+            <p class="text-lg Gilroy-medium text-white">Swipe payments</p>
+            <div>
+              <label class="switch">
+                <input type="checkbox" />
+                <span class="slider round"></span>
+              </label>
+            </div>
+          </div>
+          <div
+            class="border-t border-solid border-white mt-6 pt-4 flex items-center justify-between"
+          >
+            <p class="text-lg Gilroy-medium text-white">
+              Contactless payments
+            </p>
+            <div>
+              <label class="switch">
+                <input type="checkbox" checked="" />
+                <span class="slider round"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+        <button
+          onclick="terminateBtn()"
+          type="button"
+          class="px-6 py-3 w-full text-base text-white Gilroy-medium text-center rounded-lg hover:bg-transparent bg-[#E9901A] border border-solid border-[#E9901A]"
+        >
+          Terminate Card
+        </button>
+      </div>
+
+      </div>
+      </div>
     <script src="./script.js"></script>
+    <script src="./allcards.js"></script>
   </body>
 </html>

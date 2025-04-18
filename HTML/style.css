@@ -24,6 +24,8 @@
   align-items: center;
 }
 
+
+
 .sidbar-list li.active::before {
   content: "";
   position: absolute;
@@ -32,6 +34,7 @@
   width: 6px;
   height: 100%;
   border-radius: 0px 10px 10px 0px;
+  background-color: #e9901a;
 }
 
 .sidbar-list li.active p {
@@ -146,6 +149,7 @@
 }
 .iconMainBox:hover {
   background-color: white;
+  color: #e9901a !important;
 }
 .iconMainBox svg path {
   stroke: white;
@@ -395,4 +399,24 @@ input:checked + .slider:before {
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
+}
+
+.primaryColor {
+  background-color: #191153;
+}
+.dark .primaryColor {
+  background-color: black;
+}
+.dark .bg-gradient {
+  background: linear-gradient(270deg, #000 0.77%,  rgba(10, 9, 17, 0.42) 99.92%);
+}
+.dark .tableHeader {
+  background-color: #2e2a2a;
+}
+.dark .mainData:nth-child(odd) {
+  background-color: #2e2a2a;
+}
+.dark .bg-bgPrimary {
+  --tw-bg-opacity: 1;
+  background-color: rgb(25 24 32 / var(--tw-bg-opacity, 1));
 }

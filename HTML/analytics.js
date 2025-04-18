@@ -615,7 +615,7 @@ function seeAll(){
 }
 
 function showLess(){
-  const cardsPerPage = 6;
+  const cardsPerPage = 9;
   const cards = Array.from(document.getElementsByClassName("listCardContainer"));
   const currentPage = 1;
 

@@ -60,64 +60,116 @@ fetch("chartData.json")
   })
   .catch(() => console.error("Error loading chart data:"));
 
+let detailSelectTableText = document.querySelector("#detailSelectTableText");
 
-  let detailSelectTableText = document.querySelector("#detailSelectTableText");
+function changeSelectTableText(text, event) {
+  detailSelectTableText.textContent = text;
 
-  function changeSelectTableText(text, event) {
-    detailSelectTableText.textContent = text;
-  
-    if (detailSelectTableText.textContent === "Last 10 days") {
-      handleLast10Days();
-    } else {
-      handleLast15Days();
-    }
-  
-    closeDropDowns();
+  if (detailSelectTableText.textContent === "Last 10 days") {
+    handleLast10Days();
+  } else {
+    handleLast15Days();
   }
+
+  closeDropDowns();
+}
 function handleLast10Days() {
   $.getJSON("wallet.json", function (data) {
-    console.log("Data loaded for Last 10 Days:", data);
-    let last10Days = data.last10Days;
-    makeResultsTable(last10Days, data.last15Days);
+    const assets = JSON.parse(localStorage.getItem("assets")) || [];
+
+    if (assets && assets.length > 0) {
+      console.log("Assets Data:", assets);
+
+      assets.forEach((asset) => {
+        if (asset && asset.category) { // Check if asset is not null and has a category
+          data.last10Days.push({
+            title: asset.category,
+            img: asset.coverImage,
+            date: asset.date,
+            history: "0df3635...eq23",
+            status: asset.status,
+            transaction: `+${asset.amount}`,
+            currency: asset.convertCurrency,
+            transactionDetail: `+$${asset.amount * 10}`,
+          });
+        }
+      });
+    } else {
+      console.log("No assets found in local storage.");
+    }
+    makeResultsTable(data.last10Days.reverse(), data.last15Days.reverse());
   });
 }
 
 function handleLast15Days() {
   $.getJSON("wallet.json", function (data) {
-    console.log("Data loaded for Last 15 Days:", data);
-    let last15Days = data.last15Days;
-    makeResultsTable(last15Days, data.last10Days);
+    const assets = JSON.parse(localStorage.getItem("assets")) || [];
+
+    if (assets && assets.length > 0) {
+      console.log("Assets Data:", assets);
+
+      assets.forEach((asset) => {
+        if (asset && asset.category) { // Check if asset is not null and has a category
+          data.last15Days.push({
+            title: asset.category,
+            img: asset.coverImage,
+            date: asset.date,
+            history: "0df3635...eq23",
+            status: asset.status,
+            transaction: `+${asset.amount}`,
+            currency: asset.convertCurrency,
+            transactionDetail: `+$${asset.amount * 10}`,
+          });
+        }
+      });
+    } else {
+      console.log("No assets found in local storage.");
+    }
+    makeResultsTable(data.last15Days.reverse(), data.last10Days.reverse());
   });
 }
 
-// Fetch the data from "wallet.json"
 $.getJSON("wallet.json", function (data) {
   console.log("Data loaded:", data);
-  
-  // Retrieve assets from localStorage
-  const assets = JSON.parse(localStorage.getItem("assets"));
-  
-  if (assets) {
+
+  const assets = JSON.parse(localStorage.getItem("assets")) || [];
+
+  if (assets && assets.length > 0) {
     console.log("Assets Data:", assets);
 
-    // Add the assets to the `last15Days` array without clearing previous data
-    data.last15Days.push({
-      "title": assets.category,  // Use assets' category as title
-      "img": assets.coverImage,  // Use assets' cover image
-      "date": new Date().toLocaleDateString(),  // Use current date
-      "history": "0df3635...eq23",  // Update this field as needed
-      "status": assets.status,  // Use assets' status
-      "transaction": `+${assets.amount}`,  // Use assets' amount as transaction value
-      "currency": assets.convertCurrency,
-      "transactionDetail": `+$${assets.amount * 10}`  // Adjust this calculation as needed
+    assets.forEach((asset) => {
+      if (asset && asset.category) {
+        if (asset.date > new Date(Date.now() - 10 * 24 * 60 * 60 * 1000)) {
+          data.last15Days.push({
+            title: asset.category,
+            img: asset.coverImage,
+            date: asset.date,
+            history: "0df3635...eq23",
+            status: asset.status,
+            transaction: `+${asset.amount}`,
+            currency: asset.convertCurrency,
+            transactionDetail: `+$${asset.amount * 10}`,
+          });
+        } else {
+          data.last10Days.push({
+            title: asset.category,
+            img: asset.coverImage,
+            date: asset.date,
+            history: "0df3635...eq23",
+            status: asset.status,
+            transaction: `+${asset.amount}`,
+            currency: asset.convertCurrency,
+            transactionDetail: `+$${asset.amount * 10}`,
+          });
+        }
+      }
     });
   } else {
     console.log("No assets found in local storage.");
   }
 
-  // Now call the function to create the results table with the updated data
-  let last15Days = data.last15Days;
-  let last10Days = data.last10Days;
+  let last15Days = data.last15Days.reverse();
+  let last10Days = data.last10Days.reverse();
   makeResultsTable(last15Days, last10Days);
 });
 
@@ -126,7 +178,7 @@ function makeResultsTable(last15Days, last10Days) {
   let dataContainer = document.getElementById("data-container");
 
   // Clear existing table content
-  dataContainer.innerHTML = '';
+  dataContainer.innerHTML = "";
 
   let tbl = document.createElement("table");
   tbl.classList.add("w-full");
@@ -139,7 +191,6 @@ function makeResultsTable(last15Days, last10Days) {
   headerRow.insertCell().textContent = "Status";
   headerRow.insertCell().textContent = "Transaction";
 
-  // Create table rows for the last 15 days data
   last15Days.forEach((result) => {
     let newRow = tbl.insertRow();
     newRow.classList.add("mainData");
@@ -178,11 +229,11 @@ function makeResultsTable(last15Days, last10Days) {
     var mainResultStatus = document.createElement("div");
     var mainResultStatusText = document.createElement("h2");
     mainResultStatusText.textContent = result.status;
-    if(result.status === "Successful"){
+    if (result.status === "Successful") {
       mainResultStatus.classList.add("succesfullStatusBox");
-    } else if(result.status === "Pending"){
+    } else if (result.status === "Pending") {
       mainResultStatus.classList.add("pendingStatusBox");
-    } else if(result.status === "Canceled"){
+    } else if (result.status === "Cancelled") {
       mainResultStatus.classList.add("canceledStatusBox");
     }
     mainResultStatus.appendChild(mainResultStatusText);
@@ -193,7 +244,8 @@ function makeResultsTable(last15Days, last10Days) {
     mainResultTransaction.classList.add("maintransactionContainer");
     var mainResultTransactionText = document.createElement("h2");
     var mainResultTransactionDetailText = document.createElement("p");
-    mainResultTransactionText.textContent = result.transaction + " " + result.currency;
+    mainResultTransactionText.textContent =
+      result.transaction + " " + result.currency;
     mainResultTransactionDetailText.textContent = result.transactionDetail;
     mainResultTransaction.appendChild(mainResultTransactionText);
     mainResultTransaction.appendChild(mainResultTransactionDetailText);
@@ -238,11 +290,11 @@ function makeResultsTable(last15Days, last10Days) {
     var mainResultStatus = document.createElement("div");
     var mainResultStatusText = document.createElement("h2");
     mainResultStatusText.textContent = result.status;
-    if(result.status === "Successful"){
+    if (result.status === "Successful") {
       mainResultStatus.classList.add("succesfullStatusBox");
-    } else if(result.status === "Pending"){
+    } else if (result.status === "Pending") {
       mainResultStatus.classList.add("pendingStatusBox");
-    } else if(result.status === "Canceled"){
+    } else if (result.status === "Canceled") {
       mainResultStatus.classList.add("canceledStatusBox");
     }
     mainResultStatus.appendChild(mainResultStatusText);
@@ -253,7 +305,8 @@ function makeResultsTable(last15Days, last10Days) {
     mainResultTransaction.classList.add("maintransactionContainer");
     var mainResultTransactionText = document.createElement("h2");
     var mainResultTransactionDetailText = document.createElement("p");
-    mainResultTransactionText.textContent = result.transaction;
+    mainResultTransactionText.textContent =
+      result.transaction + " " + result.currency;
     mainResultTransactionDetailText.textContent = result.transactionDetail;
     mainResultTransaction.appendChild(mainResultTransactionText);
     mainResultTransaction.appendChild(mainResultTransactionDetailText);
@@ -276,10 +329,9 @@ function searchFunction() {
     td = tr[i].getElementsByTagName("td")[0];
     if (td) {
       txtValue = td.textContent || td.innerText;
-     
+
       if (txtValue.toUpperCase().indexOf(filter) > -1) {
         tr[i].style.display = "";
-       
       } else {
         tr[i].style.display = "none";
         document.getElementById("seeLess").style.display = "none";
@@ -290,23 +342,23 @@ function searchFunction() {
         document.getElementById("seeLess").style.display = "none";
         document.getElementById("seeAll").style.display = "none";
       }
-    }  
-  } 
+    }
+  }
 }
 
-function showLess(){
+function showLess() {
   showLess();
   document.getElementById("seeLess").style.display = "none";
   document.getElementById("seeAll").style.display = "flex";
 }
 
-function seeAll(){
+function seeAll() {
   showAll();
   document.getElementById("seeAll").style.display = "none";
   // document.getElementById("seeLess").style.display = "flex";
 }
 
-function showLess(){
+function showLess() {
   const cardsPerPage = 6;
   const cards = Array.from(document.getElementsByClassName("mainData"));
   const currentPage = 1;
@@ -320,12 +372,8 @@ function showLess(){
     });
   }
 
-  
-
   displayPage(currentPage);
 }
-
-
 
 function showAll() {
   const cards = Array.from(document.getElementsByClassName("mainData"));
@@ -333,24 +381,3 @@ function showAll() {
     card.style.display = "table-row";
   });
 }
-
-document.addEventListener("DOMContentLoaded", function() {
-  const assets = JSON.parse(localStorage.getItem("assets"));
-  
-  console.log("Retrieved assets:", assets);  // Log the data after retrieval
-  
-  if (assets) {
-      console.log("Assets Data:", assets);
-      
-      // Example: If you want to display this data somewhere on the page
-      document.getElementById("assetsCoverImageDisplay").src = assets.coverImage;
-      document.getElementById("assetsNameDisplay").textContent = assets.name;
-      document.getElementById("assetsCategoryDisplay").textContent = assets.category;
-      document.getElementById("assetsAmountDisplay").textContent = assets.amount;
-      document.getElementById("assetsRequiredActionDisplay").textContent = assets.requiredAction;
-      document.getElementById("assetsStatusDisplay").textContent = assets.status;
-  } else {
-      console.log("No assets found in local storage.");
-  }
-});
-

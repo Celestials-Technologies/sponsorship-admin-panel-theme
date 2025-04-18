@@ -19,19 +19,19 @@
     >
       <div
         id="sideBar"
-        class="fixed top-[25px]"
+        class="fixed siderBarMainContainer"
         style="width: 260px; transition: all 0.5s ease; left: 24px"
       >
         <div
           style="transition: all 0.5s ease"
-          class="w-full rounded-[20px] pt-[46px] pb-5 flex-col justify-between bg-sideBarBg border border-translucentWhite hidden lg:flex h-[92vh] sticky top-6 tableScroll overflow-y-auto"
+          class="w-full rounded-[20px] pt-[46px] pb-5 flex-col justify-between bg-sideBarBg border border-[#fff3] siderBarMobile h-[92vh] sticky top-6 tableScroll overflow-y-auto"
         >
           <div class="px-2.5">
             <h1 class="text-[28px] leading-8 text-center Gilroy-extrabold">
               <span class="text-primary">Fin</span
               ><span class="text-white">Vista</span>
             </h1>
-            <ul class="mt-[90px] sidbar-list pl-px">
+            <ul class="mt-5 md:mt-[90px] sidbar-list pl-px">
               <a href="./dashboard.html">
                 <li
                   class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center cursor-pointer hover:bg-[#E9901A] transition-all"
@@ -61,7 +61,7 @@
                     </svg>
                   </div>
                   <p
-                    class="text-base leading-5 text-white pt-0.5 Gilroy-semibold"
+                    class="text-base leading-5 text-white !pt-[3px] Gilroy-semibold"
                   >
                     Dashboards
                   </p>
@@ -91,7 +91,7 @@
                     </svg>
                   </div>
                   <p
-                    class="text-base leading-5 text-white h-auto pt-0.5 Gilroy-semibold"
+                    class="text-base leading-5 text-white !pt-[3px] Gilroy-semibold"
                   >
                     Balance Details
                   </p>
@@ -121,106 +121,140 @@
                     </svg>
                   </div>
                   <p
-                    class="text-base leading-5 text-white pt-0.5 h-auto Gilroy-semibold"
+                    class="text-base leading-5 text-white !pt-[3px] h-auto Gilroy-semibold"
                   >
                     Analytics
                   </p>
                 </li>
               </a>
-              <a href="./wallet.html">
-                <li
-                  class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-2.5 cursor-pointer hover:bg-[#E9901A] transition-all"
-                >
-                  <div
-                    class="w-[34px] h-[34px] rounded-lg flex justify-center items-center"
+              <div class="relative walletMain">
+                <a href="./wallet.html">
+                  <li
+                    class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-2.5 cursor-pointer hover:bg-[#E9901A] walletHead transition-all"
                   >
-                    <svg
-                      width="100%"
-                      height="100%"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
+                    <div
+                      class="w-[34px] h-[34px] rounded-lg flex justify-center items-center"
                     >
-                      <path
-                        d="M16 7.99983V4.50048C16 3.66874 16 3.25287 15.8248 2.9973C15.6717 2.77401 15.4346 2.62232 15.1678 2.57691C14.8623 2.52493 14.4847 2.6992 13.7295 3.04775L4.85901 7.14182C4.18551 7.45267 3.84875 7.6081 3.60211 7.84915C3.38406 8.06225 3.21762 8.32238 3.1155 8.60966C3 8.93462 3 9.30551 3 10.0473V14.9998M16.5 14.4998H16.51M3 11.1998L3 17.7998C3 18.9199 3 19.48 3.21799 19.9078C3.40973 20.2841 3.71569 20.5901 4.09202 20.7818C4.51984 20.9998 5.07989 20.9998 6.2 20.9998H17.8C18.9201 20.9998 19.4802 20.9998 19.908 20.7818C20.2843 20.5901 20.5903 20.2841 20.782 19.9078C21 19.48 21 18.9199 21 17.7998V11.1998C21 10.0797 21 9.51967 20.782 9.09185C20.5903 8.71552 20.2843 8.40956 19.908 8.21782C19.4802 7.99983 18.9201 7.99983 17.8 7.99983L6.2 7.99983C5.0799 7.99983 4.51984 7.99983 4.09202 8.21781C3.7157 8.40956 3.40973 8.71552 3.21799 9.09185C3 9.51967 3 10.0797 3 11.1998ZM17 14.4998C17 14.776 16.7761 14.9998 16.5 14.9998C16.2239 14.9998 16 14.776 16 14.4998C16 14.2237 16.2239 13.9998 16.5 13.9998C16.7761 13.9998 17 14.2237 17 14.4998Z"
-                        stroke="white"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                  </div>
-                  <p
-                    class="text-base leading-5 text-white h-auto pt-0.5 Gilroy-semibold"
-                  >
-                    Wallet
-                  </p>
-                </li>
-              </a>
-              <a href="./details.html">
-                <li
-                  class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-2.5 cursor-pointer hover:bg-[#E9901A] transition-all"
-                >
-                  <div
-                    class="w-[34px] h-[34px] rounded-lg flex justify-center items-center"
-                  >
-                    <svg
-                      width="100%"
-                      height="100%"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
+                      <svg
+                        width="100%"
+                        height="100%"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M16 7.99983V4.50048C16 3.66874 16 3.25287 15.8248 2.9973C15.6717 2.77401 15.4346 2.62232 15.1678 2.57691C14.8623 2.52493 14.4847 2.6992 13.7295 3.04775L4.85901 7.14182C4.18551 7.45267 3.84875 7.6081 3.60211 7.84915C3.38406 8.06225 3.21762 8.32238 3.1155 8.60966C3 8.93462 3 9.30551 3 10.0473V14.9998M16.5 14.4998H16.51M3 11.1998L3 17.7998C3 18.9199 3 19.48 3.21799 19.9078C3.40973 20.2841 3.71569 20.5901 4.09202 20.7818C4.51984 20.9998 5.07989 20.9998 6.2 20.9998H17.8C18.9201 20.9998 19.4802 20.9998 19.908 20.7818C20.2843 20.5901 20.5903 20.2841 20.782 19.9078C21 19.48 21 18.9199 21 17.7998V11.1998C21 10.0797 21 9.51967 20.782 9.09185C20.5903 8.71552 20.2843 8.40956 19.908 8.21782C19.4802 7.99983 18.9201 7.99983 17.8 7.99983L6.2 7.99983C5.0799 7.99983 4.51984 7.99983 4.09202 8.21781C3.7157 8.40956 3.40973 8.71552 3.21799 9.09185C3 9.51967 3 10.0797 3 11.1998ZM17 14.4998C17 14.776 16.7761 14.9998 16.5 14.9998C16.2239 14.9998 16 14.776 16 14.4998C16 14.2237 16.2239 13.9998 16.5 13.9998C16.7761 13.9998 17 14.2237 17 14.4998Z"
+                          stroke="white"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </div>
+                    <p
+                      class="text-base leading-5 text-white !pt-[3px] Gilroy-semibold"
                     >
-                      <path
-                        d="M14 11H8M10 15H8M16 7H8M20 10.5V6.8C20 5.11984 20 4.27976 19.673 3.63803C19.3854 3.07354 18.9265 2.6146 18.362 2.32698C17.7202 2 16.8802 2 15.2 2H8.8C7.11984 2 6.27976 2 5.63803 2.32698C5.07354 2.6146 4.6146 3.07354 4.32698 3.63803C4 4.27976 4 5.11984 4 6.8V17.2C4 18.8802 4 19.7202 4.32698 20.362C4.6146 20.9265 5.07354 21.3854 5.63803 21.673C6.27976 22 7.11984 22 8.8 22H11.5M22 22L20.5 20.5M21.5 18C21.5 19.933 19.933 21.5 18 21.5C16.067 21.5 14.5 19.933 14.5 18C14.5 16.067 16.067 14.5 18 14.5C19.933 14.5 21.5 16.067 21.5 18Z"
-                        stroke="white"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                  </div>
-                  <p
-                    class="text-base leading-5 text-white pt-0.5 h-auto Gilroy-semibold"
+                      Wallet
+                    </p>
+                  </li>
+                </a>
+                <a href="./allCards.html" class="walletCards">
+                  <li
+                    class="py-2 px-2 rounded-r-xl flex gap-[7px] h-[50px] relative items-center mt-2.5 cursor-pointer hover:bg-[#E9901A] transition-all"
                   >
-                    Asset Details
-                  </p>
-                </li>
-              </a>
-              <a href="./new-asset.html">
-                <li
-                  class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-2.5 cursor-pointer hover:bg-[#E9901A] transition-all"
-                >
-                  <div
-                    class="w-[34px] h-[34px] rounded-lg flex justify-center items-center"
-                  >
-                    <svg
-                      width="100%"
-                      height="100%"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
+                    <div
+                      class="w-6 h-6 rounded-lg flex justify-center items-center"
                     >
-                      <path
-                        d="M20 10.5V6.8C20 5.11984 20 4.27976 19.673 3.63803C19.3854 3.07354 18.9265 2.6146 18.362 2.32698C17.7202 2 16.8802 2 15.2 2H8.8C7.11984 2 6.27976 2 5.63803 2.32698C5.07354 2.6146 4.6146 3.07354 4.32698 3.63803C4 4.27976 4 5.11984 4 6.8V17.2C4 18.8802 4 19.7202 4.32698 20.362C4.6146 20.9265 5.07354 21.3854 5.63803 21.673C6.27976 22 7.11984 22 8.8 22H12M14 11H8M10 15H8M16 7H8M18 21V15M15 18H21"
-                        stroke="white"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                  </div>
-                  <p
-                    class="text-base leading-5 text-white pt-0.5 h-auto Gilroy-semibold"
+                      <svg
+                        width="100%"
+                        height="100%"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M22 22L20.5 20.5M22 10H2M22 12V8.2C22 7.0799 22 6.51984 21.782 6.09202C21.5903 5.7157 21.2843 5.40974 20.908 5.21799C20.4802 5 19.9201 5 18.8 5H5.2C4.0799 5 3.51984 5 3.09202 5.21799C2.7157 5.40973 2.40973 5.71569 2.21799 6.09202C2 6.51984 2 7.0799 2 8.2V15.8C2 16.9201 2 17.4802 2.21799 17.908C2.40973 18.2843 2.71569 18.5903 3.09202 18.782C3.51984 19 4.0799 19 5.2 19H10.5M21.5 18C21.5 19.933 19.933 21.5 18 21.5C16.067 21.5 14.5 19.933 14.5 18C14.5 16.067 16.067 14.5 18 14.5C19.933 14.5 21.5 16.067 21.5 18Z"
+                          stroke="white"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </div>
+                    <p
+                      class="text-base leading-5 text-white pt-1 h-auto Gilroy-semibold"
+                    >
+                      Wallets Cards
+                    </p>
+                  </li>
+                </a>
+              </div>
+              <div class="relative assetsDetailsMain">
+                <a href="./details.html">
+                  <li
+                    class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-2.5 cursor-pointer detailsMain hover:bg-[#E9901A] transition-all"
                   >
-                    New Asset
-                  </p>
-                </li>
-              </a>
-              <div>
+                    <div
+                      class="w-[34px] h-[34px] rounded-lg flex justify-center items-center"
+                    >
+                      <svg
+                        width="100%"
+                        height="100%"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M14 11H8M10 15H8M16 7H8M20 10.5V6.8C20 5.11984 20 4.27976 19.673 3.63803C19.3854 3.07354 18.9265 2.6146 18.362 2.32698C17.7202 2 16.8802 2 15.2 2H8.8C7.11984 2 6.27976 2 5.63803 2.32698C5.07354 2.6146 4.6146 3.07354 4.32698 3.63803C4 4.27976 4 5.11984 4 6.8V17.2C4 18.8802 4 19.7202 4.32698 20.362C4.6146 20.9265 5.07354 21.3854 5.63803 21.673C6.27976 22 7.11984 22 8.8 22H11.5M22 22L20.5 20.5M21.5 18C21.5 19.933 19.933 21.5 18 21.5C16.067 21.5 14.5 19.933 14.5 18C14.5 16.067 16.067 14.5 18 14.5C19.933 14.5 21.5 16.067 21.5 18Z"
+                          stroke="white"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </div>
+                    <p
+                      class="text-base leading-5 text-white !pt-[3px] h-auto Gilroy-semibold"
+                    >
+                      Asset Details
+                    </p>
+                  </li>
+                </a>
+                <a href="./new-asset.html" class="newAsset">
+                  <li
+                    class="py-2 px-2 rounded-r-xl flex gap-[7px] h-[50px] relative items-center mt-2.5 cursor-pointer hover:bg-[#E9901A] transition-all"
+                  >
+                    <div
+                      class="w-[34px] h-[34px] rounded-lg flex justify-center items-center"
+                    >
+                      <svg
+                        width="100%"
+                        height="100%"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M20 10.5V6.8C20 5.11984 20 4.27976 19.673 3.63803C19.3854 3.07354 18.9265 2.6146 18.362 2.32698C17.7202 2 16.8802 2 15.2 2H8.8C7.11984 2 6.27976 2 5.63803 2.32698C5.07354 2.6146 4.6146 3.07354 4.32698 3.63803C4 4.27976 4 5.11984 4 6.8V17.2C4 18.8802 4 19.7202 4.32698 20.362C4.6146 20.9265 5.07354 21.3854 5.63803 21.673C6.27976 22 7.11984 22 8.8 22H12M14 11H8M10 15H8M16 7H8M18 21V15M15 18H21"
+                          stroke="white"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </div>
+                    <p
+                      class="text-base leading-5 text-white !pt-[3px] h-auto Gilroy-semibold"
+                    >
+                      New Asset
+                    </p>
+                  </li>
+                </a>
+              </div>
+            
                 <div class="accountMain">
                   <li
-                    class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-2.5 cursor-pointer hover:bg-[#E9901A] transition-all"
+                    class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center active cursor-pointer mt-2.5"
                   >
                     <div
                       class="w-[34px] h-[34px] rounded-lg flex justify-center items-center"
@@ -241,21 +275,21 @@
                       </svg>
                     </div>
                     <p
-                      class="text-base leading-5 text-white pt-0.5 h-auto Gilroy-semibold"
+                      class="text-base leading-5 text-white !pt-[3px] h-auto Gilroy-semibold"
                     >
                       Account
                     </p>
                   </li>
                 </div>
                 <div class="pl-8">
-                  <div class="border-l border-solid border-[#E9901A]">
-                    <ul>
+                  <div class="border-l border-solid border-[#E9901A] pt-2.5">
+                    <ul class="flex flex-col gap-1">
                       <a href="./setting.html">
                         <li
-                          class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center cursor-pointer transition-all"
+                          class="rounded-xl flex gap-[7px] h-[50px] relative items-center cursor-pointer transition-all"
                         >
                           <p
-                            class="text-base leading-5 text-[#E9901A] transition-all pt-0.5 h-auto Gilroy-semibold"
+                            class="text-base leading-5 text-white flex items-center transition-all py-2 px-2 pt-2.5 h-full w-full bg-[#E9901A] rounded-r-xl Gilroy-semibold"
                           >
                             Setting
                           </p>
@@ -263,10 +297,10 @@
                       </a>
                       <a href="./password.html">
                         <li
-                          class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center cursor-pointer transition-all"
+                          class="rounded-xl flex gap-[7px] h-[50px] relative items-center cursor-pointer transition-all"
                         >
                           <p
-                            class="text-base leading-5 text-white hover:text-[#E9901A] transition-all pt-0.5 h-auto Gilroy-semibold"
+                            class="text-base leading-5 text-white flex items-center transition-all py-2 px-2 pt-2.5 w-full h-full hover:bg-[#E9901A] rounded-r-xl Gilroy-semibold"
                           >
                             Password
                           </p>
@@ -274,10 +308,10 @@
                       </a>
                       <a href="./billing.html">
                         <li
-                          class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center cursor-pointer transition-all"
+                          class="rounded-xl flex gap-[7px] h-[50px] relative items-center cursor-pointer transition-all"
                         >
                           <p
-                            class="text-base leading-5 text-white hover:text-[#E9901A] transition-all pt-0.5 h-auto Gilroy-semibold"
+                            class="text-base leading-5 text-white flex items-center transition-all py-2 px-2 pt-2.5 w-full h-full hover:bg-[#E9901A] rounded-r-xl Gilroy-semibold"
                           >
                             Billing
                           </p>
@@ -285,10 +319,10 @@
                       </a>
                       <a href="./notification.html">
                         <li
-                          class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-0 cursor-pointer !bg-transparent transition-all"
+                          class="rounded-xl flex gap-[7px] h-[50px] relative items-center cursor-pointer transition-all"
                         >
                           <p
-                            class="text-base leading-5 text-white hover:text-[#E9901A] transition-all pt-0.5 h-auto Gilroy-semibold"
+                            class="text-base leading-5 text-white flex items-center transition-all py-2 px-2 pt-2.5 w-full h-full hover:bg-[#E9901A] rounded-r-xl Gilroy-semibold"
                           >
                             Notifications
                           </p>
@@ -296,32 +330,32 @@
                       </a>
                       <a href="./team.html">
                         <li
-                          class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-0 cursor-pointer !bg-transparent transition-all"
+                          class="rounded-xl flex gap-[7px] h-[50px] relative items-center cursor-pointer transition-all"
                         >
                           <p
-                            class="text-base leading-5 text-white hover:text-[#E9901A] transition-all pt-0.5 h-auto Gilroy-semibold"
+                            class="text-base leading-5 text-white flex items-center transition-all py-2 px-2 pt-2.5 w-full h-full hover:bg-[#E9901A] rounded-r-xl Gilroy-semibold"
                           >
                             Team
                           </p>
                         </li>
                       </a>
-                      <a href="./login.html">
+                      <a href="./login.html" id="accountLogin">
                         <li
-                          class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-0 cursor-pointer !bg-transparent transition-all"
+                          class="rounded-xl flex gap-[7px] h-[50px] relative items-center cursor-pointer transition-all"
                         >
                           <p
-                            class="text-base leading-5 text-white hover:text-[#E9901A] transition-all pt-0.5 h-auto Gilroy-semibold"
+                            class="text-base leading-5 text-white flex items-center transition-all py-2 px-2 pt-2.5 w-full h-full hover:bg-[#E9901A] rounded-r-xl Gilroy-semibold"
                           >
                             Login
                           </p>
                         </li>
                       </a>
-                      <a href="./signup.html">
+                      <a href="./signup.html" id="accountSignUp">
                         <li
-                          class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-0 cursor-pointer !bg-transparent transition-all"
+                          class="rounded-xl flex gap-[7px] h-[50px] relative items-center cursor-pointer transition-all"
                         >
                           <p
-                            class="text-base leading-5 text-white hover:text-[#E9901A] transition-all pt-0.5 h-auto Gilroy-semibold"
+                            class="text-base leading-5 text-white flex items-center transition-all py-2 px-2 pt-2.5 w-full h-full hover:bg-[#E9901A] rounded-r-xl Gilroy-semibold"
                           >
                             Sign Up
                           </p>
@@ -330,12 +364,23 @@
                     </ul>
                   </div>
                 </div>
-              </div>
+              
             </ul>
           </div>
           <div class="px-5 mt-10">
             <button
               type="button"
+              id="login"
+              onclick="loginBtn()"
+              class="text-lg leading-[18px] text-white w-full h-12 text-center border border-white capitalize rounded-[50px] Gilroy-normal logout-btn-shadow"
+            >
+              Login
+            </button>
+            <button
+              type="button"
+              id="logout"
+              onclick="logoutBtn()"
+              style="display: none"
               class="text-lg leading-[18px] text-white w-full h-12 text-center border border-white capitalize rounded-[50px] Gilroy-normal logout-btn-shadow"
             >
               Logout
@@ -349,7 +394,7 @@
         style="transition: all 0.5s ease"
       >
         <div
-          class="w-full py-[9px] md:pr-[18px] md:px-[33px] rounded-[15px] flex justify-between items-center gap-2.5 bg-sideBarBg border border-translucentWhite px-3 z-10 backdrop-blur-sm z-[999] relative"
+          class="w-full py-[9px] md:pr-[18px] md:px-[33px] rounded-[15px] flex justify-between items-center gap-2.5 bg-sideBarBg border border-[#fff3] px-3 z-10 backdrop-blur-sm z-[999] relative"
         >
           <div class="flex items-center gap-5 justify-between w-full">
             <div class="flex gap-3 items-center">
@@ -393,54 +438,54 @@
                   </svg>
                 </div>
               </div>
-              <div class="relative layoutContainer">
-                <div
-                  class="relative p-1 bg-white rounded-lg layerIconBox cursor-pointer w-fit flex items-center"
-                >
-                  <svg
-                    width="100%"
-                    height="100%"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="w-7 h-7 layerIcon"
-                  >
-                    <path
-                      d="M8.4 3H4.6C4.03995 3 3.75992 3 3.54601 3.10899C3.35785 3.20487 3.20487 3.35785 3.10899 3.54601C3 3.75992 3 4.03995 3 4.6V8.4C3 8.96005 3 9.24008 3.10899 9.45399C3.20487 9.64215 3.35785 9.79513 3.54601 9.89101C3.75992 10 4.03995 10 4.6 10H8.4C8.96005 10 9.24008 10 9.45399 9.89101C9.64215 9.79513 9.79513 9.64215 9.89101 9.45399C10 9.24008 10 8.96005 10 8.4V4.6C10 4.03995 10 3.75992 9.89101 3.54601C9.79513 3.35785 9.64215 3.20487 9.45399 3.10899C9.24008 3 8.96005 3 8.4 3Z"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M19.4 3H15.6C15.0399 3 14.7599 3 14.546 3.10899C14.3578 3.20487 14.2049 3.35785 14.109 3.54601C14 3.75992 14 4.03995 14 4.6V8.4C14 8.96005 14 9.24008 14.109 9.45399C14.2049 9.64215 14.3578 9.79513 14.546 9.89101C14.7599 10 15.0399 10 15.6 10H19.4C19.9601 10 20.2401 10 20.454 9.89101C20.6422 9.79513 20.7951 9.64215 20.891 9.45399C21 9.24008 21 8.96005 21 8.4V4.6C21 4.03995 21 3.75992 20.891 3.54601C20.7951 3.35785 20.6422 3.20487 20.454 3.10899C20.2401 3 19.9601 3 19.4 3Z"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M19.4 14H15.6C15.0399 14 14.7599 14 14.546 14.109C14.3578 14.2049 14.2049 14.3578 14.109 14.546C14 14.7599 14 15.0399 14 15.6V19.4C14 19.9601 14 20.2401 14.109 20.454C14.2049 20.6422 14.3578 20.7951 14.546 20.891C14.7599 21 15.0399 21 15.6 21H19.4C19.9601 21 20.2401 21 20.454 20.891C20.6422 20.7951 20.7951 20.6422 20.891 20.454C21 20.2401 21 19.9601 21 19.4V15.6C21 15.0399 21 14.7599 20.891 14.546C20.7951 14.3578 20.6422 14.2049 20.454 14.109C20.2401 14 19.9601 14 19.4 14Z"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M8.4 14H4.6C4.03995 14 3.75992 14 3.54601 14.109C3.35785 14.2049 3.20487 14.3578 3.10899 14.546C3 14.7599 3 15.0399 3 15.6V19.4C3 19.9601 3 20.2401 3.10899 20.454C3.20487 20.6422 3.35785 20.7951 3.54601 20.891C3.75992 21 4.03995 21 4.6 21H8.4C8.96005 21 9.24008 21 9.45399 20.891C9.64215 20.7951 9.79513 20.6422 9.89101 20.454C10 20.2401 10 19.9601 10 19.4V15.6C10 15.0399 10 14.7599 9.89101 14.546C9.79513 14.3578 9.64215 14.2049 9.45399 14.109C9.24008 14 8.96005 14 8.4 14Z"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </div>
-                <div
-                  class="p-1 text-white text-base capitalize absolute top-11 bg-btnSecondary rounded layoutText"
-                >
-                  Layout
-                </div>
-              </div>
+              <!-- <div class="relative layoutContainer">
+        <div
+          class="relative p-1 bg-white rounded-lg layerIconBox cursor-pointer w-fit flex items-center"
+        >
+          <svg
+            width="100%"
+            height="100%"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-7 h-7 layerIcon"
+          >
+            <path
+              d="M8.4 3H4.6C4.03995 3 3.75992 3 3.54601 3.10899C3.35785 3.20487 3.20487 3.35785 3.10899 3.54601C3 3.75992 3 4.03995 3 4.6V8.4C3 8.96005 3 9.24008 3.10899 9.45399C3.20487 9.64215 3.35785 9.79513 3.54601 9.89101C3.75992 10 4.03995 10 4.6 10H8.4C8.96005 10 9.24008 10 9.45399 9.89101C9.64215 9.79513 9.79513 9.64215 9.89101 9.45399C10 9.24008 10 8.96005 10 8.4V4.6C10 4.03995 10 3.75992 9.89101 3.54601C9.79513 3.35785 9.64215 3.20487 9.45399 3.10899C9.24008 3 8.96005 3 8.4 3Z"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M19.4 3H15.6C15.0399 3 14.7599 3 14.546 3.10899C14.3578 3.20487 14.2049 3.35785 14.109 3.54601C14 3.75992 14 4.03995 14 4.6V8.4C14 8.96005 14 9.24008 14.109 9.45399C14.2049 9.64215 14.3578 9.79513 14.546 9.89101C14.7599 10 15.0399 10 15.6 10H19.4C19.9601 10 20.2401 10 20.454 9.89101C20.6422 9.79513 20.7951 9.64215 20.891 9.45399C21 9.24008 21 8.96005 21 8.4V4.6C21 4.03995 21 3.75992 20.891 3.54601C20.7951 3.35785 20.6422 3.20487 20.454 3.10899C20.2401 3 19.9601 3 19.4 3Z"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M19.4 14H15.6C15.0399 14 14.7599 14 14.546 14.109C14.3578 14.2049 14.2049 14.3578 14.109 14.546C14 14.7599 14 15.0399 14 15.6V19.4C14 19.9601 14 20.2401 14.109 20.454C14.2049 20.6422 14.3578 20.7951 14.546 20.891C14.7599 21 15.0399 21 15.6 21H19.4C19.9601 21 20.2401 21 20.454 20.891C20.6422 20.7951 20.7951 20.6422 20.891 20.454C21 20.2401 21 19.9601 21 19.4V15.6C21 15.0399 21 14.7599 20.891 14.546C20.7951 14.3578 20.6422 14.2049 20.454 14.109C20.2401 14 19.9601 14 19.4 14Z"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M8.4 14H4.6C4.03995 14 3.75992 14 3.54601 14.109C3.35785 14.2049 3.20487 14.3578 3.10899 14.546C3 14.7599 3 15.0399 3 15.6V19.4C3 19.9601 3 20.2401 3.10899 20.454C3.20487 20.6422 3.35785 20.7951 3.54601 20.891C3.75992 21 4.03995 21 4.6 21H8.4C8.96005 21 9.24008 21 9.45399 20.891C9.64215 20.7951 9.79513 20.6422 9.89101 20.454C10 20.2401 10 19.9601 10 19.4V15.6C10 15.0399 10 14.7599 9.89101 14.546C9.79513 14.3578 9.64215 14.2049 9.45399 14.109C9.24008 14 8.96005 14 8.4 14Z"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
+        <div
+          class="p-1 text-white text-base capitalize absolute top-11 bg-btnSecondary rounded layoutText"
+        >
+          Layout
+        </div>
+      </div> -->
             </div>
             <div class="gap-3 flex items-center">
               <button
@@ -478,12 +523,15 @@
               </div>
 
               <button
-                type="button"
-                class="p-1 cursor-pointer iconMainBox rounded-lg hidden md:block"
-              >
+              type="button"
+              onclick="darkModeBtn()"
+              id="darkModeSvg"
+              class="p-1 cursor-pointer iconMainBox rounded-lg hidden md:block"
+            >
+              <div class="w-6 h-6" id="darkMode">
                 <svg
-                  width="24"
-                  height="24"
+                  width="100%"
+                  height="100%"
                   viewBox="0 0 24 24"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -496,7 +544,25 @@
                     stroke-linejoin="round"
                   />
                 </svg>
-              </button>
+              </div>
+              <div class="w-6 h-6" id="lightMode" style="display: none">
+                <svg
+                  width="100%"
+                  height="100%"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12 2V4M12 20V22M4 12H2M6.31412 6.31412L4.8999 4.8999M17.6859 6.31412L19.1001 4.8999M6.31412 17.69L4.8999 19.1042M17.6859 17.69L19.1001 19.1042M22 12H20M17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12Z"
+                    stroke="white"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+            </button>
               <div class="relative">
                 <button
                   type="button"
@@ -533,7 +599,7 @@
                     class="text-base Gilroy-normal hover:bg-[#E9901A] p-1 text-white w-full rounded-lg flex items-center gap-3 justify-between"
                   >
                     <div class="flex items-center gap-3">
-                      <a href="/#">
+                      <a href="#">
                         <img
                           src="./src/images/user_profile10.png"
                           class="w-10 h-10 object-cover rounded-full"
@@ -559,7 +625,7 @@
                     class="text-base Gilroy-normal hover:bg-[#E9901A] p-1 text-white w-full rounded-lg flex items-center gap-3 justify-between"
                   >
                     <div class="flex items-center gap-3">
-                      <a href="/#">
+                      <a href="#">
                         <img
                           src="./src/images/user_profile9.png"
                           class="w-10 h-10 object-cover rounded-full"
@@ -585,7 +651,7 @@
                     class="text-base Gilroy-normal hover:bg-[#E9901A] p-1 text-white w-full rounded-lg flex items-center gap-3 justify-between"
                   >
                     <div class="flex items-center gap-3">
-                      <a href="/#">
+                      <a href="#">
                         <img
                           src="./src/images/user_profile3.png"
                           class="w-10 h-10 object-cover rounded-full"
@@ -611,7 +677,7 @@
                 <button
                   type="button"
                   onclick="countrySelectBtn()"
-                  class="p-1 cursor-pointer iconMainBox rounded-full"
+                  class="p-1 cursor-pointer iconMainBox rounded-full mt-1"
                 >
                   <img
                     src="./src/images/australia.png"
@@ -708,14 +774,9 @@
                 <button
                   type="button"
                   onclick="profileButton()"
+                  id="profileImg"
                   class="p-0 cursor-pointer iconMainBox rounded-full"
-                >
-                  <img
-                    src="src/images/profile-img.png"
-                    alt="Profile"
-                    class="w-8 h-8"
-                  />
-                </button>
+                ></button>
                 <div
                   class="absolute right-0 bg-bgPrimary rounded-lg px-2 py-1 border border-solid border-white w-[219px]"
                   id="profileDropDown"
@@ -886,7 +947,7 @@
                 <p class="md:text-lg text-base Gilroy-normal text-white">
                   Profile photo
                 </p>
-                <div
+                <!-- <div
                   class="flex flex-wrap items-center lg:gap-6 gap-5 border-b border-dashed border-white pb-6"
                 >
                   <img
@@ -912,9 +973,37 @@
                   >
                     Cancel
                   </button>
+                </div> -->
+                <div class="flex md:gap-6 gap-5 flex-wrap items-center">
+                  <div class="w-[120px] h-[120px]" id="file-chosen">
+                    <img
+                      src="./src/images/upload.png"
+                      alt="upload"
+                      class="w-full h-full object-cover"
+                      id="coin-img"
+                    />
+                  </div>
+                  <label
+                    for="input-file"
+                    class="bg-btnSecondary transition-all h-fit px-6 py-3 pt-3.5 text-base text-white Gilroy-normal hover:bg-transparent border border-solid rounded-lg border-[#E9901A] hover:border-white"
+                    >Upload Image</label
+                  >
+                  <input
+                    type="file"
+                    accept="image/jpeg, image/png, image/jpg"
+                    id="input-file"
+                    style="display: none"
+                  />
+                  <button
+                    type="button"
+                    onclick="removeCoinImage()"
+                    class="bg-transparent transition-all h-fit px-6 py-3 pt-3.5 text-base text-white Gilroy-normal hover:bg-[#E9901A] border border-solid rounded-lg border-white hover:border-[#E9901A]"
+                  >
+                    Cancel
+                  </button>
                 </div>
                 <div class="flex flex-wrap md:flex-nowrap gap-5 items-center">
-                  <div class="w-full md:w-[48%] flex flex-col">
+                  <div class="w-full md:w-[48%] flex flex-col relative">
                     <label
                       class="md:text-lg text-base Gilroy-normal text-white sm:mb-4 mb-2 Gilroy-medium"
                     >
@@ -922,10 +1011,19 @@
                     </label>
                     <input
                       type="text"
+                      required
+                      id="firstNameInput"
                       class="px-8 py-3 text-base border border-solid border-white outline-none rounded-xl bg-transparent text-white"
                     />
+                    <p
+                      class="text-red-500 text-sm"
+                      id="firstNameError"
+                      style="display: none"
+                    >
+                      Please enter your first name
+                    </p>
                   </div>
-                  <div class="w-full md:w-[48%] flex flex-col">
+                  <div class="w-full md:w-[48%] flex flex-col relative">
                     <label
                       class="md:text-lg text-base Gilroy-normal text-white sm:mb-4 mb-2 Gilroy-medium"
                     >
@@ -933,11 +1031,20 @@
                     </label>
                     <input
                       type="text"
+                      required
+                      id="lastNameInput"
                       class="px-8 py-3 text-base border border-solid border-white outline-none rounded-xl bg-transparent text-white"
                     />
+                    <p
+                      class="text-red-500 text-sm"
+                      id="lastNameError"
+                      style="display: none"
+                    >
+                      Please enter your last name
+                    </p>
                   </div>
                 </div>
-                <div>
+                <div class="relative">
                   <label
                     class="md:text-lg w-full text-base Gilroy-normal text-white Gilroy-medium"
                   >
@@ -945,10 +1052,19 @@
                   </label>
                   <input
                     type="email"
+                    required
+                    id="emailInput"
                     class="px-8 py-3 mt-2 sm:mt-4 text-base border w-full border-solid border-white outline-none rounded-xl bg-transparent text-white"
                   />
+                  <p
+                    class="text-red-500 text-sm"
+                    id="emailError"
+                    style="display: none"
+                  >
+                    Please enter your email
+                  </p>
                 </div>
-                <div>
+                <div class="relative">
                   <label
                     class="md:text-lg w-full text-base Gilroy-normal text-white Gilroy-medium"
                   >
@@ -959,8 +1075,16 @@
                   <input
                     type="tel"
                     pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+                    id="phoneInput"
                     class="px-8 py-3 mt-2 sm:mt-4 text-base border w-full border-solid border-white outline-none rounded-xl bg-transparent text-white"
                   />
+                  <p
+                    class="text-red-500 text-sm"
+                    id="phoneError"
+                    style="display: none"
+                  >
+                    Please enter your phone number
+                  </p>
                 </div>
                 <div>
                   <label
@@ -969,24 +1093,29 @@
                     Gender
                   </label>
                   <div class="flex items-center lg:gap-6 gap-5 mt-2 sm:mt-4">
-                    <label class="radioButtonContainer text-base text-white"
-                      >Male
-                      <input type="radio" checked="checked" name="radio" />
+                    <label class="radioButtonContainer text-base text-white">
+                      Male
+                      <input
+                        type="radio"
+                        name="radio"
+                        value="Male"
+                        checked="checked"
+                      />
                       <span class="checkmark"></span>
                     </label>
-                    <label class="radioButtonContainer text-base text-white"
-                      >Female
-                      <input type="radio" name="radio" />
+                    <label class="radioButtonContainer text-base text-white">
+                      Female
+                      <input type="radio" name="radio" value="Female" />
                       <span class="checkmark"></span>
                     </label>
-                    <label class="radioButtonContainer text-base text-white"
-                      >Others
-                      <input type="radio" name="radio" />
+                    <label class="radioButtonContainer text-base text-white">
+                      Others
+                      <input type="radio" name="radio" value="Others" />
                       <span class="checkmark"></span>
                     </label>
                   </div>
                 </div>
-                <div>
+                <div class="relative">
                   <label
                     class="md:text-lg w-full text-base Gilroy-normal text-white Gilroy-medium"
                   >
@@ -1001,10 +1130,10 @@
                       <select
                         class="text-base text-white outline-none Gilroy-normal bg-transparent"
                       >
-                        <option value="1">Normal</option>
-                        <option value="2">Heading 1</option>
+                        <option value="normal" class="text-black">Normal</option>
+                        <option value="heading" class="text-black">Heading 1</option>
                       </select>
-                      <div class="px-1.5">
+                      <button type="button" onclick="boldBtn()" class="px-1.5">
                         <svg
                           width="18"
                           height="18"
@@ -1020,8 +1149,8 @@
                             stroke-linejoin="round"
                           />
                         </svg>
-                      </div>
-                      <div class="px-1.5">
+                      </button>
+                      <button type="button" onclick="italicBtn()" class="px-1.5">
                         <svg
                           width="18"
                           height="18"
@@ -1037,8 +1166,8 @@
                             stroke-linejoin="round"
                           />
                         </svg>
-                      </div>
-                      <div class="px-1.5">
+                      </button>
+                      <button type="button" onclick="underlineBtn()" class="px-1.5">
                         <svg
                           width="18"
                           height="18"
@@ -1054,8 +1183,8 @@
                             stroke-linejoin="round"
                           />
                         </svg>
-                      </div>
-                      <div class="px-1.5">
+                      </button>
+                      <!-- <div class="px-1.5">
                         <svg
                           width="18"
                           height="18"
@@ -1071,8 +1200,8 @@
                             stroke-linejoin="round"
                           />
                         </svg>
-                      </div>
-                      <div class="px-1.5">
+                      </div> -->
+                      <button type="button" onclick="alignCenter()" class="px-1.5">
                         <svg
                           width="18"
                           height="18"
@@ -1088,12 +1217,21 @@
                             stroke-linejoin="round"
                           />
                         </svg>
-                      </div>
+                      </button>
                     </div>
                     <textarea
+                      required
+                      id="taglineInput"
                       class="py-3 px-3.5 h-[200px] w-full bg-transparent outline-none text-white"
                     ></textarea>
                   </div>
+                  <p
+                    class="text-red-500 text-sm"
+                    id="taglineError"
+                    style="display: none"
+                  >
+                    Please enter your tagline
+                  </p>
                 </div>
                 <div>
                   <label
@@ -1114,12 +1252,14 @@
                 <div class="gap-5 lg:gap-6 flex flex-wrap items-center pt-4">
                   <button
                     type="button"
+                    onclick="saveChange()"
                     class="px-6 py-3 rounded-xl bg-[#E9901A] text-base text-white hover:text-[#E9901A] border border-solid border-[#E9901A] Gilroy-medium hover:bg-transparent transition-all"
                   >
                     Save Change
                   </button>
                   <button
                     type="button"
+                    onclick="cancelChange()"
                     class="px-6 py-3 rounded-xl bg-transparent hover:bg-[#E9901A] text-base text-white text-[#E9901A] hover:text-white border border-solid border-[#E9901A] Gilroy-medium transition-all"
                   >
                     Cancel
@@ -1139,46 +1279,87 @@
                   </h3>
                 </div>
                 <form class="flex flex-col md:gap-6 gap-5">
-                  <div>
+                  <div class="relative">
                     <label
                       class="md:text-lg w-full text-base Gilroy-normal text-white Gilroy-medium"
                     >
                       Location
                     </label>
                     <select
-                      class="px-6 py-3 mt-4 sm:mt-2 w-full text-base border border-solid border-white outline-none rounded-xl bg-transparent text-white bg-transparent"
+                      id="locationInput"
+                      class="px-6 py-3 mt-4 sm:mt-2 w-full text-base cursor-pointer border border-solid border-white outline-none rounded-xl bg-transparent text-white bg-transparent"
                     >
-                      <option value="option1">Select Country</option>
-                      <option value="option2">Option 2</option>
+                      <option value="Select Country" class="text-gray-500">
+                        Select Country
+                      </option>
+                      <option value="United States" class="text-gray-500">
+                        United States
+                      </option>
+                      <option value="United Kingdom" class="text-gray-500">
+                        United Kingdom
+                      </option>
+                      <option value="Canada" class="text-gray-500">
+                        Canada
+                      </option>
+                      <option value="Australia" class="text-gray-500">
+                        Australia
+                      </option>
+                      <option value="New Zealand" class="text-gray-500">
+                        New Zealand
+                      </option>
+                      <option value="India" class="text-gray-500">India</option>
                     </select>
+                    <p
+                      class="text-red-500 text-sm"
+                      id="locationError"
+                      style="display: none"
+                    >
+                      Please select your location
+                    </p>
                   </div>
                   <div class="flex flex-wrap md:flex-nowrap gap-5 items-center">
-                    <div class="w-full md:w-[48%] flex flex-col">
+                    <div class="w-full md:w-[48%] flex flex-col relative">
                       <label
                         class="md:text-lg text-base Gilroy-normal text-white sm:mb-4 mb-2 Gilroy-medium"
                       >
                         Address 1
                       </label>
                       <input
-                        type="text"
+                        type="address"
+                        id="address1Input"
                         placeholder="Enter Address"
                         class="px-6 py-3 text-base border border-solid border-white outline-none rounded-xl bg-transparent text-white"
                       />
+                      <p
+                        class="text-red-500 text-sm"
+                        id="address1Error"
+                        style="display: none"
+                      >
+                        Please enter your address
+                      </p>
                     </div>
-                    <div class="w-full md:w-[48%] flex flex-col">
+                    <div class="w-full md:w-[48%] flex flex-col relative">
                       <label
                         class="md:text-lg text-base Gilroy-normal text-white sm:mb-4 mb-2 Gilroy-medium"
                       >
                         Address 2
                       </label>
                       <input
-                        type="text"
+                        type="address"
+                        id="address2Input"
                         placeholder="Enter Address"
                         class="px-6 py-3 text-base border border-solid border-white outline-none rounded-xl bg-transparent text-white"
                       />
+                      <p
+                        class="text-red-500 text-sm"
+                        id="address2Error"
+                        style="display: none"
+                      >
+                        Please enter your address
+                      </p>
                     </div>
                   </div>
-                  <div>
+                  <div class="relative">
                     <label
                       class="md:text-lg w-full text-base Gilroy-normal text-white Gilroy-medium"
                     >
@@ -1186,19 +1367,29 @@
                     </label>
                     <input
                       type="number"
+                      id="zipCodeInput"
                       placeholder="Enter Code"
                       class="w-full px-6 py-3 text-base border border-solid border-white outline-none rounded-xl bg-transparent text-white mt-2 sm:mt-4"
                     />
+                    <p
+                      class="text-red-500 text-sm"
+                      id="zipCodeError"
+                      style="display: none"
+                    >
+                      Please enter your zip code
+                    </p>
                   </div>
                   <div class="gap-5 lg:gap-6 flex flex-wrap items-center pt-4">
                     <button
                       type="button"
+                      onclick="addressSaveChange()"
                       class="px-6 py-3 rounded-xl bg-[#E9901A] text-base text-white hover:text-[#E9901A] border border-solid border-[#E9901A] Gilroy-medium hover:bg-transparent transition-all"
                     >
                       Save Change
                     </button>
                     <button
                       type="button"
+                      onclick="addressCancelChange()"
                       class="px-6 py-3 rounded-xl bg-transparent hover:bg-[#E9901A] text-base text-white text-[#E9901A] hover:text-white border border-solid border-[#E9901A] Gilroy-medium transition-all"
                     >
                       Cancel
@@ -1217,27 +1408,45 @@
                   </h3>
                 </div>
                 <form class="flex flex-col md:gap-6 gap-5">
-                  <div>
+                  <div class="relative">
                     <label
                       class="md:text-lg w-full text-base Gilroy-normal text-white Gilroy-medium"
                     >
                       Who can see your profile photo?
                     </label>
                     <select
-                      class="px-6 py-3 mt-4 sm:mt-2 w-full text-base border border-solid border-white outline-none rounded-xl bg-transparent text-white bg-transparent"
+                      id="profilePhotoVisibilityInput"
+                      class="px-6 py-3 mt-4 sm:mt-2 w-full text-base cursor-pointer border border-solid border-white outline-none rounded-xl bg-transparent text-white bg-transparent"
                     >
-                      <option value="option1">Anyone</option>
+                      <option value="Select" class="text-gray-500">
+                        Select
+                      </option>
+                      <option value="Anyone" class="text-gray-500">
+                        Anyone
+                      </option>
+                      <option value="Only me" class="text-gray-500">
+                        Only me
+                      </option>
                     </select>
+                    <p
+                      class="text-red-500 text-sm"
+                      id="profilePhotoVisibilityError"
+                      style="display: none"
+                    >
+                      Please select your profile photo visibility
+                    </p>
                   </div>
                   <div class="gap-5 lg:gap-6 flex flex-wrap items-center pt-4">
                     <button
                       type="button"
+                      onclick="privacySaveChange()"
                       class="px-6 py-3 rounded-xl bg-[#E9901A] text-base text-white hover:text-[#E9901A] border border-solid border-[#E9901A] Gilroy-medium hover:bg-transparent transition-all"
                     >
                       Save Change
                     </button>
                     <button
                       type="button"
+                      onclick="privacyCancelChange()"
                       class="px-6 py-3 rounded-xl bg-transparent hover:bg-[#E9901A] text-base text-white text-[#E9901A] hover:text-white border border-solid border-[#E9901A] Gilroy-medium transition-all"
                     >
                       Cancel
@@ -1246,7 +1455,7 @@
                 </form>
               </div>
               <div
-                class="p-6 md:pt-6 md:pr-[31px] md:pb-[22px] md:pl-[26px] border border-white rounded-[15px] bg-gradient"
+                class="p-6 md:pt-6 md:pr-[31px] md:pb-[22px] md:pl-[26px] border border-white rounded-[15px] bg-gradient relative"
               >
                 <div
                   class="flex border-b border-dashed border-white pb-4 mb-4 items-center gap-3"
@@ -1264,13 +1473,25 @@
                   <label
                     class="radioButtonContainer text-base text-white Gilroy-normal"
                     >Confirm that I want to delete my account.
-                    <input type="checkbox" checked="checked" />
+                    <input
+                      type="checkbox"
+                      checked="checked"
+                      id="deleteAccountInput"
+                    />
                     <span class="radioTickcheckmark"></span>
                   </label>
+                  <p
+                    class="text-red-500 text-sm"
+                    id="deleteAccountError"
+                    style="display: none"
+                  >
+                    Please confirm that you want to delete your account
+                  </p>
                 </div>
                 <div class="gap-5 lg:gap-6 flex flex-wrap items-center pt-4">
                   <button
                     type="button"
+                    onclick="deleteAccount()"
                     class="px-6 py-3 rounded-xl bg-transparent hover:bg-[#E9901A] text-base text-white text-[#E9901A] hover:text-white border border-solid border-[#E9901A] Gilroy-medium transition-all"
                   >
                     Delete
@@ -1373,7 +1594,7 @@
         </div>
         <div class="flex flex-col gap-3">
           <a
-            href="/#"
+            href="#"
             class="border border-solid border-white rounded-lg flex justify-between items-center lg:px-6 px-5 lg:py-4 py-3"
           >
             <div class="flex gap-3 items-center">
@@ -1392,7 +1613,7 @@
             </button>
           </a>
           <a
-            href="/#"
+            href="#"
             class="border border-solid border-white rounded-lg flex justify-between items-center lg:px-6 px-5 lg:py-4 py-3"
           >
             <div class="flex gap-3 items-center">
@@ -1405,7 +1626,7 @@
             </div>
           </a>
           <a
-            href="/#"
+            href="#"
             class="border border-solid border-white rounded-lg flex justify-between items-center lg:px-6 px-5 lg:py-4 py-3"
           >
             <div class="flex gap-3 items-center">
@@ -1418,7 +1639,7 @@
             </div>
           </a>
           <a
-            href="/#"
+            href="#"
             class="border border-solid border-white rounded-lg flex justify-between items-center lg:px-6 px-5 lg:py-4 py-3"
           >
             <div class="flex gap-3 items-center">
@@ -1437,7 +1658,7 @@
             </button>
           </a>
           <a
-            href="/#"
+            href="#"
             class="border border-solid border-white rounded-lg flex justify-between items-center lg:px-6 px-5 lg:py-4 py-3"
           >
             <div class="flex gap-3 items-center">
@@ -1452,7 +1673,7 @@
             </button>
           </a>
           <a
-            href="/#"
+            href="#"
             class="border border-solid border-white rounded-lg flex justify-between items-center lg:px-6 px-5 lg:py-4 py-3"
           >
             <div class="flex gap-3 items-center">
@@ -1469,7 +1690,7 @@
         </div>
         <p class="mt-5 lg:mt-6 text-sm text-white Gilroy-normal">
           By connecting wallet, you agree to Finvista
-          <a href="/#" class="text-[#E9901A] Gilroy-medium">
+          <a href="#" class="text-[#E9901A] Gilroy-medium">
             Terms of Service
           </a>
         </p>
@@ -1505,19 +1726,6 @@
     </div>
 
     <script src="./script.js"></script>
-
-    <script>
-      let profilePhoto = document.getElementById("profile-photo");
-     let uploadFile = document.getElementById("upload-file");
-
-     uploadFile.onchange = function () {
-       profilePhoto.src = URL.createObjectURL(this.files[0]);
-     };
-
-     function removeProfilePhoto() {
-       profilePhoto.src = "./src/images/bit_xxxl.png";
-       uploadFile.value = "";
-     }
-   </script>
+    <script src="./settings.js"></script>
   </body>
 </html>
