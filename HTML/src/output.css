@@ -2703,12 +2703,12 @@ video {
   font-size: 9px;
 }
 
-.text-base {
+.text-sm md:text-baase {
   font-size: 1rem;
   line-height: 1.5rem;
 }
 
-.text-lg {
+.text-sm md:text-baase md:text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
 }
@@ -3325,12 +3325,18 @@ tr td {
   font-size: 18px;
   font-weight: 400;
   text-align: left;
+  @media (max-width:768px) {
+    font-size: 16px;
+  }
 }
 .tableHeader td {
   color: #FFA51F;
   padding: 17px 24px;
   font-size: 20px;
   font-weight: 600;
+  @media (max-width:768px) {
+    font-size: 18px;
+  }
 }
 .tableHeader td:first-child {
   border-top-left-radius: 17.84px;
@@ -3381,6 +3387,9 @@ tr td {
   font-size: 18px;
   color: white;
   font-weight: medium;
+  @media (max-width:768px) {
+    font-size: 16px;
+  }
 }
 .mainTitleText p {
   font-size: 14px;
@@ -3408,6 +3417,9 @@ tr td {
   font-size: 18px;
   color: white;
   white-space: nowrap;
+  @media (max-width:768px) {
+    font-size: 16px;
+  }
 }
 .succesfullStatusBox {
   width: 100%;
@@ -3420,6 +3432,9 @@ tr td {
   text-align: center;
   padding-top: 10px;
   font-weight: medium;
+  @media (max-width:768px) {
+    font-size: 16px;
+  }
 }
 .pendingStatusBox {
   width: 100%;
@@ -3432,6 +3447,9 @@ tr td {
   text-align: center;
   padding-top: 10px;
   font-weight: medium;
+  @media (max-width:768px) {
+    font-size: 16px;
+  }
 }
 .canceledStatusBox {
   width: 100%;
@@ -3444,6 +3462,9 @@ tr td {
   padding-top: 10px;
   color: #ff6161;
   font-weight: medium;
+  @media (max-width:768px) {
+    font-size: 16px;
+  }
 }
 .balanceDetailLastSevenDays {
   font-size: 18px;
@@ -3453,6 +3474,9 @@ tr td {
   gap: 12px;
   align-items: center;
   justify-content: space-between;
+  @media (max-width:768px) {
+    font-size: 16px;
+  }
 }
 
 .resultBarContainer {
@@ -3482,6 +3506,7 @@ tr td {
   z-index: 9999;
   @media (max-width: 768px) {
     padding: 6px 16px;
+    font-size: 16px;
   }
 }
 .balanceDetailTrade:hover {
@@ -3517,11 +3542,17 @@ tr td {
   font-size: 20px;
   color: white;
   font-weight: 500;
+  @media (max-width:768px) {
+    font-size: 18px;
+  }
 }
 .listCardPercentage {
   font-size: 16px;
   color: white;
   font-weight: 400;
+  @media (max-width:768px) {
+    font-size: 14px;
+  }
 }
 .listCardTitleContainer {
   display: flex;
@@ -3561,11 +3592,17 @@ tr td {
   font-size: 16px;
   color: white;
   font-weight: 400;
+  @media (max-width:768px) {
+    font-size: 14px;
+  }
 }
 .listCardValue {
   font-size: 16px;
   color: white;
   font-weight: 400;
+  @media (max-width:768px) {
+    font-size: 14px;
+  }
 }
 .listCardButtonSvg {
   display: flex;
@@ -3603,6 +3640,9 @@ tr td {
   align-items: center;
   font-size: 18px;
   color: white;
+  @media (max-width:768px) {
+    font-size: 16px;
+  }
 }
 .assetContainer img {
   width: 34px;
@@ -3631,6 +3671,9 @@ tr td {
   font-weight: 400;
   text-align: left;
   text-transform: capitalize;
+  @media (max-width:768px) {
+    font-size: 14px;
+  }
 }
 .selectBank {
   font-size: 12px;
@@ -3654,6 +3697,7 @@ tr td {
   flex-wrap: wrap;
   flex-direction: column;
   width: 32%;
+  min-width: 280px;
   height: fit-content;
 }
 .card-header {
@@ -3690,6 +3734,9 @@ tr td {
   color: white;
   font-size: 16px;
   text-align: left;
+  @media (max-width:768px) {
+    font-size: 14px;
+  }
 }
 .checkBoxMainDiv {
   border-top-left-radius: 17.84px;
@@ -3698,6 +3745,9 @@ tr td {
 .chexkBoxLabel {
   font-size: 16px;
   color: white;
+  @media (max-width:768px) {
+    font-size: 14px;
+  }
 }
 
 .checkMarkRadioButtonContainer {
@@ -3807,6 +3857,9 @@ tr td {
   font-size: 16px;
   color: white;
   font-weight: 400;
+  @media (max-width:768px) {
+    font-size: 14px;
+  }
 }
 .mainData td .checkMarkRadioTick {
   top: -6px;
@@ -3815,6 +3868,9 @@ tr td {
   font-size: 16px;
   color: white;
   font-weight: 400;
+  @media (max-width:768px) {
+    font-size: 14px;
+  }
 }
 .mainResultAction {
   display: flex;
@@ -3942,6 +3998,9 @@ tr td {
   cursor: pointer;
   transition: all 0.5s ease;
   padding-top: 10px;
+  @media (max-width:768px) {
+    font-size: 14px;
+  }
 }
 .manageBtn:hover {
   background-color: transparent;
@@ -3982,3 +4041,9 @@ tr td {
   .navBarContainer button {
     min-width:auto !important;
   }
+  .xAxisScroll {
+    overflow-x: auto;
+  }
+  .xAxisScroll::-webkit-scrollbar {
+    display: none;
+}

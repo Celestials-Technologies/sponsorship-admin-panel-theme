@@ -21,7 +21,12 @@ let daysIcon = document.getElementById("daysIcon");
 
 function sideBarControl() {
   if (sideBar.style.left === "24px") {
-    sideBar.style.left = "-40%";
+    // when media query max-with : 768px left is -70%
+    if (window.matchMedia("(max-width: 768px)").matches) {
+      sideBar.style.left = "-70%";
+    } else {
+      sideBar.style.left = "-40%"; 
+    }
     sideData.style.width = "100%";
     sideData.style.transitionDelay = "0.1s";
   } else {
@@ -617,12 +622,11 @@ function provideLiquidityBtn() {
     return false;
   } else {
     liquidityErrorField.style.display = "none";
-    SuccessfulMessage.style.right = "24px";
-    SuccessfulMessage.style.display = "block";
-    setTimeout(function () {
-      SuccessfulMessage.style.display = "none";
-      SuccessfulMessage.style.right = "-50%";
-    }, 5000);
+ window.scrollTo(0, 0);
+    SuccessfulMessage.style.top = "0";
+
+    bodyOverflowModal.style.overflow = "auto";
+   
     liquidityModal.style.top = "-150%";
     liquidityModal.style.opacity = "0";
     bodyOverflowModal.style.overflow = "auto";
@@ -631,12 +635,11 @@ function provideLiquidityBtn() {
   }
 }
 function terminateBtn() {
-  SuccessfulMessage.style.right = "24px";
-  SuccessfulMessage.style.display = "block";
-  setTimeout(function () {
-    SuccessfulMessage.style.display = "none";
-    SuccessfulMessage.style.right = "-50%";
-  }, 5000);
+  window.scrollTo(0, 0);
+  SuccessfulMessage.style.top = "0";
+
+  bodyOverflowModal.style.overflow = "auto";
+
   manageModal.style.top = "-150%";
   manageModal.style.opacity = "0";
   bodyOverflowModal.style.overflow = "auto";
@@ -644,8 +647,8 @@ function terminateBtn() {
 }
 
 function closeModalMessageBtn() {
-  SuccessfulMessage.style.display = "none";
-  SuccessfulMessage.style.right = "-50%";
+  SuccessfulMessage.style.top = "-150%";
+  bodyOverflowModal.style.overflow = "auto";
 }
 function AllCardValidateForm() {
   let cardHolderName = document.getElementById("cardHolderName").value;
@@ -721,7 +724,7 @@ function AllCardValidateForm() {
   localStorage.setItem("addCard", JSON.stringify(storedCards));
 
   // Display success message
-  // SuccessfulMessage.style.display = "block";
+  // bodyOverflowModal.style.overflow = "auto";
   // setTimeout(() => {
   //   SuccessfulMessage.style.display = "none";
   // }, 3000);
@@ -822,7 +825,7 @@ function validateForm() {
   localStorage.setItem("addCard", JSON.stringify(storedCards));
 
   // Display success message
-  SuccessfulMessage.style.display = "block";
+  bodyOverflowModal.style.overflow = "auto";
   setTimeout(() => {
     SuccessfulMessage.style.display = "none";
   }, 3000);
@@ -952,12 +955,11 @@ function depositBtn() {
 
   // Check if a card is selected
   if (storedCardContainer.style.transform === "scale(0.95)") {
-    SuccessfulMessage.style.right = "24px";
-    SuccessfulMessage.style.display = "block";
-    setTimeout(function () {
-      SuccessfulMessage.style.display = "none";
-      SuccessfulMessage.style.right = "-50%";
-    }, 5000);
+ window.scrollTo(0, 0);
+    SuccessfulMessage.style.top = "0";
+
+    bodyOverflowModal.style.overflow = "auto";
+   
     topUpModal.style.top = "-150%";
     topUpModal.style.opacity = "0";
     bodyOverflowModal.style.overflow = "auto";
