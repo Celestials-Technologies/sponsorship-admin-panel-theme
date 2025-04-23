@@ -971,7 +971,6 @@
               </a>
             </div>
           </div>
-
           <div
             class="flex flex-wrap 2xl:flex-nowrap items-center gap-y-5 relative"
             id="blockZindex"
@@ -2382,9 +2381,17 @@
           class="rounded-full w-5 h-5"
         />
       </button>
-      <button type="button" class="p-1 cursor-pointer iconMainBox rounded-lg">
-        <img src="src/images/profile-img.png" alt="Profile" class="w-6 h-6" />
-      </button>
+      <div class="relative  p-1 cursor-pointer iconMainBox rounded-full flex items-center justify-center">
+        <button
+          type="button"
+          onclick="profileButton()"
+          id="profileImg"
+          class="p-0 cursor-pointer iconMainBox rounded-full"
+        >
+          <img src="src/images/profile-img.png" alt="Profile" class="rounded-full w-8 h-8 object-cover" />
+        </button>
+      
+      </div>
     </div>
     <div
       class="w-full h-screen absolute text-white z-[99999] bg-bgPrimary flex justify-center items-center py-6"
@@ -2839,7 +2846,7 @@ class="bg-sideBarBg border border-[#e5e5e585] py-1.5 pl-5 pr-2 gap-4 rounded-ful
         >
           <div
             id="selectedCoin"
-            class="selectedBtn p-4 flex gap-3 justify-between hover:bg-[#E9901A] rounded-lg addMoreSelectButton"
+            class="selectedBtn p-0 md:p-4 flex gap-3 justify-between hover:bg-[#E9901A] rounded-lg addMoreSelectButton"
           >
             <div class="flex gap-3 items-center">
               <img

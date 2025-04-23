@@ -18,58 +18,55 @@
     >
       <div class="w-full h-screen">
           <div class="flex items-center h-full md:justify-normal justify-center overflow-hidden">
-            <div class="bg-sideBarBg md:w-1/2 hidden min-h-screen md:flex items-center justify-center">
-                <img src="./src/images/login.png" alt="login"/>
-            </div>
-            <div class="md:w-1/2">
-              <div class="p-6 w-full max-w-[650px] mx-auto">
-                <h1 class="text-[32px] text-white leading-normal Gilroy-semibold">
-                  Welcome Back!
-                </h1>
-                <p class="text-sm md:text-base Gilroy-normal text-white mt-4">
-                  Sign in to your account and join us
-                </p>
-                <form class="mt-8 lg:mt-10">
-                  <div class="flex flex-col gap-6">
-                    <div class="relative">
-                      <label class="text-[18px] Gilroy-medium text-white">
-                        Enter Your Email ID
-                      </label>
-                      <input type="email" id="emailInput" class="w-full border border-solid border-[#e5e5e585] rounded-xl text-white text-sm md:text-base bg-transparent outline-none px-6 py-3 Gilroy-normal mt-2 md:mt-4" placeholder="Enter your Email"/>
-                      <p id="emailError" style="display: none;" class="text-[#FF2B28] absolute text-sm">Please Enter Your Email.</p>
-                    </div>
-                    <div class="relative">
-                      <label class="text-[18px] Gilroy-medium text-white">
-                        Enter Your Password
-                      </label>
-                      <div class="relative w-full border border-solid border-[#e5e5e585] rounded-xl text-white text-sm md:text-base bg-transparent outline-none px-6 py-3 Gilroy-normal mt-2 md:mt-4">
-                        <input type="password" id="passwordInput" class="w-[80%] bg-transparent h-full outline-none" placeholder="Enter your Password"/>
-                        <button type="button" onclick="showPasswordBtn()" class="absolute right-6 top-2.5 cursor-pointer">
-                          <div id="eyeBorder" class="border-t border-solid border-[#e5e5e585] rotate-[29deg] relative top-3"></div>
-                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-6 h-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                          </svg>                      
-                        </button>
-                      </div>
-                      <p id="passwordError" style="display: none;" class="text-[#FF2B28] absolute text-sm">Please Enter Your Password.</p>
-                    </div>
-                    <a href="./forgotPassword.html" class="text-[#FFA51F] text-sm md:text-base Gilroy-semibold text-right">Forgot Password</a>
+
+            <div class="p-6 w-full max-w-[480px] bg-gradient border border-[#e5e5e585] mx-auto rounded-[15.97px] h-[90%] max-h-[579px] yAxisScroll">
+              <h1 class="text-2xl lg:text-[32px] text-white leading-normal Gilroy-semibold">
+                Welcome Back!
+              </h1>
+              <p class="text-sm md:text-base Gilroy-normal text-white mt-4">
+                Sign in to your account and join us
+              </p>
+              <form class="mt-8 lg:mt-10">
+                <div class="flex flex-col gap-6">
+                  <div class="relative">
+                    <label class="text-[18px] Gilroy-medium text-white">
+                      Enter Your Email ID
+                    </label>
+                    <input type="email" id="emailInput" class="w-full border border-solid border-[#e5e5e585] rounded-xl text-black text-sm md:text-base bg-transparent outline-none px-[13px] py-3 pt-4 h-11 Gilroy-normal mt-1 bg-white placeholder-[#D0D0D0]" placeholder="Enter your Email"/>
+                    <p id="emailError" style="display: none;" class="text-[#FF2B28] absolute text-sm">Please Enter Your Email.</p>
                   </div>
-                  <p class="text-sm md:text-base text-white Gilroy-normal">Don’t have an account? <a href="./signup.html" class="text-[#FFA51F] Gilroy-semibold"> Signup</a></p>
-                  <div class="flex gap-5 lg:mt-8 mt-6">
-                    <button type="button" onclick="loginBtn()" class="bg-btnSecondary hover:bg-transparent border border-solid border-[#E9901A] py-2 pt-2.5 px-[18px] md:px-8 md:py-4 md:pt-[18px] text-sm md:text-base text-white hover:text-[#FFA51F] rounded-lg flex items-center justify-center Gilroy-semibold">
-                      Login
-                    </button>
-                    <button onclick="history.back()" type="button" class="bg-transparent hover:bg-[#E9901A] border border-solid border-[#E9901A] py-2 pt-2.5 px-[18px] md:px-8 md:py-4 md:pt-[18px] text-sm md:text-base text-[#FFA51F] hover:text-white rounded-lg flex items-center justify-center Gilroy-semibold">
-                     
-                        Back Home
-                      
-                    </button>
+                  <div class="relative">
+                    <label class="text-[18px] Gilroy-medium text-white">
+                      Enter Your Password
+                    </label>
+                    <div class="relative w-full border border-solid border-[#e5e5e585] rounded-xl text-black text-sm md:text-base bg-transparent outline-none h-11 Gilroy-normal mt-1 bg-white ">
+                      <input type="password" id="passwordInput" class="w-[80%] bg-transparent h-full outline-none px-[13px] py-3 pt-4 placeholder-[#D0D0D0]" placeholder="Enter your Password"/>
+                      <button type="button" onclick="showPasswordBtn()" class="absolute right-6 top-2.5 cursor-pointer">
+                        <div id="eyeBorder" class="border-t border-solid border-[#191153] rotate-[29deg] relative top-3"></div>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="rgba(25, 17, 83, 1)" class="w-6 h-6">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                        </svg>                      
+                      </button>
+                      <p id="passwordError" style="display: none;" class="text-[#FF2B28] absolute text-sm ">Please Enter Your Password.</p>
+                    </div>
                   </div>
-                </form>
-              </div>
+                  <a href="./forgotPassword.html" class="text-[#FFA51F] text-sm md:text-base Gilroy-semibold text-right">Forgot Password</a>
+                </div>
+                <p class="text-sm md:text-base text-white Gilroy-normal">Don’t have an account? <a href="./signup.html" class="text-[#FFA51F] Gilroy-semibold"> Signup</a></p>
+                <div class="flex gap-5 lg:mt-8 mt-6">
+                  <button type="button" onclick="loginBtn()" class="bg-btnSecondary hover:bg-transparent border border-solid border-[#E9901A] py-2 pt-2.5 px-[18px] md:px-8 md:py-4 md:pt-[18px] text-sm md:text-base text-white hover:text-[#FFA51F] rounded-lg flex items-center justify-center Gilroy-semibold">
+                    Login
+                  </button>
+                  <button onclick="history.back()" type="button" class="bg-transparent hover:bg-[#E9901A] border border-solid border-[#E9901A] py-2 pt-2.5 px-[18px] md:px-8 md:py-4 md:pt-[18px] text-sm md:text-base text-[#FFA51F] hover:text-white rounded-lg flex items-center justify-center Gilroy-semibold">
+                    
+                      Back Home
+                    
+                  </button>
+                </div>
+              </form>
             </div>
+
           </div>
       </div>
     </div>

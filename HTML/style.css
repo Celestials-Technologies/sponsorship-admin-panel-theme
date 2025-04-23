@@ -237,6 +237,10 @@
   display: inline-block;
   width: 60px;
   height: 32px;
+  @media (max-width:768px) {
+    width: 50px;
+    height: 24px;
+  }
 }
 
 .switch input { 
@@ -267,6 +271,15 @@
   background-color: white;
   -webkit-transition: .4s;
   transition: .4s;
+}
+
+@media screen and (max-width:768px) {
+  .slider:before {
+    height: 14px;
+    width: 14px;
+    left: 5px;
+    bottom: 5px;
+  }
 }
 
 input:checked + .slider {
