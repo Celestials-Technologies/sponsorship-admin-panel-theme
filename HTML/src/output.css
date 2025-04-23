@@ -2703,12 +2703,12 @@ video {
   font-size: 9px;
 }
 
-.text-sm md:text-baase {
+.text-sm md:text-base {
   font-size: 1rem;
   line-height: 1.5rem;
 }
 
-.text-sm md:text-baase md:text-lg {
+.text-base md:text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
 }
