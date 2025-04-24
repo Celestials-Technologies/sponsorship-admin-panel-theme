@@ -80,5 +80,13 @@ document.addEventListener("DOMContentLoaded", () => {
     bodyOverflowModal.style.overflow = "auto";
     bodyScreenData.style.opacity = "1";
   }
+  let newCardModal = document.getElementById("newCardModal");
+document.getElementById("closeNewCardBtn").addEventListener("click", closeNewCardBtn);
+function closeNewCardBtn() {
+  if (newCardModal && newCardModal.style.top === "0%") {
+    newCardModal.style.top = "-150%";
+    bodyOverflowModal.style.overflow = "auto";
+    bodyScreenData.style.opacity = "1";
+  }
+}
 });
-

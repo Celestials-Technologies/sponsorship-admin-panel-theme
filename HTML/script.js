@@ -4,6 +4,7 @@ let profileDropDown = document.getElementById("profileDropDown");
 let buttonHeader = document.getElementById("buttonHeader");
 let countrySelect = document.getElementById("countrySelect");
 let countrySelected = document.getElementById("mainImg");
+let countrySelectedMobile = document.getElementById("mainImgMobile")
 let bellDropDown = document.getElementById("bellDropDown");
 let connectModal = document.getElementById("connectModal");
 let bodyOverflowModal = document.getElementById("bodyOverflowModal");
@@ -18,6 +19,9 @@ let addSelectToken = document.getElementById("addSelectToken");
 let daysSelect = document.getElementById("daysSelect");
 let selectedDays = document.getElementById("mainText");
 let daysIcon = document.getElementById("daysIcon");
+let bellMobileDropdown = document.getElementById("bellMobileDropdown")
+let countrySelectMobile = document.getElementById("countrySelectMobile")
+let profileDropdownMobile = document.getElementById("profileDropdownMobile")
 
 function sideBarControl() {
   if (sideBar.style.left === "24px") {
@@ -46,6 +50,9 @@ function closeDropDowns() {
   bellDropDown.style.opacity = "0";
   bellDropDown.style.marginTop = "50px";
   bellDropDown.style.zIndex = "0";
+  bellMobileDropdown.style.display = "none";
+  countrySelectMobile.style.display = "none";
+  profileDropdownMobile.style.display = "none"
   buttonHeader.style.zIndex = "9999";
   blockZindex.style.zIndex = "9999";
   document.querySelectorAll("#daysSelect").forEach((dropdown) => {
@@ -91,6 +98,33 @@ if (localStorage.getItem("loginSuccess") === "true" && currentUser) {
   profileImg.src = "src/images/profile-img.png";
   profileImg.style.width = "32px";
   profileImg.style.height = "32px";
+}
+
+const profileImgMobile = document.getElementById("profileImgMobile");
+
+if (localStorage.getItem("loginSuccess") === "true" && currentUser) {
+  // Clear existing content
+  profileImgMobile.innerHTML = "";
+  profileImgMobile.textContent = currentUser.firstName[0].toUpperCase();
+  profileImgMobile.style.width = "32px";
+  profileImgMobile.style.height = "32px";
+  profileImgMobile.style.display = "flex";
+  profileImgMobile.style.justifyContent = "center";
+  profileImgMobile.style.alignItems = "center";
+  profileImgMobile.style.color = "white";
+} else {
+  // Clear existing content
+  profileImgMobile.innerHTML = "";
+  // create img element IN PROFILE IMG BUTTON
+  const profileImgMobileSvg = document.createElement("img");
+  profileImgMobileSvg.src = "src/images/profile-img.png";
+  profileImgMobileSvg.alt = "Profile Image";
+  profileImgMobileSvg.style.width = "32px";
+  profileImgMobileSvg.style.height = "32px";
+  profileImgMobileSvg.style.display = "block";
+  profileImgMobile.appendChild(profileImgMobileSvg);
+  profileImgMobile.style.width = "32px";
+  profileImgMobile.style.height = "32px";
 }
 
 // Update button text based on login state
@@ -140,6 +174,20 @@ function profileButton() {
   blockZindex.style.zIndex = "auto";
 }
 
+function profileButtonMobile() {
+  if (
+    profileDropdownMobile.style.display === "none" &&
+    localStorage.getItem("loginSuccess") === "true"
+  ) {
+    profileDropdownMobile.style.display = "block";
+    countrySelectMobile.style.display = "none";
+    bellMobileDropdown.style.display = "none";
+  } else {
+    closeDropDowns();
+  }
+  blockZindex.style.zIndex = "auto";
+}
+
 function bellButton() {
   if (
     bellDropDown.style.opacity === "0" &&
@@ -159,6 +207,21 @@ function bellButton() {
   blockZindex.style.zIndex = "auto";
 }
 
+function bellButtonMobile() {
+  if (
+    bellMobileDropdown.style.display === "none"
+  ) {
+    bellMobileDropdown.style.display = "block";
+    bellMobileDropdown.style.zIndex = "90";
+    countrySelectMobile.style.display = "none";
+    profileDropdownMobile.style.display = "none";
+  } else {
+    closeDropDowns();
+  }
+  blockZindex.style.zIndex = "auto";
+}
+
+
 function countrySelectBtn() {
   if (
     countrySelect.style.opacity === "0" &&
@@ -172,6 +235,19 @@ function countrySelectBtn() {
     blockZindex.style.zIndex = "auto";
     profileDropDown.style.opacity = "0";
     bellDropDown.style.opacity = "0";
+  } else {
+    closeDropDowns();
+  }
+  blockZindex.style.zIndex = "auto";
+}
+
+function countrySelectBtnMobile() {
+  if (
+    countrySelectMobile.style.display === "none"
+  ) {
+    countrySelectMobile.style.display = "block";
+    profileDropdownMobile.style.display = "none";
+    bellMobileDropdown.style.display === "none"
   } else {
     closeDropDowns();
   }
@@ -359,9 +435,14 @@ document.addEventListener("click", function (event) {
   }
 });
 
-function changeMainImage(newSrc) {
+function changeMainImage( newSrc) {
   countrySelected.src = newSrc;
-  countrySelectBtn();
+  countrySelectedMobile.src = newSrc;
+ 
+    countrySelectBtn();
+ 
+    countrySelectBtnMobile();
+  
 }
 
 function connectBtn() {
