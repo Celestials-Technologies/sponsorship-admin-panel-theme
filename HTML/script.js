@@ -82,77 +82,90 @@ function closeDropDowns() {
 }
 
 const profileImg = document.getElementById("profileImg");
-const currentUser = JSON.parse(localStorage.getItem("currentUser"));
-
-if (localStorage.getItem("loginSuccess") === "true" && currentUser) {
-  profileImg.textContent = currentUser.firstName[0].toUpperCase();
-  profileImg.style.width = "32px";
-  profileImg.style.height = "32px";
-  profileImg.style.display = "flex";
-  profileImg.style.justifyContent = "center";
-  profileImg.style.alignItems = "center";
-  profileImg.style.color = "white";
-} else {
-  // create img element IN PROFILE IMG BUTTON
-  profileImg = document.createElement("img");
-  profileImg.src = "src/images/profile-img.png";
-  profileImg.style.width = "32px";
-  profileImg.style.height = "32px";
-}
-
 const profileImgMobile = document.getElementById("profileImgMobile");
 
-if (localStorage.getItem("loginSuccess") === "true" && currentUser) {
-  // Clear existing content
+let currentUser = JSON.parse(localStorage.getItem("currentUser"));
+const isLoggedIn = localStorage.getItem("loginSuccess") === "true";
+
+function updateProfileImages() {
+
+  profileImg.innerHTML = "";
   profileImgMobile.innerHTML = "";
-  profileImgMobile.textContent = currentUser.firstName[0].toUpperCase();
-  profileImgMobile.style.width = "32px";
-  profileImgMobile.style.height = "32px";
-  profileImgMobile.style.display = "flex";
-  profileImgMobile.style.justifyContent = "center";
-  profileImgMobile.style.alignItems = "center";
-  profileImgMobile.style.color = "white";
-} else {
-  // Clear existing content
-  profileImgMobile.innerHTML = "";
-  // create img element IN PROFILE IMG BUTTON
-  const profileImgMobileSvg = document.createElement("img");
-  profileImgMobileSvg.src = "src/images/profile-img.png";
-  profileImgMobileSvg.alt = "Profile Image";
-  profileImgMobileSvg.style.width = "32px";
-  profileImgMobileSvg.style.height = "32px";
-  profileImgMobileSvg.style.display = "block";
-  profileImgMobile.appendChild(profileImgMobileSvg);
-  profileImgMobile.style.width = "32px";
-  profileImgMobile.style.height = "32px";
+
+  if (isLoggedIn && currentUser) {
+    const firstInitial = currentUser.firstName[0].toUpperCase();
+
+    profileImg.textContent = firstInitial;
+    profileImg.style.width = "32px";
+    profileImg.style.height = "32px";
+    profileImg.style.display = "flex";
+    profileImg.style.justifyContent = "center";
+    profileImg.style.alignItems = "center";
+    profileImg.style.color = "white";
+   
+    profileImgMobile.textContent = firstInitial;
+    profileImgMobile.style.width = "32px";
+    profileImgMobile.style.height = "32px";
+    profileImgMobile.style.display = "flex";
+    profileImgMobile.style.justifyContent = "center";
+    profileImgMobile.style.alignItems = "center";
+    profileImgMobile.style.color = "white";
+  } else {
+    const imgDesktop = document.createElement("img");
+    imgDesktop.src = "src/images/profile-img.png";
+    imgDesktop.alt = "Profile";
+    imgDesktop.style.width = "32px";
+    imgDesktop.style.height = "32px";
+    imgDesktop.style.display = "block";
+    profileImg.appendChild(imgDesktop);
+
+    const imgMobile = document.createElement("img");
+    imgMobile.src = "src/images/profile-img.png";
+    imgMobile.alt = "Profile";
+    imgMobile.style.width = "32px";
+    imgMobile.style.height = "32px";
+    imgMobile.style.display = "block";
+    profileImgMobile.appendChild(imgMobile);
+  }
 }
 
-// Update button text based on login state
-const logout = document.getElementById("logout");
-const login = document.getElementById("login");
-const accountLogin = document.getElementById("accountLogin");
-const accountSignUp = document.getElementById("accountSignUp");
-if (localStorage.getItem("loginSuccess") === "true") {
-  logout.style.display = "block";
-  login.style.display = "none";
-  accountLogin.style.display = "none";
-  accountSignUp.style.display = "none";
-} else {
-  logout.style.display = "none";
-  login.style.display = "block";
-  accountLogin.style.display = "block";
-  accountSignUp.style.display = "block";
+function updateNavButtons() {
+  const logout = document.getElementById("logout");
+  const login = document.getElementById("login");
+  const accountLogin = document.getElementById("accountLogin");
+  const accountSignUp = document.getElementById("accountSignUp");
+
+  if (isLoggedIn) {
+    logout.style.display = "block";
+    login.style.display = "none";
+    accountLogin.style.display = "none";
+    accountSignUp.style.display = "none";
+  } else {
+    logout.style.display = "none";
+    login.style.display = "block";
+    accountLogin.style.display = "block";
+    accountSignUp.style.display = "block";
+  }
 }
 
+// Logout function
 function logoutBtn() {
   localStorage.removeItem("loginSuccess");
   localStorage.removeItem("currentUser");
-  window.location.reload();
+  currentUser = null;
+  
+  updateProfileImages();
+  updateNavButtons();
 }
 
+// Login redirect
 function loginBtn() {
   window.location.href = "login.html";
 }
+
+// Initialize on page load
+updateProfileImages();
+updateNavButtons();
 
 function profileButton() {
   if (

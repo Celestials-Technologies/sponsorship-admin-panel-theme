@@ -42,6 +42,9 @@ function loginBtn() {
   
     emailError.textContent = "Email not found";
     emailError.style.display = "block";
+    localStorage.setItem("loginSuccess", "false");
+    localStorage.removeItem("currentUser");
+    currentUser = null;
   }
 }
 
