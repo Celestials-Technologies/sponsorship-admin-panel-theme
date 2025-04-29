@@ -26,7 +26,7 @@
       >
         <div
           style="transition: all 0.5s ease"
-          class="w-full rounded-[20px] pt-5 lg:pt-[46px] pb-5 flex-col justify-between bg-sideBarBg border border-[#fff3] siderBarMobile h-[67vh] lg:h-[92vh] sticky top-6 tableScroll overflow-y-auto"
+          class="w-full rounded-[20px] pt-5 lg:pt-[46px] pb-5 flex-col justify-between bg-sideBarBg border border-[#fff3] yAxisScroll siderBarMobile h-[67vh] lg:h-[92vh] sticky top-6 tableScroll overflow-y-auto"
         >
           <div class="px-2.5">
             <h1 class="text-[28px] leading-8 text-center Gilroy-extrabold">
@@ -2312,7 +2312,7 @@
         <div
           class="absolute right-0 bg-bgPrimary rounded-lg px-2 py-1 border border-solid border-[#e5e5e585] w-[206px] max-h-[206px] yAxisScroll"
           id="bellMobileDropdown"
-          style="display: none; bottom: 122%; left: -45px"
+          style="opacity: 0; bottom: -220px; left: -45px; transition: all 0.5s ease;"
         >
           <div
             class="text-sm md:text-base Gilroy-normal hover:bg-[#E9901A] p-1 text-white w-full rounded-lg flex items-center gap-3 justify-between"
@@ -2408,7 +2408,7 @@
         <div
           class="absolute right-0 bg-bgPrimary rounded-lg px-2 py-1 border border-solid border-[#e5e5e585] w-[124px] max-h-[206px] yAxisScroll"
           id="countrySelectMobile"
-          style="display: none; bottom: 122%; left: -45px"
+          style="opacity:0; bottom: -220px; left: -45px ; transition: all 0.5s ease;"
         >
           <button
             type="button"
@@ -2494,7 +2494,7 @@
         <div
           class="absolute right-0 bg-bgPrimary rounded-lg px-2 py-1 border border-solid border-[#e5e5e585] w-[206px] max-h-[206px] yAxisScroll"
           id="profileDropdownMobile"
-          style="display: none; bottom: 138%"
+          style="opacity: 0; bottom: -220px; transition: all 0.5s ease;"
         >
           <a
             href="#"

@@ -50,9 +50,12 @@ function closeDropDowns() {
   bellDropDown.style.opacity = "0";
   bellDropDown.style.marginTop = "50px";
   bellDropDown.style.zIndex = "0";
-  bellMobileDropdown.style.display = "none";
-  countrySelectMobile.style.display = "none";
-  profileDropdownMobile.style.display = "none"
+  bellMobileDropdown.style.opacity = "0";
+  bellMobileDropdown.style.bottom = "-220px"
+  countrySelectMobile.style.opacity = "0";
+  countrySelectMobile.style.bottom = "-220px";
+  profileDropdownMobile.style.opacity = "0";
+  profileDropdownMobile.style.bottom = "-220px";
   buttonHeader.style.zIndex = "9999";
   blockZindex.style.zIndex = "9999";
   document.querySelectorAll("#daysSelect").forEach((dropdown) => {
@@ -189,12 +192,16 @@ function profileButton() {
 
 function profileButtonMobile() {
   if (
-    profileDropdownMobile.style.display === "none" &&
+    profileDropdownMobile.style.opacity === "0" &&
+    profileDropdownMobile.style.bottom === "-220px" &&
     localStorage.getItem("loginSuccess") === "true"
   ) {
-    profileDropdownMobile.style.display = "block";
-    countrySelectMobile.style.display = "none";
-    bellMobileDropdown.style.display = "none";
+    profileDropdownMobile.style.opacity = "1";
+    profileDropdownMobile.style.bottom = "138%";
+    countrySelectMobile.style.opacity = "0";
+     countrySelectMobile.style.bottom = "-220px"
+    bellMobileDropdown.style.opacity = "0";
+    bellMobileDropdown.style.bottom = "-220px"
   } else {
     closeDropDowns();
   }
@@ -222,12 +229,16 @@ function bellButton() {
 
 function bellButtonMobile() {
   if (
-    bellMobileDropdown.style.display === "none"
+    bellMobileDropdown.style.opacity === "0" &&
+    bellMobileDropdown.style.bottom === "-220px"
   ) {
-    bellMobileDropdown.style.display = "block";
+    bellMobileDropdown.style.opacity = "1";
+    bellMobileDropdown.style.bottom = "122%"
     bellMobileDropdown.style.zIndex = "90";
-    countrySelectMobile.style.display = "none";
-    profileDropdownMobile.style.display = "none";
+    countrySelectMobile.style.opacity = "0";
+    countrySelectMobile.style.bottom = "-220px"
+    profileDropdownMobile.style.opacity = "0";
+    profileDropdownMobile.style.bottom = "-220px";
   } else {
     closeDropDowns();
   }
@@ -256,11 +267,15 @@ function countrySelectBtn() {
 
 function countrySelectBtnMobile() {
   if (
-    countrySelectMobile.style.display === "none"
+    countrySelectMobile.style.opacity === "0" &&
+    countrySelectMobile.style.bottom === "-220px"
   ) {
-    countrySelectMobile.style.display = "block";
-    profileDropdownMobile.style.display = "none";
-    bellMobileDropdown.style.display === "none"
+    countrySelectMobile.style.opacity = "1";
+    countrySelectMobile.style.bottom = "138%";
+    profileDropdownMobile.style.opacity = "0";
+    profileDropdownMobile.style.bottom = "-220px";
+    bellMobileDropdown.style.opacity = "0";
+    bellMobileDropdown.style.bottom = "-220px"
   } else {
     closeDropDowns();
   }

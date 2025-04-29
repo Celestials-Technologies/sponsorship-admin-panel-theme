@@ -4046,7 +4046,7 @@ tr td {
   .siderBarMobile {
     display: flex;
    @media (max-width:1024px) {
-    backdrop-filter: blur(6px);
+    backdrop-filter: blur(80px);
    }
   }
   .siderBarMainContainer {
