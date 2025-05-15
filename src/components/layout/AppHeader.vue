@@ -1,11 +1,5 @@
 <template>
-  <div
-    class="fixed top-[25px] right-6 transition-all duration-300"
-    :class="{
-      'left-[308px]': props.isSidebarVisible,
-      'left-6': !props.isSidebarVisible,
-    }"
-  >
+  <div class="transition-all duration-300 relative z-[99999]">
     <div
       class="w-full py-[9px] md:pr-[18px] md:px-[33px] rounded-[15px] flex justify-between items-center gap-2.5 bg-sideBarBg border border-translucentWhite px-3 backdrop-blur-sm relative"
     >
@@ -35,7 +29,7 @@
             <input
               type="text"
               placeholder="Search"
-              class="text-base bg-transparent leading-6 text-white outline-none Gilroy-medium"
+              class="text-base bg-transparent leading-6 text-white outline-none Gilroy-medium max-w-[195px]"
             />
             <div
               class="p-1 flex items-center justify-center bg-white cursor-pointer w-fit rounded-full searchIconBox"
@@ -53,34 +47,6 @@
                   d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
                 />
               </svg>
-            </div>
-          </div>
-          <div class="relative layoutContainer">
-            <div
-              class="relative p-1 bg-white rounded-lg layerIconBox cursor-pointer w-fit flex items-center"
-            >
-              <svg
-                width="100%"
-                height="100%"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                class="w-7 h-7 layerIcon"
-              >
-                <path
-                  d="M8.4 3H4.6C4.03995 3 3.75992 3 3.54601 3.10899C3.35785 3.20487 3.20487 3.35785 3.10899 3.54601C3 3.75992 3 4.03995 3 4.6V8.4C3 8.96005 3 9.24008 3.10899 9.45399C3.20487 9.64215 3.35785 9.79513 3.54601 9.89101C3.75992 10 4.03995 10 4.6 10H8.4C8.96005 10 9.24008 10 9.45399 9.89101C9.64215 9.79513 9.79513 9.64215 9.89101 9.45399C10 9.24008 10 8.96005 10 8.4V4.6C10 4.03995 10 3.75992 9.89101 3.54601C9.79513 3.35785 9.64215 3.20487 9.45399 3.10899C9.24008 3 8.96005 3 8.4 3Z"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <!-- Other paths from the layout icon -->
-              </svg>
-            </div>
-            <div
-              class="p-1 text-white text-base capitalize absolute top-11 bg-btnSecondary rounded layoutText"
-            >
-              Layout
             </div>
           </div>
         </div>
@@ -143,7 +109,8 @@
           </button>
 
           <!-- Notification -->
-          <div class="relative hidden md:block">
+
+          <div class="relative hidden md:block" ref="notificationsRef">
             <button
               type="button"
               @click="toggleNotifications"
@@ -170,6 +137,7 @@
               v-show="showNotifications"
               class="absolute right-0 bg-bgPrimary rounded-lg px-2 py-1 border border-solid border-white w-[300px]"
               style="margin-top: 10px"
+              ref="notificationsRef"
             >
               <div
                 v-for="notification in notifications"
@@ -207,7 +175,7 @@
           </div>
 
           <!-- Country selector -->
-          <div class="relative hidden md:block">
+          <div class="relative hidden md:block" ref="countrySelectRef">
             <button
               type="button"
               @click="toggleCountrySelect"
@@ -215,15 +183,17 @@
             >
               <img
                 :src="selectedCountry.flag"
-                alt="nation"
+                :alt="selectedCountry.name"
                 class="rounded-full w-5 h-5"
               />
             </button>
             <!-- Country dropdown -->
+
             <div
               v-show="showCountrySelect"
               class="absolute right-0 bg-bgPrimary rounded-lg px-2 py-1 border border-solid border-white w-[130px]"
               style="margin-top: 10px"
+              ref="countrySelectRef"
             >
               <button
                 v-for="country in countries"
@@ -245,24 +215,25 @@
           </div>
 
           <!-- Profile -->
-          <div class="relative hidden md:block">
+
+          <div class="hidden md:block" ref="profileRef">
             <button
               type="button"
               @click="toggleProfile"
-              class="p-0 cursor-pointer iconMainBox rounded-full"
+              class="p-0 cursor-pointer iconMainBox rounded-full w-[30px] h-[30px] relative top-[2px]"
             >
-              Image
-              <!-- <img
-                src="@/../../../../HTML/src/image/profile-img.png"
+              <img
+                src="@/assets/images/profile-img.png"
                 alt="Profile"
-                class="w-8 h-8"
-              /> -->
+                class="w-full h-full"
+              />
             </button>
             <!-- Profile dropdown -->
             <div
               v-show="showProfile"
               class="absolute right-0 bg-bgPrimary rounded-lg px-2 py-1 border border-solid border-white w-[219px]"
               style="margin-top: 10px"
+              ref="profileRef"
             >
               <a
                 v-for="item in profileMenu"
@@ -288,7 +259,21 @@ export default {
 </script>
 
 <script setup lang="ts">
-import { ref, defineComponent, defineProps, defineEmits } from "vue";
+import {
+  ref,
+  defineComponent,
+  defineProps,
+  defineEmits,
+  onMounted,
+  onUnmounted,
+} from "vue";
+import australiaFlag from "@/assets/images/australia.png";
+import italyFlag from "@/assets/images/italy.png";
+import franceFlag from "@/assets/images/france.png";
+import brazilFlag from "@/assets/images/brazil.png";
+import canadaFlag from "@/assets/images/canada.png";
+import chinaFlag from "@/assets/images/china.png";
+import { useClickOutside } from "@/composables/useClickOutside";
 
 interface Props {
   isSidebarVisible: boolean;
@@ -350,12 +335,12 @@ const notifications = ref<Notification[]>([
 ]);
 
 const countries = ref<Country[]>([
-  { name: "Australia", flag: "/src/assets/images/australia.png" },
-  { name: "Italy", flag: "/src/assets/images/italy.png" },
-  { name: "France", flag: "/src/assets/images/france.png" },
-  { name: "Brazil", flag: "/src/assets/images/brazil.png" },
-  { name: "Canada", flag: "/src/assets/images/canada.png" },
-  { name: "China", flag: "/src/assets/images/china.png" },
+  { name: "Australia", flag: australiaFlag },
+  { name: "Italy", flag: italyFlag },
+  { name: "France", flag: franceFlag },
+  { name: "Brazil", flag: brazilFlag },
+  { name: "Canada", flag: canadaFlag },
+  { name: "China", flag: chinaFlag },
 ]);
 
 const selectedCountry = ref<Country>(countries.value[0]);
@@ -448,14 +433,38 @@ const selectCountry = (country: Country) => {
 const connectWallet = () => {
   // Implement wallet connection
 };
+
+// Add refs for dropdown containers
+const notificationsRef = ref<HTMLElement | null>(null);
+const countrySelectRef = ref<HTMLElement | null>(null);
+const profileRef = ref<HTMLElement | null>(null);
+
+// Replace the handleClickOutside implementation with these:
+useClickOutside(notificationsRef, () => {
+  if (showNotifications.value) {
+    showNotifications.value = false;
+  }
+});
+
+useClickOutside(countrySelectRef, () => {
+  if (showCountrySelect.value) {
+    showCountrySelect.value = false;
+  }
+});
+
+useClickOutside(profileRef, () => {
+  if (showProfile.value) {
+    showProfile.value = false;
+  }
+});
 </script>
 
 <style scoped>
-.iconMainBox {
+/* .iconMainBox {
   @apply border border-solid border-white hover:border-[#E9901A] transition-all duration-[0.5s];
 }
 
 .iconMainBox svg {
   @apply text-white hover:text-[#E9901A] transition-all duration-[0.5s];
-}
+} */
 </style>

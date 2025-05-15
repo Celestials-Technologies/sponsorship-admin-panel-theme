@@ -12,6 +12,11 @@ const routes: Array<RouteRecordRaw> = [
     name: "about",
     component: () => import("../views/AboutView.vue"), // lazy-loaded
   },
+  {
+    path: "/dashboard",
+    name: "dashboard",
+    component: () => import("../views/DashBoard.vue"), // lazy-loaded
+  },
 ];
 
 const router = createRouter({

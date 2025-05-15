@@ -12,10 +12,12 @@ const handleToggleSidebar = () => {
 </script>
 
 <template>
-  <div class="min-h-screen bg-bgPrimary">
+  <div
+    class="min-h-screen bg-bgPrimary flex gap-[25px] pt-[25px] pb-[53px] px-6"
+  >
     <AppSidebar :is-visible="isSidebarVisible" />
     <div
-      class="transition-all duration-300"
+      class="transition-all duration-300 w-full"
       :class="{
         'lg:ml-[284px]': isSidebarVisible,
         'lg:ml-0': !isSidebarVisible,
@@ -25,7 +27,7 @@ const handleToggleSidebar = () => {
         @toggle-sidebar="handleToggleSidebar"
         :is-sidebar-visible="isSidebarVisible"
       />
-      <main class="mt-[25px] px-6 transition-all duration-300">
+      <main class="">
         <router-view />
       </main>
     </div>

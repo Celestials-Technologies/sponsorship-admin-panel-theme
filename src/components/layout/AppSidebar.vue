@@ -5,7 +5,8 @@ export default {
 </script>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, computed } from "vue";
+import { useRoute } from "vue-router";
 
 interface Props {
   isVisible?: boolean;
@@ -14,6 +15,12 @@ interface Props {
 /* eslint-disable-next-line no-undef */
 defineProps<Props>();
 const isAccountOpen = ref(false);
+
+const route = useRoute();
+
+const isActiveRoute = computed(() => {
+  return (path: string) => route.path === path;
+});
 
 const toggleAccount = () => {
   isAccountOpen.value = !isAccountOpen.value;
@@ -39,7 +46,11 @@ const toggleAccount = () => {
         <ul class="mt-[90px] sidbar-list pl-px">
           <router-link to="/dashboard">
             <li
-              class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center cursor-pointer hover:bg-[#E9901A] transition-all"
+              class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center cursor-pointer transition-all"
+              :class="{
+                'bg-[#E9901A] active': isActiveRoute('/dashboard'),
+                'hover:bg-[#E9901A]': !isActiveRoute('/dashboard'),
+              }"
             >
               <div
                 class="w-[34px] h-[34px] rounded-lg flex justify-center items-center"
@@ -73,7 +84,11 @@ const toggleAccount = () => {
 
           <router-link to="/balance">
             <li
-              class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-2.5 cursor-pointer hover:bg-[#E9901A] transition-all"
+              class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-2.5 cursor-pointer transition-all"
+              :class="{
+                'bg-[#E9901A] active': isActiveRoute('/balance'),
+                'hover:bg-[#E9901A]': !isActiveRoute('/balance'),
+              }"
             >
               <div
                 class="w-[34px] h-[34px] rounded-lg flex justify-center items-center"
@@ -104,7 +119,11 @@ const toggleAccount = () => {
 
           <router-link to="/analytics">
             <li
-              class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] mt-2.5 relative items-center active cursor-pointer"
+              class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] mt-2.5 relative items-center cursor-pointer transition-all"
+              :class="{
+                'bg-[#E9901A] active': isActiveRoute('/analytics'),
+                'hover:bg-[#E9901A]': !isActiveRoute('/analytics'),
+              }"
             >
               <div
                 class="w-[34px] h-[34px] rounded-lg flex justify-center items-center"
@@ -135,7 +154,11 @@ const toggleAccount = () => {
 
           <router-link to="/wallet">
             <li
-              class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-2.5 cursor-pointer hover:bg-[#E9901A] transition-all"
+              class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-2.5 cursor-pointer transition-all"
+              :class="{
+                'bg-[#E9901A] active': isActiveRoute('/wallet'),
+                'hover:bg-[#E9901A]': !isActiveRoute('/wallet'),
+              }"
             >
               <div
                 class="w-[34px] h-[34px] rounded-lg flex justify-center items-center"
@@ -166,7 +189,11 @@ const toggleAccount = () => {
 
           <router-link to="/asset-details">
             <li
-              class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-2.5 cursor-pointer hover:bg-[#E9901A] transition-all"
+              class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-2.5 cursor-pointer transition-all"
+              :class="{
+                'bg-[#E9901A] active': isActiveRoute('/asset-details'),
+                'hover:bg-[#E9901A]': !isActiveRoute('/asset-details'),
+              }"
             >
               <div
                 class="w-[34px] h-[34px] rounded-lg flex justify-center items-center"
@@ -197,7 +224,11 @@ const toggleAccount = () => {
 
           <router-link to="/new-asset">
             <li
-              class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-2.5 cursor-pointer hover:bg-[#E9901A] transition-all"
+              class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-2.5 cursor-pointer transition-all"
+              :class="{
+                'bg-[#E9901A] active': isActiveRoute('/new-asset'),
+                'hover:bg-[#E9901A]': !isActiveRoute('/new-asset'),
+              }"
             >
               <div
                 class="w-[34px] h-[34px] rounded-lg flex justify-center items-center"
@@ -230,7 +261,27 @@ const toggleAccount = () => {
             <div class="accountMain">
               <li
                 @click="toggleAccount"
-                class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-2.5 cursor-pointer hover:bg-[#E9901A] transition-all"
+                class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-2.5 cursor-pointer transition-all"
+                :class="{
+                  'bg-[#E9901A]': [
+                    '/setting',
+                    '/password',
+                    '/billing',
+                    '/notification',
+                    '/team',
+                    '/login',
+                    '/signup',
+                  ].some((path) => isActiveRoute(path)),
+                  'hover:bg-[#E9901A]': ![
+                    '/setting',
+                    '/password',
+                    '/billing',
+                    '/notification',
+                    '/team',
+                    '/login',
+                    '/signup',
+                  ].some((path) => isActiveRoute(path)),
+                }"
               >
                 <div
                   class="w-[34px] h-[34px] rounded-lg flex justify-center items-center"
@@ -265,73 +316,107 @@ const toggleAccount = () => {
                       class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-0 cursor-pointer !bg-transparent transition-all"
                     >
                       <p
-                        class="text-base leading-5 text-white hover:text-[#E9901A] transition-all pt-0.5 h-auto Gilroy-semibold"
+                        class="py-2 px-2 rounded-xl text-white flex gap-[7px] h-[50px] relative items-center mt-2.5 cursor-pointer transition-all"
+                        :class="{
+                          'bg-[#E9901A] active': isActiveRoute('/setting'),
+                          'hover:bg-[#E9901A]': !isActiveRoute('/setting'),
+                        }"
                       >
                         Setting
                       </p>
                     </li>
                   </router-link>
+
                   <router-link to="/password">
                     <li
-                      class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-0 cursor-pointer !bg-transparent transition-all"
+                      class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-1 cursor-pointer !bg-transparent transition-all"
                     >
                       <p
-                        class="text-base leading-5 text-white hover:text-[#E9901A] transition-all pt-0.5 h-auto Gilroy-semibold"
+                        class="py-2 px-2 rounded-xl text-white flex gap-[7px] h-[50px] relative items-center mt-2.5 cursor-pointer transition-all"
+                        :class="{
+                          'bg-[#E9901A] active': isActiveRoute('/password'),
+                          'hover:bg-[#E9901A]': !isActiveRoute('/password'),
+                        }"
                       >
                         Password
                       </p>
                     </li>
                   </router-link>
+
                   <router-link to="/billing">
                     <li
-                      class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-0 cursor-pointer !bg-transparent transition-all"
+                      class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-1 cursor-pointer !bg-transparent transition-all"
                     >
                       <p
-                        class="text-base leading-5 text-white hover:text-[#E9901A] transition-all pt-0.5 h-auto Gilroy-semibold"
+                        class="py-2 px-2 rounded-xl text-white flex gap-[7px] h-[50px] relative items-center mt-2.5 cursor-pointer transition-all"
+                        :class="{
+                          'bg-[#E9901A] active': isActiveRoute('/billing'),
+                          'hover:bg-[#E9901A]': !isActiveRoute('/billing'),
+                        }"
                       >
                         Billing
                       </p>
                     </li>
                   </router-link>
+
                   <router-link to="/notification">
                     <li
-                      class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-0 cursor-pointer !bg-transparent transition-all"
+                      class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-1 cursor-pointer !bg-transparent transition-all"
                     >
                       <p
-                        class="text-base leading-5 text-white hover:text-[#E9901A] transition-all pt-0.5 h-auto Gilroy-semibold"
+                        class="py-2 px-2 rounded-xl text-white flex gap-[7px] h-[50px] relative items-center mt-2.5 cursor-pointer transition-all"
+                        :class="{
+                          'bg-[#E9901A] active': isActiveRoute('/notification'),
+                          'hover:bg-[#E9901A]': !isActiveRoute('/notification'),
+                        }"
                       >
                         Notification
                       </p>
                     </li>
                   </router-link>
+
                   <router-link to="/team">
                     <li
-                      class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-0 cursor-pointer !bg-transparent transition-all"
+                      class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-1 cursor-pointer !bg-transparent transition-all"
                     >
                       <p
-                        class="text-base leading-5 text-white hover:text-[#E9901A] transition-all pt-0.5 h-auto Gilroy-semibold"
+                        class="py-2 px-2 rounded-xl text-white flex gap-[7px] h-[50px] relative items-center mt-2.5 cursor-pointer transition-all"
+                        :class="{
+                          'bg-[#E9901A] active': isActiveRoute('/team'),
+                          'hover:bg-[#E9901A]': !isActiveRoute('/team'),
+                        }"
                       >
                         Team
                       </p>
                     </li>
                   </router-link>
+
                   <router-link to="/login">
                     <li
-                      class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-0 cursor-pointer !bg-transparent transition-all"
+                      class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-1 cursor-pointer !bg-transparent transition-all"
                     >
                       <p
-                        class="text-base leading-5 text-white hover:text-[#E9901A] transition-all pt-0.5 h-auto Gilroy-semibold"
+                        class="py-2 px-2 rounded-xl text-white flex gap-[7px] h-[50px] relative items-center mt-2.5 cursor-pointer transition-all"
+                        :class="{
+                          'bg-[#E9901A] active': isActiveRoute('/login'),
+                          'hover:bg-[#E9901A]': !isActiveRoute('/login'),
+                        }"
                       >
                         Login
                       </p>
                     </li>
                   </router-link>
+
                   <router-link to="/signup">
                     <li
-                      class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-0 cursor-pointer !bg-transparent transition-all"
+                      class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-1 cursor-pointer !bg-transparent transition-all"
                     >
                       <p
-                        class="text-base leading-5 text-white hover:text-[#E9901A] transition-all pt-0.5 h-auto Gilroy-semibold"
+                        class="py-2 px-2 rounded-xl text-white flex gap-[7px] h-[50px] relative items-center mt-2.5 cursor-pointer transition-all"
+                        :class="{
+                          'bg-[#E9901A] active': isActiveRoute('/login'),
+                          'hover:bg-[#E9901A]': !isActiveRoute('/login'),
+                        }"
                       >
                         Sign Up
                       </p>
