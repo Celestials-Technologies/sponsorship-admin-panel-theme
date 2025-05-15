@@ -9,7 +9,7 @@ $.getJSON("wallet.json", function (data) {
         assets.forEach((asset) => {
             if (asset && asset.coverImage) {
                 let assetContainer = document.createElement("div");
-                assetContainer.classList.add("assetContainer");
+                assetContainer.classList.add("assetContainerMain");
                 assetContainer.setAttribute("data-id", asset.id);
                 assetContainer.innerHTML = `
                 <div class="assetImage">

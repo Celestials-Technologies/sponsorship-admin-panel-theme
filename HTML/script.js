@@ -4,6 +4,7 @@ let profileDropDown = document.getElementById("profileDropDown");
 let buttonHeader = document.getElementById("buttonHeader");
 let countrySelect = document.getElementById("countrySelect");
 let countrySelected = document.getElementById("mainImg");
+let countrySelectedMobile = document.getElementById("mainImgMobile")
 let bellDropDown = document.getElementById("bellDropDown");
 let connectModal = document.getElementById("connectModal");
 let bodyOverflowModal = document.getElementById("bodyOverflowModal");
@@ -18,10 +19,18 @@ let addSelectToken = document.getElementById("addSelectToken");
 let daysSelect = document.getElementById("daysSelect");
 let selectedDays = document.getElementById("mainText");
 let daysIcon = document.getElementById("daysIcon");
+let bellMobileDropdown = document.getElementById("bellMobileDropdown")
+let countrySelectMobile = document.getElementById("countrySelectMobile")
+let profileDropdownMobile = document.getElementById("profileDropdownMobile")
 
 function sideBarControl() {
   if (sideBar.style.left === "24px") {
-    sideBar.style.left = "-40%";
+    // when media query max-with : 768px left is -70%
+    if (window.matchMedia("(max-width: 768px)").matches) {
+      sideBar.style.left = "-70%";
+    } else {
+      sideBar.style.left = "-40%"; 
+    }
     sideData.style.width = "100%";
     sideData.style.transitionDelay = "0.1s";
   } else {
@@ -41,6 +50,12 @@ function closeDropDowns() {
   bellDropDown.style.opacity = "0";
   bellDropDown.style.marginTop = "50px";
   bellDropDown.style.zIndex = "0";
+  bellMobileDropdown.style.opacity = "0";
+  bellMobileDropdown.style.bottom = "-220px"
+  countrySelectMobile.style.opacity = "0";
+  countrySelectMobile.style.bottom = "-220px";
+  profileDropdownMobile.style.opacity = "0";
+  profileDropdownMobile.style.bottom = "-220px";
   buttonHeader.style.zIndex = "9999";
   blockZindex.style.zIndex = "9999";
   document.querySelectorAll("#daysSelect").forEach((dropdown) => {
@@ -70,50 +85,90 @@ function closeDropDowns() {
 }
 
 const profileImg = document.getElementById("profileImg");
-const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+const profileImgMobile = document.getElementById("profileImgMobile");
 
-if (localStorage.getItem("loginSuccess") === "true" && currentUser) {
-  profileImg.textContent = currentUser.firstName[0].toUpperCase();
-  profileImg.style.width = "32px";
-  profileImg.style.height = "32px";
-  profileImg.style.display = "flex";
-  profileImg.style.justifyContent = "center";
-  profileImg.style.alignItems = "center";
-  profileImg.style.color = "white";
-} else {
-  // create img element IN PROFILE IMG BUTTON
-  profileImg = document.createElement("img");
-  profileImg.src = "src/images/profile-img.png";
-  profileImg.style.width = "32px";
-  profileImg.style.height = "32px";
+let currentUser = JSON.parse(localStorage.getItem("currentUser"));
+const isLoggedIn = localStorage.getItem("loginSuccess") === "true";
+
+function updateProfileImages() {
+
+  profileImg.innerHTML = "";
+  profileImgMobile.innerHTML = "";
+
+  if (isLoggedIn && currentUser) {
+    const firstInitial = currentUser.firstName[0].toUpperCase();
+
+    profileImg.textContent = firstInitial;
+    profileImg.style.width = "32px";
+    profileImg.style.height = "32px";
+    profileImg.style.display = "flex";
+    profileImg.style.justifyContent = "center";
+    profileImg.style.alignItems = "center";
+    profileImg.style.color = "white";
+   
+    profileImgMobile.textContent = firstInitial;
+    profileImgMobile.style.width = "32px";
+    profileImgMobile.style.height = "32px";
+    profileImgMobile.style.display = "flex";
+    profileImgMobile.style.justifyContent = "center";
+    profileImgMobile.style.alignItems = "center";
+    profileImgMobile.style.color = "white";
+  } else {
+    const imgDesktop = document.createElement("img");
+    imgDesktop.src = "src/images/profile-img.png";
+    imgDesktop.alt = "Profile";
+    imgDesktop.style.width = "32px";
+    imgDesktop.style.height = "32px";
+    imgDesktop.style.display = "block";
+    profileImg.appendChild(imgDesktop);
+
+    const imgMobile = document.createElement("img");
+    imgMobile.src = "src/images/profile-img.png";
+    imgMobile.alt = "Profile";
+    imgMobile.style.width = "32px";
+    imgMobile.style.height = "32px";
+    imgMobile.style.display = "block";
+    profileImgMobile.appendChild(imgMobile);
+  }
 }
 
-// Update button text based on login state
-const logout = document.getElementById("logout");
-const login = document.getElementById("login");
-const accountLogin = document.getElementById("accountLogin");
-const accountSignUp = document.getElementById("accountSignUp");
-if (localStorage.getItem("loginSuccess") === "true") {
-  logout.style.display = "block";
-  login.style.display = "none";
-  accountLogin.style.display = "none";
-  accountSignUp.style.display = "none";
-} else {
-  logout.style.display = "none";
-  login.style.display = "block";
-  accountLogin.style.display = "block";
-  accountSignUp.style.display = "block";
+function updateNavButtons() {
+  const logout = document.getElementById("logout");
+  const login = document.getElementById("login");
+  const accountLogin = document.getElementById("accountLogin");
+  const accountSignUp = document.getElementById("accountSignUp");
+
+  if (isLoggedIn) {
+    logout.style.display = "block";
+    login.style.display = "none";
+    accountLogin.style.display = "none";
+    accountSignUp.style.display = "none";
+  } else {
+    logout.style.display = "none";
+    login.style.display = "block";
+    accountLogin.style.display = "block";
+    accountSignUp.style.display = "block";
+  }
 }
 
+// Logout function
 function logoutBtn() {
   localStorage.removeItem("loginSuccess");
   localStorage.removeItem("currentUser");
-  window.location.reload();
+  currentUser = null;
+  
+  updateProfileImages();
+  updateNavButtons();
 }
 
+// Login redirect
 function loginBtn() {
   window.location.href = "login.html";
 }
+
+// Initialize on page load
+updateProfileImages();
+updateNavButtons();
 
 function profileButton() {
   if (
@@ -129,6 +184,24 @@ function profileButton() {
     blockZindex.style.zIndex = "auto";
     countrySelect.style.opacity = "0";
     bellDropDown.style.opacity = "0";
+  } else {
+    closeDropDowns();
+  }
+  blockZindex.style.zIndex = "auto";
+}
+
+function profileButtonMobile() {
+  if (
+    profileDropdownMobile.style.opacity === "0" &&
+    profileDropdownMobile.style.bottom === "-220px" &&
+    localStorage.getItem("loginSuccess") === "true"
+  ) {
+    profileDropdownMobile.style.opacity = "1";
+    profileDropdownMobile.style.bottom = "138%";
+    countrySelectMobile.style.opacity = "0";
+     countrySelectMobile.style.bottom = "-220px"
+    bellMobileDropdown.style.opacity = "0";
+    bellMobileDropdown.style.bottom = "-220px"
   } else {
     closeDropDowns();
   }
@@ -154,6 +227,25 @@ function bellButton() {
   blockZindex.style.zIndex = "auto";
 }
 
+function bellButtonMobile() {
+  if (
+    bellMobileDropdown.style.opacity === "0" &&
+    bellMobileDropdown.style.bottom === "-220px"
+  ) {
+    bellMobileDropdown.style.opacity = "1";
+    bellMobileDropdown.style.bottom = "122%"
+    bellMobileDropdown.style.zIndex = "90";
+    countrySelectMobile.style.opacity = "0";
+    countrySelectMobile.style.bottom = "-220px"
+    profileDropdownMobile.style.opacity = "0";
+    profileDropdownMobile.style.bottom = "-220px";
+  } else {
+    closeDropDowns();
+  }
+  blockZindex.style.zIndex = "auto";
+}
+
+
 function countrySelectBtn() {
   if (
     countrySelect.style.opacity === "0" &&
@@ -167,6 +259,23 @@ function countrySelectBtn() {
     blockZindex.style.zIndex = "auto";
     profileDropDown.style.opacity = "0";
     bellDropDown.style.opacity = "0";
+  } else {
+    closeDropDowns();
+  }
+  blockZindex.style.zIndex = "auto";
+}
+
+function countrySelectBtnMobile() {
+  if (
+    countrySelectMobile.style.opacity === "0" &&
+    countrySelectMobile.style.bottom === "-220px"
+  ) {
+    countrySelectMobile.style.opacity = "1";
+    countrySelectMobile.style.bottom = "138%";
+    profileDropdownMobile.style.opacity = "0";
+    profileDropdownMobile.style.bottom = "-220px";
+    bellMobileDropdown.style.opacity = "0";
+    bellMobileDropdown.style.bottom = "-220px"
   } else {
     closeDropDowns();
   }
@@ -354,9 +463,14 @@ document.addEventListener("click", function (event) {
   }
 });
 
-function changeMainImage(newSrc) {
+function changeMainImage( newSrc) {
   countrySelected.src = newSrc;
-  countrySelectBtn();
+  countrySelectedMobile.src = newSrc;
+ 
+    countrySelectBtn();
+ 
+    countrySelectBtnMobile();
+  
 }
 
 function connectBtn() {
@@ -617,12 +731,11 @@ function provideLiquidityBtn() {
     return false;
   } else {
     liquidityErrorField.style.display = "none";
-    SuccessfulMessage.style.right = "24px";
-    SuccessfulMessage.style.display = "block";
-    setTimeout(function () {
-      SuccessfulMessage.style.display = "none";
-      SuccessfulMessage.style.right = "-50%";
-    }, 5000);
+ window.scrollTo(0, 0);
+    SuccessfulMessage.style.top = "0";
+
+    bodyOverflowModal.style.overflow = "auto";
+   
     liquidityModal.style.top = "-150%";
     liquidityModal.style.opacity = "0";
     bodyOverflowModal.style.overflow = "auto";
@@ -631,12 +744,11 @@ function provideLiquidityBtn() {
   }
 }
 function terminateBtn() {
-  SuccessfulMessage.style.right = "24px";
-  SuccessfulMessage.style.display = "block";
-  setTimeout(function () {
-    SuccessfulMessage.style.display = "none";
-    SuccessfulMessage.style.right = "-50%";
-  }, 5000);
+  window.scrollTo(0, 0);
+  SuccessfulMessage.style.top = "0";
+
+  bodyOverflowModal.style.overflow = "auto";
+
   manageModal.style.top = "-150%";
   manageModal.style.opacity = "0";
   bodyOverflowModal.style.overflow = "auto";
@@ -644,8 +756,8 @@ function terminateBtn() {
 }
 
 function closeModalMessageBtn() {
-  SuccessfulMessage.style.display = "none";
-  SuccessfulMessage.style.right = "-50%";
+  SuccessfulMessage.style.top = "-150%";
+  bodyOverflowModal.style.overflow = "auto";
 }
 function AllCardValidateForm() {
   let cardHolderName = document.getElementById("cardHolderName").value;
@@ -721,7 +833,7 @@ function AllCardValidateForm() {
   localStorage.setItem("addCard", JSON.stringify(storedCards));
 
   // Display success message
-  // SuccessfulMessage.style.display = "block";
+  // bodyOverflowModal.style.overflow = "auto";
   // setTimeout(() => {
   //   SuccessfulMessage.style.display = "none";
   // }, 3000);
@@ -822,7 +934,7 @@ function validateForm() {
   localStorage.setItem("addCard", JSON.stringify(storedCards));
 
   // Display success message
-  SuccessfulMessage.style.display = "block";
+  bodyOverflowModal.style.overflow = "auto";
   setTimeout(() => {
     SuccessfulMessage.style.display = "none";
   }, 3000);
@@ -952,12 +1064,11 @@ function depositBtn() {
 
   // Check if a card is selected
   if (storedCardContainer.style.transform === "scale(0.95)") {
-    SuccessfulMessage.style.right = "24px";
-    SuccessfulMessage.style.display = "block";
-    setTimeout(function () {
-      SuccessfulMessage.style.display = "none";
-      SuccessfulMessage.style.right = "-50%";
-    }, 5000);
+ window.scrollTo(0, 0);
+    SuccessfulMessage.style.top = "0";
+
+    bodyOverflowModal.style.overflow = "auto";
+   
     topUpModal.style.top = "-150%";
     topUpModal.style.opacity = "0";
     bodyOverflowModal.style.overflow = "auto";

@@ -99,6 +99,9 @@ fetch("analytics.json")
           scales: {
             xAxes: [
               {
+                maxBarThickness: 10,
+                barPercentage: 0.5,
+                
                 ticks: { fontColor: "white" },
                 gridLines: { display: "none" },
               },
@@ -106,6 +109,7 @@ fetch("analytics.json")
             yAxes: [
               {
                 ticks: {
+               
                   fontColor: "white",
                   stepSize: 20,
                   min: 0,

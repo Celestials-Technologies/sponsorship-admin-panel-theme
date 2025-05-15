@@ -2703,12 +2703,12 @@ video {
   font-size: 9px;
 }
 
-.text-base {
+.text-sm md:text-base {
   font-size: 1rem;
   line-height: 1.5rem;
 }
 
-.text-lg {
+.text-base md:text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
 }
@@ -3325,12 +3325,18 @@ tr td {
   font-size: 18px;
   font-weight: 400;
   text-align: left;
+  @media (max-width:768px) {
+    font-size: 16px;
+  }
 }
 .tableHeader td {
   color: #FFA51F;
   padding: 17px 24px;
   font-size: 20px;
   font-weight: 600;
+  @media (max-width:768px) {
+    font-size: 18px;
+  }
 }
 .tableHeader td:first-child {
   border-top-left-radius: 17.84px;
@@ -3381,6 +3387,9 @@ tr td {
   font-size: 18px;
   color: white;
   font-weight: medium;
+  @media (max-width:768px) {
+    font-size: 16px;
+  }
 }
 .mainTitleText p {
   font-size: 14px;
@@ -3408,6 +3417,9 @@ tr td {
   font-size: 18px;
   color: white;
   white-space: nowrap;
+  @media (max-width:768px) {
+    font-size: 16px;
+  }
 }
 .succesfullStatusBox {
   width: 100%;
@@ -3420,6 +3432,9 @@ tr td {
   text-align: center;
   padding-top: 10px;
   font-weight: medium;
+  @media (max-width:768px) {
+    font-size: 16px;
+  }
 }
 .pendingStatusBox {
   width: 100%;
@@ -3432,6 +3447,9 @@ tr td {
   text-align: center;
   padding-top: 10px;
   font-weight: medium;
+  @media (max-width:768px) {
+    font-size: 16px;
+  }
 }
 .canceledStatusBox {
   width: 100%;
@@ -3444,6 +3462,9 @@ tr td {
   padding-top: 10px;
   color: #ff6161;
   font-weight: medium;
+  @media (max-width:768px) {
+    font-size: 16px;
+  }
 }
 .balanceDetailLastSevenDays {
   font-size: 18px;
@@ -3453,6 +3474,9 @@ tr td {
   gap: 12px;
   align-items: center;
   justify-content: space-between;
+  @media (max-width:768px) {
+    font-size: 16px;
+  }
 }
 
 .resultBarContainer {
@@ -3480,8 +3504,13 @@ tr td {
   transition: all 0.3s ease;
   position: relative;
   z-index: 9999;
+  height: 50px;
+  padding-top: 10px;
   @media (max-width: 768px) {
     padding: 6px 16px;
+    height: 45px;
+    padding-top: 8px;
+    font-size: 16px;
   }
 }
 .balanceDetailTrade:hover {
@@ -3517,11 +3546,17 @@ tr td {
   font-size: 20px;
   color: white;
   font-weight: 500;
+  @media (max-width:768px) {
+    font-size: 18px;
+  }
 }
 .listCardPercentage {
   font-size: 16px;
   color: white;
   font-weight: 400;
+  @media (max-width:768px) {
+    font-size: 14px;
+  }
 }
 .listCardTitleContainer {
   display: flex;
@@ -3561,11 +3596,17 @@ tr td {
   font-size: 16px;
   color: white;
   font-weight: 400;
+  @media (max-width:768px) {
+    font-size: 14px;
+  }
 }
 .listCardValue {
   font-size: 16px;
   color: white;
   font-weight: 400;
+  @media (max-width:768px) {
+    font-size: 14px;
+  }
 }
 .listCardButtonSvg {
   display: flex;
@@ -3597,14 +3638,24 @@ tr td {
   text-decoration: none;
   padding: 4px 8px;
 }
-.assetContainer {
+.assetContainerMain {
   display: flex;
   gap: 20px;
   align-items: center;
   font-size: 18px;
+  justify-content: space-around;
+    padding: 14px;
+    border: 1px dashed white;
+    border-radius: 20px;
+    margin-bottom: 24px;
   color: white;
+  @media (max-width:768px) {
+    font-size: 14px;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
 }
-.assetContainer img {
+.assetContainerMain img {
   width: 34px;
   height: 34px;
   border-radius: 60px;
@@ -3631,6 +3682,9 @@ tr td {
   font-weight: 400;
   text-align: left;
   text-transform: capitalize;
+  @media (max-width:768px) {
+    font-size: 14px;
+  }
 }
 .selectBank {
   font-size: 12px;
@@ -3654,6 +3708,7 @@ tr td {
   flex-wrap: wrap;
   flex-direction: column;
   width: 32%;
+  min-width: 280px;
   height: fit-content;
 }
 .card-header {
@@ -3690,6 +3745,9 @@ tr td {
   color: white;
   font-size: 16px;
   text-align: left;
+  @media (max-width:768px) {
+    font-size: 14px;
+  }
 }
 .checkBoxMainDiv {
   border-top-left-radius: 17.84px;
@@ -3698,6 +3756,9 @@ tr td {
 .chexkBoxLabel {
   font-size: 16px;
   color: white;
+  @media (max-width:768px) {
+    font-size: 14px;
+  }
 }
 
 .checkMarkRadioButtonContainer {
@@ -3807,6 +3868,9 @@ tr td {
   font-size: 16px;
   color: white;
   font-weight: 400;
+  @media (max-width:768px) {
+    font-size: 14px;
+  }
 }
 .mainData td .checkMarkRadioTick {
   top: -6px;
@@ -3815,6 +3879,9 @@ tr td {
   font-size: 16px;
   color: white;
   font-weight: 400;
+  @media (max-width:768px) {
+    font-size: 14px;
+  }
 }
 .mainResultAction {
   display: flex;
@@ -3887,11 +3954,19 @@ tr td {
   display: flex;
   align-items: center;
   gap: 20px;
+  @media (max-width:768px) {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
 }
 .subscriptionValue img {
   width: 100px;
   height: 100px;
   object-fit: cover;
+  @media (max-width:768px) {
+    width: 70px;
+    height: 70px;
+  }
 }
 .subscriptionValue button {
   padding: 8px 12px;
@@ -3942,6 +4017,9 @@ tr td {
   cursor: pointer;
   transition: all 0.5s ease;
   padding-top: 10px;
+  @media (max-width:768px) {
+    font-size: 14px;
+  }
 }
 .manageBtn:hover {
   background-color: transparent;
@@ -3956,7 +4034,10 @@ tr td {
     display: flex;
     gap: 12px;
     justify-content: space-between;
-    border-radius: 20px
+    border-radius: 20px;
+    @media (max-width:768px) {
+      padding: 16px 0px;
+    }
   }
   .addMoreSelectButton:hover {
     background-color: #e9901a;
@@ -3969,7 +4050,7 @@ tr td {
   .siderBarMobile {
     display: flex;
    @media (max-width:1024px) {
-    backdrop-filter: blur(6px);
+    backdrop-filter: blur(80px);
    }
   }
   .siderBarMainContainer {
@@ -3982,3 +4063,32 @@ tr td {
   .navBarContainer button {
     min-width:auto !important;
   }
+  .yAxisScroll {
+    overflow-y: auto;
+  }
+  .xAxisScroll {
+    overflow-x: auto;
+  }
+  .xAxisScroll::-webkit-scrollbar {
+    display: none;
+}
+.yAxisScroll::-webkit-scrollbar {
+  display: none;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 8px;
+  bottom: 6px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+  @media screen and (max-width:768px) {
+    height: 14px;
+    width: 14px;
+    left: 5px;
+    bottom: 5px;
+  }
+}

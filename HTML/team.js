@@ -141,7 +141,7 @@ function submitNewMember() {
     workInput.value = "";
     teamStatus.value = "Select Status";
 
-    SuccessfulMessage.style.display = "block";
+    bodyOverflowModal.style.overflow = "auto";
     setTimeout(() => {
       SuccessfulMessage.style.display = "none";
     }, 3000);
