@@ -14,17 +14,12 @@ interface Props {
 
 /* eslint-disable-next-line no-undef */
 defineProps<Props>();
-const isAccountOpen = ref(false);
 
 const route = useRoute();
 
 const isActiveRoute = computed(() => {
   return (path: string) => route.path === path;
 });
-
-const toggleAccount = () => {
-  isAccountOpen.value = !isAccountOpen.value;
-};
 </script>
 
 <template>
@@ -260,7 +255,6 @@ const toggleAccount = () => {
           <div class="accountContainer">
             <div class="accountMain">
               <li
-                @click="toggleAccount"
                 class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-2.5 cursor-pointer transition-all"
                 :class="{
                   'bg-[#E9901A]': [
@@ -308,7 +302,7 @@ const toggleAccount = () => {
                 </p>
               </li>
             </div>
-            <div v-show="isAccountOpen" class="pl-8 accountList">
+            <div class="pl-8 accountList">
               <div class="border-l border-solid border-[#E9901A]">
                 <ul>
                   <router-link to="/setting">

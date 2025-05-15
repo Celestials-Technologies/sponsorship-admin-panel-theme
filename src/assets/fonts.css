@@ -295,11 +295,12 @@ input:checked + .slider:before {
 
 .accountList {
   display: none;
- 
 }
 
+/* Show dropdown on hover OR when any account route is active */
 .accountMain:hover + .accountList,
-.accountList:hover {
+.accountList:hover,
+.accountMain:has(.bg-\[\#E9901A\]) + .accountList {
   display: block !important;
 }
 .accountContainer:hover li {
