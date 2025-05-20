@@ -100,7 +100,7 @@
 }
 
 .faqs-bg {
-  background-image: url(@/assets/images/faqs-bg.png);
+  background-image: url(@/assets/flags/faqs-bg.png);
 }
 
 .scrollBar-hidden::-webkit-scrollbar {
@@ -297,7 +297,6 @@ input:checked + .slider:before {
   display: none;
 }
 
-/* Show dropdown on hover OR when any account route is active */
 .accountMain:hover + .accountList,
 .accountList:hover,
 .accountMain:has(.bg-\[\#E9901A\]) + .accountList {

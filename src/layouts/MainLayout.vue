@@ -27,7 +27,7 @@ const handleToggleSidebar = () => {
         @toggle-sidebar="handleToggleSidebar"
         :is-sidebar-visible="isSidebarVisible"
       />
-      <main class="">
+      <main class="h-[calc(92vh-120px)] overflow-auto mt-12">
         <router-view />
       </main>
     </div>

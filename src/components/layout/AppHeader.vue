@@ -1,5 +1,5 @@
 <template>
-  <div class="transition-all duration-300 relative z-[99999]">
+  <div class="transition-all duration-300 relative z-[99999] fixed top-0">
     <div
       class="w-full py-[9px] md:pr-[18px] md:px-[33px] rounded-[15px] flex justify-between items-center gap-2.5 bg-sideBarBg border border-translucentWhite px-3 backdrop-blur-sm relative"
     >
@@ -223,7 +223,7 @@
               class="p-0 cursor-pointer iconMainBox rounded-full w-[30px] h-[30px] relative top-[2px]"
             >
               <img
-                src="@/assets/images/profile-img.png"
+                src="/images/profile-img.png"
                 alt="Profile"
                 class="w-full h-full"
               />
@@ -267,12 +267,12 @@ import {
   onMounted,
   onUnmounted,
 } from "vue";
-import australiaFlag from "@/assets/images/australia.png";
-import italyFlag from "@/assets/images/italy.png";
-import franceFlag from "@/assets/images/france.png";
-import brazilFlag from "@/assets/images/brazil.png";
-import canadaFlag from "@/assets/images/canada.png";
-import chinaFlag from "@/assets/images/china.png";
+import australiaFlag from "@/assets/flags/australia.png";
+import italyFlag from "@/assets/flags/italy.png";
+import franceFlag from "@/assets/flags/france.png";
+import brazilFlag from "@/assets/flags/brazil.png";
+import canadaFlag from "@/assets/flags/canada.png";
+import chinaFlag from "@/assets/flags/china.png";
 import { useClickOutside } from "@/composables/useClickOutside";
 
 interface Props {
@@ -312,7 +312,7 @@ const notifications = ref<Notification[]>([
     id: 1,
     name: "Theresa Webb",
     message: "just ideas for next time",
-    avatar: "/src/assets/images/user_profile10.png",
+    avatar: "images/user_profile10.png",
     count: 5,
     time: "4m",
   },
@@ -320,7 +320,7 @@ const notifications = ref<Notification[]>([
     id: 2,
     name: "Bessie Cooper",
     message: "omg, this is amazing",
-    avatar: "/src/assets/images/user_profile9.png",
+    avatar: "images/user_profile9.png",
     count: 1,
     time: "5m",
   },
@@ -328,7 +328,7 @@ const notifications = ref<Notification[]>([
     id: 3,
     name: "Jerome Bell",
     message: "woohoooo",
-    avatar: "/src/assets/images/user_profile3.png",
+    avatar: "images/user_profile3.png",
     count: 3,
     time: "10m",
   },
