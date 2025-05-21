@@ -99,9 +99,9 @@
   font-family: "Gilroy-black", sans-serif;
 }
 
-.faqs-bg {
-  background-image: url(@/assets/flags/faqs-bg.png);
-}
+/* .faqs-bg {
+  background-image: url(@/shared/ui/Icons/png/faqs-bg.png);
+} */
 
 .scrollBar-hidden::-webkit-scrollbar {
   display: none;
