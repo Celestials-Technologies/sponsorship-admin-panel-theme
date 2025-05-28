@@ -6,10 +6,17 @@ export default {
 
 <script setup lang="ts">
 import { type Notification } from "../model/types";
+import { ref } from "vue";
 
 defineProps<{
   notifications: Notification[];
 }>();
+
+const selectedNotificationId = ref<number | null>(null);
+
+const handleNotificationClick = (notificationId: number) => {
+  selectedNotificationId.value = notificationId;
+};
 </script>
 
 <template>
@@ -17,7 +24,13 @@ defineProps<{
     <li
       v-for="notification in notifications"
       :key="notification.id"
-      class="text-base Gilroy-normal hover:bg-[#E9901A] p-2 text-white w-full rounded-lg flex items-center gap-3 justify-between cursor-pointer"
+      @click="handleNotificationClick(notification.id)"
+      :class="[
+        'text-base Gilroy-normal p-2 text-white w-full rounded-lg flex items-center gap-3 justify-between cursor-pointer',
+        selectedNotificationId === notification.id
+          ? 'bg-[#E9901A]'
+          : 'hover:bg-[#E9901A]',
+      ]"
     >
       <div class="flex items-center gap-2">
         <img
@@ -26,8 +39,10 @@ defineProps<{
           class="w-8 h-8 rounded-full"
         />
         <div>
-          <p class="font-medium">{{ notification.name }}</p>
-          <p class="text-sm text-gray-300">{{ notification.message }}</p>
+          <p class="font-medium text-start">{{ notification.name }}</p>
+          <p class="text-sm text-gray-300 text-start">
+            {{ notification.message }}
+          </p>
         </div>
       </div>
       <div class="flex items-center gap-2">

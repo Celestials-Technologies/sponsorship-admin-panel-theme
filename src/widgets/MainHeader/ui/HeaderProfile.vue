@@ -44,13 +44,13 @@ useClickOutside(profileRef, () => {
         <li
           v-for="item in profileMenu"
           :key="item.name"
-          class="p-2 hover:bg-[#E9901A] cursor-pointer rounded-lg"
+          class="hover:bg-[#E9901A] cursor-pointer rounded-lg"
         >
           <router-link
             :to="item.link"
-            class="text-white block w-full text-left"
+            class="text-white block w-full text-left h-10 w-[182px]"
           >
-            {{ item.name }}
+            <p class="p-2 h-full">{{ item.name }}</p>
           </router-link>
         </li>
       </ul>

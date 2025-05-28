@@ -18,8 +18,10 @@
           </p>
           <div class="flex items-center gap-2 mt-3">
             <!-- <img :src="trendIcon" :alt="trend" class="w-6 h-6" /> -->
+            <GrowthIcon v-if="trend === 'up'" :color="trendColor" />
             <p
-              :class="`text-sm sm:text-base Gilroy-normal text-[${trendColor}] pt-0.5`"
+              :class="`text-sm sm:text-base Gilroy-normal pt-0.5`"
+              :style="{ color: trendColor }"
             >
               {{ percentage }}%
             </p>
@@ -34,6 +36,7 @@
 </template>
 
 <script setup lang="ts">
+import GrowthIcon from "@/shared/ui/Icons/svgs/dashboardSvgs/GrowthIcon.vue";
 /* eslint-disable */
 const props = defineProps<{
   icon: string;

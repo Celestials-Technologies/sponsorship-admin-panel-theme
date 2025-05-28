@@ -1,5 +1,5 @@
 <template>
-  <div class="border border-white bg-sideBarBg p-6 rounded-xl">
+  <div class="border border-white bg-gradient p-6 rounded-xl">
     <div class="flex items-center justify-between">
       <p class="text-base text-white Gilroy-medium">Balance</p>
       <div class="flex items-center gap-1">
@@ -9,7 +9,9 @@
         </p>
       </div>
     </div>
-    <h3 class="mt-4 mb-10 text-2xl md:text-[32px] text-white Gilroy-semibold">
+    <h3
+      class="mt-4 mb-10 text-2xl md:text-[32px] text-white Gilroy-semibold text-start"
+    >
       {{ balanceData.total }}
     </h3>
     <div class="flex justify-between items-center gap-6">
@@ -36,8 +38,13 @@
 </template>
 
 <script setup lang="ts">
-import { balanceData } from "@/features/dashboard/model/dashboardData";
+import type { BalanceData } from "@/features/dashboard/model/types";
 import ArrowUpTrend from "@/shared/ui/Icons/svgs/dashboardSvgs/ArrowUpTrend.vue";
 import ArrowBottom from "@/shared/ui/Icons/svgs/dashboardSvgs/ArrowBottom.vue";
 import ExpenceArrowTop from "@/shared/ui/Icons/svgs/dashboardSvgs/ExpenceArrowTop.vue";
+
+// Define props with type
+defineProps<{
+  balanceData: BalanceData;
+}>();
 </script>

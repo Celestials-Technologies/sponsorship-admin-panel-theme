@@ -29,3 +29,10 @@ export type SubscriptionData = {
   name: string;
   price: string;
 };
+
+export type DashboardData = {
+  cryptoCards: CryptoCardData[];
+  stakingRewards: StakingRewardData[];
+  subscriptions: SubscriptionData[];
+  balanceData: BalanceData;
+};

@@ -25,7 +25,9 @@
       "dom",
       "dom.iterable",
       "scripthost"
-    ]
+    ],
+    "resolveJsonModule": true,
+    "allowJs": true
   },
   "include": [
     "src/**/*.ts",

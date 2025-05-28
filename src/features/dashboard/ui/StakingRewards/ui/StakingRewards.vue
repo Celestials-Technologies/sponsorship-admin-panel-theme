@@ -1,5 +1,5 @@
 <template>
-  <div class="border border-white bg-sideBarBg p-6 rounded-xl">
+  <div class="border border-white bg-gradient p-6 rounded-xl">
     <div
       class="border-b border-dashed border-white pb-6 mb-6 flex gap-1 justify-between items-center"
     >
@@ -47,5 +47,10 @@
 
 <script setup lang="ts">
 import RefreshButton from "@/shared/ui/Icons/svgs/dashboardSvgs/RefreshButton.vue";
-import { stakingRewards } from "@/features/dashboard/model/dashboardData";
+// import { stakingRewards } from "@/features/dashboard/model/dashboardData";
+import type { StakingRewardData } from "@/features/dashboard/model/types";
+
+defineProps<{
+  stakingRewards: StakingRewardData[];
+}>();
 </script>

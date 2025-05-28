@@ -7,4 +7,3 @@ export { default as TransactionHistory } from "./TransactionHistory/ui/Transacti
 export { default as SubscriptionsCard } from "./SubscriptionsCard/ui/SubscriptionsCard.vue";
 
 export * from "../model/types";
-export * from "../model/dashboardData";

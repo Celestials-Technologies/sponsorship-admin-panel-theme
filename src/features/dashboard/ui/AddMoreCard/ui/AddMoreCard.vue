@@ -1,13 +1,17 @@
+<script setup lang="ts">
+import AddButton from "@/shared/ui/Icons/svgs/dashboardSvgs/AddButton.vue";
+</script>
+
 <template>
   <div
-    class="sm:w-3/6 xl:w-[31.333%] 2xl:w-full w-full max-w-full sm:px-2.5 h-full max-h-full h-[217px]"
+    class="sm:w-3/6 xl:w-[31.333%] 2xl:w-full w-full max-w-full sm:px-2.5 max-h-full h-[217px]"
   >
     <div
-      class="p-2 border border-translucentWhite rounded-xl w-full bg-sideBarBg flex h-full items-center py-6"
+      class="p-3 border border-translucentWhite rounded-xl w-full bg-sideBarBg flex h-full items-center"
     >
       <button
         type="button"
-        class="p-[18px] w-full border border-dashed border-white rounded-lg cursor-pointer"
+        class="p-[18px] w-full border border-dashed border-white rounded-lg cursor-pointer h-full"
       >
         <AddButton />
         <p
@@ -22,5 +26,3 @@
     </div>
   </div>
 </template>
-
-<script setup lang="ts"></script>
