@@ -10,6 +10,12 @@ export const routes: Array<RouteRecordRaw> = [
   {
     path: "/dashboard",
     name: "dashboard",
-    component: () => import("@/pages/dashboard/DashBoard.vue"),
+    component: () => import("@/pages/dashboard"),
+  },
+
+  {
+    path: "/balance",
+    name: "balance",
+    component: () => import("@/pages/balance"),
   },
 ];
