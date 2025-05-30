@@ -18,4 +18,10 @@ export const routes: Array<RouteRecordRaw> = [
     name: "balance",
     component: () => import("@/pages/balance"),
   },
+
+  {
+    path: "/signup",
+    name: "signup",
+    component: () => import("@/pages/signup/Signup.vue"),
+  },
 ];
