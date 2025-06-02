@@ -6,7 +6,7 @@
     v-bind="$attrs"
     :target="isExternal ? '_blank' : undefined"
     :rel="isExternal ? 'noopener noreferrer' : undefined"
-    class="text-blue-600 hover:underline"
+    class="hover:underline cursor-pointer"
   >
     <slot />
   </component>

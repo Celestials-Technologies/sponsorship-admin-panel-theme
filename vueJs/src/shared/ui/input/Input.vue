@@ -30,10 +30,12 @@ const props = defineProps<{
   label?: string;
   error?: string;
   type?: "text" | "password";
+  handleBlur?: () => void;
 }>();
 
 const emits = defineEmits<{
   (e: "update:modelValue", payload: string | number): void;
+  (e: "blur"): void;
 }>();
 
 const modelValue = useVModel(props, "modelValue", emits, {
@@ -41,6 +43,12 @@ const modelValue = useVModel(props, "modelValue", emits, {
   defaultValue: props.defaultValue,
 });
 
+const handleBlur = () => {
+  if (typeof props.handleBlur === "function") {
+    props.handleBlur();
+  }
+  emits("blur");
+};
 const showPassword = ref(false);
 
 const togglePassword = () => {
@@ -54,16 +62,22 @@ const togglePassword = () => {
       {{ label }}
     </label>
     <input
-      :type="type === 'password' && showPassword ? 'text' : 'password'"
+      :type="
+        type != 'password'
+          ? 'text'
+          : type === 'password' && showPassword
+          ? 'text'
+          : 'password'
+      "
       v-model="modelValue"
       :placeholder="props.placeholder"
       :class="cn(inputVariants({ variant: props.variant }), props.class)"
+      @blur="handleBlur"
     />
     <p
       v-if="error"
       id="lastNameError"
-      style="display: none"
-      class="text-[#FF2B28] absolute text-sm"
+      class="text-[#FF2B28] absolute text-[10px] mt-1 ml-1"
     >
       {{ error }}
     </p>
