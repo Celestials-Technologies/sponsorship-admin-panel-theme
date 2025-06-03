@@ -13,12 +13,15 @@ const clearErrors = () => {
   hasSubmissionError.value = false;
 };
 
-const handleSubmit = async () => {
-  clearErrors();
+const validateFieldName = async (fieldName: keyof typeof formData) => {
   isSubmitting.value = true;
   try {
-    const validatedData = signUpSchema.parse(formData);
-    console.log("Form data is valid:", validatedData);
+    const fieldData = { [fieldName]: formData[fieldName] };
+    const fieldSchema = z.object({
+      [fieldName]: (signUpSchema._def.schema.shape as any)[fieldName],
+    });
+    fieldSchema.parse(fieldData);
+    errors[fieldName] = "";
   } catch (error) {
     if (error instanceof z.ZodError) {
       error.errors.forEach((err) => {
@@ -34,4 +37,32 @@ const handleSubmit = async () => {
   }
 };
 
-export { handleSubmit, hasSubmissionError, isSubmitting };
+const clearForm = () => {
+  Object.keys(formData).forEach((key) => {
+    formData[key as keyof typeof formData] = "";
+  });
+};
+
+const handleSubmit = async () => {
+  clearErrors();
+  isSubmitting.value = true;
+  try {
+    const validatedData = signUpSchema.parse(formData);
+    console.log("Form data is valid:", validatedData);
+    clearForm();
+  } catch (error) {
+    if (error instanceof z.ZodError) {
+      error.errors.forEach((err) => {
+        if (err.path) {
+          errors[err.path[0] as keyof typeof errors] = err.message;
+        }
+      });
+    } else {
+      hasSubmissionError.value = true;
+    }
+  } finally {
+    isSubmitting.value = false;
+  }
+};
+
+export { handleSubmit, hasSubmissionError, isSubmitting, validateFieldName };

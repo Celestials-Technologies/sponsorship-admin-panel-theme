@@ -11,7 +11,8 @@ const inputVariants = cva("w-full outline-none", {
   variants: {
     variant: {
       search: "",
-      form: "border border-solid border-[#e5e5e585] rounded-xl text-black text-sm md:text-base bg-transparent px-[13px] py-3 pt-3.5 h-11 Gilroy-normal mt-1 bg-white placeholder-[#D0D0D0]",
+      formInputField:
+        "w-full border border-solid border-[#e5e5e585] rounded-xl text-black text-sm md:text-base bg-transparent outline-none px-[13px] py-3 pt-4 h-11 Gilroy-normal mt-1 bg-white placeholder-[#D0D0D0]",
       default:
         "flex h-10 rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-foreground file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
     },
@@ -71,7 +72,7 @@ const togglePassword = () => {
       "
       v-model="modelValue"
       :placeholder="props.placeholder"
-      :class="cn(inputVariants({ variant: props.variant }), props.class)"
+      :class="cn(inputVariants({ variant: props.variant as any }), props.class)"
       @blur="handleBlur"
     />
     <p

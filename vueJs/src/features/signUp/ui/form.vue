@@ -15,8 +15,8 @@
             label="First Name"
             :error="errors.firstName"
             placeholder="Enter your First Name"
-            variant="form"
-            handleBlur="validateFirstName"
+            variant="formInputField"
+            @blur="() => validateFieldName('firstName')"
           />
         </div>
         <div class="mt-6 md:mt-0 md:w-1/2 relative">
@@ -25,7 +25,8 @@
             label="Last Name"
             :error="errors.lastName"
             placeholder="Enter your Last Name"
-            variant="form"
+            variant="formInputField"
+            @blur="() => validateFieldName('lastName')"
           />
         </div>
       </div>
@@ -33,10 +34,11 @@
       <div class="relative">
         <Input
           v-model="formData.email"
-          label="Email ID"
+          label="Email"
           :error="errors.email"
           placeholder="Enter your Email"
-          variant="form"
+          variant="formInputField"
+          @blur="() => validateFieldName('email')"
         />
       </div>
       <div>
@@ -45,8 +47,20 @@
           label="Password"
           :error="errors.password"
           placeholder="Enter your Password"
-          variant="form"
+          variant="formInputField"
           type="password"
+          @blur="() => validateFieldName('password')"
+        />
+      </div>
+      <div>
+        <Input
+          v-model="formData.confirmPassword"
+          label="Confirm Password"
+          :error="errors.confirmPassword"
+          placeholder="Enter your Password"
+          variant="formInputField"
+          type="password"
+          @blur="() => validateFieldName('confirmPassword')"
         />
       </div>
     </div>
@@ -81,13 +95,10 @@ import { formData, errors } from "../modal/types";
 import Input from "@/shared/ui/input/Input.vue";
 import Button from "@/shared/ui/button/Button.vue";
 import { BaseLink } from "@/shared/ui/baselink";
-import { handleSubmit, hasSubmissionError, isSubmitting } from "../modal/api";
-import { useDebounceFn } from "@vueuse/core";
-
-const validateFirstName = useDebounceFn(() => {
-  console.log("hello validateFirstName");
-  if (!formData.firstName) {
-    errors.firstName = "First name is required";
-  }
-}, 500);
+import {
+  handleSubmit,
+  hasSubmissionError,
+  isSubmitting,
+  validateFieldName,
+} from "../modal/api";
 </script>

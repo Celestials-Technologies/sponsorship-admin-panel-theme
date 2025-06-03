@@ -4,19 +4,21 @@
       <Input
         v-model="formData.email"
         id="emailInput"
-        class="w-full border border-solid border-[#e5e5e585] rounded-xl text-black text-sm md:text-base bg-transparent outline-none px-[13px] py-3 pt-4 h-11 Gilroy-normal mt-1 bg-white placeholder-[#D0D0D0]"
+        variant="formInputField"
         placeholder="Enter your Email"
-        label="Enter Your Email ID"
+        label="Enter Your Email"
         :error="errors.email"
+        @blur="() => validateFieldName('email')"
       />
       <Input
         v-model="formData.password"
         type="password"
         id="passwordInput"
-        class="w-full border border-solid border-[#e5e5e585] rounded-xl text-black text-sm md:text-base bg-transparent outline-none px-[13px] py-3 pt-4 h-11 Gilroy-normal mt-1 bg-white placeholder-[#D0D0D0]"
+        variant="formInputField"
         label="Enter Your Password"
         :error="errors.password"
         placeholder="Enter Your Password"
+        @blur="() => validateFieldName('password')"
       />
       <BaseLink
         class="text-[#FFA51F] text-sm md:text-base Gilroy-semibold text-right"
@@ -56,5 +58,5 @@ import { formData, errors } from "../modal/types";
 import Input from "@/shared/ui/input/Input.vue";
 import Button from "@/shared/ui/button/Button.vue";
 import { BaseLink } from "@/shared/ui/baselink";
-import { handleSubmit } from "../modal/api";
+import { handleSubmit, validateFieldName } from "../modal/api";
 </script>

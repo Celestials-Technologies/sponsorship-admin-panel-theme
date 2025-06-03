@@ -13,6 +13,30 @@ const clearErrors = () => {
   hasSubmissionError.value = false;
 };
 
+const validateFieldName = async (fieldName: keyof typeof formData) => {
+  isSubmitting.value = true;
+  try {
+    const fieldData = { [fieldName]: formData[fieldName] };
+    const fieldSchema = z.object({
+      [fieldName]: signUpSchema.shape[fieldName],
+    });
+    fieldSchema.parse(fieldData);
+    errors[fieldName] = "";
+  } catch (error) {
+    if (error instanceof z.ZodError) {
+      error.errors.forEach((err) => {
+        if (err.path) {
+          errors[err.path[0] as keyof typeof errors] = err.message;
+        }
+      });
+    } else {
+      hasSubmissionError.value = true;
+    }
+  } finally {
+    isSubmitting.value = false;
+  }
+};
+
 const handleSubmit = async () => {
   clearErrors();
   isSubmitting.value = true;
@@ -34,4 +58,4 @@ const handleSubmit = async () => {
   }
 };
 
-export { handleSubmit, hasSubmissionError, isSubmitting };
+export { handleSubmit, hasSubmissionError, isSubmitting, validateFieldName };
