@@ -21,7 +21,8 @@
     "tailwindcss-animate": "^1.0.7",
     "vue": "^3.2.13",
     "vue-router": "^4.0.3",
-    "vuex": "^4.0.0"
+    "vuex": "^4.0.0",
+    "zod": "^3.25.48"
   },
   "devDependencies": {
     "@tailwindcss/cli": "^4.0.14",

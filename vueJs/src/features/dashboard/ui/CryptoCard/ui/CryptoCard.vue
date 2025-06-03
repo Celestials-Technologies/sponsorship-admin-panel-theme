@@ -36,7 +36,7 @@
 </template>
 
 <script setup lang="ts">
-import GrowthIcon from "@/shared/ui/Icons/svgs/dashboardSvgs/GrowthIcon.vue";
+import GrowthIcon from "@/shared/ui/Icons/svgs/GrowthIcon.vue";
 /* eslint-disable */
 const props = defineProps<{
   icon: string;
@@ -49,5 +49,4 @@ const props = defineProps<{
   trendColor: string;
   chartId: string;
 }>();
-
 </script>
