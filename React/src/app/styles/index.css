@@ -1,2 +1,80 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+
+
+
+
+
+
+
+@theme {
+
+    --color-primary: #FFA51F;
+    --color-secondary: #191153;
+    --color-primary-button: #0e9e59;
+}
+
+
+@font-face {
+    font-family: Gilroy-normal;
+    src: url("@/shared/fonts/gilroy/Gilroy-Regular.ttf");
+}
+
+@font-face {
+    font-family: Gilroy-medium;
+    src: url("@/shared/fonts/gilroy/Gilroy-Medium.ttf");
+
+}
+
+@font-face {
+    font-family: Gilroy-semibold;
+    src: url("@/shared/fonts/gilroy/Gilroy-SemiBold.ttf");
+
+}
+
+@font-face {
+    font-family: Gilroy-bold;
+    src: url("@/shared/fonts/gilroy/Gilroy-Bold.ttf");
+
+}
+
+@font-face {
+    font-family: Gilroy-extrabold;
+    src: url("@/shared/fonts/gilroy/Gilroy-ExtraBold.ttf");
+
+}
+
+@font-face {
+    font-family: Gilroy-black;
+    src: url("@/shared/fonts/gilroy/Gilroy-Black.ttf");
+}
+
+.Gilroy-normal {
+    font-family: "Gilroy-normal", sans-serif;
+}
+
+.Gilroy-medium {
+    font-family: "Gilroy-medium", sans-serif;
+}
+
+.Gilroy-semibold {
+    font-family: "Gilroy-semibold", sans-serif;
+}
+
+.Gilroy-bold {
+    font-family: "Gilroy-bold", sans-serif;
+}
+
+.Gilroy-extrabold {
+    font-family: "Gilroy-extrabold", sans-serif;
+}
+
+.Gilroy-black {
+    font-family: "Gilroy-black", sans-serif;
+}
+
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
