@@ -1,46 +1,66 @@
 <template>
-  <h1 class="text-2xl lg:text-[32px] text-white leading-normal Gilroy-semibold">
-    Let’s Get Started!
-  </h1>
-  <p class="text-sm md:text-base Gilroy-normal text-white mt-4">
-    Please Enter your Email Address to Start your Online Application
-  </p>
-  <form class="mt-8 lg:mt-10">
+  <form @submit.prevent="handleSubmit" class="mt-8 lg:mt-10">
+    <div
+      v-if="hasSubmissionError"
+      class="mb-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded"
+    >
+      An error occurred during registration. Please try again.
+    </div>
+
     <div class="flex flex-col gap-6">
       <div class="md:flex items-center gap-5 justify-between">
         <div class="md:w-1/2 relative">
           <Input
+            v-model="formData.firstName"
             label="First Name"
-            error="Please Enter Your First Name."
-            placeholder="First Name"
-            variant="form"
+            :error="errors.firstName"
+            placeholder="Enter your First Name"
+            variant="formInputField"
+            @blur="() => validateFieldName('firstName')"
           />
         </div>
         <div class="mt-6 md:mt-0 md:w-1/2 relative">
           <Input
+            v-model="formData.lastName"
             label="Last Name"
-            error="Please Enter Your Last Name."
-            placeholder="Last Name"
-            variant="form"
+            :error="errors.lastName"
+            placeholder="Enter your Last Name"
+            variant="formInputField"
+            @blur="() => validateFieldName('lastName')"
           />
         </div>
       </div>
 
       <div class="relative">
         <Input
-          label="Email ID"
-          error="Please Enter Your Email."
+          v-model="formData.email"
+          label="Email"
+          :error="errors.email"
           placeholder="Enter your Email"
-          variant="form"
+          variant="formInputField"
+          @blur="() => validateFieldName('email')"
         />
       </div>
       <div>
         <Input
+          v-model="formData.password"
           label="Password"
-          error="Please Enter Your Password."
+          :error="errors.password"
           placeholder="Enter your Password"
-          variant="form"
+          variant="formInputField"
           type="password"
+          @blur="() => validateFieldName('password')"
+        />
+      </div>
+      <div>
+        <Input
+          v-model="formData.confirmPassword"
+          label="Confirm Password"
+          :error="errors.confirmPassword"
+          placeholder="Enter your Password"
+          variant="formInputField"
+          type="password"
+          @blur="() => validateFieldName('confirmPassword')"
         />
       </div>
     </div>
@@ -52,16 +72,17 @@
     </p>
     <div class="flex gap-5 lg:mt-8 mt-6">
       <Button
-        type="button"
-        onclick="signupBtn()"
-        class="bg-btnSecondary hover:bg-transparent border border-solid border-[#E9901A] py-2 pt-2.5 px-[18px] md:px-8 md:py-4 md:pt-[18px] text-sm md:text-base text-white hover:text-[#FFA51F] rounded-lg flex items-center justify-center Gilroy-semibold"
+        type="submit"
+        :disabled="isSubmitting"
+        class="bg-btnSecondary hover:bg-transparent border border-solid border-[#E9901A] py-2 pt-2.5 px-[18px] md:px-8 md:py-4 md:pt-[18px] text-sm md:text-base text-white hover:text-[#FFA51F] rounded-lg flex items-center justify-center Gilroy-semibold disabled:opacity-50 disabled:cursor-not-allowed"
       >
         Sign Up
       </Button>
       <Button
-        onclick="history.back()"
+        @click="$router.back()"
         type="button"
-        class="bg-transparent hover:bg-[#E9901A] border border-solid border-[#E9901A] py-2 pt-2.5 px-[18px] md:px-8 md:py-4 md:pt-[18px] text-sm md:text-base text-[#FFA51F] hover:text-white rounded-lg flex items-center justify-center Gilroy-semibold"
+        :disabled="isSubmitting"
+        class="bg-transparent hover:bg-[#E9901A] border border-solid border-[#E9901A] py-2 pt-2.5 px-[18px] md:px-8 md:py-4 md:pt-[18px] text-sm md:text-base text-[#FFA51F] hover:text-white rounded-lg flex items-center justify-center Gilroy-semibold disabled:opacity-50 disabled:cursor-not-allowed"
       >
         Back Home
       </Button>
@@ -70,7 +91,14 @@
 </template>
 
 <script setup>
+import { formData, errors } from "../modal/types";
 import Input from "@/shared/ui/input/Input.vue";
 import Button from "@/shared/ui/button/Button.vue";
 import { BaseLink } from "@/shared/ui/baselink";
+import {
+  handleSubmit,
+  hasSubmissionError,
+  isSubmitting,
+  validateFieldName,
+} from "../modal/api";
 </script>
