@@ -2,6 +2,8 @@ import { createRoutesFromElements, Route, createBrowserRouter, RouterProvider } 
 import { Signup } from "@/pages/signup";
 import { Login } from "@/pages/login";
 import { MainLayout } from "./layout/main-layout";
+import { LoginDetail } from "@/pages/login-detail/ui/LoginDetail";
+
 
 
 
@@ -10,6 +12,8 @@ function App() {
     <Route path='/' element={<MainLayout />} >
       <Route path='signup' element={<Signup />} />
       <Route path='login' element={<Login />} />
+      <Route path='loginDetail' element={<LoginDetail />} />
+
     </Route>
   )
   const routes = createBrowserRouter(routesDefination)
