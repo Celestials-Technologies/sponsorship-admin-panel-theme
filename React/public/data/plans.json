@@ -1,0 +1,66 @@
+[
+  {
+    "free": {
+      "allow": [
+        "General Contact Details Of A Sample Of 10 YouTube Channel Sponsors Every Month",
+        "8+ Data Points Per Sponsor",
+        "CEO Details & Contact Information",
+        "LinkedIn & Twitter/X Profiles"
+      ],
+      "missing": [
+        "Limited Support",
+        "Additional Decision Maker Details (CFOs, CMOs, Head Of Partnerships, Etc.)",
+        "First Access To These Sponsors",
+        "60,000 Database Of All Historical Sponsors"
+      ]
+    }
+  },
+  {
+    "startup": {
+      "allow": [
+        "Direct Contact Details Of The Top 10,000 YouTube Channel Sponsors Every Month",
+        "20+ Data Points Per Sponsor",
+        "CEO Contact Details & Social Media Profiles",
+        "Additional Decision Maker Details (CFOs, CMOs, Head Of Partnerships, Etc.)",
+        "First Access To New Sponsors",
+        "Email Support",
+        "Access To Our Entire Network Of Partners Who Have Actively Contacted Us To Be Your Long-Term Partner",
+        "Access To Our Entire Network Of Partners Who Have Actively Contacted Us To Be Your Long-Term Partner",
+        "1 Team Member"
+      ],
+      "missing": [
+        "Unlimited Team Members",
+        "60,000 Database Of All Historical Sponsors"
+      ]
+    }
+  },
+  {
+    "pro": {
+      "allow": [
+        "Direct Contact Details Of The Top 10,000 YouTube Channel Sponsors Every Month",
+        "20+ Data Points Per Sponsor",
+        "CEO Contact Details & Social Media Profiles",
+        "Additional Decision Maker Details (CFOs, CMOs, Head Of Partnerships, Etc.)",
+        "First Access To New Sponsors",
+        "Email Support",
+        "Access To Our Featured Apps And Tools (Coming Soon: How To Get Brand Deals Course)",
+        "Access To Our Entire Network Of Partners Who Have Actively Contacted Us To Be Your Long-Term Partner",
+        "60,000 Database Of All Historical Sponsors",
+        "3 Team Members"
+      ],
+      "missing": ["Unlimited Team Members"]
+    }
+  },
+  {
+    "enterprise": {
+      "allow": [
+        "Priority Support And A Dedicated Account Manager",
+        "Unlimited Team Members",
+        "API Access",
+        "Reseller Rights",
+        "Custom Solutions Based On Your Needs"
+      ],
+      "missing": []
+    }
+  }
+]

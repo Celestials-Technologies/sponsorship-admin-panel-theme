@@ -1,0 +1,22 @@
+.sidebarLinksActive {
+    position: relative;
+    background-color: #FFA51F;
+    border-radius: 15px;
+}
+
+.sidebarLinksActive::before {
+    content: "";
+    position: absolute;
+    top: 1/2;
+    left: -10px;
+    width: 6px;
+    height: 45px;
+    background-color: #FFA51F;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.headerLinksActive {
+    color: #FFA51F !important;
+
+}

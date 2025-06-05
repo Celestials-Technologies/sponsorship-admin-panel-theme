@@ -3,7 +3,7 @@ import ConnectSponsersLogo from "@/shared/ui/ConnectSponsersLogo";
 import GoogleIcon from "./GoogleIcon"
 import MicrosoftIcon from "./MicrosoftIcon"
 import { Link, Form, useLocation } from 'react-router-dom'
-import { FreeTrailWorkingStep } from "../lib/LoginDetailSteps"
+import { FreeTrailWorkingStep } from "../model/constant"
 
 
 export default function AuthForm({ title = "", titleDescription = "", submitButtonText = "submit", children }) {
