@@ -1,0 +1,38 @@
+[
+  {
+    "imageSrc": "partnerImages/Adcreative.png",
+    "name": "Adcreative.ai",
+    "description": "Generate conversion-focused ad creatives and social media posts in a matter of seconds using Artificial Intelligence. Get Your free trial here.",
+    "backgroundColor": "pink"
+  },
+  {
+    "imageSrc": "partnerImages/Spocket.png",
+    "name": "Spocket",
+    "description": "Discover top dropshipping suppliers of original US/EU products",
+    "backgroundColor": "purple"
+  },
+  {
+    "imageSrc": "partnerImages/Exploding.png",
+    "name": "Exploding Topics",
+    "description": "Discover exploding trends before they take off.",
+    "backgroundColor": "blue"
+  },
+  {
+    "imageSrc": "partnerImages/inflow-.png",
+    "name": "InFlow",
+    "description": "Manage your stock and orders from any device",
+    "backgroundColor": "yellow"
+  },
+  {
+    "imageSrc": "partnerImages/RevealBot.png",
+    "name": "RevealBot",
+    "description": "Automate your ad management routine so you can focus on reaching results, faster.",
+    "backgroundColor": "gray"
+  },
+  {
+    "imageSrc": "partnerImages/Trainual.png",
+    "name": "Trainual",
+    "description": "Easily systemize and scale the way you work with SOPs",
+    "backgroundColor": "green"
+  }
+]
