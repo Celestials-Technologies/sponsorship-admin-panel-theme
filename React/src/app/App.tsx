@@ -4,7 +4,7 @@ import { Login } from "@/pages/login";
 import { MainLayout } from "./layout/main-layout";
 import { LoginDetail } from "@/pages/login-detail/ui/LoginDetail";
 import { DashboardHome } from "@/pages/dashboard-home/ui/DashboardHome";
-
+import { StartUpPlan } from "@/pages/startup-plan/ui/startup-plan";
 
 
 
@@ -15,6 +15,8 @@ function App() {
       <Route path='signup' element={<Signup />} />
       <Route path='login' element={<Login />} />
       <Route path='loginDetail' element={<LoginDetail />} />
+      <Route path='startup-plan' element={<StartUpPlan />} />
+
 
     </Route>
   )
