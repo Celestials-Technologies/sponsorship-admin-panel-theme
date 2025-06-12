@@ -15,7 +15,7 @@ export default function AuthForm({ title = "", titleDescription = "", submitButt
                 <ConnectSponsersLogo className="text-[34px] Gilroy-extrabold" />
                 <div className=" space-y-3 border-[1.4px]  border-gray-100 rounded-2xl p-4 px-6 my-4 mb-8 text-center bg-gradient-to-r from-[#261A7E] to-[#191155]">
                     <h3 className="text-[26px] sm:text-2xl Gilroy-bold tracking-[1px]  ">{title}</h3>
-                    <p className={` ${currentPath.startsWith("/signUp") && "text-primary"} text-[18px] leading-[23px] sm:text-lg max-w-[300px] mx-auto mt-[20px] mb-[21px] `}>{titleDescription}</p>
+                    <p className={` ${currentPath.startsWith("/signup") && "text-primary"} text-[18px] leading-[23px] sm:text-lg max-w-[300px] mx-auto mt-[20px] mb-[21px] `}>{titleDescription}</p>
                     <div className="flex sm:flex-row flex-col items-center gap-4 ">
                         <Button
                             label="Login With Google"
@@ -40,7 +40,7 @@ export default function AuthForm({ title = "", titleDescription = "", submitButt
                     label={submitButtonText}
                     className="bg-primary-button p-6 py-[28px] pt-[30px] rounded-full Gilroy-normal text-[15px] text-wrap min-w-[170px] max-w-[391px]"
                 />
-                {currentPath.startsWith("/signUp") ? <p className="text-sm font-semibold my-4">Do you have an account ?  <Link to="/login" className="text-primary mx-1 hover:opacity-70">Login</Link></p> : <p className="my-4">Don't you have an account ?  <Link to="/signup" className="text-primary mx-1">Sign Up</Link></p>}
+                {currentPath.startsWith("/signup") ? <p className="text-sm font-semibold my-4">Do you have an account ?  <Link to="/login" className="text-primary mx-1 hover:opacity-70">Login</Link></p> : <p className="my-4">Don't you have an account ?  <Link to="/signup" className="text-primary mx-1">Sign Up</Link></p>}
 
                 {currentPath.startsWith("/loginDetail") && <div
                     className="hidden lg:block absolute -right-62 top-22 rounded-e-2xl border border-[#e5e5e585] pt-7 pr-5 pb-8 pl-2 w-[250px] h-[360px] bg-gradient-to-r from-[#261A7E] to-[#191155]">

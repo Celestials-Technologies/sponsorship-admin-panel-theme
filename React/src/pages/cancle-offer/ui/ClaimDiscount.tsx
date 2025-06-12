@@ -2,6 +2,7 @@ import CustomDiv from "@/shared/ui/CustomDiv";
 import { Button } from "@/shared/ui/Button";
 import userImage from "@/shared/images/user_profile1.png"
 import StarIcon from "./StarIcon"
+import { Link } from "react-router-dom";
 export default function ClaimDiscount() {
 
     return (
@@ -39,10 +40,10 @@ export default function ClaimDiscount() {
             <p className="text-base sm:text-xl leading-7 Gilroy-medium text-white text-left sm:text-center mt-3">
                 9 out of 10 ConnectSponsors users say the sponsor leads paid for their subscriptions within the first few months, and we don't want you to miss out on this valuable opportunity!
             </p>
-            <Button
-                label="Claim 50% discount Forever"
-                className=" w-full h-12 mt-8 text-base bg-primary-button rounded-full"
-            />
+            <Link
+                to="/payment-detail"
+                className=" py-3 w-full inline-block text-center Gilroy-medium mt-8 text-base bg-primary-button hover:bg-primary rounded-full"
+            >Claim 50% discount Forever</Link>
         </CustomDiv>
     )
 }
