@@ -23,7 +23,6 @@ export default function AffiliateLink() {
                     </p>
                 </div>
                 <div className="bg-sideBarBg pt-2.5 pb-[18px]">
-                    {/* ...rest of your content... */}
                 </div>
                 <div className="px-4 pt-4 pb-[25px] mt-[5px]">
                     <p className="text-xl leading-[26px] text-white text-center capitalize mb-[9px] Gilroy-semibold">Your affiliate link</p>

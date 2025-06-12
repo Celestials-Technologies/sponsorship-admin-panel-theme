@@ -1,6 +1,7 @@
 import AuthForm from "@/widgets/auth/ui/AuthForm"
 import { Input } from "@/shared/ui/Input"
 import { Button } from "@/shared/ui/Button"
+import { Link } from "react-router-dom"
 
 export function Login() {
     return (
@@ -21,9 +22,7 @@ export function Login() {
                             </Button>
                         </div>
                     </div>
-                    <Button
-                        label="Forget Passowrd"
-                        className="w-full hover:bg-primary absolute left-0 bottom-30 rounded-none rounded-b-xl "></Button>
+                    <Link to="/forget-Password" className="w-full py-1.5 bg-primary absolute left-0 bottom-30 rounded-none rounded-b-xl">Forget Passowrd</Link>
                 </AuthForm>
             </div>
         </>
