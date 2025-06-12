@@ -10,7 +10,7 @@ export function useFetchOffers() {
         const fetchData = async () => {
             setIsFetching(true);
             try {
-                await new Promise(resolve => setTimeout(resolve, 1000));
+                await new Promise(resolve => setTimeout(resolve, 500));
                 const offersData = await fetchOffers();
                 setOffers(offersData);
             } catch (error) {

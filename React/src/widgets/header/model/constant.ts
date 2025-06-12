@@ -1,5 +1,5 @@
 export const navBarList = [
-  { name: "Plans & Pricing", src: "/plans-pricing" },
+  { name: "Plans & Pricing", src: "/plans-and-pricing" },
   { name: "Account", src: "/account" },
   { name: "Team", src: "/team" },
   { name: "Faq", src: "/faq" },
