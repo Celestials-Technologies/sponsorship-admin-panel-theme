@@ -9,6 +9,12 @@ import { ProPlan } from "@/pages/pro-plan";
 import { FeaturedSponsorshipOpportunities } from "@/pages/featured-sponsorship-opportunities";
 import { FeaturedContentEntrepreneurs } from "@/pages/featured-content-entrepreneurs";
 import { PartnerApps } from "@/pages/partner-apps";
+import { YoutubeChannel } from "@/pages/youtube-channel";
+import { PlansAndPricing } from "@/pages/plans-and-pricing";
+import { Account } from "@/pages/account";
+import { CancleOffer } from "@/pages/cancle-offer";
+import { Team } from "@/pages/team";
+
 
 
 
@@ -26,6 +32,15 @@ function App() {
       <Route path='opportunities' element={<FeaturedSponsorshipOpportunities />} />
       <Route path='Entrepreneurs' element={<FeaturedContentEntrepreneurs />} />
       <Route path='partner-apps' element={<PartnerApps />} />
+      <Route path='youtube-channel' element={<YoutubeChannel />} />
+      <Route path='plans-and-pricing' element={<PlansAndPricing />} />
+      <Route path='account' element={<Account />} />
+      <Route path='cancle-offer' element={<CancleOffer />} />
+      <Route path='team' element={<Team />} />
+
+
+
+
 
     </Route>
   )
