@@ -5,6 +5,12 @@ import { MainLayout } from "./layout/main-layout";
 import { LoginDetail } from "@/pages/login-detail/ui/LoginDetail";
 import { DashboardHome } from "@/pages/dashboard-home/ui/DashboardHome";
 import { StartUpPlan } from "@/pages/startup-plan/ui/startup-plan";
+import { ProPlan } from "@/pages/pro-plan";
+import { FeaturedSponsorshipOpportunities } from "@/pages/featured-sponsorship-opportunities";
+import { FeaturedContentEntrepreneurs } from "@/pages/featured-content-entrepreneurs";
+import { PartnerApps } from "@/pages/partner-apps";
+
+
 
 
 
@@ -16,7 +22,10 @@ function App() {
       <Route path='login' element={<Login />} />
       <Route path='loginDetail' element={<LoginDetail />} />
       <Route path='startup-plan' element={<StartUpPlan />} />
-
+      <Route path='pro-plan' element={<ProPlan />} />
+      <Route path='opportunities' element={<FeaturedSponsorshipOpportunities />} />
+      <Route path='Entrepreneurs' element={<FeaturedContentEntrepreneurs />} />
+      <Route path='partner-apps' element={<PartnerApps />} />
 
     </Route>
   )

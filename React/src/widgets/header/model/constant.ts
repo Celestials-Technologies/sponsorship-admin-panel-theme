@@ -1,35 +1,10 @@
 export const navBarList = [
-  {
-    name: "Plans & Pricing",
-    src: "/plans-pricing"
-  },
-  {
-    name: "Account",
-    src: "/account"
-  },
-  {
-    name: "Team",
-    src: "/"
-  },
-  {
-    name: "Faq",
-    src: "/"
-  },
-  {
-    name: "Contact Us",
-    src: "/"
-  },
-  {
-    name: "Affiliate",
-    src: "/"
-  },
-  {
-    name: "Api",
-    src: "/"
-  },
-  {
-    name: "Reseller",
-    src: "/"
-  },
-
-]
+  { name: "Plans & Pricing", src: "/plans-pricing" },
+  { name: "Account", src: "/account" },
+  { name: "Team", src: "/team" },
+  { name: "Faq", src: "/faq" },
+  { name: "Contact Us", src: "/contact-us" },
+  { name: "Affiliate", src: "/affiliate" },
+  { name: "Api", src: "/api" },
+  { name: "Reseller", src: "/reseller" },
+];
