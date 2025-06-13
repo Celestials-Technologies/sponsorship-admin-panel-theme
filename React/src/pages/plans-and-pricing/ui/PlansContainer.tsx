@@ -4,9 +4,9 @@ export default function PlansContainer({ type = "", btnText = "Confirm", setShow
 
     return (
 
-        <div className="relative w-full max-w-[300px]">
+        <div className="relative w-full max-w-[300px] shadow-lg">
             {type === "Pro Plan" && (
-                <div className='absolute -top-5 right-7 text-white bg-primary-button rounded-sm text-[12px] font-bold py-2 px-3 z-20'>
+                <div className='absolute -top-3 right-7 text-white bg-primary-button rounded-sm text-[12px] font-bold py-1 px-3 z-20'>
                     Most Popular
                 </div>
             )}

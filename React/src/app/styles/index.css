@@ -1,11 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
-
-
-
-
-
-
 
 @theme {
 
@@ -14,6 +9,10 @@
     --color-primary-button: #0e9e59;
 }
 
+@font-face {
+    font-family: poppins;
+    src: url("@/shared/fonts/gilroy/Gilroy-Regular.ttf");
+}
 
 @font-face {
     font-family: Gilroy-normal;
@@ -47,6 +46,10 @@
 @font-face {
     font-family: Gilroy-black;
     src: url("@/shared/fonts/gilroy/Gilroy-Black.ttf");
+}
+
+.Poppins {
+    font-family: "Poppins", sans-serif;
 }
 
 .Gilroy-normal {
