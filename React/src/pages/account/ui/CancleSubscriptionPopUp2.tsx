@@ -1,12 +1,8 @@
 import { Button } from '@/shared/ui/Button'
 import CrossIcon from '@/shared/ui/CrossIcon'
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
-
 import { handleAcceptOffer } from '../utils/acceptOffer'
 
 export default function CancleSubscriptionPopUp2({ onClose, onAccept }) {
-
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-xs bg-black/10">
             <div className="bg-white py-5 px-5 rounded-xl w-full max-w-2xl relative">
@@ -19,8 +15,7 @@ export default function CancleSubscriptionPopUp2({ onClose, onAccept }) {
                     <p className='text-[18px] my-4'>
                         Thank you for accepting our offer. You got a fantastic discount, it'll apply to all the next packages you may upgrade!
                     </p>
-                    <Button variant="outline" onClick={() => handleAcceptOffer(onClose, onAccept)} className="w-full rounded-full text-base bg-primary-button text-white py-6 " label='Got it! Return to App'></Button>
-
+                    <Button variant="outline" onClick={() => handleAcceptOffer(onClose, onAccept)} className="w-full rounded-full text-base bg-primary-button text-white py-6 " label='Got it! Return to App' />
                 </div>
             </div>
         </div>

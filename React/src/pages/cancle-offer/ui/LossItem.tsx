@@ -1,5 +1,4 @@
 import LossIcon from "./LossIcon"
-
 export function LossItem({ title, description }) {
     return (
         <div className="flex gap-1.5 mt-4">

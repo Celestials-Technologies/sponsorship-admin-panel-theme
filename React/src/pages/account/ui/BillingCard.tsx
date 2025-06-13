@@ -5,6 +5,9 @@ import CustomDiv from "@/shared/ui/CustomDiv"
 
 export default function BillingCard() {
     const [billingData, setBillingData] = useState({
+        cardnumber: "",
+        expirydate: "",
+        ccvCode: "",
         address: '',
         city: '',
         state: '',
@@ -12,9 +15,11 @@ export default function BillingCard() {
         country: ''
     })
 
-    const handleBillingChange = (field, value) => {
-        setBillingData(prev => ({ ...prev, [field]: value }))
-    }
+    const handleBillingChange = (e) => {
+        const { name, value } = e.target;
+        setBillingData(prev => ({ ...prev, [name]: value }));
+    };
+
 
     return (
         <CustomDiv style="text-center w-full lg:w-1/2 pt-10">
@@ -24,7 +29,11 @@ export default function BillingCard() {
             <div className="flex flex-col gap-3 mb-2">
                 <Input className="rounded-xl" placeholder="5294 9728 3961 3763" />
                 <div className="flex flex-col sm:flex-row gap-3">
-                    <Input className="w-full sm:w-1/2 rounded-xl" placeholder="10/29" />
+                    <Input className="w-full sm:w-1/2 rounded-xl"
+                        placeholder="10/29"
+                        value={billingData.cardnumber}
+                        onChange={(e) => handleBillingChange(e)}
+                    />
                     <Input className="w-full sm:w-1/2 rounded-xl" placeholder="527" />
                 </div>
                 <p className="text-[14px] text-gray-300">Be Charged during 7 days Free Trials</p>

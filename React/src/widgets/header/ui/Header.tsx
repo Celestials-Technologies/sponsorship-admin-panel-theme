@@ -5,8 +5,6 @@ import { CustomNavlink } from '@/shared/ui/CustomNavlink'
 import { navBarList } from '../model/constant'
 import { useState } from 'react'
 
-
-
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   return (

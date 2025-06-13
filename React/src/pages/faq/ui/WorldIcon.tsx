@@ -1,4 +1,3 @@
-import * as React from "react";
 const WorldIcon = (props) => (
     <svg
         width={15}

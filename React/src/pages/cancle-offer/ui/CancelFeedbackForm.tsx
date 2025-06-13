@@ -7,7 +7,6 @@ import { Link } from "react-router-dom";
 
 export default function CancelFeedbackForm() {
     const likelihoodOptions = Array.from({ length: 10 }, (_, i) => i + 1);
-
     return (
         <div className=" px-2 sm:px-4 mt-[60px] pb-[69px] max-w-[1069px] mx-auto">
             <div className="bg-translucentWhite rounded-[20px] border border-[#e5e5e585]">

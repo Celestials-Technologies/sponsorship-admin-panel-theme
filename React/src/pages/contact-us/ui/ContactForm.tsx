@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export function ContactForm() {
     return (
-        <form action="#/" className="mt-[25px]">
+        <form className="mt-[25px]">
             <div className="flex sm:flex-row flex-col gap-x-[25px] mb-[15px]">
 
                 {/* Name Field */}
@@ -26,7 +26,7 @@ export function ContactForm() {
                         label="Reply to Email"
                     />
                     <p className="text-[15px] leading-[19px] text-white Gilroy-normal capitalize mt-2">
-                        Your account’s email address: <span className="">ltvspot@reserchway.co</span>
+                        Your account’s email address: <span>ltvspot@reserchway.co</span>
                     </p>
                 </div>
             </div>

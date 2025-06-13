@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { fetchPartnersData } from "../../../shared/lib/partners";
+import { fetchPartnersData } from "@/shared/lib/partners";
 
 export function useFetchPartners() {
     const [partners, setPartners] = useState([]);

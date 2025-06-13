@@ -1,7 +1,6 @@
 export  const handleSubmit = (e,formData,setFormData) => {
         e.preventDefault();
     
-    // console.log("e:",e.target.formData())
         const requiredFields = [
             "address",
             "city",

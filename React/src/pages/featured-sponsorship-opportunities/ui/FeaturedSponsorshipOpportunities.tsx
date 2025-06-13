@@ -1,5 +1,5 @@
 import { OfferSection } from "@/widgets/offer-section/ui/OfferSection";
-import { NewsLetter } from "@/features/newsLetter/ui/NewsLetter";
+import { NewsLetter } from "@/features/newsletter/ui/NewsLetter";
 import { SponserSection } from "@/widgets/sponsers-section/ui/SponserSection";
 
 export function FeaturedSponsorshipOpportunities() {
@@ -8,7 +8,9 @@ export function FeaturedSponsorshipOpportunities() {
         <>
             {/* Sponsers */}
             <div className="text-gray-50 py-4 mt-12 text-center min-h-[500px]" >
-                <h1 className="text-2xl lg:text-3xl font-bold Gilroy-bold">Featured Sponsorship <span className="text-primary">Opportunities</span> </h1>
+                <h1 className="text-2xl lg:text-3xl font-bold Gilroy-bold">
+                    Featured Sponsorship <span className="text-primary">Opportunities</span>
+                </h1>
                 <SponserSection />
             </div>
             {/* Offers */}

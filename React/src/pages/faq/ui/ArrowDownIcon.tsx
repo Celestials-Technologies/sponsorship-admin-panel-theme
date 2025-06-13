@@ -1,4 +1,3 @@
-import * as React from "react";
 const ArrowDownIcon = (props) => (
     <svg
         width={11}

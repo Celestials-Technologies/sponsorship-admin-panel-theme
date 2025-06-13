@@ -1,4 +1,3 @@
-import * as React from "react";
 const ProPlanActiveIcon = (props) => (
   <svg
     width={21}

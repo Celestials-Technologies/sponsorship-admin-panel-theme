@@ -1,4 +1,3 @@
-import * as React from "react"
 import { SVGProps, memo } from "react"
 const FacebookIcon = (props: SVGProps<SVGSVGElement>) => (
     <svg

@@ -1,4 +1,3 @@
-import * as React from "react"
 import { SVGProps, memo } from "react"
 const LinkedienIcon = (props: SVGProps<SVGSVGElement>) => (
     <svg

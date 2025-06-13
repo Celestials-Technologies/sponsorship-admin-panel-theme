@@ -65,7 +65,8 @@ const asideNavLinks = [
 export default function Sidebar() {
   return (
     <div
-      className="relative rounded-xl pt-11 pb-5 flex-col justify-between bg-[#302964] border border-[#474175] hidden lg:flex min-h-[700px]  overflow-y-auto w-full lg:min-w-[260px] lg:w-[260px] "
+      className="relative rounded-xl pt-11 pb-5 flex-col justify-between bg-[#302964] border border-[#474175] hidden lg:flex min-h-[700px]  
+                overflow-y-auto w-full lg:min-w-[260px] lg:w-[260px] "
     >
       <div className="px-2">
         <h1 className="text-2xl leading-8 text-center Gilroy-extrabold">
@@ -73,13 +74,11 @@ export default function Sidebar() {
         </h1>
         <ul className="mt-5 md:mt-[90px] space-y-2">
           {asideNavLinks.map(link => (
-            <li key={link.name} className="">
+            <li key={link.name}>
               <CustomNavlink key={link.name} to={link.src} icon={link.icon} activeIcon={link.activeIcon} label={link.name} mode="outline" />
             </li>
           ))}
         </ul>
-
-
         <Button label="Logout" variant="ghost" className="text-base text-gray-50 p-4 py-6 border border-gray-200 w-[90%] rounded-full absolute bottom-5"></Button>
 
       </div>
