@@ -1,4 +1,3 @@
-import * as React from "react";
 const FiveStarIcon = (props) => (
     <svg
         width={84}

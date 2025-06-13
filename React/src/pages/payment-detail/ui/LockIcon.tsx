@@ -1,4 +1,3 @@
-import * as React from "react";
 const LockIcon = (props) => (
     <svg
         width={11}

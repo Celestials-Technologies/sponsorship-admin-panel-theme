@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { fetchDocuments } from "../../../shared/lib//documents";
+import { fetchDocuments } from "@/shared/lib//documents";
 
 export function useFetchDocuments() {
     const [documents, setDocuments] = useState([]);

@@ -1,4 +1,3 @@
-import * as React from "react";
 const DollarIcon = (props) => (
     <svg
         width={17}

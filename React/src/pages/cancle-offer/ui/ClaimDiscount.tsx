@@ -1,5 +1,4 @@
 import CustomDiv from "@/shared/ui/CustomDiv";
-import { Button } from "@/shared/ui/Button";
 import userImage from "@/shared/images/user_profile1.png"
 import StarIcon from "./StarIcon"
 import { Link } from "react-router-dom";

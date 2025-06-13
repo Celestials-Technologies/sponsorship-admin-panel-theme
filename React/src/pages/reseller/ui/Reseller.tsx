@@ -1,9 +1,7 @@
 import DollarIcon from "./DollarIcon"
 import CommingSoon from '@/shared/ui/CommingSoon'
-
 export function Reseller() {
     return (
-
         <CommingSoon
             Icon={DollarIcon}
             title="Start selling ConnectSponsors to your clients!"

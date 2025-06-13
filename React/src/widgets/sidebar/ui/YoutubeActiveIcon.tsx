@@ -1,4 +1,3 @@
-import * as React from "react";
 const SVGComponent = (props) => (
   <svg
     fill="#ffa51f"

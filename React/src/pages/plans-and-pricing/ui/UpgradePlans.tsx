@@ -1,11 +1,7 @@
-
-
 import { PlanCard } from './PlanCard';
 import { Button } from '@/shared/ui/Button';
 import ArrowRightIcon from "./ArrowRightIcon"
 export function UpgradePlans({ currentFeature, newFeature, price, newPrice }) {
-
-
 
     return (
         <div className="pt-5 pr-6 pb-7 pl-[23px]">
@@ -13,7 +9,7 @@ export function UpgradePlans({ currentFeature, newFeature, price, newPrice }) {
                 <PlanCard title="Current Plan" price={price} monthlyPrice={newPrice} features={currentFeature} />
                 <div className="absolute flex  left-1/2 top-1/2 -translate-y-[9px] -translate-x-[15px]">
                     <ArrowRightIcon className="opacity-40" />
-                    <ArrowRightIcon className="" />
+                    <ArrowRightIcon />
                     <ArrowRightIcon className="opacity-40" />
                 </div>
                 <PlanCard title="New Plan" price={price} monthlyPrice={newPrice} features={newFeature} />

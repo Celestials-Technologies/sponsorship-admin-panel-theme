@@ -16,7 +16,8 @@ export function FAQ() {
                     <span className="text-[16px] sm:text-[19px] text-white opacity-60 Gilroy-medium capitalize">
                         GetSponsored.AI FAQs
                     </span>
-                </div>                <div className="mt-[30px] mb-2.5">
+                </div>
+                <div className="mt-[30px] mb-2.5">
                     <FaqIcon />
                     <ConnectSponsersLogo className='text-[29px] text-left ' />
                 </div>

@@ -3,10 +3,10 @@ import { NotFoundPage } from "@/shared/ui/NotFoundPage"
 import { Signup } from "@/pages/signup";
 import { Login } from "@/pages/login";
 import { ForgetPassword } from "@/pages/forget-password";
-import { MainLayout } from "./layout/main-layout";
-import { LoginDetail } from "@/pages/login-detail/ui/LoginDetail";
-import { DashboardHome } from "@/pages/dashboard-home/ui/DashboardHome";
-import { StartUpPlan } from "@/pages/startup-plan/ui/startup-plan";
+import { MainLayout } from "./layout/MainLayout";
+import { LoginDetail } from "@/pages/login-detail";
+import { DashboardHome } from "@/pages/dashboard-home";
+import { StartUpPlan } from "@/pages/startup-plan";
 import { ProPlan } from "@/pages/pro-plan";
 import { FeaturedSponsorshipOpportunities } from "@/pages/featured-sponsorship-opportunities";
 import { FeaturedContentEntrepreneurs } from "@/pages/featured-content-entrepreneurs";
@@ -51,11 +51,7 @@ function App() {
   )
   const routes = createBrowserRouter(routesDefination)
 
-  return (
-    <>
-      <RouterProvider router={routes}></RouterProvider>
-    </>
-  )
+  return (<RouterProvider router={routes}></RouterProvider>)
 }
 
 export default App

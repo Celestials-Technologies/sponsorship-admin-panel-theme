@@ -1,4 +1,3 @@
-import React from 'react'
 import { useFetchPartners } from '../api/useFetchPartners'
 import { Error } from '@/shared/ui/Error'
 import { Loader } from '@/shared/ui/Loader'
@@ -6,7 +5,6 @@ import { SponserCard } from '@/shared/ui/SponserCard'
 
 export default function SponsersSection() {
     const { partners, isFetching, error } = useFetchPartners()
-
 
     return (
         <>

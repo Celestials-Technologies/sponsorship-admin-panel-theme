@@ -12,7 +12,6 @@ export function SponsorshipTable({ heading, count }) {
     }
     const visibleDocuments = documents.slice(0, +count);
 
-
     return (
         <div className="pt-12">
             <p className="text-xl sm:text-2xl lg:text-3xl text-white mb-5 Gilroy-black">{heading}</p>
@@ -25,7 +24,7 @@ export function SponsorshipTable({ heading, count }) {
                     {isFetching && <Loader message="Loading Documents..." />}
                     <table className="border-separate border-spacing-y-[15px] w-full">
                         <thead className="text-lg sm:text-xl leading-4 text-primary text-left Gilroy-medium">
-                            <tr className="">
+                            <tr>
                                 <th className="px-6 w-1/2 min-w-[184px] xl:min-w-[500px] leading-5">
                                     Download Sponsors
                                 </th>

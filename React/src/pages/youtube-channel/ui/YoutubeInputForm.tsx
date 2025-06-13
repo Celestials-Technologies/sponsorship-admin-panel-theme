@@ -49,7 +49,7 @@ export function YoutubeInputForm() {
                     <textarea placeholder="Type Here" name="description" className="resize-none block w-full bg-white text-black  px-[13px] py-3.5 h-[45px] placeholder:text-[#00000033]  rounded-xl min-h-[210px]"></textarea>
                 </div>
                 <div className="text-right mt-[25px]">
-                    <Button label="Send" type='submit' variant="outline" className="rounded-full bg-primary p-5 px-9 text-lg text-white text-center"></Button>
+                    <Button label="Send" type='submit' variant="outline" className="rounded-full bg-primary p-5 px-9 text-lg text-white text-center" />
                 </div>
             </Form>
         </>

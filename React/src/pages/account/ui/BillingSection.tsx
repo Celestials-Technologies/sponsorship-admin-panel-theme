@@ -1,4 +1,3 @@
-import React from "react"
 import BillingCard from "./BillingCard"
 import InvoicePreview from "./InvoicePreview"
 

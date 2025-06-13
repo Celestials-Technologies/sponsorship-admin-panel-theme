@@ -1,4 +1,3 @@
-import * as React from "react";
 const ApiIcon = (props) => (
     <svg
         width={30}

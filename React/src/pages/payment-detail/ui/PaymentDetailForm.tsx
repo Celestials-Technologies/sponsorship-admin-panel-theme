@@ -1,7 +1,7 @@
 import ConnectSponsersLogo from '@/shared/ui/ConnectSponsersLogo'
 import CustomDiv from '@/shared/ui/CustomDiv'
 import { Input } from '@/shared/ui/Input'
-import React, { useState } from 'react'
+import { useState } from 'react'
 import OnlinePaymentIcon from "./OnlinePaymentIcon";
 import LockIcon from "./LockIcon";
 import { Button } from "@/shared/ui/Button";
@@ -117,7 +117,7 @@ export function PaymentDetailForm() {
                         </div>
                     </div>
 
-                    <OnlinePaymentIcon className=" w-full max-w-[325px] mb-9 sm:mb-1" />
+                    <OnlinePaymentIcon className="w-full max-w-[325px] mb-9 sm:mb-1" />
 
                     <div className="absolute bottom-0 left-0 flex justify-between items-center bg-primary w-full p-2 rounded-b-2xl">
                         <p className="flex items-center gap-3 text-white">

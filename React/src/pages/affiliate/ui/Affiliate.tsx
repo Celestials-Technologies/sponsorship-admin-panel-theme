@@ -11,7 +11,5 @@ export function Affiliate() {
                 <SuccessKit />
             </div>
         </main>
-
     )
-
 }

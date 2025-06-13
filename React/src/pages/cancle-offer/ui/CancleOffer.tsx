@@ -5,7 +5,6 @@ import ArrowIcon from "./ArrowIcon"
 import { Button } from '@/shared/ui/Button'
 import CancelFeedbackForm from './CancelFeedbackForm'
 
-
 const UpdatedIcon = <div className="w-[22px] h-[22px] pl-1 rounded-full flex justify-center items-center bg-white">
     <ArrowIcon />
 </div>
@@ -17,7 +16,7 @@ export function CancleOffer() {
             <div className="bg-secondary  pt-20 pb-10 px-1">
                 <div className="max-w-[1300px] mx-auto">
 
-                    <div className="">
+                    <div>
                         <ConnectSponsersLogo className='text-lg sm:text-[43px] Gilroy-bold' />
                         <p className="text-base sm:text-xl leading-[30px] Gilroy-medium text-white text-center">Tim, we're sad to let you go! We are
                             hoping that you'd</p>

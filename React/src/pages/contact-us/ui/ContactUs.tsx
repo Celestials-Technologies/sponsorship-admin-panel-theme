@@ -9,7 +9,7 @@ export function ContactUs() {
             <p className="text-[15px] leading-[19px] Gilroy-normal capitalize text-gray-300">
                 Can’t find what you are looking for? Fill in the form below and contact our support team
             </p>
-            <div className="">
+            <div>
                 <ContactForm />
             </div>
         </main>

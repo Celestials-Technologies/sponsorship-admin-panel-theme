@@ -3,8 +3,6 @@ import { PartnerDetail } from "./PartnerDetail";
 import { Error } from "@/shared/ui/Error";
 import { Loader } from "@/shared/ui/Loader";
 
-
-
 export function OfferSection({ }) {
 
     const { offers, isFetching, error } = useFetchOffers()

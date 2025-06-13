@@ -1,4 +1,3 @@
-import * as React from "react";
 const OnlinePaymentIcon = (props) => (
     <svg
         width={325}

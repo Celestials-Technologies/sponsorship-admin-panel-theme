@@ -2,7 +2,7 @@ import * as React from "react"
 
 import { cn } from "@/shared/lib/utils"
 
-function Input({ className = "", type = "text", label = false, ...props }: React.ComponentProps<"input">) {
+function Input({ className = "", type = "text", label = "", ...props }: React.ComponentProps<"input">) {
   return (
     <>
       {label && <label className="inline-block text-[15px] leading-[19px] text-white Gilroy-medium mb-1">{label}</label>

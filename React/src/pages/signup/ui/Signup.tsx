@@ -12,7 +12,9 @@ export function Signup() {
                     <Input type="password" placeholder='Password *' className='rounded-lg' />
                     <Input type="email" placeholder='Email' className='rounded-lg' />
                 </div>
-                <p className="capitalize text-[14px] mt-6 mb-2">By registering you agree to our <Link to="/" className='text-primary underline hover:opacity-70'> Terms of use</Link></p>
+                <p className="capitalize text-[14px] mt-6 mb-2">By registering you agree to our
+                    <Link to="/" className='text-primary underline hover:opacity-70'> Terms of use</Link>
+                </p>
             </AuthForm>
         </div>
     )
