@@ -1,7 +1,6 @@
 import CustomDiv from '@/shared/ui/CustomDiv';
 import { PlanFeatureBadge } from './PlanFeatureBadge';
 
-
 export function PlanCard({ title, price, monthlyPrice, features = [] }) {
     return (
         <CustomDiv style="bg-gradient border border-[#e5e5e585] rounded-[15px] !pt-3 !pb-4 !px-3 w-full max-w-[278px]">

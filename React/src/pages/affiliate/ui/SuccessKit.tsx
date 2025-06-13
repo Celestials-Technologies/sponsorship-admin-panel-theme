@@ -1,6 +1,5 @@
 import { Button } from '@/shared/ui/Button'
 import CustomDiv from '@/shared/ui/CustomDiv'
-import React from 'react'
 
 export default function SuccessKit() {
     return (

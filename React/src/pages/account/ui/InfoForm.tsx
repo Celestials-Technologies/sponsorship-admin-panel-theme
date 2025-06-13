@@ -7,30 +7,29 @@ import FileIcon from './FileIcon'
 export default function InfoForm() {
     const [fullName, setFullName] = useState('')
     const [email, setEmail] = useState('')
-    const [file, setFile] = useState(null)
-    const [fileName, setFileName] = useState()
+    const [, setFile] = useState(null)
+    const [fileName, setFileName] = useState("")
     const [errors, setErrors] = useState({ fullName: '', email: '', file: '' })
 
     const handleNameSubmit = (e) => {
         e.preventDefault()
         if (!fullName.trim()) {
             setErrors(prev => ({ ...prev, fullName: 'Full Name is required' }))
-            return
+            return;
         }
         setErrors(prev => ({ ...prev, fullName: '' }))
-        console.log('Updating full name:', fullName)
     }
 
     const handleEmailSubmit = (e) => {
         e.preventDefault()
         if (!email.trim()) {
             setErrors(prev => ({ ...prev, email: 'Email is required' }))
-            return
+            return;
         }
         const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
         if (!pattern.test(email)) {
             setErrors(prev => ({ ...prev, email: 'Invalid email address' }))
-            return
+            return;
         }
         setErrors(prev => ({ ...prev, email: '' }))
         console.log('Updating email:', email)

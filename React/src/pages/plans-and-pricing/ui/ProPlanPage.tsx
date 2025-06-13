@@ -18,12 +18,6 @@ export function ProPlanPage({ onClose }) {
                     </CustomDiv>
                 </div>
             </div>
-
-
-
         </>
-
-
-
     )
 }

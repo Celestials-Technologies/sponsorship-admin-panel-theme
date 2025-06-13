@@ -5,7 +5,6 @@ import { useEffect, useState } from "react"
 
 export function MainLayout() {
   const currentpath = useLocation()
-  console.log("currentpath:", currentpath)
   const [isHeaderVisible, setIsHeaderVisible] = useState(true)
   const [isSidebarVisible, setIsSidebarVisible] = useState(true)
 

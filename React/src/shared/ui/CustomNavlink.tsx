@@ -14,7 +14,13 @@ export const CustomNavlink = ({ to = "/", icon, activeIcon, label, mode = "" }) 
                     >
                         {isActive ? activeIcon : icon}
                     </div>
-                    <p className="text-sm md:text-base leading-5 text-white pt-[3px] Gilroy-semibold">
+                    <p
+                        className={`text-sm md:text-base leading-5 ${isActive
+                            ? mode === "outline"
+                                ? "text-white"
+                                : "text-primary" :
+                            "text-white"} pt-[3px] Gilroy-semibold`}
+                    >
                         {label}
                     </p>
                 </div>

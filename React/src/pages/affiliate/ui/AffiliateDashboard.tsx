@@ -5,12 +5,10 @@ import CustomDiv from "@/shared/ui/CustomDiv";
 export default function AffiliateDashboard() {
     return (
         <div className="w-full mt-20 xl:max-w-[505px] mx-auto sm:mx-0">
-
             <h1 className="text-[38px] md:text-[45px] lg:text-[54px] leading-[48px] md:leading-[54px] lg:leading-[64px] Gilroy-bold mb-[25px]">
                 <span className="text-primary">Affiliate</span>
                 <span className="text-white"> Dashboard</span>
             </h1>
-
             <section className="mb-[17px]">
                 <p className="text-xl leading-[29px] text-white Gilroy-medium mb-0.5">Paypal Email</p>
                 <div className="flex justify-center items-center gap-3">
@@ -23,7 +21,6 @@ export default function AffiliateDashboard() {
                         />
                     </div>
                     <Button variant="ghost" className="hover:bg-transparent" icon={<EditIcon className="relative top-3" />} />
-
                 </div>
             </section>
 
@@ -35,7 +32,6 @@ export default function AffiliateDashboard() {
                 className="rounded-full h-[44px] w-[192px] text-[17px]"
                 label="Start Earning Money "
             />
-
 
             {/* Earnings Section */}
             <section className="mt-7">

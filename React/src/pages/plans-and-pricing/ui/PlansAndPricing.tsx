@@ -9,21 +9,22 @@ import { planTypes } from "../model/Plans"
 import { StartUpPlanPage } from "./StartUpPlanPage"
 import { ProPlanPage } from './ProPlanPage'
 
-
 export function PlansAndPricing() {
     const { plans, isFetching, error } = useFetchPlans()
     const [showUpgradeModal, setShowUpgradeModal] = useState(undefined)
-
 
     return (
         <>
             <div className="pt-10 px-2 sm:pr-[23px] pb-[75px] sm:pl-5 max-w-[1300px] mx-auto">
                 <div className="flex items-center">
-                    <span className="w-[29px] h-[29px] relative rounded-full bg-primary flex justify-center items-center p-1.5 after:content-[''] after:absolute after:right-0 after:top-0 after:bg-gray-200 after:w-2px after:h-20">
+                    <span className="w-[29px] h-[29px] relative rounded-full bg-primary flex justify-center items-center p-1.5 after:content-['']
+                                     after:absolute after:right-0 after:top-0 after:bg-gray-200 after:w-2px after:h-20">
                         <DiscountIcon />
                     </span>
                     <div className="w-px h-[33px] divider-bg-gradient ml-2 mr-3"></div>
-                    <p className="text-lg sm:text-xl lg:text-2xl leading-6 md:leading-10 Gilroy-bold text-white ">Discount code applied!: Get <span className="text-primary">50% off</span> the 1st year on all plans</p>
+                    <p className="text-lg sm:text-xl lg:text-2xl leading-6 md:leading-10 Gilroy-bold text-white ">
+                        Discount code applied!: Get <span className="text-primary">50% off</span> the 1st year on all plans
+                    </p>
                 </div>
 
                 {isFetching && <Loader />}
