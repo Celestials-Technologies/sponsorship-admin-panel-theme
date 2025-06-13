@@ -23,13 +23,13 @@ export function SponsorshipTable({ heading, count }) {
                     {(error && <Error message={error.message} />)}
                     {(!isFetching && visibleDocuments.length === 0) && <p className="text-white font-bold p-2 border-2 border-primary">You currently have no Documents to show here!</p>}
                     {isFetching && <Loader message="Loading Documents..." />}
-                    <table className="border-separate border-spacing-y-[15px] max-w-[400px]">
-                        <thead className="text-xl leading-4 text-primary text-left Gilroy-medium">
+                    <table className="border-separate border-spacing-y-[15px] w-full">
+                        <thead className="text-lg sm:text-xl leading-4 text-primary text-left Gilroy-medium">
                             <tr className="">
-                                <th className="xl:w-[600px] xl:min-w-[600px] w-[184px] min-w-[184px] px-6">
+                                <th className="px-6 w-1/2 min-w-[184px] xl:min-w-[500px] leading-5">
                                     Download Sponsors
                                 </th>
-                                <th className="xl:w-[600px] xl:min-w-[600px] w-[184px] min-w-[184px] px-6">
+                                <th className="px-6 w-1/2 min-w-[184px] xl:min-w-[500px]">
                                     Date
                                 </th>
                             </tr>
@@ -48,8 +48,8 @@ export function SponsorshipTable({ heading, count }) {
                         </tbody>}
                     </table>
                 </div>
-                <p className="text-xl leading-7 text-white mb-[11px] Gilroy-medium">This content is for Pro plan & Enterprise members only</p>
-                <p className="text-xl leading-7 text-white mb-0 Gilroy-medium">Please <Link to="/" className="text-primary underline">Click Here</Link> to gain access</p>
+                <p className="text-lg sm:text-xl leading-7 text-white mb-[11px] Gilroy-medium">This content is for Pro plan & Enterprise members only</p>
+                <p className="text-lg sm:text-xl leading-7 text-white mb-0 Gilroy-medium">Please <Link to="/" className="text-primary underline">Click Here</Link> to gain access</p>
             </CustomDiv>
         </div >
 

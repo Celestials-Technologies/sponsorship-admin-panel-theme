@@ -1,0 +1,1 @@
+export {FeaturedContentEntrepreneurs} from "./ui/FeaturedContentEntrepreneurs"

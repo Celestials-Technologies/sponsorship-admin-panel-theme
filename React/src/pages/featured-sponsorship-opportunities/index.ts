@@ -1,0 +1,1 @@
+export {FeaturedSponsorshipOpportunities} from "./ui/FeaturedSponsorshipOpportunities"

@@ -2,48 +2,62 @@ import { CustomNavlink } from "@/shared/ui/CustomNavlink";
 import { Button } from "@/shared/ui/Button";
 import ConnectSponsersLogo from "@/shared/ui/ConnectSponsersLogo";
 import DashboardIcon from "./DashboardIcon"
+import DashboardActiveIcon from "./DashboardActiveIcon ";
 import ProPlanIcon from "./ProPlanIcon"
+import ProPlanActiveIcon from "./ProPlanActiveIcon";
 import StartupPlanIcon from "./StartupPlanIcon"
+import StartupPlanActiveIcon from "./StartupPlanActiveIcon";
 import OpportunitiesIcon from "./OpportunitiesIcon"
+import OpportunitiesActiveIcon from "./OpportunitiesActiveIcon";
 import EntrepreneursIcon from "./EntrepreneursIcon"
+import EntrepreneursActiveIcon from "./EntrepreneursActiveIcon";
 import PartnerIcons from "./PartnerIcons"
+import PartnerActiveIcons from "./PartnerActiveIcons";
 import YoutubeIcon from "./YoutubeIcon"
+import YoutubeActiveIcon from "./YoutubeActiveIcon";
 
 
 const asideNavLinks = [
   {
     name: "Dashboard",
     icon: <DashboardIcon />,
+    activeIcon: <DashboardActiveIcon />,
     src: "/"
   },
   {
     name: "Startup Plan",
     icon: <StartupPlanIcon />,
+    activeIcon: <StartupPlanActiveIcon />,
     src: "startup-plan"
   },
   {
     name: "Pro Plan",
     icon: <ProPlanIcon />,
+    activeIcon: <ProPlanActiveIcon />,
     src: "pro-plan"
   },
   {
     name: "Featured Sponsorship Opportunities",
     icon: <OpportunitiesIcon />,
+    activeIcon: <OpportunitiesActiveIcon />,
     src: "opportunities"
   },
   {
     name: "Featured Content Entrepreneurs",
     icon: <EntrepreneursIcon />,
+    activeIcon: <EntrepreneursActiveIcon />,
     src: "Entrepreneurs"
   },
   {
     name: "Partner apps, tools & courses",
     icon: <PartnerIcons />,
+    activeIcon: <PartnerActiveIcons />,
     src: "partner-apps"
   },
   {
     name: " Suggest Youtube Channel",
     icon: <YoutubeIcon />,
+    activeIcon: <YoutubeActiveIcon />,
     src: "youtube-channel"
   },
 ]
@@ -60,7 +74,7 @@ export default function Sidebar() {
         <ul className="mt-5 md:mt-[90px] space-y-2">
           {asideNavLinks.map(link => (
             <li key={link.name} className="">
-              <CustomNavlink key={link.name} to={link.src} icon={link.icon} label={link.name} mode="outline" />
+              <CustomNavlink key={link.name} to={link.src} icon={link.icon} activeIcon={link.activeIcon} label={link.name} mode="outline" />
             </li>
           ))}
         </ul>
