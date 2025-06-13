@@ -2,15 +2,20 @@
 
 import { PlanCard } from './PlanCard';
 import { Button } from '@/shared/ui/Button';
-
+import ArrowRightIcon from "./ArrowRightIcon"
 export function UpgradePlans({ currentFeature, newFeature, price, newPrice }) {
 
 
 
     return (
         <div className="pt-5 pr-6 pb-7 pl-[23px]">
-            <div className="flex flex-col sm:flex-row justify-between gap-[18px] relative">
+            <div className="flex flex-col sm:flex-row items-centerjustify-center md:justify-between gap-[35px] sm:gap-[20px] relative">
                 <PlanCard title="Current Plan" price={price} monthlyPrice={newPrice} features={currentFeature} />
+                <div className="absolute flex  left-1/2 top-1/2 -translate-y-[9px] -translate-x-[15px]">
+                    <ArrowRightIcon className="opacity-40" />
+                    <ArrowRightIcon className="" />
+                    <ArrowRightIcon className="opacity-40" />
+                </div>
                 <PlanCard title="New Plan" price={price} monthlyPrice={newPrice} features={newFeature} />
             </div>
             <Button className=" rounded-full bg-primary-button text-base Gilroy-medium w-[150px] h-[45px] mx-auto block mt-3" label="Confirm" />

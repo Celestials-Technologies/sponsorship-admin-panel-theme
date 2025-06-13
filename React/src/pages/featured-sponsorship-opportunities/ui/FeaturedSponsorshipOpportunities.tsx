@@ -7,7 +7,7 @@ export function FeaturedSponsorshipOpportunities() {
     return (
         <>
             {/* Sponsers */}
-            <div className="text-gray-50 py-4 mt-12 text-center" >
+            <div className="text-gray-50 py-4 mt-12 text-center min-h-[500px]" >
                 <h1 className="text-2xl lg:text-3xl font-bold Gilroy-bold">Featured Sponsorship <span className="text-primary">Opportunities</span> </h1>
                 <SponserSection />
             </div>

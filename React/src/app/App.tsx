@@ -30,7 +30,7 @@ function App() {
       <Route path='signup' element={<Signup />} />
       <Route path='login' element={<Login />} />
       <Route path='forget-Password' element={<ForgetPassword />} />
-      <Route path='loginDetail' element={<LoginDetail />} />
+      <Route path='login-detail' element={<LoginDetail />} />
       <Route path='startup-plan' element={<StartUpPlan />} />
       <Route path='pro-plan' element={<ProPlan />} />
       <Route path='opportunities' element={<FeaturedSponsorshipOpportunities />} />

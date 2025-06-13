@@ -1,7 +1,7 @@
 import AuthForm from "@/widgets/auth/ui/AuthForm"
 import { Input } from "@/shared/ui/Input"
 import { Button } from "@/shared/ui/Button"
-
+import EyeIcon from "@/shared/ui/EyeIcon"
 export function ForgetPassword() {
     return (
         <>
@@ -15,7 +15,7 @@ export function ForgetPassword() {
                         <div className="flex justify-center items-center bg-gray-50 mb-14">
                             <Input type="password" placeholder='Confirm Password *' className="focus-visible:ring-0 focus-visible:border-transparent" />
                             <Button
-                                icon={<i className="fa-regular fa-eye  text-gray-600  hover:text-gray-800 "></i>}
+                                icon={<EyeIcon />}
                                 className="bg-transparent hover:bg-transparent" />
                         </div>
                     </div>
