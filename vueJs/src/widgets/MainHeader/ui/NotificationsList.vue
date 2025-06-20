@@ -1,24 +1,3 @@
-<script lang="ts">
-export default {
-  name: "NotificationsList",
-};
-</script>
-
-<script setup lang="ts">
-import { type Notification } from "../model/types";
-import { ref } from "vue";
-
-defineProps<{
-  notifications: Notification[];
-}>();
-
-const selectedNotificationId = ref<number | null>(null);
-
-const handleNotificationClick = (notificationId: number) => {
-  selectedNotificationId.value = notificationId;
-};
-</script>
-
 <template>
   <ul class="divide-y divide-gray-700">
     <li
@@ -54,7 +33,26 @@ const handleNotificationClick = (notificationId: number) => {
     </li>
   </ul>
 </template>
+<script lang="ts">
+export default {
+  name: "NotificationsList",
+};
+</script>
 
+<script setup lang="ts">
+import { type Notification } from "../model/types";
+import { ref } from "vue";
+
+defineProps<{
+  notifications: Notification[];
+}>();
+
+const selectedNotificationId = ref<number | null>(null);
+
+const handleNotificationClick = (notificationId: number) => {
+  selectedNotificationId.value = notificationId;
+};
+</script>
 <style scoped>
 .notification-count {
   @apply bg-primary text-white text-xs rounded-full px-1.5 py-0.5 min-w-[20px] text-center;

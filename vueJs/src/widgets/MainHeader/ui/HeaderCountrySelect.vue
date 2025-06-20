@@ -1,33 +1,3 @@
-<script lang="ts">
-export default {
-  name: "HeaderCountrySelect",
-};
-</script>
-
-<script setup lang="ts">
-import { ref } from "vue";
-import { type Country } from "../model/types";
-import { countries } from "../model/config";
-import { useClickOutside } from "@/shared/composables/useClickOutside";
-
-const isOpen = ref(false);
-const selectedCountry = ref(countries[0]);
-const countrySelectRef = ref<HTMLElement | null>(null);
-
-const toggleDropdown = () => {
-  isOpen.value = !isOpen.value;
-};
-
-const selectCountry = (country: Country) => {
-  selectedCountry.value = country;
-  isOpen.value = false;
-};
-
-useClickOutside(countrySelectRef, () => {
-  isOpen.value = false;
-});
-</script>
-
 <template>
   <div class="relative" ref="countrySelectRef">
     <Button
@@ -65,3 +35,32 @@ useClickOutside(countrySelectRef, () => {
     </div>
   </div>
 </template>
+<script lang="ts">
+export default {
+  name: "HeaderCountrySelect",
+};
+</script>
+
+<script setup lang="ts">
+import { ref } from "vue";
+import { type Country } from "../model/types";
+import { countries } from "../model/config";
+import { useClickOutside } from "@/shared/composables/useClickOutside";
+
+const isOpen = ref(false);
+const selectedCountry = ref(countries[0]);
+const countrySelectRef = ref<HTMLElement | null>(null);
+
+const toggleDropdown = () => {
+  isOpen.value = !isOpen.value;
+};
+
+const selectCountry = (country: Country) => {
+  selectedCountry.value = country;
+  isOpen.value = false;
+};
+
+useClickOutside(countrySelectRef, () => {
+  isOpen.value = false;
+});
+</script>

@@ -1,29 +1,3 @@
-<script setup lang="ts">
-import { type HeaderProps, type HeaderEmits } from "../model/types";
-import BurgerIcon from "@/shared/ui/Icons/svgs/BurgerIcon.vue";
-import HeaderSearch from "./HeaderSearch.vue";
-import HeaderNotifications from "./HeaderNotifications.vue";
-import HeaderCountrySelect from "./HeaderCountrySelect.vue";
-import HeaderProfile from "./HeaderProfile.vue";
-import WalletButton from "./WalletButton.vue";
-import { Button } from "@/shared/ui/button";
-
-defineOptions({
-  name: "AppHeader",
-});
-
-const props = defineProps<HeaderProps>();
-const emit = defineEmits<HeaderEmits>();
-
-const handleToggleSidebar = () => {
-  emit("toggle-sidebar");
-};
-
-const handleConnectWallet = () => {
-  emit("connect-wallet");
-};
-</script>
-
 <template>
   <header class="transition-all duration-300 relative z-[99999] fixed top-0">
     <div
@@ -52,3 +26,29 @@ const handleConnectWallet = () => {
     </div>
   </header>
 </template>
+
+<script setup lang="ts">
+import { type HeaderProps, type HeaderEmits } from "../model/types";
+import BurgerIcon from "@/shared/ui/Icons/svgs/BurgerIcon.vue";
+import HeaderSearch from "./HeaderSearch.vue";
+import HeaderNotifications from "./HeaderNotifications.vue";
+import HeaderCountrySelect from "./HeaderCountrySelect.vue";
+import HeaderProfile from "./HeaderProfile.vue";
+import WalletButton from "./WalletButton.vue";
+import { Button } from "@/shared/ui/button";
+
+defineOptions({
+  name: "AppHeader",
+});
+
+const props = defineProps<HeaderProps>();
+const emit = defineEmits<HeaderEmits>();
+
+const handleToggleSidebar = () => {
+  emit("toggle-sidebar");
+};
+
+const handleConnectWallet = () => {
+  emit("connect-wallet");
+};
+</script>

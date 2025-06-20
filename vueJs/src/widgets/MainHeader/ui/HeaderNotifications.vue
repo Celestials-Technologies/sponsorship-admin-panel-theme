@@ -1,3 +1,28 @@
+<template>
+  <div class="relative hidden md:block" ref="notificationsRef">
+    <Button
+      variant="none"
+      @click="toggleNotifications"
+      class="p-1 cursor-pointer iconMainBox rounded-lg"
+      aria-label="Notifications"
+      :aria-expanded="showNotifications"
+    >
+      <BellIcon />
+      <span v-if="unreadCount" class="notification-badge">{{
+        unreadCount
+      }}</span>
+    </Button>
+
+    <div
+      v-show="showNotifications"
+      class="absolute right-0 bg-bgPrimary rounded-lg px-2 py-1 border border-solid border-white w-[300px] mt-2.5"
+      role="dialog"
+      aria-label="Notifications panel"
+    >
+      <NotificationsList :notifications="notifications" />
+    </div>
+  </div>
+</template>
 <script lang="ts">
 export default {
   name: "HeaderNotifications",
@@ -29,33 +54,6 @@ useClickOutside(notificationsRef, () => {
   showNotifications.value = false;
 });
 </script>
-
-<template>
-  <div class="relative hidden md:block" ref="notificationsRef">
-    <Button
-      variant="none"
-      @click="toggleNotifications"
-      class="p-1 cursor-pointer iconMainBox rounded-lg"
-      aria-label="Notifications"
-      :aria-expanded="showNotifications"
-    >
-      <BellIcon />
-      <span v-if="unreadCount" class="notification-badge">{{
-        unreadCount
-      }}</span>
-    </Button>
-
-    <div
-      v-show="showNotifications"
-      class="absolute right-0 bg-bgPrimary rounded-lg px-2 py-1 border border-solid border-white w-[300px] mt-2.5"
-      role="dialog"
-      aria-label="Notifications panel"
-    >
-      <NotificationsList :notifications="notifications" />
-    </div>
-  </div>
-</template>
-
 <style scoped>
 .notification-badge {
   position: absolute;

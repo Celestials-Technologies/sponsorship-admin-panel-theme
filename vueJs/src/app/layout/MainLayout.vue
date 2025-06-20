@@ -1,16 +1,3 @@
-<script setup lang="ts">
-import { ref } from "vue";
-import { AppHeader } from "@/widgets/MainHeader";
-import { Sidebar } from "@/widgets/Sidebar";
-// Add any required imports or logic here
-
-const isSidebarVisible = ref(true);
-
-const handleToggleSidebar = () => {
-  isSidebarVisible.value = !isSidebarVisible.value;
-};
-</script>
-
 <template>
   <div
     class="min-h-screen bg-bgPrimary flex gap-[25px] pt-[25px] pb-[53px] px-6"
@@ -33,3 +20,16 @@ const handleToggleSidebar = () => {
     </div>
   </div>
 </template>
+
+<script setup lang="ts">
+import { ref } from "vue";
+import { AppHeader } from "@/widgets/MainHeader";
+import { Sidebar } from "@/widgets/Sidebar";
+// Add any required imports or logic here
+
+const isSidebarVisible = ref(true);
+
+const handleToggleSidebar = () => {
+  isSidebarVisible.value = !isSidebarVisible.value;
+};
+</script>

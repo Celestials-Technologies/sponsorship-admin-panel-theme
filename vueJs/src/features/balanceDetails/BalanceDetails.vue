@@ -1,19 +1,3 @@
-<script setup lang="ts">
-import { ref } from "vue";
-
-import { TitleHeader } from "@/shared/ui/TitleHeader";
-import { LiquidityModal } from "@/entities/liquidity";
-import VerticalEllipsis from "@/shared/ui/Icons/svgs/VerticalEllipsis.vue";
-import Typography from "@/shared/ui/typography/Typography.vue";
-import AverageBalance from "./ui/AverageBalance.vue";
-import CurrencyOverview from "./ui/CurrencyOverview.vue";
-const showLiquidityModal = ref(false);
-
-const openLiquidityModal = () => {
-  showLiquidityModal.value = true;
-};
-</script>
-
 <template>
   <div>
     <TitleHeader
@@ -30,6 +14,7 @@ const openLiquidityModal = () => {
       <AverageBalance />
       <CurrencyOverview />
     </div>
+    <TransactionHistory />
 
     <LiquidityModal
       v-if="showLiquidityModal"
@@ -37,3 +22,17 @@ const openLiquidityModal = () => {
     />
   </div>
 </template>
+<script setup lang="ts">
+import { ref } from "vue";
+
+import { TitleHeader } from "@/shared/ui/TitleHeader";
+import { LiquidityModal } from "@/entities/liquidity";
+import AverageBalance from "./ui/AverageBalance.vue";
+import CurrencyOverview from "./ui/CurrencyOverview.vue";
+import TransactionHistory from "@/features/dashboard/ui/TransactionHistory/ui/TransactionHistory.vue";
+const showLiquidityModal = ref(false);
+
+const openLiquidityModal = () => {
+  showLiquidityModal.value = true;
+};
+</script>

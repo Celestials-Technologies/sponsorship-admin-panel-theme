@@ -3,7 +3,6 @@
     class="md:p-6 p-4 border border-[#e5e5e585] rounded-[15px] bg-gradient w-full xl:w-1/2"
   >
     <Header title="Average Balance" />
-
     <div
       class="grid sm:grid-cols-2 grid-cols-1 gap-3 items-center justify-between gap-5"
     >

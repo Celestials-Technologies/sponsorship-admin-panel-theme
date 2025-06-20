@@ -1,3 +1,26 @@
+<template>
+  <div
+    id="sideBar"
+    class="fixed top-[25px]"
+    :class="{ 'lg:block': isVisible, 'lg:hidden': !isVisible }"
+    style="width: 260px; transition: all 0.5s ease; left: 24px"
+  >
+    <div
+      class="w-full rounded-[20px] pt-[46px] pb-5 flex-col justify-between bg-sideBarBg border border-translucentWhite hidden lg:flex h-[92vh] sticky top-6 tableScroll overflow-y-auto"
+    >
+      <div class="px-2.5">
+        <SidebarLogo />
+        <SidebarNav
+          :navigation-items="navigationConfig"
+          :is-active-route="isActiveRoute"
+          :is-active-parent="isActiveParent"
+        />
+      </div>
+      <SidebarFooter />
+    </div>
+  </div>
+</template>
+
 <script lang="ts">
 export default {
   name: "Sidebar",
@@ -29,26 +52,3 @@ const isActiveParent = (item: NavigationItem) => {
   return item.children.some((child) => isActiveRoute.value(child.path));
 };
 </script>
-
-<template>
-  <div
-    id="sideBar"
-    class="fixed top-[25px]"
-    :class="{ 'lg:block': isVisible, 'lg:hidden': !isVisible }"
-    style="width: 260px; transition: all 0.5s ease; left: 24px"
-  >
-    <div
-      class="w-full rounded-[20px] pt-[46px] pb-5 flex-col justify-between bg-sideBarBg border border-translucentWhite hidden lg:flex h-[92vh] sticky top-6 tableScroll overflow-y-auto"
-    >
-      <div class="px-2.5">
-        <SidebarLogo />
-        <SidebarNav
-          :navigation-items="navigationConfig"
-          :is-active-route="isActiveRoute"
-          :is-active-parent="isActiveParent"
-        />
-      </div>
-      <SidebarFooter />
-    </div>
-  </div>
-</template>

@@ -1,7 +1,3 @@
-<script setup lang="ts">
-import AddButton from "@/shared/ui/Icons/svgs/dashboardSvgs/AddButton.vue";
-</script>
-
 <template>
   <div
     class="sm:w-3/6 xl:w-[31.333%] 2xl:w-full w-full max-w-full sm:px-2.5 max-h-full h-[217px]"
@@ -26,3 +22,6 @@ import AddButton from "@/shared/ui/Icons/svgs/dashboardSvgs/AddButton.vue";
     </div>
   </div>
 </template>
+<script setup lang="ts">
+import AddButton from "@/shared/ui/Icons/svgs/dashboardSvgs/AddButton.vue";
+</script>
