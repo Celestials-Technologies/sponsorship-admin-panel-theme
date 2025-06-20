@@ -1,3 +1,42 @@
+<template>
+  <div class="relative">
+    <label v-if="label" class="text-lg Gilroy-medium text-white w-full flex">
+      {{ label }}
+    </label>
+    <input
+      :type="
+        type != 'password'
+          ? 'text'
+          : type === 'password' && showPassword
+          ? 'text'
+          : 'password'
+      "
+      v-model="modelValue"
+      :placeholder="props.placeholder"
+      :class="cn(inputVariants({ variant: props.variant as any }), props.class)"
+      @blur="handleBlur"
+    />
+    <p
+      v-if="error"
+      id="lastNameError"
+      class="text-[#FF2B28] absolute text-[10px] mt-1 ml-1"
+    >
+      {{ error }}
+    </p>
+
+    <Button
+      v-if="type === 'password'"
+      type="button"
+      @click="togglePassword"
+      class="absolute right-6 top-9 cursor-pointer p-0"
+      variant="none"
+    >
+      <EyeIcon v-if="showPassword" />
+      <HidePasswordIcon v-else />
+    </Button>
+  </div>
+</template>
+
 <script setup lang="ts">
 import type { HTMLAttributes } from "vue";
 import { useVModel } from "@vueuse/core";
@@ -56,42 +95,3 @@ const togglePassword = () => {
   showPassword.value = !showPassword.value;
 };
 </script>
-
-<template>
-  <div class="relative">
-    <label v-if="label" class="text-lg Gilroy-medium text-white w-full flex">
-      {{ label }}
-    </label>
-    <input
-      :type="
-        type != 'password'
-          ? 'text'
-          : type === 'password' && showPassword
-          ? 'text'
-          : 'password'
-      "
-      v-model="modelValue"
-      :placeholder="props.placeholder"
-      :class="cn(inputVariants({ variant: props.variant as any }), props.class)"
-      @blur="handleBlur"
-    />
-    <p
-      v-if="error"
-      id="lastNameError"
-      class="text-[#FF2B28] absolute text-[10px] mt-1 ml-1"
-    >
-      {{ error }}
-    </p>
-
-    <Button
-      v-if="type === 'password'"
-      type="button"
-      @click="togglePassword"
-      class="absolute right-6 top-9 cursor-pointer p-0"
-      variant="none"
-    >
-      <EyeIcon v-if="showPassword" />
-      <HidePasswordIcon v-else />
-    </Button>
-  </div>
-</template>

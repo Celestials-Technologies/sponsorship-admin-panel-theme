@@ -4,8 +4,15 @@
   </MainLayout>
 </template>
 
-<script setup lang="ts">
+<script lang="ts">
+import { defineComponent } from "vue";
 import MainLayout from "@/app/layout/MainLayout.vue";
+
+export default defineComponent({
+  components: {
+    MainLayout,
+  },
+});
 </script>
 
 <style lang="scss">

@@ -1,3 +1,8 @@
+<template>
+  <component :is="tag" :class="classes" :style="{ color: props.color }">
+    <slot />
+  </component>
+</template>
 <script setup lang="ts">
 import { computed } from "vue";
 import { cn } from "@/shared/lib/utils"; // Assuming you have a utility function for class merging
@@ -52,9 +57,3 @@ const classes = computed(() => {
   return cn(defaultClasses[props.variant], props.className);
 });
 </script>
-
-<template>
-  <component :is="tag" :class="classes" :style="{ color: props.color }">
-    <slot />
-  </component>
-</template>

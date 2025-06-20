@@ -1,8 +1,3 @@
-<script setup lang="ts">
-import SearchIcon from "@/shared/ui/Icons/svgs/SearchIcon.vue";
-import Input from "@/shared/ui/input/Input.vue";
-</script>
-
 <template>
   <div
     class="bg-sideBarBg border border-translucentWhite py-1.5 pl-5 pr-2 gap-4 rounded-full flex items-center hidden md:flex"
@@ -19,3 +14,7 @@ import Input from "@/shared/ui/input/Input.vue";
     </div>
   </div>
 </template>
+<script setup lang="ts">
+import SearchIcon from "@/shared/ui/Icons/svgs/SearchIcon.vue";
+import Input from "@/shared/ui/input/Input.vue";
+</script>

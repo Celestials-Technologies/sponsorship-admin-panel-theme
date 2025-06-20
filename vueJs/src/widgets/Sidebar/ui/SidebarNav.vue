@@ -1,16 +1,3 @@
-<script setup lang="ts">
-import { defineProps } from "vue";
-import { type NavigationItem } from "../model/types";
-
-interface Props {
-  navigationItems: NavigationItem[];
-  isActiveRoute: (path: string) => boolean;
-  isActiveParent: (item: NavigationItem) => boolean;
-}
-
-defineProps<Props>();
-</script>
-
 <template>
   <ul class="mt-[90px] sidbar-list pl-px">
     <template v-for="item in navigationItems" :key="item.path">
@@ -85,3 +72,15 @@ defineProps<Props>();
     </template>
   </ul>
 </template>
+<script setup lang="ts">
+import { defineProps } from "vue";
+import { type NavigationItem } from "../model/types";
+
+interface Props {
+  navigationItems: NavigationItem[];
+  isActiveRoute: (path: string) => boolean;
+  isActiveParent: (item: NavigationItem) => boolean;
+}
+
+defineProps<Props>();
+</script>

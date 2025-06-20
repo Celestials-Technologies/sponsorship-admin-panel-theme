@@ -1,27 +1,3 @@
-<script lang="ts">
-export default {
-  name: "HeaderProfile",
-};
-</script>
-
-<script setup lang="ts">
-import { ref } from "vue";
-import { profileMenu } from "../model/config";
-import { useClickOutside } from "@/shared/composables/useClickOutside";
-// import defaultProfile from "@/shared/assets/images/default-profile.png";
-
-const isOpen = ref(false);
-const profileRef = ref<HTMLElement | null>(null);
-
-const toggleMenu = () => {
-  isOpen.value = !isOpen.value;
-};
-
-useClickOutside(profileRef, () => {
-  isOpen.value = false;
-});
-</script>
-
 <template>
   <div class="relative" ref="profileRef">
     <Button
@@ -57,3 +33,26 @@ useClickOutside(profileRef, () => {
     </div>
   </div>
 </template>
+<script lang="ts">
+export default {
+  name: "HeaderProfile",
+};
+</script>
+
+<script setup lang="ts">
+import { ref } from "vue";
+import { profileMenu } from "../model/config";
+import { useClickOutside } from "@/shared/composables/useClickOutside";
+// import defaultProfile from "@/shared/assets/images/default-profile.png";
+
+const isOpen = ref(false);
+const profileRef = ref<HTMLElement | null>(null);
+
+const toggleMenu = () => {
+  isOpen.value = !isOpen.value;
+};
+
+useClickOutside(profileRef, () => {
+  isOpen.value = false;
+});
+</script>

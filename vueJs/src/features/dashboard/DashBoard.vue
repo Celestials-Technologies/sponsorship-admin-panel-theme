@@ -1,52 +1,3 @@
-<script setup lang="ts">
-import { ref, onMounted } from "vue";
-import axios from "axios";
-import type { DashboardData } from "@/features/dashboard/model/types";
-
-import { TitleHeader } from "@/shared/ui/TitleHeader";
-import {
-  CryptoCard,
-  BalanceCard,
-  EarningsCard,
-  StakingRewards,
-  AddMoreCard,
-  TransactionHistory,
-  SubscriptionsCard,
-} from "@/features/dashboard/ui";
-
-import { LiquidityModal } from "@/entities/liquidity";
-
-const showLiquidityModal = ref(false);
-const dashboardData = ref<DashboardData>({
-  cryptoCards: [],
-  stakingRewards: [],
-  subscriptions: [],
-  balanceData: {
-    total: "",
-    percentage: 0,
-    income: "",
-    expenses: "",
-  },
-});
-const isLoading = ref(true);
-
-onMounted(async () => {
-  try {
-    isLoading.value = true;
-    const response = await axios.get("dashboardData/data.json");
-    dashboardData.value = response.data;
-  } catch (error) {
-    console.error("Error fetching dashboard data:", error);
-  } finally {
-    isLoading.value = false;
-  }
-});
-
-const openLiquidityModal = () => {
-  showLiquidityModal.value = true;
-};
-</script>
-
 <template>
   <div>
     <TitleHeader
@@ -99,3 +50,52 @@ const openLiquidityModal = () => {
     />
   </div>
 </template>
+
+<script setup lang="ts">
+import { ref, onMounted } from "vue";
+import axios from "axios";
+import type { DashboardData } from "@/features/dashboard/model/types";
+
+import { TitleHeader } from "@/shared/ui/TitleHeader";
+import {
+  CryptoCard,
+  BalanceCard,
+  EarningsCard,
+  StakingRewards,
+  AddMoreCard,
+  TransactionHistory,
+  SubscriptionsCard,
+} from "@/features/dashboard/ui";
+
+import { LiquidityModal } from "@/entities/liquidity";
+
+const showLiquidityModal = ref(false);
+const dashboardData = ref<DashboardData>({
+  cryptoCards: [],
+  stakingRewards: [],
+  subscriptions: [],
+  balanceData: {
+    total: "",
+    percentage: 0,
+    income: "",
+    expenses: "",
+  },
+});
+const isLoading = ref(true);
+
+onMounted(async () => {
+  try {
+    isLoading.value = true;
+    const response = await axios.get("dashboardData/data.json");
+    dashboardData.value = response.data;
+  } catch (error) {
+    console.error("Error fetching dashboard data:", error);
+  } finally {
+    isLoading.value = false;
+  }
+});
+
+const openLiquidityModal = () => {
+  showLiquidityModal.value = true;
+};
+</script>
