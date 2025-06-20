@@ -1,7 +1,14 @@
 import FiveStarIcon from "./FiveStarIcon";
 import { PaymentDetailForm } from "./PaymentDetailForm";
 
-export function TestimonialCard({ text, name, role, imgSrc, index }) {
+interface TestimonialCardType {
+    text:string;
+    name:string;
+    role:string;
+    imgSrc:string;
+    index:number
+}
+export function TestimonialCard({ text, name, role, imgSrc, index }:TestimonialCardType) {
     return (
         <>
             <div className="flex flex-col md:flex-row justify-center items-center gap-3">

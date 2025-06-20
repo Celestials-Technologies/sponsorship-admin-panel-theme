@@ -1,8 +1,9 @@
-function isValidEmail(email) {
+import  React from 'react';
+function isValidEmail(email:string) {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
-function isValidURL(url) {
+function isValidURL(url:string) {
     try {
         new URL(url);
         return true;
@@ -11,26 +12,31 @@ function isValidURL(url) {
     }
 }
 
-export function formSubmissionHandler(e,setErrors,) {
-    e.preventDefault();
-    setErrors([]);
+export function formSubmissionHandler(
+  e: React.FormEvent,
+  setErrors: (error: string[]) => void
+) {
+  e.preventDefault();
+  setErrors([]);
 
-    const formData = new FormData(e.target);
-    const name = formData.get('channel-name')?.trim();
-    const url = formData.get('channel-url')?.trim();
-    const category = formData.get('category')?.trim();
-    const email = formData.get('email')?.trim();
-    const description = formData.get('description')?.trim();
+  const form = e.target as HTMLFormElement;
+  const formData = new FormData(form);
 
-    const newErrors = [];
+  const name = formData.get('channel-name')?.toString().trim();
+  const url = formData.get('channel-url')?.toString().trim();
+  const category = formData.get('category')?.toString().trim();
+  const email = formData.get('email')?.toString().trim();
+  const description = formData.get('description')?.toString().trim();
 
-    if (!name) newErrors.push("Please enter the channel name.");
-    if (!url || !isValidURL(url)) newErrors.push("Please provide a valid Channel URL.");
-    if (!email || !isValidEmail(email)) newErrors.push("Please enter a valid email address.");
+  const newErrors: string[] = [];
 
-    if (newErrors.length > 0) {
-        setErrors(newErrors);
-        return;
-    }
+  if (!name) newErrors.push("Please enter the channel name.");
+  if (!url || !isValidURL(url)) newErrors.push("Please provide a valid Channel URL.");
+  if (!email || !isValidEmail(email)) newErrors.push("Please enter a valid email address.");
+
+  if (newErrors.length > 0) {
+    setErrors(newErrors);
+    return;
+  }
 
 }

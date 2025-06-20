@@ -1,4 +1,13 @@
-export function Section({ title, children, borderTop = false, roundedTop = false, roundedBottom = false }) {
+import type { ReactNode } from "react";
+
+type SectionType = {
+    title: string;
+    children: ReactNode;
+    borderTop?: boolean;
+    roundedTop?: boolean;
+    roundedBottom?: boolean;
+}
+export function Section({ title, children, borderTop = false, roundedTop = false, roundedBottom = false }: SectionType) {
     return (
         <div
             className={`

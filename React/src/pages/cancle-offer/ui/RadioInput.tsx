@@ -1,4 +1,11 @@
-export function RadioInput({ id, name, label, center = false }) {
+type RadioInputType = {
+    id: string;
+    name: string;
+    label: string | number;
+    center?: boolean;
+}
+
+export function RadioInput({ id, name, label, center = false }: RadioInputType) {
     return (
         <div className={`flex items-center gap-3 mb-[18px] ${center ? 'text-center justify-center flex-col' : ''}`}>
             <div className="relative w-6 h-6">

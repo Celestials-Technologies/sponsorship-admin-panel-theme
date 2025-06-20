@@ -1,4 +1,4 @@
-export const NewsLetterLinks = [
+export const NewsLetterLinks:{name:string;link:string}[] = [
     {
         name: "Home",
         link: "/"

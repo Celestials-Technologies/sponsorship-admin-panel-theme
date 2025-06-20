@@ -1,7 +1,13 @@
 import { Button } from "@/shared/ui/Button";
 import CrossIcon from "@/shared/ui/CrossIcon";
+import type { userFormDataType } from "../type/user";
 
-export default function UserTable({ team, onDelete }) {
+interface UserTableType {
+    team:userFormDataType[] ;
+    onDelete: (email:string) => void
+}
+
+export default function UserTable({ team, onDelete }:UserTableType) {
     return (
         <div className="w-full mt-5 rounded-xl overflow-x-scroll lg:overflow-hidden border border-gray-100 bg-gradient-to-r from-[#261A7E] to-[#191155]">
             <table className="w-full text-left">

@@ -1,9 +1,12 @@
 
-export function PartnerDetail({ imgSrc, name, description }) {
+import type { offerType } from "../type/offer";
+
+
+export function PartnerDetail({ imageSrc, name, description }:offerType) {
     return (
         <div className="flex items-center gap-5 py-5 px-6 mt-3 bg-white rounded-2xl mb-3 max-w-[920px] mx-auto">
             <div className="w-[60px] h-[50px] flex justify-center items-center">
-                <img className="mx-auto" src={`http://localhost:5173/${imgSrc}`} alt="Ad Creative Logo" />
+                <img className="mx-auto" src={`http://localhost:5173/${imageSrc}`} alt="Ad Creative Logo" />
             </div>
             <div className="capitalize text-black text-left">
                 <h5 className="text-xl font-semibold">{name}</h5>

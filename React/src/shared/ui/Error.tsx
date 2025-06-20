@@ -1,5 +1,5 @@
 
-export function Error({ message }) {
+export function Error({ message }:{message:string}) {
     return (
         <div className="text-center text-white py-20">
             <h1 className="text-3xl font-bold text-red-500">Oops!</h1>

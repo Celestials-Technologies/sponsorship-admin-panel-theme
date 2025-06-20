@@ -1,4 +1,4 @@
-export const bgColor = {
+export const bgColor:{[color:string]:string} = {
     gray: "bg-gray-300",
     blue: "bg-blue-00",
     green: "bg-green-200",

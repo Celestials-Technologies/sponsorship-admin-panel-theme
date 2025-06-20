@@ -5,8 +5,8 @@ import { useEffect, useState } from "react"
 
 export function MainLayout() {
   const currentpath = useLocation()
-  const [isHeaderVisible, setIsHeaderVisible] = useState(true)
-  const [isSidebarVisible, setIsSidebarVisible] = useState(true)
+  const [isHeaderVisible, setIsHeaderVisible] = useState<boolean>(true)
+  const [isSidebarVisible, setIsSidebarVisible] = useState<boolean>(true)
 
   useEffect(() => {
     if (currentpath.pathname.startsWith("/login") ||

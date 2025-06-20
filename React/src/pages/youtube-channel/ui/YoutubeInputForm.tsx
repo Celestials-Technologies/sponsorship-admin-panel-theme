@@ -5,7 +5,7 @@ import { Input } from '@/shared/ui/Input';
 import { Button } from '@/shared/ui/Button';
 
 export function YoutubeInputForm() {
-    const [errors, setErrors] = useState([])
+    const [errors, setErrors] = useState<string[]>([])
 
     return (
         <>

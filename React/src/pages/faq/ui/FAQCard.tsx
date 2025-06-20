@@ -1,7 +1,8 @@
 import { Button } from "@/shared/ui/Button";
 import ArrowRightIcon from "./ArrowRightIcon";
+import type { questionType } from "../model/type";
 
-export default function FAQCard({ question, answer }) {
+export default function FAQCard({ question, answer }: questionType) {
 
     return (
         <div className="bg-[#372e7b] flex justify-between items-starts  pt-[21px] px-2 sm:px-7 pb-[17px]  rounded-[15px] mb-[15px] bg-translucentWhite min-h-[141px]">

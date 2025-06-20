@@ -1,18 +1,18 @@
+import type { userFormDataType } from '../type/user';
 import { useEffect, useState } from "react";
 import usermage from "@/shared/images/user_profile1.png";
-
 const MAX_USERS = 1;
 
 export function useTeamManager() {
-    const [team, setTeam] = useState([]);
-    const [formData, setFormData] = useState({
+    const [team, setTeam] = useState<userFormDataType[]>([]);
+    const [formData, setFormData] = useState<userFormDataType>({
         name: "",
         email: "",
         type: "user",
         imageSrc: usermage,
     });
     const [error, setError] = useState({ message: "" });
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState<boolean>(true);
 
     useEffect(() => {
         const fetchInitialUsers = async () => {
@@ -30,7 +30,7 @@ export function useTeamManager() {
         fetchInitialUsers();
     }, []);
 
-    const handleChange = (field, value) => {
+    const handleChange = (field:string, value:string) => {
         setFormData((prev) => ({ ...prev, [field]: value }));
         setError({ message: "" });
     };
@@ -55,7 +55,7 @@ export function useTeamManager() {
         setError({ message: "" });
     };
 
-    const handleDelete = (email) => {
+    const handleDelete = (email:string) => {
         setTeam((prev) => prev.filter((user) => user.email !== email));
     };
 

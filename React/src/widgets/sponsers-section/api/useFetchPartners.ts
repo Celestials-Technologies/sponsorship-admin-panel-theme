@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { fetchPartnersData } from "@/shared/lib/partners";
+import type { SponserCardType } from "@/shared/types/sponsers";
 
 export function useFetchPartners() {
-    const [partners, setPartners] = useState([]);
-    const [error, setError] = useState(null);
+    const [partners, setPartners] = useState<SponserCardType[]>([]);
+    const [error, setError] = useState<{message:string}>();
     const [isFetching, setIsFetching] = useState(false);
 
     useEffect(() => {

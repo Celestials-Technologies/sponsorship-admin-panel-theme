@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { fetchOffers } from "../utils/offers";
+import type { offerType } from "../type/offer";
 
 export function useFetchOffers() {
-    const [offers, setOffers] = useState([]);
-    const [error, setError] = useState(null);
+    const [offers, setOffers] = useState<offerType[]>([]);
+    const [error, setError] = useState<{message:string}>();
     const [isFetching, setIsFetching] = useState(false);
 
     useEffect(() => {

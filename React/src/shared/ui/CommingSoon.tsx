@@ -1,7 +1,16 @@
 import { Button } from '@/shared/ui/Button';
 import CustomDiv from './CustomDiv';
+import type { SVGProps } from "react";
 
-export default function ComingSoon({ Icon, title, description, shape = "sequare", extraDes = undefined }) {
+interface ComingSoonProps  { 
+    Icon: React.FC<SVGProps<SVGSVGElement>>;
+    title: string;
+    description:String;
+    shape?:string;
+    extraDes?:string;
+}
+
+export default function ComingSoon({ Icon, title, description, shape = "sequare", extraDes = "" }:ComingSoonProps) {
     return (
         <CustomDiv style="mt-10 !px-2 sm:px-8 !pr-2 !rounded-2xl w-full max-w-[738px] min-h-[271px] flex flex-col sm:flex-row gap-4 sm:gap-6 items-start px-4 py-5">
             <div className="w-[70px] h-[70px] min-w-[70px] rounded-full bg-[#655ea5] flex justify-center items-center">

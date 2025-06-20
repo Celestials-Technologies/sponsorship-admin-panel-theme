@@ -1,6 +1,12 @@
+interface FreeTrailWorkingStep {
+    title:string;
+    description:string;
+    active:boolean;
+}
+
 export  const FreeTrailWorkingStep = [
     {
-        title: " Sign up for ConnectSponsors",
+        title: "Sign up for ConnectSponsors",
         description: "You Have Succesfully Created your Account",
         active: true
     },
@@ -15,7 +21,7 @@ export  const FreeTrailWorkingStep = [
         active: false
     },
     {
-        title: " Day 7 Your Startup Plan subscription starts",
+        title: "Day 7 Your Startup Plan subscription starts",
         description: "Your Professional Plan Subscripion Starts.",
         active: false
     }

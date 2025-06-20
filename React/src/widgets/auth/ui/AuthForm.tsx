@@ -5,9 +5,16 @@ import MicrosoftIcon from "./MicrosoftIcon"
 import { Link, Form, useLocation } from 'react-router-dom'
 import { FreeTrailWorkingStep } from "../model/constant"
 import TickIcon from "./TickIcon"
+import type { ReactNode } from "react";
 
+interface AuthFormProps {
+    title: string;
+    titleDescription: string;
+    submitButtonText: string;
+    children: ReactNode
+}
 
-export default function AuthForm({ title = "", titleDescription = "", submitButtonText = "submit", children }) {
+export default function AuthForm({ title = "", titleDescription = "", submitButtonText = "submit", children }: AuthFormProps) {
     const location = useLocation();
     const currentPath = location.pathname;
     return (

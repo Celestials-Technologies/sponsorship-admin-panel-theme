@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { Button } from '@/shared/ui/Button'
 
 export function NeedAssistance() {
-    const [cancleSubcription, setCancleSubcription] = useState(false)
+    const [cancleSubcription, setCancleSubcription] = useState<boolean>(false)
     return (
         <>
             <div className="px-8 py-6 rounded-[14px] bg-[#302964] mt-5 flex flex-col sm:flex-row gap-5 justify-between items-center shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)]">

@@ -1,5 +1,11 @@
 import LossIcon from "./LossIcon"
-export function LossItem({ title, description }) {
+
+type LossItemType = {
+    title: string;
+    description: string;
+}
+
+export function LossItem({ title, description }: LossItemType) {
     return (
         <div className="flex gap-1.5 mt-4">
             <LossIcon />

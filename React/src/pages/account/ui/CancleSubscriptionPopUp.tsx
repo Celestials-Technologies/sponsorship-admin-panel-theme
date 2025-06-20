@@ -5,8 +5,13 @@ import { Button } from '@/shared/ui/Button'
 import CancleSubscriptionPopUp2 from './CancleSubscriptionPopUp2'
 import { Link } from 'react-router-dom'
 
-export default function CancleSubscriptionPopUp({ onClose }) {
-    const [acceptOffer, setAcceptOffer] = useState(false)
+type CancleSubscriptionPropsType = {
+    onClose: React.Dispatch<React.SetStateAction<boolean>>
+}
+
+
+export default function CancleSubscriptionPopUp({ onClose }: CancleSubscriptionPropsType) {
+    const [acceptOffer, setAcceptOffer] = useState<boolean>(false)
 
     return (
         <>

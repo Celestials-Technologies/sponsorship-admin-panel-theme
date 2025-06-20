@@ -9,7 +9,7 @@ export function ForgetPassword() {
                 <AuthForm
                     title="Reset Account Password"
                     titleDescription="Enter A new Password"
-                    submitButtontext="Reset Password">
+                    submitButtonText="Reset Password">
                     <div className="space-y-6 mb-10">
                         <Input type="password" placeholder='Password' />
                         <div className="flex justify-center items-center bg-gray-50 mb-14">

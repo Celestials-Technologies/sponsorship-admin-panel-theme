@@ -6,23 +6,24 @@ import OnlinePaymentIcon from "./OnlinePaymentIcon";
 import LockIcon from "./LockIcon";
 import { Button } from "@/shared/ui/Button";
 import FourStarIcon from "./FourStarIcon";
-import { handleSubmit } from '../utils/checkout';
+import { handlePaymentDetailFormSubmission } from '../utils/checkout';
 import { handleChange } from '../utils/checkout';
-
+import type { paymentDetailType } from '@/shared/types/billingDetail';
+import type { PaymentDetailFormType } from '@/shared/types/payment-detail-form';
 export function PaymentDetailForm() {
-    const [formData, setFormData] = useState({
+    const [formData, setFormData] = useState<paymentDetailType>({
         address: "",
         city: "",
         state: "",
-        zip: "",
+        zipCode: "",
         country: "",
         cardNumber: "",
-        nameOnCard: "",
-        securityCode: "",
+        name: "",
+        ccvCode: "",
     });
 
     return (
-        <form onSubmit={e => handleSubmit(e, formData, setFormData)} className="text-center w-full max-w-[512px] md:w-[512px] mx-auto mb-4">
+        <form onSubmit={e => handlePaymentDetailFormSubmission({e, formData, setFormData})} className="text-center w-full max-w-[512px] md:w-[512px] mx-auto mb-4">
             <ConnectSponsersLogo className="text=[36px] md:text-[38px] lg:text-[43px]" />
             <CustomDiv style="w-full mt-8 !px-2 sm:px-5 !rounded-2xl relative ">
                 <div className="space-y-3">
@@ -38,6 +39,7 @@ export function PaymentDetailForm() {
                             <Input
                                 type="text"
                                 label="Full Address*"
+                                name="fullAddress"
                                 placeholder="Full Address*"
                                 value={formData.address}
                                 onChange={(e) => handleChange(setFormData, "address", e.target.value)}
@@ -48,6 +50,7 @@ export function PaymentDetailForm() {
                             <Input
                                 type="text"
                                 label="City Name*"
+                                name="city"
                                 placeholder="City Name*"
                                 value={formData.city}
                                 onChange={(e) => handleChange(setFormData, "city", e.target.value)}
@@ -60,6 +63,7 @@ export function PaymentDetailForm() {
                             <Input
                                 type="text"
                                 label="State/Province*"
+                                name="state"
                                 placeholder="State/Province..."
                                 value={formData.state}
                                 onChange={(e) => handleChange(setFormData, "state", e.target.value)}
@@ -69,9 +73,10 @@ export function PaymentDetailForm() {
                             <Input
                                 type="number"
                                 label="Zip Code*"
+                                name="zipCode"
                                 placeholder="Zip Code..."
-                                value={formData.zip}
-                                onChange={(e) => handleChange(setFormData, "zip", e.target.value)}
+                                value={formData.zipCode}
+                                onChange={(e) => handleChange(setFormData, "zipCode", e.target.value)}
                             />
                         </div>
                     </div>
@@ -80,6 +85,7 @@ export function PaymentDetailForm() {
                         <Input
                             type="text"
                             label="Country"
+                            name="country"
                             placeholder="Select Country..."
                             value={formData.country}
                             onChange={(e) => handleChange(setFormData, "country", e.target.value)}
@@ -90,6 +96,7 @@ export function PaymentDetailForm() {
                         <Input
                             type="number"
                             label="Card Number"
+                            name="cardNumber"
                             placeholder="0123xxxxxxxxxx"
                             value={formData.cardNumber}
                             onChange={(e) => handleChange(setFormData, "cardNumber", e.target.value)}
@@ -101,18 +108,20 @@ export function PaymentDetailForm() {
                             <Input
                                 type="text"
                                 label="Name On The Card*"
+                                name="name"
                                 placeholder="ABC..."
-                                value={formData.nameOnCard}
-                                onChange={(e) => handleChange(setFormData, "nameOnCard", e.target.value)}
+                                value={formData.name}
+                                onChange={(e) => handleChange(setFormData, "name", e.target.value)}
                             />
                         </div>
                         <div className="text-left w-full sm:w-1/2">
                             <Input
                                 type="number"
                                 label="Security Code*"
+                                name="ccvCode"
                                 placeholder="123"
-                                value={formData.securityCode}
-                                onChange={(e) => handleChange(setFormData, "securityCode", e.target.value)}
+                                value={formData.ccvCode}
+                                onChange={(e) => handleChange(setFormData, "ccvCode", e.target.value)}
                             />
                         </div>
                     </div>

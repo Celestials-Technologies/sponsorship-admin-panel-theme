@@ -4,48 +4,61 @@ import CustomDiv from '@/shared/ui/CustomDiv'
 import { Input } from '@/shared/ui/Input'
 import FileIcon from './FileIcon'
 
+type eventType = React.FormEvent<HTMLFormElement>
+interface ErrorStateType {
+    fullName: string;
+    email: string;
+    file: string;
+};
+
 export default function InfoForm() {
-    const [fullName, setFullName] = useState('')
-    const [email, setEmail] = useState('')
-    const [, setFile] = useState(null)
-    const [fileName, setFileName] = useState("")
-    const [errors, setErrors] = useState({ fullName: '', email: '', file: '' })
+    const [fullName, setFullName] = useState<string>('')
+    const [email, setEmail] = useState<string>('')
+    const [, setFile] = useState<File | null>(null)
+    const [fileName, setFileName] = useState<string>("")
+    const [errors, setErrors] = useState<ErrorStateType>({
+        fullName: '',
+        email: '',
+        file: '',
+    });
 
-    const handleNameSubmit = (e) => {
-        e.preventDefault()
+
+    const handleNameSubmit = (e: eventType) => {
+        e.preventDefault();
         if (!fullName.trim()) {
-            setErrors(prev => ({ ...prev, fullName: 'Full Name is required' }))
+            setErrors((prev) => ({ ...prev, fullName: "Full Name is required" }));
             return;
         }
-        setErrors(prev => ({ ...prev, fullName: '' }))
-    }
+        setErrors((prev) => ({ ...prev, fullName: "" }));
+    };
 
-    const handleEmailSubmit = (e) => {
-        e.preventDefault()
+    const handleEmailChange = (e: eventType) => {
+        e.preventDefault();
         if (!email.trim()) {
-            setErrors(prev => ({ ...prev, email: 'Email is required' }))
+            setErrors((prev) => ({ ...prev, email: "Email is required" }));
             return;
         }
-        const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+        const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!pattern.test(email)) {
-            setErrors(prev => ({ ...prev, email: 'Invalid email address' }))
+            setErrors((prev) => ({ ...prev, email: "Invalid email address" }));
             return;
         }
-        setErrors(prev => ({ ...prev, email: '' }))
-        console.log('Updating email:', email)
-    }
+        setErrors((prev) => ({ ...prev, email: "" }));
+    };
 
-    const handleFileChange = (e) => {
-        const selected = e.target.files[0]
+
+    const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const selected = e.target.files?.[0];
         if (selected && selected.size <= 2 * 1024 * 1024) {
-            setFile(selected)
-            setErrors(prev => ({ ...prev, file: '' }))
-            setFileName(selected.name)
+            setFile(selected);
+            setErrors((prev) => ({ ...prev, file: "" }));
+            setFileName(selected.name);
         } else {
-            setFile(null)
-            setErrors(prev => ({ ...prev, file: 'File must be under 2MB' }))
+            setFile(null);
+            setErrors((prev) => ({ ...prev, file: "File must be under 2MB" }));
         }
-    }
+    };
+
 
     return (
         <CustomDiv style="w-full max-w-[580px] min-h-[317px] rounded-xl">
@@ -65,8 +78,9 @@ export default function InfoForm() {
                         </div>
                         <input
                             type="file"
+                            name="file"
                             className="hidden"
-                            onChange={handleFileChange}
+                            onChange={(e) => handleFileChange(e)}
                         />
                         {fileName && <p className='text-[13px] mt-1 text-center text-white'>{fileName}</p>}
                     </label>
@@ -76,12 +90,13 @@ export default function InfoForm() {
                 </div>
 
                 <div className="w-full">
-                    <form onSubmit={handleNameSubmit} className="flex items-end gap-2.5">
+                    <form onSubmit={(e) => handleNameSubmit(e)} className="flex items-end gap-2.5">
                         <div className="w-full md:max-w-[300px]">
                             <Input
                                 type="text"
                                 className="rounded-xl"
                                 label="Full Name"
+                                name="fullName"
                                 value={fullName}
                                 onChange={(e) => setFullName(e.target.value)}
                             />
@@ -96,12 +111,13 @@ export default function InfoForm() {
                         />
                     </form>
 
-                    <form onSubmit={handleEmailSubmit} className="flex items-end gap-2.5">
+                    <form onSubmit={(e) => handleEmailChange(e)} className="flex items-end gap-2.5">
                         <div className="w-full md:max-w-[300px]">
                             <Input
                                 type="email"
                                 className="rounded-xl"
                                 label="Email"
+                                name="email"
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
                             />

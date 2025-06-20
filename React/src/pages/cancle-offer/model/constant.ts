@@ -1,4 +1,10 @@
-  export const LossItems = [
+ type LossItemType = {
+  title: string;
+  description: string;
+};
+
+  
+  export const LossItems:LossItemType[] = [
         {
             title: 'Access to Your Sponsor Data',
             description: '(You’ll lose direct contact details of top YouTube sponsors and decision-makers, a key resource for your growth.)',
@@ -21,7 +27,7 @@
         },
     ];
 
-   export const CanclePlanReasons = [
+   export const CanclePlanReasons :string[] = [
   'Too expensive',
   'Customer service was unsatisfactory',
   'Creatives need to be improved',
@@ -31,3 +37,4 @@
   'Too complicated or hard to use',
   'Other',
 ];
+

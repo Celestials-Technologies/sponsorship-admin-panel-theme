@@ -1,4 +1,10 @@
-export const navBarList = [
+
+interface navBarListType {
+  name:string;
+  src:string;
+}
+
+export const navBarList:navBarListType[] = [
   { name: "Plans & Pricing", src: "/plans-and-pricing" },
   { name: "Account", src: "/account" },
   { name: "Team", src: "/team" },

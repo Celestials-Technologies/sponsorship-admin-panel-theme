@@ -4,32 +4,32 @@ import CustomDiv from '@/shared/ui/CustomDiv'
 import { Input } from '@/shared/ui/Input'
 
 export default function PasswordForm() {
-    const [password, setPassword] = useState('')
-    const [confirmPassword, setConfirmPassword] = useState('')
-    const [errors, setErrors] = useState()
+    const [password, setPassword] = useState<string>('')
+    const [confirmPassword, setConfirmPassword] = useState<string>('')
+    const [errors, setErrors] = useState<{ password: string; confirm: string }>({ password: "", confirm: "" })
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
-
-        let valid = true
-        const newErrors = {}
-
+    const updatePasswordHandler = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        let valid = true;
+        const newErrors: { password: string; confirm: string } = {
+            password: "",
+            confirm: "",
+        };
         if (password.length < 6) {
-            newErrors.password = 'Password must be at least 6 characters'
-            valid = false
+            newErrors.password = "Password must be at least 6 characters";
+            valid = false;
         }
-
         if (confirmPassword !== password) {
-            newErrors.confirm = 'Passwords do not match'
-            valid = false
+            newErrors.confirm = "Passwords do not match";
+            valid = false;
         }
-
-        setErrors(newErrors)
-
+        setErrors(newErrors);
         if (valid) {
-            console.log('Password Updated:', password)
+
         }
-    }
+    };
+
+
 
     return (
         <CustomDiv style="w-full max-w-[580px] min-h-[317px] rounded-xl">
@@ -38,7 +38,7 @@ export default function PasswordForm() {
                 On your next login you will be using the new password
             </p>
 
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={updatePasswordHandler}>
                 <div className="w-full mt-6">
                     <Input
                         type="password"

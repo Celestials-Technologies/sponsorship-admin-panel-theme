@@ -1,7 +1,19 @@
 import { Button } from "@/shared/ui/Button";
 import { Input } from "@/shared/ui/Input";
+import type { userFormDataType } from '../type/user';
 
-export default function InviteUserSection({ error, formData, team, handleChange, handleInvite }) {
+
+
+interface InviteUserSectionType {
+    error:{message:string};
+    formData:userFormDataType;
+    team:userFormDataType[];
+    handleChange:(field:string, value:string)=>void;
+    handleInvite:()=>void
+
+}
+
+export default function InviteUserSection({ error, formData, team, handleChange, handleInvite }:InviteUserSectionType) {
     return (
         <div className="px-5 pb-4 pt-2 rounded-3xl border border-gray-700 bg-[#302964]">
             <div className="flex justify-between items-center mb-3">

@@ -17,7 +17,7 @@ export function SponserSection() {
                     {partners.map(sponser => (
                         <SponserCard
                             key={sponser.name}
-                            sponser={sponser} />
+                            {...sponser} />
                     ))}
                 </div>
             }</>

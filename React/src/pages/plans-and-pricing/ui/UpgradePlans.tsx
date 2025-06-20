@@ -1,7 +1,16 @@
 import { PlanCard } from './PlanCard';
 import { Button } from '@/shared/ui/Button';
 import ArrowRightIcon from "./ArrowRightIcon"
-export function UpgradePlans({ currentFeature, newFeature, price, newPrice }) {
+
+interface UpgradePlans{
+    currentFeature: string [];
+    newFeature:string[] ;
+    price:string ;
+    newPrice: string;
+
+}
+
+export function UpgradePlans({ currentFeature, newFeature, price, newPrice }:UpgradePlans) {
 
     return (
         <div className="pt-5 pr-6 pb-7 pl-[23px]">

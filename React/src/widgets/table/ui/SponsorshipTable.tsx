@@ -5,7 +5,7 @@ import { Error } from "@/shared/ui/Error";
 import { Loader } from "@/shared/ui/Loader";
 
 
-export function SponsorshipTable({ heading, count }) {
+export function SponsorshipTable({ heading, count }:{heading:string;count:number | string}) {
     const { documents, isFetching, error } = useFetchDocuments()
     if (count === "all") {
         count = documents.length

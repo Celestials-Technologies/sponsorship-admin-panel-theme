@@ -11,7 +11,7 @@ import { ProPlanPage } from './ProPlanPage'
 
 export function PlansAndPricing() {
     const { plans, isFetching, error } = useFetchPlans()
-    const [showUpgradeModal, setShowUpgradeModal] = useState(undefined)
+    const [showUpgradeModal, setShowUpgradeModal] = useState<string>()
 
     return (
         <>

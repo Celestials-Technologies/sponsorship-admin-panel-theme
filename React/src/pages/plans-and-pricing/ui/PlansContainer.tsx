@@ -1,6 +1,12 @@
 import { Button } from '@/shared/ui/Button'
-
-export default function PlansContainer({ type = "", btnText = "Confirm", setShowUpgradeModal, children }) {
+import type { ReactNode } from 'react';
+interface PlansContainerTypes {
+  type?: string;
+  btnText?: string;
+  setShowUpgradeModal: (planType: string) => void;
+  children: ReactNode;
+}
+export default function PlansContainer({ type = "", btnText = "Confirm", setShowUpgradeModal, children }:PlansContainerTypes) {
 
     return (
 

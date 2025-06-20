@@ -6,7 +6,7 @@ import AccountSection from './AccountSection'
 import BillingSection from './BillingSection'
 
 export function Account() {
-    const [activeSection, setActiveSection] = useState("account")
+    const [activeSection, setActiveSection] = useState<string>("account")
     return (
         <div className="max-w-[1300px] mx-auto">
             <div className="flex gap-5 pt-[25px] mb-8">

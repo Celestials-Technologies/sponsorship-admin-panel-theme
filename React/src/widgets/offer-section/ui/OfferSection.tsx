@@ -16,7 +16,7 @@ export function OfferSection({ }) {
             {(!isFetching && offers.length > 0) && offers.map(partner => (
                 <PartnerDetail
                     key={partner.name}
-                    imgSrc={partner.imageSrc}
+                    imageSrc={partner.imageSrc}
                     name={partner.name}
                     description={partner.description} />
             ))}

@@ -1,4 +1,9 @@
-export function PlanFeatureBadge({ label }) {
+
+interface labelType {
+    label:string;
+}
+
+export function PlanFeatureBadge({label}:labelType) {
     return (
         <div className="flex justify-center items-center gap-1 bg-primary p-[9px] w-[110px] h-[34px] rounded-xl border border-[#e5e5e585]">
             <div className="w-3 h-3 rounded-full bg-primary-button flex justify-center items-center">

@@ -11,7 +11,7 @@ import { handleCopy } from '../api/handleCopy'
 
 export default function AffiliateLink() {
     const [copied, setCopied] = useState(false);
-    const affiliateLink = "https://Getsponsored.ai.com/c/YTVS49";
+    const affiliateLink:string = "https://Getsponsored.ai.com/c/YTVS49";
 
     return (
         <div className="w-full max-w-[534px] mx-auto">

@@ -1,4 +1,5 @@
-  export const handleCopy = async (affiliateLink,setCopied) => {
+ 
+ export const handleCopy = async (affiliateLink:string,setCopied:(copied:boolean)=>void) => {
         try {
             await navigator.clipboard.writeText(affiliateLink);
             setCopied(true);

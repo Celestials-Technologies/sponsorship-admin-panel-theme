@@ -3,8 +3,9 @@ import CustomDiv from '@/shared/ui/CustomDiv'
 import UpgradeHeader from './UpgradeHeader'
 import { UpgradePlans } from './UpgradePlans'
 import { currentFeatures, newFeatures } from "../model/Plans"
+import type { onCloseFunType } from '../type/plans'
 
-export function ProPlanPage({ onClose }) {
+export function ProPlanPage({ onClose }:onCloseFunType) {
     return (
 
         <>

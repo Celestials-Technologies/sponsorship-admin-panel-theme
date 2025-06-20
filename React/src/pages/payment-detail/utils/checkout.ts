@@ -1,17 +1,23 @@
-export  const handleSubmit = (e,formData,setFormData) => {
+import type { PaymentDetailFormType } from '@/shared/types/payment-detail-form';
+import type { paymentDetailType } from "@/shared/types/billingDetail";
+
+
+
+export  const handlePaymentDetailFormSubmission = ({e,formData,setFormData}:PaymentDetailFormType) => {
         e.preventDefault();
+        console.log("formData:",formData)
     
-        const requiredFields = [
+        const requiredFields: (keyof paymentDetailType)[] = [
             "address",
             "city",
             "state",
-            "zip",
+            "zipCode",
             "cardNumber",
-            "nameOnCard",
-            "securityCode",
+            "name",
+            "ccvCode",
         ];
 
-        const missingFields = requiredFields.filter((field) => !formData[field].trim());
+        const missingFields = requiredFields.filter((field) => !formData[field]?.trim());
 
         if (missingFields.length > 0) {
             alert("Please fill all required fields.");
@@ -23,14 +29,14 @@ export  const handleSubmit = (e,formData,setFormData) => {
             address: "",
             city: "",
             state: "",
-            zip: "",
+            zipCode: "",
             country: "",
             cardNumber: "",
-            nameOnCard: "",
-            securityCode: "",
+            name: "",
+            ccvCode: "",
         })
     };
 
-    export const handleChange = (field, value,setFormData) => {
+    export const handleChange = (field:string, value:string,setFormData:React.Dispatch<React.SetStateAction<paymentDetailType>>) => {
         setFormData((prev) => ({ ...prev, [field]: value }));
     };

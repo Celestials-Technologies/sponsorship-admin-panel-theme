@@ -2,12 +2,14 @@ import ConnectSponsersLogo from '@/shared/ui/ConnectSponsersLogo'
 import UpgradeIcon from './UpgradeIcon'
 import CrossIcon from '@/shared/ui/CrossIcon'
 import { Button } from '@/shared/ui/Button'
+import type { onCloseFunType } from '../type/plans'
 
-export default function UpgradeHeader({ onClose }) {
+
+export default function UpgradeHeader({ onClose }:onCloseFunType) {
     return (
         <div className="pt-[15px] pb-[26px] px-[15px] border-b border-white relative">
             <Button variant={"ghost"} type="button" className="absolute top-3 right-3 hover:bg-transparent"
-                icon={<CrossIcon color="white" size="40" />} onClick={() => onClose(undefined)} />
+                icon={<CrossIcon color="white" size="40" />} onClick={() => onClose("")} />
             <ConnectSponsersLogo className='text-[30px] md:text-[40px] lg:text-[47px] mt-5 Gilroy-bold' />
             <div className="my-2 ">
                 <UpgradeIcon className="mx-auto" />

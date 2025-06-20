@@ -3,8 +3,10 @@ import CustomDiv from '@/shared/ui/CustomDiv'
 import UpgradeHeader from './UpgradeHeader'
 import { UpgradePlans } from './UpgradePlans'
 import { currentFeatures, newFeatures } from "../model/Plans"
+import type { onCloseFunType } from '../type/plans'
 
-export function StartUpPlanPage({ onClose }) {
+
+export function StartUpPlanPage({ onClose }:onCloseFunType) {
     return (
         <>
             <div className="fixed inset-0 z-50 overflow-y-auto flex items-center justify-center backdrop-blur-xs bg-black/10">

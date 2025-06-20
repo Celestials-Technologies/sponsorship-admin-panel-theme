@@ -1,7 +1,12 @@
 import TickIcon from "./TickIcon"
 import CrossIcon from "@/shared/ui/CrossIcon"
 import TickGreenIcon from "./TickGreenIcon"
-export default function SingalPlan({ type = "tick", text = "", planKey = "" }) {
+interface SingalPlanType {
+    type:string;
+    text:string;
+    planKey?:string;
+}
+export default function SingalPlan({ type = "tick", text = "", planKey = "" }:SingalPlanType) {
     return (
         <div className="flex gap-3 items-start text-white rounded-lg my-[8px]  max-w-md">
             <div className="w-[13px] h-[13px] mt-1 flex-shrink-0 rounded-full bg-white font-bold flex items-center justify-center  text-sm">

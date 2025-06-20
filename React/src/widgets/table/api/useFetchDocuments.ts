@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import { fetchDocuments } from "@/shared/lib//documents";
 
 export function useFetchDocuments() {
-    const [documents, setDocuments] = useState([]);
-    const [error, setError] = useState(null);
+    const [documents, setDocuments] = useState<{title:string;date:string}[]>([]);
+    const [error, setError] = useState<{message:string}>();
     const [isFetching, setIsFetching] = useState(false);
 
     useEffect(() => {
