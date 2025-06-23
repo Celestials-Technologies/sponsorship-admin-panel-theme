@@ -20,6 +20,12 @@ export const routes: Array<RouteRecordRaw> = [
   },
 
   {
+    path: "/analytics",
+    name: "analytics",
+    component: () => import("@/pages/analytics"),
+  },
+
+  {
     path: "/signup",
     name: "signup",
     component: () => import("@/pages/signup/Signup.vue"),
