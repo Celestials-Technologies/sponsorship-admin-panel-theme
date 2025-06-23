@@ -32,14 +32,14 @@ interface Props {
 const props = withDefaults(defineProps<Props>(), {
   variant: "p",
   className: "",
-  color: "black",
+  color: "white",
 });
 
 // Default Tailwind classes per variant
 const defaultClasses = {
   h1: "text-4xl font-bold leading-tight",
   h2: "text-3xl font-semibold leading-tight",
-  h3: "text-2xl font-medium leading-snug",
+  h3: "text-2xl Gilroy-semibold font-medium leading-snug text-white",
   h4: "text-xl font-medium leading-snug",
   p: "text-base leading-relaxed",
   b: "font-bold",
