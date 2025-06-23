@@ -25,6 +25,7 @@
     "zod": "^3.25.48"
   },
   "devDependencies": {
+    "@iconify/vue": "^5.0.0",
     "@tailwindcss/cli": "^4.0.14",
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@typescript-eslint/parser": "^5.4.0",
