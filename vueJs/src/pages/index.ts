@@ -24,6 +24,11 @@ export const routes: Array<RouteRecordRaw> = [
     name: "analytics",
     component: () => import("@/pages/analytics"),
   },
+  {
+    path: "/wallet",
+    name: "wallet",
+    component: () => import("@/pages/wallet"),
+  },
 
   {
     path: "/signup",
