@@ -9,42 +9,24 @@
         Credit Card
       </p>
     </div>
-    <div>
-      <!-- <img
-                src="@/assets/images/creditcard.png"
-                alt="card"
-                class="w-full h-auto"
-              /> -->
-    </div>
     <div class="md:mt-10 mt-7 flex gap-3">
-      <button
+      <Button
         type="button"
+        variant="none"
         onclick="makeACard()"
-        class="px-2 md:px-4 py-3 flex justify-center items-center md:gap-3 gap-2 border border-solid border-[#E9901A] transition-all hover:bg-[#E9901A] rounded-xl walletTopUp"
+        class="group px-2 md:px-4 py-3 flex justify-center items-center md:gap-3 gap-2 border border-solid border-[#E9901A] transition-all hover:bg-[#E9901A] rounded-xl walletTopUp"
       >
-        <svg
-          width="20"
-          height="20"
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M12 8V16M8 12H16M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z"
-            stroke="white"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-        </svg>
-        <p
-          class="text-white text-sm md:text-base Gilroy-medium whitespace-nowrap"
+        <Icon icon="heroicons:plus" width="20" height="20" />
+        <Typography
+          variant="p"
+          class="!text-[#E9901A] group-hover:!text-white text-sm md:text-base Gilroy-medium whitespace-nowrap"
         >
           New Card
-        </p>
-      </button>
-      <button
+        </Typography>
+      </Button>
+      <Button
         type="button"
+        variant="none"
         onclick="manageBtn()"
         class="px-4 md:px-5 md:py-4 py-3 flex justify-center items-center md:gap-3 gap-2 border border-solid border-[#E9901A] transition-all hover:bg-[#E9901A] rounded-xl walletTopUp"
       >
@@ -61,8 +43,12 @@
           ></path>
         </svg>
         <p class="text-white text-sm md:text-base Gilroy-medium">Manage</p>
-      </button>
+      </Button>
     </div>
   </div>
 </template>
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { Button } from "@/shared/ui/button";
+import { Icon } from "@iconify/vue";
+import { Typography } from "@/shared/ui/typography";
+</script>

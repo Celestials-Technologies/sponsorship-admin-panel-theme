@@ -7,7 +7,6 @@
       <Performance />
       <div class="w-full xl:w-[33.33%]">
         <CraditCard />
-        <!-- Recent Transaction  -->
         <RecentCard />
       </div>
     </div>

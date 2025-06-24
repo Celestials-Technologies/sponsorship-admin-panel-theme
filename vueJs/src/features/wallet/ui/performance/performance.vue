@@ -9,64 +9,11 @@
         <p class="text-xl md:text-[26px] text-white Gilroy-semibold">
           Performance
         </p>
+
         <div class="flex items-center gap-2">
           <p class="text-sm Gilroy-normal text-white">Sort By</p>
 
-          <div class="relative">
-            <button
-              type="button"
-              onclick="selectDays(this)"
-              class="px-2 py-1 flex items-center gap-3 justify-between cursor-pointer selectDaysBox rounded-lg border border-solid border-[#e5e5e585] bg-transparent p-1 text-xs text-white pt-1.5 rounded-lg Gilroy-normal"
-            >
-              <p class="text-sm text-white Gilroy-normal" id="performancetext">
-                Last 15 days
-              </p>
-              <div class="w-4 h-4">
-                <svg
-                  width="100%"
-                  height="100%"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  id="daysIcon"
-                  style="rotate: 0deg; transition: all 0.5s ease"
-                >
-                  <path
-                    d="M6 9L12 15L18 9"
-                    stroke="white"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </div>
-            </button>
-            <div
-              class="absolute right-0 bg-bgPrimary rounded-lg px-2 py-1 border border-solid border-[#e5e5e585] w-[130px]"
-              id="daysSelect"
-              style="
-                scale: 0;
-                margin-top: -50px;
-                z-index: 0;
-                transition: all 0.2s ease;
-              "
-            >
-              <button
-                type="button"
-                class="text-sm md:text-base Gilroy-normal hover:bg-[#E9901A] p-1 text-white w-full rounded-lg flex items-center gap-3"
-                onclick="performancechangeMainText('Last 15 days' , event)"
-              >
-                <p class="text-sm text-white Gilroy-normal">Last 15 days</p>
-              </button>
-              <button
-                type="button"
-                class="text-sm md:text-base Gilroy-normal hover:bg-[#E9901A] p-1 text-white w-full rounded-lg flex items-center gap-3"
-                onclick="performancechangeMainText('Last 10 days' , event)"
-              >
-                <p class="text-sm text-white Gilroy-normal">Last 10 days</p>
-              </button>
-            </div>
-          </div>
+          <Dropdown v-model="selectedDays" :options="daysOptions" />
         </div>
       </div>
 
@@ -80,4 +27,25 @@
 </template>
 <script setup lang="ts">
 import UpcommingTable from "../UpcommingTable/table.vue";
+import { Dropdown } from "@/shared/ui/dropdown";
+import { ref } from "vue";
+const selectedDays = ref({
+  label: "Last 15 days",
+  value: "15",
+});
+
+const daysOptions = [
+  {
+    label: "Last 15 days",
+    value: "15",
+  },
+  {
+    label: "Last 10 days",
+    value: "10",
+  },
+  {
+    label: "Last 7 days",
+    value: "7",
+  },
+];
 </script>
