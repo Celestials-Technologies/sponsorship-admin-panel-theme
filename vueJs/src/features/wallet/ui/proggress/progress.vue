@@ -24,7 +24,8 @@
               <div class="flex items-center gap-2">
                 <GrowthIcon :color="limit.growthColor" />
                 <p
-                  class="text-sm sm:text-sm md:text-base Gilroy-normal text-[#00A385] pt-0.5"
+                  :style="{ color: limit.growthColor }"
+                  class="text-sm sm:text-sm md:text-base Gilroy-normal pt-0.5"
                 >
                   {{ limit.value }} EUR
                 </p>
