@@ -4,3 +4,12 @@ export type LimitsType = {
   value: string;
   growthColor: string;
 };
+
+export type RecentTransactionType = {
+  title: string;
+  status: string;
+  time: string;
+  transaction: string;
+  amount: string;
+  addition: string;
+};

@@ -1,7 +1,7 @@
 <template>
   <div class="mt-6 flex flex-wrap 2xl:flex-nowrap items-center gap-5">
     <div
-      v-for="limit in Limits"
+      v-for="limit in props.limits"
       :key="limit.title"
       class="sm:w-[48%] xl:w-[31.333%] 2xl:w-full w-full max-w-full h-full"
     >
@@ -69,24 +69,7 @@
 import { LimitsType } from "@/features/wallet/modals/types";
 import GrowthIcon from "@/shared/ui/Icons/svgs/GrowthIcon.vue";
 
-const Limits: LimitsType[] = [
-  {
-    title: "Todays Expenses",
-    amount: "370,00",
-    value: "7.500,00",
-    growthColor: "#00A385",
-  },
-  {
-    title: "Today's Withdrawal",
-    amount: "1800,00",
-    value: "1000,00",
-    growthColor: "#FFA51F",
-  },
-  {
-    title: "Monthly Withdrawal",
-    amount: "6510,00",
-    value: "7.500,00 ",
-    growthColor: "#8956ff",
-  },
-];
+const props = defineProps<{
+  limits: LimitsType[];
+}>();
 </script>

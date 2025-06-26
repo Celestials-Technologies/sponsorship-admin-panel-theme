@@ -1,0 +1,56 @@
+{
+  "Limits": [
+    {
+      "title": "Todays Expenses",
+      "amount": "370,00",
+      "value": "7.500,00",
+      "growthColor": "#00A385"
+    },
+    {
+      "title": "Today's Withdrawal",
+      "amount": "1800,00",
+      "value": "1000,00",
+      "growthColor": "#FFA51F"
+    },
+    {
+      "title": "Monthly Withdrawal",
+      "amount": "6510,00",
+      "value": "7.500,00 ",
+      "growthColor": "#8956ff"
+    }
+  ],
+  "RecentTransaction": [
+    {
+      "title": "Bitcoin",
+      "status": "Pending",
+      "time": "3 min ago",
+      "transaction": "+0.2948 BTC",
+      "amount": "+0.2948 BTC",
+      "addition": "+$10,930.90"
+    },
+    {
+      "title": "Cardano",
+      "status": "Canceled",
+      "time": "3 min ago",
+      "transaction": "+0.8475 ADA",
+      "amount": "+0.8475 ADA",
+      "addition": "+$10,930.90"
+    },
+    {
+      "title": "Bitcoin",
+      "status": "Pending",
+      "time": "3 min ago",
+      "transaction": "+0.2948 BTC",
+      "amount": "+0.2948 BTC",
+      "addition": "+$10,930.90"
+    },
+    {
+      "title": "Cardano",
+      "status": "Canceled",
+      "time": "3 min ago",
+      "transaction": "+0.8475 ADA",
+      "amount": "+0.8475 ADA",
+      "addition": "+$10,930.90"
+    }
+  ]
+}

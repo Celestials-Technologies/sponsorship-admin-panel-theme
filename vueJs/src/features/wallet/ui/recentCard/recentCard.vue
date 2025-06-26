@@ -27,7 +27,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="item in recentTransaction" :key="item.title">
+          <tr v-for="item in props.recentTransaction" :key="item.title">
             <td class="px-6 py-2.5 whitespace-nowrap">
               <div class="flex items-center gap-3">
                 <!-- <img
@@ -67,38 +67,8 @@
 </template>
 <script setup lang="ts">
 import { Icon } from "@iconify/vue";
-const recentTransaction = [
-  {
-    title: "Bitcoin",
-    status: "Pending",
-    time: "3 min ago",
-    transaction: "+0.2948 BTC",
-    amount: "+0.2948 BTC",
-    addition: "+$10,930.90",
-  },
-  {
-    title: "Cardano",
-    status: "Canceled",
-    time: "3 min ago",
-    transaction: "+0.8475 ADA",
-    amount: "+0.8475 ADA",
-    addition: "+$10,930.90",
-  },
-  {
-    title: "Bitcoin",
-    status: "Pending",
-    time: "3 min ago",
-    transaction: "+0.2948 BTC",
-    amount: "+0.2948 BTC",
-    addition: "+$10,930.90",
-  },
-  {
-    title: "Cardano",
-    status: "Canceled",
-    time: "3 min ago",
-    transaction: "+0.8475 ADA",
-    amount: "+0.8475 ADA",
-    addition: "+$10,930.90",
-  },
-];
+import { RecentTransactionType } from "@/features/wallet/modals/types";
+const props = defineProps<{
+  recentTransaction: RecentTransactionType[];
+}>();
 </script>
