@@ -1,4 +1,5 @@
 export type CryptoCardData = {
+  id: number;
   icon: string;
   name: string;
   symbol: string;
@@ -35,4 +36,20 @@ export type DashboardData = {
   stakingRewards: StakingRewardData[];
   subscriptions: SubscriptionData[];
   balanceData: BalanceData;
+};
+
+export type AverageBalanceData = {
+  title: string;
+  balance: string;
+  growth: string;
+  icon: string;
+  growthColor: string;
+};
+
+export type CurrencyOverviewData = {
+  id: number;
+  icon: string;
+  name: string;
+  price: string;
+  growth: string;
 };

@@ -6,7 +6,7 @@
     <div class="grid sm:grid-cols-2 grid-cols-1 gap-y-6 gap-x-5 items-center">
       <div
         class="lg:p-6 p-4 border border-[#fff3] w-full max-w-full bg-sideBarBg h-full rounded-xl"
-        v-for="item in currency"
+        v-for="item in props.data"
         :key="item.id"
       >
         <div class="flex gap-3 sm:gap-4 items-center">
@@ -54,35 +54,9 @@
 <script setup lang="ts">
 import Header from "./header/Header.vue";
 import GrowthIcon from "@/shared/ui/Icons/svgs/GrowthIcon.vue";
+import { CurrencyOverviewData } from "../model/types";
 
-const currency = [
-  {
-    id: 1,
-    icon: "images/bit_xxl.png",
-    name: "BTC-USD",
-    price: "$23,000",
-    growth: "+2,4%",
-  },
-  {
-    id: 2,
-    icon: "images/car_xxl.png",
-    name: "ADA-USD",
-    price: "$7,500",
-    growth: "-1,2%",
-  },
-  {
-    id: 3,
-    icon: "images/usd_xxl.png",
-    name: "BTC-USD",
-    price: "$23,000",
-    growth: "+2,4%",
-  },
-  {
-    id: 4,
-    icon: "images/ele_xxl.png",
-    name: "ETN-USD",
-    price: "$7,500",
-    growth: "+2,4%",
-  },
-];
+const props = defineProps<{
+  data: CurrencyOverviewData[];
+}>();
 </script>

@@ -41,39 +41,9 @@
 <script setup lang="ts">
 import GrowthIcon from "@/shared/ui/Icons/svgs/GrowthIcon.vue";
 import { Typography } from "@/shared/ui/typography";
+import { AnalyticsInfo } from "@/features/analytics/model/types";
 
-const analyticsInfo = [
-  {
-    id: 1,
-    name: "Orders",
-    description: "Orders",
-    amount: 671.28,
-    percentage: 92.4,
-    growthColor: "#00A385",
-  },
-  {
-    id: 2,
-    name: "Package",
-    description: "Package",
-    amount: 456.12,
-    percentage: 37.9,
-    growthColor: "#00A385",
-  },
-  {
-    id: 3,
-    name: "Payments",
-    description: "Payments",
-    amount: 324.17,
-    percentage: 60.1,
-    growthColor: "#00A385",
-  },
-  {
-    id: 4,
-    name: "Subscriptions",
-    description: "Subscriptions",
-    amount: 365.21,
-    percentage: 60.1,
-    growthColor: "#00A385",
-  },
-];
+const props = defineProps<{
+  analyticsInfo: AnalyticsInfo[];
+}>();
 </script>
