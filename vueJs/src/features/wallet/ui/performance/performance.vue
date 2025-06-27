@@ -22,13 +22,19 @@
       </div>
     </div>
 
-    <UpcommingTable />
+    <UpcommingTable :tableData="props.tableData" v-if="props.tableData" />
   </div>
 </template>
 <script setup lang="ts">
 import UpcommingTable from "../UpcommingTable/table.vue";
 import { Dropdown } from "@/shared/ui/dropdown";
 import { ref } from "vue";
+import { UpcommingTransactionType } from "../../modals/types";
+
+const props = defineProps<{
+  tableData: UpcommingTransactionType[];
+}>();
+
 const selectedDays = ref({
   label: "Last 15 days",
   value: "15",

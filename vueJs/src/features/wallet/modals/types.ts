@@ -13,3 +13,12 @@ export type RecentTransactionType = {
   amount: string;
   addition: string;
 };
+
+export type UpcommingTransactionType = {
+  title: string;
+  TimeStatus: string;
+  time: string;
+  transactionId: string;
+  payments: string;
+  status: string;
+};
