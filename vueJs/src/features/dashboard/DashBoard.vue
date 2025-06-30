@@ -86,7 +86,7 @@ const isLoading = ref(true);
 onMounted(async () => {
   try {
     isLoading.value = true;
-    const response = await axios.get("dashboardData/data.json");
+    const response = await axios.get("/dashboardData/data.json");
     dashboardData.value = response.data;
   } catch (error) {
     console.error("Error fetching dashboard data:", error);

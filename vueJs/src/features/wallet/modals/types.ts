@@ -22,3 +22,9 @@ export type UpcommingTransactionType = {
   payments: string;
   status: string;
 };
+
+export type TableActionsType = {
+  label: string;
+  icon: string;
+  function: () => void;
+};

@@ -29,7 +29,7 @@ const openLiquidityModal = () => {
   showLiquidityModal.value = true;
 };
 onMounted(async () => {
-  const response = await axios.get("analyticsData/data.json");
+  const response = await axios.get("/analyticsData/data.json");
   analyticsInfo.value = response.data.analyticsInfo;
 });
 </script>

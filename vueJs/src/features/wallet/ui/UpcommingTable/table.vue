@@ -26,7 +26,11 @@
       </div>
     </div>
     <div class="overflow-auto tableScroll pb-2.5">
-      <TableUI :headers="tableDataHeader.headers" :rows="props.tableData">
+      <TableUI
+        :headers="tableDataHeader.headers"
+        :rows="props.tableData"
+        :actions="tableActions"
+      >
         <template #cell-title="{ row }">
           <div class="flex flex-col gap-1">
             <p class="pt-0.5 text-base md:text-lg Gilroy-medium text-white">
@@ -105,7 +109,29 @@ const daysOptions = [
     value: "5",
   },
 ];
-
+const tableActions = [
+  {
+    label: "Edit",
+    icon: "heroicons:pencil-square",
+    function: () => {
+      console.log("edit");
+    },
+  },
+  {
+    label: "Update",
+    icon: "heroicons:arrow-path-solid",
+    function: () => {
+      console.log("update");
+    },
+  },
+  {
+    label: "Delete",
+    icon: "heroicons:trash",
+    function: () => {
+      console.log("delete");
+    },
+  },
+];
 const tableDataHeader = {
   headers: [
     { key: "title", label: "Title" },

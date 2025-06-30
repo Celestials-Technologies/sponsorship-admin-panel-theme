@@ -49,7 +49,7 @@ const openLiquidityModal = () => {
 onMounted(async () => {
   try {
     isLoading.value = true;
-    const response = await axios.get("balanceDetailData/data.json");
+    const response = await axios.get("/balanceDetailData/data.json");
     const data = response.data;
     averageBalanceData.value = data.AverageBalanceInfo;
     currencyOverviewData.value = data.CurrencyOverview;
