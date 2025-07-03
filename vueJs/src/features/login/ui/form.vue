@@ -21,7 +21,7 @@
         @blur="() => validateFieldName('password')"
       />
       <BaseLink
-        class="text-[#FFA51F] text-sm md:text-base Gilroy-semibold text-right"
+        class="text-commonOrange text-sm md:text-base Gilroy-semibold text-right"
         to="/forgotPassword"
         >Forgot Password</BaseLink
       >
@@ -29,7 +29,7 @@
     <p class="text-sm md:text-base text-white Gilroy-normal mt-4">
       Dont have an account?
       <BaseLink
-        class="text-[#FFA51F] Gilroy-semibold hover:underline cursor-pointer Gilroy-semibold"
+        class="text-commonOrange Gilroy-semibold hover:underline cursor-pointer Gilroy-semibold"
         to="/signup"
         >Signup</BaseLink
       >
@@ -37,15 +37,15 @@
     <div class="flex gap-5 lg:mt-8 mt-6">
       <Button
         type="button"
-        class="bg-btnSecondary hover:bg-transparent border border-solid border-[#E9901A] py-2 pt-2.5 px-[18px] md:px-8 md:py-4 md:pt-[18px] text-sm md:text-base text-white hover:text-[#FFA51F] rounded-lg flex items-center justify-center Gilroy-semibold"
+        class="bg-btnSecondary hover:bg-transparent border border-solid border-[#E9901A] py-2 pt-2.5 px-[18px] md:px-8 md:py-4 md:pt-[18px] text-sm md:text-base text-white hover:text-commonOrange rounded-lg flex items-center justify-center Gilroy-semibold"
         @click="handleSubmit"
       >
         Login
       </Button>
       <Button
-        onclick="history.back()"
+        @click="backHome"
         type="button"
-        class="bg-transparent hover:bg-[#E9901A] border border-solid border-[#E9901A] py-2 pt-2.5 px-[18px] md:px-8 md:py-4 md:pt-[18px] text-sm md:text-base text-[#FFA51F] hover:text-white rounded-lg flex items-center justify-center Gilroy-semibold"
+        class="bg-transparent hover:bg-[#E9901A] border border-solid border-[#E9901A] py-2 pt-2.5 px-[18px] md:px-8 md:py-4 md:pt-[18px] text-sm md:text-base text-commonOrange hover:text-white rounded-lg flex items-center justify-center Gilroy-semibold"
       >
         Back Home
       </Button>
@@ -53,10 +53,17 @@
   </form>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { formData, errors } from "../modal/types";
 import Input from "@/shared/ui/input/Input.vue";
 import Button from "@/shared/ui/button/Button.vue";
 import { BaseLink } from "@/shared/ui/baselink";
 import { handleSubmit, validateFieldName } from "../modal/api";
+import { useRouter } from "vue-router";
+
+const router = useRouter();
+
+const backHome = () => {
+  router.push("/");
+};
 </script>

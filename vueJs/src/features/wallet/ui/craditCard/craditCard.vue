@@ -13,8 +13,8 @@
       <Button
         type="button"
         variant="none"
-        onclick="makeACard()"
-        class="group px-2 md:px-4 py-3 flex justify-center items-center md:gap-3 gap-2 border border-solid border-[#E9901A] transition-all hover:bg-[#E9901A] rounded-xl walletTopUp"
+        @click="makeACard"
+        class="group px-2 md:px-4 py-3 flex justify-center items-center md:gap-3 gap-2 border border-solid border-borderColor transition-all hover:bg-borderColor rounded-xl walletTopUp"
       >
         <Icon icon="heroicons:plus" width="20" height="20" />
         <Typography
@@ -27,8 +27,8 @@
       <Button
         type="button"
         variant="none"
-        onclick="manageBtn()"
-        class="px-4 md:px-5 md:py-4 py-3 flex justify-center items-center md:gap-3 gap-2 border border-solid border-[#E9901A] transition-all hover:bg-[#E9901A] rounded-xl walletTopUp"
+        @click="manageBtn"
+        class="px-4 md:px-5 md:py-4 py-3 flex justify-center items-center md:gap-3 gap-2 border border-solid border-borderColor transition-all hover:bg-borderColor rounded-xl walletTopUp"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -51,4 +51,12 @@
 import { Button } from "@/shared/ui/button";
 import { Icon } from "@iconify/vue";
 import { Typography } from "@/shared/ui/typography";
+
+const makeACard = () => {
+  console.log("makeACard");
+};
+
+const manageBtn = () => {
+  console.log("manageBtn");
+};
 </script>

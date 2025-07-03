@@ -5,6 +5,7 @@ const formData = reactive({
   lastName: "",
   email: "",
   password: "",
+  confirmPassword: "",
 });
 
 const errors = reactive({
@@ -12,6 +13,7 @@ const errors = reactive({
   lastName: "",
   email: "",
   password: "",
+  confirmPassword: "",
 });
 
 export { formData, errors };

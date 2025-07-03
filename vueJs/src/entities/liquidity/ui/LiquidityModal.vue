@@ -86,7 +86,7 @@
         <button
           type="button"
           id="liquidityConverterBtn"
-          onclick="liquidityConverter()"
+          @click="liquidityConverter"
           class="p-1 flex gap-0 items-center bg-[#E9901A] w-fit rounded-lg absolute top-[43%] left-[41%] mx-auto transition-all"
         >
           <svg
@@ -151,32 +151,32 @@
       >
         <button
           type="button"
-          onclick="halfPercentBtn()"
+          @click="halfPercentBtn"
           id="halfPercentButton"
-          class="py-3 px-6 border border-solid border-[#E9901A] rounded-lg hover:bg-[#E9901A] text-[#E9901A] hover:text-white transition-all w-[30%]"
+          class="py-3 px-6 border border-solid border-borderColor rounded-lg hover:bg-borderColor text-borderColor hover:text-white transition-all w-[30%]"
         >
           0.5%
         </button>
         <button
           type="button"
-          onclick="onePercentBtn()"
+          @click="onePercentBtn"
           id="onePercentButton"
-          class="py-3 px-6 border border-solid border-[#E9901A] rounded-lg hover:bg-transparent hover:text-[#E9901A] text-[#E9901A] transition-all w-[30%]"
+          class="py-3 px-6 border border-solid border-borderColor rounded-lg hover:bg-transparent hover:text-borderColor text-borderColor transition-all w-[30%]"
         >
           1%
         </button>
         <button
           type="button"
-          onclick="threePercentBtn()"
+          @click="threePercentBtn"
           id="threePercentButton"
-          class="py-3 px-6 border border-solid border-[#E9901A] rounded-lg hover:bg-[#E9901A] text-[#E9901A] hover:text-white transition-all w-[30%]"
+          class="py-3 px-6 border border-solid border-borderColor rounded-lg hover:bg-borderColor text-borderColor hover:text-white transition-all w-[30%]"
         >
           3%
         </button>
       </div>
       <button
         type="button"
-        onclick="provideLiquidityBtn()"
+        @click="provideLiquidityBtn"
         class="px-6 py-3 w-full mt-5 text-base text-white Gilroy-medium text-center rounded-lg hover:bg-transparent bg-[#E9901A] border border-solid border-[#E9901A]"
       >
         Provide liquidity
@@ -186,7 +186,6 @@
 </template>
 
 <script setup lang="ts">
-/* eslint-disable */
 import { ref, defineEmits } from "vue";
 import Dropdown from "@/shared/ui/dropdown/Dropdown.vue";
 
@@ -223,4 +222,24 @@ const currencyOptions = [
 defineEmits<{
   (e: "close"): void;
 }>();
+
+const liquidityConverter = () => {
+  console.log("liquidityConverter");
+};
+
+const halfPercentBtn = () => {
+  console.log("halfPercentBtn");
+};
+
+const onePercentBtn = () => {
+  console.log("onePercentBtn");
+};
+
+const threePercentBtn = () => {
+  console.log("threePercentBtn");
+};
+
+const provideLiquidityBtn = () => {
+  console.log("provideLiquidityBtn");
+};
 </script>

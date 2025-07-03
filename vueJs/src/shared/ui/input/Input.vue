@@ -65,7 +65,7 @@ const props = defineProps<{
   defaultValue?: string | number;
   modelValue?: string | number;
   class?: HTMLAttributes["class"];
-  variant?: "search" | "default" | "form";
+  variant?: "search" | "default" | "form" | "formInputField";
   placeholder?: string;
   label?: string;
   error?: string;

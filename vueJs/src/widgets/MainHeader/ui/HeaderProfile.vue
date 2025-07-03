@@ -20,7 +20,7 @@
         <li
           v-for="item in profileMenu"
           :key="item.name"
-          class="hover:bg-[#E9901A] cursor-pointer rounded-lg"
+          class="hover:bg-borderColor cursor-pointer rounded-lg"
         >
           <router-link
             :to="item.link"

@@ -8,7 +8,7 @@
         type="button"
         variant="none"
         style="min-width: auto"
-        onclick="detailsBtn(this)"
+        @click="detailsBtn"
         class="chooseOption"
       >
         <VerticalEllipsis />
@@ -52,4 +52,8 @@ import Button from "@/shared/ui/button/Button.vue";
 const props = defineProps<{
   title: string;
 }>();
+
+const detailsBtn = () => {
+  console.log("detailsBtn");
+};
 </script>

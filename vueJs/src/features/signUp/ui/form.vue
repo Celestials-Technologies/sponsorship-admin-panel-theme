@@ -66,7 +66,7 @@
     </div>
     <p class="text-sm md:text-base text-white Gilroy-normal mt-4">
       Have an account?
-      <BaseLink to="/login" class="text-[#FFA51F] Gilroy-semibold"
+      <BaseLink to="/login" class="text-commonOrange Gilroy-semibold"
         >Sign In</BaseLink
       >
     </p>
@@ -74,7 +74,7 @@
       <Button
         type="submit"
         :disabled="isSubmitting"
-        class="bg-btnSecondary hover:bg-transparent border border-solid border-[#E9901A] py-2 pt-2.5 px-[18px] md:px-8 md:py-4 md:pt-[18px] text-sm md:text-base text-white hover:text-[#FFA51F] rounded-lg flex items-center justify-center Gilroy-semibold disabled:opacity-50 disabled:cursor-not-allowed"
+        class="bg-btnSecondary hover:bg-transparent border border-solid border-[#E9901A] py-2 pt-2.5 px-[18px] md:px-8 md:py-4 md:pt-[18px] text-sm md:text-base text-white hover:text-commonOrange rounded-lg flex items-center justify-center Gilroy-semibold disabled:opacity-50 disabled:cursor-not-allowed"
       >
         Sign Up
       </Button>
@@ -82,7 +82,7 @@
         @click="$router.back()"
         type="button"
         :disabled="isSubmitting"
-        class="bg-transparent hover:bg-[#E9901A] border border-solid border-[#E9901A] py-2 pt-2.5 px-[18px] md:px-8 md:py-4 md:pt-[18px] text-sm md:text-base text-[#FFA51F] hover:text-white rounded-lg flex items-center justify-center Gilroy-semibold disabled:opacity-50 disabled:cursor-not-allowed"
+        class="bg-transparent hover:bg-[#E9901A] border border-solid border-[#E9901A] py-2 pt-2.5 px-[18px] md:px-8 md:py-4 md:pt-[18px] text-sm md:text-base text-commonOrange hover:text-white rounded-lg flex items-center justify-center Gilroy-semibold disabled:opacity-50 disabled:cursor-not-allowed"
       >
         Back Home
       </Button>
@@ -90,7 +90,7 @@
   </form>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { formData, errors } from "../modal/types";
 import Input from "@/shared/ui/input/Input.vue";
 import Button from "@/shared/ui/button/Button.vue";

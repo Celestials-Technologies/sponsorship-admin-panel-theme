@@ -29,12 +29,12 @@
       </h3>
       <Button
         type="button"
-        onclick="topUpBtn()"
-        class="xl:px-8 md:px-5 px-4 xl:py-4 md:py-3 py-2 group border border-solid border-[#E9901A] hover:bg-[#E9901A] transition-all bg-transparent rounded-xl walletTopUp flex md:gap-3 gap-2 items-center"
+        @click="topUpBtn"
+        class="xl:px-8 md:px-5 px-4 xl:py-4 md:py-3 py-2 group border border-solid border-borderColor hover:bg-borderColor transition-all bg-transparent rounded-xl walletTopUp flex md:gap-3 gap-2 items-center"
       >
         <Icon
           color="#fff"
-          class="border-2 border-solid border-[#E9901A] group-hover:border-[#fff] transition-all rounded-full"
+          class="border-2 border-solid border-borderColor group-hover:border-[#fff] transition-all rounded-full"
           icon="heroicons:plus-20-solid"
           width="20"
           height="20"
@@ -44,7 +44,7 @@
       <Button
         href="./allCards.html"
         target="_blank"
-        class="txl:px-8 md:px-5 px-4 xl:py-4 md:py-3 py-2 border border-solid border-[#E9901A] hover:bg-[#E9901A] transition-all bg-transparent rounded-xl text-[#FFA51F] hover:text-white"
+        class="txl:px-8 md:px-5 px-4 xl:py-4 md:py-3 py-2 border border-solid border-borderColor hover:bg-borderColor transition-all bg-transparent rounded-xl text-commonOrange hover:text-white"
         >All Cards
       </Button>
     </div>
@@ -60,4 +60,8 @@ import {
   TooltipTrigger,
 } from "@/shared/ui/tooltip";
 import { Button } from "@/shared/ui/button";
+
+const topUpBtn = () => {
+  console.log("topUpBtn");
+};
 </script>

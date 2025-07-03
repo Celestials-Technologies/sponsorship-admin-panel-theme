@@ -21,7 +21,7 @@
         <li
           v-for="country in countries"
           :key="country.name"
-          class="flex items-center gap-2 p-2 hover:bg-[#E9901A] cursor-pointer rounded-lg"
+          class="flex items-center gap-2 p-2 hover:bg-borderColor cursor-pointer rounded-lg"
           @click="selectCountry(country)"
         >
           <img

@@ -16,9 +16,6 @@
 </template>
 
 <script setup lang="ts">
-/* eslint-disable */
-import { defineProps } from "vue";
-
 defineProps<{
   color?: string;
 }>();

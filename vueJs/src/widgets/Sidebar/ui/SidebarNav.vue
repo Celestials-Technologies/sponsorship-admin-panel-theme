@@ -7,8 +7,8 @@
             <li
               class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-2.5 cursor-pointer transition-all"
               :class="{
-                'bg-[#E9901A]': isActiveRoute(item.path),
-                'hover:bg-[#E9901A]': !isActiveRoute(item.path),
+                'bg-borderColor': isActiveRoute(item.path),
+                'hover:bg-borderColor': !isActiveRoute(item.path),
               }"
             >
               <div
@@ -27,8 +27,8 @@
             v-else
             class="py-2 px-2 rounded-xl flex gap-[7px] h-[50px] relative items-center mt-2.5 cursor-pointer transition-all"
             :class="{
-              'bg-[#E9901A]': isActiveParent(item),
-              'hover:bg-[#E9901A]': !isActiveParent(item),
+              'bg-borderColor': isActiveParent(item),
+              'hover:bg-borderColor': !isActiveParent(item),
             }"
           >
             <div
@@ -44,7 +44,7 @@
 
         <!-- Child menu items -->
         <div v-if="item.children" class="pl-8 accountList">
-          <div class="border-l border-solid border-[#E9901A]">
+          <div class="border-l border-solid border-borderColor">
             <ul>
               <router-link
                 v-for="child in item.children"
@@ -57,8 +57,8 @@
                   <p
                     class="py-2 px-2 rounded-xl text-white flex gap-[7px] h-[50px] relative items-center mt-2.5 cursor-pointer transition-all"
                     :class="{
-                      'bg-[#E9901A]': isActiveRoute(child.path),
-                      'hover:bg-[#E9901A]': !isActiveRoute(child.path),
+                      'bg-borderColor': isActiveRoute(child.path),
+                      'hover:bg-borderColor': !isActiveRoute(child.path),
                     }"
                   >
                     {{ child.label }}
@@ -73,7 +73,6 @@
   </ul>
 </template>
 <script setup lang="ts">
-import { defineProps } from "vue";
 import { type NavigationItem } from "../model/types";
 
 interface Props {

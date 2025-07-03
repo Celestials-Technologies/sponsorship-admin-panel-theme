@@ -16,7 +16,7 @@
   </ModalWrapper>
 </template>
 <script setup lang="ts">
-import Form from "./form.vue";
+import Form from "../ui/form.vue";
 import Typography from "@/shared/ui/typography/Typography.vue";
 import { ModalWrapper } from "@/shared/ui/ModalWrapper";
 </script>

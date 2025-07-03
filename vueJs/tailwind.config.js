@@ -6,6 +6,8 @@ module.exports = {
   theme: {
   	extend: {
   		colors: {
+			borderColor:'#E9901A',
+			commonOrange:'#FFA51F',
   			bgPrimary: '#191153',
   			primary: {
   				DEFAULT: 'hsl(var(--primary))',

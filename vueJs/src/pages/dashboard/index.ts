@@ -1,1 +1,1 @@
-export { default } from "./DashBoard.vue";
+export { default } from "./dashBoard.vue";

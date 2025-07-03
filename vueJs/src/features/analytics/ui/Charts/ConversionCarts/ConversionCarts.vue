@@ -17,11 +17,11 @@
       </div>
       <a
         v-if="title === 'Asset Allocation'"
-        onclick="seeAll()"
+        @click="seeAll"
         id="seeAll"
         class="w-[85px] flex gap-2 py-2"
       >
-        <Typography variant="p" class="text-[#FFA51F] cursor-pointer">
+        <Typography variant="p" class="text-commonOrange cursor-pointer">
           See All
         </Typography>
         <Icon
@@ -63,4 +63,8 @@ const daysOptions = [
     value: "30",
   },
 ];
+
+const seeAll = () => {
+  console.log("seeAll");
+};
 </script>

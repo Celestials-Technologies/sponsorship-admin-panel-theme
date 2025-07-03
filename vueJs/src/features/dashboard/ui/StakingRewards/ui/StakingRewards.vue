@@ -6,7 +6,7 @@
       <h4 class="text-xl md:text-2xl text-white Gilroy-semibold">
         Staking rewards
       </h4>
-      <button type="button" onclick="rewardsRefresh()">
+      <button type="button" @click="rewardsRefresh">
         <RefreshButton />
       </button>
     </div>
@@ -53,4 +53,8 @@ import type { StakingRewardData } from "@/features/dashboard/model/types";
 defineProps<{
   stakingRewards: StakingRewardData[];
 }>();
+
+const rewardsRefresh = () => {
+  console.log("rewardsRefresh");
+};
 </script>

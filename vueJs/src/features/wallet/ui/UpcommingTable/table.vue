@@ -45,11 +45,13 @@
     </div>
     <div id="data-container" class="overflow-auto tableScroll pb-2.5"></div>
     <a
-      onclick="seeAll()"
+      @click="seeAll"
       id="seeAll"
       class="flex items-center mt-6 gap-2 cursor-pointer"
     >
-      <p class="text-sm md:text-base text-[#FFA51F] Gilroy-medium">See All</p>
+      <p class="text-sm md:text-base text-commonOrange Gilroy-medium">
+        See All
+      </p>
       <Icon
         icon="heroicons:arrow-small-right"
         width="24"
@@ -58,12 +60,14 @@
       />
     </a>
     <a
-      onclick="showLess()"
+      @click="showLess"
       id="seeLess"
       class="flex items-center mt-6 gap-2 cursor-pointer"
       style="display: none"
     >
-      <p class="text-sm md:text-base text-[#FFA51F] Gilroy-medium">See Less</p>
+      <p class="text-sm md:text-base text-commonOrange Gilroy-medium">
+        See Less
+      </p>
       <Icon
         icon="heroicons:arrow-small-right"
         width="24"
@@ -140,5 +144,11 @@ const tableDataHeader = {
     { key: "status", label: "Status" },
     { key: "action", label: "Action" },
   ],
+};
+const seeAll = () => {
+  console.log("seeAll");
+};
+const showLess = () => {
+  console.log("showLess");
 };
 </script>

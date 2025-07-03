@@ -37,7 +37,7 @@
 
 <script setup lang="ts">
 import GrowthIcon from "@/shared/ui/Icons/svgs/GrowthIcon.vue";
-/* eslint-disable */
+
 const props = defineProps<{
   icon: string;
   name: string;

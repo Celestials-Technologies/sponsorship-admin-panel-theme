@@ -41,7 +41,6 @@
 </template>
 
 <script setup lang="ts">
-/* eslint-disable */
 import { defineProps, defineEmits } from "vue";
 
 interface TitleHeaderProps {

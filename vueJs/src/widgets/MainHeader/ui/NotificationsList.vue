@@ -7,8 +7,8 @@
       :class="[
         'text-base Gilroy-normal p-2 text-white w-full rounded-lg flex items-center gap-3 justify-between cursor-pointer',
         selectedNotificationId === notification.id
-          ? 'bg-[#E9901A]'
-          : 'hover:bg-[#E9901A]',
+          ? 'bg-borderColor'
+          : 'hover:bg-borderColor',
       ]"
     >
       <div class="flex items-center gap-2">

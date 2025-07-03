@@ -14,13 +14,13 @@
         <thead>
           <tr class="">
             <th
-              class="py-4 px-6 whitespace-nowrap text-[#FFA51F] text-base md:text-lg Gilroy-semibold text-left bg-[#ffffff1a] rounded-l-[17.84px]"
+              class="py-4 px-6 whitespace-nowrap text-commonOrange text-base md:text-lg Gilroy-semibold text-left bg-[#ffffff1a] rounded-l-[17.84px]"
             >
               Title
             </th>
 
             <th
-              class="py-4 px-6 whitespace-nowrap text-[#FFA51F] text-base md:text-lg Gilroy-semibold text-left bg-[#ffffff1a] rounded-r-[17.84px]"
+              class="py-4 px-6 whitespace-nowrap text-commonOrange text-base md:text-lg Gilroy-semibold text-left bg-[#ffffff1a] rounded-r-[17.84px]"
             >
               Transaction
             </th>
@@ -60,7 +60,9 @@
       </table>
     </div>
     <a href="#" class="flex items-center mt-6 gap-2">
-      <p class="text-sm md:text-base text-[#FFA51F] Gilroy-medium">See All</p>
+      <p class="text-sm md:text-base text-commonOrange Gilroy-medium">
+        See All
+      </p>
       <Icon icon="heroicons:arrow-right" width="20" height="20" />
     </a>
   </div>

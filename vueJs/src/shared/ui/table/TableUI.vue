@@ -5,7 +5,7 @@
         <th
           v-for="header in headers"
           :key="header.key"
-          class="bg-[#ffffff1a] py-4 px-6 whitespace-nowrap text-[#FFA51F] text-base md:text-lg Gilroy-semibold text-left"
+          class="bg-[#ffffff1a] py-4 px-6 whitespace-nowrap text-commonOrange text-base md:text-lg Gilroy-semibold text-left"
         >
           {{ header.label }}
         </th>
