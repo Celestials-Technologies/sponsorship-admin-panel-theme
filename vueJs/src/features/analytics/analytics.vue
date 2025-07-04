@@ -19,17 +19,11 @@ import { InfoSection } from "@/features/analytics/ui";
 import { AnalyticsCharts } from "@/features/analytics/ui/Charts";
 import { TitleHeader } from "@/shared/ui/TitleHeader";
 import { LiquidityModal } from "@/entities/liquidity";
-import { AnalyticsInfo } from "./model/types";
-import { onMounted } from "vue";
-import axios from "axios";
+import { useAnalyticsData } from "./api";
 const showLiquidityModal = ref(false);
-const analyticsInfo = ref<AnalyticsInfo[]>([]);
+const { analyticsInfo } = useAnalyticsData();
 
 const openLiquidityModal = () => {
   showLiquidityModal.value = true;
 };
-onMounted(async () => {
-  const response = await axios.get("/analyticsData/data.json");
-  analyticsInfo.value = response.data.analyticsInfo;
-});
 </script>
