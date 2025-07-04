@@ -29,7 +29,7 @@
 import UpcommingTable from "../UpcommingTable/table.vue";
 import { Dropdown } from "@/shared/ui/dropdown";
 import { ref } from "vue";
-import { UpcommingTransactionType } from "../../modals/types";
+import { UpcommingTransactionType } from "../../model/types";
 
 const props = defineProps<{
   tableData: UpcommingTransactionType[];

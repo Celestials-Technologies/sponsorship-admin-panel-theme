@@ -69,7 +69,7 @@
 </template>
 <script setup lang="ts">
 import { Icon } from "@iconify/vue";
-import { RecentTransactionType } from "@/features/wallet/modals/types";
+import { RecentTransactionType } from "@/features/wallet/model/types";
 const props = defineProps<{
   recentTransaction: RecentTransactionType[];
 }>();

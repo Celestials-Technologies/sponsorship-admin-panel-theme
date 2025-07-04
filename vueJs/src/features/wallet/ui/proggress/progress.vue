@@ -66,7 +66,7 @@
 </template>
 
 <script setup lang="ts">
-import { LimitsType } from "@/features/wallet/modals/types";
+import { LimitsType } from "@/features/wallet/model/types";
 import GrowthIcon from "@/shared/ui/Icons/svgs/GrowthIcon.vue";
 
 const props = defineProps<{

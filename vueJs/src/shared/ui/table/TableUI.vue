@@ -78,7 +78,7 @@
 
 <script setup lang="ts">
 import { Icon } from "@iconify/vue";
-import { TableActionsType } from "@/features/wallet/modals/types";
+import { TableActionsType } from "@/features/wallet/model/types";
 import { onMounted, onUnmounted } from "vue";
 
 import {

@@ -85,7 +85,7 @@ import HeaderSearch from "@/widgets/MainHeader/ui/HeaderSearch.vue";
 import { Typography } from "@/shared/ui/typography";
 import { Icon } from "@iconify/vue";
 import { TableUI } from "@/shared/ui/table";
-import { UpcommingTransactionType } from "../../modals/types";
+import { UpcommingTransactionType } from "../../model/types";
 
 const props = defineProps<{
   tableData: UpcommingTransactionType[];

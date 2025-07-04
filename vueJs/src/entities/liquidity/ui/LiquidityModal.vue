@@ -188,6 +188,7 @@
 <script setup lang="ts">
 import { ref, defineEmits } from "vue";
 import Dropdown from "@/shared/ui/dropdown/Dropdown.vue";
+import { CurrencyType } from "../model/types";
 
 const fromCurrency = ref({
   label: "ADA",
@@ -201,7 +202,7 @@ const toCurrency = ref({
   icon: "images/bitcoin_mid.png",
 });
 
-const currencyOptions = [
+const currencyOptions = ref<CurrencyType[]>([
   {
     label: "ADA",
     value: "ada",
@@ -217,7 +218,7 @@ const currencyOptions = [
     value: "eth",
     icon: "images/ethereum.png",
   },
-];
+]);
 
 defineEmits<{
   (e: "close"): void;

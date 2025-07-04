@@ -91,7 +91,7 @@
 </template>
 
 <script setup lang="ts">
-import { formData, errors } from "../modal/types";
+import { formData, errors } from "../model/types";
 import Input from "@/shared/ui/input/Input.vue";
 import Button from "@/shared/ui/button/Button.vue";
 import { BaseLink } from "@/shared/ui/baselink";
@@ -100,5 +100,5 @@ import {
   hasSubmissionError,
   isSubmitting,
   validateFieldName,
-} from "../modal/api";
+} from "../model/api";
 </script>
